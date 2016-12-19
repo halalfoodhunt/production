@@ -28,11 +28,13 @@ class CulinarySkillsController < ApplicationController
 
     respond_to do |format|
       if @culinary_skill.save
-        format.html { redirect_to @culinary_skill, notice: 'Culinary skill was successfully created.' }
+        format.html { redirect_to culinary_skills_path, notice: 'Culinary skill was successfully created.' }
         format.json { render :show, status: :created, location: @culinary_skill }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @culinary_skill.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class CulinarySkillsController < ApplicationController
       if @culinary_skill.update(culinary_skill_params)
         format.html { redirect_to @culinary_skill, notice: 'Culinary skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @culinary_skill }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @culinary_skill.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class CulinarySkillsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to culinary_skills_url, notice: 'Culinary skill was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

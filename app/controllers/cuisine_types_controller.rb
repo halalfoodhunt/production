@@ -28,11 +28,13 @@ class CuisineTypesController < ApplicationController
 
     respond_to do |format|
       if @cuisine_type.save
-        format.html { redirect_to @cuisine_type, notice: 'Cuisine type was successfully created.' }
+        format.html { redirect_to cuisine_types_path, notice: 'Cuisine type was successfully created.' }
         format.json { render :show, status: :created, location: @cuisine_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @cuisine_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class CuisineTypesController < ApplicationController
       if @cuisine_type.update(cuisine_type_params)
         format.html { redirect_to @cuisine_type, notice: 'Cuisine type was successfully updated.' }
         format.json { render :show, status: :ok, location: @cuisine_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @cuisine_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class CuisineTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to cuisine_types_url, notice: 'Cuisine type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -28,7 +28,7 @@ class EstablishmentTypesController < ApplicationController
 
     respond_to do |format|
       if @establishment_type.save
-        format.html { redirect_to @establishment_type, notice: 'Establishment type was successfully created.' }
+        format.html { redirect_to establishment_types_path, notice: 'Establishment type was successfully created.' }
         format.json { render :show, status: :created, location: @establishment_type }
         format.js
       else

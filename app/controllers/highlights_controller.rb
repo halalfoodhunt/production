@@ -28,11 +28,13 @@ class HighlightsController < ApplicationController
 
     respond_to do |format|
       if @highlight.save
-        format.html { redirect_to @highlight, notice: 'Highlight was successfully created.' }
+        format.html { redirect_to highlights_path, notice: 'Highlight was successfully created.' }
         format.json { render :show, status: :created, location: @highlight }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @highlight.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class HighlightsController < ApplicationController
       if @highlight.update(highlight_params)
         format.html { redirect_to @highlight, notice: 'Highlight was successfully updated.' }
         format.json { render :show, status: :ok, location: @highlight }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @highlight.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class HighlightsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to highlights_url, notice: 'Highlight was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

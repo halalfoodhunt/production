@@ -28,11 +28,13 @@ class GrocerServiceTypesController < ApplicationController
 
     respond_to do |format|
       if @grocer_service_type.save
-        format.html { redirect_to @grocer_service_type, notice: 'Grocer service type was successfully created.' }
+        format.html { redirect_to grocer_service_types_path, notice: 'Grocer service type was successfully created.' }
         format.json { render :show, status: :created, location: @grocer_service_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @grocer_service_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class GrocerServiceTypesController < ApplicationController
       if @grocer_service_type.update(grocer_service_type_params)
         format.html { redirect_to @grocer_service_type, notice: 'Grocer service type was successfully updated.' }
         format.json { render :show, status: :ok, location: @grocer_service_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @grocer_service_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class GrocerServiceTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to grocer_service_types_url, notice: 'Grocer service type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

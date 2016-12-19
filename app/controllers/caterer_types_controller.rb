@@ -28,11 +28,13 @@ class CatererTypesController < ApplicationController
 
     respond_to do |format|
       if @caterer_type.save
-        format.html { redirect_to @caterer_type, notice: 'Caterer type was successfully created.' }
+        format.html { redirect_to caterer_types_path, notice: 'Caterer type was successfully created.' }
         format.json { render :show, status: :created, location: @caterer_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @caterer_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class CatererTypesController < ApplicationController
       if @caterer_type.update(caterer_type_params)
         format.html { redirect_to @caterer_type, notice: 'Caterer type was successfully updated.' }
         format.json { render :show, status: :ok, location: @caterer_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @caterer_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class CatererTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to caterer_types_url, notice: 'Caterer type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
