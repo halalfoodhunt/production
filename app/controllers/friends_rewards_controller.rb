@@ -28,13 +28,11 @@ class FriendsRewardsController < ApplicationController
 
     respond_to do |format|
       if @friends_reward.save
-        format.html { redirect_to friends_rewards_path, notice: 'Friends reward was successfully created.' }
+        format.html { redirect_to @friends_reward, notice: 'Friends reward was successfully created.' }
         format.json { render :show, status: :created, location: @friends_reward }
-        format.js
       else
         format.html { render :new }
         format.json { render json: @friends_reward.errors, status: :unprocessable_entity }
-        format.js
       end
     end
   end
@@ -46,11 +44,9 @@ class FriendsRewardsController < ApplicationController
       if @friends_reward.update(friends_reward_params)
         format.html { redirect_to @friends_reward, notice: 'Friends reward was successfully updated.' }
         format.json { render :show, status: :ok, location: @friends_reward }
-        format.js
       else
         format.html { render :edit }
         format.json { render json: @friends_reward.errors, status: :unprocessable_entity }
-        format.js
       end
     end
   end
@@ -62,7 +58,7 @@ class FriendsRewardsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to friends_rewards_url, notice: 'Friends reward was successfully destroyed.' }
       format.json { head :no_content }
-      format.js
+    end
   end
 
   private
