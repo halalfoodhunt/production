@@ -1,5 +1,6 @@
  <% @supplier_types.each do |supplier_type| %>
  <tr>
+    <td class="col-md-1"><%= image_tag(supplier_type.icon.url(:square), :class => "img_circle") %></td>
   <td class="col-md-9"><%= supplier_type.name %></td>
   <td class="col-md-1"><%= link_to edit_supplier_type_path(supplier_type), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
