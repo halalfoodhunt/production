@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218132936) do
+ActiveRecord::Schema.define(version: 20161219103555) do
 
   create_table "banquet_types", force: :cascade do |t|
     t.integer  "place_id"
@@ -959,8 +959,12 @@ ActiveRecord::Schema.define(version: 20161218132936) do
 
   create_table "supplier_types", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "suppliers", force: :cascade do |t|
