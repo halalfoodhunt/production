@@ -24,7 +24,7 @@ class Plan < ActiveRecord::Base
 
     Plan.create({
       name: 'Social',
-      price: 38.00, 
+      price: 68.00, 
       interval: 'month',
       stripe_id: 'social', 
       features: ['Unlimited Listings', '10 Pages', '10 Users', '10 Organizations'].join("\n\n"), 
