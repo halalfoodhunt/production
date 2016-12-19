@@ -1,5 +1,6 @@
 <% @grocer_types.each do |grocer_type| %>
       <tr>
+        <td class="col-md-1"><%= image_tag(grocer_type.icon.url(:square), :class => "img_circle") %></td>
         <td class="col-md-9"><%= grocer_type.name %></td>
         <td class="col-md-1"><%= link_to edit_grocer_type_path(grocer_type), remote: true do %>
           <i class="fa fa-pencil" style="color:brown"></i><% end %>
