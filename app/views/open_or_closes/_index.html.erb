@@ -1,0 +1,11 @@
+ <% @open_or_closes.each do |open_or_close| %>
+ <tr>
+  <td class="col-md-9"><%= open_or_close.name %></td>
+  <td class="col-md-1"><%= link_to edit_open_or_close_path(open_or_close), remote: true do %>
+    <i class="fa fa-pencil" style="color:brown"></i><% end %>
+  </td>
+  <td class="col-md-1"><%= link_to open_or_close, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash-o" style="color:brown"></i><% end %>
+  </td>
+</tr>
+<% end %>

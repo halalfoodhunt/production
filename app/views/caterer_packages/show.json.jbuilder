@@ -1,0 +1,1 @@
+json.partial! "caterer_packages/caterer_package", caterer_package: @caterer_package

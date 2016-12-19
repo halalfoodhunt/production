@@ -1,0 +1,12 @@
+<% @supermarket_highlights.each do |supermarket_highlights| %>
+<tr>
+  <td class="col-md-1"><%= image_tag(supermarket_highlights.icon.url(:square), :class => "img_circle") %></td>
+  <td class="col-md-9"><%= supermarket_highlights.name %></td>
+  <td class="col-md-1"><%= link_to edit_supermarket_highlight_path(supermarket_highlights), remote: true do %>
+    <i class="fa fa-pencil" style="color:brown"></i><% end %>
+  </td>
+  <td class="col-md-1"><%= link_to supermarket_highlights, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash-o" style="color:brown"></i><% end %>
+  </td>
+</tr>
+<% end %>

@@ -1,0 +1,2 @@
+module CulinarySkillsHelper
+end

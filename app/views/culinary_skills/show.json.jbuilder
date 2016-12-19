@@ -1,0 +1,1 @@
+json.partial! "culinary_skills/culinary_skill", culinary_skill: @culinary_skill

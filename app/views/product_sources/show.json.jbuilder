@@ -1,0 +1,1 @@
+json.partial! "product_sources/product_source", product_source: @product_source

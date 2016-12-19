@@ -1,0 +1,2 @@
+module GrocerServiceTypesHelper
+end

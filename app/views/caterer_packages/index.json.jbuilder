@@ -1,0 +1,1 @@
+json.array! @caterer_packages, partial: 'caterer_packages/caterer_package', as: :caterer_package

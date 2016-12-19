@@ -1,0 +1,1 @@
+json.array! @catering_types, partial: 'catering_types/catering_type', as: :catering_type

@@ -1,0 +1,2 @@
+module CateringTypesHelper
+end

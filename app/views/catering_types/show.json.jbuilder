@@ -1,0 +1,1 @@
+json.partial! "catering_types/catering_type", catering_type: @catering_type

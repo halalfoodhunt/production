@@ -1,0 +1,16 @@
+<h4>Menu & Packages</h4>
+<table class="table table-responsive">
+<%= f.fields_for :caterer_packages do |builder| %>
+  <thead>
+    <tr>
+      <th><%= builder.text_field :name, label:'Package Name' %></th>
+      <th><%= builder.text_field :price %></th>
+      <th><%= builder.number_field :minimum_pax, label:'Min. Pax' %></th>
+    </tr>
+    <tr>
+    <th colspan="3"><%= builder.text_area :description, label:'Course & Menu Type' %></th>
+    </tr>
+  </head>
+  <% end %>
+</table>
+  

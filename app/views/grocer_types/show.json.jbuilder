@@ -1,0 +1,1 @@
+json.partial! "grocer_types/grocer_type", grocer_type: @grocer_type

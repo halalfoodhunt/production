@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Operating address</th>
+      <th>Facebook</th>
+      <th>Instagram</th>
+      <th>Website</th>
+      <th>Preferred contact</th>
+      <th>Preferred order method</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Delivery url</th>
+      <th>Expiry date</th>
+      <th>Friends terms</th>
+      <th>Merchant</th>
+      <th>Draft</th>
+      <th>Verified</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.business_name %></td>
+        <td><%= product.general_contact_number %></td>
+        <td><%= product.general_email %></td>
+        <td><%= product.operating_address %></td>
+        <td><%= product.facebook %></td>
+        <td><%= product.instagram %></td>
+        <td><%= product.website %></td>
+        <td><%= product.preferred_contact %></td>
+        <td><%= product.preferred_order_method %></td>
+        <td><%= product.question_1 %></td>
+        <td><%= product.question_2 %></td>
+        <td><%= product.delivery_url %></td>
+        <td><%= product.expiry_date %></td>
+        <td><%= product.friends_terms %></td>
+        <td><%= product.merchant_id %></td>
+        <td><%= product.draft %></td>
+        <td><%= product.verified %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

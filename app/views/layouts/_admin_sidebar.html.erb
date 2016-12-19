@@ -1,0 +1,18 @@
+<div class="col-sm-3 col-md-2 admin-sidebar" style="padding:0;">
+  <%= render 'layouts/topbar_side' %>
+    <ul class="nav nav-sidebar">
+      <li><%= link_to root_path do %><i class="fa fa-home fa-1x"></i> Home<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_categories_path) %>"><%= link_to pages_categories_path do %><i class="fa fa-map-marker fa-1x"></i> Admin Dashboard<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_places_path) %>"><%= link_to pages_places_path do %><i class="fa fa-list fa-1x"></i> Places<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_ecommers_path) %>"><%= link_to pages_ecommers_path do %><i class="fa fa-list fa-1x"></i> Ecommers<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_caterers_path) %>"><%= link_to pages_caterers_path do %><i class="fa fa-list fa-1x"></i> Caterers<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_supermarkets_path) %>"><%= link_to pages_caterers_path do %><i class="fa fa-list fa-1x"></i> Supermarkets<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_online_grocers_path) %>"><%= link_to pages_online_grocers_path do %><i class="fa fa-list fa-1x"></i> Online Grocers<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_lessons_path) %>"><%= link_to pages_lessons_path do %><i class="fa fa-list fa-1x"></i> Lessons<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_suppliers_path) %>"><%= link_to pages_categories_path do %><i class="fa fa-list fa-1x"></i> Suppliers<% end %></li>
+      <li class="<%= 'active' if current_page?(pages_food_deliveries_path) %>"><%= link_to pages_food_deliveries_path do %><i class="fa fa-list fa-1x"></i> Food Deliveries<% end %></li>
+      <li class="<%= 'active' if current_page?(featured_articles_path) %>"><%= link_to featured_articles_path do %><i class="fa fa-list fa-1x"></i> Add Articles<% end %></li>
+      <li class="<%= 'active' if current_page?(users_testimonials_path) %>"><%= link_to users_testimonials_path do %><i class="fa fa-list fa-1x"></i> Add User Testimonials<% end %></li>
+      <li><%= link_to destroy_merchant_session_path, method: :delete do %> <i class="fa fa-sign-out fa-1x" aria-hidden="true"></i> Logout<% end %></li>
+    </ul>
+  </div>

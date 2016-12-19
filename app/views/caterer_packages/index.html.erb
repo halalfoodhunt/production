@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Caterer Packages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Minimum pax</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @caterer_packages.each do |caterer_package| %>
+      <tr>
+        <td><%= caterer_package.name %></td>
+        <td><%= caterer_package.description %></td>
+        <td><%= caterer_package.minimum_pax %></td>
+        <td><%= caterer_package.price %></td>
+        <td><%= link_to 'Show', caterer_package %></td>
+        <td><%= link_to 'Edit', edit_caterer_package_path(caterer_package) %></td>
+        <td><%= link_to 'Destroy', caterer_package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Caterer package', new_caterer_package_path %>

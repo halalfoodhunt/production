@@ -1,0 +1,1 @@
+json.array! @users_testimonials, partial: 'users_testimonials/users_testimonial', as: :users_testimonial

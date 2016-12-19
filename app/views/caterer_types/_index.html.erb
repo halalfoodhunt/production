@@ -1,0 +1,12 @@
+<% @caterer_types.each do |caterer_type| %>
+<tr>
+  <td class="col-md-1"><%= image_tag(caterer_type.icon.url(:square), :class => "img_circle") %></td>
+  <td class="col-md-9"><%= caterer_type.name %></td>
+  <td class="col-md-1"><%= link_to edit_caterer_type_path(caterer_type), remote: true do %>
+    <i class="fa fa-pencil" style="color:brown"></i><% end %>
+  </td>
+  <td class="col-md-1"><%= link_to caterer_type, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash-o" style="color:brown"></i><% end %>
+  </td>
+</tr>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @ecommers, partial: 'ecommers/ecommer', as: :ecommer

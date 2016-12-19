@@ -1,0 +1,12 @@
+<% @grocer_service_types.each do |grocer_service_type| %>
+      <tr>
+        <td class="col-md-1"><%= image_tag(grocer_service_type.icon.url(:square), :class => "img_circle") %></td>
+        <td class="col-md-9"><%= grocer_service_type.name %></td>
+        <td class="col-md-1"><%= link_to edit_grocer_service_type_path(grocer_service_type), remote: true do %>
+          <i class="fa fa-pencil" style="color:brown"></i><% end %>
+        </td>
+        <td class="col-md-1"><%= link_to grocer_service_type, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash-o" style="color:brown"></i><% end %>
+        </td>
+      </tr>
+<% end %>

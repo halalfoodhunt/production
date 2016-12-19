@@ -1,0 +1,8 @@
+$("ul.errors").html("")
+<% if @qualifying_types.errors.any? %>
+  <% @qualifying_types.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#qualifying_types-modal").modal("hide")
+<% end %>

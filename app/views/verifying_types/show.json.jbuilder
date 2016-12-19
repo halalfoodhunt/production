@@ -1,0 +1,1 @@
+json.partial! "verifying_types/verifying_type", verifying_type: @verifying_type

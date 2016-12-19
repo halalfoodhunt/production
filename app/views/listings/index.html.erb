@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/merchant_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
+        <center><h4><strong>Welcome to halalfoodhunt.com’s Merchant's dashboard!</strong></h4>
+          <p>The information you put in here will determine what your hungry customers will read about your place. Give them the right information to help them decide where to eat!</p>
+          <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/11/Youtube.jpg" class="img-responsive" alt="Responsive image">
+        </center>
+        <p id="notice"><%= notice %></p>
+        <h1>Listing Listings</h1>
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Merchant</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @listings.each do |listing| %>
+            <tr>
+              <td><%= listing.merchant_id %></td>
+              <td><%= link_to 'Show', listing %></td>
+              <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+              <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Listing', new_listing_path %>
+      </div>
+    </div>
+  </div>
+</div>

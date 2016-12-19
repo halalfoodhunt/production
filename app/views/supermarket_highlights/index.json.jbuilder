@@ -1,0 +1,1 @@
+json.array! @supermarket_highlights, partial: 'supermarket_highlights/supermarket_highlight', as: :supermarket_highlight

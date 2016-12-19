@@ -1,0 +1,1 @@
+json.array! @open_or_closes, partial: 'open_or_closes/open_or_close', as: :open_or_close

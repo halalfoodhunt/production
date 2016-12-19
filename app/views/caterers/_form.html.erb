@@ -1,0 +1,223 @@
+<%= bootstrap_form_for(@caterer) do |f| %>
+<% if @caterer.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@caterer.errors.count, "error") %> prohibited this caterer from being saved:</h2>
+
+  <ul>
+    <% @caterer.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Let your customers be familiar with your logo</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="media">
+    <div class="media-left media-top">
+      <%= image_tag(@caterer.logo.url(:large), :class => "img_circle", :style => "width:200px; height:200px;") %>
+      <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p>
+    </div>
+    <div class="media-body">
+      <div class="field">
+       <p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo<br><br><br><br><br><br><br><br><br></p>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Select the region of listing and the location in that region</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
+   <%= f.collection_select :catering_type_id, CateringType.all, :id, :name, autofocus: true, layout: :inline, label: "Caterer Type" %>
+ </div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Halal Status</strong></h5> <p>Select if you're halal-certified or muslim-owned. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Verifying Documents</strong></h5> <p>For Halal- Certified Merchants, please upload a copy or photo of your MUIS Halal Certificate<br><br>For Muslim-Owned Merchants, please upload a copy of your NRIC (front and back), and your company’s bizfile/ ROC </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="6">File Name</th>
+        <th>File Size</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= image_tag(@caterer.document_1.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.document_1_file_name %></td>
+        <td><%= @caterer.document_1_file_size %></td>
+        <td><%= f.file_field :document_1, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@caterer.document_2.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.document_2_file_name %></td>
+        <td><%= @caterer.document_2_file_size %></td>
+        <td><%= f.file_field :document_2, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@caterer.document_3.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.document_3_file_name %></td>
+        <td><%= @caterer.document_3_file_size %></td>
+        <td><%= f.file_field :document_3, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@caterer.document_4.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.document_4_file_name %></td>
+        <td><%= @caterer.document_4_file_size %></td>
+        <td><%= f.file_field :document_4, hide_label: true %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>It is very important for you to complete these. Without these information, your customers can’t find you online! Merchants with more complete information will make it easier for hungry customers on halalfoodhunt.com to find you.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <div class="field">
+    <%= f.text_field :business_name %>
+  </div>
+  <div class="field">
+    <%= f.text_field :general_contact_number %>
+  </div>
+  <div class="field">
+    <%= f.text_field :general_email %>
+  </div>
+  <div class="field">
+    <%= f.text_field :facebook %>
+  </div>
+  <div class="field">
+    <%= f.text_field :instagram %>
+  </div>
+  <div class="field">
+    <%= f.text_field :website %>
+  </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Menu & Packages</strong></h5> <p>Fill in the menu and packages that your business offers. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.fields_for :caterer_packages do |builder| %>
+  <%= render "caterer_package_fields", :f => builder %>
+  <% end %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>HELP YOUR HUNGRY CUSTOMERS FIND YOU</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="field">
+    <%= f.text_area :question_1, label:'Describe the types of food that is catered, and for what events do you cater to?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_2, label:'Type in the tags that you might want your customers to look for?', label_class: "question" %>
+  </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR CATEGORY</strong></h5> <p>It is very important to complete this informtaion.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.select :caterer_type_ids, CatererType.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'caterer-type', label: 'Caterer Service Type' %>
+   <%= f.select :cuisine_type_ids, CuisineType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'cuisine-type' %>
+   <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
+ </div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Featured Image</strong></h5> <p>It is very important for you to upload your logo </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="media">
+    <div class="media-left media-top">
+      <%= image_tag(@caterer.featured_image.url(:large), :class => "img_responsive", :style => "width:300px; height:180px;") %>
+      <p><i>Dimension 800 by 600 pixels. JPEG files only.</i></p>
+    </div>
+    <div class="media-body">
+      <div class="field">
+       <p>Drag and drop or <%= f.file_field :featured_image, hide_label: true %> to upload logo<br><br><br><br><br><br><br><br><br></p>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Gallery Images</strong></h5> <p>Showcase your restaurant and the best photos of your dish. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="6">File Name</th>
+        <th>File Size</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= image_tag(@caterer.image.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.image_file_name %></td>
+        <td><%= @caterer.image_file_size %></td>
+        <td><%= f.file_field :image, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@caterer.image_2.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.image_2_file_name %></td>
+        <td><%= @caterer.image_2_file_size %></td>
+        <td><%= f.file_field :image_2, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@caterer.image_3.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.image_3_file_name %></td>
+        <td><%= @caterer.image_3_file_size %></td>
+        <td><%= f.file_field :image_3, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@caterer.image_4.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @caterer.image_4_file_name %></td>
+        <td><%= @caterer.image_4_file_size %></td>
+        <td><%= f.file_field :image_4, hide_label: true %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Friends Rewards</strong></h5> <p>You will need to offer a FRIENDS rewards to to FRIENDS with halalfoodhunt.com Rewards Cardholders to be eligible on the Free Forever listing. This will automatically give you a shoutout on our publicity pages. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.collection_select :friends_reward_id, FriendsReward.all, :id, :name, autofocus: true, layout: :inline %>
+  <%= f.text_area :friends_rewards_terms %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Additional Links</strong></h5> <p>You can add your reservation link or delivery link here</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.text_field :delivery_link, label:'Online Ordering Page Link' %>
+  <%= f.text_area :delivery_terms %>
+</div>
+</div>
+<div class="field">
+    <%= f.label :draft %><br>
+    <%= f.check_box :draft, label: 'Save as Draft' %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('select#caterer-type').select2({
+    placeholder: "Select caterer types",
+    allowClear: true
+  });
+});
+$(document).ready(function() {
+  $('select#cuisine-type').select2({
+    placeholder: "Select cuisine types",
+    allowClear: true
+  });
+});
+</script>

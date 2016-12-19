@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Caterers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Operating address</th>
+      <th>Facebook</th>
+      <th>Instagram</th>
+      <th>Website</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Question 3</th>
+      <th>Question 4</th>
+      <th>Question 5</th>
+      <th>Delivery link</th>
+      <th>Delivery terms</th>
+      <th>Draft</th>
+      <th>Expiry date</th>
+      <th>Merchant</th>
+      <th>Friends rewards terms</th>
+      <th>Verified</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @caterers.each do |caterer| %>
+      <tr>
+        <td><%= caterer.business_name %></td>
+        <td><%= caterer.general_contact_number %></td>
+        <td><%= caterer.general_email %></td>
+        <td><%= caterer.operating_address %></td>
+        <td><%= caterer.facebook %></td>
+        <td><%= caterer.instagram %></td>
+        <td><%= caterer.website %></td>
+        <td><%= caterer.question_1 %></td>
+        <td><%= caterer.question_2 %></td>
+        <td><%= caterer.question_3 %></td>
+        <td><%= caterer.question_4 %></td>
+        <td><%= caterer.question_5 %></td>
+        <td><%= caterer.delivery_link %></td>
+        <td><%= caterer.delivery_terms %></td>
+        <td><%= caterer.draft %></td>
+        <td><%= caterer.expiry_date %></td>
+        <td><%= caterer.merchant_id %></td>
+        <td><%= caterer.friends_rewards_terms %></td>
+        <td><%= caterer.verified %></td>
+        <td><%= link_to 'Show', caterer %></td>
+        <td><%= link_to 'Edit', edit_caterer_path(caterer) %></td>
+        <td><%= link_to 'Destroy', caterer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Caterer', new_caterer_path %>

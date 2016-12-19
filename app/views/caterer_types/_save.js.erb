@@ -1,0 +1,8 @@
+$("ul.errors").html("")
+<% if @caterer_type.errors.any? %>
+  <% @caterer_type.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#caterer-type-modal").modal("hide")
+<% end %>

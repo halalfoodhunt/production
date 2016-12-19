@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grocer_type_id: 1
+  online_grocer_id: 1
+
+two:
+  grocer_type_id: 1
+  online_grocer_id: 1

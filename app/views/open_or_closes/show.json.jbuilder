@@ -1,0 +1,1 @@
+json.partial! "open_or_closes/open_or_close", open_or_close: @open_or_close

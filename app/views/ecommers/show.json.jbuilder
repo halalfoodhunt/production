@@ -1,0 +1,1 @@
+json.partial! "ecommers/ecommer", ecommer: @ecommer

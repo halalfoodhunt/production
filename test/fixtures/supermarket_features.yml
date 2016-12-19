@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supermarket_id: 1
+  supermarket_highlight_id: 1
+
+two:
+  supermarket_id: 1
+  supermarket_highlight_id: 1

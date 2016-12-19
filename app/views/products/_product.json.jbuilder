@@ -1,0 +1,2 @@
+json.extract! product, :id, :business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :preferred_contact, :preferred_order_method, :question_1, :question_2, :delivery_url, :expiry_date, :friends_terms, :merchant_id, :draft, :verified, :created_at, :updated_at
+json.url product_url(product, format: :json)

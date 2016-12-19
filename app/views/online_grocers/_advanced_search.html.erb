@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-md-12">
+  <div class="col-sm-12 col-md-2" style="padding:0">
+    <h6 style="text-align:left">Search for an online_grocer</h6>
+  </div>
+  <%= search_form_for @search do |f| %>
+  <div class="col-sm-12 col-md-10" style="padding:0">
+    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+      <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
+    </div>
+    <br>
+    <div class="col-sm-12 col-md-6" style="padding:2px">
+     <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %><br>
+     <%= f.collection_select(:dining_types_id_eq_any, DiningType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
+   </div>
+   <div class="col-sm-12 col-md-6" style="padding:2px">
+    <%= f.collection_select(:highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %>
+     <br>
+    <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
+  </div>
+  <div>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-material-red" %>
+  </div>
+</div>
+<% end %>

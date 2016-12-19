@@ -1,0 +1,1 @@
+json.array! @food_delivery_types, partial: 'food_delivery_types/food_delivery_type', as: :food_delivery_type

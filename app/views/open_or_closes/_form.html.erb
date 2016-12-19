@@ -1,0 +1,23 @@
+<div class="modal-body">
+  <%= bootstrap_form_for(@open_or_close) do |f| %>
+  <div class="modal-body">
+    <% if @open_or_close.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@open_or_close.errors.count, "error") %> prohibited this open_or_close from being saved:</h2>
+      <ul>
+        <% @open_or_close.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_field :name %>
+    </div>
+    <div class="modal-footer">
+     <%= f.submit :class => "btn btn-block btn-raised btn-material-teal" %>
+     <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+   </div>
+ </div>
+ <% end %>
+</div>

@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <center><h4 class="header">categories</h4><p class="italic-font">Choose the most suitable category that first represents your business for our users to easily. After selecting a category, you will then be directed to a registration form for you to tell our users more about yourself. Welcome to halalfoodhunt.com!</p></center>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Ecommers-Service-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', service_types_path, :class=>"btn btn-places btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/E-commers-Type.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', establishment_types_path, :class=>"btn btn-delivery btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Dining-Type.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', dining_types_path, :class=>"btn btn-ecommer btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Days.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', days_path, :class=>"btn btn-caterer btn-block btn-lg" %></div>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Culinary-Skils.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', culinary_skills_path, :class=>"btn btn-supermarket btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Cuisine-type.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', cuisine_types_path, :class=>"btn btn-grocer btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Country.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', regions_path, :class=>"btn btn-academy btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Close.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', open_or_closes_path, :class=>"btn btn-supplier btn-block btn-lg" %></div>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Class-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', class_types_path, :class=>"btn btn-places btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Caterer-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', caterer_types_path, :class=>"btn btn-delivery btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Caterer-Service-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', catering_types_path, :class=>"btn btn-ecommer btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Highlights.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', highlights_path, :class=>"btn btn-caterer btn-block btn-lg" %></div>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Food-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', food_types_path, :class=>"btn btn-supermarket btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Verifying-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', verifying_types_path, :class=>"btn btn-grocer btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supplier-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', supplier_types_path, :class=>"btn btn-academy btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supplier-Highlights.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', supplier_highlights_path, :class=>"btn btn-supplier btn-block btn-lg" %></div>
+      </div>
+       <div class="col-md-10 col-md-offset-1">
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supermarket-Features.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', supermarket_highlights_path, :class=>"btn btn-places btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Qualifying-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', qualifying_types_path, :class=>"btn btn-delivery btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Price-Range.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', price_ranges_path, :class=>"btn btn-ecommer btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Place-type.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', place_types_path, :class=>"btn btn-caterer btn-block btn-lg" %></div>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Location.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', locations_path, :class=>"btn btn-supermarket btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Lesson-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', lesson_types_path, :class=>"btn btn-grocer btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Grocer-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', grocer_types_path, :class=>"btn btn-academy btn-block btn-lg" %></div>
+        <div class="col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Grocer-Service-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', grocer_service_types_path, :class=>"btn btn-supplier btn-block btn-lg" %></div>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="margin-bottom:30px;">
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Friends-Rewards-Categories.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', friends_rewards_path, :class=>"btn btn-places btn-block btn-lg" %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0;"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Food-Delivery-Types.jpg" class="img-responsive" alt="Responsive image">
+        <%= link_to 'Select', food_delivery_types_path, :class=>"btn btn-delivery btn-block btn-lg" %></div>
+      </div>
+    </div>
+  </div>
+</div>

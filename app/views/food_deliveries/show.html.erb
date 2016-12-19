@@ -1,0 +1,115 @@
+<%= render 'layouts/header' %>
+<div style="padding-left:0; padding-right:0; height:400px;" class="container-fluid">
+  <div id="map" style="width:100%; height:400px;"></div>
+  <script type="text/javascript">
+  var map;
+  var myCenter = {lat: <%= @food_delivery.latitude %>, lng: <%= @food_delivery.longitude %>};
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: myCenter,
+      zoom: 15
+    });
+    var marker = new google.maps.Marker({
+      position: myCenter,
+      map: map,
+    });
+  }
+  </script>
+</div>
+<div class="container-fluid show-bg" style="padding-bottom:50px;">
+  <div class="container form-style">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7">
+        <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <%= image_tag @food_delivery.logo.url(:medium), :class => "media-object img-circle" %>
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading form-subtitle"><%= @food_delivery.business_name %> (<%= @food_delivery.qualifying_criterium.name %>)</h4>
+            <table class="table">
+              <thead>
+                <tr><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr>
+                <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @food_delivery.general_contact %></p></td></tr>
+                <tr><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr>
+                <tr><td><p>Social sites: <%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %></p></td>
+                </tr>
+              </thead>
+            </table>
+            <hr/>
+          </div>
+          <% @food_delivery.friends_rewards.each do |friends_reward| %>
+          <div class="container-fluid" style="background: white; padding:10px;">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+              <div class="avatar"><center><%= image_tag friends_reward.reward_category.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+                <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-material-green" role="button">Be a FRIEND</a>
+              </center>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+              <p><%= friends_reward.terms %></p>
+            </div>
+          </div>
+          <% end %>
+          <div class="container-fluid">
+            <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
+            <h5 class="question">What type of food do you make and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
+            <p><%= h(@food_delivery.question_1).gsub(/\n/, '<br>').html_safe %></p>
+            <h5 class="question">How do I place an order with you?</h5>
+            <p><%= h(@food_delivery.question_2).gsub(/\n/, '<br>').html_safe %></p>
+            <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
+            <p><%= h(@food_delivery.question_3).gsub(/\n/, '<br>').html_safe %></p>
+            <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
+            <p><%= h(@food_delivery.question_4).gsub(/\n/, '<br>').html_safe %></p>
+            <h5 class="question">Please provide me with links to reviews about you.</h5>
+            <p><%= h(@food_delivery.question_5).gsub(/\n/, '<br>').html_safe %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <div class="container-fluid" style="border:#ccc solid 1px;">
+          <h4 class="form-subtitle">Contactable Hours</h4>
+          <p><%= h(@food_delivery.contactable_hours).gsub(/\n/, '<br>').html_safe %></p>
+        </div>
+        <p><% @food_delivery.deliveries.each do |delivery| %>
+                <%= link_to "Order NOW!", raw(delivery.delivery_url), :class => "btn btn-block btn-raised btn-material-teal", :style => 'color:#fff;' %>
+                <% end %>
+              </p>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= image_tag @food_delivery.photo_1.url(:square), :class => "img-thumbnail" %><br><br>
+            <%= image_tag @food_delivery.photo_2.url(:square), :class => "img-thumbnail" %>
+          </div>
+          <div class="col-xs-6">
+           <%= image_tag @food_delivery.photo_3.url(:square), :class => "img-thumbnail" %><br><br>
+           <%= image_tag @food_delivery.photo_4.url(:square), :class => "img-thumbnail" %>
+         </div>
+       </div>
+       <br>
+       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="form-subtitle">Food Delivery Types</h4>
+        <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="form-subtitle">Cuisine Types</h4>
+        <% @food_delivery.cuisine_types.each do cuisine_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="form-subtitle">Price (Per Pax) Range</h4>
+        <% @food_delivery.price_ranges.each do |price_range| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag price_range.icon.url(:thumb) %> <%= price_range.name %></p></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
+async defer></script>

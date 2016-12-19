@@ -1,0 +1,12 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding:0;">
+  <%= render 'layouts/topbar_side' %>
+  <ul class="nav nav-sidebar">
+    <li class="<%= 'active' if current_page?(main_app.new_listing_path) %>"> <%= link_to 'Add a Listing', main_app.new_listing_path %></li>
+    <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"> <%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
+    <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Listings', main_app.listings_path %></li>
+    <li><%= link_to koudoku.owner_subscriptions_path(@merchant) %></li>
+    <li><a href="">Reviews</a></li>
+    <li><a href="">Statistics</a></li>
+    <li><a href="">Advertise</a></li>
+  </ul>
+</div>

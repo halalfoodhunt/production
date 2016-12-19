@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @caterer_package.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @caterer_package.description %>
+</p>
+
+<p>
+  <strong>Minimum pax:</strong>
+  <%= @caterer_package.minimum_pax %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @caterer_package.price %>
+</p>
+
+<%= link_to 'Edit', edit_caterer_package_path(@caterer_package) %> |
+<%= link_to 'Back', caterer_packages_path %>

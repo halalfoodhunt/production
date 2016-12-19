@@ -1,0 +1,26 @@
+<div class="modal-body">
+  <%= bootstrap_form_for(@caterer_type) do |f| %>
+  <div class="modal-body">
+    <% if @caterer_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caterer_type.errors.count, "error") %> prohibited this caterer type from being saved:</h2>
+      <ul>
+        <% @caterer_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.file_field :icon %>
+    </div>
+    <div class="modal-footer">
+     <%= f.submit :class => "btn btn-block btn-raised btn-material-teal" %>
+     <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+   </div>
+</div>
+<% end %>
+</div>

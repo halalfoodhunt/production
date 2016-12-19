@@ -1,0 +1,1 @@
+json.partial! "online_grocers/online_grocer", online_grocer: @online_grocer

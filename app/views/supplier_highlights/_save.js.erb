@@ -1,0 +1,8 @@
+$("ul.errors").html("")
+<% if @supplier_highlights.errors.any? %>
+  <% @supplier_highlights.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#highlights-modal").modal("hide")
+<% end %>

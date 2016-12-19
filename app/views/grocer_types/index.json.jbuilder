@@ -1,0 +1,1 @@
+json.array! @grocer_types, partial: 'grocer_types/grocer_type', as: :grocer_type

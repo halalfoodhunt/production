@@ -1,0 +1,8 @@
+$("ul.errors").html("")
+<% if @lesson_type.errors.any? %>
+  <% @lesson_type.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#lesson-type-modal").modal("hide")
+<% end %>

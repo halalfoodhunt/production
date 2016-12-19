@@ -1,0 +1,66 @@
+<%= render 'layouts/header' %>
+<div class="container-fluid">
+  <div class="row">
+		<div style="padding:0; background:none;" class="col-md-6" id="left">
+			<div id="map" style="width:100%; height:100%;"></div>
+    </div>
+			<div class="col-md-6 container" id="right">
+					<div class="form-style">
+						<h3 >Find the right halal food places for every occasion</h3>
+						<p>Use the search bars and map above to find exactly what you need where you need. If there isn't one that fits the bill, write to us and we'll deploy our food hunters.</p>
+					</div>
+        <hr>
+        <%= render 'places/advanced_search' %>
+        <br>
+        <div class="col-md-12">
+ <div class="row">
+  <div class="col-md-9"><h5 style="padding:20px 0">SHOWING <b><%= @places.count %></b> Halal establishments IN ALL CITIES, SINGAPORE</h5></div>
+  <div class="col-md-3">
+    <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><center><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+    <li><center><h5><%= sort_link(@search, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+    <li><center><h5><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+    <li><center><h5><%= sort_link(@search, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+  </ul>
+</div>
+  </div>
+</div>
+					<div class="row">
+					<% @places.each do |place| %>
+    <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
+      <% if place.verified == true %>
+      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_criterium.icon.url(:medium), :class => "img-responsive") %></span>
+<% else %>
+      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;">
+    <%= image_tag('unverified.png', :alt => "Unverified", :class => "img-responsive", :style => "width:120px;height:30px;") %>
+      </span>
+<% end %>
+      <div style="padding:0px; height:350px; position:relative;" class="thumbnail">
+        <%= image_tag place.featured_image.url(:medium), :class => "img_responsive" %>
+        <div class="caption">
+          <div class="media">
+            <div class="media-left">
+              <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
+            </div>
+            <div class="media-body">
+              <h5 class="media-heading"><%= link_to place.business_name, place_path(place) %></h5>
+              <p><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+					</div>
+				</div>
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {do_clustering: false}, internal: {id: 'map'}}, function(){
+	markers = handler.addMarkers(<%=raw @hash.to_json %>);
+	handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>

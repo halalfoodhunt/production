@@ -1,0 +1,49 @@
+ <div class="container-fluid admin_dashboard-full-height">
+  <%= render 'layouts/admin_sidebar' %>
+  <%= render 'layouts/admin_topbar' %>
+  <div style="background:rgba(255,255,255,0.8);" class="col-xs-12 col-md-12">
+    <%= form_tag update_multiple_supermarkets_path, method: :put do %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Business Name</th>
+          <th>Halal Status</th>
+          <th>Verify?</th>
+          <th>Expiry Date</th>
+          <th>Publish</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @supermarkets.each do |supermarket| %>
+      <%= fields_for "supermarkets[]", supermarket do |f| %>
+      <% if supermarket.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(supermarket.errors.count, "error") %> prohibited this supermarket from being saved:</h2>
+        <ul>
+          <% supermarket.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+        <tr>
+          <td><%= supermarket.business_name %></td>
+          <td><%= f.collection_select :qualifying_criterium_id, QualifyingCriterium.all, :id, :name, autofocus: true, layout: :inline %></td>
+          <td><%= f.check_box :verified %></td>
+          <td><%= f.date_select :expiry_date %></td>
+          <td><%= f.check_box :publish %></td>
+        </tr>
+                          <% end %>
+    <% end %>
+      </tbody>
+      </table>
+    <div class="actions">
+      <center><%= submit_tag "Update", class: 'btn btn-lg btn-raised btn-material-brown' %></center>
+    </div>
+
+  </div>
+  <% end %>
+</div>
+<script type="text/javascript">
+$.material.init();
+</script>

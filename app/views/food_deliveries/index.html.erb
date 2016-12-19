@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Food Deliveries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General email</th>
+      <th>Contactable hours</th>
+      <th>General contact number</th>
+      <th>Website</th>
+      <th>Ordering link</th>
+      <th>Facebook</th>
+      <th>Instagram</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Question 3</th>
+      <th>Question 4</th>
+      <th>Question 5</th>
+      <th>Expiry date</th>
+      <th>Friends rewards terms</th>
+      <th>Merchant</th>
+      <th>Draft</th>
+      <th>Verified</th>
+      <th>Friends reward</th>
+      <th>Region</th>
+      <th>Cuisine type</th>
+      <th>Food delivery type</th>
+      <th>Price range</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_deliveries.each do |food_delivery| %>
+      <tr>
+        <td><%= food_delivery.brand_name %></td>
+        <td><%= food_delivery.general_email %></td>
+        <td><%= food_delivery.contactable_hours %></td>
+        <td><%= food_delivery.general_contact_number %></td>
+        <td><%= food_delivery.website %></td>
+        <td><%= food_delivery.ordering_link %></td>
+        <td><%= food_delivery.facebook %></td>
+        <td><%= food_delivery.instagram %></td>
+        <td><%= food_delivery.question_1 %></td>
+        <td><%= food_delivery.question_2 %></td>
+        <td><%= food_delivery.question_3 %></td>
+        <td><%= food_delivery.question_4 %></td>
+        <td><%= food_delivery.question_5 %></td>
+        <td><%= food_delivery.expiry_date %></td>
+        <td><%= food_delivery.friends_rewards_terms %></td>
+        <td><%= food_delivery.merchant_id %></td>
+        <td><%= food_delivery.draft %></td>
+        <td><%= food_delivery.verified %></td>
+        <td><%= food_delivery.friends_reward_id %></td>
+        <td><%= food_delivery.region_id %></td>
+        <td><%= food_delivery.cuisine_type_id %></td>
+        <td><%= food_delivery.food_delivery_type_id %></td>
+        <td><%= food_delivery.price_range_id %></td>
+        <td><%= link_to 'Show', food_delivery %></td>
+        <td><%= link_to 'Edit', edit_food_delivery_path(food_delivery) %></td>
+        <td><%= link_to 'Destroy', food_delivery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Food delivery', new_food_delivery_path %>

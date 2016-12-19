@@ -1,0 +1,25 @@
+    <% @places.each do |place| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <% if place.verified == true %>
+      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_criterium.icon.url(:medium), :class => "img-responsive") %></span>
+<% else %>
+      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;">
+    <%= image_tag('unverified.png', :alt => "Unverified", :class => "img-responsive", :style => "width:120px;height:30px;") %>
+      </span>
+<% end %>
+      <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
+        <%= image_tag place.featured_image.url(:medium), :class => "img_responsive" %>
+        <div class="caption">
+          <div class="media">
+            <div class="media-left">
+              <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
+            </div>
+            <div class="media-body">
+              <h5 class="media-heading"><%= link_to place.business_name, place_path(place) %></h5>
+              <p><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>

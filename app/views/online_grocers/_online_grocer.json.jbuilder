@@ -1,0 +1,2 @@
+json.extract! online_grocer, :id, :brand_name, :general_email, :contactable_hours, :general_contact_number, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :friends_rewards_terms, :merchant_id, :draft, :created_at, :updated_at
+json.url online_grocer_url(online_grocer, format: :json)

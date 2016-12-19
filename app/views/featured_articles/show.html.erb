@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @featured_article.title %>
+</p>
+
+<p>
+  <strong>Article url:</strong>
+  <%= @featured_article.article_url %>
+</p>
+
+<%= link_to 'Edit', edit_featured_article_path(@featured_article) %> |
+<%= link_to 'Back', featured_articles_path %>

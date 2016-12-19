@@ -1,0 +1,8 @@
+$("ul.errors").html("")
+<% if @open_or_close.errors.any? %>
+  <% @open_or_close.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#open-or-closes-modal").modal("hide")
+<% end %>

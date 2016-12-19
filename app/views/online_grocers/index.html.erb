@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Online Grocers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General email</th>
+      <th>Contactable hours</th>
+      <th>General contact number</th>
+      <th>Website</th>
+      <th>Ordering link</th>
+      <th>Facebook</th>
+      <th>Instagram</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Question 3</th>
+      <th>Question 4</th>
+      <th>Question 5</th>
+      <th>Expiry date</th>
+      <th>Friends rewards terms</th>
+      <th>Merchant</th>
+      <th>Draft</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @online_grocers.each do |online_grocer| %>
+      <tr>
+        <td><%= online_grocer.brand_name %></td>
+        <td><%= online_grocer.general_email %></td>
+        <td><%= online_grocer.contactable_hours %></td>
+        <td><%= online_grocer.general_contact_number %></td>
+        <td><%= online_grocer.website %></td>
+        <td><%= online_grocer.ordering_link %></td>
+        <td><%= online_grocer.facebook %></td>
+        <td><%= online_grocer.instagram %></td>
+        <td><%= online_grocer.question_1 %></td>
+        <td><%= online_grocer.question_2 %></td>
+        <td><%= online_grocer.question_3 %></td>
+        <td><%= online_grocer.question_4 %></td>
+        <td><%= online_grocer.question_5 %></td>
+        <td><%= online_grocer.expiry_date %></td>
+        <td><%= online_grocer.friends_rewards_terms %></td>
+        <td><%= online_grocer.merchant_id %></td>
+        <td><%= online_grocer.draft %></td>
+        <td><%= link_to 'Show', online_grocer %></td>
+        <td><%= link_to 'Edit', edit_online_grocer_path(online_grocer) %></td>
+        <td><%= link_to 'Destroy', online_grocer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Online grocer', new_online_grocer_path %>

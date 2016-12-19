@@ -1,0 +1,1 @@
+json.array! @verifying_types, partial: 'verifying_types/verifying_type', as: :verifying_type

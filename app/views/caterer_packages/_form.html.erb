@@ -1,0 +1,33 @@
+<%= form_for(@caterer_package) do |f| %>
+  <% if @caterer_package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caterer_package.errors.count, "error") %> prohibited this caterer_package from being saved:</h2>
+
+      <ul>
+      <% @caterer_package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :minimum_pax %><br>
+    <%= f.number_field :minimum_pax %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+  <%= f.fields_for :opening_hours do |builder| %>
+  <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+  <%= builder.collection_select :open_or_close_id, OpenOrClose.all, :id, :name, autofocus: true, layout: :inline, label: "Open/Close" %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+  <%= builder.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+  <%= builder.time_select :opening, label: "From" %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+  <%= builder.time_select :closing, label: "To" %>
+  </div>
+  <% end %>

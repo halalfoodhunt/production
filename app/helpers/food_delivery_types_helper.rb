@@ -1,0 +1,2 @@
+module FoodDeliveryTypesHelper
+end

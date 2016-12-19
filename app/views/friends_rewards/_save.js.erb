@@ -1,0 +1,8 @@
+$("ul.errors").html("")
+<% if @friends_rewards.errors.any? %>
+  <% @friends_rewards.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#friends-reward-modal").modal("hide")
+<% end %>

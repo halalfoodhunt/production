@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_name: MyString
+  general_contact_number: MyString
+  general_email: MyString
+  operating_address: MyString
+  facebook: MyString
+  instagram: MyString
+  website: MyString
+  preferred_contact: MyString
+  preferred_order_method: MyString
+  question_1: MyText
+  question_2: MyText
+  question_3: MyText
+  question_4: MyText
+  question_5: MyText
+  delivery_link: MyString
+  draft: false
+  expiry_date: 2016-11-16 04:20:48
+  merchant_id: MyString
+  friends_rewards_terms: MyText
+  verified: false
+
+two:
+  business_name: MyString
+  general_contact_number: MyString
+  general_email: MyString
+  operating_address: MyString
+  facebook: MyString
+  instagram: MyString
+  website: MyString
+  preferred_contact: MyString
+  preferred_order_method: MyString
+  question_1: MyText
+  question_2: MyText
+  question_3: MyText
+  question_4: MyText
+  question_5: MyText
+  delivery_link: MyString
+  draft: false
+  expiry_date: 2016-11-16 04:20:48
+  merchant_id: MyString
+  friends_rewards_terms: MyText
+  verified: false

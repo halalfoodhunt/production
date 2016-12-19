@@ -1,0 +1,85 @@
+class OnlineGrocersController < ApplicationController
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :set_online_grocer, only: [:show, :edit, :update, :destroy]
+
+  # GET /online_grocers
+  # GET /online_grocers.json
+  def index
+     if params[:highlight].blank?
+			@online_grocers = Online Grocer.where(draft: false).order("created_at DESC")
+		else
+			@highlight_id = Highlight.find_by(name: params[:highlight]).id
+			@online_grocers = Online Grocer.where(highlight_id: @highlight_id).order("created_at DESC")
+		end
+    @search = Online Grocer.ransack(params[:q])
+    @search.sorts = 'created_at DESC' if @search.sorts.empty?
+    @online_grocers = @search.result.where(draft: false)
+    @qualifying_type = QualifyingType.all
+  end
+
+  # GET /online_grocers/1
+  # GET /online_grocers/1.json
+  def show
+  end
+
+  # GET /online_grocers/new
+  def new
+    @current_merchant = current_merchant
+    @online_grocer = OnlineGrocer.new
+  end
+
+  # GET /online_grocers/1/edit
+  def edit
+  end
+
+  # POST /online_grocers
+  # POST /online_grocers.json
+  def create
+    @online_grocer = current_merchant.online_grocers.new(online_grocer_params)
+
+    respond_to do |format|
+      if @online_grocer.save
+        format.html { redirect_to @online_grocer, notice: 'Online grocer was successfully created.' }
+        format.json { render :show, status: :created, location: @online_grocer }
+      else
+        format.html { render :new }
+        format.json { render json: @online_grocer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /online_grocers/1
+  # PATCH/PUT /online_grocers/1.json
+  def update
+    respond_to do |format|
+      if @online_grocer.update(online_grocer_params)
+        format.html { redirect_to @online_grocer, notice: 'Online grocer was successfully updated.' }
+        format.json { render :show, status: :ok, location: @online_grocer }
+      else
+        format.html { render :edit }
+        format.json { render json: @online_grocer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /online_grocers/1
+  # DELETE /online_grocers/1.json
+  def destroy
+    @online_grocer.destroy
+    respond_to do |format|
+      format.html { redirect_to online_grocers_url, notice: 'Online grocer was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_online_grocer
+      @online_grocer = Online Grocer.friendly.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def online_grocer_params
+      params.require(:online_grocer).permit(:brand_name, :general_email, :contactable_hours, :general_contact_number, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :friends_rewards_terms, :merchant_id, :draft)
+    end
+end

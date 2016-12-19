@@ -1,0 +1,2 @@
+module SupermarketHighlightsHelper
+end

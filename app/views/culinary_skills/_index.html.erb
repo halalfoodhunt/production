@@ -1,0 +1,12 @@
+<% @culinary_skills.each do |culinary_skill| %>
+<tr>
+  <td class="col-md-1"><%= image_tag(culinary_skill.icon.url(:square), :class => "img_circle") %></td>
+  <td class="col-md-9"><%= culinary_skill.name %></td>
+  <td class="col-md-1"><%= link_to edit_culinary_skill_path(culinary_skill), remote: true do %>
+    <i class="fa fa-pencil" style="color:brown"></i><% end %>
+  </td>
+  <td class="col-md-1"><%= link_to culinary_skill, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash-o" style="color:brown"></i><% end %>
+  </td>
+</tr>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "supplier_highlights/supplier_highlight", supplier_highlight: @supplier_highlight
