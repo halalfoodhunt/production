@@ -28,7 +28,7 @@ class OpenOrClosesController < ApplicationController
 
     respond_to do |format|
       if @open_or_close.save
-        format.html { redirect_to open_or_close_path, notice: 'Open or close was successfully created.' }
+        format.html { redirect_to open_or_closes_url, notice: 'Open or close was successfully created.' }
         format.json { render :show, status: :created, location: @open_or_close }
         format.js
       else
@@ -44,7 +44,7 @@ class OpenOrClosesController < ApplicationController
   def update
     respond_to do |format|
       if @open_or_close.update(open_or_close_params)
-        format.html { redirect_to @open_or_close, notice: 'Open or close was successfully updated.' }
+        format.html {redirect_to open_or_closes_url, notice: 'Open or close was successfully updated.' }
         format.json { render :show, status: :ok, location: @open_or_close }
         format.js
       else
