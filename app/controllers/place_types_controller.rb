@@ -28,11 +28,13 @@ class PlaceTypesController < ApplicationController
 
     respond_to do |format|
       if @place_type.save
-        format.html { redirect_to @place_type, notice: 'Place type was successfully created.' }
+        format.html { redirect_to place_types_path, notice: 'Place type was successfully created.' }
         format.json { render :show, status: :created, location: @place_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @place_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class PlaceTypesController < ApplicationController
       if @place_type.update(place_type_params)
         format.html { redirect_to @place_type, notice: 'Place type was successfully updated.' }
         format.json { render :show, status: :ok, location: @place_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @place_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class PlaceTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to place_types_url, notice: 'Place type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

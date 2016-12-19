@@ -740,7 +740,6 @@ ActiveRecord::Schema.define(version: 20161218132936) do
   create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.string   "stripe_id"
-    t.string   "merchant_id"
     t.float    "price"
     t.string   "interval"
     t.text     "features"

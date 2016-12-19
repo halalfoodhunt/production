@@ -28,11 +28,13 @@ class PriceRangesController < ApplicationController
 
     respond_to do |format|
       if @price_range.save
-        format.html { redirect_to @price_range, notice: 'Price range was successfully created.' }
+        format.html { redirect_to price_ranges_path, notice: 'Price range was successfully created.' }
         format.json { render :show, status: :created, location: @price_range }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @price_range.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class PriceRangesController < ApplicationController
       if @price_range.update(price_range_params)
         format.html { redirect_to @price_range, notice: 'Price range was successfully updated.' }
         format.json { render :show, status: :ok, location: @price_range }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @price_range.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class PriceRangesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to price_ranges_url, notice: 'Price range was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

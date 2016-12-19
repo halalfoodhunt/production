@@ -28,11 +28,13 @@ class SupplierTypesController < ApplicationController
 
     respond_to do |format|
       if @supplier_type.save
-        format.html { redirect_to @supplier_type, notice: 'Supplier type was successfully created.' }
+        format.html { redirect_to supplier_types_path, notice: 'Supplier type was successfully created.' }
         format.json { render :show, status: :created, location: @supplier_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @supplier_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class SupplierTypesController < ApplicationController
       if @supplier_type.update(supplier_type_params)
         format.html { redirect_to @supplier_type, notice: 'Supplier type was successfully updated.' }
         format.json { render :show, status: :ok, location: @supplier_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @supplier_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class SupplierTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to supplier_types_url, notice: 'Supplier type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -28,12 +28,13 @@ class SupplierHighlightsController < ApplicationController
 
     respond_to do |format|
       if @supplier_highlight.save
-        format.html { redirect_to @supplier_highlight, notice: 'Supplier highlight was successfully created.' }
+        format.html { redirect_to supplier_highlights_path, notice: 'Supplier highlight was successfully created.' }
         format.json { render :show, status: :created, location: @supplier_highlight }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @supplier_highlight.errors, status: :unprocessable_entity }
-      end
+        format.js
     end
   end
 
@@ -44,10 +45,11 @@ class SupplierHighlightsController < ApplicationController
       if @supplier_highlight.update(supplier_highlight_params)
         format.html { redirect_to @supplier_highlight, notice: 'Supplier highlight was successfully updated.' }
         format.json { render :show, status: :ok, location: @supplier_highlight }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @supplier_highlight.errors, status: :unprocessable_entity }
-      end
+        format.js
     end
   end
 
@@ -58,6 +60,7 @@ class SupplierHighlightsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to supplier_highlights_url, notice: 'Supplier highlight was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

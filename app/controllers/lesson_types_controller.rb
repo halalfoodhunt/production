@@ -28,11 +28,13 @@ class LessonTypesController < ApplicationController
 
     respond_to do |format|
       if @lesson_type.save
-        format.html { redirect_to @lesson_type, notice: 'Lesson type was successfully created.' }
+        format.html { redirect_to lesson_types_path, notice: 'Lesson type was successfully created.' }
         format.json { render :show, status: :created, location: @lesson_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @lesson_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class LessonTypesController < ApplicationController
       if @lesson_type.update(lesson_type_params)
         format.html { redirect_to @lesson_type, notice: 'Lesson type was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @lesson_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class LessonTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to lesson_types_url, notice: 'Lesson type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

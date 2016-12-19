@@ -28,11 +28,13 @@ class ClassTypesController < ApplicationController
 
     respond_to do |format|
       if @class_type.save
-        format.html { redirect_to @class_type, notice: 'Class type was successfully created.' }
+        format.html { redirect_to class_types_path, notice: 'Class type was successfully created.' }
         format.json { render :show, status: :created, location: @class_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @class_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +46,11 @@ class ClassTypesController < ApplicationController
       if @class_type.update(class_type_params)
         format.html { redirect_to @class_type, notice: 'Class type was successfully updated.' }
         format.json { render :show, status: :ok, location: @class_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @class_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,6 +62,7 @@ class ClassTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to class_types_url, notice: 'Class type was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
