@@ -16,7 +16,7 @@
             <h4 class="media-heading form-subtitle"><%= @ecommer.business_name %> (<%= @ecommer.qualifying_type.name %>)</h4>
             <table class="table">
               <thead>
-                <tr><td><p><i class="fa fa-map-marker"></i> <%= @ecommer.self_collection_address %></p></td></tr>
+                <tr><td><p><i class="fa fa-map-marker"></i> <%= @ecommer.preferred_contact %></p></td></tr>
                 <tr><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @ecommer.general_email %></p></td></tr>
                 <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @ecommer.general_contact_number %></p></td></tr>
                 <tr><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %></p></td></tr>
