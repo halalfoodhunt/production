@@ -16,6 +16,7 @@
 //= require jquery-fileupload
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery.slick
 //= require initialize
 //= require underscore
 //= require gmaps/google
