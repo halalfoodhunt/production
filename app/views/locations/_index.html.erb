@@ -1,7 +1,8 @@
  <% @locations.each do |location| %>
  <tr>
-  <td class="col-md-9"><%= location.name %></td>
-  <td class="col-md-1"><%= link_to edit_location_path(location), remote: true do %>
+    <td class="col-md-1"><%= image_tag(location.icon.url(:square), :class => "img_circle") %></td>
+      <td class="col-md-9"><%= location.name %></td>
+      <td class="col-md-1"><%= link_to edit_location_path(location), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
   </td>
   <td class="col-md-1"><%= link_to location, method: :delete, data: { confirm: 'Are you sure?' } do %>
