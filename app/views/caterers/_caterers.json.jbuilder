@@ -1,2 +1,2 @@
-json.extract! caterers, :id, :business_name, :general_contact, :general_email, :opening_hours, :operating_address, :business_description, :facebook, :instagram, :website, :delivery_url, :reservation_url, :merchant_id, :created_at, :updated_at
+json.extract! caterers, :id, :business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :question_1, :question_2, :delivery_link, :delivery_terms, :draft, :expiry_date, :merchant_id, :friends_rewards_terms, :verified, :created_at, :updated_at, :qualifying_type_id, :caterer_type_id, :cuisine_type_id, :friends_reward_id, :region_id, :price_range_id, :catering_type_id
 json.url caterers_url(caterers, format: :json)
