@@ -82,10 +82,6 @@ class PlacesController < ApplicationController
     @place.cuisine_type_ids = params[:place][:cuisine_type_ids]
     @place.highlight_ids = params[:place][:highlight_ids]
     @place.dining_type_ids = params[:place][:dining_type_ids]
-    7.times do
-      @day = @place.days.build
-    end
-    7.times { @day.opening_hours.build }
   end
 
   # DELETE /places/1
