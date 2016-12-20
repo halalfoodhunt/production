@@ -5,12 +5,6 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    if params[:highlight].blank?
-			@places = Place.where(draft: false).order("created_at DESC")
-		  else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@places = Place.where(highlight_id: @highlight_id).order("created_at DESC")
-	  end
     @search = Place.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @places = @search.result.where(draft: false)
