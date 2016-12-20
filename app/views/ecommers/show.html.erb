@@ -81,7 +81,7 @@
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="form-subtitle">Ecommer Service Types</h4>
-        <% @ecommer.ecommer_service_types.each do |ecommer_service_type| %>
+        <% @ecommer.service_types.each do |ecommer_service_type| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag ecommer_service_type.icon.url(:thumb) %> <%= ecommer_service_type.name %></p></div>
         <% end %>
       </div>
