@@ -1,0 +1,5 @@
+<div class="infobox text-center">
+	<%= image_tag place.logo.url(:medium), :class => "img-circle" %>
+		<h6><%= link_to place.business_name, place_path(place) %></h6>
+	<p><%= place.operating_address %></p>
+</div>
