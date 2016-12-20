@@ -71,9 +71,7 @@
        <br>
        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="form-subtitle">Establishment Type</h4>
-        <% @ecommer.establishment_types.each do |establishment_type| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag establishment_type.icon.url(:thumb) %> <%= establishment_type.name %></p></div>
-        <% end %>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
