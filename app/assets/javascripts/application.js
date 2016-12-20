@@ -16,6 +16,7 @@
 //= require jquery-fileupload
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require initialize
 //= require underscore
 //= require gmaps/google
 //= require bootstrap-sprockets
