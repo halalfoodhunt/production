@@ -29,24 +29,34 @@
           </tbody>
         </table>
         <br>
-        <table class="table table-responsive">
-          <thead>
-            <tr>
-              <th>Merchant</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @places.each do |place| %>
-            <tr>
-              <td></td>
-              <td><%= link_to 'Show', places_path(@place) %></td>
-              <td><%= link_to 'Edit', edit_place_path(place) %></td>
-              <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <table class="table form-subtitle">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Business name</th>
+                <th>Halal Status</th>
+                <th>Verified</th>
+                <th>Status</th>
+                <th>Expiry Date</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @current_merchant.places.each do |place| %>
+              <tr>
+                <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
+                <td><%= link_to place.business_name, edit_place_path(place) %></td>
+                <td><%= link_to place.qualifying_type.name %></td>
+                <td><%= place.verified ? "Verified" : "Unverified" %></td>
+                <td><%= place.publish ? "Active" : "Draft" %></td>
+                <td><%= place.expiry_date.strftime("%d %b %Y") %></td>
+                <td><%= link_to 'Show', place %></td>
+                <td><%= link_to 'Edit', edit_place_path(place) %></td>
+                <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
       </div>
     </div>
   </div>
