@@ -27,7 +27,7 @@
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading form-subtitle"><%= @place.business_name %> (<%= @place.qualifying_criterium.name %>)</h4>
+            <h4 class="media-heading form-subtitle"><%= @place.business_name %> (<%= @place.qualifying_type.name %>)</h4>
             <table class="table">
               <thead>
                 <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
@@ -40,19 +40,17 @@
             </table>
             <hr/>
           </div>
-          <% @place.friends_rewards.each do |friends_reward| %>
           <div class="container-fluid" style="background: white; padding:10px;">
             <div class="col-xs-12 col-sm-12 col-md-3">
-              <div class="avatar"><center><%= image_tag friends_reward.reward_category.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+              <div class="avatar"><center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
                 <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-material-green" role="button">Be a FRIEND</a>
               </center>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9">
               <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-              <p><%= friends_reward.terms %></p>
+              <p><%= @place.friends_rewards_terms %></p>
             </div>
           </div>
-          <% end %>
           <div class="container-fluid">
             <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
             <h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
@@ -73,24 +71,22 @@
       <div class="col-xs-12 col-sm-12 col-md-5">
         <div class="container-fluid" style="border:#ccc solid 1px;">
           <h4 class="form-subtitle">Opening Hours</h4>
-          <p><%= h(@place.opening_hours).gsub(/\n/, '<br>').html_safe %></p>
+          
         </div>
-        <p><% @place.deliveries.each do |delivery| %>
-                <%= link_to "Order NOW!", raw(delivery.delivery_url), :class => "btn btn-block btn-raised btn-material-teal", :style => 'color:#fff;' %>
-                <% end %>
+                <p><%= link_to "Order NOW!", raw(@place.delivery_url), :class => "btn btn-block btn-raised btn-material-teal", :style => 'color:#fff;' %>
               </p>
-        <p><% @place.reservations.each do |reservation| %>
-                <%= link_to "Reserve NOW!", raw(reservation.reservation_url), :class => "btn btn-block btn-raised btn-material-red", :style => 'color:#fff;' %>
+        <p>
+                <%= link_to "Reserve NOW!", raw(@place.reservation_url), :class => "btn btn-block btn-raised btn-material-red", :style => 'color:#fff;' %>
                 <% end %>
               </p>
         <div class="row">
           <div class="col-xs-6">
-            <%= image_tag @place.photo_1.url(:square), :class => "img-thumbnail" %><br><br>
-            <%= image_tag @place.photo_2.url(:square), :class => "img-thumbnail" %>
+            <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
+            <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
           </div>
           <div class="col-xs-6">
-           <%= image_tag @place.photo_3.url(:square), :class => "img-thumbnail" %><br><br>
-           <%= image_tag @place.photo_4.url(:square), :class => "img-thumbnail" %>
+           <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+           <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
          </div>
        </div>
        <br>
