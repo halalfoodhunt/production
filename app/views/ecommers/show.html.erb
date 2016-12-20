@@ -102,9 +102,7 @@
        <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="form-subtitle">Price Range</h4>
-        <% @ecommer.price_ranges.each do |price_range| %>
-        <div class="col-xs-6 col-md-6"><p><%= price_range.price %></p></div>
-        <% end %>
+        <div class="col-xs-6 col-md-6"><p><%= @ecommer.price_range.price %></p></div>
       </div>
     </div>
   </div>
