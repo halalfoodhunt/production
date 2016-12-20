@@ -1,6 +1,6 @@
- <% @regions.each do |regions| %>
+ <% @regions.each do |region| %>
  <tr>
-  <td class="col-md-9"><%= regions.name %></td>
+  <td class="col-md-9"><%= region.name %></td>
   <td class="col-md-1"><%= link_to edit_region_path(regions), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
   </td>
