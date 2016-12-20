@@ -48,7 +48,7 @@
                 <td><%= link_to place.business_name, edit_place_path(place) %></td>
                 <td><%= link_to place.qualifying_type.name %></td>
                 <td><%= place.verified ? "Verified" : "Unverified" %></td>
-                <td><%= place.publish ? "Active" : "Draft" %></td>
+                <td><%= place.draft ? "Published" : "Draft" %></td>
                 <td><%= place.expiry_date.strftime("%d %b %Y") %></td>
                 <td><%= link_to 'Show', place %></td>
                 <td><%= link_to 'Edit', edit_place_path(place) %></td>
