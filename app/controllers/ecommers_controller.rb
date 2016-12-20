@@ -5,12 +5,6 @@ class EcommersController < ApplicationController
   # GET /ecommers
   # GET /ecommers.json
   def index
-  if params[:highlight].blank?
-			@ecommers = Ecommer.where(draft: false).order("created_at DESC")
-		else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@ecommers = Ecommer.where(highlight_id: @highlight_id).order("created_at DESC")
-		end
     @search = Ecommer.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @ecommers = @search.result.where(draft: false)
@@ -46,6 +40,9 @@ class EcommersController < ApplicationController
         format.json { render json: @ecommer.errors, status: :unprocessable_entity }
       end
     end
+    @ecommer.cuisine_type_ids = params[:place][:cuisine_type_ids]
+    @ecommer.highlight_ids = params[:place][:highlight_ids]
+    @ecommer.dining_type_ids = params[:place][:dining_type_ids]
   end
 
   # PATCH/PUT /ecommers/1
