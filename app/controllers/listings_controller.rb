@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
+    @current_merchant = current_merchant
     @listings = Listing.all
     @places = Place.all
   end

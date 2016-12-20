@@ -42,7 +42,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @places.each do |place| %>
+            <% @current_merchant.places.each do |place| %>
             <tr>
              <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to place.business_name, edit_place_path(place) %></td>
