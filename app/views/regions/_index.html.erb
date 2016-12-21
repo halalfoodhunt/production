@@ -1,6 +1,5 @@
  <% @regions.each do |region| %>
  <tr>
-  <td class="col-md-1"><%= image_tag(region.icon.url(:square), :class => "img_circle") %></td>
   <td class="col-md-9"><%= region.name %></td>
   <td class="col-md-1"><%= link_to edit_region_path(region), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
