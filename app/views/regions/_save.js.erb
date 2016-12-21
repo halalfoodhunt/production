@@ -1,6 +1,6 @@
 $("ul.errors").html("")
-<% if @regions.errors.any? %>
-  <% @regions.errors.full_messages.each do |message| %>
+<% if @region.errors.any? %>
+  <% @region.errors.full_messages.each do |message| %>
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
