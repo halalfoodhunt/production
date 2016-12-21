@@ -5,7 +5,7 @@
   </div>
   <div class="modal-body">
   <ul class="errors"></ul>
-  Are you sure you wish to delete <b><%= @regions.name %></b>?
+  Are you sure you wish to delete <b><%= @region.name %></b>?
   </div>
   <div class="modal-footer">
     <%= link_to "Delete", highlight_path(@regions), method: :delete, remote: true, class: "btn btn-danger" %>
