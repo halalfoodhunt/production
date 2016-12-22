@@ -12,6 +12,9 @@ class CreateSuppliers < ActiveRecord::Migration
       t.text :preferred_order_method
       t.text :question_1
       t.text :question_2
+      t.text :question_3
+      t.text :question_4
+      t.text :question_5
       t.string :delivery_url
       t.datetime :expiry_date
       t.text :friends_terms
