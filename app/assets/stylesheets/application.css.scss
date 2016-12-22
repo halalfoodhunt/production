@@ -54,6 +54,12 @@ hr {
   border-top: 1px solid #979797;
 }
 
+@media only screen and (max-width : 767px) {
+  .box {
+    height: auto !important;
+  } 
+}
+
 .btn-places { 
     border: 0;
     border-radius: 0;
