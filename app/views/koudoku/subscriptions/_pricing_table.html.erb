@@ -1,5 +1,6 @@
 <% @plans.each do |plan| %>
-<div class="col-xs-6 col-sm-3 <%= 'plan-primary' if plan.highlight? %>">
+<div class="col-xs-6 col-sm-3 <%= 'plan-primary' if plan.highlight? %>" style="border:2px solid #ccc;">
+  <center></center>
   <h3><%= plan.name %></h3>
   <h4><%= plan.price %></h4>
   <p>
@@ -8,6 +9,7 @@
     <% end %>
     <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1p>').html_safe %>
   </p>
+  </center>
   <div class="call-to-action">
     <% if @subscription.nil? %>
     <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-success btn-large" %>
