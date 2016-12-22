@@ -1,3 +1,10 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'merchant_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
+<h4>Update Your Card</h4>
 <% if params['update'] == 'card' %>
   <%= render 'card', title: "Update Your Payment Information", url: owner_subscription_path(@owner, @subscription) %>
 <% else %>
@@ -5,3 +12,7 @@
   <%= render 'pricing_table' %>
   <p>You can also <%= link_to 'cancel your subscription', cancel_owner_subscription_path(@owner, @subscription), method: :post %>.</p>
 <% end %>
+</div>
+</div>
+</div>
+</div>
