@@ -3,7 +3,7 @@
   <div class="box">
   <center>
   <h3><%= plan.name %></h3>
-  <h4><%= plan.price %></h4>
+  <h4><%= number_to_currency plan.price, :precision => 0 %>/Month</h4>
   <p>
     <% if Koudoku.free_trial? %>
     <%= Koudoku.free_trial_length %>-day Free Trial
