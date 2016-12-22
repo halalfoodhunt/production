@@ -16,7 +16,7 @@
     <% elsif @subscription.persisted? %>
     <% if @subscription.plan == plan %>
     <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
-    <%= f.submit 'Selected', class: "btn btn-large", disabled: 'disabled' %>
+    <%= f.submit 'Selected', class: "btn btn-block", disabled: 'disabled' %>
     <% end %>
     <% else %>
     <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
