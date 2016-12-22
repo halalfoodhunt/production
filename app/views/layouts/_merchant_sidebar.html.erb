@@ -4,7 +4,7 @@
     <li class="<%= 'active' if current_page?(new_listing_path) %>"> <%= link_to 'Add a Listing', new_listing_path %></li>
     <li class="<%= 'active' if current_page?(edit_merchant_registration_path) %>"> <%= link_to 'My Profile', edit_merchant_registration_path %></li>
     <li class="<%= 'active' if current_page?(listings_path) %>"> <%= link_to 'My Listings', listings_path %></li>
-    <li><%= link_to 'Subscriptions', main_app.pricing_path %></li>
+    <li class="<%= 'active' if current_page?(main_app.pricing_path) %>"> <%= link_to 'Subscriptions', main_app.pricing_path %></li>
     <li><a href="">Reviews</a></li>
     <li><a href="">Statistics</a></li>
     <li><a href="">Advertise</a></li>
