@@ -163,6 +163,16 @@ input[type="textarea"]:focus,
     box-shadow: none;
 }
 
+input, button, select, textarea {
+    height; 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555555;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
 .top-label {
     top: 0;
     left: 0;
