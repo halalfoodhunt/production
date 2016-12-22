@@ -1,5 +1,5 @@
-<% @plans.each do |plan| %>
   <div class="row">
+<% @plans.each do |plan| %>
 <div class="col-xs-6 col-sm-3 plan <%= 'plan-primary' if plan.highlight? %>">
   <div class="box">
   <center>
@@ -27,11 +27,11 @@
     <% end %>
     <% else %>
     <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-delivery btn-block" %>
-    </div>
     <% end %>
   </div>
 </div>
 <% end %>
+    </div>
 <script>
 $(function() {
     $('.box').matchHeight();
