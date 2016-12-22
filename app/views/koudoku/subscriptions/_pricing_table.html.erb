@@ -3,8 +3,8 @@
 <div class="col-xs-6 col-sm-3 <%= 'plan-primary' if plan.highlight? %>">
   <div class="box">
   <center>
-  <h3><%= plan.name %></h3>
-  <h4><%= number_to_currency plan.price, :precision => 0 %>/Month</h4>
+  <h3 style="color:#EF6C3D"><%= plan.name %></h3>
+  <h4><%= number_to_currency plan.price, :precision => 0 %><br>/Month</h4>
   <p>
     <% if Koudoku.free_trial? %>
     <%= Koudoku.free_trial_length %>-day Free Trial
