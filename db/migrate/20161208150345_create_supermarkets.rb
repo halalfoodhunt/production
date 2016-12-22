@@ -25,6 +25,7 @@ class CreateSupermarkets < ActiveRecord::Migration
       t.integer :region_id
       t.integer :location_id
       t.integer :supermarket_highlight_id
+      t.integer :qualifying_type_id
 
       t.timestamps null: false
     end
