@@ -1,5 +1,5 @@
 <% @plans.each do |plan| %>
-<div class="col-xs-6 col-sm-3 match-my-cols <%= 'plan-primary' if plan.highlight? %>" style="border:2px solid #ccc; padding:5px; margin:0">
+<div class="col-xs-6 col-sm-3 <%= 'plan-primary' if plan.highlight? %>">
   <div class="box">
   <center>
   <h3><%= plan.name %></h3>
