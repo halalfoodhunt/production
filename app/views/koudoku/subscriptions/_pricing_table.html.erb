@@ -12,7 +12,7 @@
   </center>
   <div class="call-to-action">
     <% if @subscription.nil? %>
-    <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-success btn-large" %>
+    <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-success btn-block" %>
     <% elsif @subscription.persisted? %>
     <% if @subscription.plan == plan %>
     <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
@@ -21,11 +21,11 @@
     <% else %>
     <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
     <%= f.hidden_field :plan_id, value: plan.id %>
-    <%= f.submit @subscription.describe_difference(plan), class: "btn btn-success btn-large" %>
+    <%= f.submit @subscription.describe_difference(plan), class: "btn btn-success btn-block" %>
     <% end %>
     <% end %>
     <% else %>
-    <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-success btn-large" %>
+    <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-success btn-block" %>
     <% end %>
   </div>
 </div>
