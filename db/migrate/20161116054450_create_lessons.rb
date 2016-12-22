@@ -12,6 +12,8 @@ class CreateLessons < ActiveRecord::Migration
       t.string :website
       t.text :question_1
       t.text :question_2
+      t.text :question_3
+      t.text :question_4
       t.boolean :draft, default: true
       t.datetime :expiry_date
       t.string :merchant_id
