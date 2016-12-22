@@ -1,5 +1,6 @@
 <% @plans.each do |plan| %>
-<div class="col-xs-6 col-sm-3 match-my-cols <%= 'plan-primary' if plan.highlight? %>" style="border:2px solid #ccc; padding:5px; margin:0">
+<div class="row match-my-cols">
+<div class="col-xs-6 col-sm-3 <%= 'plan-primary' if plan.highlight? %>" style="border:2px solid #ccc; padding:5px; margin:0">
   <center>
   <h3><%= plan.name %></h3>
   <h4><%= plan.price %></h4>
@@ -27,6 +28,7 @@
     <% else %>
     <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-success btn-block" %>
     <% end %>
+  </div>
   </div>
   </div>
 <% end %>
