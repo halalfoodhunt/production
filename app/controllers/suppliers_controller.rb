@@ -5,12 +5,6 @@ class SuppliersController < ApplicationController
   # GET /suppliers
   # GET /suppliers.json
   def index
-     if params[:highlight].blank?
-			@suppliers = Supplier.where(draft: false).order("created_at DESC")
-		else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@suppliers = Supplier.where(highlight_id: @highlight_id).order("created_at DESC")
-		end
     @search = Supplier.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @suppliers = @search.result.where(draft: false)
