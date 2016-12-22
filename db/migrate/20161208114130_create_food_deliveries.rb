@@ -24,6 +24,7 @@ class CreateFoodDeliveries < ActiveRecord::Migration
       t.integer :cuisine_type_id
       t.integer :food_delivery_type_id
       t.integer :price_range_id
+      t.integer :qualifying_type_id
 
       t.timestamps null: false
     end
