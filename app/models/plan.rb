@@ -5,7 +5,7 @@ class Plan < ActiveRecord::Base
   
   Plan.create({
       name: 'FREE',
-      price: 00.00,
+      price: 0.00,
       interval: 'month',
       stripe_id: 'free',
       features: ['1 Unverified Listing', '1 Featured Image', '1 Category', '1 Highlight', '1 Location', '1 Featured Question'].join("\n\n"),
