@@ -57,11 +57,12 @@ hr {
 @media only screen and (max-width : 767px) {
   .box {
     height: auto !important;
+    border:1px solid #ccc;
   } 
 }
 
 .plan-primary {
-    border:1px solid #EF6C3D;
+    border:3px solid #EF6C3D;
     font-weight:700;
     padding:0;
 }

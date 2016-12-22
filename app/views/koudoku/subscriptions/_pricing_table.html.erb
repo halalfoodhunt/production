@@ -1,7 +1,7 @@
   <div class="row">
 <% @plans.each do |plan| %>
-<div class="col-xs-6 col-sm-3 plan <%= 'plan-primary' if plan.highlight? %>">
-  <div class="box plan">
+<div class="col-xs-6 col-sm-3 <%= 'plan-primary' if plan.highlight? %>">
+  <div class="box">
   <center>
   <h3><%= plan.name %></h3>
   <h4><%= number_to_currency plan.price, :precision => 0 %>/Month</h4>
