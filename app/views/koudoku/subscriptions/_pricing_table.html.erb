@@ -6,7 +6,7 @@
     <% if Koudoku.free_trial? %>
     <%= Koudoku.free_trial_length %>-day Free Trial
     <% end %>
-    <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1li>').html_safe %>
+    <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1p>').html_safe %>
   </p>
   <div class="call-to-action">
     <% if @subscription.nil? %>
