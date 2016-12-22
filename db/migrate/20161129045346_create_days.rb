@@ -3,6 +3,7 @@ class CreateDays < ActiveRecord::Migration
     create_table :days do |t|
       t.string :name
       t.integer :place_id
+      t.integer :supermarket_id
 
       t.timestamps null: false
     end

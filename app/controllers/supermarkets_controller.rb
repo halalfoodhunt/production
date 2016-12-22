@@ -5,12 +5,6 @@ class SupermarketsController < ApplicationController
   # GET /supermarkets
   # GET /supermarkets.json
   def index
-     if params[:highlight].blank?
-			@supermarkets = Supermarket.where(draft: false).order("created_at DESC")
-		else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@supermarkets = Supermarket.where(highlight_id: @highlight_id).order("created_at DESC")
-		end
     @search = Supermarket.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @supermarkets = @search.result.where(draft: false)
