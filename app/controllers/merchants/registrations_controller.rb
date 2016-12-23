@@ -9,6 +9,10 @@ class Merchants::RegistrationsController < Devise::RegistrationsController
 	end
 	
 	private
+	
+	def after_sign_up_path_for(resource)
+    main_app.pricing_path
+	end
 
 	
 end
