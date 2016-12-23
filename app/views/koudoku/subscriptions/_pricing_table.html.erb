@@ -4,7 +4,7 @@
   <div class="box">
   <center>
   <h3 style="color:#EF6C3D"><%= plan.name %></h3>
-  <h4><%= number_to_currency plan.price, :precision => 0 %><br>/Month</h4>
+  <h4 style="color:#ccc">SGD<%= number_to_currency plan.price, :precision => 0 %><br>Per Month</h4>
   <p>
     <% if Koudoku.free_trial? %>
     <%= Koudoku.free_trial_length %>-day Free Trial
