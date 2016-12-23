@@ -24,7 +24,7 @@ class Plan < ActiveRecord::Base
 
     Plan.create({
       name: 'Basic Plus',
-      price: 28.00,
+      price: 38.00,
       interval: 'month',
       stripe_id: 'basic-plus',
       features: ['5 Verified Listings', 'Unlimited Categories', 'Unlimited Highlights', 'Unlimited Locations', '5 Featured Questions', 'Meta Word Search', 'Reservation Listing', 'Delivery Listing', 'FRIENDS Reward', 'Email Function', 'Review/Feedback Add-on'].join("\n\n"),
