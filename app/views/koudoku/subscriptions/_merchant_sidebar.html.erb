@@ -5,6 +5,9 @@
     <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"> <%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
     <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Listings', main_app.listings_path %></li>
         <li class="<%= 'active' if current_page?(main_app.pricing_path) %>"> <%= link_to 'Subscriptions', main_app.pricing_path %></li>
+        <% if @subscription.present? %>
+                <li class="<%= 'active' if current_page?(koudoku.owner_subscriptions_path(@merchant)) %>"> <%= link_to 'Subscriptions', koudoku.owner_subscriptions_path(@merchant) %></li>
+                <% end %>
     <li><a href="">Reviews</a></li>
     <li><a href="">Statistics</a></li>
     <li><a href="">Advertise</a></li>
