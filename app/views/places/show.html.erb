@@ -72,7 +72,8 @@
           <h4 class="title">Opening Hours</h4>
           
         </div>
-                <p><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
+                <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
+                <% end %>
               </p>
         <p>
                 <%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => 'color:#fff;' %>
