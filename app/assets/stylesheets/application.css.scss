@@ -252,6 +252,7 @@ html,
 body,
 .container-table {
     height: 100%;
+    background: #ececec;
 }
 
 @media (min-width: 768px) {
@@ -507,7 +508,7 @@ body,
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 300px;
+    height: 400px;
 }
 
 .admin_dashboard-full-height {
