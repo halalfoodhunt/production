@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= form_tag edit_multiple_places_path, method: :get do %>
+    <table class="table form-subtitle">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Business name</th>
+          <th>Halal Status</th>
+          <th>Verification</th>
+          <th>Expiry Date</th>
+          <th>Status</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @places.each do |place| %>
+        <tr>
+          <td><%= check_box_tag "place_ids[]", place.id %>
+          </td>
+          <td><%= link_to place.business_name, edit_place_path(place) %></td>
+          <td><%= link_to place.qualifying_type.name %></td>
+          <td><%= place.verified ? "Verified" : "Unverified" %></td>
+          <td><%= place.expiry_date %></td>
+          <td><%= place.draft ? "Draft" : "Publish" %></td>
+          <td><%= link_to 'Show', place %></td>
+          <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <center><%= submit_tag "Edit Places", class: "btn btn-large btn-raised btn-primary" %></center>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -83,7 +83,11 @@ Rails.application.routes.draw do
   resources :caterer_packages
   resources :caterers
   resources :ecommers
-  resources :places
+  resources :places do
+     collection do
+      put :discontinue
+    end
+  end
   resources :days
  
   devise_for :merchants, controllers: { registrations: "merchants/registrations" }

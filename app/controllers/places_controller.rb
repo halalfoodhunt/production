@@ -93,6 +93,20 @@ class PlacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def edit_multiple
+  @places = Place.friendly.find(params[:place_ids])
+  end
+
+  def update_multiple
+  @places = Place.friendly.update(params[:places].keys, params[:places].values)
+  @places.reject! { |p| p.errors.empty? }
+  if @places.empty?
+    redirect_to pages_places_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

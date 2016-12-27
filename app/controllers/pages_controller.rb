@@ -26,6 +26,28 @@ class PagesController < ApplicationController
   def terms_of_use
   end
 
-  def privacy_policy
+  def caterers
+  end
+  
+  def ecommers
+  end
+  
+  def food_deliveries
+  end
+  
+  def lessons
+  end
+  
+  def places
+    @places = Place.all
+  end
+  
+  def online_grocers
+  end
+  
+  def supermarkets
+  end
+  
+  def suppliers
   end
 end
