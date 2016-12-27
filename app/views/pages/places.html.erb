@@ -27,8 +27,12 @@
               <td><%= place.verified ? "Verified" : "Unverified" %></td>
               <td><%= place.expiry_date %></td>
               <td><%= place.draft ? "Draft" : "Publish" %></td>
-              <td><%= link_to 'Show', place %></td>
-              <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="col-md-1"><%= link_to edit_place_path(place), remote: true do %>
+          <i class="fa fa-pencil" style="color:#22211d"></i><% end %>
+        </td>
+        <td class="col-md-1"><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash-o" style="color:#22211d"></i><% end %>
+        </td>
             </tr>
             <% end %>
           </tbody>
