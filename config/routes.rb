@@ -85,7 +85,8 @@ Rails.application.routes.draw do
   resources :ecommers
   resources :places do
      collection do
-      put :discontinue
+      get :edit_multiple
+      put :update_multiple
     end
   end
   resources :days
