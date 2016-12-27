@@ -34,7 +34,7 @@
       <% if place.verified == true %>
       <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:medium), :class => "img-responsive") %></span>
 <% else %>
-     <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 8px 0px 8px; left:7%; top:3%; margin: 5px 0 5px 0;"><h5 style="line-height:1;">Unverified</h5></span>
+     <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 8px 0px 8px; left:7%; top:3%;"><h5 style="line-height:1; margin:5px 0 5px 0;">Unverified</h5></span>
 <% end %>
       <div style="padding:0px; height:350px; position:relative;" class="thumbnail">
         <%= image_tag place.featured_image.url(:medium), :class => "img_responsive" %>
