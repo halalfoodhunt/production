@@ -32,7 +32,7 @@
 					<% @places.each do |place| %>
     <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
       <% if place.verified == true %>
-      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_criterium.icon.url(:medium), :class => "img-responsive") %></span>
+      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:medium), :class => "img-responsive") %></span>
 <% else %>
      <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 15px 0px 15px; left:7%; top:3%;"><h5 style="line-height:1;">Unverified</h5></span>
 <% end %>
