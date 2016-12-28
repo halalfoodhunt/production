@@ -25,9 +25,9 @@
               <td><%= link_to place.business_name, edit_place_path(place) %></td>
               <td><%= link_to place.qualifying_type.name %></td>
               <td><% if place.verified == true %>
-                <span class="label label-success"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+                <span class="label label-success"><h6>Unverified</h6></span>
                 <% else %>
-                <span class="label label-danger"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+                <span class="label label-danger"><h6>Unverified</h6></span>
                 <% end %>
               </td>
                 <td><%= place.expiry_date.strftime("%m/%d/%Y") %></td>
