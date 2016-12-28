@@ -9,11 +9,11 @@
           <thead>
             <tr>
               <th></th>
-          <th><h6><strong>Business Name</strong></h6></th>
-          <th><h6><strong>Halal Status</strong></h6></th>
-          <th><h6><strong>Verify?</strong></h6></th>
-          <th><h6><strong>Expiry Date</strong></h6></th>
-          <th><h6><strong>Draft</strong></h6></th>
+              <th><h6><strong>Business Name</strong></h6></th>
+              <th><h6><strong>Halal Status</strong></h6></th>
+              <th><h6><strong>Verify?</strong></h6></th>
+              <th><h6><strong>Expiry Date</strong></h6></th>
+              <th><h6><strong>Draft</strong></h6></th>
               <th colspan="2"></th>
             </tr>
           </thead>
@@ -24,22 +24,27 @@
               </td>
               <td><%= link_to place.business_name, edit_place_path(place) %></td>
               <td><%= link_to place.qualifying_type.name %></td>
-              <td><%= place.verified ? "Verified" : "Unverified" %></td>
-              <td><%= place.expiry_date.strftime("%m/%d/%Y") %></td>
-              <td><%= place.draft ? "Draft" : "Publish" %></td>
-              <td><%= link_to edit_place_path(place), remote: true do %>
-          <i class="fa fa-pencil" style="color:#22211d"></i><% end %>
-        </td>
-        <td><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <i class="fa fa-trash-o" style="color:#22211d"></i><% end %>
-        </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <center><%= submit_tag "Edit Places", class: "btn btn-large btn-raised btn-primary" %></center>
-        <% end %>
+              <td><% if place.verified == true %>
+                <span class="label label-success"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+                <% else %>
+                <span class="label label-danger"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+                <% end %>
+              </td>
+                <td><%= place.expiry_date.strftime("%m/%d/%Y") %></td>
+                <td><%= place.draft ? "Draft" : "Publish" %></td>
+                <td><%= link_to edit_place_path(place), remote: true do %>
+                  <i class="fa fa-pencil" style="color:#22211d"></i><% end %>
+                </td>
+                <td><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fa fa-trash-o" style="color:#22211d"></i><% end %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <center><%= submit_tag "Edit Places", class: "btn btn-large btn-raised btn-primary" %></center>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
