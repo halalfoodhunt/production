@@ -28,7 +28,8 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    day = @place.days.build
+    @day = @place.days.build
+    @day.opening_hours.build
   end
 
   # GET /places/new
