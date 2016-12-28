@@ -28,6 +28,8 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    @place = Place.find(params[:id])
+    @day = @place.days.build
   end
 
   # GET /places/new
