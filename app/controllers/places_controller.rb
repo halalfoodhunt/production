@@ -44,9 +44,9 @@ class PlacesController < ApplicationController
   # GET /places/1/edit
   def edit
     7.times do
-      @day = @place.days
+      @day = @place.days.build
     end
-    7.times { @day.opening_hours }
+    7.times { @day.opening_hours.build }
   end
 
   # POST /places
