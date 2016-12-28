@@ -28,8 +28,10 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    @day = @place.days.build
-    @day.opening_hours.build
+    7.times do
+      @day = @place.days.build
+    end
+    7.times { @day.opening_hours.build }
   end
 
   # GET /places/new
