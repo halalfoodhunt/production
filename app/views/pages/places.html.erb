@@ -25,7 +25,7 @@
               <td><%= link_to place.business_name, edit_place_path(place) %></td>
               <td><%= link_to place.qualifying_type.name %></td>
               <td><% if place.verified == true %>
-                <span class="label label-success"><h6>Unverified</h6></span>
+                <span class="label label-success">Unverified</span>
                 <% else %>
                 <span class="label label-danger"><h6>Unverified</h6></span>
                 <% end %>
