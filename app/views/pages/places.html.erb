@@ -13,7 +13,7 @@
               <th><h6><strong>Halal Status</strong></h6></th>
               <th><h6><strong>Verify?</strong></h6></th>
               <th><h6><strong>Expiry Date</strong></h6></th>
-              <th><h6><strong>Draft</strong></h6></th>
+              <th><h6><strong>Publish</strong></h6></th>
               <th colspan="2"></th>
             </tr>
           </thead>
@@ -32,9 +32,9 @@
               </td>
                 <td><%= place.expiry_date.strftime("%m/%d/%Y") %></td>
                 <td><% if place.draft == true %>
-                <span><i class="fa fa-times-circle fa-lg" aria-hidden="true" style="color:#5cb85c"></i></span>
+                <span><i class="fa fa-times-circle fa-lg" aria-hidden="true" style="color:#d9534f"></i></span>
                 <% else %>
-                <span><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:#d9534f"></i></span>
+                <span><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:#5cb85c"></i></span>
                 <% end %>
               </td>
                 <td><%= link_to edit_place_path(place), remote: true do %>
