@@ -23,7 +23,7 @@
               <td><%= check_box_tag "place_ids[]", place.id %>
               </td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
-              <td><%= link_to place.qualifying_type.name, class:'table-text' %></td>
+              <td><%= place.qualifying_type.name, class:'table-text' %></td>
               <td><% if place.verified == true %>
                 <span class="label label-success">VERIFIED</span>
                 <% else %>
@@ -33,10 +33,10 @@
                 <td><%= place.expiry_date.strftime("%m/%d/%Y") %></td>
                 <td class="table-text"><%= place.draft ? "Draft" : "Publish" %></td>
                 <td><%= link_to edit_place_path(place), remote: true do %>
-                  <i class="fa fa-pencil" style="color:#22211d"></i><% end %>
+                  <i class="fa fa-pencil"></i><% end %>
                 </td>
                 <td><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <i class="fa fa-trash-o" style="color:#22211d"></i><% end %>
+                  <i class="fa fa-trash-o"></i><% end %>
                 </td>
               </tr>
               <% end %>
