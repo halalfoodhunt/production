@@ -72,7 +72,7 @@
           <h4 class="title">Opening Hours</h4>
            <% @place.days.each do |day| %>
            <% @day.opening_hours.each do |builder| %>
-<%= builder.day %>
+<%= builder.day.name %>
  <% end %><% end %>
         </div>
         <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
