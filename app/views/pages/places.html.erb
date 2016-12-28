@@ -22,7 +22,7 @@
             <tr>
               <td><%= check_box_tag "place_ids[]", place.id %>
               </td>
-              <td><%= link_to place.business_name, edit_place_path(place) %></td>
+              <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
               <td><%= link_to place.qualifying_type.name %></td>
               <td><% if place.verified == true %>
                 <span class="label label-success">VERIFIED</span>

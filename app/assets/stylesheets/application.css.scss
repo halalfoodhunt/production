@@ -44,8 +44,12 @@ label {
     background: rgba(0,0,0,0.2);
 }
 
-.borderless td, .borderless th {
-    border: none;
+.table-text {
+    color: #ccc;
+    font-weight:300;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .question { 
