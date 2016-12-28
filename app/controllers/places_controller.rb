@@ -43,6 +43,7 @@ class PlacesController < ApplicationController
 
   # GET /places/1/edit
   def edit
+    @place = Place.friendly.find(params[:id])
     7.times do
       @day = @place.days.build
     end
