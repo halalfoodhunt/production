@@ -54,7 +54,6 @@ class PagesController < ApplicationController
   def friends_rewards
     @friends_rewards = FriendsReward.all
     @places = Place.all
-    @rewards_categories = RewardsCategory.all
   end
 
 end
