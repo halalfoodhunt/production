@@ -70,50 +70,61 @@
       <div class="col-xs-12 col-sm-12 col-md-5">
         <div class="container-fluid" style="border:#ccc solid 1px;">
           <h4 class="title">Opening Hours</h4>
-           <% @place.days.each do |day| %>
-           <%= day.name %>
-           <% end %>
+          <% @place.opening_hours.each do |time| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= time.day.name %>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= time.open_or_close.name %>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= time.opening %>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= time.closing %>
+          </div>
+          <% end %>
         </div>
         <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
           <% end %>
         </p>
         <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => 'color:#fff;' %>
           <% end %>
-          </p>
-          <div class="row">
-            <div class="col-xs-6">
-              <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
-              <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
-            </div>
-            <div class="col-xs-6">
-             <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-             <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
-           </div>
+        </p>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
+            <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
+          </div>
+          <div class="col-xs-6">
+           <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+           <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
          </div>
-         <br>
-         <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-          <h4 class="title">Highlights</h4>
-          <% @place.highlights.each do |highlight| %>
-          <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= highlight.name %></p></div>
-          <% end %>
-        </div>
-        <br>
-        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-          <h4 class="title">Dining Types</h4>
-          <% @place.dining_types.each do |dining_type| %>
-          <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= dining_type.name %></p></div>
-          <% end %>
-        </div>
-        <br>
-        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-          <h4 class="title">Cuisine Types</h4>
-          <% @place.cuisine_types.each do |cuisine_type| %>
-          <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
-          <% end %>
-        </div>
+       </div>
+       <br>
+       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Highlights</h4>
+        <% @place.highlights.each do |highlight| %>
+        <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= highlight.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Dining Types</h4>
+        <% @place.dining_types.each do |dining_type| %>
+        <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= dining_type.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Cuisine Types</h4>
+        <% @place.cuisine_types.each do |cuisine_type| %>
+        <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
-  async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
+async defer></script>

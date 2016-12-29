@@ -2,9 +2,8 @@ class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
 
-  attr_accessor :days_attributes
-  has_many :days, :dependent => :destroy
-  accepts_nested_attributes_for :days, allow_destroy: true
+  has_many  :opening_hours
+  accepts_nested_attributes_for  :opening_hours
   
   before_create :set_expiration_date
 
