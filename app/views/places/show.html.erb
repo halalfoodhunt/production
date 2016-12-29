@@ -30,7 +30,7 @@
             <h4 class="media-heading title"><%= @place.business_name %> (<%= @place.qualifying_type.name %>)</h4>
             <table class="table table-striped">
               <thead>
-                <tr style="border-top:#ccc solid 1px"><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
+                <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
                 <tr style="border-top:#ccc solid 1px"><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @place.general_email %></p></td></tr>
                 <tr style="border-top:#ccc solid 1px"><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @place.general_contact_number %></p></td></tr>
                 <tr style="border-top:#ccc solid 1px"><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @place.website, "#{@place.website}" %></p></td></tr>
