@@ -50,5 +50,10 @@ class PagesController < ApplicationController
   
   def suppliers
   end
+  
+  def friends_rewards
+    @friends_rewards = FriendsReward.all
+    @places = Place.all
+  end
 
 end
