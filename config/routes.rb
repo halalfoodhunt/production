@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   
   get 'pages/categories'
   
+  get 'pages/friends_rewards'
+  
   resources :verifying_types
   resources :users_testimonials
   resources :featured_articles
