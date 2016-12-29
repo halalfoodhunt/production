@@ -17,7 +17,45 @@
 </div>
 <div class="container">
   <div class="row">
-   <% render 'places/friends_rewards' %>
+    <% @places.each do |place| %>
+<div class="col-xs-12 col-sm-6 col-md-3" >
+  <!--Rotating card-->
+  <div class="card-wrapper">
+    <div id="card-1" class="card-rotating effect__click">
+      <!--Front Side-->
+      <div class="face front">
+        <!-- Image-->
+        <div class="card-up">
+          <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
+        </div>
+        <!--Avatar-->
+        <div class="avatar"><%= image_tag place.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        </div>
+        <!--Content-->
+        <div class="card-block" style="padding:0 5px 0 5px;">
+          <h4><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></h4>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+          <!--Triggering button-->
+          <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
+        </div>
+      </div>
+      <!--/.Front Side-->
+      <!--Back Side-->
+      <div class="face back">
+        <!--Content-->
+        <h4><%= place.friends_reward.name %></h4>
+        <hr>
+        <p><%= place.friends_rewards_terms %></p>
+        <hr>
+        <!--Triggering button-->
+        <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
+      </div>
+      <!--/.Back Side-->
+    </div>
+  </div>
+  <!--/.Rotating card-->
+</div>
+<% end %>
   </div>
 </div>
   </div>
