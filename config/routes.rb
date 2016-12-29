@@ -87,6 +87,7 @@ Rails.application.routes.draw do
      collection do
       get :edit_multiple
       put :update_multiple
+      get :friends_rewards
     end
   end
   resources :days

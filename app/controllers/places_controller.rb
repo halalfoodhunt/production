@@ -108,6 +108,22 @@ class PlacesController < ApplicationController
     render "edit_multiple"
   end
   end
+  
+  def friends_rewards
+    @search = Place.ransack(params[:q])
+    @search.sorts = 'created_at DESC' if @search.sorts.empty?
+    @places = @search.result.where(draft: false)
+    @friends_rewards = FriendsReward.all
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+    marker.lat place.latitude
+    marker.lng place.longitude
+    marker.json({operating_address: place.operating_address})
+    marker.picture({
+     "url" => "http://halalfoodhunt.com/friends/wp-content/uploads/2016/10/shadows-marker.png",
+     "width" =>  52,
+     "height" => 52})
+    marker.infowindow render_to_string(:partial => "/layouts/infobox", :locals => { :place => place})
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

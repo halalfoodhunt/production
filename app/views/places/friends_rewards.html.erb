@@ -1,0 +1,66 @@
+<%= render 'layouts/header' %>
+<div style="padding:60px 0 60px 0" class="container-fluid friends-rewards">
+    <div class="col-md-8 col-md-offset-2" style="background:rgba(0,0,0,0.5); margin-top:60px;">
+      <div class="text-center">
+        <h3 class="form-subtitle" style="color:#c2a476;">Find out who our FRIENDS are. </h3>
+        <p class="sub-header" style="font-size:20px; color:#fff;">And get rewards from our FRIENDS.</p><br><br>
+      </div>
+    </div>
+  </div>
+<div class="container">
+<div class="col-md-12">
+ <div class="row">
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @friends_rewards.count %></b> Halal establishments IN ALL CITIES, SINGAPORE</h5></div>
+  <div class="col-md-1" style="padding-top:40px">
+   
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @places.each do |place| %>
+<div class="col-xs-12 col-sm-6 col-md-3" >
+  <!--Rotating card-->
+  <div class="card-wrapper">
+    <div id="card-1" class="card-rotating effect__click">
+      <!--Front Side-->
+      <div class="face front">
+        <!-- Image-->
+        <div class="card-up">
+          <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
+        </div>
+        <!--Avatar-->
+        <div class="avatar"><%= image_tag place.friends_reward.reward_category.icon.url(:large), :class => "img-circle img_responsive" %>
+        </div>
+        <!--Content-->
+        <div class="card-block" style="padding:0 5px 0 5px;">
+          <h4><%= link_to place_path do %><strong><%= place.business_name %></strong><% end %></h4>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+          <!--Triggering button-->
+          <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
+        </div>
+      </div>
+      <!--/.Front Side-->
+      <!--Back Side-->
+      <div class="face back">
+        <!--Content-->
+        <h4><%= place.friends_reward.reward_category.name %></h4>
+        <hr>
+        <p><%= place.friends_rewards_terms %></p>
+        <hr>
+        <!--Triggering button-->
+        <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
+      </div>
+      <!--/.Back Side-->
+    </div>
+  </div>
+  <!--/.Rotating card-->
+</div>
+<% end %>
+  </div>
+</div>
+  </div>
+<script>
+$('.rotate-btn').on('click', function(){
+  $(this).closest('.card-rotating.effect__click').toggleClass('flipped');
+});
+</script>
