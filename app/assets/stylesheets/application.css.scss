@@ -48,14 +48,13 @@ label {
     position: relative;
     width: 100%;
     padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
-    background-color:#1E1E1E;
     overflow:hidden;
 }
 
 .content {
     position:absolute;
-    height:90%; /* = 100% - 2*5% padding */
-    width:90%; /* = 100% - 2*5% padding */
+    height:100%; /* = 100% - 2*5% padding */
+    width:100%; /* = 100% - 2*5% padding */
     padding: 5%;
     
 }
