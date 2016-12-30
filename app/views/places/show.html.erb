@@ -78,10 +78,10 @@
             <%= time.open_or_close.name %>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <%= time.opening.strftime("%I:%M %p") %>
+            <%= time.opening.to_formatted_s(:time) %>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <%= time.closing.strftime("%I:%M %p") %>
+            <%= time.closing.to_formatted_s(:time) %>
           </div>
           <% end %>
         </div>
