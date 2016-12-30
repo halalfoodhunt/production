@@ -15,7 +15,7 @@
               <thead>
                 <tr><td><p><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %></p></td></tr>
                 <tr><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr>
-                <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @supplier.general_contact %></p></td></tr>
+                <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @supplier.general_contact_number %></p></td></tr>
                 <tr><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %></p></td></tr>
                 <tr><td><p>Social sites: <%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %></p></td>
                 </tr>
