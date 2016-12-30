@@ -14,7 +14,7 @@
         </div>
         <div class="media-body">
           <h5 class="media-heading"><%= link_to ecommer.business_name, ecommer_path(ecommer) %></h5>
-          <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type %></p>
+          <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
         </div>
       </div>
     </div>
