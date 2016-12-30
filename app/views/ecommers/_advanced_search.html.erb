@@ -13,7 +13,7 @@
      <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
    </div>
    <div class="col-sm-12 col-md-6" style="padding:2px">
-    <%= f.collection_select(:cuisine_id_eq_any, Cuisine.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
+    <%= f.collection_select(:cuisine_type_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
      <br>
     <%= f.collection_select(:price_range_id_eq, PriceRange.order(:asc), :id, :name, {:include_blank => "Price Range"}, {:class=>'form-control'}) %><br>
   </div>
