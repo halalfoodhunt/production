@@ -46,8 +46,8 @@ label {
 .square {
     float:left;
     position: relative;
-    width: 20%;
-    padding-bottom : 20%; /* = width for a 1:1 aspect ratio */
+    width: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
     background-color:#1E1E1E;
     overflow:hidden;
 }
