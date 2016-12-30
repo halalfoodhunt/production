@@ -39,7 +39,7 @@
             <div class="table">
               <div class="table-cell numbers">
                 <center>
-                  <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @places.friends_rewards.count %></h1>
+                  <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= FriendsReward.count %></h1>
                   <h4>FRIENDS REWARDS</h4>
                 </center>
               </div>
@@ -67,6 +67,7 @@
               <th></th>
               <th><h6><strong>Business Name</strong></h6></th>
               <th><h6><strong>Halal Status</strong></h6></th>
+              <th><h6><strong>Halal Expiry</strong></h6></th>
               <th><h6><strong>Verify?</strong></h6></th>
               <th><h6><strong>Expiry Date</strong></h6></th>
               <th><h6><strong>Publish</strong></h6></th>
@@ -80,6 +81,7 @@
               </td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
               <td class="table-text"><%= place.qualifying_type.name %></td>
+              <td><%= place.halal_expiry.strftime("%m/%d/%Y") %></td>
               <td><% if place.verified == true %>
                 <span class="label label-success">VERIFIED</span>
                 <% else %>
