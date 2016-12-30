@@ -26,7 +26,7 @@
             </table>
             <hr/>
           </div>
-          <div class="container-fluid" padding:10px;">
+          <div class="container-fluid" style="padding:10px;">
             <div class="col-xs-12 col-sm-12 col-md-3">
               <div class="avatar"><center><%= image_tag @ecommer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
                 <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-material-green" role="button">Be a FRIEND</a>
@@ -54,7 +54,7 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
         <div class="container-fluid" style="border:#ccc solid 1px;">
-          <h4 class="form-subtitle">Contactable Hours</h4>
+          <h4 class="form-subtitle">Preferred Order Method</h4>
           <p><%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p>
         </div>
         <p><%= link_to "Order NOW!", raw(@ecommer.delivery_link), :class => "btn btn-block btn-raised btn-default", :style => 'color:#fff;' %></p>
