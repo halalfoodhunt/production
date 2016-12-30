@@ -81,14 +81,14 @@
               </td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
               <td class="table-text"><%= place.qualifying_type.name %></td>
-              <td></td>
+              <td><%= place.halal_expiry.strftime("%m/%d/%Y") %></td>
               <td><% if place.verified == true %>
                 <span class="label label-success">VERIFIED</span>
                 <% else %>
                 <span class="label label-danger">UNVERIFIED</span>
                 <% end %>
               </td>
-              <td><%= place.expiry_date.strftime("%B %e, %Y") %></td>
+              <td><%= place.expiry_date.strftime("%m/%d/%Y") %></td>
               <td><% if place.draft == true %>
                 <span><i class="fa fa-times-circle fa-lg" aria-hidden="true" style="color:#d9534f"></i></span>
                 <% else %>
