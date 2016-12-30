@@ -739,7 +739,6 @@ ActiveRecord::Schema.define(version: 20161220032957) do
     t.string   "document_4_content_type"
     t.integer  "document_4_file_size"
     t.datetime "document_4_updated_at"
-    t.datetime "halal_expiry"
   end
 
   create_table "plans", force: :cascade do |t|
