@@ -88,6 +88,10 @@ label {
 .question { 
     text-transform:none;
     font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #22211d;
+    line-height: 20px;
 }
 
 .header {
@@ -105,7 +109,7 @@ hr {
   .box {
     height: auto !important;
     border:2px solid #ccc;
-  } 
+} 
 }
 
 .plan-primary {
@@ -334,332 +338,325 @@ body {
 }
 
 //.form-group .control-label, .form-group-default .control-label {
-//  color: #c2a476;
-//}
-// Also don't forget to change the hover styles as well
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li>a:focus {
-    color: #D04E2E;
-}
+    //  color: #c2a476;
+    //}
+    // Also don't forget to change the hover styles as well
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+        color: #D04E2E;
+    }
 
-// And the brand colour
-.navbar-default .navbar-brand {
-    color: #D04E2E;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+    // And the brand colour
+    .navbar-default .navbar-brand {
+        color: #D04E2E;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-.navbar.navbar,
-.navbar-default.navbar {
-    background: #000;
-    color: rgba(255, 255, 255, 0.84);
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    font-size: 11px;
-    margin-bottom: 0px;
-}
+    .navbar.navbar,
+    .navbar-default.navbar {
+        background: #000;
+        color: rgba(255, 255, 255, 0.84);
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-size: 11px;
+        margin-bottom: 0px;
+    }
 
-.navbar-merchant.navbar {
-    background: #EF6C3D;
-    color: rgba(255, 255, 255, 0.84);
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    font-size: 11px;
-    margin-bottom: 20px;
-    border: 0;
-    border-radius: 0;
-}
+    .navbar-merchant.navbar {
+        background: #EF6C3D;
+        color: rgba(255, 255, 255, 0.84);
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-size: 11px;
+        margin-bottom: 20px;
+        border: 0;
+        border-radius: 0;
+    }
 
-.navbar-sidebar.navbar {
-    background: #FFB20E;
-    color: rgba(255, 255, 255, 0.84);
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    font-size: 11px;
-    margin-bottom: 20px;
-    border: 0;
-    border-radius: 0;
-}
+    .navbar-sidebar.navbar {
+        background: #FFB20E;
+        color: rgba(255, 255, 255, 0.84);
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-size: 11px;
+        margin-bottom: 20px;
+        border: 0;
+        border-radius: 0;
+    }
 
-.dropdown-menu {
-    font-size: 10px;
-}
+    .dropdown-menu {
+        font-size: 10px;
+    }
 
-.selection-title {
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-}
+    .selection-title {
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
 
-.selection-subtitle {
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    color: #fff;
-}
+    .selection-subtitle {
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        color: #fff;
+    }
 
-.form-subtitle {
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: white;
-}
+    .form-subtitle {
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: white;
+    }
 
-.title {
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #22211d;
-}
+    .title {
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #22211d;
+    }
 
-.subtitle {
-    font-size: 14px;
-    color: #22211d;
-    font-style: italic;
-    font-weight: 400;
-}
+    .subtitle {
+        font-size: 14px;
+        color: #22211d;
+        font-style: italic;
+        font-weight: 400;
+    }
 
-.sub-header {
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-}
+    .sub-header {
+        font-size: 16px;
+        color: #fff;
+        font-weight: 400;
+    }
 
-.question {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    color: #22211d;
-    line-height: 20px;
-}
+    .index {
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/photo-1472393365320-db77a5abbecc.jpeg) no-repeat center bottom fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 600px;
+    }
 
-.index {
-    background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/photo-1472393365320-db77a5abbecc.jpeg) no-repeat center bottom fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 600px;
-}
+    .ecommers {
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Ecommers-1.jpg) no-repeat center bottom fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 400px;
+    }
 
-.delivery {
-    background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/photo-1418669112725-fb499fb61127.jpeg) no-repeat center bottom fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 500px;
-}
+    .caterers {
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Caterers-1.jpg) no-repeat center bottom fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 500px;
+    }
 
-.reservation {
-    background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/bac2.png) no-repeat center bottom fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 500px;
-}
+    .index-more {
+        padding-bottom: 50px;
+        background: #F4F3EF;
+    }
 
-.index-more {
-    padding-bottom: 50px;
-    background: #F4F3EF;
-}
+    .articles {
+        background: #22211d;
+    }
 
-.articles {
-    background: #22211d;
-}
+    .friends {
+        padding: 50px 0;
+        background: #D04E2E;
+    }
 
-.friends {
-    padding: 50px 0;
-    background: #D04E2E;
-}
+    .friends-rewards {
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/bac2.png) no-repeat center bottom fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 500px;
+    }
 
-.friends-rewards {
-    background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/bac2.png) no-repeat center bottom fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 500px;
-}
+    .testimonial {
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/bw-room.jpg) no-repeat center bottom fixed;
+    }
 
-.testimonial {
-    background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/09/bw-room.jpg) no-repeat center bottom fixed;
-}
+    .ipad {
+        background: url('https://halalfoodhunt.slack.com/files/ain/F2HBZNYP6/ipad-air-horizontal.png') center center no-repeat #000;
+        padding: 20px 50px 20px 50px;
+        border-radius: 25px;
+    }
 
-.ipad {
-    background: url('https://halalfoodhunt.slack.com/files/ain/F2HBZNYP6/ipad-air-horizontal.png') center center no-repeat #000;
-    padding: 20px 50px 20px 50px;
-    border-radius: 25px;
-}
+    .cover {
+        background: rgba(0, 0, 0, 0.7);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 540px;
+    }
 
-.cover {
-    background: rgba(0, 0, 0, 0.7);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 540px;
-}
+    .sign-up {
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/11/background2.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+    }
 
-.sign-up {
-    background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2016/11/background2.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
-}
+    .sign-up-left {
+        background: url(http://halalfoodhunt.com/wp-content/uploads/2016/03/places-1.jpg) no-repeat left top;
+        max-height: 100%;
+        background-size: cover;
+    }
 
-.sign-up-left {
-    background: url(http://halalfoodhunt.com/wp-content/uploads/2016/03/places-1.jpg) no-repeat left top;
-    max-height: 100%;
-    background-size: cover;
-}
+    .col-center {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-.col-center {
-    float: none;
-    margin-right: auto;
-    margin-left: auto;
-}
+    .alert {
+        margin-bottom: 0px;
+    }
 
-.alert {
-    margin-bottom: 0px;
-}
+    .merchant_dashboard {
+        background: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT3R6xXMCS18921QPSqmzyY8LrcgMbVRYjxivAxZzjqreQhiXHpsA) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 
-.merchant_dashboard {
-    background: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT3R6xXMCS18921QPSqmzyY8LrcgMbVRYjxivAxZzjqreQhiXHpsA) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+    .merchant_dashboard-full-height {
+        background: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT3R6xXMCS18921QPSqmzyY8LrcgMbVRYjxivAxZzjqreQhiXHpsA) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+    }
 
-.merchant_dashboard-full-height {
-    background: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT3R6xXMCS18921QPSqmzyY8LrcgMbVRYjxivAxZzjqreQhiXHpsA) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
-}
+    .admin_dashboard {
+        background: url(http://halalfoodhunt.com/wp-content/uploads/2016/08/background12.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 
-.admin_dashboard {
-    background: url(http://halalfoodhunt.com/wp-content/uploads/2016/08/background12.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+    .show-bg {
+        background: url(http://halalfoodhunt.com/wp-content/uploads/2016/09/white_bg.jpeg) repeat top left;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 300px;
+    }
 
-.show-bg {
-    background: url(http://halalfoodhunt.com/wp-content/uploads/2016/09/white_bg.jpeg) repeat top left;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 300px;
-}
-
-.admin_dashboard-full-height {
-    background: #3e414a;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
-}
+    .admin_dashboard-full-height {
+        background: #3e414a;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+    }
 
 
-/* Hide for mobile, show later */
+    /* Hide for mobile, show later */
 
-.sidebar {
-    display: none;
-    background-color: #4C4743;
-}
-
-@media (min-width: 768px) {
     .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
-        display: block;
-        padding: 20px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        /* Scrollable contents if viewport is shorter than content. */
+        display: none;
         background-color: #4C4743;
     }
-}
 
-.admin-sidebar {
-    display: none;
-    background-color: #0D0D15;
-}
+    @media (min-width: 768px) {
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* Scrollable contents if viewport is shorter than content. */
+            background-color: #4C4743;
+        }
+    }
 
-@media (min-width: 768px) {
     .admin-sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
-        display: block;
-        padding: 20px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        /* Scrollable contents if viewport is shorter than content. */
+        display: none;
         background-color: #0D0D15;
     }
-}
+
+    @media (min-width: 768px) {
+        .admin-sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* Scrollable contents if viewport is shorter than content. */
+            background-color: #0D0D15;
+        }
+    }
 
 
-/* Sidebar navigation */
+    /* Sidebar navigation */
 
-.nav-sidebar {
-    margin-right: -21px;
-    /* 20px padding + 1px border */
-    margin-bottom: 20px;
-}
+    .nav-sidebar {
+        margin-right: -21px;
+        /* 20px padding + 1px border */
+        margin-bottom: 20px;
+    }
 
-.nav-sidebar>li>a {
-    padding-right: 20px;
-    padding-left: 20px;
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 300;
-    color: #fff;
-    font-size: 12px;
-}
+    .nav-sidebar>li>a {
+        padding-right: 20px;
+        padding-left: 20px;
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: #fff;
+        font-size: 12px;
+    }
 
-.nav-sidebar>li>a:hover,
-a:focus {
-    color: #ccc;
-    background: none;
-}
+    .nav-sidebar>li>a:hover,
+    a:focus {
+        color: #ccc;
+        background: none;
+    }
 
-.nav-sidebar>.active>a,
-.nav-sidebar>.active>a:hover,
-.nav-sidebar>.active>a:focus {
-    color: #ccc;
-}
+    .nav-sidebar>.active>a,
+    .nav-sidebar>.active>a:hover,
+    .nav-sidebar>.active>a:focus {
+        color: #ccc;
+    }
 
 
 /*
  * Main content
  */
 
-.main {
+ .main {
     padding: 20px;
 }
 
@@ -689,7 +686,7 @@ a:focus {
  * Placeholder dashboard ideas
  */
 
-.placeholders {
+ .placeholders {
     margin-bottom: 30px;
     text-align: center;
 }
@@ -778,7 +775,7 @@ span.step {
  * Card Wrapper
  */
 
-.card-wrapper {
+ .card-wrapper {
     margin: .5rem 0 1rem;
     height: 380px;
     position: relative;
