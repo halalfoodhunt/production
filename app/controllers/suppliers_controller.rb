@@ -40,6 +40,8 @@ class SuppliersController < ApplicationController
         format.json { render json: @supplier.errors, status: :unprocessable_entity }
       end
     end
+    @supplier.food_type_ids = params[:supplier][:food_type_ids]
+    @supplier.supplier_highlight_ids = params[:supplier][:supplier_highlight_ids]
   end
 
   # PATCH/PUT /suppliers/1
@@ -54,6 +56,8 @@ class SuppliersController < ApplicationController
         format.json { render json: @supplier.errors, status: :unprocessable_entity }
       end
     end
+    @supplier.food_type_ids = params[:supplier][:food_type_ids]
+    @supplier.supplier_highlight_ids = params[:supplier][:supplier_highlight_ids]
   end
 
   # DELETE /suppliers/1
