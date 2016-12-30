@@ -40,6 +40,7 @@ class PagesController < ApplicationController
   
   def places
     @places = Place.all
+    @friends_rewards = FriendsReward.all
   end
   
   def online_grocers
