@@ -118,10 +118,10 @@
       <%= time.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :opening, label: "From", :include_blank => true %>
+      <%= time.time_select :opening, label: "From" %>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :closing, label: "To", :include_blank => true %>
+      <%= time.time_select :closing, label: "To" %>
     </div>
     <% end %>
   </div>
