@@ -68,16 +68,12 @@
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="form-subtitle">Supplier Types</h4>
-        <% @supplier.supplier_types.each do |supplier_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag supplier_type.icon.url(:thumb) %> <%= supplier_type.name %></p></div>
-        <% end %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag @supplier.supplier_type.icon.url(:thumb) %> <%= @supplier.supplier_type.name %></p></div>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="form-subtitle">Location</h4>
-        <% @supplier.locations.each do |location| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag location.icon.url(:thumb) %> <%= location.name %></p></div>
-        <% end %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag @supplier.location.icon.url(:thumb) %> <%= @supplier.location.name %></p></div>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
