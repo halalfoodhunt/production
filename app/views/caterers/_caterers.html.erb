@@ -1,25 +1,23 @@
-    <% @caterers.each do |caterers| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <% if caterers.verified == true %>
-      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(caterers.qualifying_criterium.icon.url(:medium), :class => "img-responsive") %></span>
-<% else %>
-      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;">
-    <%= image_tag('unverified.png', :alt => "Unverified", :class => "img-responsive", :style => "width:120px;height:30px;") %>
-      </span>
-<% end %>
-      <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
-        <%= image_tag caterers.featured_image.url(:medium), :class => "img_responsive" %>
-        <div class="caption">
-          <div class="media">
-            <div class="media-left">
-              <%= image_tag caterers.logo.url(:medium), :class => "img-circle-40" %>
-            </div>
-            <div class="media-body">
-              <h5 class="media-heading"><%= link_to caterers.business_name, caterers_path(caterers) %></h5>
-              <p><i class="fa fa-map-marker"></i> <%= caterers.operating_address %></p>
-            </div>
-          </div>
+<% @caterers.each do |caterer| %>
+<div class="col-xs-12 col-sm-6 col-md-3">
+  <% if caterer.verified == true %>
+  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(caterer.qualifying_type.icon.url(:medium), :class => "img-responsive") %></span>
+  <% else %>
+ <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 8px 0px 8px; left:7%; top:3%;"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+  <% end %>
+  <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
+    <%= image_tag caterer.featured_image.url(:large), :class => "img_responsive" %>
+    <div class="caption">
+      <div class="media">
+        <div class="media-left">
+          <%= image_tag caterer.logo.url(:medium), :class => "img-circle-40" %>
+        </div>
+        <div class="media-body">
+          <h5 class="media-heading"><%= link_to caterer.business_name, caterer_path(caterer) %></h5>
+          <p><%= image_tag caterer.catering_type.icon.url(:thumb) %> <%= caterer.catering_type.name %></p>
         </div>
       </div>
     </div>
-    <% end %>
+  </div>
+</div>
+<% end %>
