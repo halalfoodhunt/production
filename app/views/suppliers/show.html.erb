@@ -1,10 +1,10 @@
 <%= render 'layouts/header' %>
-<div class="container-fluid">
-  <div class="row">
-    <div style="padding-left:0; padding-right:0" class="container-fluid">
-      <%= image_tag @supplier.featured_image.url(:large) %>
-    </div>
-    <div class="col-md-6 container" id="right">
+<div style="padding-left:0; padding-right:0; height:500px;" class="container-fluid">
+  <%= image_tag @supplier.featured_image.url(:large), :class => "img-responsive" %>
+</div>
+<div class="container-fluid show-bg" style="padding-bottom:50px;">
+  <div class="container form-style">
+    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
         <div class="media">
           <div class="media-left">
@@ -88,9 +88,9 @@
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="form-subtitle">supplier highlights</h4>
-        <% @supplier.supplier_highlights.each do |highlight| %>
+         <% @supplier.supplier_highlights.each do |highlight| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag highlight.icon.url(:thumb) %> <%= highlight.name %></p></div>
-        <% end %>
+         <% end %>
       </div>
     </div>
   </div>
