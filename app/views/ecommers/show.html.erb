@@ -49,7 +49,7 @@
       </div>  
       <div class="col-xs-12 col-sm-12 col-md-5">
         <div class="container-fluid" style="border:#ccc solid 1px;">
-          <h4 class="form-subtitle">Preferred Order Method</h4>
+          <h4 class="title">Preferred Order Method</h4>
           <p><%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p>
         </div>
         <br>
@@ -66,38 +66,38 @@
        </div>
        <br>
        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Establishment Type</h4>
+        <h4 class="title">Establishment Type</h4>
         <div class="col-xs-6 col-md-6"><p><%= image_tag @ecommer.establishment_type.icon.url(:thumb) %> <%= @ecommer.establishment_type.name %></p></div>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Location</h4>
+        <h4 class="title">Location</h4>
         <div class="col-xs-6 col-md-6"><p><%= image_tag @ecommer.location.icon.url(:thumb) %> <%= @ecommer.location.name %></p></div>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Ecommer Service Types</h4>
+        <h4 class="title">Ecommer Service Types</h4>
         <% @ecommer.service_types.each do |ecommer_service_type| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag ecommer_service_type.icon.url(:thumb) %> <%= ecommer_service_type.name %></p></div>
         <% end %>
       </div>
        <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Cuisine Types</h4>
+        <h4 class="title">Cuisine Types</h4>
         <% @ecommer.cuisine_types.each do |cuisine_type| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
         <% end %>
       </div>
        <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Food Types</h4>
+        <h4 class="title">Food Types</h4>
         <% @ecommer.food_types.each do |food_type| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag food_type.icon.url(:thumb) %> <%= food_type.name %></p></div>
         <% end %>
       </div>
        <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Price Range</h4>
+        <h4 class="title">Price Range</h4>
         <div class="col-xs-6 col-md-6"><p></p></div>
       </div>
     </div>
