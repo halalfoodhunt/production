@@ -3,8 +3,8 @@
   <center><%= image_tag @supplier.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
   </center>
 </div>
-<div style="height:200px; background:#22211d" class="container-fluid">
-  <div class="media">
+<div style="height:150px; background:#22211d" class="container-fluid">
+  <div class="media" style="margin-top:10px;">
     <div class="media-left">
       <a href="#">
         <%= image_tag @supplier.logo.url(:medium), :class => "media-object img-circle" %>
@@ -14,7 +14,7 @@
       <h1 class="media-heading form-subtitle">
         <%= @supplier.business_name %> (<%= @supplier.qualifying_type.name %>)
       </h1>
-      <h4><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %></h4>
+      <h4><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %> | <img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @supplier.general_contact_number %> | <br> <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %> | <%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %> </h4>
     </div>
   </div>
 </div>
@@ -25,10 +25,10 @@
         <table class="table">
           <thead>
             <tr><td></td></tr>
-            <tr><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr>
-            <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @supplier.general_contact_number %></p></td></tr>
-            <tr><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %></p></td></tr>
-            <tr><td><p>Social sites: <%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %></p></td>
+            <tr><td><p></p></td></tr>
+            <tr><td><p></p></td></tr>
+            <tr><td><p></p></td></tr>
+            <tr><td><p>Social sites: </p></td>
             </tr>
           </thead>
         </table>
