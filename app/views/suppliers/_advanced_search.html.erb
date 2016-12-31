@@ -9,7 +9,7 @@
     </div>
     <br>
     <div class="col-sm-12 col-md-6" style="padding:2px">
-     <%= f.collection_select(:supplier_types_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Types"}, {:class=>'form-control'}) %><br>
+     <br>
      <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
    </div>
    <div class="col-sm-12 col-md-6" style="padding:2px">
