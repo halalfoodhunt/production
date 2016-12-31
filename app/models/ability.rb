@@ -3,8 +3,7 @@ class Ability
 
   def initialize(merchant)
 
-    if merchant.admin?
-    can :manage, :all
+    can :manage, :all if merchant.role == "admin"
 else
     can :read, Place do |place|
         place.merchant == merchant
