@@ -1,65 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Suppliers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Business name</th>
-      <th>General contact number</th>
-      <th>General email</th>
-      <th>Operating address</th>
-      <th>Facebook</th>
-      <th>Instagram</th>
-      <th>Website</th>
-      <th>Preferred contact</th>
-      <th>Preferred order method</th>
-      <th>Question 1</th>
-      <th>Question 2</th>
-      <th>Question 3</th>
-      <th>Question 4</th>
-      <th>Question 5</th>
-      <th>Delivery url</th>
-      <th>Expiry date</th>
-      <th>Friends terms</th>
-      <th>Merchant</th>
-      <th>Draft</th>
-      <th>Verified</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @suppliers.each do |supplier| %>
-      <tr>
-        <td><%= supplier.business_name %></td>
-        <td><%= supplier.general_contact_number %></td>
-        <td><%= supplier.general_email %></td>
-        <td><%= supplier.operating_address %></td>
-        <td><%= supplier.facebook %></td>
-        <td><%= supplier.instagram %></td>
-        <td><%= supplier.website %></td>
-        <td><%= supplier.preferred_contact %></td>
-        <td><%= supplier.preferred_order_method %></td>
-        <td><%= supplier.question_1 %></td>
-        <td><%= supplier.question_2 %></td>
-        <td><%= supplier.question_3 %></td>
-        <td><%= supplier.question_4 %></td>
-        <td><%= supplier.question_5 %></td>
-        <td><%= supplier.delivery_url %></td>
-        <td><%= supplier.expiry_date %></td>
-        <td><%= supplier.friends_terms %></td>
-        <td><%= supplier.merchant_id %></td>
-        <td><%= supplier.draft %></td>
-        <td><%= supplier.verified %></td>
-        <td><%= link_to 'Show', supplier %></td>
-        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-        <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Supplier', new_supplier_path %>
+<% @suppliers.each do |supplier| %>
+<div class="col-xs-12 col-sm-6 col-md-3">
+  <% if supplier.verified == true %>
+  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(supplier.qualifying_type.icon.url(:medium), :class => "img-responsive") %></span>
+  <% else %>
+ <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 8px 0px 8px; left:7%; top:3%;"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+  <% end %>
+  <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
+    <%= image_tag supplier.featured_image.url(:medium), :class => "img_responsive" %>
+    <div class="caption">
+      <div class="media">
+        <div class="media-left">
+          <%= image_tag supplier.logo.url(:medium), :class => "img-circle-40" %>
+        </div>
+        <div class="media-body">
+          <h5 class="media-heading"><%= link_to supplier.business_name, supplier_path(supplier) %></h5>
+          <p><%= image_tag supplier.supplier_type.icon.url(:thumb) %> <%= supplier.supplier_type.name %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
