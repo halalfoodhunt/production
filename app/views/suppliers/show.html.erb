@@ -52,6 +52,7 @@
           <h4 class="title">Preferred Order Method</h4>
           <p><%= h(@supplier.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p>
         </div>
+        <br>
         <% unless @supplier.delivery_url.blank? %><p><%= link_to "Order NOW!", raw(@supplier.delivery_url), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p><% end %>
         <div class="row">
           <div class="col-xs-6">
