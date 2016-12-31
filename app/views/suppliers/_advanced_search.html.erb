@@ -9,16 +9,16 @@
     </div>
     <br>
     <div class="col-sm-12 col-md-6" style="padding:2px">
-     <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %><br>
-     <%= f.collection_select(:dining_types_id_eq_any, DiningType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
+     <%= f.collection_select(:supplier_types_id_eq_any, SupplierType.all, :id, :name, {:include_blank => "Supplier Types"}, {:class=>'form-control'}) %><br>
+     <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
    </div>
    <div class="col-sm-12 col-md-6" style="padding:2px">
-    <%= f.collection_select(:highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %>
+    <%= f.collection_select(:supplier_highlights_id_eq_any, SupplierHighlight.all, :id, :name, {:include_blank => "Supplier Highlights"}, {:class=>'form-control'}) %>
      <br>
-    <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
+    <%= f.collection_select(:price_range_id_eq, PriceRange.all, :id, :name, {:include_blank => "Price Range"}, {:class=>'form-control'}) %><br>
   </div>
   <div>
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-material-red" %>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-primary" %>
   </div>
 </div>
 <% end %>

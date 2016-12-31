@@ -1,25 +1,23 @@
-    <% @suppliers.each do |supplier| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <% if supplier.verified == true %>
-      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(supplier.qualifying_criterium.icon.url(:medium), :class => "img-responsive") %></span>
-<% else %>
-      <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;">
-    <%= image_tag('unverified.png', :alt => "Unverified", :class => "img-responsive", :style => "width:120px;height:30px;") %>
-      </span>
-<% end %>
-      <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
-        <%= image_tag supplier.featured_image.url(:medium), :class => "img_responsive" %>
-        <div class="caption">
-          <div class="media">
-            <div class="media-left">
-              <%= image_tag supplier.logo.url(:medium), :class => "img-circle-40" %>
-            </div>
-            <div class="media-body">
-              <h5 class="media-heading"><%= link_to supplier.business_name, supplier_path(supplier) %></h5>
-              <p><i class="fa fa-map-marker"></i> <%= supplier.operating_address %></p>
-            </div>
-          </div>
+<% @suppliers.each do |supplier| %>
+<div class="col-xs-12 col-sm-6 col-md-3">
+  <% if supplier.verified == true %>
+  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(supplier.qualifying_type.icon.url(:medium), :class => "img-responsive") %></span>
+  <% else %>
+ <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 8px 0px 8px; left:7%; top:3%;"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
+  <% end %>
+  <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
+    <%= image_tag supplier.featured_image.url(:medium), :class => "img_responsive" %>
+    <div class="caption">
+      <div class="media">
+        <div class="media-left">
+          <%= image_tag supplier.logo.url(:medium), :class => "img-circle-40" %>
+        </div>
+        <div class="media-body">
+          <h5 class="media-heading"><%= link_to supplier.business_name, supplier_path(supplier) %></h5>
+          <p><%= image_tag supplier.supplier_type.icon.url(:thumb) %> <%= supplier.supplier_type.name %></p>
         </div>
       </div>
     </div>
-    <% end %>
+  </div>
+</div>
+<% end %>
