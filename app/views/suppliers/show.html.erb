@@ -14,7 +14,7 @@
       <h1 class="media-heading form-subtitle">
         <%= @supplier.business_name %> (<%= @supplier.qualifying_type.name %>)
       </h1>
-      <h4><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %> | <img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @supplier.general_contact_number %> | <br> <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %> | <%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %> </h4>
+      <h4 style="color:#44C5C4;"><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %> | <img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @supplier.general_contact_number %> | <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %> | <%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %></h4>
     </div>
   </div>
 </div>
@@ -22,27 +22,15 @@
   <div class="container form-style">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
-        <table class="table">
-          <thead>
-            <tr><td></td></tr>
-            <tr><td><p></p></td></tr>
-            <tr><td><p></p></td></tr>
-            <tr><td><p></p></td></tr>
-            <tr><td><p>Social sites: </p></td>
-            </tr>
-          </thead>
-        </table>
-        <hr/>
-        <div class="container-fluid" style="padding:10px;">
-          <div class="col-xs-12 col-sm-12 col-md-3">
-            <div class="avatar"><center><%= image_tag @supplier.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
-            <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-            </center>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="avatar"><center><%= image_tag @supplier.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-9">
-            <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-            <p><%= @supplier.friends_terms %></p>
-          </div>
+          <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+          </center>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+          <p><%= @supplier.friends_terms %></p>
         </div>
         <div class="container-fluid">
           <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
@@ -56,8 +44,9 @@
           <p><%= h(@supplier.question_4).gsub(/\n/, '<br>').html_safe %></p>
           <h5 class="question">Please provide me links to reviews about you!</h5>
           <p><%= h(@supplier.question_5).gsub(/\n/, '<br>').html_safe %></p>
-        </div>
+        </div>  
       </div>
+      <hr/>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <div class="container-fluid" style="border:#ccc solid 1px;">
