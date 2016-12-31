@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  before_filter :is_admin?, only: [:admin_dashboard]
+  before_action :authenticate_merchant!, only: [:merchant_dashboard, :categories, :places, :ecommers, :food_deliveries, :caterers, :online_grocers, :lessons, :suppliers, :supermarkets ]
+  before_filter :is_admin?, only: [:admin_dashboard, :merchant_dashboard, :categories, :places, :ecommers, :food_deliveries, :caterers, :online_grocers, :lessons, :suppliers, :supermarkets]
   
   def index
    @search = Place.ransack(params[:q])
