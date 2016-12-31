@@ -11,11 +11,11 @@
       </a>
     </div>
     <div class="media-body">
-      <h1 class="media-heading form-subtitle">
+      <h3 class="media-heading form-subtitle">
         <%= @ecommer.business_name %> (<%= @ecommer.qualifying_type.name %>)
-      </h1>
-      <h4 style="color:#44C5C4; text-transform:none;"><i class="fa fa-map-marker"></i> <%= @ecommer.operating_address %> | <img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @ecommer.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @ecommer.general_contact_number %> | <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %> | <%= link_to @ecommer.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @ecommer.instagram do %><i class="fa fa-instagram"></i><% end %></h4>
-      <h4 style="color:#44C5C4; text-transform:none;"><%= image_tag @ecommer.location.icon.url(:thumb) %> <%= @ecommer.location.name %> | <%= @ecommer.price_range.price %></h4>
+      </h3>
+      <h5 style="color:#44C5C4; text-transform:none;"><i class="fa fa-map-marker"></i> <%= @ecommer.operating_address %> | <img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @ecommer.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @ecommer.general_contact_number %> | <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %> | <%= link_to @ecommer.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @ecommer.instagram do %><i class="fa fa-instagram"></i><% end %></h5>
+      <h5 style="color:#44C5C4; text-transform:none;"><%= image_tag @ecommer.location.icon.url(:thumb) %> <%= @ecommer.location.name %> | <%= @ecommer.price_range.price %></h5>
     </div>
   </div>
 </div>
