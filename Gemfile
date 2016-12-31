@@ -18,6 +18,8 @@ gem 'font-awesome-sass', '~> 4.6.2'
 
 gem 'bootstrap_form'
 
+gem "cancan"
+
 gem 'ransack'
 
 gem "select2-rails"
