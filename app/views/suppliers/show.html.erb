@@ -3,7 +3,7 @@
   <center><%= image_tag @supplier.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
   </center>
 </div>
-<div style="padding-left:0; padding-right:0; height:100px; background:#22211d" class="container-fluid">
+<div style="height:200px; background:#22211d" class="container-fluid">
   <div class="media">
     <div class="media-left">
       <a href="#">
@@ -11,7 +11,10 @@
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading form-subtitle"><%= @supplier.business_name %> (<%= @supplier.qualifying_type.name %>)</h4>
+      <h1 class="media-heading form-subtitle">
+        <%= @supplier.business_name %> (<%= @supplier.qualifying_type.name %>)
+      </h1>
+      <h4><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %></h4>
     </div>
   </div>
 </div>
@@ -21,7 +24,7 @@
       <div class="col-xs-12 col-sm-12 col-md-7">
         <table class="table">
           <thead>
-            <tr><td><p><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %></p></td></tr>
+            <tr><td></td></tr>
             <tr><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr>
             <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @supplier.general_contact_number %></p></td></tr>
             <tr><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %></p></td></tr>
