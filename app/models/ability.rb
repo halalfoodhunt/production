@@ -37,6 +37,7 @@ else
     can :destroy, Supplier do |Supplier|
         Supplier.merchant == merchant
     end
+    
     can :create, Supplier
     
     can :read, Caterer do |Caterer|
@@ -48,4 +49,6 @@ else
     can :destroy, Caterer do |Caterer|
         Caterer.merchant == merchant
     end
+end
+end
 end
