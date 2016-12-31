@@ -17,38 +17,38 @@ else
     end
     can :create, Place
     
-    can :read, Ecommer do |Ecommer|
+    can :read, Ecommer do |ecommer|
         Ecommer.merchant == merchant
     end
-    can :update, Ecommer do |Ecommer|
+    can :update, Ecommer do |ecommer|
         Ecommer.merchant == merchant
     end
-    can :destroy, Ecommer do |Ecommer|
+    can :destroy, Ecommer do |ecommer|
         Ecommer.merchant == merchant
     end
     can :create, Ecommer
     
-    can :read, Supplier do |Supplier|
+    can :read, Supplier do |supplier|
         Supplier.merchant == merchant
     end
-    can :update, Supplier do |Supplier|
+    can :update, Supplier do |supplier|
         Supplier.merchant == merchant
     end
-    can :destroy, Supplier do |Supplier|
+    can :destroy, Supplier do |supplier|
         Supplier.merchant == merchant
     end
-    
     can :create, Supplier
     
-    can :read, Caterer do |Caterer|
+    can :read, Caterer do |caterer|
         Caterer.merchant == merchant
     end
-    can :update, Caterer do |Caterer|
+    can :update, Caterer do |caterer|
         Caterer.merchant == merchant
     end
-    can :destroy, Caterer do |Caterer|
+    can :destroy, Caterer do |caterer|
         Caterer.merchant == merchant
     end
+    can :create, Caterer
 end
 end
 end
