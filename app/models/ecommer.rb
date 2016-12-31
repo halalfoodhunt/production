@@ -14,6 +14,7 @@ class Ecommer < ActiveRecord::Base
     belongs_to :merchant
     belongs_to :qualifying_type
     belongs_to :location
+    belongs_to :price_range
     belongs_to :establishment_type
     belongs_to :region
     belongs_to :friends_reward
