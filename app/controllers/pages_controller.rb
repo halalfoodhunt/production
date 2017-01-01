@@ -40,7 +40,7 @@ class PagesController < ApplicationController
  end
  
  def places
-  @places = @search.result.where(draft: false)
+  @places = Place.where(draft: false)
   @friends_rewards = FriendsReward.all
 end
 
