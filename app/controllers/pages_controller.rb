@@ -40,7 +40,6 @@ class PagesController < ApplicationController
  end
  
  def places
-  authorize! :places, @place
   @places = Place.all
   @friends_rewards = FriendsReward.all
 end
