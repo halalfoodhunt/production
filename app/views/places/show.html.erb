@@ -39,12 +39,15 @@
               </thead>
             </table>
           </div>
+          <% unless @place.friends_reward.icon.blank? %>
           <div class="container-fluid" style="background: white; padding:10px;">
             <div class="col-xs-12 col-sm-12 col-md-3">
               <div class="avatar"><center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
-              <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+              <center>
+                <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
               </center>
             </div>
+            <% end %>
             <div class="col-xs-12 col-sm-12 col-md-9">
               <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
               <p><%= @place.friends_rewards_terms %></p>
