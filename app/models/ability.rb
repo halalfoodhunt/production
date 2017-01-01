@@ -3,7 +3,7 @@ class Ability
 
   def initialize(merchant)
 
-    if merchant.admin?
+    if is_admin?(merchant)
     can :manage, :all
 else
     can :read, Place do |place|
