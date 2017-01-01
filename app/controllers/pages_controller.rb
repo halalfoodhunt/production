@@ -7,61 +7,67 @@ class PagesController < ApplicationController
    @places = @search.result.where(draft: false)
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
-  end
+ end
 
-  def merchant_dashboard
-  end
+ def merchant_dashboard
+ end
 
-  def admin_dashboard
-  end
+ def admin_dashboard
+ end
 
-  def corporate_services
-  end
+ def corporate_services
+ end
 
-  def getting_listed
-  end
+ def getting_listed
+ end
 
-  def about_us
-  end
+ def about_us
+ end
 
-  def terms_of_use
-  end
+ def terms_of_use
+ end
 
-  def caterers
-  end
-  
-  def ecommers
-  end
-  
-  def food_deliveries
-  end
-  
-  def lessons
-  end
-  
-  def places
-    authorize! :places, @place
-    @places = Place.all
-    @friends_rewards = FriendsReward.all
-  end
-  
-  def online_grocers
-  end
-  
-  def supermarkets
-  end
-  
-  def suppliers
-  end
-  
-  def friends_rewards
-    @friends_rewards = FriendsReward.all
-    @places = Place.all
-  end
-  
-  def ecommers_friends_rewards
-    @friends_rewards = FriendsReward.all
-    @ecommers = Ecommer.all
-  end
+ def caterers
+ end
+ 
+ def ecommers
+ end
+ 
+ def food_deliveries
+ end
+ 
+ def lessons
+ end
+ 
+ def places
+  authorize! :places, @place
+  @places = Place.all
+  @friends_rewards = FriendsReward.all
+end
+
+def online_grocers
+end
+
+def supermarkets
+end
+
+def suppliers
+end
+
+def friends_rewards
+  @friends_rewards = FriendsReward.all
+  @places = Place.all
+end
+
+def ecommers_friends_rewards
+  @friends_rewards = FriendsReward.all
+  @ecommers = Ecommer.all
+end
+
+def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render :text => "You are not authorised to perform this action", :status => :unauthorized
+ end
+end
 
 end
