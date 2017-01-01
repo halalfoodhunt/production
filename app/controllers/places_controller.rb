@@ -28,6 +28,7 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    @friends_rewards = FriendsReward.all
   end
 
   # GET /places/new
