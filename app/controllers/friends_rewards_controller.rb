@@ -1,6 +1,6 @@
 class FriendsRewardsController < ApplicationController
-  load_and_authorize_resource
   before_action :set_friends_reward, only: [:show, :edit, :update, :destroy]
+  before_filter :is_admin?, only: [:show, :edit, :update, :destroy]
 
   # GET /friends_rewards
   # GET /friends_rewards.json
@@ -61,6 +61,12 @@ class FriendsRewardsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render :text => "You are not authorised to perform this action", :status => :unauthorized
+ end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

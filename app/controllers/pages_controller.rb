@@ -69,7 +69,7 @@ def halal_delivery
 end
 
 def is_admin?
-  unless current_merchant && current_merchant.admin?
+  unless current_merchant.admin?
    render :text => "You are not authorised to perform this action", :status => :unauthorized
  end
 end
