@@ -1,5 +1,5 @@
 class FriendsRewardsController < ApplicationController
-  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
+  load_and_authorize_resource
   before_action :set_friends_reward, only: [:show, :edit, :update, :destroy]
 
   # GET /friends_rewards
