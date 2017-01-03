@@ -7,7 +7,7 @@ class PagesController < ApplicationController
    @places = @search.result.where(draft: false)
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
- end
+  end 
 
  def merchant_dashboard
  end
@@ -68,10 +68,10 @@ def halal_delivery
   @search = Place.ransack(params[:q])
 end
 
-def is_admin?
-  unless current_merchant.admin?
-   render :text => "You are not authorised to perform this action", :status => :unauthorized
- end
-end
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
+  end
 
 end
