@@ -35,12 +35,11 @@ class PlacesController < ApplicationController
   def new
     @current_merchant = current_merchant
     @place = Place.new
-    7.times { @place.opening_hours.build }
   end
 
   # GET /places/1/edit
   def edit
-    
+    7.times { @place.opening_hours.build }
   end
 
   # POST /places
@@ -76,7 +75,6 @@ class PlacesController < ApplicationController
     @place.cuisine_type_ids = params[:place][:cuisine_type_ids]
     @place.highlight_ids = params[:place][:highlight_ids]
     @place.dining_type_ids = params[:place][:dining_type_ids]
-    7.times { @place.opening_hours.build }
   end
 
   # DELETE /places/1
