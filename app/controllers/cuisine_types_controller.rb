@@ -1,4 +1,5 @@
 class CuisineTypesController < ApplicationController
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_cuisine_type, only: [:show, :edit, :update, :destroy]
 
   # GET /cuisine_types

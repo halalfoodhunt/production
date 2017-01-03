@@ -1,4 +1,5 @@
 class ClassTypesController < ApplicationController
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_class_type, only: [:show, :edit, :update, :destroy]
 
   # GET /class_types
