@@ -64,9 +64,9 @@ class FriendsRewardsController < ApplicationController
   
   def is_admin?
   unless current_merchant && current_merchant.admin?
-   render :text => "You are not authorised to perform this action", :status => :unauthorized
- end
-end
+   render "layouts/unauthorised"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
