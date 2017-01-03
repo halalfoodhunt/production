@@ -1,4 +1,5 @@
 class GrocerTypesController < ApplicationController
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_grocer_type, only: [:show, :edit, :update, :destroy]
 
   # GET /grocer_types

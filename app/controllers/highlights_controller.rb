@@ -1,4 +1,5 @@
 class HighlightsController < ApplicationController
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_highlight, only: [:show, :edit, :update, :destroy]
 
   # GET /highlights
