@@ -1,6 +1,6 @@
 class FriendsRewardsController < ApplicationController
   before_action :set_friends_reward, only: [:show, :edit, :update, :destroy]
-  before_filter :is_admin?, only: [:show, :edit, :update, :destroy]
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /friends_rewards
   # GET /friends_rewards.json
