@@ -32,7 +32,7 @@ class Ecommer < ActiveRecord::Base
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
   
-  has_attached_file :featured_image, styles: { large: "800x300#", medium: "450x300#", square: "500x500#", thumb: "100x67>" }, default_url: "/images/:style/image-placeholder.jpg"
+  has_attached_file :featured_image, styles: { large: "800x300#", medium: "800x500#", square: "500x500#", thumb: "100x67>" }, default_url: "/images/:style/image-placeholder.jpg"
   validates_attachment_content_type :featured_image, content_type: /\Aimage\/.*\Z/
   
   has_attached_file :image, styles: { large: "800x500>", medium: "450x300>", square: "500x500#", thumb: "100x67>" }, default_url: "/images/:style/image-placeholder.jpg"
