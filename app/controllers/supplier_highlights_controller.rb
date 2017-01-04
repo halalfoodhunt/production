@@ -1,4 +1,5 @@
 class SupplierHighlightsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_supplier_highlight, only: [:show, :edit, :update, :destroy]
 
   # GET /supplier_highlights
@@ -59,6 +60,12 @@ class SupplierHighlightsController < ApplicationController
       format.html { redirect_to supplier_highlights_url, notice: 'Supplier highlight was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

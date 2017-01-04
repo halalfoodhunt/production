@@ -1,4 +1,5 @@
 class VerifyingTypesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_verifying_type, only: [:show, :edit, :update, :destroy]
 
   # GET /verifying_types
@@ -59,6 +60,12 @@ class VerifyingTypesController < ApplicationController
       format.html { redirect_to verifying_types_url, notice: 'Verifying type was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

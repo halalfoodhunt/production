@@ -1,4 +1,5 @@
 class UsersTestimonialsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_users_testimonial, only: [:show, :edit, :update, :destroy]
 
   # GET /users_testimonials
@@ -59,6 +60,12 @@ class UsersTestimonialsController < ApplicationController
       format.html { redirect_to users_testimonials_url, notice: 'Users testimonial was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

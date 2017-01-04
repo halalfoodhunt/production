@@ -1,5 +1,5 @@
 class SuppliersController < ApplicationController
-  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_supplier, only: [:show, :edit, :update, :destroy]
 
   # GET /suppliers
@@ -68,6 +68,12 @@ class SuppliersController < ApplicationController
       format.html { redirect_to suppliers_url, notice: 'Supplier was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+    def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private
