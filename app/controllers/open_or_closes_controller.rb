@@ -1,4 +1,5 @@
 class OpenOrClosesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_open_or_close, only: [:show, :edit, :update, :destroy]
 
   # GET /open_or_closes
@@ -62,8 +63,14 @@ class OpenOrClosesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to open_or_closes_url, notice: 'Open or close was successfully destroyed.' }
       format.json { head :no_content }
-      format.js
+      format.jsw
     end
+  end
+
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

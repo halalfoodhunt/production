@@ -1,4 +1,5 @@
 class PlaceTypesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_place_type, only: [:show, :edit, :update, :destroy]
 
   # GET /place_types
@@ -64,6 +65,12 @@ class PlaceTypesController < ApplicationController
       format.json { head :no_content }
       format.js
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

@@ -1,5 +1,5 @@
 class CulinarySkillsController < ApplicationController
-  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
+   before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_culinary_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /culinary_skills
@@ -66,7 +66,13 @@ class CulinarySkillsController < ApplicationController
       format.js
     end
   end
-
+  
+def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_culinary_skill

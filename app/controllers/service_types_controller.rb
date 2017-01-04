@@ -1,4 +1,5 @@
 class ServiceTypesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_service_type, only: [:show, :edit, :update, :destroy]
 
   # GET /service_types
@@ -60,7 +61,13 @@ class ServiceTypesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+ def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service_type

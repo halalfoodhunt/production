@@ -1,4 +1,5 @@
 class RegionsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_region, only: [:show, :edit, :update, :destroy]
 
   # GET /regions
@@ -60,7 +61,13 @@ class RegionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+ def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region

@@ -1,4 +1,5 @@
 class ProductSourcesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_product_source, only: [:show, :edit, :update, :destroy]
 
   # GET /product_sources
@@ -59,6 +60,12 @@ class ProductSourcesController < ApplicationController
       format.html { redirect_to product_sources_url, notice: 'Product source was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

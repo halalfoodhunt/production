@@ -1,4 +1,5 @@
 class PriceRangesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_price_range, only: [:show, :edit, :update, :destroy]
 
   # GET /price_ranges
@@ -66,6 +67,12 @@ class PriceRangesController < ApplicationController
     end
   end
 
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_price_range

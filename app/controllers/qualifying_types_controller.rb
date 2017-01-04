@@ -1,4 +1,5 @@
 class QualifyingTypesController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_qualifying_type, only: [:show, :edit, :update, :destroy]
 
   # GET /qualifying_types
@@ -59,6 +60,12 @@ class QualifyingTypesController < ApplicationController
       format.html { redirect_to qualifying_types_url, notice: 'Qualifying type was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private

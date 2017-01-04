@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -64,6 +65,12 @@ class LocationsController < ApplicationController
       format.json { head :no_content }
       format.js
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private
