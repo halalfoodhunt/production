@@ -1,5 +1,4 @@
 class EcommersController < ApplicationController
-   before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_ecommer, only: [:show, :edit, :update, :destroy]
 
   # GET /ecommers
@@ -70,12 +69,6 @@ class EcommersController < ApplicationController
       format.html { redirect_to ecommers_url, notice: 'Ecommer was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-  
-  def is_admin?
-  unless current_merchant && current_merchant.admin?
-   render "layouts/unauthorised"
-  end
   end
 
   private
