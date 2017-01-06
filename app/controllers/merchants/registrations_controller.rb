@@ -11,7 +11,7 @@ class Merchants::RegistrationsController < Devise::RegistrationsController
 	private
 	
 	def after_sign_up_path_for(resource)
-    koudoku_pricing_path
+    koudoku.new_subscription_path(resource, plan: Plan.first.id)
 	end
 
 	
