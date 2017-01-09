@@ -31,8 +31,8 @@
             <table class="table table-striped">
               <thead>
                 <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
-                <% unless @place.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"><%= @place.general_email %></p></td></tr><% end %>
-                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16">+65  <%= @place.general_contact_number %></p></td></tr>
+                <% unless @place.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @place.general_email %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @place.general_contact_number %></p></td></tr>
                 <% unless @place.website.blank? %><tr style="border-top:#ccc solid 1px">
                   <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @place.website, "#{@place.website}" %></p></td></tr><% end %>
                 <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @place.facebook.blank? %><%= link_to @place.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
