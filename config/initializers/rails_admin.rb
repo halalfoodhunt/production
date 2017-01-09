@@ -8,7 +8,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_merchant)
     
   config.authorize_with do
-    redirect_to main_app.root_path unless current_merchant.is_admin?
+    redirect_to main_app.root_path unless current_merchant.admin?
   end
 
   ## == Cancan ==
