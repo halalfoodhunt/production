@@ -70,7 +70,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @current_merchant.ecommers.each do |ecommer %>
+            <% @current_merchant.ecommers.each do |ecommer| %>
             <tr>
              <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to ecommer.business_name, edit_place_path(place) %></td>
