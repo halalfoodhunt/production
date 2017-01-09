@@ -42,6 +42,8 @@ gem 'geocoder'
 
 gem 'gmaps4rails'
 
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 gem 'devise'
 
 gem 'koudoku'

@@ -76,6 +76,7 @@ class PlacesController < ApplicationController
     @place.cuisine_type_ids = params[:place][:cuisine_type_ids]
     @place.highlight_ids = params[:place][:highlight_ids]
     @place.dining_type_ids = params[:place][:dining_type_ids]
+
   end
 
   # DELETE /places/1
