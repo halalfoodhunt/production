@@ -8,6 +8,9 @@ class ListingsController < ApplicationController
     @current_merchant = current_merchant
     @listings = Listing.all
     @places = Place.all
+    @ecommers = Ecommer.all
+    @caterers = Caterer.all
+    @food_deliveries = FoodDelivery.all
   end
 
   # GET /listings/1
