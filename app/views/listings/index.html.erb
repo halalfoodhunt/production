@@ -67,7 +67,7 @@
                 <td><%= ecommer.draft ? "Draft" : "Published" %></td>
                 <td><%= ecommer.expiry_date.strftime("%d %b %Y") %></td>
                 <td><%= link_to 'Show', ecommer %></td>
-                <td><%= link_to 'Edit', edit_ecommer_path(place) %></td>
+                <td><%= link_to 'Edit', edit_ecommer_path(ecommer) %></td>
                 <td><%= link_to 'Destroy', ecommer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
             <% end %>
