@@ -6,7 +6,7 @@ class Place < ActiveRecord::Base
   accepts_nested_attributes_for  :opening_hours
   
   before_create :set_expiration_date
-  after_create :set_halal_expiry
+  before_create :set_halal_expiry
 
   validates_presence_of :merchant_id
   validates_presence_of :business_name
