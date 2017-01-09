@@ -3,9 +3,7 @@ class Ability
 
   def initialize(merchant)
 
-    if merchant.role? :admin
-    can :access, :rails_admin   # grant access to rails_admin
-    can :dashboard              # grant access to the dashboard
+    if merchant.admin?
     can :manage, :all
     else
     can :read, Place do |place|
