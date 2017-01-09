@@ -57,6 +57,34 @@
             <% end %>
           </tbody>
         </table>
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+                <th></th>
+                <th>Business name</th>
+                <th>Halal Status</th>
+                <th>Verified</th>
+                <th>Status</th>
+                <th>Expiry Date</th>
+                <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @current_merchant.ecommers.each do |ecommer %>
+            <tr>
+             <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
+                <td><%= link_to ecommer.business_name, edit_place_path(place) %></td>
+                <td><%= link_to ecommer.qualifying_type.name %></td>
+                <td><%= ecommer.verified ? "Verified" : "Unverified" %></td>
+                <td><%= ecommer.draft ? "Draft" : "Published" %></td>
+                <td><%= ecommer.expiry_date.strftime("%d %b %Y") %></td>
+                <td><%= link_to 'Show', ecommer %></td>
+                <td><%= link_to 'Edit', edit_ecommer_path(place) %></td>
+                <td><%= link_to 'Destroy', ecommer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
