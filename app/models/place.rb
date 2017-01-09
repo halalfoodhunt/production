@@ -6,7 +6,7 @@ class Place < ActiveRecord::Base
   accepts_nested_attributes_for  :opening_hours
   
   before_create :set_expiration_date
-  before_create :halal_expiry
+  before_create :set_halal_expiry
 
   validates_presence_of :merchant_id
   validates_presence_of :business_name
@@ -34,7 +34,7 @@ class Place < ActiveRecord::Base
     self.expiry_date =  Date.today + 365.days
   end
   
-  def halal_expiry
+  def set_halal_expiry
     self.halal_expiry =  Date.today + 365.days
   end
   
