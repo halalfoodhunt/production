@@ -1,4 +1,8 @@
 RailsAdmin.config do |config|
+  
+  config.authorize_with do
+    redirect_to main_app.root_path unless current_merchant.is_admin?
+  end
 
   ### Popular gems integration
 
