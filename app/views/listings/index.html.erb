@@ -56,20 +56,7 @@
             </tr>
             <% end %>
           </tbody>
-        </table>
-        <% unless @ecommers.empty? %>
-        <table class="table table-responsive">
-          <thead>
-            <tr>
-                <th></th>
-                <th>Business name</th>
-                <th>Halal Status</th>
-                <th>Verified</th>
-                <th>Status</th>
-                <th>Expiry Date</th>
-                <th colspan="3"></th>
-            </tr>
-          </thead>
+          <% unless @current_merchant.ecommers.empty? %>
           <tbody>
             <% @current_merchant.ecommers.each do |ecommer| %>
             <tr>
@@ -85,8 +72,8 @@
             </tr>
             <% end %>
           </tbody>
+          <% end %>
         </table>
-        <% end %>
       </div>
     </div>
   </div>
