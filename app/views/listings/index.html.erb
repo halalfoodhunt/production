@@ -60,7 +60,7 @@
           <tbody>
             <% @current_merchant.ecommers.each do |ecommer| %>
             <tr>
-             <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
+             <td><%= image_tag ecommer.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to ecommer.business_name, edit_place_path(place) %></td>
                 <td><%= link_to ecommer.qualifying_type.name %></td>
                 <td><%= ecommer.verified ? "Verified" : "Unverified" %></td>
