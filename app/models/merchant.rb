@@ -9,6 +9,10 @@ class Merchant < ActiveRecord::Base
     self.role ||= :free
   end
   
+  def is_admin?
+    self.merchant_role == 4
+  end
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
