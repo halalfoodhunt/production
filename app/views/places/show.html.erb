@@ -76,16 +76,19 @@
         <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
           <h4 class="title">Opening Hours</h4>
           <% @place.opening_hours.each do |time| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="col-xs-12 col-sm-6 col-md-5">
             <%= time.day.name %>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-2">
             <%= time.open_or_close.name %>
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="col-xs-12 col-sm-6 col-md-2">
             <%= time.opening.strftime("%I:%M %p") %>
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="col-xs-12 col-sm-6 col-md-1">
+            <p>-</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-2">
             <%= time.closing.strftime("%I:%M %p") %>
           </div>
           <% end %>
