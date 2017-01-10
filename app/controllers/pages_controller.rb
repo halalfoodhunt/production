@@ -31,6 +31,9 @@ class PagesController < ApplicationController
  end
  
  def ecommers
+    @search = Ecommer.ransack(params[:q])
+    @ecommers = @search.result
+    @friends_rewards = FriendsReward.all
  end
  
  def food_deliveries
