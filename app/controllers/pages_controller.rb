@@ -42,11 +42,11 @@ class PagesController < ApplicationController
  def lessons
  end
  
-    def places
+ def places
     @search = Place.ransack(params[:q])
     @places = @search.result
     @friends_rewards = FriendsReward.all
-    end
+ end
 
 def online_grocers
 end
