@@ -35,6 +35,7 @@ class PlacesController < ApplicationController
   def new
     @current_merchant = current_merchant
     @place = Place.new
+    7.times { @place.opening_hours.build }
   end
 
   # GET /places/1/edit
@@ -54,7 +55,6 @@ class PlacesController < ApplicationController
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
-    7.times { @place.opening_hours.build }
     @place.cuisine_type_ids = params[:place][:cuisine_type_ids]
     @place.highlight_ids = params[:place][:highlight_ids]
     @place.dining_type_ids = params[:place][:dining_type_ids]
