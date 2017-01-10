@@ -70,6 +70,20 @@ class EcommersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def edit_multiple
+  @ecommers = Ecommer.friendly.find(params[:ecommer_ids])
+  end
+
+  def update_multiple
+  @ecommers = Ecommer.friendly.update(params[:ecommers].keys, params[:ecommers].values)
+  @ecommers.reject! { |p| p.errors.empty? }
+  if @ecommers.empty?
+    redirect_to pages_ecommers_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

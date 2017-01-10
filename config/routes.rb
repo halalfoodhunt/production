@@ -87,7 +87,12 @@ Rails.application.routes.draw do
   resources :lessons
   resources :caterer_packages
   resources :caterers
-  resources :ecommers
+  resources :ecommers do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :places do
      collection do
       get :edit_multiple
