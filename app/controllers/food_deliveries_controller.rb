@@ -5,12 +5,6 @@ class FoodDeliveriesController < ApplicationController
   # GET /food_deliveries
   # GET /food_deliveries.json
   def index
-     if params[:highlight].blank?
-			@food_delivery = Food Delivery.where(draft: false).order("created_at DESC")
-		else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@food_delivery = Food Delivery.where(highlight_id: @highlight_id).order("created_at DESC")
-		end
     @search = Food Delivery.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @food_delivery = @search.result.where(draft: false)
