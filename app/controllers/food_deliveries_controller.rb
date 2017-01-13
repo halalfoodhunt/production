@@ -5,7 +5,7 @@ class FoodDeliveriesController < ApplicationController
   # GET /food_deliveries
   # GET /food_deliveries.json
   def index
-    @search = Food Delivery.ransack(params[:q])
+    @search = FoodDelivery.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @food_delivery = @search.result.where(draft: false)
     @qualifying_type = QualifyingType.all
@@ -69,7 +69,7 @@ class FoodDeliveriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_food_delivery
-       @food_delivery = Food Delivery.friendly.find(params[:id])
+       @food_delivery = FoodDelivery.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

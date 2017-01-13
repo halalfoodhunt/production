@@ -5,13 +5,7 @@ class OnlineGrocersController < ApplicationController
   # GET /online_grocers
   # GET /online_grocers.json
   def index
-     if params[:highlight].blank?
-			@online_grocers = Online Grocer.where(draft: false).order("created_at DESC")
-		else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@online_grocers = Online Grocer.where(highlight_id: @highlight_id).order("created_at DESC")
-		end
-    @search = Online Grocer.ransack(params[:q])
+    @search = OnlineGrocer.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @online_grocers = @search.result.where(draft: false)
     @qualifying_type = QualifyingType.all
@@ -75,7 +69,7 @@ class OnlineGrocersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_online_grocer
-      @online_grocer = Online Grocer.friendly.find(params[:id])
+      @online_grocer = OnlineGrocer.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
