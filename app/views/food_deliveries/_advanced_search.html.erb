@@ -8,10 +8,10 @@
       <%= f.text_field :brand_name_cont, class: "form-control" %>
     </div>
     <br>
-    <div class="col-sm-12 col-md-6" style="padding:2px">
+    <div class="col-sm-12 col-md-6" style="padding:2px; margin-bottom:20px;">
      <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
    </div>
-   <div class="col-sm-12 col-md-6" style="padding:2px">
+   <div class="col-sm-12 col-md-6" style="padding:2px; margin-bottom:20px;">
     <%= f.collection_select(:food_delivery_types_id_eq_any, FoodDeliveryType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
   </div>
   <div>
