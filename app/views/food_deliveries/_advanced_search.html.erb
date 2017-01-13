@@ -15,7 +15,7 @@
     <%= f.collection_select(:food_delivery_types_id_eq_any, FoodDeliveryType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
   </div>
   <div>
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger", style: "margin-bottom:10px;" %>
   </div>
 </div>
 <% end %>
