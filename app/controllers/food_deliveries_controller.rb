@@ -7,7 +7,7 @@ class FoodDeliveriesController < ApplicationController
   def index
     @search = FoodDelivery.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
-    @food_delivery = @search.result.where(draft: false)
+    @food_deliveries = @search.result.where(draft: false)
     @qualifying_type = QualifyingType.all
   end
 
