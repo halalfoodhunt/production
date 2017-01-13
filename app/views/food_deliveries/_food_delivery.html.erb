@@ -1,4 +1,4 @@
-    <% @food_delivery.each do |food_delivery| %>
+    <% @food_deliveries.each do |food_delivery| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
       <% if food_delivery.verified == true %>
       <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(food_delivery.qualifying_criterium.icon.url(:medium), :class => "img-responsive") %></span>
