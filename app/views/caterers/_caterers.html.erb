@@ -14,7 +14,9 @@
         </div>
         <div class="media-body">
           <h5 class="media-heading"><%= link_to caterer.business_name, caterer_path(caterer) %></h5>
-          <p><%= image_tag caterer.caterer_type.icon.url(:thumb) %> <%= caterer.caterer_type.name %></p>
+          <p><% caterer.caterer_types.each do |caterer_type| %>
+          <%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %>
+          <% end %></p>
         </div>
       </div>
     </div>
