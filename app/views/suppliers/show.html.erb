@@ -17,6 +17,7 @@
           <h4 class="media-heading title"><%= @supplier.business_name %> (<%= @supplier.qualifying_type.name %>)</h4>
           <table class="table table-striped">
             <thead>
+              <tr><td><p><%= image_tag @supplier.supplier_type.icon.url(:thumb) %> <%= @supplier.supplier_type.name %></p></td></tr>
               <tr><% unless @supplier.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %>, <%= image_tag @supplier.location.icon.url(:thumb) %> <%= @supplier.location.name %> </p></td><% end %></tr>
               <% unless @supplier.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr><% end %>
               <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @supplier.general_contact_number %></p></td></tr>
@@ -26,7 +27,6 @@
                 <td><p>Social sites: <% unless @supplier.facebook.blank? %><%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
                   <% unless @supplier.instagram.blank? %><%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
                 </td>
-                <td><p><%= image_tag @supplier.supplier_type.icon.url(:thumb) %> <%= @supplier.supplier_type.name %></p></td>
               </tr>
             </thead>
           </table>
