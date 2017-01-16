@@ -40,6 +40,8 @@ class CaterersController < ApplicationController
         format.json { render json: @caterer.errors, status: :unprocessable_entity }
       end
     end
+    @ecommer.caterer_type_ids = params[:caterer][:caterer_type_ids]
+    @ecommer.cuisine_type_ids = params[:caterer][:cuisine_type_ids]
   end
 
   # PATCH/PUT /caterers/1
@@ -54,6 +56,8 @@ class CaterersController < ApplicationController
         format.json { render json: @caterer.errors, status: :unprocessable_entity }
       end
     end
+    @ecommer.caterer_type_ids = params[:caterer][:caterer_type_ids]
+    @ecommer.cuisine_type_ids = params[:caterer][:cuisine_type_ids]
   end
 
   # DELETE /caterers/1
