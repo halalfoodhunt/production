@@ -3,72 +3,81 @@
   <div class="container form-style" style="margin-top:50px;">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
-        <div class="media" style="margin-top:10px;">
-          <div class="media-left">
-            <a href="#">
-              <%= image_tag @food_delivery.logo.url(:medium), :class => "media-object img-circle" %>
-            </a>
-          </div>
-          <div class="media-body">
-            <h3 class="media-heading form-subtitle" style="color:#22211d;">
-              <%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)
-            </h3>
-            <h5 style="color:#EF6C3D; text-transform:none;"><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %> <br><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @food_delivery.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @food_delivery.general_contact_number %> <br> <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %> | <%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %></h5>
-            <h5 style="color:#EF6C3D; text-transform:none;">Price Range: <%= @food_delivery.price_range.price %></h5>
-          </div>
+       <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <%= image_tag @food_delivery.logo.url(:medium), :class => "media-object img-circle" %>
+          </a>
         </div>
-        <div class="container-fluid" style="border:#ccc solid 1px; padding:10px; background:#fff;">
-          <div class="col-xs-12 col-sm-12 col-md-3">
-            <div class="avatar">
-              <center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
-            </div>
-            <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-            </center>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-9">
-            <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-            <p><%= @food_delivery.friends_rewards_terms %></p>
-          </div>
+        <div class="media-body">
+          <h4 class="media-heading title"><%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr><td><p><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %></p></td></tr>
+              <% unless @food_delivery.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr><% end %>
+              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
+              <% unless @food_delivery.website.blank? %><tr style="border-top:#ccc solid 1px">
+              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr><% end %>
+              <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @food_delivery.facebook.blank? %><%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+                <% unless @food_delivery.instagram.blank? %><%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
+              </tr>
+            </thead>
+          </table>
         </div>
-        <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-        <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
-        <p><%= h(@food_delivery.question_1).gsub(/\n/, '<br>').html_safe %></p>
-        <h5 class="question">How do I place an order with you?</h5>
-        <p><%= h(@food_delivery.question_2).gsub(/\n/, '<br>').html_safe %></p>
-        <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
-        <p><%= h(@food_delivery.question_3).gsub(/\n/, '<br>').html_safe %></p>
-        <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
-        <p><%= h(@food_delivery.question_4).gsub(/\n/, '<br>').html_safe %></p>
-        <h5 class="question">Please provide me with links to reviews about you.</h5>
-        <p><%= h(@food_delivery.question_5).gsub(/\n/, '<br>').html_safe %></p>
-      </div>  
-      <div class="col-xs-12 col-sm-12 col-md-5">
-        <br>
-        <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= image_tag @food_delivery.image.url(:square), :class => "img-thumbnail" %><br><br>
-            <%= image_tag @food_delivery.image_2.url(:square), :class => "img-thumbnail" %>
-          </div>
-          <div class="col-xs-6">
-           <%= image_tag @food_delivery.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-           <%= image_tag @food_delivery.image_4.url(:square), :class => "img-thumbnail" %>
-         </div>
-       </div>
-       <br>
-       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Food Delivery Type</h4>
-        <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
-        <% end %>
       </div>
+      <% unless @food_delivery.friends_rewards_terms.blank? %>
+      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="avatar"><center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+          <center>
+            <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+          </center>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+          <p><%= @food_delivery.friends_rewards_terms %></p>
+        </div>
+      </div>
+      <% end %>
+      <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
+      <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
+      <p><%= h(@food_delivery.question_1).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">How do I place an order with you?</h5>
+      <p><%= h(@food_delivery.question_2).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
+      <p><%= h(@food_delivery.question_3).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
+      <p><%= h(@food_delivery.question_4).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">Please provide me with links to reviews about you.</h5>
+      <p><%= h(@food_delivery.question_5).gsub(/\n/, '<br>').html_safe %></p>
+    </div>  
+    <div class="col-xs-12 col-sm-12 col-md-5">
       <br>
-      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Cuisine Types</h4>
-        <% @food_delivery.cuisine_types.each do |cuisine_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
-        <% end %>
-      </div>
+      <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= image_tag @food_delivery.image.url(:square), :class => "img-thumbnail" %><br><br>
+          <%= image_tag @food_delivery.image_2.url(:square), :class => "img-thumbnail" %>
+        </div>
+        <div class="col-xs-6">
+         <%= image_tag @food_delivery.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+         <%= image_tag @food_delivery.image_4.url(:square), :class => "img-thumbnail" %>
+       </div>
+     </div>
+     <br>
+     <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Food Delivery Type</h4>
+      <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
+      <% end %>
+    </div>
+    <br>
+    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Cuisine Types</h4>
+      <% @food_delivery.cuisine_types.each do |cuisine_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
