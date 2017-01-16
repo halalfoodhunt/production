@@ -13,7 +13,7 @@
           <h4 class="media-heading title"><%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)</h4>
           <table class="table table-striped">
             <thead>
-              <tr><td><p><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %></p></td></tr>
+              <tr><td><p><% unless @food_delivery.contactable_hours.blank? %><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %><% end %></p></td></tr>
               <% unless @food_delivery.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr><% end %>
               <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
               <% unless @food_delivery.website.blank? %><tr style="border-top:#ccc solid 1px">
