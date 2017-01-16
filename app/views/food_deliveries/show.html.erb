@@ -63,8 +63,10 @@
        </div>
        <br>
        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Establishment Type</h4>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag @food_delivery.food_delivery_type.icon.url(:thumb) %> <%= @food_delivery.food_delivery_type.name %></p></div>
+        <h4 class="title">Food Delivery Type</h4>
+        <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
+        <% end %>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
