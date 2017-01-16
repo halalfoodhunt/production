@@ -3,26 +3,35 @@
   <center><%= image_tag @supplier.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
   </center>
 </div>
-<div style="height:150px; background:#22211d" class="container-fluid">
-  <div class="media" style="margin-top:10px;">
-    <div class="media-left">
-      <a href="#">
-        <%= image_tag @supplier.logo.url(:medium), :class => "media-object img-circle" %>
-      </a>
-    </div>
-    <div class="media-body">
-      <h3 class="media-heading form-subtitle">
-        <%= @supplier.business_name %> (<%= @supplier.qualifying_type.name %>)
-      </h3>
-      <h5 style="color:#44C5C4; text-transform:none;"><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %> | <img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supplier.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @supplier.general_contact_number %> | <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %> | <%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %></h5>
-      <h5 style="color:#44C5C4; text-transform:none;"><%= image_tag @supplier.location.icon.url(:thumb) %> <%= @supplier.location.name %> | <%= image_tag @supplier.supplier_type.icon.url(:thumb) %> <%= @supplier.supplier_type.name %> </h5>
-    </div>
-  </div>
-</div>
 <div class="container-fluid show-bg" style="padding-bottom:50px;">
   <div class="container form-style">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
+         <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <%= image_tag @supplier.logo.url(:medium), :class => "media-object img-circle" %>
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading title"><%= @supplier.brand_name %> (<%= @supplier.qualifying_type.name %>)</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr><% unless @supplier.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %>, <%= image_tag @supplier.location.icon.url(:thumb) %> <%= @supplier.location.name %> </p></td><% end %></tr>
+              <% unless @supplier.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr><% end %>
+              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @supplier.general_contact_number %></p></td></tr>
+              <% unless @supplier.website.blank? %><tr style="border-top:#ccc solid 1px">
+              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %></p></td></tr><% end %>
+              <tr style="border-top:#ccc solid 1px">
+                <td><p>Social sites: <% unless @supplier.facebook.blank? %><%= link_to @supplier.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+                <% unless @supplier.instagram.blank? %><%= link_to @supplier.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
+                </td>
+                <td><p><%= image_tag @supplier.supplier_type.icon.url(:thumb) %> <%= @supplier.supplier_type.name %></p></td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
         <div class="container-fluid" style="border:#ccc solid 1px; padding:10px;">
         <div class="col-xs-12 col-sm-12 col-md-3">
             <div class="avatar">
