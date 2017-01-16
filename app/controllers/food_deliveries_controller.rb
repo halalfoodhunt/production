@@ -9,7 +9,6 @@ class FoodDeliveriesController < ApplicationController
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @food_deliveries = @search.result.where(draft: false)
     @qualifying_type = QualifyingType.all
-    @cuisine_types = CuisineType.all
   end
 
   # GET /food_deliveries/1
@@ -42,7 +41,7 @@ class FoodDeliveriesController < ApplicationController
       end
     end
     @food_delivery.food_delivery_type_ids = params[:food_delivery][:food_delivery_type_ids]
-    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_ids]
+    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_type_ids]
   end
 
   # PATCH/PUT /food_deliveries/1
