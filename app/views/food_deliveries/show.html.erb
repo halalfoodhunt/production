@@ -14,7 +14,7 @@
               <%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)
             </h3>
             <h5 style="color:#EF6C3D; text-transform:none;"><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %> <br><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @food_delivery.general_email %> | <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16"> +65 <%= @food_delivery.general_contact_number %> <br> <img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %> | <%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %></h5>
-            <h5 style="color:#EF6C3D; text-transform:none;"> <%= @food_delivery.price_range.price %></h5>
+            <h5 style="color:#EF6C3D; text-transform:none;">Price Range: <%= @food_delivery.price_range.price %></h5>
           </div>
         </div>
         <div class="container-fluid" style="border:#ccc solid 1px; padding:10px;">
