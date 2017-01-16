@@ -1,6 +1,9 @@
 <%= render 'layouts/header' %>
 <div class="container-fluid show-bg" style="padding-bottom:50px;">
-  <div class="media" style="margin-top:10px;">
+  <div class="container form-style">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7">
+        <div class="media" style="margin-top:10px;">
     <div class="media-left">
       <a href="#">
         <%= image_tag @food_delivery.logo.url(:medium), :class => "media-object img-circle" %>
@@ -14,9 +17,6 @@
       <h5 style="color:#44C5C4; text-transform:none;"> <%= @food_delivery.price_range.price %></h5>
     </div>
   </div>
-  <div class="container form-style">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-7">
         <div class="container-fluid" style="border:#ccc solid 1px; padding:10px;">
         <div class="col-xs-12 col-sm-12 col-md-3">
             <div class="avatar">
