@@ -57,7 +57,7 @@ class FoodDeliveriesController < ApplicationController
       end
     end
     @food_delivery.food_delivery_type_ids = params[:food_delivery][:food_delivery_type_ids]
-    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_ids]
+    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_type_ids]
   end
 
   # DELETE /food_deliveries/1
