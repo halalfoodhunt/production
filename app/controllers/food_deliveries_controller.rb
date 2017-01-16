@@ -40,6 +40,8 @@ class FoodDeliveriesController < ApplicationController
         format.json { render json: @food_delivery.errors, status: :unprocessable_entity }
       end
     end
+    @food_delivery.food_delivery_type_ids = params[:food_delivery][:food_delivery_type_ids]
+    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_ids]
   end
 
   # PATCH/PUT /food_deliveries/1
@@ -54,6 +56,8 @@ class FoodDeliveriesController < ApplicationController
         format.json { render json: @food_delivery.errors, status: :unprocessable_entity }
       end
     end
+    @food_delivery.food_delivery_type_ids = params[:food_delivery][:food_delivery_type_ids]
+    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_ids]
   end
 
   # DELETE /food_deliveries/1
