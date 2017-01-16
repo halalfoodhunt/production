@@ -29,7 +29,7 @@ class CaterersController < ApplicationController
   # POST /caterers
   # POST /caterers.json
   def create
-    @caterer = current_merchant.caterer.new(caterer_params)
+    @caterer = current_merchant.caterers.new(caterer_params)
 
     respond_to do |format|
       if @caterer.save

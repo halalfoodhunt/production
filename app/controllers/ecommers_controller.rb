@@ -41,7 +41,7 @@ class EcommersController < ApplicationController
     end
     @ecommer.service_type_ids = params[:ecommer][:service_type_ids]
     @ecommer.food_type_ids = params[:ecommer][:food_type_ids]
-    @ecommer.cuisine_type_ids = params[:ecommer][:cuisine_ids]
+    @ecommer.cuisine_type_ids = params[:ecommer][:cuisine_type_ids]
   end
 
   # PATCH/PUT /ecommers/1
@@ -58,7 +58,7 @@ class EcommersController < ApplicationController
     end
     @ecommer.service_type_ids = params[:ecommer][:service_type_ids]
     @ecommer.food_type_ids = params[:ecommer][:food_type_ids]
-    @ecommer.cuisine_type_ids = params[:ecommer][:cuisine_ids]
+    @ecommer.cuisine_type_ids = params[:ecommer][:cuisine_type_ids]
   end
 
   # DELETE /ecommers/1
