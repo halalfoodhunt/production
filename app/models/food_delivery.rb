@@ -13,6 +13,7 @@ class FoodDelivery < ActiveRecord::Base
     belongs_to :qualifying_type
     belongs_to :region
     belongs_to :friends_reward
+    belongs_to :price_range
     has_many :food_delivery_types, :through => :dish_delivery_types
     has_many :dish_delivery_types
     has_many :cuisine_types, :through => :menu_types
