@@ -9,8 +9,6 @@ class FoodDeliveriesController < ApplicationController
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @food_deliveries = @search.result.where(draft: false)
     @qualifying_type = QualifyingType.all
-    @food_delivery.cuisine_type_ids = params[:food_delivery][:cuisine_ids]
-    @food_delivery.food_delivery_type_ids = params[:food_delivery][:food_delivery_type_ids]
   end
 
   # GET /food_deliveries/1
