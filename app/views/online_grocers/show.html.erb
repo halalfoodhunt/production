@@ -74,7 +74,8 @@
        <br>
        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="title">Grocer Type</h4>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag @online_grocer.grocer_type.icon.url(:thumb) %> <%= @online_grocer.grocer_type.name %></p></div>
+        <% @online_grocer.grocer_types.each do |grocer_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_type.icon.url(:thumb) %> <%= grocer_type.name %></p></div><% end %>
       </div>
       <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
