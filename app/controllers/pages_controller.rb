@@ -28,6 +28,9 @@ class PagesController < ApplicationController
  end
 
  def caterers
+    @search = Caterer.ransack(params[:q])
+    @caterers = @search.result
+    @friends_rewards = FriendsReward.all
  end
  
  def ecommers
@@ -37,6 +40,9 @@ class PagesController < ApplicationController
  end
  
  def food_deliveries
+    @search = FoodDelivery.ransack(params[:q])
+    @food_deliveries = @search.result
+    @friends_rewards = FriendsReward.all 
  end
  
  def lessons
