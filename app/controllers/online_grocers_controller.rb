@@ -88,6 +88,6 @@ class OnlineGrocersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def online_grocer_params
-      params.require(:online_grocer).permit(:brand_name, :general_email, :region, :contactable_hours, :general_contact_number, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :halal_expiry, :friends_rewards_terms, :merchant_id, :draft)
+      params.require(:online_grocer).permit(:brand_name, :general_email, :region, :contactable_hours, :general_contact_number, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :halal_expiry, :friends_rewards_terms, :draft)
     end
 end
