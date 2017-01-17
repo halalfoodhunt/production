@@ -13,7 +13,7 @@
           <%= image_tag online_grocer.logo.url(:medium), :class => "img-circle-40" %>
         </div>
         <div class="media-body">
-          <h5 class="media-heading"><%= link_to online_grocer.business_name, online_grocer_path(online_grocer) %></h5>
+          <h5 class="media-heading"><%= link_to online_grocer.brand_name, online_grocer_path(online_grocer) %></h5>
           <p><%= image_tag online_grocer.grocer_type.icon.url(:thumb) %> <%= online_grocer.grocer_type.name %></p>
         </div>
       </div>
