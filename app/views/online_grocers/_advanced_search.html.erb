@@ -10,9 +10,11 @@
     <br>
     <div class="col-sm-12 col-md-6" style="padding:2px">
      <%= f.collection_select(:grocer_types_id_eq_any, GrocerType.all, :id, :name, {:include_blank => "Grocer Types"}, {:class=>'form-control'}) %><br>
+     <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %>
    </div>
    <div class="col-sm-12 col-md-6" style="padding:2px">
-     <%= f.collection_select(:grocer_service_types_id_eq_any, GrocerServiceType.all, :id, :name, {:include_blank => "Grocer Service Types"}, {:class=>'form-control'}) %>
+     <%= f.collection_select(:grocer_service_types_id_eq_any, GrocerServiceType.all, :id, :name, {:include_blank => "Grocer Service Types"}, {:class=>'form-control'}) %><br>
+     <%= f.collection_select(:price_range_id_eq, PriceRange.all, :id, :price, {:include_blank => "Price Range"}, {:class=>'form-control'}) %>
   </div>
   <div>
     <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger", style: "margin-bottom:50px;" %>

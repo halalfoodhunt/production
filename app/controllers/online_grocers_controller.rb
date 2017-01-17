@@ -40,6 +40,8 @@ class OnlineGrocersController < ApplicationController
         format.json { render json: @online_grocer.errors, status: :unprocessable_entity }
       end
     end
+    @online_grocer.grocer_service_type_ids = params[:online_grocer][:grocer_service_type_ids]
+    @online_grocer.grocer_type_ids = params[:online_grocer][:grocer_type_ids]
   end
 
   # PATCH/PUT /online_grocers/1
@@ -54,6 +56,8 @@ class OnlineGrocersController < ApplicationController
         format.json { render json: @online_grocer.errors, status: :unprocessable_entity }
       end
     end
+    @online_grocer.grocer_service_type_ids = params[:online_grocer][:grocer_service_type_ids]
+    @online_grocer.grocer_type_ids = params[:online_grocer][:grocer_type_ids]
   end
 
   # DELETE /online_grocers/1
