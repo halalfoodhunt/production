@@ -83,7 +83,7 @@
             <tr>
               <td><%= check_box_tag "food_delivery_ids[]", food_delivery.id %>
               </td>
-              <td><%= link_to food_delivery.business_name, edit_food_delivery_path(food_delivery), class:'table-text' %></td>
+              <td><%= link_to food_delivery.brand_name, edit_food_delivery_path(food_delivery), class:'table-text' %></td>
               <td class="table-text"><%= food_delivery.qualifying_type.name %></td>
               <td><%= food_delivery.halal_expiry.try(:strftime, '%m/%d/%Y') %></td>
               <td><% if food_delivery.verified == true %>
