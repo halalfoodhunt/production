@@ -84,7 +84,7 @@
             <tr>
               <td><%= check_box_tag "online_grocer_ids[]", online_grocer.id %>
               </td>
-              <td><%= link_to online_grocer.business_name, edit_online_grocer_path(online_grocer), class:'table-text' %></td>
+              <td><%= link_to online_grocer.brand_name, edit_online_grocer_path(online_grocer), class:'table-text' %></td>
               <td class="table-text"><%= online_grocer.qualifying_type.name %></td>
               <td><%= online_grocer.halal_expiry.try(:strftime, '%m/%d/%Y') %></td>
               <td><% if online_grocer.verified == true %>
