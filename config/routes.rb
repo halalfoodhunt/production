@@ -77,7 +77,12 @@ Rails.application.routes.draw do
   resources :regions
   resources :supplier_types
   resources :friends_rewards
-  resources :suppliers
+  resources :suppliers do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :product_types
   resources :product_sources
   resources :products
