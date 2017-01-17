@@ -65,6 +65,20 @@ class OnlineGrocersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def edit_multiple
+  @online_grocers = OnlineGrocer.friendly.find(params[:online_grocer_ids])
+  end
+
+  def update_multiple
+  @online_grocers = OnlineGrocer.friendly.update(params[:online_grocers].keys, params[:online_grocers].values)
+  @online_grocers.reject! { |p| p.errors.empty? }
+  if @online_grocers.empty?
+    redirect_to pages_online_grocers_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -64,7 +64,12 @@ Rails.application.routes.draw do
   end
   resources :supplier_highlights
   resources :grocer_types
-  resources :online_grocers
+  resources :online_grocers do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :catering_types
   resources :open_or_closes
   resources :price_ranges
