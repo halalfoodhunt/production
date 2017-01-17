@@ -1,0 +1,16 @@
+<%= bootstrap_form_for(@current_merchant, as: current_merchant, url: registration_path(current_merchant), html: { method: :put }) do |f| %>
+
+<div class="col-xs-12 col-sm-12 col-md-3">
+<%= f.radio_button :role, :free, label: "FREE" %>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3">
+<%= f.radio_button :role, :basic, label: "Basic" %>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3">
+<%= f.radio_button :role, :basic_plus, label: "Basic-plus" %>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3">
+<%= f.radio_button :role, :social, label: "Social" %>
+</div>
+  <%= f.submit "Select" %>
+  <% end %>
