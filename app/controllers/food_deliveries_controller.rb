@@ -69,6 +69,20 @@ class FoodDeliveriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def edit_multiple
+  @food_deliveries = FoodDelivery.friendly.find(params[:food_delivery_ids])
+  end
+
+  def update_multiple
+  @food_deliveries = FoodDelivery.friendly.update(params[:food_deliveries].keys, params[:food_deliveries].values)
+  @food_deliveries.reject! { |p| p.errors.empty? }
+  if @food_deliveries.empty?
+    redirect_to pages_food_deliveries_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

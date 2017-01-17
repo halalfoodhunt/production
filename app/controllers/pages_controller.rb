@@ -55,12 +55,18 @@ class PagesController < ApplicationController
  end
 
 def online_grocers
+    @search = OnlineGrocer.ransack(params[:q])
+    @online_grocers = @search.result
+    @friends_rewards = FriendsReward.all 
 end
 
 def supermarkets
 end
 
 def suppliers
+    @search = Supplier.ransack(params[:q])
+    @suppliers = @search.result
+    @friends_rewards = FriendsReward.all 
 end
 
 def friends_rewards

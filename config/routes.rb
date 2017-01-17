@@ -56,7 +56,12 @@ Rails.application.routes.draw do
   resources :supermarkets
   resources :grocer_service_types
   resources :food_delivery_types
-  resources :food_deliveries
+  resources :food_deliveries do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :supplier_highlights
   resources :grocer_types
   resources :online_grocers
