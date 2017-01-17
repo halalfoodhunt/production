@@ -78,6 +78,6 @@ class SuppliersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supplier_params
-      params.require(:supplier).permit(:business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :preferred_contact, :preferred_order_method, :question_1, :question_2, :question_3, :question_4, :question_5, :delivery_url, :expiry_date, :friends_terms, :merchant_id, :draft, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :friends_reward_id, :region_id, :location_id, :supplier_type_id, :price_range_id, :qualifying_type_id, food_type_ids: [], supplier_highlight_ids: [] )
+      params.require(:supplier).permit(:business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :preferred_contact, :preferred_order_method, :question_1, :question_2, :question_3, :question_4, :question_5, :delivery_url, :expiry_date, :halal_expiry, :friends_terms, :merchant_id, :draft, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :friends_reward_id, :region_id, :location_id, :supplier_type_id, :price_range_id, :qualifying_type_id, food_type_ids: [], supplier_highlight_ids: [] )
     end
 end
