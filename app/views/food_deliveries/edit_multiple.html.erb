@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <%= form_tag update_multiple_food_deliveries_path, method: :put do %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><h6><strong>Business Name</strong></h6></th>
+              <th><h6><strong>Halal Status</strong></h6></th>
+              <th><h6><strong>Halal Expiry</strong></h6></th>
+              <th><h6><strong>Verify?</strong></h6></th>
+              <th><h6><strong>Expiry Date</strong></h6></th>
+              <th><h6><strong>Draft</strong></h6></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @food_deliveries.each do |food_delivery| %>
+            <%= fields_for "food_deliveries[]", food_delivery do |f| %>
+            <% if food_delivery.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(food_delivery.errors.count, "error") %> prohibited this food_delivery from being saved:</h2>
+              <ul>
+                <% food_delivery.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+            <tr>
+              <td><%= food_delivery.brand_name %></td>
+              <td><%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %></td>
+              <td><%= f.date_select :halal_expiry %></td>
+              <td><%= f.check_box :verified %></td>
+              <td><%= f.date_select :expiry_date %></td>
+              <td><%= f.check_box :draft %></td>
+            </tr>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="actions">
+          <center><%= submit_tag "Update", class: 'btn btn-large btn-raised btn-primary' %></center>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
