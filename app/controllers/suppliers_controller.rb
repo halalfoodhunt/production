@@ -69,6 +69,20 @@ class SuppliersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def edit_multiple
+  @suppliers = Supplier.friendly.find(params[:supplier_ids])
+  end
+
+  def update_multiple
+  @suppliers = Supplier.friendly.update(params[:suppliers].keys, params[:suppliers].values)
+  @suppliers.reject! { |p| p.errors.empty? }
+  if @suppliers.empty?
+    redirect_to pages_suppliers_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
