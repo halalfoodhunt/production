@@ -1,67 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Lessons</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Brand name</th>
-      <th>General contact number</th>
-      <th>General email</th>
-      <th>Preferred contact</th>
-      <th>Preferred sign up method</th>
-      <th>String</th>
-      <th>Facebook</th>
-      <th>Instagram</th>
-      <th>Website</th>
-      <th>Question 1</th>
-      <th>Question 2</th>
-      <th>Question 3</th>
-      <th>Question 4</th>
-      <th>Question 5</th>
-      <th>Delivery link</th>
-      <th>Delivery terms</th>
-      <th>Draft</th>
-      <th>Expiry date</th>
-      <th>Merchant</th>
-      <th>Friends rewards terms</th>
-      <th>Verified</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.brand_name %></td>
-        <td><%= lesson.general_contact_number %></td>
-        <td><%= lesson.general_email %></td>
-        <td><%= lesson.preferred_contact %></td>
-        <td><%= lesson.preferred_sign_up_method %></td>
-        <td><%= lesson.string %></td>
-        <td><%= lesson.facebook %></td>
-        <td><%= lesson.instagram %></td>
-        <td><%= lesson.website %></td>
-        <td><%= lesson.question_1 %></td>
-        <td><%= lesson.question_2 %></td>
-        <td><%= lesson.question_3 %></td>
-        <td><%= lesson.question_4 %></td>
-        <td><%= lesson.question_5 %></td>
-        <td><%= lesson.delivery_link %></td>
-        <td><%= lesson.delivery_terms %></td>
-        <td><%= lesson.draft %></td>
-        <td><%= lesson.expiry_date %></td>
-        <td><%= lesson.merchant_id %></td>
-        <td><%= lesson.friends_rewards_terms %></td>
-        <td><%= lesson.verified %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Lesson', new_lesson_path %>
+<%= render 'layouts/header' %>
+<div style="padding:60px 0 60px 0" class="container-fluid ecommers">
+  <div class="col-md-8 col-md-offset-2" style="background:rgba(0,0,0,0.5); margin-top:50px;">
+      <center><h3 class="form-subtitle" style="color:#c2a476; font-weight:900; font-size:2em;">Find halal online grocers for your needs </h3>
+      <p class="sub-header" style="font-size:20px; color:#fff;">Find them online.</p></center><br><br>
+      <%= render 'advanced_search' %>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-12">
+   <div class="row">
+    <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @lessons.count %></b> ECOMMERS IN ALL CITIES, SINGAPORE</h5></div>
+    <div class="col-md-1" style="padding-top:40px">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <%= render 'lessons' %>
+    </div>
+  </div>
+</div>
