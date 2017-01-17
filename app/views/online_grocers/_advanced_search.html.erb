@@ -15,7 +15,7 @@
      <%= f.collection_select(:grocer_service_types_id_eq_any, GrocerServiceType.all, :id, :name, {:include_blank => "Grocer Service Types"}, {:class=>'form-control'}) %>
   </div>
   <div>
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-material-red" %>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger", style: "margin-bottom:50px;" %>
   </div>
 </div>
 <% end %>
