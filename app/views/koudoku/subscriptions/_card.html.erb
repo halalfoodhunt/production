@@ -1,48 +1,48 @@
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong><legend><%= title %></legend></strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong><legend><%= title %></legend></strong></h5> <p>Fill in your payment details to subscribe to a plan. <br><br><i>Don't worry! Your card will not be charged if you are on the <strong> FREE</strong> plan.</i></p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <% content_for :koudoku do %>
-        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-        <% end %>
-        <%= bootstrap_form_for @subscription, url: url, html: {id: 'payment-form', class: 'form-horizontal'} do |f| %>
-        <fieldset>
-          <div class="control-group">
-            <label class="control-label">Card Number</label>
-            <div class="controls">
-              <input type="text" size="20" autocomplete="off" class="card-number"/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Expiration (MM/YYYY)</label>
-            <div class="controls">
-              <input type="text" size="2" class="card-expiry-month input-mini"/>
-              <span> / </span>
-              <input type="text" size="4" class="card-expiry-year input-mini"/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">CVC</label>
-            <div class="controls">
-              <input type="text" size="4" autocomplete="off" class="card-cvc input-small"/>
-            </div>
-          </div>
-          <div class="alert alert-error payment-errors"></div>
-          <%= f.hidden_field :plan_id %>
-        </fieldset>
-        <br>
-        <div class="control-group">
-          <div class="controls">
-            <% if Koudoku.free_trial? %>
-            <button type="submit" class="btn btn-primary submit-button">Save Billing Information</button>
-            <% else %>
-            <button type="submit" class="btn btn-primary submit-button">Upgrade Your Account</button>
-            <% end %>
-            <%= link_to "Cancel", owner_subscriptions_path(@owner), class: 'btn' %>
-          </div>
-        </div>
-        <% end %>
+   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+   <% end %>
+   <%= bootstrap_form_for @subscription, url: url, html: {id: 'payment-form', class: 'form-horizontal'} do |f| %>
+   <fieldset>
+    <div class="control-group">
+      <label class="control-label">Card Number</label>
+      <div class="controls">
+        <input type="text" size="20" autocomplete="off" class="card-number"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Expiration (MM/YYYY)</label>
+      <div class="controls">
+        <input type="text" size="2" class="card-expiry-month input-mini"/>
+        <span> / </span>
+        <input type="text" size="4" class="card-expiry-year input-mini"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">CVC</label>
+      <div class="controls">
+        <input type="text" size="4" autocomplete="off" class="card-cvc input-small"/>
+      </div>
+    </div>
+    <div class="alert alert-error payment-errors"></div>
+    <%= f.hidden_field :plan_id %>
+  </fieldset>
+  <br>
+  <div class="control-group">
+    <div class="controls">
+      <% if Koudoku.free_trial? %>
+      <button type="submit" class="btn btn-primary submit-button">Save Billing Information</button>
+      <% else %>
+      <button type="submit" class="btn btn-primary submit-button">Subscribe</button>
+      <% end %>
+      <%= link_to "Cancel", owner_subscriptions_path(@owner), class: 'btn' %>
+    </div>
+  </div>
+  <% end %>
 </div>    
-        <script type="text/javascript">
+<script type="text/javascript">
 
   // All this code taken from Stripe's own examples at:
   // https://stripe.com/docs/tutorials/forms .
@@ -88,5 +88,4 @@
       return false;
     });
   });
-
       </script>
