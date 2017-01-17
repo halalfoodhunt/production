@@ -1,19 +1,19 @@
 <div class="container-fluid">
   <div class="row">
-    <%= render 'merchant_sidebar' %>
+    <%= render 'layouts/merchant_sidebar' %>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
       <%= render 'layouts/topbar' %>
       <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
-<center><h4><strong>WELCOME TO YOUR MERCHANT DASHBOARD!</strong></h4>
+        <center><h4><strong>WELCOME TO YOUR MERCHANT DASHBOARD!</strong></h4>
           <p>To begin listing on halalfoodhunt.com, first provide your payment details to subscribe for a plan and get access to the features.</p>
         </center>
         <div class="col-xs-12 col-md-4"><h4>1.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/free.png" alt="step 1" class="img-circle"><center><h5><strong>You have selected the <%= @subscription.plan.name %> plan!</strong></h5><p>You may upgrade your plan.</p></center></div>
         <div class="col-xs-12 col-md-4"><h4>2.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/eee.png" alt="step 1" class="img-circle"><center><h5><strong>PROVIDE YOUR PAYMENT DETAILS</strong></h5><p>Please update your payment details to subscribe for the insert name plan.</p></center></div>
         <div class="col-xs-12 col-md-4"><h4>3.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/3.png" alt="step 1" class="img-circle"><center><h5><strong>YOU ARE SUBSCRIBED TO HALALFOODHUNT.COM!</strong></h5><p>Welcome, you are now a subscriber! <br> Check out the features offered under your plan and explore. <br>You can upgrade your plan at anytime to access more features!
-</p></center>
+        </p></center>
         </div>
-<%= render 'card', title: (Koudoku.free_trial? ? "Start Your Free Trial" : "Upgrade Your Account"), url: owner_subscriptions_path(@owner) %>
-</div>
-</div>
+      <%= render 'card', title: (Koudoku.free_trial? ? "Start Your Free Trial" : "Upgrade Your Account"), url: owner_subscriptions_path(@owner) %>
+    </div>
+  </div>
 </div>
 </div>
