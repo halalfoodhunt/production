@@ -1,0 +1,118 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; padding:10px; margin-bottom:20px;">
+        <h5><i class="fa fa-list fa-1x"></i> suppliers Listings</h5>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#EF6C3D">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= Merchant.count %></h1>
+                    <h4>MERCHANT</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#FFB20E">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @suppliers.count %></h1>
+                    <h4>supplierS</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#C4A276">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @suppliers.distinct.count(:friends_rewards_terms) %></h1>
+                    <h4>FRIENDS REWARDS</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#4C4743">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @suppliers.distinct.count(:verified => 'true') %></h1>
+                    <h4>VERIFIED</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <%= render 'suppliers_search' %>
+        <hr>
+        <%= form_tag edit_multiple_suppliers_path, method: :get do %>
+        <table class="table table-striped table-responsive">
+          <thead>
+            <tr>
+              <th></th>
+              <th><h6><strong>Business Name</strong></h6></th>
+              <th><h6><strong>Halal Status</strong></h6></th>
+              <th><h6><strong>Halal Expiry</strong></h6></th>
+              <th><h6><strong>Verify?</strong></h6></th>
+              <th><h6><strong>Expiry Date</strong></h6></th>
+              <th><h6><strong>Publish</strong></h6></th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @suppliers.each do |supplier| %>
+            <tr>
+              <td><%= check_box_tag "supplier_ids[]", supplier.id %>
+              </td>
+              <td><%= link_to supplier.business_name, edit_supplier_path(supplier), class:'table-text' %></td>
+              <td class="table-text"><%= supplier.qualifying_type.name %></td>
+              <td><%= supplier.halal_expiry.try(:strftime, '%m/%d/%Y') %></td>
+              <td><% if supplier.verified == true %>
+                <span class="label label-success">VERIFIED</span>
+                <% else %>
+                <span class="label label-danger">UNVERIFIED</span>
+                <% end %>
+              </td>
+              <td><%= supplier.expiry_date.strftime("%m/%d/%Y") %></td>
+              <td><% if supplier.draft == true %>
+                <span><i class="fa fa-times-circle fa-lg" aria-hidden="true" style="color:#d9534f"></i></span>
+                <% else %>
+                <span><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:#5cb85c"></i></span>
+                <% end %>
+              </td>
+              <td><%= link_to edit_supplier_path(supplier), remote: true do %>
+                <i class="fa fa-pencil"></i><% end %>
+              </td>
+              <td><%= link_to supplier, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash-o"></i><% end %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <center><%= submit_tag "Edit Suppliers", class: "btn btn-large btn-raised btn-primary" %></center>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
