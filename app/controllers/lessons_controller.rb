@@ -1,16 +1,10 @@
 class LessonsController < ApplicationController
-  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json
   def index
-     if params[:highlight].blank?
-			@lessons = Lesson.where(draft: false).order("created_at DESC")
-		else
-			@highlight_id = Highlight.find_by(name: params[:highlight]).id
-			@lessons = Lesson.where(highlight_id: @highlight_id).order("created_at DESC")
-		end
     @search = Lesson.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @lessons = @search.result.where(draft: false)
@@ -72,11 +66,7 @@ class LessonsController < ApplicationController
     end
   end
 
- def is_admin?
-  unless current_merchant && current_merchant.admin?
-   render "layouts/unauthorised"
-  end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -86,6 +76,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:brand_name, :general_contact_number, :general_email, :preferred_contact, :preferred_sign_up_method, :facebook, :instagram, :website, :question_1, :question_2, :question_3, :question_4, :delivery_link, :delivery_terms, :draft, :expiry_date, :merchant_id, :friends_rewards_terms, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :region_id, :caterer_type_id, :friends_reward_id, lesson_type_ids: [], class_type_ids: [], culinary_skill_ids: [])
+      params.require(:lesson).permit(:brand_name, :general_contact_number, :general_email, :preferred_contact, :preferred_sign_up_method, :facebook, :instagram, :website, :question_1, :question_2, :question_3, :question_4, :delivery_link, :delivery_terms, :draft, :expiry_date, :friends_rewards_terms, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :region_id, :friends_reward_id, lesson_type_ids: [], class_type_ids: [], culinary_skill_ids: [])
     end
 end
