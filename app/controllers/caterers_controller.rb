@@ -20,6 +20,7 @@ class CaterersController < ApplicationController
   def new
     @current_merchant = current_merchant
     @caterer = Caterer.new
+    5.times { @caterer.caterer_packages.build }
   end
 
   # GET /caterers/1/edit

@@ -34,10 +34,6 @@ class SupermarketsController < ApplicationController
   def new
     @current_merchant = current_merchant
     @supermarket = Supermarket.new
-    7.times do
-      @day = @supermarket.days.build
-    end
-    7.times { @day.opening_hours.build }
   end
 
   # GET /supermarkets/1/edit
