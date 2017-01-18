@@ -33,6 +33,7 @@
           <thead>
             <tr>
                 <th></th>
+                <th>Listing Type</th>
                 <th>Business name</th>
                 <th>Halal Status</th>
                 <th>Verified</th>
@@ -43,8 +44,8 @@
           </thead>
           <tbody>
             <% @current_merchant.places.each do |place| %>
-            <tr>
-             <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
+            <tr><td>Place</td>
+                <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to place.business_name, edit_place_path(place) %></td>
                 <td><%= link_to place.qualifying_type.name %></td>
                 <td><%= place.verified ? "Verified" : "Unverified" %></td>
@@ -58,8 +59,8 @@
           <% unless @current_merchant.ecommers.empty? %>
           <tbody>
             <% @current_merchant.ecommers.each do |ecommer| %>
-            <tr>
-             <td><%= image_tag ecommer.logo.url(:thumb), :class => "img-circle" %></td>
+            <tr><td>Ecommer</td>
+                <td><%= image_tag ecommer.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to ecommer.business_name, edit_ecommer_path(ecommer) %></td>
                 <td><%= link_to ecommer.qualifying_type.name %></td>
                 <td><%= ecommer.verified ? "Verified" : "Unverified" %></td>
@@ -74,8 +75,8 @@
            <% unless @current_merchant.suppliers.empty? %>
           <tbody>
             <% @current_merchant.suppliers.each do |supplier| %>
-            <tr>
-             <td><%= image_tag supplier.logo.url(:thumb), :class => "img-circle" %></td>
+            <tr><td>Supplier</td>
+                <td><%= image_tag supplier.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to supplier.business_name, edit_supplier_path(supplier) %></td>
                 <td><%= link_to supplier.qualifying_type.name %></td>
                 <td><%= supplier.verified ? "Verified" : "Unverified" %></td>
@@ -90,8 +91,8 @@
            <% unless @current_merchant.caterers.empty? %>
           <tbody>
             <% @current_merchant.caterers.each do |caterer| %>
-            <tr>
-             <td><%= image_tag caterer.logo.url(:thumb), :class => "img-circle" %></td>
+            <tr><td>Caterer</td>
+                <td><%= image_tag caterer.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to caterer.business_name, edit_caterer_path(caterer) %></td>
                 <td><%= link_to caterer.qualifying_type.name %></td>
                 <td><%= caterer.verified ? "Verified" : "Unverified" %></td>
