@@ -78,7 +78,7 @@
             <% @current_merchant.suppliers.each do |supplier| %>
             <tr>
              <td><%= image_tag supplier.logo.url(:thumb), :class => "img-circle" %></td>
-                <td><%= link_to supplier.business_name, edit_ecommer_path(ecommer) %></td>
+                <td><%= link_to supplier.business_name, edit_supplier_path(supplier) %></td>
                 <td><%= link_to supplier.qualifying_type.name %></td>
                 <td><%= supplier.verified ? "Verified" : "Unverified" %></td>
                 <td><%= supplier.draft ? "Draft" : "Published" %></td>
