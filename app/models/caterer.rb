@@ -2,8 +2,8 @@ class Caterer < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
   
-    has_many :caterer_packages, :dependent => :destroy
-    accepts_nested_attributes_for :caterer_packages, allow_destroy: true
+    has_many :caterer_packages
+    accepts_nested_attributes_for :caterer_packages
     
     before_create :set_expiration_date
     
