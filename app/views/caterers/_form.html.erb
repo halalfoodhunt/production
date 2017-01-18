@@ -110,7 +110,7 @@
   <%= f.fields_for :caterer_packages do |package| %> 
   <div class="col-xs-12 col-sm-12 col-md-12" style="background:#fff; border:1px solid #979797; margin-bottom:20px;">
     <div class="col-xs-12 col-sm-6 col-md-6" style="padding:0 5px 0 5px;">
-      <%= package.text_field :name %>
+      <%= package.text_field :name, label:'Package Name' %>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6" style="padding:0 5px 0 5px;">
       <%= package.text_area :description %>
