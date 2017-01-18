@@ -59,6 +59,7 @@ class CaterersController < ApplicationController
     end
     @caterer.caterer_type_ids = params[:caterer][:caterer_type_ids]
     @caterer.cuisine_type_ids = params[:caterer][:cuisine_type_ids]
+    5.times { @caterer.caterer_packages.build }
   end
 
   # DELETE /caterers/1
