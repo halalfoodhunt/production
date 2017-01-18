@@ -90,6 +90,23 @@
             <% end %>
           </tbody>
           <% end %>
+           <% unless @current_merchant.caterers.empty? %>
+          <tbody>
+            <% @current_merchant.caterers.each do |caterer| %>
+            <tr>
+             <td><%= image_tag caterer.logo.url(:thumb), :class => "img-circle" %></td>
+                <td><%= link_to caterer.business_name, edit_caterer_path(caterer) %></td>
+                <td><%= link_to caterer.qualifying_type.name %></td>
+                <td><%= caterer.verified ? "Verified" : "Unverified" %></td>
+                <td><%= caterer.draft ? "Draft" : "Published" %></td>
+                <td><%= caterer.expiry_date.strftime("%d %b %Y") %></td>
+                <td><%= link_to 'Show', caterer %></td>
+                <td><%= link_to 'Edit', edit_caterer_path(caterer) %></td>
+                <td><%= link_to 'Destroy', caterer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+          <% end %>
         </table>
       </div>
     </div>
