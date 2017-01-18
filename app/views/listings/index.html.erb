@@ -50,9 +50,8 @@
                 <td><%= place.verified ? "Verified" : "Unverified" %></td>
                 <td><%= place.draft ? "Draft" : "Published" %></td>
                 <td><%= place.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to 'Show', place %></td>
-                <td><%= link_to 'Edit', edit_place_path(place) %></td>
-                <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to edit_place_path(place) do %><i class="fa fa-pencil"></i><% end %></td>
+                <td><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
             </tr>
             <% end %>
           </tbody>
@@ -66,9 +65,8 @@
                 <td><%= ecommer.verified ? "Verified" : "Unverified" %></td>
                 <td><%= ecommer.draft ? "Draft" : "Published" %></td>
                 <td><%= ecommer.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to 'Show', ecommer %></td>
-                <td><%= link_to 'Edit', edit_ecommer_path(ecommer) %></td>
-                <td><%= link_to 'Destroy', ecommer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil"></i><% end %></td>
+                <td><%= link_to ecommer, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
             </tr>
             <% end %>
           </tbody>
@@ -83,9 +81,8 @@
                 <td><%= supplier.verified ? "Verified" : "Unverified" %></td>
                 <td><%= supplier.draft ? "Draft" : "Published" %></td>
                 <td><%= supplier.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to 'Show', supplier %></td>
-                <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-                <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to edit_supplier_path(supplier) do %><i class="fa fa-pencil"></i><% end %></td>
+                <td><%= link_to supplier, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
             </tr>
             <% end %>
           </tbody>
@@ -100,9 +97,8 @@
                 <td><%= caterer.verified ? "Verified" : "Unverified" %></td>
                 <td><%= caterer.draft ? "Draft" : "Published" %></td>
                 <td><%= caterer.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to 'Show', caterer %></td>
-                <td><%= link_to 'Edit', edit_caterer_path(caterer) %></td>
-                <td><%= link_to 'Destroy', caterer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil"></i><% end %></td>
+                <td><%= link_to caterer, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
             </tr>
             <% end %>
           </tbody>
