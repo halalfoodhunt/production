@@ -11,6 +11,9 @@ class ListingsController < ApplicationController
     @ecommers = Ecommer.all
     @caterers = Caterer.all
     @food_deliveries = FoodDelivery.all
+    @suppliers = Supplier.all
+    @supermarkets = Supermarket.all
+    @lessons = Lesson.all
   end
 
   # GET /listings/1
