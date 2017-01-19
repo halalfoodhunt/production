@@ -46,6 +46,9 @@ class PagesController < ApplicationController
  end
  
  def lessons
+    @search = Lesson.ransack(params[:q])
+    @lessons = @search.result
+    @friends_rewards = FriendsReward.all 
  end
  
  def places
