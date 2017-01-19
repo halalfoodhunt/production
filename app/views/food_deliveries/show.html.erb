@@ -8,6 +8,8 @@
           <a href="#">
             <%= image_tag @food_delivery.logo.url(:medium), :class => "media-object img-circle" %>
           </a>
+          <p>Social sites: <% unless @food_delivery.facebook.blank? %><%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+                <% unless @food_delivery.instagram.blank? %><%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
         </div>
         <div class="media-body">
           <h4 class="media-heading title"><%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)</h4>
@@ -18,9 +20,6 @@
               <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
               <% unless @food_delivery.website.blank? %><tr style="border-top:#ccc solid 1px">
               <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @food_delivery.facebook.blank? %><%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-                <% unless @food_delivery.instagram.blank? %><%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
-              </tr>
             </thead>
           </table>
         </div>
