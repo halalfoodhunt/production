@@ -10,7 +10,7 @@
 </div>
 <% end %>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Let your customers be familiar with your logo</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="media">
     <div class="media-left media-top">
@@ -26,7 +26,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Select the region of listing and the location in that region</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE REGION & LOCATION OF YOUR LISTING</strong></h5> <p>Please pick the region and location of your listing so that your customers can find you. Identify yourself as a dine-in or take-out kiosk for customers to visit.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
    <%= f.collection_select :location_id, Location.all, :id, :name, autofocus: true, layout: :inline %>
@@ -34,13 +34,13 @@
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Halal Status</strong></h5> <p>Select if you're halal-certified or muslim-owned. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE</strong></h5> <p>Are you a halal-certified or Muslim-owned establishment?</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Verifying Documents</strong></h5> <p>For Halal- Certified Merchants, please upload a copy or photo of your MUIS Halal Certificate<br><br>For Muslim-Owned Merchants, please upload a copy of your NRIC (front and back), and your company’s bizfile/ ROC </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>For halal-certified businesses, please help us to verify your business by providing a copy or a photo of your MUIS certificate if you are halal-certified. Please key in the expiry date of your certificate for the halal expiry date, so we can help you to maintain your verified status.<br><br>For Muslim-owned businesses, please upload a copy or a photo of your NRIC (front and back), your company’s Bizfile and your ROC. For the halal expiry date, please key in your listing expiry date. The listing expiry date is one year from the date of submission. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
@@ -80,7 +80,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>It is very important for you to complete these. Without these information, your customers can’t find you online! Merchants with more complete information will make it easier for hungry customers on halalfoodhunt.com to find you.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>Please provide the relevant details to allow customers to maintain contact with your business easily. Accurate and comprehensive information will help you gain more credibility on your listings and help you to be more easily searchable.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <div class="field">
     <%= f.text_field :business_name %>
@@ -106,7 +106,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>HELP YOUR HUNGRY CUSTOMERS FIND YOU</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>WHEN SHOULD YOUR CUSTOMERS VISIT YOU</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.fields_for :opening_hours do |time| %> 
@@ -127,7 +127,7 @@
 </div>
 </div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>HELP YOUR HUNGRY CUSTOMERS FIND YOU</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.text_area :question_1, label:'What dishes do you serve, and which are the highly recommended ones?', label_class:'question' %>
@@ -150,7 +150,7 @@
 </div>
 </div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR CATEGORY</strong></h5> <p>It is very important to complete this informtaion.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.select :cuisine_type_ids, CuisineType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'cuisine-type' %>
    <%= f.select :dining_type_ids, DiningType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'dining-type' %>
@@ -159,7 +159,7 @@
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Featured Image</strong></h5> <p>It is very important for you to upload your logo </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD A FEATURED IMAGE FOR YOUR LISTING</strong></h5> <p>Please upload an image of your listing so that customers can get a hint of what they can look forward to! The photo should depict your storefront so your customers can find you or the interior of the place so that customers can get a feel of the ambience. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="media">
     <div class="media-left media-top">
@@ -175,7 +175,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Gallery Images</strong></h5> <p>Showcase your restaurant and the best photos of your dish. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD GALLERY IMAGES</strong></h5> <p>Please upload four images to represent your menu. Please showcase your best dishes and your outlet. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
@@ -215,14 +215,14 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Friends Rewards</strong></h5> <p>You will need to offer a FRIENDS rewards to to FRIENDS with halalfoodhunt.com Rewards Cardholders to be eligible on the Free Forever listing. This will automatically give you a shoutout on our publicity pages. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>FRIENDS REWARDS</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage. Your listing will automatically get a shout-out on our publicity pages when you offer a FRIENDS reward.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :friends_reward_id, FriendsReward.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offerred' %>
    <%= f.text_area :friends_rewards_terms %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Additional Links</strong></h5> <p>You can add your reservation link or delivery link here</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>PROVIDE ADDITIONAL LINKS</strong></h5> <pAdd a reservations and/or a delivery link so that it’s more convenient for your customers to visit you and/or to get food delivered from your place.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.url_field :delivery_link %>
@@ -233,7 +233,8 @@
 </div>
 </div>
 <div class="field">
-  <%= f.label :draft %><br>
+  <%= f.label :draft, label: 'ARE YOU READY TO BE PUBLISHED?' %><br>
+  <p>Not ready to publish yet? Tick this box if you’d like to save this listing as a draft. Make sure to un-tick this box once you’re ready to publish your listing!</p>
   <%= f.check_box :draft, label: 'Save as Draft' %>
 </div>
 <div class="actions">
