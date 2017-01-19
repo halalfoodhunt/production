@@ -70,8 +70,8 @@ def suppliers
 end
 
 def friends_rewards
-    @search = Place.ransack(params[:q])
-    @search.result.includes(:place, :friends_reward).where(draft: false)
+  @friends_rewards = FriendsReward.all
+  @ecommers = Ecommer.all
 end
 
 def ecommers_friends_rewards
