@@ -71,7 +71,19 @@ class LessonsController < ApplicationController
     end
   end
 
+  def edit_multiple
+  @lessons = Lesson.friendly.find(params[:lesson_ids])
+  end
 
+  def update_multiple
+  @lessons = Lesson.friendly.update(params[:lessons].keys, params[:lessons].values)
+  @lessons.reject! { |p| p.errors.empty? }
+  if @lessons.empty?
+    redirect_to pages_lessons_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

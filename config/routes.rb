@@ -99,7 +99,12 @@ Rails.application.routes.draw do
   resources :locations
   resources :qualifying_types
   resources :qualifyings
-  resources :lessons
+  resources :lessons do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :caterer_packages
   resources :caterers do
      collection do
