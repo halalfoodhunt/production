@@ -44,15 +44,15 @@
             <tr>
               <th><h6><strong>Package Name</strong></h6></th>
               <th><h6><strong>Description</strong></h6></th>
-              <th><h6><strong>Minimum Pax</strong></h6></th>
+              <th><h6><strong>Min. Pax</strong></h6></th>
               <th><h6><strong>Price</strong></h6></th>
             </tr>
           </thead>
           <tbody>
             <% @caterer.caterer_packages.each do |caterer| %>
             <tr>
-              <td class="col-xs-12 col-sm-12 col-md-2"><%= caterer.name %></td>
-              <td class="col-xs-12 col-sm-12 col-md-8"><%= caterer.description %></td>
+              <td class="col-xs-12 col-sm-12 col-md-3"><%= caterer.name %></td>
+              <td class="col-xs-12 col-sm-12 col-md-7"><%= caterer.description %></td>
               <td class="col-xs-12 col-sm-12 col-md-1"><%= caterer.minimum_pax %></td>
               <td class="col-xs-12 col-sm-12 col-md-1"><%= caterer.price %></td>
             </tr>
