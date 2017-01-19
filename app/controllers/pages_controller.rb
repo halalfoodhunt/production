@@ -71,7 +71,7 @@ end
 
 def friends_rewards
   @friends_rewards = FriendsReward.all
-  @ecommers = Ecommer.all
+  @places = Place.all
 end
 
 def ecommers_friends_rewards
