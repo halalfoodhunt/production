@@ -91,7 +91,7 @@
        <br>
       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="title">Culinary Skill </h4>
-        <% @lesson.cilnary_skills.each do |culinary_skill| %>
+        <% @lesson.culinary_skills.each do |culinary_skill| %>
         <div class="col-xs-6 col-md-6"><p><%= image_tag culinary_skill.icon.url(:thumb) %> <%= culinary_skill.name %></p></div>
         <% end %>
       </div>
