@@ -13,7 +13,7 @@
           <h4 class="media-heading title"><%= @caterer.business_name %> (<%= @caterer.qualifying_type.name %>)</h4>
           <table class="table table-striped">
             <thead>
-              <tr><% unless @caterer.contactable_hours.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @caterer.contactable_hours %></p></td><% end %></tr>
+              <tr><% unless @caterer.contactable_hours.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @caterer.contactable_hours %></p></td><% end %></tr>
               <% unless @caterer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @caterer.general_email %></p></td></tr><% end %>
               <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @caterer.general_contact_number %></p></td></tr>
               <% unless @caterer.website.blank? %><tr style="border-top:#ccc solid 1px">
