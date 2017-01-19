@@ -104,6 +104,19 @@
             <% end %>
           </tbody>
           <% end %>
+          <tbody>
+            <% @current_merchant.lessons.each do |lesson| %>
+            <tr><td>Place</td>
+                <td><%= image_tag lesson.logo.url(:thumb), :class => "img-circle" %></td>
+                <td><%= link_to lesson.brand_name, edit_lesson_path(lesson) %></td>
+                <td><%= lesson.verified ? "Verified" : "Unverified" %></td>
+                <td><%= lesson.draft ? "Draft" : "Published" %></td>
+                <td><%= lesson.expiry_date.strftime("%d %b %Y") %></td>
+                <td><%= link_to edit_lesson_path(lesson) do %><i class="fa fa-pencil"></i><% end %></td>
+                <td><%= link_to lesson, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
+            </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
     </div>

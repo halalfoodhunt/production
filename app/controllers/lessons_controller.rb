@@ -39,6 +39,9 @@ class LessonsController < ApplicationController
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
+    @lesson.lesson_type_ids = params[:lesson][:lesson_type_ids]
+    @lesson.class_type_ids = params[:lesson][:class_type_ids]
+    @lesson.culinary_skill_ids = params[:lesson][:culinary_skill_ids]
   end
 
   # PATCH/PUT /lessons/1
@@ -53,6 +56,9 @@ class LessonsController < ApplicationController
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
+    @lesson.lesson_type_ids = params[:lesson][:lesson_type_ids]
+    @lesson.class_type_ids = params[:lesson][:class_type_ids]
+    @lesson.culinary_skill_ids = params[:lesson][:culinary_skill_ids]
   end
 
   # DELETE /lessons/1
