@@ -8,5 +8,11 @@
       <%= f.text_field :business_name_cont, class: "form-control" %>
     </div>
     <br>
+    <div class="col-sm-12 col-md-6" style="padding:2px">
+     <%= f.collection_select(:place_locations_id_eq, Locations.all, :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
+   </div>
+    <div class="col-sm-12 col-md-6" style="padding:2px">
+    <%= f.collection_select(:place_friends_rewards_id_eq, FriendsRewards.all, :id, :name, {:include_blank => "Friends Rewards"}, {:class=>'form-control'}) %><br>
+  </div>
   </div>
   <% end %>
