@@ -3,11 +3,11 @@
   <div class="col-md-8 col-md-offset-2" style="background:rgba(0,0,0,0.5); margin-top:50px;">
       <center><h3 class="form-subtitle" style="color:#c2a476; font-weight:900; font-size:2em;">Find halal caterers for your needs </h3>
       <p class="sub-header" style="font-size:20px; color:#fff;">Find them online.</p></center><br><br>
+          <%= render 'advanced_search' %>
   </div>
 </div>
 <div class="container">
   <div class="col-md-12">
-    <%= render 'advanced_search' %>
    <div class="row">
     <div class="col-md-11"><h5 style="padding:20px 0">SHOWING <b><%= @caterers.count %></b> catererS IN ALL CITIES, SINGAPORE</h5></div>
     <div class="col-md-1">
