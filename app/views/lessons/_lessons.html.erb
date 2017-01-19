@@ -16,7 +16,7 @@
             </div>
             <div class="media-body">
               <h5 class="media-heading"><%= link_to lesson.brand_name, lesson_path(lesson) %></h5>
-              <p><i class="fa fa-map-marker"></i></p>
+              <p><i class="fa fa-map-marker"></i><%= @lesson.preferred_sign_up_method %></p>
             </div>
           </div>
         </div>
