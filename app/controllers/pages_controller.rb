@@ -71,8 +71,8 @@ end
 
 def friends_rewards
     @friends_rewards = FriendsReward.all
-    @search.result.includes(:place, :friends_rewards).where(draft: false)
     @search = Place.ransack(params[:q])
+    @search.result.includes(:place, :friends_rewards).where(draft: false)
 end
 
 def ecommers_friends_rewards
