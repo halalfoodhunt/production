@@ -1,0 +1,12 @@
+<div class="col-sm-12 col-md-12">
+  <div class="col-sm-12 col-md-2" style="padding:0">
+    <h6 style="text-align:left">Search for a friends rewards</h6>
+  </div>
+  <%= search_form_for @search do |f| %>
+  <div class="col-sm-12 col-md-10" style="padding:0">
+    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+      <%= f.text_field :business_name_or_brand_name_cont, class: "form-control" %>
+    </div>
+    <br>
+  </div>
+  <% end %>
