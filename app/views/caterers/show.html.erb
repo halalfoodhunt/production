@@ -8,6 +8,8 @@
           <a href="#">
             <%= image_tag @caterer.logo.url(:medium), :class => "media-object img-circle" %>
           </a>
+          <p>Social sites: <% unless @caterer.facebook.blank? %><%= link_to @caterer.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+                <% unless @caterer.instagram.blank? %><%= link_to @caterer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
         </div>
         <div class="media-body">
           <h4 class="media-heading title"><%= @caterer.business_name %> (<%= @caterer.qualifying_type.name %>)</h4>
@@ -18,8 +20,7 @@
               <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @caterer.general_contact_number %></p></td></tr>
               <% unless @caterer.website.blank? %><tr style="border-top:#ccc solid 1px">
               <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @caterer.website, "#{@caterer.website}" %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @caterer.facebook.blank? %><%= link_to @caterer.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-                <% unless @caterer.instagram.blank? %><%= link_to @caterer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
+              <tr style="border-top:#ccc solid 1px">
               </tr>
             </thead>
           </table>
