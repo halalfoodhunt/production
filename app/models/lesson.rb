@@ -7,7 +7,6 @@ class Lesson < ActiveRecord::Base
     validates_presence_of :merchant_id
     validates_presence_of :brand_name
 	  validates_presence_of :general_contact_number
-	  validates_presence_of :operating_address
     validates_presence_of :location
     validates_presence_of :region
     
