@@ -10,7 +10,7 @@
 </div>
 <% end %>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Let your customers be familiar with your logo</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="media">
     <div class="media-left media-top">
@@ -26,19 +26,19 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Select the region of listing and the location in that region</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE REGION & LOCATION OF YOUR LISTING</strong></h5> <p>Please pick the region that you provide the catering service for. Identify the type of catering service that you provide. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Halal Status</strong></h5> <p>Select if you're halal-certified or muslim-owned. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE</strong></h5> <p>Are you a halal-certified or Muslim-owned catering service?</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Verifying Documents</strong></h5> <p>For Halal- Certified Merchants, please upload a copy or photo of your MUIS Halal Certificate<br><br>For Muslim-Owned Merchants, please upload a copy of your NRIC (front and back), and your company’s bizfile/ ROC </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>For <u><strong>halal-certified</strong></u> businesses, please help us to verify your business by providing a copy or a photo of your MUIS certificate if you are halal-certified. <br><br>For <u><strong>Muslim-owned</strong></u> businesses, please upload a copy or a photo of your NRIC (front and back), your company’s Bizfile and your ROC. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
@@ -78,7 +78,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>It is very important for you to complete these. Without these information, your customers can’t find you online! Merchants with more complete information will make it easier for hungry customers on halalfoodhunt.com to find you.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>Please provide the relevant details to allow customers to maintain contact with your business easily. Accurate and comprehensive information will help you gain more credibility on your listings and help you to be more easily searchable.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <div class="field">
     <%= f.text_field :business_name %>
@@ -104,7 +104,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Menu & Packages</strong></h5> <p>Fill in the menu and packages that your business offers. </p>
+ <div class="col-xs-6 col-md-4"><h5><strong>Menu & Packages</strong></h5> <p>Please provide the list of dishes featured on your menu. You can also upload a list of any packages that you provide.</p>
  </div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <%= f.fields_for :caterer_packages do |package| %> 
@@ -126,7 +126,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>HELP YOUR HUNGRY CUSTOMERS FIND YOU</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.text_area :question_1, label:'Describe the types of food that is catered.', label_class:'question' %>
