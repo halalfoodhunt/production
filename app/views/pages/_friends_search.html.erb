@@ -9,10 +9,10 @@
     </div>
     <br>
     <div class="col-sm-12 col-md-6" style="padding:2px">
-     <%= f.collection_select(:place_locations_id_eq, Location.all, :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
+     <%= f.collection_select(:place_location_id_eq, Location.all, :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
    </div>
     <div class="col-sm-12 col-md-6" style="padding:2px">
-    <%= f.collection_select(:place_friends_rewards_id_eq, FriendsReward.all, :id, :name, {:include_blank => "Friends Rewards"}, {:class=>'form-control'}) %><br>
+    <%= f.collection_select(:place_friends_reward_id_eq, FriendsReward.all, :id, :name, {:include_blank => "Friends Rewards"}, {:class=>'form-control'}) %><br>
   </div>
   </div>
   <% end %>
