@@ -106,7 +106,7 @@
           <% end %>
           <tbody>
             <% @current_merchant.lessons.each do |lesson| %>
-            <tr><td>Place</td>
+            <tr><td>Academy</td>
                 <td><%= image_tag lesson.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to lesson.brand_name, edit_lesson_path(lesson) %></td>
                 <td><%= lesson.verified ? "Verified" : "Unverified" %></td>
