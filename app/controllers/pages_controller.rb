@@ -71,7 +71,7 @@ end
 
 def friends_rewards
   @friends_rewards = FriendsReward.all
-  @places = Place.all
+  @search = Place.ransack(params[:q])
 end
 
 def ecommers_friends_rewards
