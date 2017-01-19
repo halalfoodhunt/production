@@ -11,7 +11,7 @@
     <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
     <br>
   </div>
-  <div>
+  <div style="margin-bottom:50px;">
     <%= f.submit "Search", class: "btn btn-raised btn-block btn-material-red" %>
   </div>
 </div>
