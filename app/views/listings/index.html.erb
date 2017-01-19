@@ -109,6 +109,7 @@
             <tr><td>Academy</td>
                 <td><%= image_tag lesson.logo.url(:thumb), :class => "img-circle" %></td>
                 <td><%= link_to lesson.brand_name, edit_lesson_path(lesson) %></td>
+                <td></td>
                 <td><%= lesson.verified ? "Verified" : "Unverified" %></td>
                 <td><%= lesson.draft ? "Draft" : "Published" %></td>
                 <td><%= lesson.expiry_date.strftime("%d %b %Y") %></td>
