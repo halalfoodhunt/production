@@ -39,6 +39,26 @@
         </div>
       </div>
       <% end %>
+       <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><h6><strong>Package Name</strong></h6></th>
+              <th><h6><strong>Description</strong></h6></th>
+              <th><h6><strong>Minimum Pax</strong></h6></th>
+              <th><h6><strong>Price</strong></h6></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @caterers.each do |caterer| %>
+            <tr>
+              <td><%= caterer.name %></td>
+              <td><%= caterer.description %></td>
+              <td><%= caterer.minimum_pax %></td>
+              <td><%= caterer.price %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
       <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
       <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
       <p><%= h(@caterer.question_1).gsub(/\n/, '<br>').html_safe %></p>
