@@ -14,7 +14,7 @@
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading title"><%= @lesson.business_name %> (<%= @lesson.qualifying_type.name %>)</h4>
+          <h4 class="media-heading title"><%= @lesson.brand_name %></h4>
           <table class="table table-striped">
             <thead>
               <tr><% unless @lesson.preferred_contact.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @lesson.preferred_contact %></p></td><% end %></tr>
