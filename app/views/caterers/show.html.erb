@@ -51,10 +51,10 @@
           <tbody>
             <% @caterer.caterer_packages.each do |caterer| %>
             <tr>
-              <td><%= caterer.name %></td>
-              <td><%= caterer.description %></td>
-              <td><%= caterer.minimum_pax %></td>
-              <td><%= caterer.price %></td>
+              <td class="col-xs-12 col-sm-12 col-md-2"><%= caterer.name %></td>
+              <td class="col-xs-12 col-sm-12 col-md-8"><%= caterer.description %></td>
+              <td class="col-xs-12 col-sm-12 col-md-1"><%= caterer.minimum_pax %></td>
+              <td class="col-xs-12 col-sm-12 col-md-1"><%= caterer.price %></td>
             </tr>
             <% end %>
           </tbody>
