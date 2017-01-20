@@ -17,7 +17,7 @@ class SupermarketsController < ApplicationController
      "url" => "http://halalfoodhunt.com/friends/wp-content/uploads/2016/10/shadows-marker.png",
      "width" =>  52,
      "height" => 52})
-    marker.infowindow render_to_string(:partial => "/layouts/infobox", :locals => { :supermarket => supermarket})
+    marker.infowindow render_to_string(:partial => "/layouts/infobox2", :locals => { :supermarket => supermarket})
   end
   respond_to do |format|
     format.html
