@@ -30,7 +30,7 @@
             </div>
             <% end %>
             <tr>
-              <td><%= online_grocer.business_name %></td>
+              <td><%= online_grocer.brand_name %></td>
               <td><%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %></td>
               <td><%= f.date_select :halal_expiry %></td>
               <td><%= f.check_box :verified %></td>
