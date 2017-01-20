@@ -15,7 +15,6 @@ class Merchant < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   validates_presence_of :registered_business_name
-  validates_presence_of :uen_roc_fhc
   validates_presence_of :contact_person_name
   validates_presence_of :office_number
   validates_presence_of :mobile_number
