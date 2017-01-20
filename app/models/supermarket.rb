@@ -5,7 +5,7 @@ class Supermarket < ActiveRecord::Base
   has_many  :opening_hours
   accepts_nested_attributes_for  :opening_hours
     
-    before_create :set_expiration_date
+  before_create :set_expiration_date
 
   validates_presence_of :merchant_id
   validates_presence_of :brand_name
