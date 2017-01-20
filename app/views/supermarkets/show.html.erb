@@ -27,80 +27,85 @@
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading form-subtitle"><%= @supermarket.business_name %> (<%= @supermarket.qualifying_criterium.name %>)</h4>
-            <table class="table">
+            <h4 class="media-heading title"><%= @supermarket.brand_name %> (<%= @supermarket.qualifying_type.name %>)</h4>
+            <table class="table table-striped">
               <thead>
                 <tr><td><p><i class="fa fa-map-marker"></i> <%= @supermarket.operating_address %></p></td></tr>
-                <tr><td><p><img src="https://maxcdn.icons8.com/windows10/PNG/16/User_Interface/email-16.png" title="Email" width="16"> <%= @supermarket.general_email %></p></td></tr>
-                <tr><td><p><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Mobile/phone-25.png" title="Email" width="16">+65  <%= @supermarket.general_contact %></p></td></tr>
-                <tr><td><p><img src="https://maxcdn.icons8.com/windows8/PNG/26/Computer_Hardware/monitor-26.png" title="Monitor" width="16"> <%= link_to @supermarket.website, "#{@supermarket.website}" %></p></td></tr>
-                <tr><td><p>Social sites: <%= link_to @supermarket.facebook do %><i class="fa fa-facebook-official"></i><% end %> <%= link_to @supermarket.instagram do %><i class="fa fa-instagram"></i><% end %></p></td>
+                <% unless @supermarket.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @supermarket.general_email %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @supermarket.general_contact_number %></p></td></tr>
+                <% unless @supermarket.website.blank? %><tr style="border-top:#ccc solid 1px">
+                  <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @supermarket.website, "#{@supermarket.website}" %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @supermarket.facebook.blank? %><%= link_to @supermarket.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+                <% unless @supermarket.instagram.blank? %><%= link_to @supermarket.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
                 </tr>
               </thead>
             </table>
-            <hr/>
           </div>
-          <% @supermarket.friends_rewards.each do |friends_reward| %>
-          <div class="container-fluid" style="background: white; padding:10px;">
+          <% unless @supermarket.friends_rewards_terms.blank? %>
+          <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
             <div class="col-xs-12 col-sm-12 col-md-3">
-              <div class="avatar"><center><%= image_tag friends_reward.reward_category.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
-                <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-material-green" role="button">Be a FRIEND</a>
+              <div class="avatar"><center><%= image_tag @supermarket.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+              <center>
+                <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
               </center>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9">
               <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-              <p><%= friends_reward.terms %></p>
+              <p><%= @supermarket.friends_rewards_terms %></p>
             </div>
           </div>
           <% end %>
           <div class="container-fluid">
-            <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-            <h5 class="question">What types of grocery items do you sell? Any specialty items?</h5>
+            <h4 class="title" style="color:#D04E2E;">FAQ</h4>
+            <h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
             <p><%= h(@supermarket.question_1).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">What is the easiest way to get to your place by public transport?</h5>
+            <h5 class="question">What is the easiest way to get to your supermarket by public transport?</h5>
             <p><%= h(@supermarket.question_2).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">Where is the nearest and easiest parking spot near your place?</h5>
+            <h5 class="question">Where is the nearest and easiest parking spot near your supermarket?</h5>
             <p><%= h(@supermarket.question_3).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">Do you have a prayer space for me? If not, where is the nearest mosque or place that I can perform my prayers at?</h5>
+            <h5 class="question">Do you have a prayer space for me? If not, where is the nearest mosque or supermarket that I can perform my prayers at?</h5>
             <p><%= h(@supermarket.question_4).gsub(/\n/, '<br>').html_safe %></p>
+            <h5 class="question">Please provide me with links to reviews about you.</h5>
+            <p><%= h(@supermarket.question_5).gsub(/\n/, '<br>').html_safe %></p>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
-        <div class="container-fluid" style="border:#ccc solid 1px;">
-          <h4 class="form-subtitle">Opening Hours</h4>
-          <p><%= h(@supermarket.opening_hours).gsub(/\n/, '<br>').html_safe %></p>
+        <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
+          <h4 class="title">Opening Hours</h4>
+          <% @supermarket.opening_hours.each do |time| %>
+          <div class="col-xs-12 col-sm-6 col-md-4" style="padding:0;">
+            <%= time.day.name %>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-2">
+            <%= time.open_or_close.name %>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= time.opening.strftime("%I:%M %p") %>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= time.closing.strftime("%I:%M %p") %>
+          </div>
+          <% end %>
         </div>
-        <p><% @supermarket.deliveries.each do |delivery| %>
-                <%= link_to "Order NOW!", raw(delivery.delivery_url), :class => "btn btn-block btn-raised btn-material-teal", :style => 'color:#fff;' %>
-                <% end %>
-              </p>
-        <p><% @supermarket.reservations.each do |reservation| %>
-                <%= link_to "Reserve NOW!", raw(reservation.reservation_url), :class => "btn btn-block btn-raised btn-material-red", :style => 'color:#fff;' %>
-                <% end %>
-              </p>
+        <p><% unless @supermarket.ordering_link.blank? %><%= link_to "Order NOW!", raw(@supermarket.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
+          <% end %>
+        </p>
         <div class="row">
           <div class="col-xs-6">
-            <%= image_tag @supermarket.photo_1.url(:square), :class => "img-thumbnail" %><br><br>
-            <%= image_tag @supermarket.photo_2.url(:square), :class => "img-thumbnail" %>
+            <%= image_tag @supermarket.image.url(:square), :class => "img-thumbnail" %><br><br>
+            <%= image_tag @supermarket.image_2.url(:square), :class => "img-thumbnail" %>
           </div>
           <div class="col-xs-6">
-           <%= image_tag @supermarket.photo_3.url(:square), :class => "img-thumbnail" %><br><br>
-           <%= image_tag @supermarket.photo_4.url(:square), :class => "img-thumbnail" %>
+           <%= image_tag @supermarket.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+           <%= image_tag @supermarket.image_4.url(:square), :class => "img-thumbnail" %>
          </div>
-      </div>
-      <br>
-      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">Location</h4>
-        <% @supermarket.locations.each do |location| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag location.icon.url(:thumb) %> <%= location.name %></p></div>
-        <% end %>
-      </div>
-      <br>
-      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="form-subtitle">supermarket highlights</h4>
-        <% @supermarket.supermarket_highlights.each do |supermarket_highlights| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag supermarket_highlights.icon.url(:thumb) %> <%= supermarket_highlights.name %></p></div>
+       </div>
+       <br>
+       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Highlights</h4>
+        <% @supermarket.supermarket_highlights.each do |sh| %>
+        <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag sh.icon.url(:thumb) %> <%= sh.name %></p></div>
         <% end %>
       </div>
     </div>
