@@ -18,7 +18,7 @@
     <%= f.collection_select(:price_range_id_eq, PriceRange.all, :id, :price, {:include_blank => "Price Range"}, {:class=>'form-control'}) %><br>
   </div>
   <div>
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-material-red" %>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
   </div>
 </div>
 <% end %>
