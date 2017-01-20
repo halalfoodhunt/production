@@ -343,7 +343,7 @@ body {
     .navbar-default .navbar-nav>li>a:hover,
     .navbar-default .navbar-nav>li>a:focus {
         padding: 5px 10px;
-        background: white;
+        background: white ;
         color: #EF6C3D;
         margin: 10px;
         border-radius: 5px;
@@ -366,7 +366,19 @@ body {
     }
 
     .navbar.navbar,
-    .navbar-default.navbar, .navbar-static-top {
+    .navbar-default.navbar {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.84);
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-size: 11px;
+        margin-bottom: 0px;
+    }
+    
+        .navbar.navbar,
+        .navbar-static-top.navbar {
         background: transparent;
         color: rgba(255, 255, 255, 0.84);
         font-family: 'Montserrat', sans-serif;
