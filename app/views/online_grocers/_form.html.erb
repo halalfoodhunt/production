@@ -10,7 +10,7 @@
     </div>
   <% end %>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Let your customers be familiar with your logo</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="media">
     <div class="media-left media-top">
@@ -26,14 +26,14 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Select the region of listing and the location in that region</strong></h5> <p>It is very important for you to answer these questions in full sentences. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE REGION OF YOUR LISTING</strong></h5> <p>Please pick the general region and location of your listing so that customers can find you for self-collection or look out for you during events. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
    <%= f.collection_select :location_id, Location.all, :id, :name, autofocus: true, layout: :inline %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Halal Status</strong></h5> <p>Select if you're halal-certified or muslim-owned. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE </strong></h5> <p>Do you retail only halal-certified products on your site or do you retail non-certified Halal products as well?</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
 </div>
