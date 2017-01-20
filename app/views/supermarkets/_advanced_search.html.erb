@@ -11,6 +11,8 @@
    <div class="col-sm-12 col-md-6" style="padding:2px">
     <%= f.collection_select(:supermarket_highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %>
      <br>
+  </div>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
     <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
   </div>
   <div>
