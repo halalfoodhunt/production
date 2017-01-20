@@ -1,9 +1,9 @@
 <div class="col-sm-12 col-md-12">
-  <div class="col-sm-12 col-md-2" style="padding:0">
+  <div class="col-sm-12 col-md-12" style="padding:0">
     <h6 style="text-align:left">Search for a supplier</h6>
   </div>
   <%= search_form_for @search do |f| %>
-  <div class="col-sm-12 col-md-10" style="padding:0">
+  <div class="col-sm-12 col-md-12" style="padding:0">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
     </div>
@@ -19,7 +19,7 @@
     <%= f.collection_select(:price_range_id_eq, PriceRange.all, :id, :price, {:include_blank => "Price Range"}, {:class=>'form-control'}) %><br>
   </div>
   <div style="margin-bottom:60px;">
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-primary" %>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
   </div>
 </div>
 <% end %>
