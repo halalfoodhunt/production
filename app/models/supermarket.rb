@@ -1,15 +1,14 @@
 class Supermarket < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :business_name, use: :slugged
+  friendly_id :brand_name, use: :slugged
   
-    attr_accessor :business_name, :days_attributes
-    has_many :days, :dependent => :destroy
-    accepts_nested_attributes_for :days, allow_destroy: true
+  has_many  :opening_hours
+  accepts_nested_attributes_for  :opening_hours
     
     before_create :set_expiration_date
 
   validates_presence_of :merchant_id
-  validates_presence_of :business_name
+  validates_presence_of :brand_name
   validates_presence_of :general_contact_number
   validates_presence_of :operating_address
   validates_presence_of :location
