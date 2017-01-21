@@ -1,6 +1,6 @@
 <div class="col-sm-12 col-md-12">
   <div class="col-sm-12 col-md-2" style="padding:0">
-    <h6 style="text-align:left">Search for a place</h6>
+    <h6 style="text-align:left">Search for a supermarket</h6>
   </div>
   <%= search_form_for @search do |f| %>
   <div class="col-sm-12 col-md-10" style="padding:0">
@@ -9,14 +9,14 @@
     </div>
     <br>
    <div class="col-sm-12 col-md-6" style="padding:2px">
-    <%= f.collection_select(:supermarket_highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %>
+    <%= f.collection_select(:supermarket_highlights_id_eq_any, SupermarketHighlight.all, :id, :name, {:include_blank => "Supermarket Highlights"}, {:class=>'form-control'}) %>
      <br>
   </div>
      <div class="col-sm-12 col-md-6" style="padding:2px">
     <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
   </div>
   <div>
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-material-red" %>
+    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
   </div>
 </div>
 <% end %>
