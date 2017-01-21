@@ -67,6 +67,12 @@ class FriendsRewardsController < ApplicationController
    render "layouts/unauthorised"
   end
   end
+  
+  def all
+    @search= FriendsReward.ransack(params[:q])
+    @friends_rewards = @search.result.includes(:place).where(draft: false)
+    @places = Place.all
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
