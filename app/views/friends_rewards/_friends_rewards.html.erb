@@ -15,24 +15,23 @@
         <div class="avatar"><%= image_tag friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
-        <% friends_reward.places.each do |place| %>
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h4><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %></h4>
-          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+          <h4><% friends_reward.places.each do |place| %><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %><% end %></h4>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i><% friends_reward.places.each do |place| %><%= place.operating_address %><% end %></p>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
       </div>
-      <% end %>
       <!--/.Front Side-->
       <!--Back Side-->
       <div class="face back">
         <!--Content-->
         <h4><%= friends_reward.name %></h4>
         <hr>
-        <% friends_reward.places.each do |place| %>
-        <p><%= place.friends_rewards_terms %></p>
+        <p><% friends_reward.places.each do |place| %>
+        <%= place.friends_rewards_terms %>
         <% end %>
+        </p>
         <hr>
         <!--Triggering button-->
         <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
