@@ -82,6 +82,6 @@ class FriendsRewardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def friends_reward_params
-      params.require(:friends_reward).permit(:name, :icon)
+      params.require(:friends_reward).permit(:name, :icon, :place_id)
     end
 end
