@@ -1,4 +1,5 @@
-<% @friends_rewards.each do |friends_reward| %>
+<% @friends_rewards.all.each do |friends_reward| %>
+<% @friends_reward.places.each do |place| %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -36,6 +37,7 @@
   </div>
   <!--/.Rotating card-->
 </div>
+<% end %>
 <% end %>
 <script>
 $('.rotate-btn').on('click', function(){
