@@ -31,7 +31,7 @@
         <h4><%= friends_reward.name %></h4>
         <hr>
         <% friends_reward.places.each do |place| %>
-        <p><%= friends_reward.places.friends_rewards_terms %></p>
+        <p><%= place.friends_rewards_terms %></p>
         <% end %>
         <hr>
         <!--Triggering button-->
