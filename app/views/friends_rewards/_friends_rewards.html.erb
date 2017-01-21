@@ -1,4 +1,4 @@
-<% @friends_rewards.places.each do |place| %>
+<% @friends_rewards.each do |friends_reward| %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -7,14 +7,14 @@
       <div class="face front">
         <!-- Image-->
         <div class="card-up">
-          <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
+          <%= image_tag friends_reward.place.featured_image.url(:square), :class => "img-responsive" %>
         </div>
         <!--Avatar-->
-        <div class="avatar"><%= image_tag place.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        <div class="avatar"><%= image_tag friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h4><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %><% end %></h4>
+          <h4><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %></h4>
           <p style="margin:0;"><i class="fa fa-map-marker"></i><%= place.operating_address %></p>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
