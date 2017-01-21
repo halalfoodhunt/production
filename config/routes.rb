@@ -53,7 +53,12 @@ Rails.application.routes.draw do
   resources :featured_articles
   resources :listings
   resources :supermarket_highlights
-  resources :supermarkets
+  resources :supermarkets do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :grocer_service_types
   resources :food_delivery_types
   resources :food_deliveries do
@@ -76,7 +81,12 @@ Rails.application.routes.draw do
   resources :place_types
   resources :regions
   resources :supplier_types
-  resources :friends_rewards
+  resources :friends_rewards do
+     collection do
+      get :all
+      put :update_all
+    end
+  end
   resources :suppliers do
      collection do
       get :edit_multiple
@@ -89,10 +99,10 @@ Rails.application.routes.draw do
   resources :establishment_types
   resources :culinary_skills
   resources :class_types
-  resources :lesson_types
+  resources :lesson_types 
   resources :food_types
   resources :service_types
-  resources :caterer_types
+  resources :caterer_types 
   resources :dining_types
   resources :cuisine_types
   resources :highlights

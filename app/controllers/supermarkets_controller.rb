@@ -84,6 +84,20 @@ class SupermarketsController < ApplicationController
     end
   end
   
+  def edit_multiple
+  @supermarkets = Supermarket.friendly.find(params[:supermarket_ids])
+  end
+
+  def update_multiple
+  @supermarkets = Supermarket.friendly.update(params[:supermarkets].keys, params[:supermarkets].values)
+  @supermarkets.reject! { |p| p.errors.empty? }
+  if @supermarkets.empty?
+    redirect_to pages_supermarkets_path
+  else
+    render "edit_multiple"
+  end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_supermarket

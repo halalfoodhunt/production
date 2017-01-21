@@ -1,16 +1,18 @@
- <div class="container-fluid admin_dashboard-full-height">
-  <%= render 'layouts/admin_sidebar' %>
-  <%= render 'layouts/admin_topbar' %>
-  <div style="background:rgba(255,255,255,0.8);" class="col-xs-12 col-md-12">
-    <%= form_tag update_multiple_supermarkets_path, method: :put do %>
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <%= form_tag update_multiple_supermarkets_path, method: :put do %>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Business Name</th>
-          <th>Halal Status</th>
-          <th>Verify?</th>
-          <th>Expiry Date</th>
-          <th>Publish</th>
+          <th><h6><strong>Business Name</strong></h6></th>
+          <th><h6><strong>Halal Status</strong></h6></th>
+          <th><h6><strong>Verify?</strong></h6></th>
+          <th><h6><strong>Expiry Date</strong></h6></th>
+          <th><h6><strong>Draft</strong></h6></th>
         </tr>
       </thead>
       <tbody>
@@ -27,23 +29,23 @@
       </div>
       <% end %>
         <tr>
-          <td><%= supermarket.business_name %></td>
-          <td><%= f.collection_select :qualifying_criterium_id, QualifyingCriterium.all, :id, :name, autofocus: true, layout: :inline %></td>
+          <td><%= supermarket.brand_name %></td>
+          <td><%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %></td>
           <td><%= f.check_box :verified %></td>
           <td><%= f.date_select :expiry_date %></td>
-          <td><%= f.check_box :publish %></td>
+          <td><%= f.check_box :draft %></td>
         </tr>
                           <% end %>
     <% end %>
       </tbody>
       </table>
     <div class="actions">
-      <center><%= submit_tag "Update", class: 'btn btn-lg btn-raised btn-material-brown' %></center>
+      <center><%= submit_tag "Update", class: 'btn btn-large btn-raised btn-primary' %></center>
     </div>
 
   </div>
   <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<script type="text/javascript">
-$.material.init();
-</script>
