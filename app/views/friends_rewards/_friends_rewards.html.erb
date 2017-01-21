@@ -1,4 +1,5 @@
 <% @friends_rewards.each do |friends_reward| %>
+<% friends_reward.places.each do |place| %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -7,17 +8,15 @@
       <div class="face front">
         <!-- Image-->
         <div class="card-up">
-          <% friends_reward.places.each do |place| %>
           <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
-          <% end %>
         </div>
         <!--Avatar-->
-        <div class="avatar"><%= image_tag friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        <div class="avatar"><%= image_tag place.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h4><% friends_reward.places.each do |place| %><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %><% end %></h4>
-          <p style="margin:0;"><i class="fa fa-map-marker"></i><% friends_reward.places.each do |place| %><%= place.operating_address %><% end %></p>
+          <h4><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %><% end %></h4>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i><%= place.operating_address %></p>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
@@ -28,10 +27,7 @@
         <!--Content-->
         <h4><%= friends_reward.name %></h4>
         <hr>
-        <p><% friends_reward.places.each do |place| %>
-        <%= place.friends_rewards_terms %>
-        <% end %>
-        </p>
+        <p><%= place.friends_rewards_terms %></p>
         <hr>
         <!--Triggering button-->
         <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
@@ -41,6 +37,7 @@
   </div>
   <!--/.Rotating card-->
 </div>
+<% end %>
 <% end %>
 <script>
 $('.rotate-btn').on('click', function(){
