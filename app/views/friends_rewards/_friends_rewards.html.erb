@@ -6,24 +6,24 @@
       <!--Front Side-->
       <div class="face front">
         <!-- Image-->
+        <% friends_reward.places.each do |place| %>
         <div class="card-up">
-          <% friends_reward.places.each do |place| %>
           <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
-          <% end %>
         </div>
+        <% end %>
         <!--Avatar-->
         <div class="avatar"><%= image_tag friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
+        <% friends_reward.places.each do |place| %>
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <% friends_reward.places.each do |place| %>
           <h4><%= link_to places_path(place) do %><strong><%= place.business_name %></strong><% end %></h4>
           <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
-          <% end %>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
       </div>
+      <% end %>
       <!--/.Front Side-->
       <!--Back Side-->
       <div class="face back">
