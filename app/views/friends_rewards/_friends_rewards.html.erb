@@ -6,11 +6,11 @@
       <!--Front Side-->
       <div class="face front">
         <!-- Image-->
-        <% friends_reward.places.each do |place| %>
         <div class="card-up">
+          <% friends_reward.places.each do |place| %>
           <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
+          <% end %>
         </div>
-        <% end %>
         <!--Avatar-->
         <div class="avatar"><%= image_tag friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
