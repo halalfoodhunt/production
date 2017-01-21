@@ -70,7 +70,7 @@ class FriendsRewardsController < ApplicationController
   
   def all
     @search= FriendsReward.ransack(params[:q])
-    @friends_rewards = @search.result.includes(:place).where(draft: false)
+    @friends_rewards = @search.result.includes(:place)
     @places = Place.all
   end
 
