@@ -69,7 +69,8 @@ class FriendsRewardsController < ApplicationController
   end
   
   def all
-    @friends_rewards = FriendsReward.joins(:place).select("friends_rewards.*,places.*").find params[:id]
+    @search= FriendsReward.ransack(params[:q])
+    @friends_rewards = @search.result.includes(:places)
     @places = Place.all
   end
 
