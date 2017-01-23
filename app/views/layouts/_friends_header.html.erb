@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav">
         <% FriendsReward.all.each do |reward| %>
         <li>
-          <%= link_to reward.name, places_path(friends_reward: reward.name) %>
+          <%= link_to reward.name, all_friends_rewards_path(friends_reward: reward.name) %>
         </li>
         <% end %>
       </ul>
