@@ -7,7 +7,7 @@ class PagesController < ApplicationController
    @places = @search.result.where(draft: false)
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
-  end 
+ end 
 
  def merchant_dashboard
  end
@@ -28,53 +28,57 @@ class PagesController < ApplicationController
  end
 
  def caterers
-    @search = Caterer.ransack(params[:q])
-    @caterers = @search.result
-    @friends_rewards = FriendsReward.all
- end
- 
- def ecommers
-    @search = Ecommer.ransack(params[:q])
-    @ecommers = @search.result
-    @friends_rewards = FriendsReward.all
- end
- 
- def food_deliveries
-    @search = FoodDelivery.ransack(params[:q])
-    @food_deliveries = @search.result
-    @friends_rewards = FriendsReward.all 
- end
- 
- def lessons
-    @search = Lesson.ransack(params[:q])
-    @lessons = @search.result
-    @friends_rewards = FriendsReward.all 
- end
- 
- def places
-    @search = Place.ransack(params[:q])
-    @places = @search.result
-    @friends_rewards = FriendsReward.all
- end
+  @search = Caterer.ransack(params[:q])
+  @caterers = @search.result
+  @friends_rewards = FriendsReward.all
+end
+
+def ecommers
+  @search = Ecommer.ransack(params[:q])
+  @ecommers = @search.result
+  @friends_rewards = FriendsReward.all
+end
+
+def food_deliveries
+  @search = FoodDelivery.ransack(params[:q])
+  @food_deliveries = @search.result
+  @friends_rewards = FriendsReward.all 
+end
+
+def lessons
+  @search = Lesson.ransack(params[:q])
+  @lessons = @search.result
+  @friends_rewards = FriendsReward.all 
+end
+
+def places
+  @search = Place.ransack(params[:q])
+  @places = @search.result
+  @friends_rewards = FriendsReward.all
+end
 
 def online_grocers
-    @search = OnlineGrocer.ransack(params[:q])
-    @online_grocers = @search.result
-    @friends_rewards = FriendsReward.all 
+  @search = OnlineGrocer.ransack(params[:q])
+  @online_grocers = @search.result
+  @friends_rewards = FriendsReward.all 
 end
 
 def supermarkets
 end
 
 def suppliers
-    @search = Supplier.ransack(params[:q])
-    @suppliers = @search.result
-    @friends_rewards = FriendsReward.all 
+  @search = Supplier.ransack(params[:q])
+  @suppliers = @search.result
+  @friends_rewards = FriendsReward.all 
 end
 
 def friends_rewards
-  @friends_rewards = FriendsReward.all
-  @places = Place.all
+  if params[:friends_reward].blank?
+    @places = Place.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
 end
 
 def ecommers_friends_rewards
@@ -87,10 +91,10 @@ def halal_delivery
   @search = Place.ransack(params[:q])
 end
 
-  def is_admin?
+def is_admin?
   unless current_merchant && current_merchant.admin?
    render "layouts/unauthorised"
   end
-  end
+end
 
 end
