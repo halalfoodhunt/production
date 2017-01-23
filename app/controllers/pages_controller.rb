@@ -75,9 +75,17 @@ end
 def friends_rewards
   if params[:friends_reward].blank?
     @places = Place.all.order("created_at DESC")
+    @ecommers = Ecommer.all.order("created_at DESC")
+    @caterers = Caterer.all.order("created_at DESC")
+    @food_deliveries = FoodDelivery.all.order("created_at DESC")
+    @supermarkets = Supermarket.all.order("created_at DESC")
+    @lessons = Lesson.all.order("created_at DESC")
+    @online_grocers = OnlineGrocer.all.order("created_at DESC")
+    @suppliers = Supplier.all.order("created_at DESC")
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
   end
 end
 
