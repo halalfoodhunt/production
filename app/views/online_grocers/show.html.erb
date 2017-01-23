@@ -7,7 +7,7 @@
   <div class="container form-style">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
-         <div class="media">
+       <div class="media">
         <div class="media-left">
           <a href="#">
             <%= image_tag @online_grocer.logo.url(:medium), :class => "media-object img-circle" %>
@@ -29,62 +29,64 @@
           </table>
         </div>
       </div>
-        <div class="container-fluid" style="border:#ccc solid 1px; padding:10px;">
+      <% unless @ecommer.friends_rewards_terms.blank? %>
+      <div class="container-fluid" style="border:#ccc solid 1px; padding:10px; background:#fff;">
         <div class="col-xs-12 col-sm-12 col-md-3">
-            <div class="avatar">
-              <center><%= image_tag @online_grocer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
-            </div>
-            <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-            </center>
+          <div class="avatar">
+            <center><%= image_tag @online_grocer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-9">
-            <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-            <p><%= @online_grocer.friends_rewards_terms %></p>
-          </div>
+          <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+          </center>
         </div>
-        <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-            <h5 class="question">What do you retail?</h5>
-            <p><%= h(@online_grocer.question_1).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">How do I place an order with you?</h5>
-            <p><%= h(@online_grocer.question_2).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
-            <p><%= h(@online_grocer.question_3).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
-            <p><%= h(@online_grocer.question_4).gsub(/\n/, '<br>').html_safe %></p>
-            <h5 class="question">Please provide me with links to reviews about you.</h5>
-            <p><%= h(@online_grocer.question_5).gsub(/\n/, '<br>').html_safe %></p>
-      </div>  
-      <div class="col-xs-12 col-sm-12 col-md-5">
-        <div class="container-fluid" style="border:#ccc solid 1px;">
-          <h4 class="title">Contactable Hours</h4>
-          <p><%= @online_grocer.contactable_hours %></p>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+          <p><%= @online_grocer.friends_rewards_terms %></p>
         </div>
-        <br>
-       <p><%= link_to "Order NOW!", raw(@online_grocer.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= image_tag @online_grocer.image.url(:square), :class => "img-thumbnail" %><br><br>
-            <%= image_tag @online_grocer.image_2.url(:square), :class => "img-thumbnail" %>
-          </div>
-          <div class="col-xs-6">
-           <%= image_tag @online_grocer.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-           <%= image_tag @online_grocer.image_4.url(:square), :class => "img-thumbnail" %>
-         </div>
-       </div>
-       <br>
-       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Grocer Type</h4>
-        <% @online_grocer.grocer_types.each do |grocer_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_type.icon.url(:thumb) %> <%= grocer_type.name %></p></div><% end %>
+      </div>
+      <% end %>
+      <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
+      <h5 class="question">What do you retail?</h5>
+      <p><%= h(@online_grocer.question_1).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">How do I place an order with you?</h5>
+      <p><%= h(@online_grocer.question_2).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
+      <p><%= h(@online_grocer.question_3).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
+      <p><%= h(@online_grocer.question_4).gsub(/\n/, '<br>').html_safe %></p>
+      <h5 class="question">Please provide me with links to reviews about you.</h5>
+      <p><%= h(@online_grocer.question_5).gsub(/\n/, '<br>').html_safe %></p>
+    </div>  
+    <div class="col-xs-12 col-sm-12 col-md-5">
+      <div class="container-fluid" style="border:#ccc solid 1px;">
+        <h4 class="title">Contactable Hours</h4>
+        <p><%= @online_grocer.contactable_hours %></p>
       </div>
       <br>
-      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Online Grocer Service Types</h4>
-        <% @online_grocer.grocer_service_types.each do |grocer_service_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_service_type.icon.url(:thumb) %> <%= grocer_service_type.name %></p></div>
-        <% end %>
-      </div>
-       <br>
+      <p><%= link_to "Order NOW!", raw(@online_grocer.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= image_tag @online_grocer.image.url(:square), :class => "img-thumbnail" %><br><br>
+          <%= image_tag @online_grocer.image_2.url(:square), :class => "img-thumbnail" %>
+        </div>
+        <div class="col-xs-6">
+         <%= image_tag @online_grocer.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+         <%= image_tag @online_grocer.image_4.url(:square), :class => "img-thumbnail" %>
+       </div>
+     </div>
+     <br>
+     <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Grocer Type</h4>
+      <% @online_grocer.grocer_types.each do |grocer_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_type.icon.url(:thumb) %> <%= grocer_type.name %></p></div><% end %>
     </div>
+    <br>
+    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Online Grocer Service Types</h4>
+      <% @online_grocer.grocer_service_types.each do |grocer_service_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_service_type.icon.url(:thumb) %> <%= grocer_service_type.name %></p></div>
+      <% end %>
+    </div>
+    <br>
   </div>
+</div>
 </div>
