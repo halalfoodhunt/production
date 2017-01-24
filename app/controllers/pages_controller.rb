@@ -64,6 +64,9 @@ def online_grocers
 end
 
 def supermarkets
+  @search = Supermarket.ransack(params[:q])
+  @supermarkets = @search.result
+  @friends_rewards = FriendsReward.all 
 end
 
 def suppliers
