@@ -93,8 +93,12 @@ def friends_rewards
 end
 
 def ecommers_friends_rewards
-  @friends_rewards = FriendsReward.all
-  @ecommers = Ecommer.all
+  if params[:friends_reward].blank?
+    @ecommers = Ecommer.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
 end
 
 def halal_delivery
