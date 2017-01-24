@@ -4,6 +4,10 @@
   </div>
   <%= search_form_for @search do |f| %>
   <div class="col-sm-12 col-md-12" style="padding:0">
+    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+      <%= f.text_field :business_name_cont, class: "form-control" %>
+    </div>
+    <br>
     <div class="col-sm-12 col-md-6" style="padding:2px">
      <%= f.collection_select(:caterer_types_id_eq_any, CatererType.all, :id, :name, {:include_blank => "Caterer Types"}, {:class=>'form-control'}) %><br>
    </div>

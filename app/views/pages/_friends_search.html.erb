@@ -2,10 +2,9 @@
   <div class="col-sm-12 col-md-2" style="padding:0">
     <h6 style="text-align:left">Search for a friends rewards</h6>
   </div>
-  <%= search_form_for @search do |f| %>
   <div class="col-sm-12 col-md-10" style="padding:0">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-      <%= f.text_field :business_name_cont, class: "form-control" %>
+
     </div>
     <br>
     <div class="col-sm-12 col-md-6" style="padding:2px">
@@ -21,7 +20,15 @@
 <br>
    </div>
     <div class="col-sm-12 col-md-6" style="padding:2px">
-    <%= f.collection_select(:friends_reward_id_eq, FriendsReward.all, :id, :name, {:include_blank => "Friends Rewards"}, {:class=>'form-control'}) %><br>
-  </div>
-  </div>
+     <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
+  <span class="caret"></span></button>
+  <% FriendsReward.all.each do |reward| %>
+  <ul class="dropdown-menu">
+        <li>
+          <%= link_to reward.name, pages_friends_rewards_path(friends_reward: reward.name) %>
+        </li>
+  </ul>
   <% end %>
+</div>
+  </div>
