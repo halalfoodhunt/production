@@ -1,19 +1,16 @@
-<%= render 'layouts/header' %>
+<%= render 'layouts/friends_header' %>
 <div style="padding:60px 0 60px 0" class="container-fluid friends-rewards">
-    <div class="col-md-8 col-md-offset-2" style="background:rgba(0,0,0,0.5); margin-top:60px;">
-      <div class="text-center">
-        <h3 class="form-subtitle" style="color:#c2a476; font-weight:900; font-size:3em;">Find out who our FRIENDS are. </h3>
-        <p class="sub-header" style="font-size:20px; color:#fff;">And get rewards from our FRIENDS.</p><br><br>
-      </div>
-    </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <h3 style="color:#fff; font-weight:800; font-size:2.5em; text-transform:none; line-height:1; padding-left:15px; margin-top:100px;">Friends Rewards:<br>We reward you for choosing Halal!</h3>
+    <%= render 'friends_search' %>
   </div>
+  <div class="col-xs-12 col-sm-6 col-md-6"></div>
+</div>
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @friends_rewards.count %></b> Halal establishments IN ALL CITIES, SINGAPORE</h5></div>
-  <div class="col-md-1" style="padding-top:40px">
-   
-  </div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @ecommers.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>ECOMMERS</u>, SINGAPORE</h5></div>
+  <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
   <div class="row">
