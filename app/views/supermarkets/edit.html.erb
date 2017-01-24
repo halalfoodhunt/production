@@ -1,7 +1,16 @@
-<div class="container-fluid merchant_dashboard">
-  <%= render 'layouts/merchant_sidebar' %>
-  <%= render 'layouts/merchant_topbar' %>
- <div style="background:rgba(255,255,255,0.6);" class="col-md-10 col-md-offset-1 form-style">
-   <%= render 'form' %>
- </div>
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/merchant_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="background:white; border:1px solid #ccc; padding:10px;">
+        <center><h4>You have chosen to list under<strong> Supermarkets</strong>!</h4><p class="italic-font" style="font-weight:400;">Listing under <strong>Supermarkets</strong> indicates that your business <u>provides a range of food products from various suppliers.</u><br><br>
+          It’s important to fill in all the details in order to provide all the information to your customers and get more views on your listing.
+        </p></center>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
 </div>
