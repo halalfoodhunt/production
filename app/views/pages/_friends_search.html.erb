@@ -1,29 +1,31 @@
 <div class="col-sm-12 col-md-12">
   <div class="col-sm-12 col-md-12" style="padding:0">
     <h6 style="text-align:left">Search for a friends rewards</h6>
+  </div>
+  <div class="col-sm-12 col-md-6" style="padding:2px">
+    <div class="dropdown">
+      <button class="btn btn-block btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Categories
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Places</a></li>
+          <li><a href="#">Ecommers</a></li>
+          <li><a href="#">Caterers</a></li>
+        </ul>
+      </div>
+      <br>
     </div>
     <div class="col-sm-12 col-md-6" style="padding:2px">
-      <div class="dropdown">
-        <button class="btn btn-block btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Categories
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Places</a></li>
-            <li><a href="#">Ecommers</a></li>
-            <li><a href="#">Caterers</a></li>
-          </ul>
-        </div>
-        <br>
+     <div class="dropdown">
+      <button class="btn btn-block btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Rewards
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <% FriendsReward.all.each do |reward| %>
+          <li>
+            <%= link_to reward.name, pages_friends_rewards_path(friends_reward: reward.name) %>
+          </li>
+          <% end %>
+        </ul>
       </div>
-      <div class="col-sm-12 col-md-6" style="padding:2px">
-       <div class="dropdown">
-        <button class="btn btn-block btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Rewards
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <% FriendsReward.all.each do |reward| %>
-            <li>
-              <%= link_to reward.name, pages_friends_rewards_path(friends_reward: reward.name) %>
-            </li>
-                          <% end %>
-          </ul>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>
