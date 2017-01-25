@@ -8,18 +8,6 @@
       </div>
     </div>
 </div>
-<div class="container-fluid">
-  <% Place.all.each do |place| %>
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <%= image_tag place.special_tag.icon.url(:medium), :class => "img_responsive" %>
-        <div class="overlay">
-           <h2>Hover effect 4</h2>
-           <%= link_to special_tag.name, places_path(special_tag: special_tag.name), :class => "info" %>
-        </div>
-    </div>
-</div>
-</div>
 <div class="container-fluid" style="background:#D04E2E; padding-bottom:30px;">
   <div class="col-md-10 col-md-offset-1">
     <div class="text-center"><h2 class="form-subtitle" style="margin:30px;">Looking for something else?</h2></div>
