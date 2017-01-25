@@ -7,7 +7,8 @@
         <%= render 'places/search_place' %>
       </div>
     </div>
-    <% SpecialTag.all.each do |special_tag| %>
+    <div class="container">
+<% SpecialTag.all.each do |special_tag| %>
 <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12" style="height:150px;">
     <div class="hovereffect">
         <center><%= image_tag special_tag.icon.url(:medium), :class => "img_responsive" %></center>
@@ -19,6 +20,7 @@
     </div>
 </div>
 <% end %>
+</div>
 </div>
 <div class="container-fluid" style="background:#D04E2E; padding-bottom:30px;">
   <div class="col-md-10 col-md-offset-1">
