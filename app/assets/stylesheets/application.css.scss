@@ -1003,7 +1003,7 @@ span.step {
   overflow: hidden;
   top: 0;
   left: 0;
-  background-color: rgba(75,75,75,0.7);
+  background-color: orange;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -1024,7 +1024,6 @@ span.step {
   position: relative;
   font-size: 17px;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
   -webkit-transform: translateY(45px);
   -ms-transform: translateY(45px);
   transform: translateY(45px);
