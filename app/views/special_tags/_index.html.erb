@@ -1,0 +1,12 @@
+<% @special_tags.each do |special_tag| %>
+ <tr>
+  <td class="col-md-1"><%= image_tag(special_tag.icon.url(:square), :class => "img_circle") %></td>
+  <td class="col-md-9"><%= special_tag.name %></td>
+  <td class="col-md-1"><%= link_to edit_special_tag_path(special_tag), remote: true do %>
+    <i class="fa fa-pencil" style="color:white"></i><% end %>
+  </td>
+  <td class="col-md-1"><%= link_to special_tag, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash-o" style="color:white"></i><% end %>
+  </td>
+</tr>
+<% end %>

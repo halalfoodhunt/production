@@ -1,21 +1,26 @@
-<%= form_for(@special_tag) do |f| %>
-  <% if @special_tag.errors.any? %>
+<div class="modal-body">
+  <%= bootstrap_form_for(@special_tag) do |f| %>
+  <div class="modal-body">
+    <% if @special_tag.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@special_tag.errors.count, "error") %> prohibited this special_tag from being saved:</h2>
-
       <ul>
-      <% @special_tag.errors.full_messages.each do |message| %>
+        <% @special_tag.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <% end %>
+    <div class="field">
+      <%= f.text_field :name %>
+    </div>
+     <div class="field">
+      <%= f.file_field :icon %>
+    </div>
+    <div class="modal-footer">
+     <%= f.submit :class => "btn btn-block btn-raised btn-danger" %>
+     <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+   </div>
+ </div>
+ <% end %>
+</div>

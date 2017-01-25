@@ -1,4 +1,5 @@
 class SpecialTagsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_special_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /special_tags
@@ -29,10 +30,12 @@ class SpecialTagsController < ApplicationController
     respond_to do |format|
       if @special_tag.save
         format.html { redirect_to @special_tag, notice: 'Special tag was successfully created.' }
-        format.json { render :show, status: :created, location: @special_tag }
+        format.json { render :show, status: :created, location: @special_tag 
+        format.js
       else
         format.html { render :new }
         format.json { render json: @special_tag.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +47,11 @@ class SpecialTagsController < ApplicationController
       if @special_tag.update(special_tag_params)
         format.html { redirect_to @special_tag, notice: 'Special tag was successfully updated.' }
         format.json { render :show, status: :ok, location: @special_tag }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @special_tag.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,7 +63,14 @@ class SpecialTagsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to special_tags_url, notice: 'Special tag was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private
@@ -69,6 +81,6 @@ class SpecialTagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_tag_params
-      params.require(:special_tag).permit(:name)
+      params.require(:special_tag).permit(:name, :icon)
     end
 end
