@@ -25,6 +25,8 @@ class Place < ActiveRecord::Base
   belongs_to :verifying_type
   has_many :highlights, :through => :features
   has_many :features
+  has_many :special_tags, :through => :admin_tags
+  has_many :admin_tags
   has_many :cuisine_types, :through => :menu_types
   has_many :menu_types
   has_many :dining_types, :through => :eateries
