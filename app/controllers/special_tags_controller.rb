@@ -30,7 +30,7 @@ class SpecialTagsController < ApplicationController
     respond_to do |format|
       if @special_tag.save
         format.html { redirect_to @special_tag, notice: 'Special tag was successfully created.' }
-        format.json { render :show, status: :created, location: @special_tag 
+        format.json { render :show, status: :created, location: @special_tag }
         format.js
       else
         format.html { render :new }
