@@ -9,6 +9,7 @@
       <thead>
         <tr>
           <th><h6><strong>Business Name</strong></h6></th>
+          <th><h6><strong>Special Tags</strong></h6></th>
           <th><h6><strong>Halal Status</strong></h6></th>
           <th><h6><strong>Halal Expiry</strong></h6></th>
           <th><h6><strong>Verify?</strong></h6></th>
@@ -31,6 +32,7 @@
       <% end %>
         <tr>
           <td><%= place.business_name %></td>
+          <td><%= f.select :special_tag_ids, SpecialTag.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'special_tag' %></td>
           <td><%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %></td>
           <td><%= f.date_select :halal_expiry %></td>
           <td><%= f.check_box :verified %></td>
@@ -51,3 +53,11 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('select#special_tag').select2({
+    placeholder: "Select Special Tags",
+    allowClear: true
+  });
+});
+</script>
