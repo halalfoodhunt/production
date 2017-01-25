@@ -10,8 +10,8 @@ class PagesController < ApplicationController
    @featured_articles = FeaturedArticle.all
     else
    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
-   @places = @search.result.where(draft: false).where(special_tag_id: @special_tag_id)
    @search = Place.ransack(params[:q])
+   @places = @search.result.where((draft: false).where(special_tag_id: @special_tag_id))
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
     end 
