@@ -86,7 +86,7 @@
               <td><%= check_box_tag "place_ids[]", place.id %>
               </td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
-              <td><% place.special_tag.all.each do |tag| %>
+              <td><% place.special_tag.each do |tag| %>
               <span class="label label-warning">tag.special_tag.name</span>
               <% end %>
               </td>
