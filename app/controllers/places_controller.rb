@@ -90,7 +90,6 @@ class PlacesController < ApplicationController
   
   def edit_multiple
   @places = Place.friendly.find(params[:place_ids])
-  @place.special_tag_ids = params[:place][:special_tag_ids]
   end
 
   def update_multiple
