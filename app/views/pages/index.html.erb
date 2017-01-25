@@ -10,7 +10,7 @@
 </div>
 <div class="container">
 <% SpecialTag.all.each do |special_tag| %>
-<div class="col-lg-3 col-md-2 col-sm-6 col-xs-12" style="height:280px;">
+<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12" style="height:280px;">
     <div class="hovereffect">
         <center><%= image_tag special_tag.icon.url(:medium), :class => "img_responsive" %></center>
         <div class="overlay">
