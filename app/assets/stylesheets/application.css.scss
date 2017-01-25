@@ -1009,7 +1009,7 @@ span.step {
 }
 
 .hovereffect:hover .overlay {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .hovereffect img {
@@ -1019,6 +1019,7 @@ span.step {
 
 .hovereffect h2 {
   text-transform: uppercase;
+  font-weight:500;
   color: #fff;
   text-align: center;
   position: relative;
