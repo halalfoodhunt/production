@@ -15,7 +15,7 @@
         <%= image_tag place.special_tag.icon.url(:medium), :class => "img_responsive" %>
         <div class="overlay">
            <h2>Hover effect 4</h2>
-           <%= link_to reward.name, places_path(friends_reward: reward.name), :class => "info" %>
+           <%= link_to special_tag.name, places_path(special_tag: special_tag.name), :class => "info" %>
         </div>
     </div>
 </div>
