@@ -3,11 +3,18 @@ class PagesController < ApplicationController
   before_filter :is_admin?, only: [:admin_dashboard, :merchant_dashboard, :categories, :places, :ecommers, :food_deliveries, :caterers, :online_grocers, :lessons, :suppliers, :supermarkets]
   
   def index
+   if params[:special_tag].blank? 
    @search = Place.ransack(params[:q])
    @places = @search.result.where(draft: false)
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
- end 
+   else
+    @search = Place.ransack(params[:q])
+    @places = @search.result.where(draft: false)
+    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
+    @places = Place.where(special_tag_id: @special_tag_id).where(:draft => false)
+   end
+  end 
 
  def merchant_dashboard
  end
@@ -31,7 +38,7 @@ class PagesController < ApplicationController
   @search = Caterer.ransack(params[:q])
   @caterers = @search.result
   @friends_rewards = FriendsReward.all
-end
+ end
 
 def ecommers
   @search = Ecommer.ransack(params[:q])
