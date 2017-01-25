@@ -100,7 +100,6 @@ class PlacesController < ApplicationController
   else
     render "edit_multiple"
   end
-  @place.special_tag_ids = params[:place][:special_tag_ids]
   end
 
   private
