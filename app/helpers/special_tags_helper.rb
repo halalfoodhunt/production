@@ -1,0 +1,2 @@
+module SpecialTagsHelper
+end

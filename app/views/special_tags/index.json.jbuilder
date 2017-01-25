@@ -1,0 +1,1 @@
+json.array! @special_tags, partial: 'special_tags/special_tag', as: :special_tag

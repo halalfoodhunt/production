@@ -1,0 +1,1 @@
+json.partial! "special_tags/special_tag", special_tag: @special_tag
