@@ -86,7 +86,7 @@
               </td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
               <td><% place.special_tags.all.each do |tag| %>
-              <span class="label label-warning"><%= link_to tag.name, places_path(special_tag: tag.name) %></span>
+              <span class="label label-warning"><%= link_to tag.name, places_path(special_tags: tag.name) %></span>
               <% end %>
               </td>
               <td class="table-text"><%= place.qualifying_type.name %></td>
