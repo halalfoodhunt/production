@@ -1,0 +1,4 @@
+<td><% place.special_tags.each do |tag| %>
+  <span class="label label-warning"><%= link_to tag.name, special_tag_path(special_tag) %></span>
+  <% end %>
+</td>
