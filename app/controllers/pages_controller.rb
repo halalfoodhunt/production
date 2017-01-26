@@ -61,7 +61,7 @@ def places
   @search = Place.ransack(params[:q])
   @places = @search.result
   @friends_rewards = FriendsReward.all
-  @special_tags = SpecialTag.all
+  @special_tag_ids = SpecialTag.find_by(name: params[:special_tags]).id
 end
 
 def online_grocers
