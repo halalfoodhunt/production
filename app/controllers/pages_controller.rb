@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @places = Place.all.where(draft: false)
    else
     @special_tag_ids = SpecialTag.find_by(name: params[:special_tags]).id
-    @places = Place.all.where(special_tag_id: @special_tag_id).where(draft: false)
+    @places = Place.all.where(special_tag_ids: @special_tag_ids).where(draft: false)
    end
   end 
 
