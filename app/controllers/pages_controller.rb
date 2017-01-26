@@ -7,11 +7,11 @@ class PagesController < ApplicationController
    @places = @search.result.where(draft: false)
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
-   if params[:place][:special_tag_ids].blank? 
+   if params[:special_tags].blank? 
     @places = Place.all.where(draft: false)
    else
-    @place.special_tag_ids = SpecialTag.find_by(name: params[:place][:special_tag_ids]).id
-    @places = Place.all.where(special_tag_ids: @place.special_tag_ids).where(draft: false)
+    @special_tag_ids = SpecialTag.find_by(name: params[:special_tags]).id
+    @places = Place.all.where(special_tag_ids: @special_tag_ids).where(draft: false)
    end
   end 
 
