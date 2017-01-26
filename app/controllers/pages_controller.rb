@@ -58,13 +58,10 @@ def lessons
 end
 
 def places
-  if params[:special_tags].blank?
-    @places = Place.all.order("created_at DESC")
-    @friends_rewards = FriendsReward.all
-  else
-    @places = SpecialTag.includes(:special_tags, :admin_tags).where('special_tag.id = ?', (id or ids array))
-    @friends_rewards = FriendsReward.all
-  end
+  @search = Place.ransack(params[:q])
+  @places = @search.result
+  @friends_rewards = FriendsReward.all
+  @special_tags = SpecialTag.all
 end
 
 def online_grocers
