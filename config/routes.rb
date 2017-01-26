@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  resources :special_tags
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
@@ -134,6 +133,7 @@ Rails.application.routes.draw do
       get :edit_multiple
       put :update_multiple
     end
+      resources :special_tags
   end
   resources :days
  
