@@ -61,6 +61,12 @@ def places
   @search = Place.ransack(params[:q])
   @places = @search.result
   @friends_rewards = FriendsReward.all
+   if params[:special_tags].blank? 
+    @places = Place.all.where(draft: false)
+   else
+    @special_tag_ids = SpecialTag.find_by(name: params[:special_tags]).id
+    @places = Place.all.where(special_tag_ids: @special_tag_ids).where(draft: false)
+   end
 end
 
 def online_grocers
