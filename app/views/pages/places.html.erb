@@ -85,7 +85,10 @@
               <td><%= check_box_tag "place_ids[]", place.id %>
               </td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
-              <%= render 'special_tags/tag' %>
+              <td><% place.special_tag.all.each do |tag| %>
+  <span class="label label-warning"><%= link_to tag.name, places_path(special_tag: special_tag.name) %></span>
+  <% end %>
+</td>
               <td class="table-text"><%= place.qualifying_type.name %></td>
               <td><%= place.halal_expiry.try(:strftime, '%m/%d/%Y') %></td>
               <td><% if place.verified == true %>
