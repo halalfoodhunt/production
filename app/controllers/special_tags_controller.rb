@@ -1,5 +1,5 @@
 class SpecialTagsController < ApplicationController
-  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
+  before_filter :is_admin?, only: [:index, :edit, :update, :destroy]
   before_action :set_special_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /special_tags

@@ -61,10 +61,10 @@ def places
   @search = Place.ransack(params[:q])
   @places = @search.result
   @friends_rewards = FriendsReward.all
-   if params[:special_tags].blank? 
+   if params[:place][:special_tags].blank? 
     @places = Place.all.where(draft: false)
    else
-    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
+    @special_tag_id = SpecialTag.find_by(name: params[:place][:special_tag]).id
     @places = Place.where(special_tag_id: @special_tag_id).order("created_at DESC")
    end
 end

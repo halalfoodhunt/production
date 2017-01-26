@@ -32,6 +32,7 @@ class Place < ActiveRecord::Base
   has_many :dining_types, :through => :eateries
   has_many :eateries
   
+  
   def set_expiration_date
     self.expiry_date =  Date.today + 365.days
   end
