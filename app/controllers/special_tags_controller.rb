@@ -5,13 +5,7 @@ class SpecialTagsController < ApplicationController
   # GET /special_tags
   # GET /special_tags.json
   def index
-    if params[:special_tags].blank?
-    @places = Place.all.order("created_at DESC")
-    @friends_rewards = FriendsReward.all
-  else
-    @special_tags = @place.special_tags.find_by(name: params[:special_tag]).id
-    @places = Place.where(special_tag_id: @special_tag_id).order("created_at DESC")
-    @friends_rewards = FriendsReward.all
+    @special_tags = SpecialTag.all
   end
 
   # GET /special_tags/1
