@@ -58,7 +58,7 @@ def lessons
 end
 
 def places
-  if params[:friends_reward].blank?
+  if params[:special_tag].blank?
     @places = Place.all.order("created_at DESC")
     @friends_rewards = FriendsReward.all
   else
