@@ -62,8 +62,8 @@ def places
     @places = Place.all.order("created_at DESC")
     @friends_rewards = FriendsReward.all
   else
-    @special_tags = @place.special_tags.find_by(name: params[:special_tag]).id
-    @places = Place.where(special_tag_id: @special_tag_id).order("created_at DESC")
+    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
+    @places = Place.includes(:special_tags, :admin_tags).where('special_tags.id = ?', <id or ids array>)
     @friends_rewards = FriendsReward.all
   end
 end
