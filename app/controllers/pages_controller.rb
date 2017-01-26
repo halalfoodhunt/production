@@ -63,7 +63,7 @@ def places
     @friends_rewards = FriendsReward.all
   else
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
-    @places = Place.all(:joins => [:special_tags, :admin_tags], :conditions => ["special_tag.id = ? AND admin_tag.id ?", special_tag_id, admin_tag_id])
+    @places = SpecialTag.places.includes(:admin_tags)
     @friends_rewards = FriendsReward.all
   end
 end
