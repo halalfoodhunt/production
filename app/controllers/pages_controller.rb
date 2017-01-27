@@ -10,6 +10,7 @@ class PagesController < ApplicationController
    if params[:special_tags].blank? 
     @places = Place.all.where(draft: false)
    else
+    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.filter_by_params(params)
    end
   end 
