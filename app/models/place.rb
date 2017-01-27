@@ -5,8 +5,8 @@ class Place < ActiveRecord::Base
   before_create :set_expiration_date
   before_create :set_halal_expiry
   
-  after_create :send_admin_mail
-  def send_admin_mail
+  after_create :send_new_listing_notification
+  def send_new_listing_notification
     AdminNotifier.send_new_listing_notification(self).deliver
   end
   
