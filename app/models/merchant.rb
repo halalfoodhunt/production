@@ -9,7 +9,7 @@ class Merchant < ActiveRecord::Base
   
   after_create :send_new_listing_notification
   def send_new_listing_notification
-    MerchantNotifier.send_new_listing_notification.deliver
+    MerchantNotifier.send_new_listing_notification(self).deliver
   end
   
   # Include default devise modules. Others available are:

@@ -7,7 +7,7 @@ class Place < ActiveRecord::Base
   
   after_create :send_new_listing_notification
   def send_new_listing_notification
-    AdminNotifier.send_new_listing_notification.deliver
+    AdminNotifier.send_new_listing_notification(self).deliver
   end
   
    def set_expiration_date
