@@ -41,6 +41,12 @@ class Place < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
+  def self.filter_by_params(params)
+  scoped = self.scoped
+  scoped = scoped.where(:special_tag_id => params[:special_tag_id]) if params[:special_tag_id]
+  scoped
+  end
+  
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
   
