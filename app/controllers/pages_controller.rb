@@ -64,7 +64,7 @@ def places
    if params[:special_tags].blank? 
     @places = Place.all.where(draft: false)
    else
-    @places = Place.filter_by_params(params)
+    @places = Place.where('special_tag LIKE ?', params[:special_tag])
    end
 end
 
