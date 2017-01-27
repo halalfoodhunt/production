@@ -7,8 +7,8 @@ class Merchant < ActiveRecord::Base
     self.role ||= :free
   end
   
-  after_create :send_admin_mail
-  def send_admin_mail
+  after_create :send_new_listing_notification
+  def send_new_listing_notification
     MerchantNotifier.send_new_listing_notification(self).deliver
   end
   
