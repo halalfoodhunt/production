@@ -4,25 +4,26 @@
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-  <h5>Salaam Ladies!</h5>
+  <p><strong>Salaam Ladies!</strong></p>
 
-  <p>A new user <%= @merchant.registered_business_name %> has just signed up with us! Let's do our best to improve our client's business.
+  <p>A new merchant from <strong><%= @merchant.registered_business_name %></strong> has just signed up with us!<br><br>
+  Let's do our best to improve our client's business.<br><br>
 
-    To the sales team:
-    Here's the new sign up's details
+    To the sales team:<br>
+    Here's the new sign up's details:-<br><br>
 
-    Contact Details
-    Company Name: <%= @merchant.registered_business_name %>
-    Name: <%= @merchant.contact_person_name %>
-    Contact number: <%= @merchant.mobile_number %>
-    Email: <%= @merchant.email %>
+    <strong>Contact Details</strong><br>
+    Company Name: <strong><%= @merchant.registered_business_name %></strong><br>
+    Name: <strong><%= @merchant.contact_person_name %></strong><br>
+    Contact number: <strong><%= @merchant.mobile_number %></strong><br>
+    Email: <strong><%= @merchant.email %></strong><br>
     Please reply to sales@halalfoodhunt.com and info@halalfoodhunt.com to indicate if you would like to take over on the follow up of this client by arranging a meeting with them. If you chose to do so, you will be the only point of contact for the client with halalfoodhunt.com. Once someone has replied, the other sales persons should not contact this client.
     <br><br>
     To the web admin team:
     <br>
-    Please include this new lead into our mailing lists
-    1) The corporate mailing list
-    2) Our subscribers' mailing list
+    Please include this new lead into our mailing lists<br>
+    <strong>1) The corporate mailing list</strong><br>
+    <strong>2) Our subscribers' mailing list</strong><br>
     <br><br>
     Please also indicate the salesperson attached to this client in the Affiliate Merchant Contact Details file.
     <br><br>
