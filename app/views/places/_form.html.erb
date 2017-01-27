@@ -9,6 +9,158 @@
   </ul>
 </div>
 <% end %>
+<% if current_merchant.free? %>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="media">
+    <div class="media-left media-top">
+      <%= image_tag(@place.logo.url(:large), :class => "img_circle", :style => "width:200px; height:200px;") %>
+      <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p>
+    </div>
+    <div class="media-body">
+      <div class="field">
+       <p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo<br><br><br><br><br><br><br><br><br></p>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE REGION & LOCATION OF YOUR LISTING</strong></h5> <p>Please pick the region and location of your listing so that your customers can find you. Identify yourself as a dine-in or take-out kiosk for customers to visit.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
+   <%= f.collection_select :location_id, Location.all, :id, :name, autofocus: true, layout: :inline %>
+   <%= f.collection_select :place_type_id, PlaceType.all, :id, :name, autofocus: true, layout: :inline %>
+ </div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE</strong></h5> <p>Are you a halal-certified or Muslim-owned establishment?</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>For <u><strong>halal-certified</strong></u> businesses, please help us to verify your business by providing a copy or a photo of your MUIS certificate if you are halal-certified. <br><br>For <u><strong>Muslim-owned</strong></u> businesses, please upload a copy or a photo of your NRIC (front and back), your company’s Bizfile and your ROC.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="6">File Name</th>
+        <th>File Size</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= image_tag(@place.document_1.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @place.document_1_file_name %></td>
+        <td><%= @place.document_1_file_size %></td>
+        <td><%= f.file_field :document_1, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@place.document_2.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @place.document_2_file_name %></td>
+        <td><%= @place.document_2_file_size %></td>
+        <td><%= f.file_field :document_2, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@place.document_3.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @place.document_3_file_name %></td>
+        <td><%= @place.document_3_file_size %></td>
+        <td><%= f.file_field :document_3, hide_label: true %></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@place.document_4.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
+        <td colspan="6"><%= @place.document_4_file_name %></td>
+        <td><%= @place.document_4_file_size %></td>
+        <td><%= f.file_field :document_4, hide_label: true %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>Please provide the relevant details to allow customers to maintain contact with your business easily. Accurate and comprehensive information will help you gain more credibility on your listings and help you to be more easily searchable.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <div class="field">
+    <%= f.text_field :business_name %>
+  </div>
+  <div class="field">
+    <%= f.email_field :general_email %>
+  </div>
+  <div class="field">
+    <%= f.text_field :general_contact_number %>
+  </div>
+  <div class="field">
+    <%= f.text_area :operating_address %>
+  </div>
+  <div class="field">
+    <%= f.url_field :website %>
+  </div>
+  <div class="field">
+    <%= f.url_field :facebook %>
+  </div>
+  <div class="field">
+    <%= f.url_field :instagram %>
+  </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>WHEN SHOULD YOUR CUSTOMERS VISIT YOU</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="field">
+    <%= f.fields_for :opening_hours do |time| %> 
+    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+      <%= time.collection_select :open_or_close_id, OpenOrClose.all, :id, :name, autofocus: true, layout: :inline, label: "Open/Close" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+      <%= time.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+      <%= time.time_select :opening, label: "From" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+      <%= time.time_select :closing, label: "To" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div> 
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.select :cuisine_type_ids, CuisineType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'cuisine-type' %>
+   <%= f.select :dining_type_ids, DiningType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'dining-type' %>
+   <%= f.select :highlight_ids, Highlight.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'highlight' %>
+   <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
+ </div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD A FEATURED IMAGE FOR YOUR LISTING</strong></h5> <p>Please upload an image of your listing so that customers can get a hint of what they can look forward to! The photo should depict your storefront so your customers can find you or the interior of the place so that customers can get a feel of the ambience. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="media">
+    <div class="media-left media-top">
+      <%= image_tag(@place.featured_image.url(:large), :class => "img_responsive", :style => "width:300px; height:180px;") %>
+      <p><i>Dimension 800 by 600 pixels. JPEG files only.</i></p>
+    </div>
+    <div class="media-body">
+      <div class="field">
+       <p>Drag and drop or <%= f.file_field :featured_image, hide_label: true %> to upload logo<br><br><br><br><br><br><br><br><br></p>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="field">
+  <h5><strong>ARE YOU READY TO BE PUBLISHED?</strong></h5>
+  <p>Not ready to publish yet? Tick this box if you’d like to save this listing as a draft. Make sure to un-tick this box once you’re ready to publish your listing!</p>
+  <%= f.check_box :draft, label: 'Save as Draft' %>
+</div>
+<div class="actions" style="margin-bottom:20px;">
+  <%= f.submit :class => 'btn btn-md btn-raised btn-danger' %>
+</div>
+<% else %>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
@@ -130,9 +282,7 @@
  <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
-    <% if current_merchant.try(:free?) %>
     <%= f.text_area :question_1, label:'What dishes do you serve, and which are the highly recommended ones?', label_class:'question' %>
-    <% end %>
   </div>
   <div class="field">
     <%= f.text_area :question_2, label:'What is the easiest way to get to your place by public transport?', label_class:'question' %>
@@ -244,6 +394,9 @@
   <%= f.submit :class => 'btn btn-md btn-raised btn-primary' %>
 </div>
 <% end %>
+<% end %>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
   $('select#place-type').select2({
