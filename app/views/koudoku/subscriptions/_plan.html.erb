@@ -12,7 +12,7 @@
     <tbody>
       <tr>
         <td><center><strong><%= @subscription.plan.name %></strong> <br><%= link_to 'Upgrade Your Plan', edit_owner_subscription_path(@owner, @subscription), class: 'btn btn-primary' %></center></td>
-        <td><center><p><strong><%= @current_merchant.listings.count %> out of 5</strong></p><%= link_to 'Get started', main_app.new_listing_path, class: 'btn btn-primary' %></center></td>
+        <td><center><p><strong>2</strong></p><%= link_to 'Get started', main_app.new_listing_path, class: 'btn btn-primary' %></center></td>
         <td><center><p>Your card no. ends with <%= @subscription.last_four %>.</p> <%= link_to 'Update Details', edit_owner_subscription_path(@owner, @subscription, update: 'card'), class: 'btn btn-primary' %></center></td>
       </tr>
     </tbody>
