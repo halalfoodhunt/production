@@ -65,7 +65,7 @@ def places
     @places = Place.all.where(draft: false)
    else
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
-    @places = Place.where(special_tag_id: @special_tag_id).order("created_at DESC")
+    @places = Place.filter_by_params(params)
    end
 end
 
