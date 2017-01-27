@@ -8,12 +8,6 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @places = @search.result.where(draft: false)
-    if params[:special_tags].blank? 
-    @places = Place.all.where(draft: false)
-   else
-    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
-    @places = Place.where(special_tag_id: @special_tag_id).order("created_at DESC")
-   end
     @qualifying_type = QualifyingType.all
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
     marker.lat place.latitude
