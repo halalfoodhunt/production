@@ -130,7 +130,9 @@
  <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
+    <%= unless current_merchant.free? %>
     <%= f.text_area :question_1, label:'What dishes do you serve, and which are the highly recommended ones?', label_class:'question' %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.text_area :question_2, label:'What is the easiest way to get to your place by public transport?', label_class:'question' %>
