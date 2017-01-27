@@ -26,6 +26,8 @@
          <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin-bottom:30px; padding-right:0;">
            <div class="col-xs-6 col-md-4" style="margin-top:30px;"><h5><strong>Information</strong></h5> <p>All the information that you share with us here will not be shared with the public. It is only meant for us to contact you. All other information that you’d like the public to know, please key it in your listings page.</p></div>
            <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding-top:30px;">
+             <label style="margin:0;">Current Subscription Plan</label>
+             <br><h1 class="label label-success"><%= current_merchant.role %></h1><br><br>
              <label>Country of registration</label>
              <h3 style="margin-top:0;"><%= current_merchant.region.name %></h3>
              <div class="field">

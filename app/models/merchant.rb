@@ -1,12 +1,15 @@
 class Merchant < ActiveRecord::Base
 # Added by Koudoku.
-  has_one :subscription
-
   enum role: [:free, :basic, :basic_plus, :social, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
     self.role ||= :free
+  end
+  
+  after_create :send_admin_mail
+  def send_admin_mail
+    MerchantNotifier.send_new_listing_notification(self).deliver
   end
   
   # Include default devise modules. Others available are:
@@ -29,6 +32,7 @@ class Merchant < ActiveRecord::Base
   has_many :supermarkets
   has_many :online_grocers
   has_many :suppliers
+  has_one :subscription
   belongs_to :region
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h5>Salaam Ladies!</h5>
+
+  <p>A new user <%= @merchant.registered_business_name %> has just signed up with us! Let's do our best to improve our client's business.
+
+    To the sales team:
+    Here's the new sign up's details
+
+    Contact Details
+    Company Name: <%= @merchant.registered_business_name %>
+    Name: <%= @merchant.contact_person_name %>
+    Contact number: <%= @merchant.mobile_number %>
+    Email: <%= @merchant.email %>
+    Please reply to sales@halalfoodhunt.com and info@halalfoodhunt.com to indicate if you would like to take over on the follow up of this client by arranging a meeting with them. If you chose to do so, you will be the only point of contact for the client with halalfoodhunt.com. Once someone has replied, the other sales persons should not contact this client.
+    <br><br>
+    To the web admin team:
+    <br>
+    Please include this new lead into our mailing lists
+    1) The corporate mailing list
+    2) Our subscribers' mailing list
+    <br><br>
+    Please also indicate the salesperson attached to this client in the Affiliate Merchant Contact Details file.
+    <br><br>
+    Lastly, please assist with following up, and with the filing of the documents submitted are in order. If this client isstill 'unverified' after 2 weeks, please alert sales@halalfoodhunt.com. Subsequently, the client should be dealing withthe salesperson, and admin to follow up with salespersons.
+    <br><br>
+    Thank you!
+    <br><br>
+    Much Love,
+    Jums<p>
+  </body>
+  </html>
