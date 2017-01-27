@@ -1,12 +1,22 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
-
-  has_many  :opening_hours
-  accepts_nested_attributes_for  :opening_hours
   
   before_create :set_expiration_date
   before_create :set_halal_expiry
+  
+  after_create :send_admin_mail
+  def send_admin_mail
+    AdminNotifier.send_new_listing_notification(self).deliver
+  end
+  
+   def set_expiration_date
+    self.expiry_date =  Date.today + 365.days
+  end
+  
+  def set_halal_expiry
+    self.halal_expiry =  Date.today + 365.days
+  end
 
   validates_presence_of :merchant_id
   validates_presence_of :business_name
@@ -31,15 +41,8 @@ class Place < ActiveRecord::Base
   has_many :menu_types
   has_many :dining_types, :through => :eateries
   has_many :eateries
-  
-  
-  def set_expiration_date
-    self.expiry_date =  Date.today + 365.days
-  end
-  
-  def set_halal_expiry
-    self.halal_expiry =  Date.today + 365.days
-  end
+  has_many  :opening_hours
+  accepts_nested_attributes_for  :opening_hours
 
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
