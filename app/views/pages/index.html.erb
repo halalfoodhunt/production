@@ -7,23 +7,6 @@
       <%= render 'places/search_place' %>
     </div>
   </div>
-  <div class="container" style="margin-top:20px;">
-    <% SpecialTag.all.each do |special_tag| %>
-    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12" style="height:150px;">
-      <div class="hovereffect">
-        <center></center>
-        <div class="overlay">
-          <h2><center>
-            <%= link_to places_path(special_tag: special_tag.name) do %>
-            <%= image_tag special_tag.icon.url(:medium), :class => "img_responsive" %>
-            <% end %>
-          </center></h2>
-          <%= link_to special_tag.name, places_path(special_tag: special_tag.name), :class => "info" %>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
 </div>
 <div class="container-fluid" style="background:#f8f3f0;">
   <div class="col-md-10 col-md-offset-1">

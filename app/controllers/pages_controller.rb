@@ -64,7 +64,8 @@ def places
    if params[:special_tags].blank? 
     @places = Place.all.where(draft: false)
    else
-    @places = Place.where('special_tag LIKE ?', params[:special_tag])
+    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
+    @places = Place.where(special_tag_id: @special_tag_id).order("created_at DESC")
    end
 end
 
