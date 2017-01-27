@@ -8,6 +8,6 @@ class AdminNotifier < ApplicationMailer
   #
   def send_new_listing_notification
     @merchant = merchant
-    mail to: "sales@halalfoodhunt.com", subject: "A Place Has Been Listed"
+    mail to: "zie@halalfoodhunt.com", subject: "A Place Has Been Listed"
   end
 end

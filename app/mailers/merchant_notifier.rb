@@ -8,6 +8,6 @@ class MerchantNotifier < ApplicationMailer
   #
     def send_new_listing_notification
      @merchant = merchant
-        mail to: "sales@halalfoodhunt.com", subject: "A New Merchant has Subscribed!"
+        mail to: "zie@halalfoodhunt.com", subject: "A New Merchant has Subscribed!"
     end
 end
