@@ -58,8 +58,6 @@ def lessons
 end
 
 def places
-  @search = Place.ransack(params[:q])
-  @places = @search.result
   @friends_rewards = FriendsReward.all
    if params[:special_tags].blank? 
     @places = Place.all.where(draft: false)
