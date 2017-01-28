@@ -5,9 +5,15 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
+    if params[:special_tag].present? 
+    @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
+    @places = Place.joins(:admin_tags).where(admin_tags: {special_tag_id: @special_tag_id}).where(draft: false)
+    else
     @search = Place.ransack(params[:q])
-    @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @places = @search.result.where(draft: false)
+    end
+    @friends_rewards = FriendsReward.all
+    @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @qualifying_type = QualifyingType.all
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
     marker.lat place.latitude

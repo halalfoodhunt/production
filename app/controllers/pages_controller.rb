@@ -58,13 +58,14 @@ def lessons
 end
 
 def places
-  @friends_rewards = FriendsReward.all
-   if params[:special_tag].blank? 
-    @places = Place.all.where(draft: false)
-   else
+   if params[:special_tag].present? 
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.joins(:admin_tags).where(admin_tags: {special_tag_id: @special_tag_id})
+   else
+    @search = Place.ransack(params[:q])
+    @places = @search.result
    end
+    @friends_rewards = FriendsReward.all
 end
 
 def online_grocers
