@@ -59,7 +59,7 @@ end
 
 def places
     @friends_rewards = FriendsReward.all
-   if params[:special_tags].blank? 
+   if params[:special_tag].blank? 
     @places = Place.all
    else
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
