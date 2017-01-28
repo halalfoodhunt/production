@@ -16,6 +16,7 @@
           </center></h2>
           <%= link_to tag.name, places_path(special_tag: tag.name), :class => "info" %>
         </div>
+        <span class="label label-warning"><%= link_to tag.name, places_path(special_tag: tag.name) %></span>
       </div>
     </div>
     <% end %>
