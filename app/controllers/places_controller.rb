@@ -11,9 +11,9 @@ class PlacesController < ApplicationController
     else
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
+    @search.sorts = 'created_at DESC' if @search.sorts.empty?
     end
     @friends_rewards = FriendsReward.all
-    @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @qualifying_type = QualifyingType.all
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
     marker.lat place.latitude
