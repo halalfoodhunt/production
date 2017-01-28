@@ -110,7 +110,7 @@
        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
         <h4 class="title">Highlights</h4>
         <% @place.highlights.each do |highlight| %>
-        <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= highlight.name %></p></div>
+        <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p></div>
         <% end %>
       </div>
       <br>
