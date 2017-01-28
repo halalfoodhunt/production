@@ -12,7 +12,7 @@
     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12" style="height:150px;">
       <div class="hovereffect">
         <div class="overlay">
-          <h2><center><%= image_tag tag.icon.url(:medium), :class => "img_responsive" %>
+          <h2><center><%= link_to tag.name, places_path(special_tag: tag.name), :class => "info" do %><%= image_tag tag.icon.url(:medium), :class => "img_responsive" %><% end %>
           </center></h2>
           <%= link_to tag.name, places_path(special_tag: tag.name), :class => "info" %>
         </div>
