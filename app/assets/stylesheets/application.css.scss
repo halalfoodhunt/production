@@ -151,9 +151,13 @@ hr {
 .btn-primary.btn-outline:hover,
 .btn-success.btn-outline:hover,
 .btn-info.btn-outline:hover,
-.btn-warning.btn-outline:hover,
+.btn-warning.btn-outline:hover {
+    color: #fff;
+}
+
 .btn-danger.btn-outline:hover {
     color: #fff;
+    background: #CC3333;
 }
 
 .btn-danger {
