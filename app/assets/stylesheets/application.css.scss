@@ -156,8 +156,9 @@ hr {
 }
 
 .btn-danger.btn-outline:hover {
-    color: #fff;
-    background: #CC3333;
+    color: #CC3333;
+    background: #fff;
+    border: none;
 }
 
 .btn-danger {
@@ -509,7 +510,7 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        height: 600px;
+        height: 450px;
     }
 
     .ecommers {
