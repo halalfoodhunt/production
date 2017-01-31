@@ -9,9 +9,7 @@
   </div>
   <div class="container">
     <% SpecialTag.all.each do |tag| %>
-    <span class="label label-warning">
       <%= link_to tag.name, pages_places_path(special_tag: tag.name), :class => "btn btn-block btn-outline-danger" %>
-    </span>
     <% end %>
   </div>
 </div>
