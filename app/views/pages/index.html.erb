@@ -15,7 +15,7 @@
     </div></center>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" style="padding:0;">
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
     <div class="hovereffect">
         <%= link_to places_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/place.jpg" alt=""><% end %>
@@ -25,12 +25,12 @@
     </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
-    <div class="hovereffect">
-        <%= link_to ecommers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/ecommer.jpg" alt=""><% end %>
+    <%= link_to ecommers_path do %><div class="hovereffect">
+        <img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/ecommer.jpg" alt="">
             <div class="overlay">
                 <h2>Ecommers</h2>
             </div>
-    </div>
+    </div><% end %>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
     <div class="hovereffect">
