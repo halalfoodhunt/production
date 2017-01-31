@@ -10,10 +10,44 @@
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12"><center>
       <% SpecialTag.all.each do |tag| %>
-      <%= link_to tag.name, pages_places_path(special_tag: tag.name), :class => "btn btn-sm btn-danger btn-outline" %>
+      <%= link_to tag.name, places_path(special_tag: tag.name), :class => "btn btn-sm btn-danger btn-outline" %>
       <% end %>
     </div></center>
   </div>
+</div>
+<div class="container-fluid">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <%= link_to places_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/place.jpg" alt=""><% end %>
+            <div class="overlay">
+                <h2>Places</h2>
+            </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <%= link_to ecommers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/ecommer.jpg" alt=""><% end %>
+            <div class="overlay">
+                <h2>Ecommers</h2>
+            </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <%= link_to caterers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/caterer-new.jpg" alt=""><% end %>
+            <div class="overlay">
+                <h2>Caterers</h2>
+            </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <%= link_to food_deliveries_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/caterer.jpg" alt=""><% end %>
+            <div class="overlay">
+                <h2>Food Deliveries</h2>
+            </div>
+    </div>
+</div>
 </div>
 <div class="container-fluid friends">
   <div class="col-md-8 col-md-offset-2">
