@@ -8,9 +8,11 @@
     </div>
   </div>
   <div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12">
     <% SpecialTag.all.each do |tag| %>
       <%= link_to tag.name, pages_places_path(special_tag: tag.name), :class => "btn btn-outline-danger" %>
     <% end %>
+    </div>
   </div>
 </div>
   <div class="container-fluid" style="background:#f8f3f0;">
