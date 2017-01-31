@@ -92,6 +92,6 @@ class FoodDeliveriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_delivery_params
-      params.require(:food_delivery).permit(:brand_name, :general_email, :contactable_hours, :general_contact_number, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :halal_expiry, :friends_rewards_terms, :merchant_id, :draft, :verified, :friends_reward_id, :region_id, :cuisine_type_id, :food_delivery_type_id, :price_range_id, :qualifying_type_id, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :logo)
+      params.require(:food_delivery).permit(:brand_name, :general_email, :contactable_hours, :general_contact_number, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :halal_expiry, :friends_rewards_terms, :merchant_id, :draft, :verified, :friends_reward_id, :listing_id, :region_id, :cuisine_type_id, :food_delivery_type_id, :price_range_id, :qualifying_type_id, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :logo)
     end
 end

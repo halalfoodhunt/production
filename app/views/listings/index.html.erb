@@ -4,121 +4,194 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
       <%= render 'layouts/topbar' %>
       <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
-        <center><h4><strong>Welcome to halalfoodhunt.com’s Merchant's dashboard!</strong></h4>
-          <p>The information you put in here will determine what your hungry customers will read about your place. Give them the right information to help them decide where to eat!</p>
-          <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/11/Youtube.jpg" class="img-responsive" alt="Responsive image">
+        <div class="col-xs-12 col-sm-6 col-md-8">
+          <h4><strong>Your Current Listings</strong></h4>
+            <p>This is where you can edit, delete and add your listings.</p>
+          <p id="notice"><%= notice %></p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4"><center><h6 style="margin:10px 0 0 0;"><strong>Your Current Plan:</strong><h6 class="label label-success"><%= current_merchant.role %></h6></h6>
+        <% if current_merchant.free? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
+        <% elsif current_merchant.basic? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/2</strong></p>
+        <% elsif current_merchant.basic_plus? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/5</strong></p>
+        <% else current_merchant.basic_plus? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/10</strong></p>
+        <% end %>
         </center>
-        <p id="notice"><%= notice %></p>
-        <h1>Your Listings</h1>
-        <table class="table table-responsive">
-          <thead>
-            <tr>
-              <th>Listing Type</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @current_merchant.listings.each do |listing| %>
-            <tr>
-              <td></td>
-              <td><%= link_to 'Show', listing %></td>
-              <td><%= link_to 'Delete Listing', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <br>
-        <table class="table table-responsive">
-          <thead>
-            <tr>
-                <th>Listing Type</th>
-                <th></th>
-                <th>Business name</th>
-                <th>Halal Status</th>
-                <th>Verified</th>
-                <th>Status</th>
-                <th>Expiry Date</th>
-                <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @current_merchant.places.each do |place| %>
-            <tr><td>Place</td>
-                <td><%= image_tag place.logo.url(:thumb), :class => "img-circle" %></td>
-                <td><%= link_to place.business_name, edit_place_path(place) %></td>
-                <td><%= link_to place.qualifying_type.name %></td>
-                <td><%= place.verified ? "Verified" : "Unverified" %></td>
-                <td><%= place.draft ? "Draft" : "Published" %></td>
-                <td><%= place.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to edit_place_path(place) do %><i class="fa fa-pencil"></i><% end %></td>
-                <td><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
-            </tr>
-            <% end %>
-          </tbody>
-          <% unless @current_merchant.ecommers.empty? %>
-          <tbody>
-            <% @current_merchant.ecommers.each do |ecommer| %>
-            <tr><td>Ecommer</td>
-                <td><%= image_tag ecommer.logo.url(:thumb), :class => "img-circle" %></td>
-                <td><%= link_to ecommer.business_name, edit_ecommer_path(ecommer) %></td>
-                <td><%= link_to ecommer.qualifying_type.name %></td>
-                <td><%= ecommer.verified ? "Verified" : "Unverified" %></td>
-                <td><%= ecommer.draft ? "Draft" : "Published" %></td>
-                <td><%= ecommer.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil"></i><% end %></td>
-                <td><%= link_to ecommer, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
-            </tr>
-            <% end %>
-          </tbody>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:5px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-10"><p style="margin:5px 0 0 0;">SHOWING <b><%= @current_merchant.listings.count %></b> Halal establishments IN ALL CITIES, Singapore</p></div>
+        <div class="col-xs-12 col-sm-12 col-md-2"><% if @quota_warning.present? %>
+          <button type="button" class="btn btn-sm btn-raised btn-danger disabled"><%= @quota_warning %></button>
+          <% else %>
+          <%= link_to 'Add More Listings', new_listing_path, :class => 'btn btn-sm btn-raised btn-success' %>
           <% end %>
-           <% unless @current_merchant.suppliers.empty? %>
-          <tbody>
-            <% @current_merchant.suppliers.each do |supplier| %>
-            <tr><td>Supplier</td>
-                <td><%= image_tag supplier.logo.url(:thumb), :class => "img-circle" %></td>
-                <td><%= link_to supplier.business_name, edit_supplier_path(supplier) %></td>
-                <td><%= link_to supplier.qualifying_type.name %></td>
-                <td><%= supplier.verified ? "Verified" : "Unverified" %></td>
-                <td><%= supplier.draft ? "Draft" : "Published" %></td>
-                <td><%= supplier.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to edit_supplier_path(supplier) do %><i class="fa fa-pencil"></i><% end %></td>
-                <td><%= link_to supplier, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
-            </tr>
-            <% end %>
-          </tbody>
-          <% end %>
-           <% unless @current_merchant.caterers.empty? %>
-          <tbody>
-            <% @current_merchant.caterers.each do |caterer| %>
-            <tr><td>Caterer</td>
-                <td><%= image_tag caterer.logo.url(:thumb), :class => "img-circle" %></td>
-                <td><%= link_to caterer.business_name, edit_caterer_path(caterer) %></td>
-                <td><%= link_to caterer.qualifying_type.name %></td>
-                <td><%= caterer.verified ? "Verified" : "Unverified" %></td>
-                <td><%= caterer.draft ? "Draft" : "Published" %></td>
-                <td><%= caterer.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil"></i><% end %></td>
-                <td><%= link_to caterer, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
-            </tr>
-            <% end %>
-          </tbody>
-          <% end %>
-          <tbody>
-            <% @current_merchant.lessons.each do |lesson| %>
-            <tr><td>Academy</td>
-                <td><%= image_tag lesson.logo.url(:thumb), :class => "img-circle" %></td>
-                <td><%= link_to lesson.brand_name, edit_lesson_path(lesson) %></td>
-                <td></td>
-                <td><%= lesson.verified ? "Verified" : "Unverified" %></td>
-                <td><%= lesson.draft ? "Draft" : "Published" %></td>
-                <td><%= lesson.expiry_date.strftime("%d %b %Y") %></td>
-                <td><%= link_to edit_lesson_path(lesson) do %><i class="fa fa-pencil"></i><% end %></td>
-                <td><%= link_to lesson, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:15px; border:1px solid #ccc;">
+          <% @current_merchant.listings.each do |listing| %>
+          <% unless @current_merchant.places.empty? %>
+          <% @current_merchant.places.each do |place| %>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+              <% if place.verified == true %>
+              <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+              <% else %>
+              <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+                UNVERIFIED
+              </span>
+              <% end %>
+              <div class="thumbnail" style="padding:0px; height:280px;">
+                <%= image_tag place.featured_image.url(:medium), :class => "img_responsive" %>
+                <div class="caption">
+                  <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.business_name %></p></center>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 btn-places" style="background:orange;"><center><h5><strong>Place</strong><br> (EXPIRY: <%= place.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+                 <center><%= link_to edit_place_path(place) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+               </div>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
+            <% unless @current_merchant.ecommers.empty? %>
+          <% @current_merchant.ecommers.each do |ecommer| %>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+              <% if ecommer.verified == true %>
+              <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+              <% else %>
+              <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+                UNVERIFIED
+              </span>
+              <% end %>
+              <div class="thumbnail" style="padding:0px; height:280px;">
+                <%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %>
+                <div class="caption">
+                  <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= ecommer.business_name %></p></center>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 btn-ecommer" style="background:#C4A276;"><center><h5><strong>Ecommer</strong><br> (EXPIRY: <%= ecommer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+                 <center><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+               </div>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
+            <% unless @current_merchant.caterers.empty? %>
+          <% @current_merchant.caterers.each do |caterer| %>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+              <% if caterer.verified == true %>
+              <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+              <% else %>
+              <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+                UNVERIFIED
+              </span>
+              <% end %>
+              <div class="thumbnail" style="padding:0px; height:280px;">
+                <%= image_tag caterer.featured_image.url(:medium), :class => "img_responsive" %>
+                <div class="caption">
+                  <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= caterer.business_name %></p></center>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 btn-caterer" style="background:#D39C25;"><center><h5><strong>Caterer</strong><br> (EXPIRY: <%= caterer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+                 <center><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+               </div>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
+            <% unless @current_merchant.suppliers.empty? %>
+          <% @current_merchant.suppliers.each do |supplier| %>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+              <% if supplier.verified == true %>
+              <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+              <% else %>
+              <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+                UNVERIFIED
+              </span>
+              <% end %>
+              <div class="thumbnail" style="padding:0px; height:280px;">
+                <%= image_tag supplier.featured_image.url(:medium), :class => "img_responsive" %>
+                <div class="caption">
+                  <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= supplier.business_name %></p></center>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 btn-supplier" style="background:#8B572A;"><center><h5><strong>Supplier</strong><br> (EXPIRY: <%= supplier.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+                 <center><%= link_to edit_supplier_path(supplier) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+               </div>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
+           <% unless @current_merchant.lessons.empty? %>
+          <% @current_merchant.lessons.each do |lesson| %>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+              <% if lesson.verified == true %>
+              <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+              <% else %>
+              <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+                UNVERIFIED
+              </span>
+              <% end %>
+              <div class="thumbnail" style="padding:0px; height:280px;">
+                <%= image_tag lesson.featured_image.url(:medium), :class => "img_responsive" %>
+                <div class="caption">
+                  <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= lesson.brand_name %></p></center>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 btn-academy" style="background:#886A29;"><center><h5><strong>Academy</strong><br> (EXPIRY: <%= lesson.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+                 <center><%= link_to edit_lesson_path(lesson) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+               </div>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
+           <% unless @current_merchant.online_grocers.empty? %>
+          <% @current_merchant.online_grocers.each do |online_grocer| %>
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+              <% if online_grocer.verified == true %>
+              <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+              <% else %>
+              <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+                UNVERIFIED
+              </span>
+              <% end %>
+              <div class="thumbnail" style="padding:0px; height:280px;">
+                <%= image_tag online_grocer.featured_image.url(:medium), :class => "img_responsive" %>
+                <div class="caption">
+                  <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= online_grocer.brand_name %></p></center>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 btn-grocer" style="background:#8B572A;"><center><h5><strong>Online Grocer</strong><br> (EXPIRY: <%= online_grocer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+                 <center><%= link_to edit_online_grocer_path(online_grocer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+               </div>
+               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+               </div>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
+           <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>

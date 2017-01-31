@@ -106,6 +106,6 @@ class SupermarketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supermarket_params
-      params.require(:supermarket).permit(:brand_name, :general_email, :general_contact_number, :operating_address, :latitude, :longitude, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :friends_rewards_terms, :draft, :verified, :friends_reward_id, :region_id, :location_id, :qualifying_type_id, :location_id, :price_range_id, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, supermarket_highlight_ids: [], :opening_hours_attributes => [:id, :opening, :closing, :day_id, :open_or_close_id])
+      params.require(:supermarket).permit(:brand_name, :general_email, :general_contact_number, :operating_address, :latitude, :longitude, :website, :ordering_link, :facebook, :instagram, :question_1, :question_2, :question_3, :question_4, :question_5, :expiry_date, :friends_rewards_terms, :draft, :verified, :friends_reward_id, :region_id, :location_id, :listing_id, :qualifying_type_id, :location_id, :price_range_id, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, supermarket_highlight_ids: [], :opening_hours_attributes => [:id, :opening, :closing, :day_id, :open_or_close_id])
     end
 end

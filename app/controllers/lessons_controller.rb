@@ -93,6 +93,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:brand_name, :general_contact_number, :general_email, :preferred_contact, :preferred_sign_up_method, :facebook, :instagram, :website, :question_1, :question_2, :question_3, :question_4, :delivery_link, :delivery_terms, :draft, :expiry_date, :friends_rewards_terms, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :region_id, :location_id, :friends_reward_id, lesson_type_ids: [], class_type_ids: [], culinary_skill_ids: [])
+      params.require(:lesson).permit(:brand_name, :general_contact_number, :general_email, :preferred_contact, :preferred_sign_up_method, :facebook, :instagram, :website, :question_1, :question_2, :question_3, :question_4, :delivery_link, :delivery_terms, :listing_id, :draft, :expiry_date, :friends_rewards_terms, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :region_id, :location_id, :friends_reward_id, lesson_type_ids: [], class_type_ids: [], culinary_skill_ids: [])
     end
 end

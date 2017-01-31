@@ -94,6 +94,6 @@ class CaterersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def caterer_params
-      params.require(:caterer).permit(:business_name, :general_contact_number, :contactable_hours, :general_email, :facebook, :instagram, :website, :question_1, :question_2, :delivery_link, :delivery_terms, :draft, :expiry_date, :halal_expiry, :friends_rewards_terms, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :region_id, :caterer_type_id, :qualifying_type_id, :friends_reward_id, :price_range_id, cuisine_type_ids: [], caterer_type_ids: [], :caterer_packages_attributes => [:id, :name, :description, :minimum_pax, :price] )
+      params.require(:caterer).permit(:business_name, :general_contact_number, :contactable_hours, :general_email, :facebook, :instagram, :website, :question_1, :question_2, :delivery_link, :delivery_terms, :draft, :expiry_date, :halal_expiry, :friends_rewards_terms, :verified, :logo, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :region_id, :caterer_type_id, :qualifying_type_id, :friends_reward_id, :listing_id, :price_range_id, cuisine_type_ids: [], caterer_type_ids: [], :caterer_packages_attributes => [:id, :name, :description, :minimum_pax, :price] )
     end
 end
