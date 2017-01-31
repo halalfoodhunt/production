@@ -19,7 +19,7 @@ class CaterersController < ApplicationController
   # GET /caterers/new
   def new
     @current_merchant = current_merchant
-    @caterer = Caterer.new
+    @caterer = Caterer.new(listing_id: params[:listing_id])
     5.times { @caterer.caterer_packages.build }
   end
 

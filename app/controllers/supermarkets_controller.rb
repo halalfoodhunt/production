@@ -33,7 +33,7 @@ class SupermarketsController < ApplicationController
   # GET /supermarkets/new
   def new
     @current_merchant = current_merchant
-    @supermarket = Supermarket.new
+    @supermarket = Supermarket.new(listing_id: params[:listing_id])
     7.times { @supermarket.opening_hours.build }
   end
 

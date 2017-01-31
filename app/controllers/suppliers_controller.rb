@@ -19,7 +19,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/new
   def new
     @current_merchant = current_merchant
-    @supplier = Supplier.new
+    @supplier = Supplier.new(listing_id: params[:listing_id])
   end
 
   # GET /suppliers/1/edit

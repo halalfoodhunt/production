@@ -19,7 +19,7 @@ class OnlineGrocersController < ApplicationController
   # GET /online_grocers/new
   def new
     @current_merchant = current_merchant
-    @online_grocer = OnlineGrocer.new
+    @online_grocer = OnlineGrocer.new(listing_id: params[:listing_id])
   end
 
   # GET /online_grocers/1/edit

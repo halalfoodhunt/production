@@ -18,7 +18,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @current_merchant = current_merchant
-    @lesson = Lesson.new
+    @lesson = Lesson.new(listing_id: params[:listing_id])
   end
 
   # GET /lessons/1/edit

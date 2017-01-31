@@ -19,7 +19,7 @@ class EcommersController < ApplicationController
   # GET /ecommers/new
   def new
     @current_merchant = current_merchant
-    @ecommer = Ecommer.new
+    @ecommer = Ecommer.new(listing_id: params[:listing_id])
   end
 
   # GET /ecommers/1/edit
