@@ -9,51 +9,51 @@
   </div>
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12">
-    <% SpecialTag.all.each do |tag| %>
+      <% SpecialTag.all.each do |tag| %>
       <%= link_to tag.name, pages_places_path(special_tag: tag.name), :class => "btn btn-sm btn-danger btn-outline" %>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>
-  <div class="container-fluid" style="background:#fff;">
-    <div class="col-md-10 col-md-offset-1">
-      <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/as-seen-on-media.jpg" class="img-responsive" alt="Responsive image">
+<div class="container-fluid friends">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="col-xs-12 col-sm-12 col-md-6 ipad">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="400" height="225" src="https://www.youtube.com/embed/6vm5SMkohOk?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
-  </div>
-  <div class="container-fluid friends">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="col-xs-12 col-sm-12 col-md-6 ipad">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe width="400" height="225" src="https://www.youtube.com/embed/6vm5SMkohOk?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+      <h2 class="form-subtitle" style="color:white; margin-top:0px;">OUR FRIENDS GET BENEFITS!</h2>
+      <p style="color:white;">We are super thankful and grateful to our supporters all these while. So we give thanks by scouring around halal food places for rewards and discounts for our supporters turned friends! One card to eat them all.</p>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <a class="btn btn-block btn-warning" href="http://friends.halalfoodhunt.com" style="color:white;" role="button">Let's be FRIENDS!</a>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6">
-        <h2 class="form-subtitle" style="color:white; margin-top:0px;">OUR FRIENDS GET BENEFITS!</h2>
-        <p style="color:white;">We are super thankful and grateful to our supporters all these while. So we give thanks by scouring around halal food places for rewards and discounts for our supporters turned friends! One card to eat them all.</p>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <a class="btn btn-block btn-warning" href="http://friends.halalfoodhunt.com" style="color:white;" role="button">Let's be FRIENDS!</a>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <%= link_to "See Rewards", pages_friends_rewards_path, :class => "btn btn-block btn-danger", :style => 'color:#fff;' %>
-        </div>
+        <%= link_to "See Rewards", pages_friends_rewards_path, :class => "btn btn-block btn-danger", :style => 'color:#fff;' %>
       </div>
     </div>
   </div>
-  <div class="container-fluid" style="background:#22211d; padding-bottom:30px;">
-    <div class="text-center"><h2 class="form-subtitle" style="margin: 30px 0 10px 0;">View Makan Places Listed With Us</h2>
-      <p class="subtitle">All these places are updated and verified by us.<br>So, you won't be wondering if these places are halal, or still open even.
-      </p>
+</div>
+<div class="container-fluid" style="background:#22211d; padding-bottom:30px;">
+  <div class="text-center"><h2 class="form-subtitle" style="margin: 30px 0 10px 0;">View Makan Places Listed With Us</h2>
+    <p class="subtitle">All these places are updated and verified by us.<br>So, you won't be wondering if these places are halal, or still open even.
+    </p>
+  </div>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="scroller">
+      <%= render "places/place" %>
     </div>
-    <div class="col-md-10 col-md-offset-1">
-      <div class="scroller">
-        <%= render "places/place" %>
-      </div>
-      <center>
-       <%= link_to "View makan places listed with us", places_path, :class => "h6 btn btn-default btn-danger", :style => 'color:#fff;' %>
-     </center>
-   </div>
+    <center>
+     <%= link_to "View makan places listed with us", places_path, :class => "h6 btn btn-default btn-danger", :style => 'color:#fff;' %>
+   </center>
  </div>
- <div class="container-fluid" style="background:#f8f3f0;">
+</div>
+<div class="container-fluid" style="background:#fff;">
+  <div class="col-md-10 col-md-offset-1">
+    <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/as-seen-on-media.jpg" class="img-responsive" alt="Responsive image">
+  </div>
+</div>
+<div class="container-fluid" style="background:#f8f3f0;">
   <div class="col-md-10 col-md-offset-1">
     <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/working.jpg" class="img-responsive" alt="Responsive image">
   </div>
