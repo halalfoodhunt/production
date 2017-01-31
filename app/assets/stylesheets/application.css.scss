@@ -125,7 +125,7 @@ hr {
 }
 
 .btn-danger {
-    background: #D04E2E;
+    background: #CC3333;
     border: none;
      font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
@@ -362,7 +362,7 @@ body {
     .navbar-default .navbar-nav>li>a:focus {
         padding: 5px 10px;
         background: white ;
-        color: #D04E2E;
+        color: #CC3333;
         margin: 10px;
         border-radius: 5px;
     }
@@ -377,11 +377,11 @@ body {
 
     // And the brand colour
     .navbar-default .navbar-brand {
-        color: #D04E2E;
+        color: #CC3333;
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight:900;
+        font-weight:500;
         font-size:2em;
     }
 
