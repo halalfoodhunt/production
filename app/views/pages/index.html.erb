@@ -9,7 +9,7 @@
   </div>
   <div class="container">
     <% SpecialTag.all.each do |tag| %>
-      <%= link_to tag.name, pages_places_path(special_tag: tag.name), :class => "btn btn-block btn-outline-danger" %>
+      <%= link_to tag.name, pages_places_path(special_tag: tag.name), :class => "btn btn-outline-danger" %>
     <% end %>
   </div>
 </div>
