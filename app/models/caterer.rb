@@ -13,6 +13,7 @@ class Caterer < ActiveRecord::Base
     validates_presence_of :region
     
     belongs_to :merchant
+    belongs_to :listing
     belongs_to :qualifying_type
     belongs_to :region
     belongs_to :friends_reward

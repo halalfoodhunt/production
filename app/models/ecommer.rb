@@ -12,6 +12,7 @@ class Ecommer < ActiveRecord::Base
     validates_presence_of :region
     
     belongs_to :merchant
+    belongs_to :listing
     belongs_to :qualifying_type
     belongs_to :location
     belongs_to :price_range
