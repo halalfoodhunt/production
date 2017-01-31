@@ -23,7 +23,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:5px; border:1px solid #ccc;">
         <div class="col-xs-12 col-sm-12 col-md-8"><p style="margin:5px 0 0 0;">SHOWING <b><%= @current_merchant.listings.count %></b> Listings IN ALL CITIES, Singapore</p></div>
-        <div class="col-xs-12 col-sm-12 col-md-42"><% if @quota_warning.present? %>
+        <div class="col-xs-12 col-sm-12 col-md-4"><% if @quota_warning.present? %>
           <button type="button" class="btn btn-sm btn-raised btn-danger disabled"><%= @quota_warning %></button>
           <% else %>
           <%= link_to 'Add More Listings', new_listing_path, :class => 'btn btn-sm btn-raised btn-success' %>
