@@ -1126,6 +1126,7 @@ filter: gray; /* IE5+ */
 -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
 -webkit-transition: all .5s ease-in-out;
 display: inline-block;
+padding: 0 10px 20px 10px;
     }
 
 img.color_flip:hover {
