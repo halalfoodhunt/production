@@ -27,8 +27,8 @@ class PlacesController < ApplicationController
     marker.json({operating_address: place.operating_address})
     marker.picture({
      "url" => "http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/pin-1.png",
-     "width" =>  24,
-     "height" => 24})
+     "width" =>  52,
+     "height" => 52})
     marker.infowindow render_to_string(:partial => "/layouts/infobox", :locals => { :place => place})
   end
   respond_to do |format|
