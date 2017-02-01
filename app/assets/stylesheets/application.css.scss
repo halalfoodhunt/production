@@ -32,11 +32,11 @@ h2 {
 }
 
 a {
-    color:#D04E2E;
+    color:#EF6C3D;
 }
 
 a:hover, a:focus {
-    color:#397158;
+    color:#44C5C4;
     text-decoration: none;
 }
 
@@ -164,7 +164,7 @@ hr {
 .btn-danger {
     background: #CC3333;
     border: none;
-    font-family: 'Montserrat', sans-serif;
+     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight:500;
 }
@@ -554,11 +554,11 @@ body {
 
     .friends {
         padding: 50px 0;
-        background: #397158;
+        background: #018667;
     }
 
     .friends-rewards {
-        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/friends-card.png) no-repeat right #D04E2E; 
+        background: url(http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/qaz.png) no-repeat right #D04E2E; 
         height: 500px;
     }
 
@@ -807,13 +807,10 @@ body {
 }
 
 .btn-primary {
-    background-color: #397158;
+    background-color: #41924B;
     border-radius: 2px;
     box-shadow: 0px 2px rgba(0, 0, 0, 0.15);
     border-color: transparent;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight:500;
 }
 
 .form-control {
@@ -1043,7 +1040,7 @@ span.step {
   position: relative;
   text-align: center;
   cursor: default;
-  background: #42b078;
+  background: #000;
 }
 
 .hovereffect .overlay {
