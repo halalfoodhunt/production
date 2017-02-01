@@ -1125,6 +1125,7 @@ img.color_flip {
 filter: gray; /* IE5+ */
 -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
 -webkit-transition: all .5s ease-in-out;
+white-space: nowrap;
     }
 
 img.color_flip:hover {
