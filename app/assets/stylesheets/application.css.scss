@@ -1120,12 +1120,12 @@ span.step {
   transform: translate3d(0,0,0);
 }
 
-img.color_flip {
+div img.color_flip {
 /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
 filter: gray; /* IE5+ */
 -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
 -webkit-transition: all .5s ease-in-out;
-white-space: nowrap;
+display: inline-block;
     }
 
 img.color_flip:hover {
