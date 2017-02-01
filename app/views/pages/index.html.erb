@@ -22,6 +22,7 @@
       </div>
     </div>
     <div class="container-fluid" style="padding:0;">
+      <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
           <div class="hovereffect">
             <%= link_to places_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/place.jpg" alt=""><% end %>
@@ -30,11 +31,11 @@
               <%= link_to 'View All', places_path, :class => "btn btn-sm btn-danger btn-outline" %>
             </div>
           </div>
-                    <div class="hovereffect">
-            <%= link_to online_grocers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/online-grocers.jpg" alt=""><% end %>
+          <div class="hovereffect">
+            <%= link_to suppliers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/suppliers.jpg" alt=""><% end %>
             <div class="overlay">
-              <h2>Online Grocers</h2>
-              <%= link_to 'View All', online_grocers_path, :class => "btn btn-sm btn-danger btn-outline" %>
+              <h2>Suppliers</h2>
+              <%= link_to 'View All', suppliers_path, :class => "btn btn-sm btn-danger btn-outline" %>
             </div>
           </div>
         </div>
@@ -46,6 +47,13 @@
               <%= link_to 'View All', ecommers_path, :class => "btn btn-sm btn-danger btn-outline" %>
             </div>
           </div>
+          <div class="hovereffect">
+            <%= link_to online_grocers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/online-grocers.jpg" alt=""><% end %>
+            <div class="overlay">
+              <h2>Online Grocers</h2>
+              <%= link_to 'View All', online_grocers_path, :class => "btn btn-sm btn-danger btn-outline" %>
+            </div>
+          </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
           <div class="hovereffect">
@@ -53,6 +61,13 @@
             <div class="overlay">
               <h2>Caterers</h2>
               <%= link_to 'View All', caterers_path, :class => "btn btn-sm btn-danger btn-outline" %>
+            </div>
+          </div>
+          <div class="hovereffect">
+            <%= link_to supermarkets_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/Supermarket.jpg" alt=""><% end %>
+            <div class="overlay">
+              <h2>Supermarkets</h2>
+              <%= link_to 'View All', supermarkets_path, :class => "btn btn-sm btn-danger btn-outline" %>
             </div>
           </div>
         </div>
@@ -64,17 +79,6 @@
               <%= link_to 'View All', food_deliveries_path, :class => "btn btn-sm btn-danger btn-outline" %>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
-          <div class="hovereffect">
-            <%= link_to supermarkets_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/Supermarket.jpg" alt=""><% end %>
-            <div class="overlay">
-              <h2>Supermarkets</h2>
-              <%= link_to 'View All', supermarkets_path, :class => "btn btn-sm btn-danger btn-outline" %>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:0;">
           <div class="hovereffect">
             <%= link_to lessons_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/academy.jpg" alt=""><% end %>
             <div class="overlay">
@@ -84,6 +88,7 @@
           </div>
         </div>
       </div>
+    </div>
     <div class="container-fluid friends">
       <div class="col-md-8 col-md-offset-2">
         <div class="col-xs-12 col-sm-12 col-md-6 ipad">
