@@ -140,6 +140,11 @@ hr {
 
 .btn-warning.btn-outline {
     color: #f0ad4e;
+    background: none;
+    border: 1px solid;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight:500;
 }
 
 .btn-danger.btn-outline {
@@ -161,10 +166,16 @@ hr {
     border:  #CC3333;
 }
 
+.btn-warning.btn-outline:hover {
+    color: #000;
+    background: #f0ad4e;
+    border:  #f0ad4e;
+}
+
 .btn-danger {
     background: #CC3333;
     border: none;
-     font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight:500;
 }
