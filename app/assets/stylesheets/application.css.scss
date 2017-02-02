@@ -1071,6 +1071,12 @@ span.step {
   padding: 50px 20px;
 }
 
+.hovereffect .overlay.h2 {
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);
+    font-size: 2em;
+    font-weight: 800;
+}
+
 .hovereffect img {
   display: block;
   position: relative;
