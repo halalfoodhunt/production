@@ -508,7 +508,6 @@ body {
     .title {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        color: #D04E2E;
     }
 
     .subtitle {
@@ -778,6 +777,11 @@ body {
         padding-left: 40px;
         background: #3e414a;
     }
+}
+
+.media-heading {
+    text-transform: uppercase;
+    color: #D04E2E;
 }
 
 .main .page-header {
