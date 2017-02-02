@@ -145,21 +145,6 @@
        <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/SKM_2013x2.png" class="img-responsive color_flip" alt="Responsive image">
    </div></center>
 </div>
-<div class="container-fluid testimonial">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="text-center"><h2 class="form-subtitle">Testimonials</h2>
-      <div class="single">
-        <% @users_testimonials.each do |users_testimonial| %>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <center><h4><%= image_tag users_testimonial.photo.url(:medium), :class => "media-object img-circle" %></h4>
-            <h4 class="form-subtitle"><%= users_testimonial.name %></h4>
-            <h5 class="form-subtitle" style="color:white;"><%= users_testimonial.testimonial %></h5></center>
-          </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
   <nav class="navbar navbar-inverse">
     <div class="container">
      <ul class="nav navbar-nav navbar-right">
