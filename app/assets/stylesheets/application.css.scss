@@ -569,7 +569,7 @@ body {
 
     .friends {
         padding: 50px 0;
-        background: #cc3333;
+        background:#f8f3f0;
     }
 
     .friends-rewards {
@@ -1139,15 +1139,15 @@ span.step {
 }
 
 div img.color_flip {
+    filter: none;
+    -webkit-filter: grayscale(0);
 /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+    }
+
+img.color_flip:hover {
 filter: gray; /* IE5+ */
 -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
 -webkit-transition: all .5s ease-in-out;
 display: inline-block;
 padding: 0 10px 20px 10px;
-    }
-
-img.color_flip:hover {
-filter: none;
--webkit-filter: grayscale(0);
     }
