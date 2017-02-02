@@ -138,7 +138,7 @@ hr {
     color: #5bc0de;
 }
 
-.btn-warning.btn-outline {
+.btn-block.btn-warning.btn-outline {
     color: #f0ad4e;
     background: none;
     border: 1px solid;
@@ -155,8 +155,7 @@ hr {
 
 .btn-primary.btn-outline:hover,
 .btn-success.btn-outline:hover,
-.btn-info.btn-outline:hover,
-.btn-warning.btn-outline:hover {
+.btn-info.btn-outline:hover {
     color: #fff;
 }
 
@@ -166,7 +165,7 @@ hr {
     border:  #CC3333;
 }
 
-.btn-warning.btn-outline:hover {
+.btn-block.btn-warning.btn-outline:hover {
     color: #fff;
     background: #f0ad4e;
     border:  #f0ad4e;
