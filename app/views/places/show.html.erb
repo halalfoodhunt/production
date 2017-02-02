@@ -90,10 +90,10 @@
           </div>
           <% end %>
         </div>
-        <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
+        <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary" %>
           <% end %>
         </p>
-        <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => 'color:#fff;' %>
+        <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger" %>
           <% end %>
         </p>
         <div class="row">
