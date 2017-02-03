@@ -76,7 +76,7 @@
         <% unless @place.qualifying_type.blank? %>
           <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
             <div class="col-xs-12 col-sm-12 col-md-3">
-              <div class="avatar" style="height:80px; width:80px;"><center><%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+              <div class="avatar"><center><%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %></center></div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9">
               <h4 class="title">Halal Summary</h4>
