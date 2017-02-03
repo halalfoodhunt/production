@@ -1,7 +1,8 @@
  <% @qualifying_types.each do |qualifying_types| %>
  <tr>
   <td class="col-md-1"><%= image_tag(qualifying_types.icon.url(:square), :class => "img_circle") %></td>
-  <td class="col-md-9"><%= qualifying_types.name %></td>
+  <td class="col-md-3"><%= qualifying_types.name %></td>
+  <td class="col-md-6"><%= qualifying_types.halal_summary %></td>
   <td class="col-md-1"><%= link_to edit_qualifying_type_path(qualifying_types), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
   </td>
