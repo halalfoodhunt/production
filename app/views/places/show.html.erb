@@ -41,17 +41,6 @@
               </thead>
             </table>
           </div>
-           <% unless @place.qualifying_type.blank? %>
-          <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
-            <div class="col-xs-12 col-sm-12 col-md-3">
-              <div class="avatar"><center><%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-9">
-              <h4 class="title">Halal Summary</h4>
-              <p><%= @place.qualifying_type.halal_summary %></p>
-            </div>
-          </div>
-          <% end %><br>
           <% unless @place.friends_rewards_terms.blank? %>
           <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
             <div class="col-xs-12 col-sm-12 col-md-3">
@@ -84,6 +73,17 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
+        <% unless @place.qualifying_type.blank? %>
+          <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+              <div class="avatar"><center><%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <h4 class="title">Halal Summary</h4>
+              <p><%= @place.qualifying_type.halal_summary %></p>
+            </div>
+          </div>
+          <% end %><br>
         <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
           <h4 class="title">Opening Hours</h4>
           <% @place.opening_hours.each do |time| %>
