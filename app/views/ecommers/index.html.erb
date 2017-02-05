@@ -1,5 +1,5 @@
 <%= render 'layouts/category_header' %>
-<div style="padding:60px 0 60px 0" class="container-fluid ecommers">
+<div style="padding-top:60px" class="container-fluid ecommers">
   <div class="col-xs-12 col-sm-6 col-md-6">
     <h3 style="color:#fff; padding-left:15px; font-weight:700;">Ecommers:<br>Ecommers are small businesses that typically only exist as social media accounts.</h3><p style="padding-left:15px;"><i>Like your makcik next door that can make kueh tart lah!</i></p>
     <%= render 'advanced_search' %>
@@ -11,7 +11,5 @@
     <div class="col-md-11"><h5 style="padding:20px 0">SHOWING <b><%= @ecommers.count %></b> ECOMMERS IN ALL CITIES, SINGAPORE</h5></div>
     <div class="col-md-1"></div>
   </div>
-</div>
-<div class="container">
   <%= render 'ecommers' %>
 </div>
