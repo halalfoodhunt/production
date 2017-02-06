@@ -133,8 +133,8 @@ Rails.application.routes.draw do
       get :edit_multiple
       put :update_multiple
     end
-      resources :special_tags
   end
+  resources :special_tags
   resources :days
  
   devise_for :merchants, controllers: { registrations: "merchants/registrations" }

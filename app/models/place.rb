@@ -24,6 +24,8 @@ class Place < ActiveRecord::Base
   validates_presence_of :operating_address
   validates_presence_of :location
   validates_presence_of :region
+  validates_presence_of :listing_id
+  
   
   belongs_to :merchant
   belongs_to :listing
