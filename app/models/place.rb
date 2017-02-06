@@ -28,7 +28,6 @@ class Place < ActiveRecord::Base
   
   
   belongs_to :merchant
-  belongs_to :listing
   belongs_to :qualifying_type
   belongs_to :place_type
   belongs_to :location
@@ -36,6 +35,7 @@ class Place < ActiveRecord::Base
   belongs_to :region
   belongs_to :friends_reward
   belongs_to :verifying_type
+  belongs_to :listing
   has_many :highlights, :through => :features
   has_many :features
   has_many :special_tags, :through => :admin_tags
