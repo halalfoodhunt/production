@@ -228,6 +228,7 @@
   <%= f.check_box :draft, label: 'Save as Draft' %>
 </div>
 <div class="actions" style="margin-bottom:20px;">
+  <%= f.hidden_field :listing_id %>
   <%= f.submit :class => 'btn btn-md btn-raised btn-primary' %>
 </div>
 <% end %>

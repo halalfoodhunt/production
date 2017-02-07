@@ -152,7 +152,8 @@
   <%= f.check_box :draft %>
 </div>
 <div class="actions">
-  <%= f.submit %>
+  <%= f.hidden_field :listing_id %>
+  <%= f.submit :class => 'btn btn-md btn-raised btn-primary' %>
 </div>
 <% end %>
 <script type="text/javascript">
