@@ -46,6 +46,8 @@ Rails.application.routes.draw do
   
   get 'pages/friends_rewards'
   
+  get 'pages/friends'
+  
   get 'pages/ecommers_friends_rewards'
   
   resources :verifying_types
