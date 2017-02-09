@@ -99,7 +99,8 @@ def friends_rewards
     @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @search = Place.ransack(params[:q])
+    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
   end
 end
