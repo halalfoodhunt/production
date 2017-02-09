@@ -86,15 +86,17 @@ def suppliers
 end
 
 def friends_rewards
+    @search = Place.ransack(params[:q])
+    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
   if params[:friends_reward].blank?
-    @places = Place.all.order("created_at DESC")
-    @ecommers = Ecommer.all.order("created_at DESC")
-    @caterers = Caterer.all.order("created_at DESC")
-    @food_deliveries = FoodDelivery.all.order("created_at DESC")
-    @supermarkets = Supermarket.all.order("created_at DESC")
-    @lessons = Lesson.all.order("created_at DESC")
-    @online_grocers = OnlineGrocer.all.order("created_at DESC")
-    @suppliers = Supplier.all.order("created_at DESC")
+    @places = Place.all.order("created_at DESC").where(draft: false)
+    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
+    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
+    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
+    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
+    @lessons = Lesson.all.order("created_at DESC").where(draft: false)
+    @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
+    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
