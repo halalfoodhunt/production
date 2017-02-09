@@ -18,7 +18,7 @@ class PlacesController < ApplicationController
     else
     @search = Place.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
-    @places = @search.result.where(draft: false)
+    @places = @search.result.where(draft: false).where(features: {highlight_id: @highlight_id}).where(admin_tags: {special_tag_id: @special_tag_id})
     end
     @qualifying_type = QualifyingType.all
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
