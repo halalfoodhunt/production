@@ -2,7 +2,7 @@
   <div class="col-sm-12 col-md-12" style="padding:0">
     <h6 style="text-align:left">Search for a reward</h6>
   </div>
-   <%= search_form_for @search, url: "/pages/friends_rewards" do |f| %>
+   <%= search_form_for @search, url: pages_friends_rewards_path, method: :post do |f| %>
   <div class="col-md-10" style="padding-left:0; padding-right:0;"><div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
   <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
   </div></div>

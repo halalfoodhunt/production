@@ -132,6 +132,7 @@ Rails.application.routes.draw do
   end
   resources :places do
      collection do
+      post :search, to: 'pages#friends_rewards' 
       get :edit_multiple
       put :update_multiple
     end
