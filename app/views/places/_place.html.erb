@@ -6,7 +6,7 @@
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1486459596" alt="Chania" style="width:40px; height:40px;"></span><% end %>
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:18%;"><%= image_tag(place.place_type.icon.url(:square), :class => "img-responsive") %></span>
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:30%;">
-    <%= image_tag @friends_reward.icon.url(:square), :class => "img-circle img_responsive" %>
+    <%= image_tag place.friends_reward.icon.url(:square), :class => "img-circle img_responsive" %>
     </span>
   <div style="padding:0px; height:320px; position:relative;" class="thumbnail">
     <%= image_tag place.featured_image.url(:large), :class => "img_responsive" %>
