@@ -7,7 +7,7 @@
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:18%;"><%= image_tag(place.place_type.icon.url(:square), :class => "img-responsive") %></span>
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:30%;">
     <% place.friends_rewards.each do |friends_reward| %>
-    <%= image_tag place.friends_reward.icon.url(:square), :class => "img-circle img_responsive" %>
+    <%= image_tag friends_reward.icon.url(:square), :class => "img-circle img_responsive" %>
     <% end %>
     </span>
   <div style="padding:0px; height:320px; position:relative;" class="thumbnail">
