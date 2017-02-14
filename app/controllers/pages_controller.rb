@@ -7,6 +7,7 @@ class PagesController < ApplicationController
    @places = @search.result.where(draft: false)
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
+   @verifying_types = VerifyingType.all
    if params[:special_tags].blank? 
     @places = Place.all.where(draft: false)
    else
