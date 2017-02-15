@@ -31,7 +31,6 @@
         </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:15px; border:1px solid #ccc;">
-          <% @current_merchant.listings.each do |listing| %>
           <% unless @current_merchant.places.empty? %>
           <% @current_merchant.places.each do |place| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
@@ -52,7 +51,7 @@
                  <center><%= link_to edit_place_path(place) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
                </div>
              </div>
            </div>
@@ -78,7 +77,7 @@
                  <center><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
                </div>
              </div>
            </div>
@@ -104,7 +103,7 @@
                  <center><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
                </div>
              </div>
            </div>
@@ -130,7 +129,7 @@
                  <center><%= link_to edit_supplier_path(supplier) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
                </div>
              </div>
            </div>
@@ -156,7 +155,7 @@
                  <center><%= link_to edit_lesson_path(lesson) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
                </div>
              </div>
            </div>
@@ -182,11 +181,10 @@
                  <center><%= link_to edit_online_grocer_path(online_grocer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
                </div>
              </div>
            </div>
-           <% end %>
            <% end %>
            <% end %>
          </div>
