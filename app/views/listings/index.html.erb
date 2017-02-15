@@ -31,8 +31,9 @@
         </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:15px; border:1px solid #ccc;">
+          <% @current_merchant.listings.each do |listing| %>
           <% unless @current_merchant.places.empty? %>
-          <% @current_merchant.places.each do |place| %>
+          <% listing.places.each do |place| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
               <% if place.verified == true %>
               <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
@@ -51,14 +52,14 @@
                  <center><%= link_to edit_place_path(place) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><% @current_merchant.listings.all.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
                </div>
              </div>
            </div>
            <% end %>
            <% end %>
             <% unless @current_merchant.ecommers.empty? %>
-          <% @current_merchant.ecommers.each do |ecommer| %>
+          <% listing.ecommers.each do |ecommer| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
               <% if ecommer.verified == true %>
               <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
@@ -77,14 +78,14 @@
                  <center><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
                </div>
              </div>
            </div>
            <% end %>
            <% end %>
             <% unless @current_merchant.caterers.empty? %>
-          <% @current_merchant.caterers.each do |caterer| %>
+          <% listing.caterers.each do |caterer| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
               <% if caterer.verified == true %>
               <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
@@ -103,14 +104,14 @@
                  <center><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
                </div>
              </div>
            </div>
            <% end %>
            <% end %>
             <% unless @current_merchant.suppliers.empty? %>
-          <% @current_merchant.suppliers.each do |supplier| %>
+          <% listing.suppliers.each do |supplier| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
               <% if supplier.verified == true %>
               <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
@@ -129,14 +130,14 @@
                  <center><%= link_to edit_supplier_path(supplier) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
                </div>
              </div>
            </div>
            <% end %>
            <% end %>
            <% unless @current_merchant.lessons.empty? %>
-          <% @current_merchant.lessons.each do |lesson| %>
+          <% listing.lessons.each do |lesson| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
               <% if lesson.verified == true %>
               <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
@@ -155,14 +156,14 @@
                  <center><%= link_to edit_lesson_path(lesson) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
                </div>
              </div>
            </div>
            <% end %>
            <% end %>
            <% unless @current_merchant.online_grocers.empty? %>
-          <% @current_merchant.online_grocers.each do |online_grocer| %>
+          <% listing.online_grocers.each do |online_grocer| %>
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
               <% if online_grocer.verified == true %>
               <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
@@ -181,10 +182,11 @@
                  <center><%= link_to edit_online_grocer_path(online_grocer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
                </div>
                <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-                 <center><% @current_merchant.listings.each do |listing| %><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %><% end %></center>
+                 <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
                </div>
              </div>
            </div>
+           <% end %>
            <% end %>
            <% end %>
          </div>
