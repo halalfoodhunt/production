@@ -7,7 +7,9 @@
         <center><h4 class="header">WHAT ARE YOU?</h4><p class="italic-font">Choose the type of establishment that best represents your business to your customers. After selecting a type of establishment, you will then be directed to a registration page for you to tell customers more about your business.</p></center>
       </div>
       <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
-        <div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/places.jpg" class="img-responsive" alt="Responsive image">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= link_to new_place_path(listing_id: @listing.id), :class=>"btn btn-places btn-block btn-lg" do %> 
+          <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/places.jpg" class="img-responsive" alt="Responsive image"><% end %>
         <%= link_to 'Select', new_place_path(listing_id: @listing.id), :class=>"btn btn-places btn-block btn-lg" %></div>
         <div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/FOOD.jpg" class="img-responsive" alt="Responsive image">
         <%= link_to 'Select', new_food_delivery_path(listing_id: @listing.id), :class=>"btn btn-delivery btn-block btn-lg" %></div>
