@@ -76,7 +76,7 @@
           <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
             <div class="col-xs-12 col-sm-12 col-md-3">
               <div class="avatar"><center>
-                <% if place.verified == true %>
+                <% if @place.verified == true %>
                 <%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
                 <% else %>
                 <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania">
@@ -85,7 +85,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9">
               <h4 class="title">Halal Summary</h4>
-              <p><% if place.verified == true %>
+              <p><% if @place.verified == true %>
               <%= @place.qualifying_type.halal_summary %>
               <% else %>
               This business has yet to submit documents for official verification.
