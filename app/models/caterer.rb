@@ -2,10 +2,16 @@ class Caterer < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
   
-    has_many :caterer_packages
-    accepts_nested_attributes_for :caterer_packages
-    
-    before_create :set_expiration_date
+  before_create :set_expiration_date
+  after_create :send_admin_email
+  
+  def send_admin_email
+    AdminNotifier.new_place_notification(self.merchant).deliver
+  end
+  
+  def set_expiration_date
+    self.expiry_date =  Date.today + 365.days
+  end
     
     validates_presence_of :merchant_id
     validates_presence_of :business_name
@@ -22,10 +28,8 @@ class Caterer < ActiveRecord::Base
     has_many :banquet_types
     has_many :cuisine_types, :through => :menu_types
     has_many :menu_types
-    
-    def set_expiration_date
-    self.expiry_date =  Date.today + 365.days
-    end
+    has_many :caterer_packages
+    accepts_nested_attributes_for :caterer_packages
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/

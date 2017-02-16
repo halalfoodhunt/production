@@ -2,10 +2,18 @@ class Supermarket < ActiveRecord::Base
   extend FriendlyId
   friendly_id :brand_name, use: :slugged
   
-  has_many  :opening_hours
-  accepts_nested_attributes_for  :opening_hours
-    
   before_create :set_expiration_date
+  after_create :send_admin_email
+  
+  def send_admin_email
+    AdminNotifier.new_place_notification(self.merchant).deliver
+  end
+    
+  def set_expiration_date
+    self.expiry_date =  Date.today + 365.days
+  end
+    
+  
 
   validates_presence_of :merchant_id
   validates_presence_of :brand_name
@@ -22,10 +30,8 @@ class Supermarket < ActiveRecord::Base
   belongs_to :friends_reward
   has_many :supermarket_highlights, :through => :supermarket_features
   has_many :supermarket_features
-  
-  def set_expiration_date
-    self.expiry_date =  Date.today + 365.days
-  end
+  has_many  :opening_hours
+  accepts_nested_attributes_for  :opening_hours
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/

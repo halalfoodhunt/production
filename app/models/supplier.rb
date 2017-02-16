@@ -2,7 +2,16 @@ class Supplier < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
   
-    before_create :set_expiration_date
+  before_create :set_expiration_date
+  after_create :send_admin_email
+  
+  def send_admin_email
+    AdminNotifier.new_place_notification(self.merchant).deliver
+  end
+  
+  def set_expiration_date
+    self.expiry_date =  Date.today + 365.days
+  end
     
     validates_presence_of :merchant_id
     validates_presence_of :business_name
@@ -22,10 +31,6 @@ class Supplier < ActiveRecord::Base
     has_many :dish_types
     has_many :supplier_highlights, :through => :supplier_features
     has_many :supplier_features
-    
-    def set_expiration_date
-    self.expiry_date =  Date.today + 365.days
-    end
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
