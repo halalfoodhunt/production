@@ -1,6 +1,6 @@
  <% @verifying_types.each do |verifying_type| %>
  <tr>
-  <td class="col-md-1"><%= image_tag(verifying_type.icon.url(:square), :class => "img_circle") %></td>
+  <td class="col-md-1"><%= image_tag(verifying_type.icon.url(:large), :class => "img_circle") %></td>
   <td class="col-md-9"><%= verifying_type.name %></td>
   <td class="col-md-1"><%= link_to edit_verifying_type_path(verifying_type), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
