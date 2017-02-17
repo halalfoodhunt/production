@@ -36,7 +36,7 @@
             <% else %>
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span> 
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:32%;">
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
               <% unless place.friends_rewards_terms.blank? %>
               <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
               <% end %>
