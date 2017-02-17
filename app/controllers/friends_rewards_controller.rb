@@ -29,7 +29,7 @@ class FriendsRewardsController < ApplicationController
 
     respond_to do |format|
       if @friends_reward.save
-        format.html { redirect_to @friends_reward, notice: 'Friends reward was successfully created.' }
+        format.html { redirect_to friends_rewards_path, notice: 'Friends reward was successfully created.' }
         format.json { render :show, status: :created, location: @friends_reward }
       else
         format.html { render :new }
