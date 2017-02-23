@@ -7,9 +7,6 @@
     <li class="<%= 'active' if current_page?(koudoku.owner_subscriptions_path(@owner, @subscription)) %>"> <%= link_to 'My Subscriptions', koudoku.owner_subscriptions_path(@owner, @subscription) %></li>
     <% end %>
     <li class="<%= 'active' if current_page?(main_app.pricing_path) %>"> <%= link_to 'Plans', main_app.pricing_path %></li>
-    <li><a href="">Reviews</a></li>
-    <li><a href="">Statistics</a></li>
-    <li><a href="">Advertise</a></li>
     <li><%= link_to main_app.destroy_merchant_session_path, method: :delete do %> <i class="fa fa-sign-out fa-1x" aria-hidden="true"></i> Logout<% end %></li>
   </ul>
 </div>
