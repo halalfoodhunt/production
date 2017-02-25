@@ -434,8 +434,9 @@ body {
         color: white;
     }
     
-    .navbar-default .navbar-nav>.active>a {
-      background-color: transparent;  
+    .navbar-default .navbar-nav>.active>a, .navbar-nav>.active>a:hover {
+      background-color: transparent;
+      color: #CC3333;
     }
 
     // And the brand colour
