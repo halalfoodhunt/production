@@ -428,11 +428,14 @@ body {
     .navbar-default .navbar-nav>li>a:hover,
     .navbar-default .navbar-nav>li>a:focus {
         color: #CC3333;
-        background: transparent;
     }
     
     .navbar-default .navbar-nav>li>a {
         color: white;
+    }
+    
+    .navbar-default .navbar-nav>.active>a {
+      background-color: transparent;  
     }
 
     // And the brand colour
