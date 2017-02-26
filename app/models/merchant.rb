@@ -17,11 +17,10 @@ class Merchant < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  validates_presence_of :registered_business_name
   validates_presence_of :contact_person_name
-  validates_presence_of :office_number
+  validates_presence_of :email
   validates_presence_of :mobile_number
-  validates_presence_of :office_mailing_address
+
   
   has_many :listings
   has_many :places
