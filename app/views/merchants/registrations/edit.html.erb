@@ -1,83 +1,78 @@
+<%= render 'layouts/merchant_header' %>
 <div class="container-fluid">
-  <div class="row">
-    <%= render 'layouts/merchant_sidebar' %>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
-      <%= render 'layouts/topbar' %>
-      <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
-        <h4>Welcome, <strong><%= current_merchant.registered_business_name %></strong>!</h4>
-        <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <p>All the information that you share with us here will not be shared with the public. It is only meant for us to contact you. All other information that you’d like the public to know, please key it in your listings page. <br><br>
-          <%= devise_error_messages! %></p>
-          <h4><strong>Profile Picture</strong></h4>
-          <hr>
-          <div class="media">
-            <div class="media-left media-top">
-              <%= image_tag(current_merchant.logo.url(:large), :class => "img_circle", :style => "width:200px; height:200px;") %>
-              <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p>
-            </div>
-            <div class="media-body">
-              <div class="field">
-               <p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo<br><br><br><br><br><br><br><br><br></p>
-             </div>
-           </div>
-           <h4><strong>Business Details</strong></h4>
-           <hr>
-         </div>
-         <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin-bottom:30px; padding-right:0;">
-           <div class="col-xs-6 col-md-4" style="margin-top:30px;"><h5><strong>Information</strong></h5> <p>All the information that you share with us here will not be shared with the public. It is only meant for us to contact you. All other information that you’d like the public to know, please key it in your listings page.</p></div>
-           <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding-top:30px;">
-             <label style="margin:0;">Current Subscription Plan</label>
-             <br><h1 class="label label-success"><%= current_merchant.role %></h1><br><br>
-             <label>Country of registration</label>
-             <h3 style="margin-top:0;"><%= current_merchant.region.name %></h3>
-             <div class="field">
-              <%= f.text_field :registered_business_name, autofocus: true %>
-            </div>
-            <div class="field">
-              <%= f.text_field :uen_roc_fhc %>
-            </div>
-            <div class="field">
-              <%= f.text_field :contact_person_name %>
-            </div>
-            <div class="field">
-              <%= f.text_field :contact_person_position %>
-            </div>
-            <div class="field">
-              <%= f.phone_field :office_number %>
-            </div>
-            <div class="field">
-              <%= f.phone_field :mobile_number %>
-            </div>
-            <div class="field">
-              <%= f.text_area :office_mailing_address %>
-            </div>
-            <div class="field">
-              <%= f.email_field :email, autofocus: true %>
-            </div>
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
-            <div class="field">
-              <i>(leave blank if you don't want to change it)</i>
-              <%= f.password_field :password, autocomplete: "off" %>
-              <% if @minimum_password_length %>
-              <br />
-              <em><%= @minimum_password_length %> characters minimum</em>
-              <% end %>
-            </div>
-            <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "off" %>
-            </div>
-            <div class="field">
-              <i>(we need your current password to confirm your changes)</i>
-              <%= f.password_field :current_password, autocomplete: "off" %>
-            </div>
-            <div class="actions">
-              <center><%= f.submit "Save changes", :class => 'btn btn-md btn-raised btn-primary', :style => 'margin-bottom:30px; text-transform:uppercase; font-weight:400;' %></center>
-            </div>
-            <% end %>
-          </div>
+  <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
+    <h4>Welcome, <strong><%= current_merchant.registered_business_name %></strong>!</h4>
+    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <p>All the information that you share with us here will not be shared with the public. It is only meant for us to contact you. All other information that you’d like the public to know, please key it in your listings page. <br><br>
+      <%= devise_error_messages! %></p>
+      <h4><strong>Profile Picture</strong></h4>
+      <hr>
+      <div class="media">
+        <div class="media-left media-top">
+          <%= image_tag(current_merchant.logo.url(:large), :class => "img_circle", :style => "width:200px; height:200px;") %>
+          <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p>
         </div>
+        <div class="media-body">
+          <div class="field">
+           <p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo<br><br><br><br><br><br><br><br><br></p>
+         </div>
+       </div>
+       <h4><strong>Business Details</strong></h4>
+       <hr>
+     </div>
+     <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin-bottom:30px; padding-right:0;">
+       <div class="col-xs-6 col-md-4" style="margin-top:30px;"><h5><strong>Information</strong></h5> <p>All the information that you share with us here will not be shared with the public. It is only meant for us to contact you. All other information that you’d like the public to know, please key it in your listings page.</p></div>
+       <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding-top:30px;">
+         <label style="margin:0;">Current Subscription Plan</label>
+         <br><h1 class="label label-success"><%= current_merchant.role %></h1><br><br>
+         <label>Country of registration</label>
+         <h3 style="margin-top:0;"><%= current_merchant.region.name %></h3>
+         <div class="field">
+          <%= f.text_field :registered_business_name, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.text_field :uen_roc_fhc %>
+        </div>
+        <div class="field">
+          <%= f.text_field :contact_person_name %>
+        </div>
+        <div class="field">
+          <%= f.text_field :contact_person_position %>
+        </div>
+        <div class="field">
+          <%= f.phone_field :office_number %>
+        </div>
+        <div class="field">
+          <%= f.phone_field :mobile_number %>
+        </div>
+        <div class="field">
+          <%= f.text_area :office_mailing_address %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="field">
+          <i>(leave blank if you don't want to change it)</i>
+          <%= f.password_field :password, autocomplete: "off" %>
+          <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <i>(we need your current password to confirm your changes)</i>
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+        <div class="actions">
+          <center><%= f.submit "Save changes", :class => 'btn btn-md btn-raised btn-primary', :style => 'margin-bottom:30px; text-transform:uppercase; font-weight:400;' %></center>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
