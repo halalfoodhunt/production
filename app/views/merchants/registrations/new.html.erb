@@ -44,10 +44,7 @@
 
             <div class="field label-form">
               <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
-              <%= f.text_field :registered_business_name, autofocus: true, label: "Registered Business Name" %>
-            </div>
-            <div class="field label-form">
-              <%= f.phone_field :office_number, label: "Office Number" %>
+              <%= f.text_field :contact_person_name, autofocus: true, label: "Contact Person Name" %>
             </div>
             <div class="field label-form">
               <%= f.phone_field :mobile_number, label: "Mobile Number" %>
