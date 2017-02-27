@@ -1,34 +1,63 @@
-<div class="container-fluid">
-  <div class="row">
-    <%= render 'layouts/merchant_sidebar' %>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
-      <%= render 'layouts/topbar' %>
-      <div class="col-md-10 col-md-offset-1" style="background:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
-        <center><h4 class="header">WHAT ARE YOU?</h4><p class="italic-font">Choose the type of establishment that best represents your business to your customers. After selecting a type of establishment, you will then be directed to a registration page for you to tell customers more about your business.</p></center>
-      </div>
-      <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to new_place_path(listing_id: @listing.id) do %> 
-          <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/places.jpg" class="img-responsive" alt="Responsive image"><% end %>
-        <%= link_to 'Select', new_place_path(listing_id: @listing.id), :class=>"btn btn-places btn-block btn-lg" %></div>
-        <div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/FOOD.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_food_delivery_path(listing_id: @listing.id), :class=>"btn btn-delivery btn-block btn-lg" %></div>
-        <div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/ecommers.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_ecommer_path(listing_id: @listing.id), :class=>"btn btn-ecommer btn-block btn-lg" %></div>
-        <div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/caterer.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_caterer_path(listing_id: @listing.id), :class=>"btn btn-caterer btn-block btn-lg" %></div>
-      </div>
-      <div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
-        <div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supermarket.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_supermarket_path(listing_id: @listing.id), :class=>"btn btn-supermarket btn-block btn-lg" %></div>
-        <div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/ONLINE-GROCER.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_online_grocer_path(listing_id: @listing.id), :class=>"btn btn-grocer btn-block btn-lg" %></div>
-        <div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/ACADEMY.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_lesson_path(listing_id: @listing.id), :class=>"btn btn-academy btn-block btn-lg" %></div>
-        <div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supplier.jpg" class="img-responsive" alt="Responsive image">
-        <%= link_to 'Select', new_supplier_path(listing_id: @listing.id), :class=>"btn btn-supplier btn-block btn-lg" %></div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/pricing_header' %>
+<div class="container" style="padding-bottom:50px; margin-top;80px;">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="row bs-wizard" style="border-bottom:0; margin-top:50px;">
+			<h3><center>MERCHANT REGISTRATION</center></h3>
+			<div class="col-xs-3 bs-wizard-step complete">
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5>CREATE AN ACCOUNT</h5></div>
+			</div>
+
+			<div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+				<div class="text-center bs-wizard-stepnum"></div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5>ABOUT YOUR BUSINESS</h5></div>
+			</div>
+
+			<div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+				<div class="text-center bs-wizard-stepnum"></div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
+			</div>
+
+			<div class="col-xs-3 bs-wizard-step active"><!-- active -->
+				<div class="text-center bs-wizard-stepnum"></div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">CREATE LISTING</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-10 col-md-offset-1" style="background:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+			<center><h4 class="header">WHAT ARE YOU?</h4><p class="italic-font">Choose the type of establishment that best represents your business to your customers. After selecting a type of establishment, you will then be directed to a registration page for you to tell customers more about your business.</p></center>
+		</div>
+		<div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<%= link_to new_place_path(listing_id: @listing.id) do %> 
+				<img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/places.jpg" class="img-responsive" alt="Responsive image"><% end %>
+				<%= link_to 'Select', new_place_path(listing_id: @listing.id), :class=>"btn btn-places btn-block btn-lg" %></div>
+				<div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/FOOD.jpg" class="img-responsive" alt="Responsive image">
+					<%= link_to 'Select', new_food_delivery_path(listing_id: @listing.id), :class=>"btn btn-delivery btn-block btn-lg" %></div>
+					<div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/ecommers.jpg" class="img-responsive" alt="Responsive image">
+						<%= link_to 'Select', new_ecommer_path(listing_id: @listing.id), :class=>"btn btn-ecommer btn-block btn-lg" %></div>
+						<div class="col-xs-12 col-sm-6 col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/caterer.jpg" class="img-responsive" alt="Responsive image">
+							<%= link_to 'Select', new_caterer_path(listing_id: @listing.id), :class=>"btn btn-caterer btn-block btn-lg" %></div>
+						</div>
+						<div class="col-md-10 col-md-offset-1" style="margin-bottom:20px;">
+							<div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supermarket.jpg" class="img-responsive" alt="Responsive image">
+								<%= link_to 'Select', new_supermarket_path(listing_id: @listing.id), :class=>"btn btn-supermarket btn-block btn-lg" %></div>
+								<div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/ONLINE-GROCER.jpg" class="img-responsive" alt="Responsive image">
+									<%= link_to 'Select', new_online_grocer_path(listing_id: @listing.id), :class=>"btn btn-grocer btn-block btn-lg" %></div>
+									<div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/ACADEMY.jpg" class="img-responsive" alt="Responsive image">
+										<%= link_to 'Select', new_lesson_path(listing_id: @listing.id), :class=>"btn btn-academy btn-block btn-lg" %></div>
+										<div class="col-md-3"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/Supplier.jpg" class="img-responsive" alt="Responsive image">
+											<%= link_to 'Select', new_supplier_path(listing_id: @listing.id), :class=>"btn btn-supplier btn-block btn-lg" %></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
