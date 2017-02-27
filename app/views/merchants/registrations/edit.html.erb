@@ -30,7 +30,7 @@
   </div>
 </div>
 <ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin-top:20px;">
-    <li><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
+    <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
     <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Current Listings Plan', main_app.listings_path %>
     <li role="presentation"><a href="#">Upgrade</a></li>
     <li role="presentation"><a href="#">Resource</a></li>
