@@ -30,7 +30,7 @@
         <% end %>
         <% end %>
         <% else %>
-        <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-delivery btn-block", style: "background:#cc3333;" %>
+        <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-delivery btn-block" %>
         <% end %>
       </div>
     </div>
