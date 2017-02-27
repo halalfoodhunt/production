@@ -4,7 +4,7 @@
   </center>
   <div class="row">
     <% @plans.each do |plan| %>
-    <div class="col-xs-6 col-sm-3 col-md-3 <%= 'plan-primary' if plan.highlight? %>">
+    <div class="col-xs-6 col-sm-4 col-md-4 <%= 'plan-primary' if plan.highlight? %>">
       <div class="box" style="border:2px solid #ccc;">
         <center>
           <h3 style="color:#EF6C3D"><%= plan.name %></h3>
@@ -30,7 +30,7 @@
         <% end %>
         <% end %>
         <% else %>
-        <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-delivery btn-block" %>
+        <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn btn-delivery btn-block", style: "background:#cc3333;" %>
         <% end %>
       </div>
     </div>
