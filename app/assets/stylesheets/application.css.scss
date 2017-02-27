@@ -1250,3 +1250,9 @@ img.color_flip:hover {
     font-weight:500;
     text-transform: uppercase;
 }
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    border-radius: 0;
+    background-color: #cc3333;
+    color: #fff;
+}
