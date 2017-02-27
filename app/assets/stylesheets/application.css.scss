@@ -1248,3 +1248,13 @@ img.color_flip:hover {
     font-weight:700;
     text-transform: uppercase;
 }
+
+.nav-justified>li>a, .nav-tabs.nav-justified>li>a {
+    color: #cc3333;
+    background: transparent;
+    border-bottom: 5px solid #cc3333;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    text-transform: uppercase;
+}
