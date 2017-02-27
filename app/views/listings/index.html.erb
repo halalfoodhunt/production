@@ -2,65 +2,113 @@
 <div class="container" style="padding-bottom:50px; margin-top;80px;">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
-<ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin: 20px 0 20px 0;">
-    <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
-    <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Current Listings Plan', main_app.listings_path %>
-    <li role="presentation"><a href="#">Upgrade</a></li>
-    <li role="presentation"><a href="#">Resource</a></li>
-  </ul>
-  <% if current_merchant.free? %>
-  <div class="container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <h4>YOUR LISTINGS</h4>
-      <center><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/howitworks-01.jpg" class="img-responsive" alt="Responsive image">
-      </center><h4>How many listings do you want to attach to your profile?</h4>
-      <%= bootstrap_form_for(@current_merchant, as: current_merchant, url: registration_path(current_merchant), html: { method: :put }) do |f| %>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :basic, label: "1 Listing" %>
+    <ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin: 20px 0 20px 0;">
+      <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
+      <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Current Listings Plan', main_app.listings_path %>
+        <li role="presentation"><a href="#">Upgrade</a></li>
+        <li role="presentation"><a href="#">Resource</a></li>
+      </ul>
+      <% if current_merchant.free? %>
+          <h4>YOUR LISTINGS</h4>
+          <center><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/howitworks-01.jpg" class="img-responsive" alt="Responsive image">
+          </center><h4>How many listings do you want to attach to your profile?</h4>
+          <%= bootstrap_form_for(@current_merchant, as: current_merchant, url: registration_path(current_merchant), html: { method: :put }) do |f| %>
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <%= f.radio_button :role, :basic, label: "1 Listing" %>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <%= f.radio_button :role, :basic_plus, label: "2-3 Listings" %>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <%= f.radio_button :role, :social, label: "4-6 Listings" %>
+          </div>
+          <%= f.submit "Next" %>
+          <% end %>
+      <% else %>
+      <div class="col-xs-12 col-sm-6 col-md-9">
+        <h4>YOUR LISTINGS</h4>
+        <p>This is where you can edit, delete and add your listings.</p>
+        <p id="notice"><%= notice %></p>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :basic_plus, label: "2-3 Listings" %>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :social, label: "4-6 Listings" %>
-      </div>
-      <%= f.submit "Next" %>
-      <% end %>
+      <div class="col-xs-12 col-sm-6 col-md-3"><center><h6 style="margin:10px 0 0 0;"><strong>Your Current Plan:</strong><h6 class="label label-success"><%= current_merchant.role %></h6></h6>
+        <% if current_merchant.free? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
+        <% elsif current_merchant.basic? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
+        <% elsif current_merchant.basic_plus? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/3</strong></p>
+        <% else current_merchant.basic_plus? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/5</strong></p>
+        <% end %>
+      </center>
     </div>
-  </div>
-  <% else %>
-  <div class="col-xs-12 col-sm-6 col-md-9">
-    <h4>YOUR LISTINGS</h4>
-    <p>This is where you can edit, delete and add your listings.</p>
-    <p id="notice"><%= notice %></p>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-3"><center><h6 style="margin:10px 0 0 0;"><strong>Your Current Plan:</strong><h6 class="label label-success"><%= current_merchant.role %></h6></h6>
-    <% if current_merchant.free? %>
-    <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
-    <% elsif current_merchant.basic? %>
-    <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
-    <% elsif current_merchant.basic_plus? %>
-    <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/3</strong></p>
-    <% else current_merchant.basic_plus? %>
-    <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/5</strong></p>
-    <% end %>
-  </center>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:5px; border:1px solid #ccc;">
-  <div class="col-xs-12 col-sm-12 col-md-9"><p style="margin:5px 0 0 0;">SHOWING <b><%= @current_merchant.listings.count %></b> Listings IN ALL CITIES, Singapore</p></div>
-  <div class="col-xs-12 col-sm-12 col-md-3"><% if @quota_warning.present? %>
-    <center><button type="button" class="btn btn-sm btn-raised btn-danger disabled"><%= @quota_warning %></button></center>
-    <% else %>
-    <center><%= link_to 'Add More Listings', new_listing_path, :class => 'btn btn-sm btn-raised btn-success' %></center>
-    <% end %>
-  </div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:15px; border:1px solid #ccc;">
-  <% @current_merchant.listings.each do |listing| %>
-  <% unless @current_merchant.places.empty? %>
-  <% listing.places.each do |place| %>
-  <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
-    <% if place.verified == true %>
+    <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:5px; border:1px solid #ccc;">
+      <div class="col-xs-12 col-sm-12 col-md-9"><p style="margin:5px 0 0 0;">SHOWING <b><%= @current_merchant.listings.count %></b> Listings IN ALL CITIES, Singapore</p></div>
+      <div class="col-xs-12 col-sm-12 col-md-3"><% if @quota_warning.present? %>
+        <center><button type="button" class="btn btn-sm btn-raised btn-danger disabled"><%= @quota_warning %></button></center>
+        <% else %>
+        <center><%= link_to 'Add More Listings', new_listing_path, :class => 'btn btn-sm btn-raised btn-success' %></center>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12" style="background:white; padding:15px; border:1px solid #ccc;">
+      <% @current_merchant.listings.each do |listing| %>
+      <% unless @current_merchant.places.empty? %>
+      <% listing.places.each do |place| %>
+      <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+        <% if place.verified == true %>
+        <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+        <% else %>
+        <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+          UNVERIFIED
+        </span>
+        <% end %>
+        <div class="thumbnail" style="padding:0px; height:280px;">
+          <%= image_tag place.featured_image.url(:medium), :class => "img_responsive" %>
+          <div class="caption">
+            <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.business_name %></p></center>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 btn-places" style="background:orange;"><center><h5><strong>Place</strong><br> (EXPIRY: <%= place.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+          <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+           <center><%= link_to edit_place_path(place) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+           <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+         </div>
+       </div>
+     </div>
+     <% end %>
+     <% end %>
+     <% unless @current_merchant.ecommers.empty? %>
+     <% listing.ecommers.each do |ecommer| %>
+     <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+      <% if ecommer.verified == true %>
+      <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
+      <% else %>
+      <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
+        UNVERIFIED
+      </span>
+      <% end %>
+      <div class="thumbnail" style="padding:0px; height:280px;">
+        <%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %>
+        <div class="caption">
+          <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= ecommer.business_name %></p></center>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 btn-ecommer" style="background:#C4A276;"><center><h5><strong>Ecommer</strong><br> (EXPIRY: <%= ecommer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+        <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
+         <center><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+       </div>
+       <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
+         <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
+       </div>
+     </div>
+   </div>
+   <% end %>
+   <% end %>
+   <% unless @current_merchant.caterers.empty? %>
+   <% listing.caterers.each do |caterer| %>
+   <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
+    <% if caterer.verified == true %>
     <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
     <% else %>
     <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
@@ -68,13 +116,13 @@
     </span>
     <% end %>
     <div class="thumbnail" style="padding:0px; height:280px;">
-      <%= image_tag place.featured_image.url(:medium), :class => "img_responsive" %>
+      <%= image_tag caterer.featured_image.url(:medium), :class => "img_responsive" %>
       <div class="caption">
-        <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.business_name %></p></center>
+        <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= caterer.business_name %></p></center>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 btn-places" style="background:orange;"><center><h5><strong>Place</strong><br> (EXPIRY: <%= place.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
+      <div class="col-xs-12 col-sm-12 col-md-12 btn-caterer" style="background:#D39C25;"><center><h5><strong>Caterer</strong><br> (EXPIRY: <%= caterer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
       <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
-       <center><%= link_to edit_place_path(place) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+       <center><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
      </div>
      <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
        <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
@@ -83,61 +131,9 @@
  </div>
  <% end %>
  <% end %>
- <% unless @current_merchant.ecommers.empty? %>
- <% listing.ecommers.each do |ecommer| %>
+ <% unless @current_merchant.suppliers.empty? %>
+ <% listing.suppliers.each do |supplier| %>
  <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
-  <% if ecommer.verified == true %>
-  <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
-  <% else %>
-  <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
-    UNVERIFIED
-  </span>
-  <% end %>
-  <div class="thumbnail" style="padding:0px; height:280px;">
-    <%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %>
-    <div class="caption">
-      <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= ecommer.business_name %></p></center>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 btn-ecommer" style="background:#C4A276;"><center><h5><strong>Ecommer</strong><br> (EXPIRY: <%= ecommer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
-    <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
-     <center><%= link_to edit_ecommer_path(ecommer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
-   </div>
-   <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-     <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
-   </div>
- </div>
-</div>
-<% end %>
-<% end %>
-<% unless @current_merchant.caterers.empty? %>
-<% listing.caterers.each do |caterer| %>
-<div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
-  <% if caterer.verified == true %>
-  <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
-  <% else %>
-  <span class="label label-danger" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">
-    UNVERIFIED
-  </span>
-  <% end %>
-  <div class="thumbnail" style="padding:0px; height:280px;">
-    <%= image_tag caterer.featured_image.url(:medium), :class => "img_responsive" %>
-    <div class="caption">
-      <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= caterer.business_name %></p></center>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 btn-caterer" style="background:#D39C25;"><center><h5><strong>Caterer</strong><br> (EXPIRY: <%= caterer.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
-    <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
-     <center><%= link_to edit_caterer_path(caterer) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
-   </div>
-   <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
-     <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
-   </div>
- </div>
-</div>
-<% end %>
-<% end %>
-<% unless @current_merchant.suppliers.empty? %>
-<% listing.suppliers.each do |supplier| %>
-<div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
   <% if supplier.verified == true %>
   <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
   <% else %>
@@ -242,4 +238,4 @@
 <% end %>
 </div>
 </div>
-  <% end %>
+<% end %>
