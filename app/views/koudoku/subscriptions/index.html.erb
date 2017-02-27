@@ -1,6 +1,35 @@
 <%= render 'layouts/pricing_header' %>
 <div class="container" style="padding-bottom:50px; margin-top;80px;">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	   <div class="row bs-wizard" style="border-bottom:0; margin-top:50px;">
+        <h3><center>WELCOME TO YOU MERCHANT DASHBOARD</center></h3>
+        <div class="col-xs-3 bs-wizard-step complete">
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          <div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">CREATE AN ACCOUNT</h5></div>
+        </div>
+
+        <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+          <div class="text-center bs-wizard-stepnum"></div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          <div class="bs-wizard-info text-center"><h5>ABOUT YOUR BUSINESS</h5></div>
+        </div>
+
+        <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+          <div class="text-center bs-wizard-stepnum"></div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          <div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
+        </div>
+
+        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+          <div class="text-center bs-wizard-stepnum"></div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          <div class="bs-wizard-info text-center"><h5>CREATE LISTING</h5></div>
+        </div>
+      </div>
 		<h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
 		<ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin: 20px 0 20px 0;">
 			<li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
