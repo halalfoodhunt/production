@@ -1,13 +1,5 @@
-<%= render 'layouts/merchant_header' %>
-<div class="container" style="padding-bottom:50px; margin-top;80px;">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
-		<ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin: 20px 0 20px 0;">
-			<li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
-			<li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Current Listings Plan', main_app.listings_path %>
-				<li role="presentation"><a href="#">Upgrade</a></li>
-				<li role="presentation"><a href="#">Resource</a></li>
-			</ul>
-			<%= render 'pricing_table' %>
-		</div>
-	</div>
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/merchant_links' %>
+</div>
+</div>
