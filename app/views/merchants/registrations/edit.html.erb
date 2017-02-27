@@ -100,24 +100,3 @@
       </div>
     </div>
   </div>
-  <% unless current_merchant.free? %>
-  <div class="container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <h3>YOUR LISTINGS</h3>
-      <img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/howitworks-01.jpg" class="img-responsive" alt="Responsive image">
-      <h4>How many listings do you want to attach to your profile?</h4>
-      <%= bootstrap_form_for(@current_merchant, as: current_merchant, url: registration_path(current_merchant), html: { method: :put }) do |f| %>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :basic, label: "1 Listing" %>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :basic_plus, label: "2-3 Listings" %>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :social, label: "4-6 Listings" %>
-      </div>
-      <%= f.submit "Next" %>
-      <% end %>
-    </div>
-  </div>
-  <% end %>
