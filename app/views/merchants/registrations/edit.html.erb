@@ -29,6 +29,12 @@
     <div class="bs-wizard-info text-center"><h5>CREATE LISTING</h5></div>
   </div>
 </div>
+<ul class="nav nav-pills nav-justified" style="border:1px solid #ccc;">
+    <li><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
+    <li role="presentation"><a href="#">My Listings</a></li>
+    <li role="presentation"><a href="#">Upgrade</a></li>
+    <li role="presentation"><a href="#">Resource</a></li>
+  </ul>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin:20px 0 20px 0;">
   <h4>Welcome, <strong><%= current_merchant.registered_business_name %></strong>!</h4>
   <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
