@@ -1,48 +1,47 @@
 <%= render 'layouts/pricing_header' %>
 <div class="container" style="padding-bottom:50px; margin-top;80px;">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	   <div class="row bs-wizard" style="border-bottom:0; margin-top:50px;">
-        <h3><center>MERCHANT REGISTRATION</center></h3>
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center"><h5>CREATE AN ACCOUNT</h5></div>
-        </div>
+		<div class="row bs-wizard" style="border-bottom:0; margin-top:50px;">
+			<h3><center>MERCHANT REGISTRATION</center></h3>
+			<div class="col-xs-3 bs-wizard-step complete">
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5>CREATE AN ACCOUNT</h5></div>
+			</div>
 
-        <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
-          <div class="text-center bs-wizard-stepnum"></div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center"><h5>ABOUT YOUR BUSINESS</h5></div>
-        </div>
+			<div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+				<div class="text-center bs-wizard-stepnum"></div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5>ABOUT YOUR BUSINESS</h5></div>
+			</div>
 
-        <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
-          <div class="text-center bs-wizard-stepnum"></div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
-        </div>
+			<div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+				<div class="text-center bs-wizard-stepnum"></div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
+			</div>
 
-        <div class="col-xs-3 bs-wizard-step active"><!-- active -->
-          <div class="text-center bs-wizard-stepnum"></div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">CREATE LISTING</h5></div>
-        </div>
-      </div><center><h4><strong>GET STARTED ON YOUR LISTINGS!</strong></h4>
-        <p>The information you put in here will determine what your hungry customers will read about your place. Give them the right information to help them decide where to eat!</p><div>
-        <div class="col-xs-12 col-sm-6 col-md-4"><h4>1.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/1.png" alt="step 1" class="img-circle">
-          <center><h5><strong>Begin your journey here.</strong></h5>
-            <% if @quota_warning.present? %>
-            <button type="button" class="btn btn-danger disabled"><%= @quota_warning %></button>
-            <% else %>
-            <p><%= render 'form' %></p>
-            <% end %>
-          </center>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4"><h4>2.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/3.png" alt="step 1" class="img-circle"><center><h5><strong>Select the type of establishment.</strong></h5><p>Select your type of establishment to list your business.</p></center></div>
-        <div class="col-xs-12 col-sm-6 col-md-4"><h4>3.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/2.png" alt="step 1" class="img-circle"><center><h5><strong>ADD A LISTING & PUBLISH!</strong></h5><p>You’re almost there!<br> Get your business seen by uploading a listing. Publish your listing so that customers can find you!</p></center>
-        </div>
-        </div>
-      </div>
-    </div>
+			<div class="col-xs-3 bs-wizard-step active"><!-- active -->
+				<div class="text-center bs-wizard-stepnum"></div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+				<div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">CREATE LISTING</h5></div>
+			</div>
+		</div><center><h4><strong>GET STARTED ON YOUR LISTINGS!</strong></h4>
+		<p>The information you put in here will determine what your hungry customers will read about your place. Give them the right information to help them decide where to eat!</p><div>
+		<div class="col-xs-12 col-sm-6 col-md-4"><h4>1.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/1.png" alt="step 1" class="img-circle">
+			<center><h5><strong>Begin your journey here.</strong></h5>
+				<% if @quota_warning.present? %>
+				<button type="button" class="btn btn-danger disabled"><%= @quota_warning %></button>
+				<% else %>
+				<p><%= render 'form' %></p>
+				<% end %>
+			</center>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4"><h4>2.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/3.png" alt="step 1" class="img-circle"><center><h5><strong>Select the type of establishment.</strong></h5><p>Select your type of establishment to list your business.</p></center></div>
+		<div class="col-xs-12 col-sm-6 col-md-4"><h4>3.</h4><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/2.png" alt="step 1" class="img-circle"><center><h5><strong>ADD A LISTING & PUBLISH!</strong></h5><p>You’re almost there!<br> Get your business seen by uploading a listing. Publish your listing so that customers can find you!</p></center>
+		</div>
+	</div>
+</div>
