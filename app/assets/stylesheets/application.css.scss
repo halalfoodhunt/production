@@ -1254,8 +1254,13 @@ img.color_flip:hover {
     background: transparent;
     border-bottom: 3px solid #22211d;
     border-radius: 0;
-    font-family: 'Montserrat', sans-serif;
     font-weight:500;
     text-transform: uppercase;
     border-left: 1px solid #ccc;
+}
+
+.nav-justified>li>a, .nav-tabs.nav-justified>li>.active>a:hover {
+    color: #cc3333;
+    background: transparent;
+    border-bottom: 3px solid #cc3333;
 }
