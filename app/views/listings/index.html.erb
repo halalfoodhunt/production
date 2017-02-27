@@ -9,6 +9,37 @@
         <li role="presentation"><a href="#">Resource</a></li>
       </ul>
       <% if current_merchant.free? %>
+      <div class="container">
+      <div class="row bs-wizard" style="margin-top:80px; background:#fff; border: 1px solid #ccc;">
+  <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
+  <div class="col-xs-3 bs-wizard-step complete">
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">CREATE AN ACCOUNT</h5></div>
+  </div>
+
+  <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+    <div class="text-center bs-wizard-stepnum"></div>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5>ABOUT YOUR BUSINESS</h5></div>
+  </div>
+
+  <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+    <div class="text-center bs-wizard-stepnum"></div>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
+  </div>
+
+  <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+    <div class="text-center bs-wizard-stepnum"></div>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5>CREATE LISTING</h5></div>
+  </div>
+</div>
+</div>
           <h4>YOUR LISTINGS</h4>
           <center><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/howitworks-01.jpg" class="img-responsive" alt="Responsive image">
           </center><h4>How many listings do you want to attach to your profile?</h4>
