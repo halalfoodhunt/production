@@ -8,7 +8,7 @@
         <li role="presentation"><a href="#">Upgrade</a></li>
         <li role="presentation"><a href="#">Resource</a></li>
       </ul>
-      <% if current_merchant.free? %>
+      <% if current_merchant.plan.blank? %>
       <div class="container">
       <div class="row bs-wizard" style="margin-top:80px; background:#fff; border: 1px solid #ccc;">
   <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
