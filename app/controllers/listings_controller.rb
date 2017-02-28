@@ -16,7 +16,6 @@ class ListingsController < ApplicationController
     @suppliers = Supplier.all
     @supermarkets = Supermarket.all
     @lessons = Lesson.all
-    @subscription.plan = ::Plan.find(params[:plan])
   end
 
   # GET /listings/1
