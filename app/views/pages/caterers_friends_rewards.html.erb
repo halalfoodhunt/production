@@ -23,10 +23,10 @@
       <button class="btn btn-block btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Rewards
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><%= link_to 'All Friends Rewards', pages_ecommers_friends_rewards_path %></li>
+          <li><%= link_to 'All Friends Rewards', pages_caterers_friends_rewards_path %></li>
           <% FriendsReward.all.each do |reward| %>
           <li>
-            <%= link_to reward.name, pages_ecommers_friends_rewards_path(friends_reward: reward.name) %>
+            <%= link_to reward.name, pages_caterers_friends_rewards_path(friends_reward: reward.name) %>
           </li>
           <% end %>
         </ul>
@@ -40,13 +40,13 @@
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @ecommers.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>ECOMMERS</u>, SINGAPORE</h5></div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @caterers.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>catererS</u>, SINGAPORE</h5></div>
   <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
   <div class="row">
-    <% @ecommers.each do |ecommer| %>
-    <% unless ecommer.friends_rewards_terms.blank? %>
+    <% @caterers.each do |caterer| %>
+    <% unless caterer.friends_rewards_terms.blank? %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -55,15 +55,15 @@
       <div class="face front">
         <!-- Image-->
         <div class="card-up">
-          <%= image_tag ecommer.featured_image.url(:square), :class => "img-responsive" %>
+          <%= image_tag caterer.featured_image.url(:square), :class => "img-responsive" %>
         </div>
         <!--Avatar-->
-        <div class="avatar"><%= image_tag ecommer.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        <div class="avatar"><%= image_tag caterer.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h5 style="margin:0;"><%= link_to ecommer_path(ecommer) do %><strong><%= ecommer.business_name %></strong><% end %></h5>
-          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= ecommer.operating_address %></p><br>
+          <h5 style="margin:0;"><%= link_to caterer_path(caterer) do %><strong><%= caterer.business_name %></strong><% end %></h5>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= caterer.operating_address %></p><br>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
@@ -72,9 +72,9 @@
       <!--Back Side-->
       <div class="face back">
         <!--Content-->
-        <h4><%= ecommer.friends_reward.name %></h4>
+        <h4><%= caterer.friends_reward.name %></h4>
         <hr>
-        <p><%= ecommer.friends_rewards_terms %></p>
+        <p><%= caterer.friends_rewards_terms %></p>
         <hr>
         <!--Triggering button-->
         <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>

@@ -106,12 +106,30 @@ def friends_rewards
   end
 end
 
+def places_friends_rewards
+  if params[:friends_reward].blank?
+    @places = Place.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
 def ecommers_friends_rewards
   if params[:friends_reward].blank?
     @ecommers = Ecommer.all.order("created_at DESC")
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
+def caterers_friends_rewards
+  if params[:friends_reward].blank?
+    @caterers = Caterer.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
   end
 end
 
