@@ -30,11 +30,6 @@
           <div class="bs-wizard-info text-center"><h5>CREATE LISTING</h5></div>
         </div>
       </div>
-        <div class="col-xs-12 col-md-4"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/free.png" alt="step 1" class="img-circle"><center><h5><strong>You have selected the <%= @subscription.plan.name %> plan!</strong></h5><p>You may upgrade your plan.</p></center></div>
-        <div class="col-xs-12 col-md-4"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/eee.png" alt="step 1" class="img-circle"><center><h5><strong>PROVIDE YOUR PAYMENT DETAILS</strong></h5><p>Please update your payment details to subscribe for the insert name plan.</p></center></div>
-        <div class="col-xs-12 col-md-4"><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/3.png" alt="step 1" class="img-circle"><center><h5><strong>YOU ARE SUBSCRIBED TO HALALFOODHUNT.COM!</strong></h5><p>Welcome, you are now a subscriber! <br> Check out the features offered under your plan and explore. <br>You can upgrade your plan at anytime to access more features!
-        </p></center>
-        </div>
       <%= render 'card', title: (Koudoku.free_trial? ? "Start Your Free Trial" : "Upgrade Your Account"), url: owner_subscriptions_path(@owner) %>
     </div>
   </div>
