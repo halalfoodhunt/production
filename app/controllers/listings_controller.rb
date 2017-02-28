@@ -1,4 +1,3 @@
-module Koudoku
 class ListingsController < ApplicationController
   before_action :authenticate_merchant!, only: [:index, :new, :edit, :create, :update, :destroy]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
