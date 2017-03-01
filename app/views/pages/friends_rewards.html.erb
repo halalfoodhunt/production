@@ -17,7 +17,7 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><center><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                <center><li><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></li></center>
                 <li><center><h5><%= sort_link(@search, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
                 <li><center><h5><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
                 <li><center><h5><%= sort_link(@search, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
