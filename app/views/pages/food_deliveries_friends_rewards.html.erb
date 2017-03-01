@@ -1,0 +1,101 @@
+<%= render 'layouts/friends_header' %>
+<div style="padding:60px 0 60px 0" class="container-fluid friends-rewards">
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <h3 style="color:#fff; font-weight:800; font-size:2.5em; text-transform:none; line-height:1; padding-left:15px; margin-top:100px;">Friends Rewards:<br>We reward you for choosing Halal!</h3>
+   <div class="col-sm-12 col-md-12">
+  <div class="col-sm-12 col-md-12" style="padding:0">
+    <h6 style="text-align:left">Search for a friends rewards</h6>
+  </div>
+  <div class="col-sm-12 col-md-6" style="padding:2px">
+    <div class="dropdown">
+      <button class="btn btn-block btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Listings
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+         <li><center><h5><%= link_to 'Places', pages_places_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Ecommers', pages_ecommers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Caterers', pages_caterers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Academy', pages_lessons_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Suppliers', pages_suppliers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Food Deliveries', pages_food_deliveries_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Online Grocers', pages_online_grocers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Supermarkets', pages_supermarkets_friends_rewards_path %></h5></center></li>
+        </ul>
+      </div>
+      <br>
+    </div>
+    <div class="col-sm-12 col-md-6" style="padding:2px">
+     <div class="dropdown">
+      <button class="btn btn-block btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Rewards
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'All Friends Rewards', pages_food_deliveries_friends_rewards_path %></li>
+          <% FriendsReward.all.each do |reward| %>
+          <li>
+            <%= link_to reward.name, pages_food_deliveries_friends_rewards_path(friends_reward: reward.name) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6"></div>
+</div>
+<div class="container">
+<div class="col-md-12">
+ <div class="row">
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @food_deliveries.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>food_deliverieS</u>, SINGAPORE</h5></div>
+  <div class="col-md-1" style="padding-top:40px"></div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @food_deliveries.each do |food_deliverie| %>
+    <% unless food_deliverie.friends_rewards_terms.blank? %>
+<div class="col-xs-12 col-sm-6 col-md-3" >
+  <!--Rotating card-->
+  <div class="card-wrapper">
+    <div id="card-1" class="card-rotating effect__click">
+      <!--Front Side-->
+      <div class="face front">
+        <!-- Image-->
+        <div class="card-up">
+          <%= image_tag food_deliverie.featured_image.url(:square), :class => "img-responsive" %>
+        </div>
+        <!--Avatar-->
+        <div class="avatar"><%= image_tag food_deliverie.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        </div>
+        <!--Content-->
+        <div class="card-block" style="padding:0 5px 0 5px;">
+          <h5 style="margin:0;"><%= link_to food_deliverie_path(food_deliverie) do %><strong><%= food_deliverie.business_name %></strong><% end %></h5>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= food_deliverie.operating_address %></p><br>
+          <!--Triggering button-->
+          <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
+        </div>
+      </div>
+      <!--/.Front Side-->
+      <!--Back Side-->
+      <div class="face back">
+        <!--Content-->
+        <h4><%= food_deliverie.friends_reward.name %></h4>
+        <hr>
+        <p><%= food_deliverie.friends_rewards_terms %></p>
+        <hr>
+        <!--Triggering button-->
+        <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
+      </div>
+      <!--/.Back Side-->
+    </div>
+  </div>
+  <!--/.Rotating card-->
+</div>
+<% end %>
+<% end %>
+  </div>
+</div>
+  </div>
+<script>
+$('.rotate-btn').on('click', function(){
+  $(this).closest('.card-rotating.effect__click').toggleClass('flipped');
+});
+</script>
