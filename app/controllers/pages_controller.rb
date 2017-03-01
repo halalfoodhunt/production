@@ -142,6 +142,42 @@ def lessons_friends_rewards
   end
 end
 
+def suppliers_friends_rewards
+  if params[:friends_reward].blank?
+    @suppliers = Supplier.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @suppliers = Supplier.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
+def food_deliveries_friends_rewards
+  if params[:friends_reward].blank?
+    @food_deliveries = FoodDelivery.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
+def online_grocers_friends_rewards
+  if params[:friends_reward].blank?
+    @online_grocers = OnlineGrocer.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @online_grocers = OnlineGrocer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
+def supermarkets_friends_rewards
+  if params[:friends_reward].blank?
+    @supermarkets = Supermarket.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @supermarkets = Supermarket.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
 def halal_delivery
   @friends_rewards = FriendsReward.all
   @search = Place.ransack(params[:q])

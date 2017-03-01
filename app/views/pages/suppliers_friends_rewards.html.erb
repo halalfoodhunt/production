@@ -28,10 +28,10 @@
       <button class="btn btn-block btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Rewards
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><%= link_to 'All Friends Rewards', pages_lessons_friends_rewards_path %></li>
+          <li><%= link_to 'All Friends Rewards', pages_suppliers_friends_rewards_path %></li>
           <% FriendsReward.all.each do |reward| %>
           <li>
-            <%= link_to reward.name, pages_lessons_friends_rewards_path(friends_reward: reward.name) %>
+            <%= link_to reward.name, pages_suppliers_friends_rewards_path(friends_reward: reward.name) %>
           </li>
           <% end %>
         </ul>
@@ -45,13 +45,13 @@
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @lessons.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>ACADEMIES</u>, SINGAPORE</h5></div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @suppliers.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>SUPPLIERS</u>, SINGAPORE</h5></div>
   <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
   <div class="row">
-    <% @lessons.each do |lesson| %>
-    <% unless lesson.friends_rewards_terms.blank? %>
+    <% @suppliers.each do |supplier| %>
+    <% unless supplier.friends_rewards_terms.blank? %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -60,15 +60,15 @@
       <div class="face front">
         <!-- Image-->
         <div class="card-up">
-          <%= image_tag lesson.featured_image.url(:square), :class => "img-responsive" %>
+          <%= image_tag supplier.featured_image.url(:square), :class => "img-responsive" %>
         </div>
         <!--Avatar-->
-        <div class="avatar"><%= image_tag lesson.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        <div class="avatar"><%= image_tag supplier.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h5 style="margin:0;"><%= link_to lesson_path(lesson) do %><strong><%= lesson.brand_name %></strong><% end %></h5>
-          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= lesson.general_contact_number %></p><br>
+          <h5 style="margin:0;"><%= link_to supplier_path(supplier) do %><strong><%= supplier.brand_name %></strong><% end %></h5>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= supplier.general_contact_number %></p><br>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
@@ -77,9 +77,9 @@
       <!--Back Side-->
       <div class="face back">
         <!--Content-->
-        <h4><%= lesson.friends_reward.name %></h4>
+        <h4><%= supplier.friends_reward.name %></h4>
         <hr>
-        <p><%= lesson.friends_rewards_terms %></p>
+        <p><%= supplier.friends_rewards_terms %></p>
         <hr>
         <!--Triggering button-->
         <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
