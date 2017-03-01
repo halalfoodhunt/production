@@ -133,6 +133,15 @@ def caterers_friends_rewards
   end
 end
 
+def lessons_friends_rewards
+  if params[:friends_reward].blank?
+    @lessons = Lesson.all.order("created_at DESC")
+  else
+    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
+    @lessons = Lesson.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+  end
+end
+
 def halal_delivery
   @friends_rewards = FriendsReward.all
   @search = Place.ransack(params[:q])
