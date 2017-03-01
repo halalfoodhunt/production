@@ -11,9 +11,14 @@
       <button class="btn btn-block btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Listings
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><h5><%= link_to 'Places', pages_places_friends_rewards_path %></h5></li>
-          <li><h5><%= link_to 'Ecommers', pages_ecommers_friends_rewards_path %></h5></li>
-          <li><h5><%= link_to 'caterers', pages_caterers_friends_rewards_path %></h5></li>
+         <li><center><h5><%= link_to 'Places', pages_places_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Ecommers', pages_ecommers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Caterers', pages_caterers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Academy', pages_lessons_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Suppliers', pages_suppliers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Food Deliveries', pages_food_deliveries_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Online Grocers', pages_online_grocers_friends_rewards_path %></h5></center></li>
+          <li><center><h5><%= link_to 'Supermarkets', pages_supermarkets_friends_rewards_path %></h5></center></li>
         </ul>
       </div>
       <br>
@@ -40,7 +45,7 @@
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @caterers.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>catererS</u>, SINGAPORE</h5></div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @caterers.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>CATERERS</u>, SINGAPORE</h5></div>
   <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
