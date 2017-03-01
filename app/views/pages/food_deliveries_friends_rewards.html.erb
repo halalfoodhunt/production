@@ -45,13 +45,13 @@
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @food_deliveries.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>food_deliverieS</u>, SINGAPORE</h5></div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @food_deliveries.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>FOOD DELIVERIES</u>, SINGAPORE</h5></div>
   <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
   <div class="row">
-    <% @food_deliveries.each do |food_deliverie| %>
-    <% unless food_deliverie.friends_rewards_terms.blank? %>
+    <% @food_deliveries.each do |food_delivery| %>
+    <% unless food_delivery.friends_rewards_terms.blank? %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -60,15 +60,15 @@
       <div class="face front">
         <!-- Image-->
         <div class="card-up">
-          <%= image_tag food_deliverie.featured_image.url(:square), :class => "img-responsive" %>
+          <%= image_tag food_delivery.featured_image.url(:square), :class => "img-responsive" %>
         </div>
         <!--Avatar-->
-        <div class="avatar"><%= image_tag food_deliverie.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+        <div class="avatar"><%= image_tag food_delivery.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
         </div>
         <!--Content-->
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h5 style="margin:0;"><%= link_to food_deliverie_path(food_deliverie) do %><strong><%= food_deliverie.business_name %></strong><% end %></h5>
-          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= food_deliverie.operating_address %></p><br>
+          <h5 style="margin:0;"><%= link_to food_deliveries_path(food_delivery) do %><strong><%= food_delivery.brand_name %></strong><% end %></h5>
+          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= food_delivery.general_contact_number %></p><br>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
