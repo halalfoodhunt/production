@@ -36,7 +36,7 @@
     <li role="presentation"><a href="#">Upgrade</a></li>
     <li role="presentation"><a href="#">Resource</a></li>
   </ul>
-  <% end %>
+  <% else %>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin:20px 0 20px 0;">
     <h4>Welcome, <strong><%= current_merchant.contact_person_name %></strong>!</h4>
     <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -101,4 +101,5 @@
         <% end %>
       </div>
     </div>
+    <% end %>
   </div>
