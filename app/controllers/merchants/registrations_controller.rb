@@ -15,7 +15,7 @@ class Merchants::RegistrationsController < Devise::RegistrationsController
 	end
 
     def update_resource(resource, params)
-      if params[:password].blank? && params[:password_confirmation].blank?
+      if params[:password].blank? && params[:password_confirmation].blank? && params[:current_password].blank?
       resource.update_without_password(params)
       else
         super
