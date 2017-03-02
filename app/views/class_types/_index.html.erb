@@ -1,5 +1,6 @@
 <% @class_types.each do |class_type| %>
 <tr>
+  <td class="col-md-1"><%= image_tag(class_type.icon.url(:square), :class => "img_circle") %></td>
   <td class="col-md-9"><%= class_type.name %></td>
   <td class="col-md-1"><%= link_to edit_class_type_path(class_type), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
