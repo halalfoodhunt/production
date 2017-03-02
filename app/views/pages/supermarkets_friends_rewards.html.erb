@@ -45,13 +45,13 @@
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @supermarkets.count(:friends_terms) %></b> FRIENDS REWARDS IN <u>supermarketS</u>, SINGAPORE</h5></div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @supermarkets.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN <u>supermarketS</u>, SINGAPORE</h5></div>
   <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
   <div class="row">
     <% @supermarkets.each do |supermarket| %>
-    <% unless supermarket.friends_terms.blank? %>
+    <% unless supermarket.friends_rewards_terms.blank? %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -79,7 +79,7 @@
         <!--Content-->
         <h4><%= supermarket.friends_reward.name %></h4>
         <hr>
-        <p><%= supermarket.friends_terms %></p>
+        <p><%= supermarket.friends_rewards_terms %></p>
         <hr>
         <!--Triggering button-->
         <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
