@@ -45,7 +45,7 @@
 <div class="container">
 <div class="col-md-12">
  <div class="row">
-  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @suppliers.distinct.count(:friends_terms) %></b> FRIENDS REWARDS IN <u>SUPPLIERS</u>, SINGAPORE</h5></div>
+  <div class="col-md-11" style="padding-top:40px"><h5 style="padding:20px 0">SHOWING <b><%= @suppliers.count(:friends_terms) %></b> FRIENDS REWARDS IN <u>SUPPLIERS</u>, SINGAPORE</h5></div>
   <div class="col-md-1" style="padding-top:40px"></div>
 </div>
 <div class="container">
@@ -67,7 +67,7 @@
         </div>
         <!--Content-->
         <div class="card-block" style="padding:0 5px 0 5px;">
-          <h5 style="margin:0;"><%= link_to supplier_path(supplier) do %><strong><%= supplier.brand_name %></strong><% end %></h5>
+          <h5 style="margin:0;"><%= link_to supplier_path(supplier) do %><strong><%= supplier.business_name %></strong><% end %></h5>
           <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= supplier.general_contact_number %></p><br>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
