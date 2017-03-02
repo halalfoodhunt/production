@@ -2,13 +2,14 @@
 <div class="container" style="padding-bottom:50px; margin-top;80px;">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
+          <% unless current_merchant.free? %>
     <ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin: 20px 0 20px 0;">
       <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
       <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Current Listings Plan', main_app.listings_path %>
         <li role="presentation"><a href="#">Upgrade</a></li>
         <li role="presentation"><a href="#">Resource</a></li>
       </ul>
-      <% if current_merchant.free? %>
+      <% end %>
       <div class="container">
       <div class="row bs-wizard" style="margin-top:80px; background:#fff; border: 1px solid #ccc;">
   <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
@@ -55,7 +56,6 @@
           </div>
           <%= f.submit "Next" %>
           <% end %>
-      <% else %>
       <div class="col-xs-12 col-sm-6 col-md-9">
         <h4>YOUR LISTINGS</h4>
         <p>This is where you can edit, delete and add your listings.</p>
@@ -269,4 +269,3 @@
 <% end %>
 </div>
 </div>
-<% end %>
