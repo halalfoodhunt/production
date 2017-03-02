@@ -82,8 +82,8 @@ end
 
 def suppliers
   @search = Supplier.ransack(params[:q])
-  @suppliers = @search.result
-  @friends_rewards = FriendsReward.all 
+  @suppliers = @search.result.where(draft: false)
+  @friends_rewards = FriendsReward.all.where(draft: false)
 end
 
 def friends_rewards
@@ -108,73 +108,73 @@ end
 
 def places_friends_rewards
   if params[:friends_reward].blank?
-    @places = Place.all.order("created_at DESC")
+    @places = Place.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def ecommers_friends_rewards
   if params[:friends_reward].blank?
-    @ecommers = Ecommer.all.order("created_at DESC")
+    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def caterers_friends_rewards
   if params[:friends_reward].blank?
-    @caterers = Caterer.all.order("created_at DESC")
+    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def lessons_friends_rewards
   if params[:friends_reward].blank?
-    @lessons = Lesson.all.order("created_at DESC")
+    @lessons = Lesson.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @lessons = Lesson.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @lessons = Lesson.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def suppliers_friends_rewards
   if params[:friends_reward].blank?
-    @suppliers = Supplier.all.order("created_at DESC")
+    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @suppliers = Supplier.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @suppliers = Supplier.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def food_deliveries_friends_rewards
   if params[:friends_reward].blank?
-    @food_deliveries = FoodDelivery.all.order("created_at DESC")
+    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def online_grocers_friends_rewards
   if params[:friends_reward].blank?
-    @online_grocers = OnlineGrocer.all.order("created_at DESC")
+    @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @online_grocers = OnlineGrocer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @online_grocers = OnlineGrocer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
 def supermarkets_friends_rewards
   if params[:friends_reward].blank?
-    @supermarkets = Supermarket.all.order("created_at DESC")
+    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @supermarkets = Supermarket.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @supermarkets = Supermarket.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
