@@ -51,6 +51,7 @@
 <div class="container">
   <div class="row">
     <% @caterers.each do |caterer| %>
+    <% unless caterer.friends_reward_id.blank? %>
 <div class="col-xs-12 col-sm-6 col-md-3" >
   <!--Rotating card-->
   <div class="card-wrapper">
@@ -88,6 +89,7 @@
   </div>
   <!--/.Rotating card-->
 </div>
+<% end %>
 <% end %>
   </div>
 </div>

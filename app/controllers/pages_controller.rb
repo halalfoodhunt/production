@@ -126,7 +126,7 @@ end
 
 def caterers_friends_rewards
   if params[:friends_reward].blank?
-    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @caterers = Caterer.select(:friends_rewards_terms).distinct.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
