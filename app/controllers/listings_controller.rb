@@ -96,5 +96,8 @@ class ListingsController < ApplicationController
     if current_merchant.social? && current_merchant.listings.count >= 3
       @quota_warning = "Maximum listings reached."
     end
+    if current_merchant.custom? && current_merchant.listings.count >= 10
+      @quota_warning = "Maximum listings reached."
+    end
     end
 end

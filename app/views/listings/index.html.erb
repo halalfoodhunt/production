@@ -19,8 +19,10 @@
         <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
         <% elsif current_merchant.basic_plus? %>
         <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/2</strong></p>
-        <% else current_merchant.social? %>
+        <% elsif current_merchant.social? %>
         <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/3</strong></p>
+        <% else current_merchant.custom? %>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %></strong></p>
         <% end %>
       </center>
     </div>
