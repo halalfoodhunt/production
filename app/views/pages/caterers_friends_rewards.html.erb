@@ -13,7 +13,7 @@
 <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="col-xs-12 col-sm-12 col-md-11">
-        <h5 style="padding:20px 0">SHOWING <b><%= @caterers.count %></b> FRIENDS REWARDS IN ALL CITIES, SINGAPORE</h5>
+        <h5 style="padding:20px 0">SHOWING <b><%= @caterers.where.not(friends_rewards_terms: nil).count %></b> FRIENDS REWARDS IN ALL CITIES, SINGAPORE</h5>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-1" style="margin-top:20px;">
         <div class="dropdown">
