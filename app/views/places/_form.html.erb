@@ -201,7 +201,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>If you are <b><u>halal-certified</u></b>, please upload a photo or scancopy of your halal certificate.<br><br>For <b><u>Muslim-owned</u></b> businesses, please upload a copy or a photo of your NRIC (front and back) and your Business Registration Profile (Bizfile)</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>If you are <b><u>Halal-certified</u></b>, please upload a photo or scancopy of your halal certificate.<br><br>For <b><u>Muslim-owned</u></b> businesses, please upload a copy or a photo of your NRIC (front and back) and your Business Registration Profile (Bizfile)</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
@@ -241,7 +241,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>FILL IN YOUR LISTING DETAILS</strong></h5> <p>Please provide the relevant details to allow customers to maintain contact with your business easily. Accurate and comprehensive information will help you gain more credibility on your listings and help you to be more easily searchable.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>LISTING DETAILS</strong></h5></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <div class="field">
     <%= f.text_field :business_name %>
@@ -259,15 +259,15 @@
     <%= f.url_field :website %>
   </div>
   <div class="field">
-    <%= f.url_field :facebook %>
+    <%= f.url_field :facebook, helper:"http://www.facebook.com/username", label:"Facebook Link" %>
   </div>
   <div class="field">
-    <%= f.url_field :instagram %>
+    <%= f.url_field :instagram, helper:"http://www.instagram.com/username", label:"Instagram Link" %>
   </div>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>WHEN SHOULD YOUR CUSTOMERS VISIT YOU</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>OPENING HOURS</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.fields_for :opening_hours do |time| %> 
@@ -284,29 +284,6 @@
       <%= time.time_select :closing, label: "To" %>
     </div>
     <% end %>
-  </div>
-</div>
-</div> 
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <div class="field">
-    <%= f.text_area :question_1, label:'What dishes do you serve, and which are the highly recommended ones?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_2, label:'What is the easiest way to get to your place by public transport?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_3, label:'Where is the nearest and easiest parking spot near your place?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_4, label:'Do you have a prayer space for me? If not, where is the nearest mosque or place that I can perform my prayers at?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_5, label:'How baby/child-friendly/family-friendly are you?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_6, label:'Please provide me with links to reviews about you!', label_class: "question" %>
   </div>
 </div>
 </div> 
@@ -375,6 +352,29 @@
   </table>
 </div>
 </div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="field">
+    <%= f.text_area :question_1, label:'What dishes do you serve, and which are the highly recommended ones?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_2, label:'What is the easiest way to get to your place by public transport?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_3, label:'Where is the nearest and easiest parking spot near your place?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_4, label:'Do you have a prayer space for me? If not, where is the nearest mosque or place that I can perform my prayers at?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_5, label:'How baby/child-friendly/family-friendly are you?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_6, label:'Please provide me with links to reviews about you!', label_class: "question" %>
+  </div>
+</div>
+</div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>FRIENDS REWARDS</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage. Your listing will automatically get a shout-out on our publicity pages when you offer a FRIENDS reward.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
