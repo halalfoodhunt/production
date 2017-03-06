@@ -1,16 +1,41 @@
-<div class="container-fluid">
-  <div class="row">
-    <%= render 'layouts/merchant_sidebar' %>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding:0;">
-      <%= render 'layouts/topbar' %>
-      <div class="col-md-10 col-md-offset-1" style="background:white; border:1px solid #ccc; padding:10px;">
-        <center><h4>You have chosen to list under<strong> places</strong>!</h4><p class="italic-font" style="font-weight:400;">Listing under places indicates that your business has a physical outlet or kiosk where the customers can pay a visit or walk-in to make purchases.<br><br>
-          It’s important to fill in all the details in order to provide all the information to your customers and get more views on your listing.
-        </p></center>
-      </div>
-      <div class="col-md-10 col-md-offset-1">
-      <%= render 'form' %>
-    </div>
+<%= render 'layouts/merchant_header' %>
+<div class="container">
+ <div class="row bs-wizard" style="margin-top:80px; background:#fff; border: 1px solid #ccc;">
+  <h3><center>MERCHANT REGISTRATION</center></h3>
+  <div class="col-xs-3 bs-wizard-step complete">
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5>CREATE AN ACCOUNT</h5></div>
+  </div>
+
+  <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+    <div class="text-center bs-wizard-stepnum"></div>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">ABOUT YOUR BUSINESS</h5></div>
+  </div>
+
+  <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+    <div class="text-center bs-wizard-stepnum"></div>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
+  </div>
+
+  <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+    <div class="text-center bs-wizard-stepnum"></div>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <a href="#" class="bs-wizard-dot"></a>
+    <div class="bs-wizard-info text-center"><h5>CREATE LISTING</h5></div>
   </div>
 </div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin:20px 0 20px 0;">
+  <div class="col-md-10 col-md-offset-1" style="background:white; border:1px solid #ccc; padding:10px;">
+    <center><h4>You have chosen to list a halal food<strong> place</strong>!</h4><p class="italic-font" style="font-weight:400;">Listing a halal food place indicates that your business has a physical palce where the customers can visit.<br><br>
+      It’s important to fill in all the details to get more views on your listing.
+    </p></center>
+  </div>
+  <div class="col-md-10 col-md-offset-1">
+    <%= render 'form' %>
+  </div>
 </div>
