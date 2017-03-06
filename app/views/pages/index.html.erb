@@ -30,36 +30,36 @@
             <%= link_to 'View All', places_path, :class => "btn btn-sm btn-danger btn-outline" %>
           </div>
         </div>
-        <div class="hovereffect">
-          <%= link_to suppliers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/suppliers.jpg" alt=""><% end %>
-          <div class="overlay">
-            <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Suppliers</h2>
-            <%= link_to 'View All', suppliers_path, :class => "btn btn-sm btn-danger btn-outline" %>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding:0;">
-        <div class="hovereffect">
+          <div class="hovereffect">
           <%= link_to ecommers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/ecommer.jpg" alt=""><% end %>
           <div class="overlay">
             <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Ecommers</h2>
             <%= link_to 'View All', ecommers_path, :class => "btn btn-sm btn-danger btn-outline" %>
           </div>
         </div>
-        <div class="hovereffect">
-          <%= link_to online_grocers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/online-grocers.jpg" alt=""><% end %>
-          <div class="overlay">
-            <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Online Grocers</h2>
-            <%= link_to 'View All', online_grocers_path, :class => "btn btn-sm btn-danger btn-outline" %>
-          </div>
-        </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding:0;">
+        <div class="hovereffect">
+          <%= link_to food_deliveries_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/caterer.jpg" alt=""><% end %>
+          <div class="overlay">
+            <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Food Deliveries</h2>
+            <%= link_to 'View All', food_deliveries_path, :class => "btn btn-sm btn-danger btn-outline" %>
+          </div>
+        </div>
         <div class="hovereffect">
           <%= link_to caterers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/caterer-new.jpg" alt=""><% end %>
           <div class="overlay">
             <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Caterers</h2>
             <%= link_to 'View All', caterers_path, :class => "btn btn-sm btn-danger btn-outline" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding:0;">
+        <div class="hovereffect">
+          <%= link_to online_grocers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/online-grocers.jpg" alt=""><% end %>
+          <div class="overlay">
+            <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Online Grocers</h2>
+            <%= link_to 'View All', online_grocers_path, :class => "btn btn-sm btn-danger btn-outline" %>
           </div>
         </div>
         <div class="hovereffect">
@@ -72,10 +72,10 @@
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding:0;">
         <div class="hovereffect">
-          <%= link_to food_deliveries_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/01/caterer.jpg" alt=""><% end %>
+          <%= link_to suppliers_path do %><img class="img-responsive" src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/suppliers.jpg" alt=""><% end %>
           <div class="overlay">
-            <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Food Deliveries</h2>
-            <%= link_to 'View All', food_deliveries_path, :class => "btn btn-sm btn-danger btn-outline" %>
+            <h2 style="text-shadow: 1px 2px 1px rgba(0, 0, 0, 1); font-size: 2em; font-weight: 600;">Suppliers</h2>
+            <%= link_to 'View All', suppliers_path, :class => "btn btn-sm btn-danger btn-outline" %>
           </div>
         </div>
         <div class="hovereffect">
@@ -108,7 +108,7 @@
     </div>
     <div class="container-fluid" style="background:#313131; padding-bottom:30px;">
       <center><h3 style="margin: 30px 0 10px 0; color:#ccc; text-transform:uppercase;">View verified halal choices listed with us!</h3>
-        <p class="subtitle">Listings are kept updated and verified, but if you have some edits to suggest, let me know! 
+        <p class="subtitle">Listings are kept updated and verified, but if you have some edits to suggest, let us know! 
         </p>
       </center>
       <div class="col-md-10 col-md-offset-1">
@@ -116,7 +116,7 @@
           <%= render "places/place" %>
         </div>
         <center>
-         <%= link_to "View makan places listed with us", places_path, :class => "h6 btn btn-default btn-danger" %>
+         <%= link_to "View all halal choices", places_path, :class => "h6 btn btn-default btn-danger" %>
        </center>
      </div>
    </div>
