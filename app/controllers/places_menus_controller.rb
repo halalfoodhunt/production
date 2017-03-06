@@ -28,7 +28,7 @@ class PlacesMenusController < ApplicationController
 
     respond_to do |format|
       if @places_menu.save
-        format.html { redirect_to @places_menu, notice: 'Places menu was successfully created.' }
+        format.html { redirect_to places_menus_path, notice: 'Places menu was successfully created.' }
         format.json { render :show, status: :created, location: @places_menu }
       else
         format.html { render :new }
