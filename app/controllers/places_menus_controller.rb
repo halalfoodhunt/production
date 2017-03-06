@@ -42,7 +42,7 @@ class PlacesMenusController < ApplicationController
   def update
     respond_to do |format|
       if @places_menu.update(places_menu_params)
-        format.html { redirect_to @places_menu, notice: 'Places menu was successfully updated.' }
+        format.html { redirect_to places_menus_path, notice: 'Places menu was successfully updated.' }
         format.json { render :show, status: :ok, location: @places_menu }
       else
         format.html { render :edit }
