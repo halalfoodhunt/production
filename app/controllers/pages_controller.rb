@@ -129,7 +129,9 @@ def caterers_friends_rewards
     @caterers = Caterer.all.order("created_at DESC").where(draft: false)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @search = Caterer.ransack(params[:q])
+    @caterers= @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+  
   end
 end
 
