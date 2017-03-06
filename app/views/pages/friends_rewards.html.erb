@@ -5,10 +5,10 @@
     <div class="col-md-6 col-md-offset-3"><a href="http://www.friends.halalfoodhunt.com" class="btn btn-lg btn-primary" role="button">Get FRIENDS Card Now!</a>
     </div>
   </div>
-  <%= render 'friends_search' %>
 </div>
 <div class="container">
   <div class="col-xs-12 col-sm-12 col-md-12">
+    <%= render 'friends_search' %>
     <div class="col-xs-12 col-sm-12 col-md-11"><h5 style="padding:20px 0">SHOWING <b><%= @places.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN ALL CITIES, SINGAPORE</h5></div>
     <div class="col-xs-12 col-sm-12 col-md-1" style="margin-top:20px;">
       <div class="dropdown">
