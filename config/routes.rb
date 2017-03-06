@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :places_menus
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'

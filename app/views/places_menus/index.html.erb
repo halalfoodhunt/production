@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Places Menus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @places_menus.each do |places_menu| %>
+      <tr>
+        <td><%= places_menu.name %></td>
+        <td><%= link_to 'Show', places_menu %></td>
+        <td><%= link_to 'Edit', edit_places_menu_path(places_menu) %></td>
+        <td><%= link_to 'Destroy', places_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Places menu', new_places_menu_path %>

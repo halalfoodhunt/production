@@ -37,6 +37,8 @@ class Place < ActiveRecord::Base
   belongs_to :listing
   has_many :highlights, :through => :features
   has_many :features
+  has_many :places_menus, :through => :places_menus_categories
+  has_many :places_menus_categories
   has_many :special_tags, :through => :admin_tags
   has_many :admin_tags
   has_many :cuisine_types, :through => :menu_types
