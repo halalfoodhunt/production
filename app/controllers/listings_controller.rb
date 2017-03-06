@@ -84,7 +84,7 @@ class ListingsController < ApplicationController
     end
     
     def check_quota
-    if current_merchant.free? && current_merchant.listings.count >= 1
+    if current_merchant.free? && current_merchant.listings.count >= 0
       @quota_warning = "Maximum listings reached."
     end
     if current_merchant.basic? && current_merchant.listings.count >= 1
