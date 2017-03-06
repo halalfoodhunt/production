@@ -35,13 +35,13 @@
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE</strong></h5> <p>Are you a halal-certified or Muslim-owned establishment?</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>Halal Qualifying Type</strong></h5> <p>Are you a halal-certified or Muslim-owned establishment?</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>For <u><strong>halal-certified</strong></u> businesses, please help us to verify your business by providing a copy or a photo of your MUIS certificate if you are halal-certified. <br><br>For <u><strong>Muslim-owned</strong></u> businesses, please upload a copy or a photo of your NRIC (front and back), your company’s Bizfile and your ROC.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>If you are <b><u>halal-certified</u></b>, please upload a photo or scancopy of your halal certificate.<br><br>For Muslim-owned businesses, please upload a copy or a photo of your NRIC (front and back) and your Business Registration Profile (Bizfile)</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
