@@ -107,7 +107,7 @@ def friends_rewards
 end
 
 def places_friends_rewards
-   @search = Place.ransack(params[:q])
+    @search = Place.ransack(params[:q])
     @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
   if params[:friends_reward].blank?
     @places = Place.all.order("created_at DESC").where(draft: false)
@@ -118,6 +118,8 @@ def places_friends_rewards
 end
 
 def ecommers_friends_rewards
+    @search = Ecommer.ransack(params[:q])
+    @ecommers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
   else
@@ -140,6 +142,8 @@ def caterers_friends_rewards
 end
 
 def lessons_friends_rewards
+    @search = Lesson.ransack(params[:q])
+    @lessons = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @lessons = Lesson.all.order("created_at DESC").where(draft: false)
   else
@@ -149,6 +153,8 @@ def lessons_friends_rewards
 end
 
 def suppliers_friends_rewards
+    @search = Supplier.ransack(params[:q])
+    @suppliers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   else
@@ -158,6 +164,8 @@ def suppliers_friends_rewards
 end
 
 def food_deliveries_friends_rewards
+    @search = FoodDelivery.ransack(params[:q])
+    @food_deliveries = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
   else
@@ -167,6 +175,8 @@ def food_deliveries_friends_rewards
 end
 
 def online_grocers_friends_rewards
+    @search = OnlineGrocer.ransack(params[:q])
+    @online_grocers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
   else
@@ -176,6 +186,8 @@ def online_grocers_friends_rewards
 end
 
 def supermarkets_friends_rewards
+    @search = Supermarket.ransack(params[:q])
+    @supermarkets = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
   else
