@@ -44,11 +44,11 @@
       <%= devise_error_messages! %></p>
     </div>
     <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin-bottom:30px; padding-right:0;">
-     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" style="margin-top:30px;"><h4 style="text-transform:uppercase;">Your Business Profile</h4>
+     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" style="margin-top:10px;">
        <hr><p><%= image_tag(current_merchant.logo.url(:large), :class => "img_circle", :style => "width:150px; height:150px;") %>
        <p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo</p>
        <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p></p></div>
-       <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding-top:30px;">
+       <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding-top:10px;">
          <h4 style="text-transform:uppercase;">Your Contact Details</h4>
          <hr>
          <div class="field">
