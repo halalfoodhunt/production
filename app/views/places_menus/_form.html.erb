@@ -1,8 +1,9 @@
-<%= bootstrap_form_for(@places_menu) do |f| %>
-  <% if @places_menu.errors.any? %>
+<div class="modal-body">
+  <%= bootstrap_form_for(@places_menu) do |f| %>
+  <div class="modal-body">
+     <% if @places_menu.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@places_menu.errors.count, "error") %> prohibited this places_menu from being saved:</h2>
-
       <ul>
       <% @places_menu.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,10 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="modal-footer">
+     <%= f.submit :class => "btn btn-block btn-raised btn-danger" %>
+     <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+   </div>
+ </div>
+ <% end %>
+</div>
