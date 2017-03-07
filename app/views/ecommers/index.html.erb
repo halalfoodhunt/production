@@ -8,10 +8,14 @@
   <div class="col-xs-12 col-sm-12 col-md-12">
   <%= render 'advanced_search' %>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top:70px;">
-    <div class="col-md-11"><h5 style="padding:20px 0">SHOWING <b><%= @ecommers.count %></b> ECOMMERS IN ALL CITIES, SINGAPORE</h5></div>
-    <div class="col-md-1"></div>
-  </div>
+    <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top:70px;">
+      <div class="col-md-11"><h5 style="padding:20px 0">SHOWING <b><%= @ecommers.count %></b> ECOMMERS IN ALL CITIES, SINGAPORE</h5>
+      </div>
+       <div class="col-md-1">
+       </div>
+    </div>
+  <div class="col-xs-12 col-sm-12 col-md-12">
   <%= render 'ecommers' %>
+  </div>
 </div>
 <%= render 'layouts/footer' %>
