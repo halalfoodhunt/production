@@ -14,6 +14,8 @@ class EcommersController < ApplicationController
   # GET /ecommers/1
   # GET /ecommers/1.json
   def show
+    @search = Ecommer.ransack(params[:q])
+    @ecommers = @search.result.where(draft: false)
   end
 
   # GET /ecommers/new
