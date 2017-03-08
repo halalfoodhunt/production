@@ -2,106 +2,104 @@
 <div class="col-xs-12 col-sm-12 col-md-12" style="padding:10px 0 10px 0; background:#f8f3f0; border-bottom:1px solid #ccc; margin-top:50px;">
   <%= render 'advanced_search' %>
 </div>
-<div style="padding-left:0; padding-right:0; height:500px; background:#22211d" class="container-fluid">
+<div style="padding-left:0; padding-right:0; background:#22211d" class="container-fluid">
   <center><%= image_tag @ecommer.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
   </center>
 </div>
 <div class="container-fluid show-bg" style="padding-bottom:50px;">
   <div class="container form-style">
+    <div class="col-xs-12 col-sm-12 col-md-7">
+     <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <%= image_tag @ecommer.logo.url(:medium), :class => "media-object img-circle" %>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading title"><%= @ecommer.business_name %> (<%= @ecommer.qualifying_type.name %>)</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr><% unless @ecommer.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @ecommer.operating_address %></p></td><% end %></tr>
+            <% unless @ecommer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @ecommer.general_email %></p></td></tr><% end %>
+            <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @ecommer.general_contact_number %></p></td></tr>
+            <% unless @ecommer.website.blank? %><tr style="border-top:#ccc solid 1px">
+            <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %></p></td></tr><% end %>
+            <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @ecommer.facebook.blank? %><%= link_to @ecommer.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+              <% unless @ecommer.instagram.blank? %><%= link_to @ecommer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <% unless @ecommer.friends_rewards_terms.blank? %>
+    <div class="container-fluid" style="border:#ccc solid 1px; padding:10px; background:#fff;">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <div class="avatar">
+          <center><%= image_tag @ecommer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
+        </div>
+        <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+        </center>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9">
+        <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+        <p><%= @ecommer.friends_rewards_terms %></p>
+      </div>
+    </div>
+    <% end %>
+    <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
+    <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
+    <p><%= h(@ecommer.question_1).gsub(/\n/, '<br>').html_safe %></p>
+    <h5 class="question">How do I place an order with you?</h5>
+    <p><%= h(@ecommer.question_2).gsub(/\n/, '<br>').html_safe %></p>
+    <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
+    <p><%= h(@ecommer.question_3).gsub(/\n/, '<br>').html_safe %></p>
+    <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
+    <p><%= h(@ecommer.question_4).gsub(/\n/, '<br>').html_safe %></p>
+    <h5 class="question">Please provide me with links to reviews about you.</h5>
+    <p><%= h(@ecommer.question_5).gsub(/\n/, '<br>').html_safe %></p>
+  </div>  
+  <div class="col-xs-12 col-sm-12 col-md-5">
+    <div class="container-fluid" style="border:#ccc solid 1px;">
+      <h4 class="title">Preferred Order Method</h4>
+      <p><%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p>
+    </div>
+    <br>
+    <p><%= link_to "Order NOW!", raw(@ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-7">
-       <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <%= image_tag @ecommer.logo.url(:medium), :class => "media-object img-circle" %>
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading title"><%= @ecommer.business_name %> (<%= @ecommer.qualifying_type.name %>)</h4>
-          <table class="table table-striped">
-            <thead>
-              <tr><% unless @ecommer.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @ecommer.operating_address %></p></td><% end %></tr>
-              <% unless @ecommer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @ecommer.general_email %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @ecommer.general_contact_number %></p></td></tr>
-              <% unless @ecommer.website.blank? %><tr style="border-top:#ccc solid 1px">
-              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @ecommer.facebook.blank? %><%= link_to @ecommer.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-                <% unless @ecommer.instagram.blank? %><%= link_to @ecommer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
-              </tr>
-            </thead>
-          </table>
-        </div>
+      <div class="col-xs-6">
+        <%= image_tag @ecommer.image.url(:square), :class => "img-thumbnail" %><br><br>
+        <%= image_tag @ecommer.image_2.url(:square), :class => "img-thumbnail" %>
       </div>
-      <% unless @ecommer.friends_rewards_terms.blank? %>
-      <div class="container-fluid" style="border:#ccc solid 1px; padding:10px; background:#fff;">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar">
-            <center><%= image_tag @ecommer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
-          </div>
-          <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-          </center>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-          <p><%= @ecommer.friends_rewards_terms %></p>
-        </div>
-      </div>
-      <% end %>
-      <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-      <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
-      <p><%= h(@ecommer.question_1).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">How do I place an order with you?</h5>
-      <p><%= h(@ecommer.question_2).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
-      <p><%= h(@ecommer.question_3).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
-      <p><%= h(@ecommer.question_4).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">Please provide me with links to reviews about you.</h5>
-      <p><%= h(@ecommer.question_5).gsub(/\n/, '<br>').html_safe %></p>
-    </div>  
-    <div class="col-xs-12 col-sm-12 col-md-5">
-      <div class="container-fluid" style="border:#ccc solid 1px;">
-        <h4 class="title">Preferred Order Method</h4>
-        <p><%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p>
-      </div>
-      <br>
-      <p><%= link_to "Order NOW!", raw(@ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
-      <div class="row">
-        <div class="col-xs-6">
-          <%= image_tag @ecommer.image.url(:square), :class => "img-thumbnail" %><br><br>
-          <%= image_tag @ecommer.image_2.url(:square), :class => "img-thumbnail" %>
-        </div>
-        <div class="col-xs-6">
-         <%= image_tag @ecommer.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-         <%= image_tag @ecommer.image_4.url(:square), :class => "img-thumbnail" %>
-       </div>
+      <div class="col-xs-6">
+       <%= image_tag @ecommer.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+       <%= image_tag @ecommer.image_4.url(:square), :class => "img-thumbnail" %>
      </div>
-     <br>
-     <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Ecommer Type</h4>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag @ecommer.establishment_type.icon.url(:thumb) %> <%= @ecommer.establishment_type.name %></p></div>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Ecommer Service Types</h4>
-      <% @ecommer.service_types.each do |ecommer_service_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag ecommer_service_type.icon.url(:thumb) %> <%= ecommer_service_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Cuisine Types</h4>
-      <% @ecommer.cuisine_types.each do |cuisine_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Food Types</h4>
-      <% @ecommer.food_types.each do |food_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag food_type.icon.url(:thumb) %> <%= food_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
+   </div>
+   <br>
+   <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+    <h4 class="title">Ecommer Type</h4>
+    <div class="col-xs-6 col-md-6"><p><%= image_tag @ecommer.establishment_type.icon.url(:thumb) %> <%= @ecommer.establishment_type.name %></p></div>
   </div>
+  <br>
+  <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+    <h4 class="title">Ecommer Service Types</h4>
+    <% @ecommer.service_types.each do |ecommer_service_type| %>
+    <div class="col-xs-6 col-md-6"><p><%= image_tag ecommer_service_type.icon.url(:thumb) %> <%= ecommer_service_type.name %></p></div>
+    <% end %>
+  </div>
+  <br>
+  <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+    <h4 class="title">Cuisine Types</h4>
+    <% @ecommer.cuisine_types.each do |cuisine_type| %>
+    <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
+    <% end %>
+  </div>
+  <br>
+  <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+    <h4 class="title">Food Types</h4>
+    <% @ecommer.food_types.each do |food_type| %>
+    <div class="col-xs-6 col-md-6"><p><%= image_tag food_type.icon.url(:thumb) %> <%= food_type.name %></p></div>
+    <% end %>
+  </div>
+  <br>
 </div>
