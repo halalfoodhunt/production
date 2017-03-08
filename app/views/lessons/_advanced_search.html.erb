@@ -1,24 +1,27 @@
-<div class="col-sm-12 col-md-12">
-  <div class="col-sm-12 col-md-12" style="padding:0">
-    <h6 style="text-align:left">Search for a lesson</h6>
+<div class="col-md-10 col-md-offset-1">
+  <div class="col-xs-12 col-sm-12 col-md-1">
+    <h6>SEARCH FOR AN ACADEMY</h6>
   </div>
   <%= search_form_for @search do |f| %>
-  <div class="col-sm-12 col-md-12" style="padding:0">
+  <div class="col-xs-12 col-sm-12 col-md-2">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :brand_name_cont, class: "form-control" %>
     </div>
-    <br>
-    <div class="col-sm-12 col-md-6" style="padding:2px">
-     <%= f.collection_select(:lesson_types_id_eq_any, LessonType.all, :id, :name, {:include_blank => "Lesson Types"}, {:class=>'form-control'}) %><br>
-     <%= f.collection_select(:class_types_id_eq_any, ClassType.all, :id, :name, {:include_blank => "Class Types"}, {:class=>'form-control'}) %>
-   </div>
-   <div class="col-sm-12 col-md-6" style="padding:2px">
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-2">
+    <%= f.collection_select(:lesson_types_id_eq_any, LessonType.all, :id, :name, {:include_blank => "Lesson Types"}, {:class=>'form-control'}) %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-2">
+    <%= f.collection_select(:class_types_id_eq_any, ClassType.all, :id, :name, {:include_blank => "Class Types"}, {:class=>'form-control'}) %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-2">
     <%= f.collection_select(:culinary_skills_id_eq_any, CulinarySkill.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
-     <br>
-    <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
   </div>
-  <div>
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
+  <div class="col-xs-12 col-sm-6 col-md-2">
+    <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %>
   </div>
+  <div class="col-xs-12 col-sm-12 col-md-1">
+        <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
+  </div>
+  <% end %>
 </div>
-<% end %>
