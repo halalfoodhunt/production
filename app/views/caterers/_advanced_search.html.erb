@@ -1,22 +1,21 @@
-<div class="col-sm-12 col-md-12">
-  <div class="col-sm-12 col-md-12" style="padding:0">
-    <h6 style="text-align:left">Search for a Caterer</h6>
+<div class="col-md-10 col-md-offset-1">
+  <div class="col-xs-12 col-sm-12 col-md-2">
+    <h6>SEARCH FOR A CATERER</h6>
   </div>
   <%= search_form_for @search do |f| %>
-  <div class="col-sm-12 col-md-12" style="padding:0">
+  <div class="col-xs-12 col-sm-12 col-md-4">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :business_name_cont, class: "form-control" %>
     </div>
-    <br>
-    <div class="col-sm-12 col-md-6" style="padding:2px">
-     <%= f.collection_select(:caterer_types_id_eq_any, CatererType.all, :id, :name, {:include_blank => "Caterer Types"}, {:class=>'form-control'}) %><br>
-   </div>
-   <div class="col-sm-12 col-md-6" style="padding:2px">
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-2">
+    <%= f.collection_select(:caterer_types_id_eq_any, CatererType.all, :id, :name, {:include_blank => "Caterer Types"}, {:class=>'form-control'}) %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-2">
     <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
-    <br>
   </div>
-  <div style="margin-bottom:50px;">
-    <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
+  <div class="col-xs-12 col-sm-12 col-md-2">
+        <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
   </div>
+  <% end %>
 </div>
-<% end %>

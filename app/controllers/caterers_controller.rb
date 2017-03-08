@@ -14,6 +14,8 @@ class CaterersController < ApplicationController
   # GET /caterers/1
   # GET /caterers/1.json
   def show
+    @search = Caterer.ransack(params[:q])
+    @caterers = @search.result.where(draft: false)
   end
 
   # GET /caterers/new
