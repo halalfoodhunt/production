@@ -13,6 +13,8 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    @search = Lesson.ransack(params[:q])
+    @lessons = @search.result.where(draft: false)
   end
 
   # GET /lessons/new
