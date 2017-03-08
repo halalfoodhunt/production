@@ -12,7 +12,7 @@
     <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-2">
-    <%= f.collection_select(:food_delivery_types_id_eq_any, FoodDeliveryType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
+    <%= f.collection_select(:food_delivery_types_id_eq_any, FoodDeliveryType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-2">
         <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
