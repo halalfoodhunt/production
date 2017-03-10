@@ -210,7 +210,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 btn-grocer" style="background:#8B572A;"><center><h5><strong>Food Delivery</strong><br> (EXPIRY: <%= food_delivery.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
     <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
-     <center><%= link_to food_delivery_path(food_delivery) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
+     <center><%= link_to edit_food_delivery_path(food_delivery) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
    </div>
    <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px;">
      <center><%= link_to listing, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o" style="color:white"></i><% end %></center>
