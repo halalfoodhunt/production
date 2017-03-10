@@ -40,6 +40,8 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    @search = Place.ransack(params[:q])
+    @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
   end
 
