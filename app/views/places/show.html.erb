@@ -78,6 +78,29 @@
           <h5 class="question">Please provide me with links to reviews about you.</h5>
           <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
         </div>
+        <br>
+        <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+      <h4 class="title">Highlights</h4>
+      <% @place.highlights.each do |highlight| %>
+      <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p></div>
+      <% end %>
+    </div>
+    <br>
+    <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+      <h4 class="title">Dining Types</h4>
+      <% @place.dining_types.each do |dining_type| %>
+      <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= dining_type.name %></p>
+      </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+      <h4 class="title">Cuisine Types</h4>
+      <% @place.cuisine_types.each do |cuisine_type| %>
+      <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p>
+      </div>
+      <% end %>
+    </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
@@ -136,29 +159,6 @@
          <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
        </div>
      </div>
-     <br>
-     <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-      <h4 class="title">Highlights</h4>
-      <% @place.highlights.each do |highlight| %>
-      <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p></div>
-      <% end %>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-      <h4 class="title">Dining Types</h4>
-      <% @place.dining_types.each do |dining_type| %>
-      <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= dining_type.name %></p>
-      </div>
-      <% end %>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-      <h4 class="title">Cuisine Types</h4>
-      <% @place.cuisine_types.each do |cuisine_type| %>
-      <div class="col-xs-6 col-md-6" style="padding:0;"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p>
-      </div>
-      <% end %>
-    </div>
   </div>
 </div>
 
