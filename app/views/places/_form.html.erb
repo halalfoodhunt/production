@@ -107,7 +107,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>WHEN SHOULD YOUR CUSTOMERS VISIT YOU</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>OPENING HOURS</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.fields_for :opening_hours do |time| %> 
@@ -136,7 +136,7 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :place_type_id, PlaceType.all, :id, :name, autofocus: true, layout: :inline %>
    <%= f.select :cuisine_type_ids, CuisineType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'cuisine-type' %>
