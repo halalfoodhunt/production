@@ -133,11 +133,12 @@
   <div class="field">
     <%= f.text_area :question_1, label:'What dishes do you serve, and which are the highly recommended ones?', label_class:'question' %>
   </div>
- </div>
+</div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.collection_select :place_type_id, PlaceType.all, :id, :name, autofocus: true, layout: :inline %>
    <%= f.select :cuisine_type_ids, CuisineType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'cuisine-type' %>
    <%= f.select :dining_type_ids, DiningType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'dining-type' %>
    <%= f.select :highlight_ids, Highlight.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'highlight' %>
@@ -191,7 +192,6 @@
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
    <%= f.collection_select :location_id, Location.all, :id, :name, autofocus: true, layout: :inline %>
-   <%= f.collection_select :place_type_id, PlaceType.all, :id, :name, autofocus: true, layout: :inline %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
@@ -293,6 +293,7 @@
    <%= f.select :cuisine_type_ids, CuisineType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'cuisine-type' %>
    <%= f.select :dining_type_ids, DiningType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'dining-type' %>
    <%= f.select :highlight_ids, Highlight.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'highlight' %>
+   <%= f.select :places_menu_ids, PlacesMenu.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'places-menu' %>
    <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
  </div>
 </div>
@@ -353,6 +354,18 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>PROVIDE ADDITIONAL LINKS</strong></h5> <p>Add a reservations and/or a delivery link so that it’s more convenient for your customers to visit you and/or to get food delivered from your place.</p>
+ </div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="field">
+    <%= f.url_field :delivery_link %>
+  </div>
+  <div class="field">
+    <%= f.url_field :reservation_link %>
+  </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
@@ -382,19 +395,7 @@
    <%= f.text_area :friends_rewards_terms %>
  </div>
 </div>
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>PROVIDE ADDITIONAL LINKS</strong></h5> <pAdd a reservations and/or a delivery link so that it’s more convenient for your customers to visit you and/or to get food delivered from your place.</p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <div class="field">
-    <%= f.url_field :delivery_link %>
-  </div>
-  <div class="field">
-    <%= f.url_field :reservation_link %>
-  </div>
-</div>
-</div>
 <div class="field">
-  
   <h5><strong>ARE YOU READY TO BE PUBLISHED?</strong></h5>
   <p>Not ready to publish yet? Tick this box if you’d like to save this listing as a draft. Make sure to un-tick this box once you’re ready to publish your listing!</p>
   <%= f.check_box :draft, label: 'Save as Draft' %>
