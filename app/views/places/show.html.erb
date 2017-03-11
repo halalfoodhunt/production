@@ -162,41 +162,5 @@
    </div>
  </div>
 </div>
-<div class="container-fluid" style="padding:0; background:#fff;">
-  <div class="container">
-   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4>Nearby Places</h4>
-    <div class="scroller">
-      <% for place in @place.nearbys(1).try(:limit, 4) %>
-      <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
-        <% if place.verified == true %>
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
-        <% else %>
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span> 
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
-          <% unless place.friends_rewards_terms.blank? %>
-          <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
-          <% end %>
-        </span>
-        <div style="padding:0px; height:380px; position:relative;" class="thumbnail">
-          <%= image_tag place.featured_image.url(:large), :class => "img_responsive" %>
-          <div class="caption">
-            <div class="media">
-              <div class="media-left">
-                <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading title"><%= link_to place.business_name, place_path(place) %></h5>
-                <p><i class="fa fa-map-marker"></i> <%= place.operating_address %><br>(<%= place.distance.round(2) %> miles)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
 async defer></script>
