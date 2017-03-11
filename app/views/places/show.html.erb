@@ -201,3 +201,11 @@
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
 async defer></script>
+ <script type="text/javascript">
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {do_clustering: false}, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+      </script>
