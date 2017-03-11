@@ -36,7 +36,7 @@
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading title"><%= @place.business_name %></h4>
+          <h5 class="media-heading title"><%= @place.business_name %></h5>
           <table class="table table-striped">
             <thead>
               <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
@@ -80,7 +80,7 @@
         </div>
         <br>
         <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-      <h4 class="title">Highlights</h4>
+      <h5 class="title">Highlights</h5>
       <% @place.highlights.each do |highlight| %>
       <div class="col-xs-12 col-md-4" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p></div>
       <% end %>
