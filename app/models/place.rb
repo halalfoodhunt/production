@@ -79,5 +79,5 @@ class Place < ActiveRecord::Base
   validates_attachment_content_type :document_4, content_type: /\Aimage\/.*\Z/
   
   geocoded_by :operating_address
-	after_validation :geocode
+	after_validation :geocode, :if => :operating_address_changed?
 end
