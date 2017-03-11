@@ -40,7 +40,7 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    @places = Place.all.limit(4).where(draft: false)
+    @places = Place.where(draft: false).limit(4)
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
