@@ -664,7 +664,7 @@ body {
 }
 
 .admin_dashboard {
-    background: url(http://halalfoodhunt.com/wp-content/uploads/2016/08/background12.jpg) no-repeat center center fixed;
+    background: url("http://halalfoodhunt.com/wp-content/uploads/2016/08/background12.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -672,7 +672,7 @@ body {
 }
 
 .show-bg {
-    background: url(http://halalfoodhunt.com/wp-content/uploads/2016/09/white_bg.jpeg) repeat-right;
+    background-image: url("http://halalfoodhunt.com/wp-content/uploads/2016/09/white_bg.jpeg") repeat-right;
 }
 
 .admin_dashboard-full-height {
