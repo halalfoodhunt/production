@@ -186,7 +186,7 @@
             </div>
             <div class="media-body">
               <h5 class="media-heading title"><%= link_to place.business_name, place_path(place) %></h5>
-              <p><i class="fa fa-map-marker"></i> <%= place.operating_address %>(<%= place.distance.round(2) %> miles)</p>
+              <p><i class="fa fa-map-marker"></i> <%= place.operating_address %><br>(<%= place.distance.round(2) %> miles)</p>
             </div>
           </div>
         </div>
