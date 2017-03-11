@@ -29,22 +29,24 @@
 <div class="container-fluid show-bg" style="padding-bottom:20px;">
   <div class="container form-style">
     <div class="col-xs-12 col-sm-12 col-md-7">
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= image_tag @place.logo.url(:medium), :class => "media-object img-circle" %>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-9">
-        <h4 class="title"><%= @place.business_name %></h4>
-        <table class="table table-striped">
-          <thead>
-            <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
-            <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @place.general_contact_number %></p></td></tr>
-            <% unless @place.website.blank? %><tr style="border-top:#ccc solid 1px">
-            <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @place.website, "#{@place.website}" %></p></td></tr><% end %>
-            <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @place.facebook.blank? %><%= link_to @place.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-              <% unless @place.instagram.blank? %><%= link_to @place.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
-            </tr>
-          </thead>
-        </table>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <%= image_tag @place.logo.url(:medium), :class => "media-object img-circle" %>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="title"><%= @place.business_name %></h4>
+          <table class="table table-striped">
+            <thead>
+              <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
+              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @place.general_contact_number %></p></td></tr>
+              <% unless @place.website.blank? %><tr style="border-top:#ccc solid 1px">
+              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @place.website, "#{@place.website}" %></p></td></tr><% end %>
+              <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @place.facebook.blank? %><%= link_to @place.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+                <% unless @place.instagram.blank? %><%= link_to @place.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
+              </tr>
+            </thead>
+          </table>
+        </div>
       </div>
       <% unless @place.friends_rewards_terms.blank? %>
       <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
