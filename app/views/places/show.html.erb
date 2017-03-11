@@ -11,14 +11,20 @@
 </div>
 <div style="padding-left:0; padding-right:0;" class="container-fluid">
   <div id="map" style="width:100%; height:400px;"></div>
-   <script type="text/javascript">
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {do_clustering: false}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-      </script>
+  <script type="text/javascript">
+  var map;
+  var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: myCenter,
+      zoom: 15
+    });
+    var marker = new google.maps.Marker({
+      position: myCenter,
+      map: map,
+    });
+  }
+  </script>
 </div>
 <div class="container-fluid show-bg" style="padding-bottom:20px;">
   <div class="container form-style">
@@ -192,3 +198,5 @@
     </div>
   </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
+async defer></script>
