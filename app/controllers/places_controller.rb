@@ -44,6 +44,15 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+    marker.lat place.latitude
+    marker.lng place.longitude
+    marker.json({operating_address: place.operating_address})
+    marker.picture({
+     "url" => "http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/3..png",
+     "width" =>  52,
+     "height" => 52})
+    marker.infowindow render_to_string(:partial => "/layouts/infobox", :locals => { :place => place})
   end
 
   # GET /places/new
