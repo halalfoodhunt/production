@@ -102,62 +102,61 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-5">
+    <% unless @place.qualifying_type.blank? %>
+    <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <div class="avatar"><center>
+          <% if @place.verified == true %>
+          <%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+          <% else %>
+          <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+          <% end %>
+        </center></div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9">
+        <h4 class="title">Halal Verification</h4>
+        <p><% if @place.verified == true %>
+          <%= @place.qualifying_type.halal_summary %>
+          <% else %>
+          This business has yet to submit documents for official verification.
+          <% end %>
+        </p>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-5">
-      <% unless @place.qualifying_type.blank? %>
-      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar"><center>
-            <% if @place.verified == true %>
-            <%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
-            <% else %>
-            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
-            <% end %>
-          </center></div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h4 class="title">Halal Verification</h4>
-          <p><% if @place.verified == true %>
-            <%= @place.qualifying_type.halal_summary %>
-            <% else %>
-            This business has yet to submit documents for official verification.
-            <% end %>
-          </p>
-        </div>
+    <% end %><br>
+    <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
+      <h4 class="title">Opening Hours</h4>
+      <% @place.opening_hours.each do |time| %>
+      <div class="col-xs-12 col-sm-6 col-md-4" style="padding:0;">
+        <%= time.day.name %>
       </div>
-      <% end %><br>
-      <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
-        <h4 class="title">Opening Hours</h4>
-        <% @place.opening_hours.each do |time| %>
-        <div class="col-xs-12 col-sm-6 col-md-4" style="padding:0;">
-          <%= time.day.name %>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-2">
-          <%= time.open_or_close.name %>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <%= time.opening.strftime("%I:%M %p") %>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <%= time.closing.strftime("%I:%M %p") %>
-        </div>
-        <% end %>
+      <div class="col-xs-12 col-sm-6 col-md-2">
+        <%= time.open_or_close.name %>
       </div>
-      <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary" %>
-        <% end %>
-      </p>
-      <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => "border:1px solid #cc3333;" %>
-        <% end %>
-      </p>
-      <div class="row">
-        <div class="col-xs-6">
-          <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
-          <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
-        </div>
-        <div class="col-xs-6">
-         <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-         <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
-       </div>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <%= time.opening.strftime("%I:%M %p") %>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= time.closing.strftime("%I:%M %p") %>
+      </div>
+      <% end %>
+    </div>
+    <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary" %>
+      <% end %>
+    </p>
+    <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => "border:1px solid #cc3333;" %>
+      <% end %>
+    </p>
+    <div class="row">
+      <div class="col-xs-6">
+        <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
+        <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
+      </div>
+      <div class="col-xs-6">
+       <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+       <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
      </div>
    </div>
  </div>
@@ -197,5 +196,5 @@
     </div>
   </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
-async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
+  async defer></script>
