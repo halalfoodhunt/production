@@ -29,7 +29,7 @@
 <div class="container-fluid show-bg" style="padding-bottom:50px;">
   <div class="container form-style">
     <div class="col-xs-12 col-sm-12 col-md-7">
-      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+      <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-3">
           <div class="avatar">
             <center><%= image_tag @place.logo.url(:medium), :class => "media-object img-circle" %></center>
@@ -49,7 +49,7 @@
             </thead>
           </table>
         </div>
-      </div>
+      </div><br>
       <% unless @place.friends_rewards_terms.blank? %>
       <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
         <div class="col-xs-12 col-sm-12 col-md-3">
