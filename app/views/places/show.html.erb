@@ -51,7 +51,8 @@
       <% unless @place.friends_rewards_terms.blank? %>
       <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
         <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar"><center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+          <div class="avatar"><center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
+          </div>
           <center>
             <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
           </center>
@@ -100,6 +101,7 @@
         </div>
         <% end %>
       </div>
+    </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <% unless @place.qualifying_type.blank? %>
