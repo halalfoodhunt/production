@@ -52,7 +52,6 @@
           <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p><br>
           <!--Triggering button-->
           <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
-          <p><%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-sm btn-danger" %></p>
         </div>
       </div>
       <!--/.Front Side-->
@@ -65,6 +64,7 @@
         <hr>
         <!--Triggering button-->
         <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
+         <p><%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-sm btn-danger" %></p>
       </div>
       <!--/.Back Side-->
     </div>
