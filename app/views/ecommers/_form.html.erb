@@ -95,11 +95,11 @@
   <div class="field">
     <%= f.text_field :operating_address, label: "Self Collection / Self Contact Address", helper:"Eg 10 Ubi Crescent" %>
   </div>
-  <div class="field">
-    <%= f.text_field :facebook, label: 'Insert full URL' %>
+ <div class="field">
+    <%= f.url_field :facebook, helper:"http://www.facebook.com/username", label:"Facebook Link" %>
   </div>
   <div class="field">
-    <%= f.text_field :instagram, label: 'Insert full URL' %>
+    <%= f.url_field :instagram, helper:"http://www.instagram.com/username", label:"Instagram Link" %>
   </div>
   <div class="field">
     <%= f.text_field :website %>
