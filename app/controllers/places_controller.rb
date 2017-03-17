@@ -49,6 +49,7 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @current_merchant = current_merchant
+    @listing = listing_params[:listing_id]
     @place = Place.new(listing_id: params[:listing_id])
     7.times { @place.opening_hours.build }
   end
@@ -128,5 +129,9 @@ class PlacesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
       params.require(:place).permit(:business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :question_1, :question_2, :question_3, :question_4, :question_5, :question_6, :delivery_link, :reservation_link, :draft, :expiry_date, :halal_expiry, :latitude, :longitude, :logo, :friends_rewards_terms, :verified, :qualifying_type_id, :region_id, :location_id, :friends_reward_id, :place_type_id, :price_range_id, :featured_image, :image, :image_2, :image_3, :image_4, :document_1, :document_2, :document_3, :document_4, :listing_id, dining_type_ids: [], highlight_ids: [], cuisine_type_ids: [], places_menu_ids: [], special_tag_ids: [], :opening_hours_attributes => [:id, :opening, :closing, :day_id, :open_or_close_id] )
+    end
+    
+    def listing_params
+      params.permit(:listing_id)
     end
 end
