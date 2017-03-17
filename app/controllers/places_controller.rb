@@ -49,7 +49,6 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @current_merchant = current_merchant
-    @listing = Listing.find(params[:id])
     @place = Place.new(listing_id: params[:listing_id])
     7.times { @place.opening_hours.build }
   end
