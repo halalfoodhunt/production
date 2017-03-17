@@ -99,10 +99,10 @@
     <%= f.url_field :website %>
   </div>
   <div class="field">
-    <%= f.url_field :facebook %>
+    <%= f.url_field :facebook, helper:"http://www.facebook.com/username", label:"Facebook Link (Insert full URL)" %>
   </div>
   <div class="field">
-    <%= f.url_field :instagram %>
+    <%= f.url_field :instagram, helper:"http://www.instagram.com/username", label:"Instagram Link (Insert full URL)" %>
   </div>
 </div>
 </div>
@@ -195,7 +195,7 @@
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL QUALIFYING TYPE</strong></h5> <p>Are you a Halal-certified or Muslim-owned establishment?</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>HALAL STATUS</strong></h5> <p>Are you a Halal-certified or Muslim-owned establishment?</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
 </div>
