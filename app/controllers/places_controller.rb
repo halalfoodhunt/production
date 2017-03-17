@@ -49,13 +49,13 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @current_merchant = current_merchant
+    @listings = Listing.all
     @place = Place.new(listing_id: params[:listing_id])
     7.times { @place.opening_hours.build }
   end
 
   # GET /places/1/edit
   def edit
-    @place = Place.find(listing_id: params[:listing_id])
   end
 
   # POST /places
