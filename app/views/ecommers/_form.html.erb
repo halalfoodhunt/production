@@ -37,14 +37,11 @@
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>HALAL QUALIFYING TYPE</strong></h5> </div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
+  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inlinelabel: "Halal Status" %>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>UPLOAD VERIFYING DOCUMENTS</strong></h5> <p>For <u><strong>halal-certified</strong></u> businesses, please provide a copy or a photo of your MUIS Halal certificate.<br><br>
- For <u><strong>Muslim-owned</strong></u> businesses, please upload a copy or a photo of your NRIC (front and back) and your Company’s Business Registration (Bizfile)</p>
-  For <u><strong>individuals</strong></u>;
-  Please submit photos of your NRIC (front and back) </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD YOUR VERIFYING DOCUMENTS</strong></h5> <p>If you are <b><u>Halal-certified</u></b>, please upload a photo or scancopy of your halal certificate.<br><br>For <b><u>Muslim-owned</u></b> businesses, please upload a copy or a photo of your NRIC (front and back) and your Business Registration Profile (Bizfile)</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table table-responsive">
     <thead>
@@ -116,20 +113,6 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services. </p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <div class="field">
-    <%= f.text_area :question_1, label:'What type of food do you make and which are the highly recommended ones?', label_class: "question" %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_2, label:'How will my order reach me? Do you provide delivery services and what are the charges? ', label_class: "question" %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_3, label:'Am I able to do a self-collection for my orders? If so, where?', label_class: "question" %>
-  </div>
-</div>
-</div> 
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.select :service_type_ids, ServiceType.all.map{ |h| [h.name, h.id]}, {}, multiple: true, id: 'service-type' %>
@@ -194,6 +177,20 @@
   </table>
 </div>
 </div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services. </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <div class="field">
+    <%= f.text_area :question_1, label:'What type of food do you make and which are the highly recommended ones?', label_class: "question" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_2, label:'How will my order reach me? Do you provide delivery services and what are the charges? ', label_class: "question" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_3, label:'Am I able to do a self-collection for my orders? If so, where?', label_class: "question" %>
+  </div>
+</div>
+</div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>Friends Rewards</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage and set Terms and Conditions of your Reward as necessary.  </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
