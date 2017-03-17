@@ -103,6 +103,7 @@ class PlacesController < ApplicationController
       format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
       format.json { head :no_content }
     end
+    @place = @listing.place.find(params[:id])
   end
   
   def edit_multiple
