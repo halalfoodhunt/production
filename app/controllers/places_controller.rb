@@ -49,7 +49,7 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @current_merchant = current_merchant
-    @listing = Listing.all.limit(1)
+    @listing = Listing.all.order('created_at DESC').limit(1)
     @place = Place.new(listing_id: params[:listing_id])
     7.times { @place.opening_hours.build }
   end
