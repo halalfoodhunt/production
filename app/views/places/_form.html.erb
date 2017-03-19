@@ -403,6 +403,9 @@
 <div class="actions" style="margin-bottom:20px;">
   <%= f.hidden_field :listing_id %>
   <%= f.submit :class => 'btn btn-md btn-raised btn-primary' %> 
+  <% @current_merchant.listings.each do |listing| %>
+  <%= link_to 'Cancel', listing, method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <% end %>
 </div>
 <% end %>
 <% end %>
