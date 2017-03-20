@@ -21,7 +21,7 @@
           <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
         </div>
       </div>
-      <center><% unless ecommer.delivery_link.blank? %><%= link_to "Order NOW!", raw(ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %><% end %></center>
+      <center><p><%= @ecommer.operating_address %></p><% unless ecommer.delivery_link.blank? %><%= link_to "Order NOW!", raw(ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %><% end %></center>
     </div>
   </div>
 </div>
