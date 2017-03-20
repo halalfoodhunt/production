@@ -97,6 +97,6 @@ class EcommersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ecommer_params
-      params.require(:ecommer).permit(:business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :preferred_contact, :preferred_order_method, :question_1, :question_2, :question_3, :question_4, :question_5, :delivery_link, :listing_id, :draft, :expiry_date, :merchant_id, :friends_rewards_terms, :friends_code, :verified, :logo, :featured_image, :image, :image_2, :image_3, :halal_expiry, :image_4, :document_1, :document_2, :document_3, :document_4, :location_id, :region_id, :establishment_type_id, :qualifying_type_id, :friends_reward_id, :price_range_id, service_type_ids: [], food_type_ids: [], cuisine_type_ids: [] )
+      params.require(:ecommer).permit(:business_name, :general_contact_number, :general_email, :operating_address, :facebook, :instagram, :website, :preferred_contact, :preferred_order_method, :question_1, :question_2, :question_3, :question_4, :question_5, :delivery_link, :listing_id, :draft, :expiry_date, :merchant_id, :friends_rewards_terms, :friends_code, :verified, :logo, :featured_image, :image, :image_2, :image_3, :halal_expiry, :image_4, :document_1, :document_2, :document_3, :document_4, :location_id, :region_id, :establishment_type_id, :qualifying_type_id, :friends_reward_id, :price_range_id, service_type_ids: [], food_type_ids: [], food_item_ids: [] )
     end
 end
