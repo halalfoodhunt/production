@@ -33,6 +33,7 @@ class SupermarketsController < ApplicationController
   # GET /supermarkets/new
   def new
     @current_merchant = current_merchant
+    @listing = Listing.all.order('created_at DESC').limit(1)
     @supermarket = Supermarket.new(listing_id: params[:listing_id])
     7.times { @supermarket.opening_hours.build }
   end
