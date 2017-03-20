@@ -1,0 +1,11 @@
+<% @food_items.each do |food_item| %>
+ <tr>
+  <td class="col-md-10"><%= food_item.name %></td>
+  <td class="col-md-1"><%= link_to edit_food_item_path(food_item), remote: true do %>
+    <i class="fa fa-pencil" style="color:white"></i><% end %>
+  </td>
+  <td class="col-md-1"><%= link_to food_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash-o" style="color:white"></i><% end %>
+  </td>
+</tr>
+<% end %>

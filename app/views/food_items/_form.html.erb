@@ -1,21 +1,23 @@
-<%= form_for(@food_item) do |f| %>
-  <% if @food_item.errors.any? %>
+<div class="modal-body">
+  <%= bootstrap_form_for(@food_item) do |f| %>
+  <div class="modal-body">
+    <% if @food_item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@food_item.errors.count, "error") %> prohibited this food_item from being saved:</h2>
-
+      <h2><%= pluralize(@food_item.errors.count, "error") %> prohibited this food item from being saved:</h2>
       <ul>
-      <% @food_item.errors.full_messages.each do |message| %>
+        <% @food_item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <% end %>
+    <div class="field">
+      <%= f.text_field :name %>
+    </div>
+    <div class="modal-footer">
+     <%= f.submit :class => "btn btn-block btn-raised btn-danger" %>
+     <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+   </div>
+ </div>
+ <% end %>
+</div>
