@@ -116,6 +116,7 @@
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.select :service_type_ids, ServiceType.all.map{ |h| [h.name, h.id]}, {}, multiple: true, id: 'service-type' %>
    <%= f.select :food_type_ids, FoodType.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-type' %>
+    <%= f.select :food_item_ids, FoodItem.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-item' %>
    <%= f.collection_select :establishment_type_id, EstablishmentType.all, :id, :name, autofocus: true, layout: :inline, label: "Ecommer Type" %>
  </div>
 </div>
@@ -234,6 +235,12 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('select#food-type').select2({
     placeholder: "Select food types",
+    allowClear: true
+  });
+});
+$(document).ready(function() {
+  $('select#food-item').select2({
+    placeholder: "Select food items",
     allowClear: true
   });
 });
