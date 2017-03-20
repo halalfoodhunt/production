@@ -52,7 +52,7 @@
           <div class="caption">
             <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.business_name %></p></center>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 btn-places" style="background:orange;"><center><h4><strong>Place</strong><br> (EXPIRY: <%= place.expiry_date.strftime('%m/%d/%Y') %>) </h4></center></div>
+          <div class="col-xs-12 col-sm-12 col-md-12 btn-places" style="background:orange;"><center><h5><strong>Place</strong><br> (EXPIRY: <%= place.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
           <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
            <center><%= link_to edit_place_path(place) do %><i class="fa fa-pencil" style="color:white"></i><% end %></center>
          </div>
