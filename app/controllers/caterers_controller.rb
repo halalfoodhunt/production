@@ -21,6 +21,7 @@ class CaterersController < ApplicationController
   # GET /caterers/new
   def new
     @current_merchant = current_merchant
+    @listing = Listing.all.order('created_at DESC').limit(1)
     @caterer = Caterer.new(listing_id: params[:listing_id])
     5.times { @caterer.caterer_packages.build }
   end

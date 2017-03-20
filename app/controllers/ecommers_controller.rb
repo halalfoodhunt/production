@@ -21,6 +21,7 @@ class EcommersController < ApplicationController
   # GET /ecommers/new
   def new
     @current_merchant = current_merchant
+    @listing = Listing.all.order('created_at DESC').limit(1)
     @ecommer = Ecommer.new(listing_id: params[:listing_id])
   end
 
