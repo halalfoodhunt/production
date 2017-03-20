@@ -64,7 +64,7 @@
         </div>
       </div>
       <% end %>
-       <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+      <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
         <h4 class="title">Highlights</h4>
         <% @place.highlights.each do |highlight| %>
         <div class="col-xs-12 col-md-4" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p>
@@ -87,7 +87,6 @@
         </div>
         <% end %>
       </div>
-    </div>
       <div class="container-fluid">
         <h4 class="title" style="color:#D04E2E;">FAQ</h4>
         <h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
@@ -104,6 +103,7 @@
         <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
       </div>
       <br>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <% unless @place.qualifying_type.blank? %>
       <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
