@@ -4,7 +4,6 @@
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(ecommer.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
             <% else %>
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag ecommer.establishment_type.icon.url(:square), :class => "img-responsive" %></span> 
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
               <% unless ecommer.friends_rewards_terms.blank? %>
               <%= image_tag ecommer.friends_reward.icon.url(:square), :class => "img-responsive" %>
@@ -19,7 +18,7 @@
         </div>
         <div class="media-body">
           <h5 class="media-heading"><%= link_to ecommer.business_name, ecommer_path(ecommer) %></h5>
-          <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
+          <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %><%= link_to "Order NOW!", raw(ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
         </div>
       </div>
     </div>
