@@ -20,6 +20,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @current_merchant = current_merchant
+    @listing = Listing.all.order('created_at DESC').limit(1)
     @lesson = Lesson.new(listing_id: params[:listing_id])
   end
 
