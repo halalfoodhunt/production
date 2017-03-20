@@ -19,6 +19,7 @@ class OnlineGrocersController < ApplicationController
   # GET /online_grocers/new
   def new
     @current_merchant = current_merchant
+    @listing = Listing.all.order('created_at DESC').limit(1)
     @online_grocer = OnlineGrocer.new(listing_id: params[:listing_id])
   end
 
