@@ -127,8 +127,7 @@
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-   <%= f.select :food_delivery_type_ids, FoodDeliveryType.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-delivery-type', label: 'Food Delivery Type' %>
-   <%= f.select :food_item_ids, FoodItem.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-item' %>
+   <%= f.select :food_delivery_type_ids, FoodDeliveryType.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-delivery-type', label: 'Food Delivery Type' %>s
    <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
  </div>
 </div> 
