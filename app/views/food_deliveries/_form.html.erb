@@ -11,7 +11,7 @@
     </div>
   <% end %>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD LOGO</strong></h5><p>Upload the logo representing your brand</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="media">
     <div class="media-left media-top">
@@ -33,13 +33,13 @@
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE</strong></h5> <p>Do you provide food delivery for only Halal-Certified or Muslim-owned food?</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>HALAL STATUS</strong></h5></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
+  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline, label: 'Halal Qualifying Type' %>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Verifying Documents</strong></h5> <p>For <u><strong>halal-certified</strong></u> businesses, please help us to verify your business by providing a copy or a photo of your MUIS certificate if you are halal-certified. <br><br>For <u><strong>Muslim-owned</strong></u> businesses, please upload a copy or a photo of your NRIC (front and back), your company’s Bizfile and your ROC. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD VERIFYING DOCUMENTS</strong></h5> <p>For <b>Halal-certified</b> businesses, please provide a copy or a photo of your MUIS Halal certificate. <br><br>For <b>Muslim-owned</b> businesses, please upload a copy or a photo of your NRIC (front and back) and your Company’s Business Registration (Bizfile). <br><br> For <b>Individuals</b>, please submit photos of your NRIC (front and back)</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
@@ -105,31 +105,10 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about the delivery service that your business has to offer. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your services. </p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <div class="field">
-    <%= f.text_area :question_1, label:'What type of food do you make and which are the highly recommended ones? What is the price range of the main items on your menu?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_2, label:'How do I place and order with you?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_3, label:'How will my order reach me? Do you provide delivery services and what are the charges?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_4, label:'Am I able to do a self-collection for my orders? If so, where?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_5, label:'Please provide me with links to reviews about you.', label_class: "question" %>
-  </div>
-</div>
-</div>  
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your main items so that customers can spend within their budget.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU</strong></h5> <p>You may pick more than 1 category per field.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.select :food_delivery_type_ids, FoodDeliveryType.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-delivery-type', label: 'Food Delivery Type' %>
    <%= f.select :food_item_ids, FoodItem.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'food-item' %>
-   <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
  </div>
 </div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
@@ -149,58 +128,24 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Gallery Images</strong></h5> <p>Please upload four images that showcase your food delivery service.</p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <table class="table">
-    <thead>
-      <tr>
-        <th colspan="6">File Name</th>
-        <th>File Size</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= image_tag(@food_delivery.image.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
-        <td colspan="6"><%= @food_delivery.image_file_name %></td>
-        <td><%= @food_delivery.image_file_size %></td>
-        <td><%= f.file_field :image, hide_label: true %></td>
-      </tr>
-      <tr>
-        <td><%= image_tag(@food_delivery.image_2.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
-        <td colspan="6"><%= @food_delivery.image_2_file_name %></td>
-        <td><%= @food_delivery.image_2_file_size %></td>
-        <td><%= f.file_field :image_2, hide_label: true %></td>
-      </tr>
-      <tr>
-        <td><%= image_tag(@food_delivery.image_3.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
-        <td colspan="6"><%= @food_delivery.image_3_file_name %></td>
-        <td><%= @food_delivery.image_3_file_size %></td>
-        <td><%= f.file_field :image_3, hide_label: true %></td>
-      </tr>
-      <tr>
-        <td><%= image_tag(@food_delivery.image_4.url(:thumb), :class => "img_responsive", :style => "width:50px; height:33.5px;") %></td>
-        <td colspan="6"><%= @food_delivery.image_4_file_name %></td>
-        <td><%= @food_delivery.image_4_file_size %></td>
-        <td><%= f.file_field :image_4, hide_label: true %></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Friends Rewards</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage. Your listing will automatically get a shout-out on our publicity pages when you offer a FRIENDS reward.</p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-   <%= f.collection_select :friends_reward_id, FriendsReward.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %>
-  <%= f.text_area :friends_rewards_terms %>
-</div>
-</div>
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>PROVIDE ADDITIONAL LINKS</strong></h5> <p>Add the link to your online ordering page so it’s more convenient for customers to order delivery.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
     <%= f.text_field :ordering_link, label:'Online Ordering Page Link' %>
   </div>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>Friends Rewards</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage and set Terms and Conditions of your Reward as necessary.  </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.collection_select :friends_reward_id, FriendsReward.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %>
+  <%= f.text_area :friends_rewards_terms, label:'Rewards Terms & Conditions' %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>FRIENDS Discount Code for Online Ordering</strong></h5> <p>FRIENDS Identify themselves online and over the phone via a unique CODE assigned here to exercise the Reward that you have selected for them. This code is only accessible to FRIENDS.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.text_field :friends_code, label: 'Friends Rewards Discount Code' %>
 </div>
 </div>
   <div class="field">
