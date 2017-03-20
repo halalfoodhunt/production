@@ -28,7 +28,7 @@ class FoodDelivery < ActiveRecord::Base
     has_many :dish_delivery_types
     has_many :cuisine_types, :through => :menu_types
     has_many :food_items, :through => :food_products
-    has_many :food_items
+    has_many :food_products
     has_many :menu_types
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"

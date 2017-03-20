@@ -29,7 +29,7 @@ class Ecommer < ActiveRecord::Base
     belongs_to :region
     belongs_to :friends_reward
     has_many :food_items, :through => :food_products
-    has_many :food_items
+    has_many :food_products
     has_many :service_types, :through => :service_categories
     has_many :service_categories
     has_many :cuisine_types, :through => :menu_types
