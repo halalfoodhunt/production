@@ -9,7 +9,7 @@
     <li class="breadcrumb-item active"><%= @place.business_name %> </li>
   </ol>
 </div>
-<div style="padding-left:0; padding-right:0;" class="container-fluid">
+<div style="padding-left:0; padding-right:0;" class="container-fluid hidden-xs hidden-sm">
   <div id="map" style="width:100%; height:400px;"></div>
   <script type="text/javascript">
   var map;
@@ -161,6 +161,23 @@
      </div>
    </div>
  </div>
+</div>
+<div style="padding-left:0; padding-right:0;" class="container-fluid hidden-md hidden-lg">
+  <div id="map" style="width:100%; height:400px;"></div>
+  <script type="text/javascript">
+  var map;
+  var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: myCenter,
+      zoom: 15
+    });
+    var marker = new google.maps.Marker({
+      position: myCenter,
+      map: map,
+    });
+  }
+  </script>
 </div>
 <div class="container-fluid" style="padding:0; background:#ececec;">
   <div class="container">
