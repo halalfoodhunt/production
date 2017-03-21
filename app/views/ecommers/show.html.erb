@@ -66,7 +66,7 @@
     <% end %>
   </div>
   <br>
-  <% unless @ecommer.food_item.blank? %>
+  <% unless @ecommer.food_items.blank? %>
   <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
     <h4 class="title">Food Items</h4>
     <% @ecommer.food_items.each do |food_item| %>
