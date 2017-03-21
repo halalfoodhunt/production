@@ -38,7 +38,21 @@
         </div>
       </div>
       <% end %>
-    </div>  
+    </div>
+    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Food Delivery Type</h4>
+      <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
+      <% end %>
+    </div>
+    <br>
+   <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+    <h4 class="title">Food Items</h4>
+    <% @food_delivery.food_items.each do |food_item| %>
+    <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p></div>
+    <% end %>
+  </div>
+  </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <br>
       <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
@@ -53,19 +67,6 @@
        </div>
      </div>
      <br>
-     <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Food Delivery Type</h4>
-      <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
-   <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-    <h4 class="title">Food Items</h4>
-    <% @food_delivery.food_items.each do |food_item| %>
-    <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p></div>
-    <% end %>
-  </div>
-  </div>
+     
 </div>
 </div>
