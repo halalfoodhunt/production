@@ -13,7 +13,7 @@
   <center><%= image_tag @ecommer.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
   </center>
 </div>
-<div class="container-fluid show-bg" style="padding-bottom:50px;">
+<div class="container-fluid" style="padding-bottom:50px; background: white;">
   <div class="container form-style">
     <div class="col-xs-12 col-sm-12 col-md-7">
      <div class="media">
@@ -34,7 +34,7 @@
             <% unless @ecommer.website.blank? %><tr style="border-top:#ccc solid 1px">
             <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %></p></td></tr><% end %>
             <tr style="border-top:#ccc solid 1px">
-              <td> <p>Preferred Order Method: <%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p></td>
+              <td> <p><b>Preferred Order Method:</b> <%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p></td>
             </tr>
           </thead>
         </table>
