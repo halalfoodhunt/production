@@ -12,7 +12,7 @@
             <% unless @food_delivery.instagram.blank? %><%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
           </div>
           <div class="media-body">
-            <h4 class="media-heading title"><%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)</h4>
+            <h4 class="media-heading title"><%= @food_delivery.brand_name %></h4>
             <table class="table table-striped">
               <thead>
                 <tr><% unless @food_delivery.contactable_hours.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @food_delivery.contactable_hours %></p></td><% end %></tr>
