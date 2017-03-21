@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalTitle = $('.modal .modal-title');
+$modalTitle.html("<%= @food_delivery.brand_name %>");
+$modalBody.html("<%= escape_javascript(render @food_delivery) %>");
+$modal.modal();
