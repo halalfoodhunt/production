@@ -1,0 +1,31 @@
+    <% @food_deliveries.each do |food_delivery| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+     <% if food_delivery.verified == true %>
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(food_delivery.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
+            <% else %>
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:20%;">
+              <% unless food_delivery.friends_rewards_terms.blank? %>
+              <%= image_tag food_delivery.friends_reward.icon.url(:square), :class => "img-responsive" %>
+              <% end %>
+            </span>
+      <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
+        <%= image_tag food_delivery.featured_image.url(:medium), :class => "img_responsive" %>
+        <div class="caption">
+          <div class="media">
+            <div class="media-left">
+              <%= image_tag food_delivery.logo.url(:medium), :class => "img-circle-40" %>
+            </div>
+            <div class="media-body">
+              <h5 class="media-heading"><%= link_to food_delivery.brand_name, food_delivery_path(food_delivery), remote: true %></h5>
+              <p><% food_delivery.cuisine_types.each do |cuisine_type| %>
+              <%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %>
+              <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+      <%= render "show" %>
