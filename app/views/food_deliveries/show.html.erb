@@ -9,50 +9,53 @@
             <%= image_tag @food_delivery.logo.url(:medium), :class => "media-object img-circle" %>
           </a>
           <p>Social sites: <% unless @food_delivery.facebook.blank? %><%= link_to @food_delivery.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-                <% unless @food_delivery.instagram.blank? %><%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
+            <% unless @food_delivery.instagram.blank? %><%= link_to @food_delivery.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading title"><%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)</h4>
+            <table class="table table-striped">
+              <thead>
+                <tr><% unless @food_delivery.contactable_hours.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %></p></td><% end %></tr>
+                <% unless @food_delivery.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
+                <% unless @food_delivery.website.blank? %><tr style="border-top:#ccc solid 1px">
+                <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr><% end %>
+              </thead>
+            </table>
+          </div>
         </div>
-        <div class="media-body">
-          <h4 class="media-heading title"><%= @food_delivery.brand_name %> (<%= @food_delivery.qualifying_type.name %>)</h4>
-          <table class="table table-striped">
-            <thead>
-              <tr><% unless @food_delivery.contactable_hours.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @food_delivery.contactable_hours %></p></td><% end %></tr>
-              <% unless @food_delivery.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
-              <% unless @food_delivery.website.blank? %><tr style="border-top:#ccc solid 1px">
-              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr><% end %>
-            </thead>
-          </table>
+        <% unless @food_delivery.friends_rewards_terms.blank? %>
+        <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="avatar"><center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
+            </div>
+            <center>
+              <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+            </center>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-9">
+            <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+            <p><%= @food_delivery.friends_rewards_terms %></p>
+          </div>
         </div>
+        <% end %>
+         <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Food Delivery Type</h4>
+        <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p>
+        </div>
+        <% end %>
       </div>
-      <% unless @food_delivery.friends_rewards_terms.blank? %>
-      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar"><center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
-          <center>
-            <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-          </center>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Food Items</h4>
+        <% @food_delivery.food_items.each do |food_item| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-          <p><%= @food_delivery.friends_rewards_terms %></p>
-        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Food Delivery Type</h4>
-      <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
-   <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-    <h4 class="title">Food Items</h4>
-    <% @food_delivery.food_items.each do |food_item| %>
-    <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p></div>
-    <% end %>
-  </div>
-  </div>
+      </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <br>
       <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
@@ -67,6 +70,6 @@
        </div>
      </div>
      <br>
-     
-</div>
+   </div>
+ </div>
 </div>
