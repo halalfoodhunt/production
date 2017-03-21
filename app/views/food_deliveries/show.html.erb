@@ -47,6 +47,7 @@
           <% end %>
         </div>
         <br>
+        <% unless @food_delivery.food_items.blank? %>
         <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
           <h4 class="title">Food Items</h4>
           <% @food_delivery.food_items.each do |food_item| %>
@@ -54,6 +55,7 @@
           </div>
           <% end %>
         </div>
+        <% end %>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
         <% unless @food_delivery.qualifying_type.blank? %>
