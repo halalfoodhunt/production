@@ -38,17 +38,6 @@
         </div>
       </div>
       <% end %>
-      <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-      <h5 class="question">What type of food do you make and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
-      <p><%= h(@food_delivery.question_1).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">How do I place an order with you?</h5>
-      <p><%= h(@food_delivery.question_2).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
-      <p><%= h(@food_delivery.question_3).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
-      <p><%= h(@food_delivery.question_4).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">Please provide me with links to reviews about you.</h5>
-      <p><%= h(@food_delivery.question_5).gsub(/\n/, '<br>').html_safe %></p>
     </div>  
     <div class="col-xs-12 col-sm-12 col-md-5">
       <br>
@@ -71,12 +60,12 @@
       <% end %>
     </div>
     <br>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Cuisine Types</h4>
-      <% @food_delivery.cuisine_types.each do |cuisine_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
-      <% end %>
-    </div>
+   <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+    <h4 class="title">Food Items</h4>
+    <% @ecommer.food_items.each do |food_item| %>
+    <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p></div>
+    <% end %>
+  </div>
   </div>
 </div>
 </div>
