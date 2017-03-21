@@ -39,37 +39,37 @@
           </div>
         </div>
         <% end %>
-         <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Food Delivery Type</h4>
-        <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p>
+        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+          <h4 class="title">Food Delivery Type</h4>
+          <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
+          <div class="col-xs-6 col-md-6"><p><%= image_tag food_delivery_type.icon.url(:thumb) %> <%= food_delivery_type.name %></p>
+          </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-      <br>
-      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Food Items</h4>
-        <% @food_delivery.food_items.each do |food_item| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p>
+        <br>
+        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+          <h4 class="title">Food Items</h4>
+          <% @food_delivery.food_items.each do |food_item| %>
+          <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
-    </div>
-      </div>
-    <div class="col-xs-12 col-sm-12 col-md-5">
-      <br>
-      <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
-      <div class="row">
-        <div class="col-xs-6">
-          <%= image_tag @food_delivery.image.url(:square), :class => "img-thumbnail" %><br><br>
-          <%= image_tag @food_delivery.image_2.url(:square), :class => "img-thumbnail" %>
-        </div>
-        <div class="col-xs-6">
-         <%= image_tag @food_delivery.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-         <%= image_tag @food_delivery.image_4.url(:square), :class => "img-thumbnail" %>
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <br>
+        <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= image_tag @food_delivery.image.url(:square), :class => "img-thumbnail" %><br><br>
+            <%= image_tag @food_delivery.image_2.url(:square), :class => "img-thumbnail" %>
+          </div>
+          <div class="col-xs-6">
+           <%= image_tag @food_delivery.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+           <%= image_tag @food_delivery.image_4.url(:square), :class => "img-thumbnail" %>
+         </div>
        </div>
+       <br>
      </div>
-     <br>
    </div>
  </div>
 </div>
