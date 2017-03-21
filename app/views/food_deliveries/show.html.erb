@@ -56,6 +56,28 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5">
+        <% unless @food_delivery.qualifying_type.blank? %>
+      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="avatar"><center>
+            <% if @food_delivery.verified == true %>
+            <%= image_tag @food_delivery.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+            <% else %>
+            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+            <% end %>
+          </center></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="title">Halal Verification</h4>
+          <p><% if @food_delivery.verified == true %>
+            <%= @food_delivery.qualifying_type.halal_summary %>
+            <% else %>
+            This business has yet to submit documents for official verification.
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <% end %>
         <br>
         <p><%= link_to "Order NOW!", raw(@food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
         <div class="row">
