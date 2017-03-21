@@ -62,7 +62,7 @@
     <br>
    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
     <h4 class="title">Food Items</h4>
-    <% @ecommer.food_items.each do |food_item| %>
+    <% @food_delivery.food_items.each do |food_item| %>
     <div class="col-xs-6 col-md-6"><p><%= image_tag food_item.icon.url(:thumb) %> <%= food_item.name %></p></div>
     <% end %>
   </div>
