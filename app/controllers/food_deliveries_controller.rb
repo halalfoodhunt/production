@@ -14,13 +14,6 @@ class FoodDeliveriesController < ApplicationController
   # GET /food_deliveries/1
   # GET /food_deliveries/1.json
   def show
-    @food_delivery = FoodDelivery.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.js # show.js.erb
-      format.json { render json: @food_delivery }
-    end
   end
 
   # GET /food_deliveries/new
