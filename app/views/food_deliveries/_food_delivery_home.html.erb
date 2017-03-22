@@ -25,10 +25,10 @@
             </div>
           </div>
         </div>
-      </div>
-      <center>
+         <center>
       <% unless food_delivery.ordering_link.blank? %><%= link_to "Order NOW!", raw(food_delivery.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
       <% end %>
       </center>
+      </div>
     </div>
     <% end %>
