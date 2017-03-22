@@ -24,21 +24,20 @@
             </table>
           </div>
         </div>
-        <% unless @food_delivery.friends_rewards_terms.blank? %>
-        <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
-          <div class="col-xs-12 col-sm-12 col-md-3">
-            <div class="avatar"><center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
-            </div>
-            <center>
-              <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-            </center>
+       <% unless @food_delivery.friends_rewards_terms.blank? %>
+      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="avatar">
+            <center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-9">
-            <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-            <p><%= @food_delivery.friends_rewards_terms %></p>
-          </div>
+          <center><p><%= link_to 'View More Rewards', pages_food_deliveries_friends_rewards_path, class: "btn btn-raised btn-block btn-primary" %></p></center>
         </div>
-        <% end %><br>
+        <div class="col-xs-12 col-sm-12 col-md-8">
+          <h4 class="title">Friends Card Holders Only</h4>
+          <p><%= @food_delivery.friends_rewards_terms %></p>
+        </div>
+      </div>
+      <% end %><br>
         <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
           <h4 class="title">Food Delivery Type</h4>
           <% @food_delivery.food_delivery_types.each do |food_delivery_type| %>
