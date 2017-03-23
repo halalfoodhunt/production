@@ -207,6 +207,11 @@ def is_admin?
   end
 end
 
+def friends_rewards_results
+   @search = Place.ransack(params[:q])
+    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
+end
+
 def friends
     if params[:friends_reward].blank?
     @places = Place.all.order("created_at DESC")
@@ -223,5 +228,4 @@ def friends
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
     end
 end
-
 end
