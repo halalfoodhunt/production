@@ -1,7 +1,7 @@
  <% @price_ranges.each do |price_range| %>
  <tr>
-  <td class="col-md-9"><%= price_range.price %></td>
-  <td class="col-md-9"><%= price_range.dollar_sign %></td>
+  <td class="col-md-1"><%= price_range.dollar_sign %></td>
+  <td class="col-md-8"><%= price_range.price %></td>
   <td class="col-md-1"><%= link_to edit_price_range_path(price_range), remote: true do %>
     <i class="fa fa-pencil" style="color:white"></i><% end %>
   </td>
