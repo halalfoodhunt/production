@@ -9,8 +9,7 @@
       </ul>
     </div>
   <% end %>
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Logo</strong></h5> <p>Provide a logo for your business so your customers can identify you. Providing a logo is necessary to build visual recognition for your brand.</p></div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:30px 0 30px 0; padding:0;"><div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>UPLOAD LOGO</strong></h5><p>Upload the logo representing your brand</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="media">
     <div class="media-left media-top">
@@ -26,20 +25,20 @@
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE REGION OF YOUR LISTING</strong></h5> <p>Please pick the general region and location of your listing so that customers can find you for self-collection or look out for you during events. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE REGION & LOCATION OF YOUR LISTING</strong></h5> <p>Please pick the general region and location of your listing so that customers can find you for self-collection or look out for you during events. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
    <%= f.collection_select :location_id, Location.all, :id, :name, autofocus: true, layout: :inline %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT YOUR HALAL TYPE </strong></h5> <p>Do you retail only halal-certified products on your site or do you retail non-certified Halal products as well?</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>HALAL STATUS</strong></h5> </div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %>
+  <%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline, label: "Halal Qualifying Type" %>
 </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Upload Verifying Documents</strong></h5> <p>For <u><strong>halal-certified</strong></u> businesses, please help us to verify your business by providing a copy or a photo of your MUIS certificate if you are halal-certified. <br><br>For <u><strong>Muslim-owned</strong></u> businesses, please upload a copy or a photo of your NRIC (front and back), your company’s Bizfile and your ROC. </p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>UPLOAD VERIFYING DOCUMENTS</strong></h5> <p>For <b>Halal-certified</b> businesses, please provide a copy or a photo of your MUIS Halal certificate. <br><br>For <b>Muslim-owned</b> businesses, please upload a copy or a photo of your NRIC (front and back) and your Company’s Business Registration (Bizfile). <br><br> For <b>Individuals</b>, please submit photos of your NRIC (front and back)</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <table class="table">
     <thead>
@@ -88,48 +87,21 @@
     <%= f.text_field :general_email %>
   </div>
   <div class="field">
-    <%= f.text_area :contactable_hours %>
-  </div>
-  <div class="field">
-    <%= f.text_field :general_contact_number %>
-  </div>
-  <div class="field">
     <%= f.text_field :website %>
   </div>
   <div class="field">
-    <%= f.text_field :facebook %>
+    <%= f.url_field :facebook, helper:"http://www.facebook.com/username", label:"Facebook Link (Insert full URL)" %>
   </div>
   <div class="field">
-    <%= f.text_field :instagram %>
+    <%= f.url_field :instagram, helper:"http://www.instagram.com/username", label:"Instagram Link (Insert full URL)" %>
   </div>
 </div>
 </div>
- <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your online grocer retails. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your products.</p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-  <div class="field">
-    <%= f.text_area :question_1, label:'What do you retail?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_2, label:'How do I place an order with you?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_3, label:'How will my order reach me? Do you provide delivery services and what are the charges?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_4, label:'Am I able to do self-collection for my orders? If so, where?', label_class:'question' %>
-  </div>
-  <div class="field">
-    <%= f.text_area :question_5, label:'Please provide me with links to reviews about you!', label_class: "question" %>
-  </div>
-</div>
-</div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU & SET YOUR PRICE RANGE</strong></h5> <p>Please pick out the categories that best represent your business. You can also set the price range of your specialty items.</p></div>
+ <div class="col-xs-6 col-md-4"><h5><strong>SELECT THE CATEGORIES THAT FIT YOU</strong></h5> <p>You may pick more than 1 category per field. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
    <%= f.select :grocer_type_ids, GrocerType.all.map{ |d| [d.name, d.id]}, {}, multiple: true, id: 'grocer-type', label: 'Grocer Service Type' %>
    <%= f.select :grocer_service_type_ids, GrocerServiceType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'grocer-service-type' %>
-   <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
@@ -188,25 +160,43 @@
   </table>
 </div>
 </div>
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>Friends Rewards</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage. Your listing will automatically get a shout-out on our publicity pages when you offer a FRIENDS reward.</p></div>
- <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-   <%= f.collection_select :friends_reward_id, FriendsReward.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %>
-  <%= f.text_area :friends_rewards_terms %>
-</div>
-</div>
-<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
- <div class="col-xs-6 col-md-4"><h5><strong>PROVIDE ADDITIONAL LINKS</strong></h5> <p>Add the link to your online platform so it’s more convenient for customers to visit your site.</p></div>
+ <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-6 col-md-4"><h5><strong>TELL YOUR CUSTOMERS ALL THEY NEED TO KNOW ABOUT YOU</strong></h5> <p>Please provide comprehensive information so customers can get a better understanding about what your online grocer retails. Please provide your answers in full sentences to encourage search-ability and to give your customers a clear understanding of your products.</p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
   <div class="field">
-    <%= f.text_field :ordering_link, label:'Online Ordering Page Link' %>
+    <%= f.text_area :question_3, label:'How will my order reach me? Do you provide delivery services and what are the charges?', label_class:'question' %>
   </div>
+  <div class="field">
+    <%= f.text_area :question_4, label:'Am I able to do self-collection for my orders? If so, where?', label_class:'question' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question_5, label:'Please provide me with links to reviews about you!', label_class: "question" %>
+  </div>
+</div>
+</div> 
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>FRIENDS REWARDS CARD</strong></h5> <p>Manage the FRIENDS rewards you’d like to offer to encourage their patronage and set Terms and Conditions of your Reward as necessary.  </p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+   <%= f.collection_select :friends_reward_id, FriendsReward.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %>
+  <%= f.text_area :friends_rewards_terms, label:'Rewards Terms & Conditions' %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>FRIENDS Discount Code for Online Ordering</strong></h5> <p>FRIENDS Identify themselves online and over the phone via a unique CODE assigned here to exercise the Reward that you have selected for them. This code is only accessible to FRIENDS.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.text_field :friends_code, label: 'Friends Rewards Discount Code' %>
+</div>
+</div>
+<div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
+ <div class="col-xs-12 col-sm-6 col-md-4"><h5><strong>PROVIDE MONETISING LINKS</strong></h5><p>Add the link to your delivery page that you want your users to be directed to.</p></div>
+ <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
+  <%= f.text_field :ordering_link, label: 'Online Ordering Page Link' %>
 </div>
 </div>
 <div class="field">
-   <h5><strong>ARE YOU READY TO BE PUBLISHED?</strong></h5>
+  <h5><strong>ARE YOU READY TO BE PUBLISHED?</strong></h5>
   <p>Not ready to publish yet? Tick this box if you’d like to save this listing as a draft. Make sure to un-tick this box once you’re ready to publish your listing!</p>
-  <%= f.check_box :draft, label: 'Save as Draft' %>
+    <%= f.check_box :draft, label: 'Save as Draft' %>
 </div>
 <div class="actions" style="margin-bottom:20px;">
   <%= f.hidden_field :listing_id %>

@@ -15,7 +15,6 @@ class OnlineGrocer < ActiveRecord::Base
     
     validates_presence_of :merchant_id
     validates_presence_of :brand_name
-	  validates_presence_of :general_contact_number
     validates_presence_of :region
     
     belongs_to :merchant
