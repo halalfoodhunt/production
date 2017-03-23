@@ -45,7 +45,7 @@ class PriceRangesController < ApplicationController
   def update
     respond_to do |format|
       if @price_range.update(price_range_params)
-        format.html { redirect_to @price_range, notice: 'Price range was successfully updated.' }
+        format.html { redirect_to price_ranges_path, notice: 'Price range was successfully updated.' }
         format.json { render :show, status: :ok, location: @price_range }
         format.js
       else
