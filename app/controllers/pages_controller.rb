@@ -209,22 +209,7 @@ end
 
 def friends_rewards_results
    @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
-  if params[:friends_reward].blank?
-    @places = Place.all.order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
-    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
-    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
-    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
-    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
-    @lessons = Lesson.all.order("created_at DESC").where(draft: false)
-    @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
-    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
-  else
-    @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
-  end
+   @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
 end
 
 def friends
