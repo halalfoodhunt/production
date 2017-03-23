@@ -103,6 +103,7 @@ def friends_rewards
     @search = Place.ransack(params[:q])
     @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    redirect_to pages_friends_rewards_path
   end
 end
 
