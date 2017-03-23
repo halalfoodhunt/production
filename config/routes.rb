@@ -66,6 +66,8 @@ Rails.application.routes.draw do
   
   get 'pages/supermarkets_friends_rewards'
   
+  get 'pages/friends_rewards_results'
+  
   resources :verifying_types
   resources :users_testimonials
   resources :featured_articles
