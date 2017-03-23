@@ -81,6 +81,6 @@ class PriceRangesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def price_range_params
-      params.require(:price_range).permit(:price)
+      params.require(:price_range).permit(:price, :dollar_sign)
     end
 end
