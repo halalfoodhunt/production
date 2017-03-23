@@ -46,8 +46,6 @@
               <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @place.facebook.blank? %><%= link_to @place.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
                 <% unless @place.instagram.blank? %><%= link_to @place.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
               </tr>
-              <tr style="border-top:#ccc solid 1px">
-              <td><p><%= @place.price_range.dollar_sign %></p></td></tr>
             </thead>
           </table>
         </div>
