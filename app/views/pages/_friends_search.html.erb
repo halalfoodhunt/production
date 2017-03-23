@@ -1,5 +1,5 @@
 <div class="col-md-6 col-md-offset-3">
-<%= search_form_for @search, url: pages_friends_rewards_path do |f| %>
+<%= search_form_for @search, url: places_friends_rewards_path, method: :post do |f| %>
   <div class="col-sm-12 col-md-10" style="padding:0">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
