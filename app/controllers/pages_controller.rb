@@ -101,9 +101,8 @@ def friends_rewards
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @friends_rewards = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
-    redirect_to pages_friends_rewards_path
   end
 end
 
