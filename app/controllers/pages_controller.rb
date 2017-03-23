@@ -88,7 +88,7 @@ end
 
 def friends_rewards
     @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
+    @friends_rewards = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
   if params[:friends_reward].blank?
     @places = Place.all.order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
     @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
