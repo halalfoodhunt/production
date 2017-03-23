@@ -50,4 +50,16 @@ class Lesson < ActiveRecord::Base
   has_attached_file :image_4, styles: { large: "800x500>", medium: "450x300>", square: "500x500#", thumb: "100x67>" }, default_url: "/images/:style/image-placeholder.jpg"
   validates_attachment_content_type :image_4, content_type: ["image/jpg", "image/jpeg", "image/png", ]
   
+  has_attached_file :document_1, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  validates_attachment_content_type :document_1, content_type: /\Aimage\/.*\Z/
+
+      has_attached_file :document_2, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  validates_attachment_content_type :document_2, content_type: /\Aimage\/.*\Z/
+
+      has_attached_file :document_3, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  validates_attachment_content_type :document_3, content_type: /\Aimage\/.*\Z/
+
+      has_attached_file :document_4, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  validates_attachment_content_type :document_4, content_type: /\Aimage\/.*\Z/
+  
 end
