@@ -4,7 +4,7 @@
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
     </div>
-     <div class="col-xs-12 col-sm-12 col-md-1" style="padding:0"><%= f.submit "Search", raw('<span class="glyphicon glyphicon-search" aria-hidden="true"> </span>'), class: "btn btn-raised btn-md btn-danger" %>
+     <div class="col-xs-12 col-sm-12 col-md-1" style="padding:0"><%= button_tag( :class => "btn btn-md btn-primary ") do %> Search <i class="fa fa-search"></i><% end %>
      </div>
   </div>
 <% end %>
