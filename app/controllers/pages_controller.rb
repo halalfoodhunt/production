@@ -122,7 +122,8 @@ def ecommers_friends_rewards
     @search = Ecommer.ransack(params[:q])
     @ecommers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
-    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
+    @search = Ecommer.ransack(params[:q])
+    @ecommers = @search.result.where(draft: false).where.not(friends_rewards_terms: nil)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
