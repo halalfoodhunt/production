@@ -13,7 +13,7 @@
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="col-xs-12 col-sm-12 col-md-10">
-        <h5 style="padding:20px 0">SHOWING <b><%= @food_deliveries.distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN, <u>FOOD DELIVERIES</u>, ALL CITIES, SINGAPORE</h5>
+        <h5 style="padding:20px 0">SHOWING <b><%= @food_deliveries.where(friends_reward_id: @friends_reward_id).distinct.count(:friends_rewards_terms) %></b> FRIENDS REWARDS IN, <u>FOOD DELIVERIES</u>, ALL CITIES, SINGAPORE</h5>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-2 text-right" style="margin-top:20px;">
         <div class="dropdown">
