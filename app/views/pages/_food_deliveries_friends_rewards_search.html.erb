@@ -34,7 +34,7 @@
           <li><center><h4><%= link_to 'All Friends Rewards', pages_friends_rewards_path %></h4></center></li>
           <% FriendsReward.all.each do |reward| %>
           <li>
-            <center><h4><%= link_to reward.name, pages_friends_rewards_path(friends_reward: reward.name) %></h4></center>
+            <center><h4><%= link_to reward.name, pages_food_deliveries_path(friends_reward: reward.name) %></h4></center>
           </li>
           <% end %>
         </ul>
