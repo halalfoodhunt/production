@@ -105,6 +105,10 @@ def friends_rewards
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
     @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
     @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @lessons = Lesson.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @suppliers = Supplier.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @supermarkets = Supermarket.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @online_grocers = OnlineGrocer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
   end
 end
 
