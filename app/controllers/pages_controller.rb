@@ -167,7 +167,7 @@ end
 
 def food_deliveries_friends_rewards
     @search = FoodDelivery.ransack(params[:q])
-    @food_deliveries = @search.result.where(draft: false)
+    @food_deliveries = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @search = FoodDelivery.ransack(params[:q])
     @food_deliveries = @search.result.where(draft: false)
