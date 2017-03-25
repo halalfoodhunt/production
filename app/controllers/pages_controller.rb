@@ -104,6 +104,7 @@ def friends_rewards
     @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
     @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
+    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
   end
 end
 
