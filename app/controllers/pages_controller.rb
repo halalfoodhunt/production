@@ -153,7 +153,8 @@ def lessons_friends_rewards
     @search = Lesson.ransack(params[:q])
     @lessons = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
-    @lessons = Lesson.all.order("created_at DESC").where(draft: false)
+    @search = Lesson.ransack(params[:q])
+    @lessons = @search.result.where(draft: false).where.not(friends_rewards_terms: nil)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @lessons = Lesson.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
