@@ -88,9 +88,10 @@ end
 
 def friends_rewards
     @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
+    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
   if params[:friends_reward].blank?
-    @places = Place.order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
+    @search = Place.ransack(params[:q])
+    @places = @search.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
     @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
     @caterers = Caterer.all.order("created_at DESC").where(draft: false)
     @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
