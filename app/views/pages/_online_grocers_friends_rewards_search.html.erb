@@ -1,5 +1,5 @@
 <div class="col-md-10 col-md-offset-1">
-<%= search_form_for @search, url: pages_ecommers_friends_rewards_path do |f| %>
+<%= search_form_for @search, url: pages_online_grocers_friends_rewards_path do |f| %>
   <div class="col-xs-12 col-sm-12 col-md-5" style="padding:0">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
@@ -34,7 +34,7 @@
           <li><center><h4><%= link_to 'All Friends Rewards', pages_friends_rewards_path %></h4></center></li>
           <% FriendsReward.all.each do |reward| %>
           <li>
-            <center><h4><%= link_to reward.name, pages_ecommers_friends_rewards_path(friends_reward: reward.name) %></h4></center>
+            <center><h4><%= link_to reward.name, pages_online_grocers_friends_rewards_path(friends_reward: reward.name) %></h4></center>
           </li>
           <% end %>
         </ul>
