@@ -28,7 +28,7 @@
           <h4 class="media-heading title"><%= @online_grocer.brand_name %> (<%= @online_grocer.qualifying_type.name %>)</h4>
           <table class="table table-striped">
             <thead>
-              <tr><% unless @online_grocer.location.name.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @online_grocer.contactable_hours %></p></td><% end %></tr>
+              <tr><% unless @online_grocer.location.name.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @online_grocer.contactable_hours %></p></td><% end %></tr>
               <% unless @online_grocer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @online_grocer.general_email %></p></td></tr><% end %>
               <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @online_grocer.general_contact_number %></p></td></tr>
               <% unless @online_grocer.website.blank? %><tr style="border-top:#ccc solid 1px">
