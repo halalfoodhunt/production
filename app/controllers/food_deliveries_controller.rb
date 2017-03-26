@@ -14,6 +14,8 @@ class FoodDeliveriesController < ApplicationController
   # GET /food_deliveries/1
   # GET /food_deliveries/1.json
   def show
+    @search = FoodDelivery.ransack(params[:q])
+    @food_deliveries = @search.result.where(draft: false)
   end
 
   # GET /food_deliveries/new

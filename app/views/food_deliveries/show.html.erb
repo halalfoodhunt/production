@@ -1,4 +1,14 @@
 <%= render 'layouts/category_header' %>
+<div class="col-xs-12 col-sm-12 col-md-12" style="padding:10px 0 10px 0; background:#f8f3f0; border-bottom:1px solid #ccc; margin-top:50px;">
+  <%= render 'advanced_search' %>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://sg.halalfoodhunt.com">HOME</a></li>
+    <li class="breadcrumb-item"><%= link_to 'FOOD DELIVERY', food_deliveries_path %></li>
+    <li class="breadcrumb-item active"><%= @food_delivery.brand_name %></li>
+  </ol>
+</div>
 <div class="container-fluid" style="padding-bottom:50px; background:#fff;">
   <div class="container form-style" style="margin-top:50px;">
     <div class="row">
