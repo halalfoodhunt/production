@@ -54,6 +54,20 @@
         </div>
       </div>
       <% end %>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Grocer Type</h4>
+      <% @online_grocer.grocer_types.each do |grocer_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_type.icon.url(:thumb) %> <%= grocer_type.name %></p></div><% end %>
+    </div>
+    <br>
+    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+      <h4 class="title">Online Grocer Service Types</h4>
+      <% @online_grocer.grocer_service_types.each do |grocer_service_type| %>
+      <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_service_type.icon.url(:thumb) %> <%= grocer_service_type.name %></p></div>
+      <% end %>
+    </div>
+    <br>
       <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
       <h5 class="question">What do you retail?</h5>
       <p><%= h(@online_grocer.question_1).gsub(/\n/, '<br>').html_safe %></p>
@@ -101,20 +115,6 @@
          <%= image_tag @online_grocer.image_4.url(:square), :class => "img-thumbnail" %>
        </div>
      </div>
-     <br>
-     <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Grocer Type</h4>
-      <% @online_grocer.grocer_types.each do |grocer_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_type.icon.url(:thumb) %> <%= grocer_type.name %></p></div><% end %>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Online Grocer Service Types</h4>
-      <% @online_grocer.grocer_service_types.each do |grocer_service_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag grocer_service_type.icon.url(:thumb) %> <%= grocer_service_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
   </div>
 </div>
 </div>
