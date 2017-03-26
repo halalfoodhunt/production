@@ -3,19 +3,17 @@
   <%= render 'advanced_search' %>
 </div>
 <div class="col-md-10 col-md-offset-1">
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="http://www.sg.halalfoodhunt.com">HOME</a></li>
-  <li class="breadcrumb-item"><%= link_to 'CATERERS', caterers_path %></li>
-  <li class="breadcrumb-item active"><%= @caterer.business_name %> </li>
-</ol>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://www.sg.halalfoodhunt.com">HOME</a></li>
+    <li class="breadcrumb-item"><%= link_to 'CATERERS', caterers_path %></li>
+    <li class="breadcrumb-item active"><%= @caterer.business_name %> </li>
+  </ol>
 </div>
 <div style="padding-left:0; padding-right:0; height:500px; background:#22211d" class="container-fluid">
-  <center><%= image_tag @caterer.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
-  </center>
+  <center><%= image_tag @caterer.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %></center>
 </div>
 <div class="container-fluid show-bg" style="padding-bottom:50px;">
   <div class="container form-style">
-    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
        <div class="media">
         <div class="media-left">
@@ -23,45 +21,45 @@
             <%= image_tag @caterer.logo.url(:medium), :class => "media-object img-circle" %>
           </a>
           <p>Social sites: <% unless @caterer.facebook.blank? %><%= link_to @caterer.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-                <% unless @caterer.instagram.blank? %><%= link_to @caterer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
+            <% unless @caterer.instagram.blank? %><%= link_to @caterer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading title"><%= @caterer.business_name %> (<%= @caterer.qualifying_type.name %>)</h4>
+            <table class="table table-striped">
+              <thead>
+                <tr><% unless @caterer.contactable_hours.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @caterer.contactable_hours %></p></td><% end %></tr>
+                <% unless @caterer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @caterer.general_email %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @caterer.general_contact_number %></p></td></tr>
+                <% unless @caterer.website.blank? %><tr style="border-top:#ccc solid 1px">
+                <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @caterer.website, "#{@caterer.website}" %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px">
+                </tr>
+              </thead>
+            </table>
+          </div>
         </div>
-        <div class="media-body">
-          <h4 class="media-heading title"><%= @caterer.business_name %> (<%= @caterer.qualifying_type.name %>)</h4>
-          <table class="table table-striped">
-            <thead>
-              <tr><% unless @caterer.contactable_hours.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @caterer.contactable_hours %></p></td><% end %></tr>
-              <% unless @caterer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @caterer.general_email %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @caterer.general_contact_number %></p></td></tr>
-              <% unless @caterer.website.blank? %><tr style="border-top:#ccc solid 1px">
-              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @caterer.website, "#{@caterer.website}" %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px">
-              </tr>
-            </thead>
-          </table>
+        <% unless @caterer.friends_rewards_terms.blank? %>
+        <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="avatar"><center><%= image_tag @caterer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
+            <center>
+              <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+            </center>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-9">
+            <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
+            <p><%= @caterer.friends_rewards_terms %></p>
+          </div>
         </div>
-      </div>
-      <% unless @caterer.friends_rewards_terms.blank? %>
-      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar"><center><%= image_tag @caterer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
-          <center>
-            <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
-          </center>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h4 class="form-subtitle" style="color:#044E2E">Friends Card Holders Only</h4>
-          <p><%= @caterer.friends_rewards_terms %></p>
-        </div>
-      </div>
-      <% end %>
-      <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-      <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
-      <p><%= h(@caterer.question_1).gsub(/\n/, '<br>').html_safe %></p>
-      <h5 class="question">Please provide me with links to reviews about you.</h5>
-      <p><%= h(@caterer.question_2).gsub(/\n/, '<br>').html_safe %></p>
-      <br>
-      <h4 class="form-subtitle" style="color:#D04E2E;">Catering Packages</h4>
-      <table class="table table-hover" style="background:#fff;">
+        <% end %>
+        <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
+        <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
+        <p><%= h(@caterer.question_1).gsub(/\n/, '<br>').html_safe %></p>
+        <h5 class="question">Please provide me with links to reviews about you.</h5>
+        <p><%= h(@caterer.question_2).gsub(/\n/, '<br>').html_safe %></p>
+        <br>
+        <h4 class="form-subtitle" style="color:#D04E2E;">Catering Packages</h4>
+        <table class="table table-hover" style="background:#fff;">
           <thead>
             <tr>
               <th><h6><strong>Package Name</strong></h6></th>
@@ -81,34 +79,34 @@
             <% end %>
           </tbody>
         </table>
-    </div>  
-    <div class="col-xs-12 col-sm-12 col-md-5">
-      <br>
-      <p><%= link_to "Order NOW!", raw(@caterer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
-      <div class="row">
-        <div class="col-xs-6">
-          <%= image_tag @caterer.image.url(:square), :class => "img-thumbnail" %><br><br>
-          <%= image_tag @caterer.image_2.url(:square), :class => "img-thumbnail" %>
-        </div>
-        <div class="col-xs-6">
-         <%= image_tag @caterer.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-         <%= image_tag @caterer.image_4.url(:square), :class => "img-thumbnail" %>
+      </div>  
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <br>
+        <p><%= link_to "Order NOW!", raw(@caterer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= image_tag @caterer.image.url(:square), :class => "img-thumbnail" %><br><br>
+            <%= image_tag @caterer.image_2.url(:square), :class => "img-thumbnail" %>
+          </div>
+          <div class="col-xs-6">
+           <%= image_tag @caterer.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+           <%= image_tag @caterer.image_4.url(:square), :class => "img-thumbnail" %>
+         </div>
        </div>
-     </div>
-     <br>
-     <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Caterer Type</h4>
-      <% @caterer.caterer_types.each do |caterer_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %></p></div>
-      <% end %>
-    </div>
-    <br>
-    <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-      <h4 class="title">Cuisine Types</h4>
-      <% @caterer.cuisine_types.each do |cuisine_type| %>
-      <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
-      <% end %>
+       <br>
+       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Caterer Type</h4>
+        <% @caterer.caterer_types.each do |caterer_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Cuisine Types</h4>
+        <% @caterer.cuisine_types.each do |cuisine_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
