@@ -68,10 +68,6 @@
       <p><%= h(@online_grocer.question_5).gsub(/\n/, '<br>').html_safe %></p>
     </div>  
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <div class="container-fluid" style="border:#ccc solid 1px;">
-        <h4 class="title">Contactable Hours</h4>
-        <p><%= @online_grocer.contactable_hours %></p>
-      </div>
       <br>
       <p><%= link_to "Order NOW!", raw(@online_grocer.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
       <div class="row">
