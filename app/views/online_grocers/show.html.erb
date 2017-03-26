@@ -1,10 +1,21 @@
 <%= render 'layouts/category_header' %>
-<div style="padding-left:0; padding-right:0; height:500px; background:#22211d" class="container-fluid">
+<%= render 'layouts/category_header' %>
+<div class="col-xs-12 col-sm-12 col-md-12" style="padding:10px 0 10px 0; background:#f8f3f0; border-bottom:1px solid #ccc; margin-top:50px;">
+  <%= render 'advanced_search' %>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://sg.halalfoodhunt.com">HOME</a></li>
+    <li class="breadcrumb-item"><%= link_to 'ONLINE GROCERS', online_grocers_path %></li>
+    <li class="breadcrumb-item active"><%= @online_grocer.brand_name %> </li>
+  </ol>
+</div>
+<div style="padding-left:0; padding-right:0; background:#fff" class="container-fluid">
   <center><%= image_tag @online_grocer.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %>
   </center>
 </div>
-<div class="container-fluid show-bg" style="padding-bottom:50px;">
-  <div class="container form-style">
+<div class="container-fluid" style="padding:20px 0 50px 0; background:#fff;">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
        <div class="media">

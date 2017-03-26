@@ -14,6 +14,8 @@ class OnlineGrocersController < ApplicationController
   # GET /online_grocers/1
   # GET /online_grocers/1.json
   def show
+    @search = OnlineGrocer.ransack(params[:q])
+    @online_grocers = @search.result.where(draft: false)
   end
 
   # GET /online_grocers/new
