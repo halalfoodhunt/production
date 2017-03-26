@@ -84,6 +84,30 @@
             <p><%= h(@lesson.question_3).gsub(/\n/, '<br>').html_safe %></p>
       </div>  
       <div class="col-xs-12 col-sm-12 col-md-5">
+         <div class="col-xs-12 col-sm-12 col-md-5">
+        <% unless @lesson.qualifying_type.blank? %>
+      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="avatar"><center>
+            <% if @lesson.verified == true %>
+            <%= image_tag @lesson.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+            <% else %>
+            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+            <% end %>
+          </center></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="title">Halal Verification</h4>
+          <p><% if @lesson.verified == true %>
+            <%= @lesson.qualifying_type.halal_summary %>
+            <% else %>
+            This business has yet to submit documents for official verification.
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <% end %>
+      <br>
         <div class="container-fluid" style="border:#ccc solid 1px;">
           <h4 class="title">Location of Class</h4>
           <p><%= @lesson.preferred_sign_up_method %></p>
