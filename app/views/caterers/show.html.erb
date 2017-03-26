@@ -52,12 +52,22 @@
           </div>
         </div>
         <% end %>
-        <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-        <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
-        <p><%= h(@caterer.question_1).gsub(/\n/, '<br>').html_safe %></p>
-        <h5 class="question">Please provide me with links to reviews about you.</h5>
-        <p><%= h(@caterer.question_2).gsub(/\n/, '<br>').html_safe %></p>
         <br>
+        <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Caterer Type</h4>
+        <% @caterer.caterer_types.each do |caterer_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
+        <h4 class="title">Cuisine Types</h4>
+        <% @caterer.cuisine_types.each do |cuisine_type| %>
+        <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
+        <% end %>
+      </div>
+      <br>
+       <br>
         <h4 class="form-subtitle" style="color:#D04E2E;">Catering Packages</h4>
         <table class="table table-hover" style="background:#fff;">
           <thead>
@@ -79,8 +89,35 @@
             <% end %>
           </tbody>
         </table>
+        <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
+        <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
+        <p><%= h(@caterer.question_1).gsub(/\n/, '<br>').html_safe %></p>
+        <h5 class="question">Please provide me with links to reviews about you.</h5>
+        <p><%= h(@caterer.question_2).gsub(/\n/, '<br>').html_safe %></p>
       </div>  
       <div class="col-xs-12 col-sm-12 col-md-5">
+        <% unless @caterer.qualifying_type.blank? %>
+      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="avatar"><center>
+            <% if @caterer.verified == true %>
+            <%= image_tag @caterer.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+            <% else %>
+            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+            <% end %>
+          </center></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="title">Halal Verification</h4>
+          <p><% if @caterer.verified == true %>
+            <%= @caterer.qualifying_type.halal_summary %>
+            <% else %>
+            This business has yet to submit documents for official verification.
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <% end %>
         <br>
         <p><%= link_to "Order NOW!", raw(@caterer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
         <div class="row">
@@ -93,20 +130,6 @@
            <%= image_tag @caterer.image_4.url(:square), :class => "img-thumbnail" %>
          </div>
        </div>
-       <br>
-       <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Caterer Type</h4>
-        <% @caterer.caterer_types.each do |caterer_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %></p></div>
-        <% end %>
-      </div>
-      <br>
-      <div class="container-fluid" style="border:#c2a476 solid 1px; background: white;">
-        <h4 class="title">Cuisine Types</h4>
-        <% @caterer.cuisine_types.each do |cuisine_type| %>
-        <div class="col-xs-6 col-md-6"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p></div>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
