@@ -117,7 +117,7 @@ def places_friends_rewards
     @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
   if params[:friends_reward].blank?
     @search = Place.ransack(params[:q])
-    @places = @search.result.where(draft: false).where.not(friends_rewards_terms: nil)
+    @places = @search.result.where(draft: false).where.not(friends_reward_id: nil)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
