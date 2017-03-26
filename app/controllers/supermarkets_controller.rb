@@ -28,6 +28,8 @@ class SupermarketsController < ApplicationController
   # GET /supermarkets/1
   # GET /supermarkets/1.json
   def show
+    @search = Supermarket.ransack(params[:q])
+    @supermarkets = @search.result.where(draft: false)
   end
 
   # GET /supermarkets/new
