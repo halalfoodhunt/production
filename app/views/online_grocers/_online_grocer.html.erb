@@ -1,10 +1,14 @@
 <% @online_grocers.each do |online_grocer| %>
 <div class="col-xs-12 col-sm-6 col-md-3">
-  <% if online_grocer.verified == true %>
-  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(online_grocer.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
-  <% else %>
- <span class="label label-danger" style="position:absolute; z-index:100; padding:0px 8px 0px 8px; left:7%; top:3%;"><h6 style="line-height:1; margin:8px 0 8px 0;">Unverified</h6></span>
-  <% end %>
+ <% if online_grocer.verified == true %>
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(online_grocer.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
+            <% else %>
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
+            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:20%;">
+              <% unless online_grocer.friends_rewards_terms.blank? %>
+              <%= image_tag online_grocer.friends_reward.icon.url(:square), :class => "img-responsive" %>
+              <% end %>
+            </span>
   <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
     <%= image_tag online_grocer.featured_image.url(:medium), :class => "img_responsive" %>
     <div class="caption">
