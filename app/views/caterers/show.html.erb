@@ -43,7 +43,7 @@
           <div class="col-xs-12 col-sm-12 col-md-3">
             <div class="avatar"><center><%= image_tag @caterer.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center></div>
             <center>
-              <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+              <%= link_to 'View More Rewards', pages_caterers_friends_rewards_path, class: "btn btn-raised btn-block btn-primary" %>
             </center>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-9">
@@ -75,7 +75,6 @@
               <th><h6><strong>Package Name</strong></h6></th>
               <th><h6><strong>Description</strong></h6></th>
               <th><h6><strong>Min. Pax</strong></h6></th>
-              <th><h6><strong>Price</strong></h6></th>
             </tr>
           </thead>
           <tbody>

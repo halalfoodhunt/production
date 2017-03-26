@@ -25,7 +25,7 @@
               <% unless @ecommer.instagram.blank? %><%= link_to @ecommer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
       </div>
       <div class="media-body">
-        <h4 class="media-heading title"><%= @ecommer.business_name %> (<%= @ecommer.qualifying_type.name %>)</h4>
+        <h4 class="media-heading title"><%= @ecommer.business_name %></h4>
         <table class="table table-striped">
           <thead>
             <tr><% unless @ecommer.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @ecommer.operating_address %></p></td><% end %></tr>
