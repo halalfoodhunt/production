@@ -99,7 +99,7 @@
                 <span><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:#5cb85c"></i></span>
                 <% end %>
               </td>
-              <td><%= link_to edit_supplier_path(supplier), remote: true do %>
+              <td><%= link_to edit_supplier_path(supplier) do %>
                 <i class="fa fa-pencil"></i><% end %>
               </td>
               <td><%= link_to supplier, method: :delete, data: { confirm: 'Are you sure?' } do %>
