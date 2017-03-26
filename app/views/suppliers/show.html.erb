@@ -82,12 +82,12 @@
         <p><%= h(@supplier.question_4).gsub(/\n/, '<br>').html_safe %></p>
       </div>  
       <div class="col-xs-12 col-sm-12 col-md-5">
-        <% unless @ecommer.qualifying_type.blank? %>
+        <% unless @supplier.qualifying_type.blank? %>
       <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
         <div class="col-xs-12 col-sm-12 col-md-3">
           <div class="avatar"><center>
-            <% if @ecommer.verified == true %>
-            <%= image_tag @ecommer.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+            <% if @supplier.verified == true %>
+            <%= image_tag @supplier.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
             <% else %>
             <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
             <% end %>
@@ -95,8 +95,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9">
           <h4 class="title">Halal Verification</h4>
-          <p><% if @ecommer.verified == true %>
-            <%= @ecommer.qualifying_type.halal_summary %>
+          <p><% if @supplier.verified == true %>
+            <%= @supplier.qualifying_type.halal_summary %>
             <% else %>
             This business has yet to submit documents for official verification.
             <% end %>
