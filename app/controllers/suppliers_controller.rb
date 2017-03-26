@@ -14,6 +14,10 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1
   # GET /suppliers/1.json
   def show
+    @suppliers = Supplier.where(draft: false).limit(4)
+    @search = Supplier.ransack(params[:q])
+    @suppliers = @search.result.where(draft: false)
+    @friends_rewards = FriendsReward.all
   end
 
   # GET /suppliers/new
