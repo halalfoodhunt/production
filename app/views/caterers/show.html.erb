@@ -13,7 +13,7 @@
   <center><%= image_tag @caterer.featured_image.url(:large), :class => "img-responsive", :style =>"width:100%;" %></center>
 </div>
 <div class="container-fluid" style="padding-bottom:50px;">
-  <div class="container form-style">
+  <div class="container">
       <div class="col-xs-12 col-sm-12 col-md-7">
        <div class="media">
         <div class="media-left">
@@ -24,7 +24,7 @@
             <% unless @caterer.instagram.blank? %><%= link_to @caterer.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p>
           </div>
           <div class="media-body">
-            <h4 class="media-heading title"><%= @caterer.business_name %> (<%= @caterer.qualifying_type.name %>)</h4>
+            <h4 class="media-heading title"><%= @caterer.business_name %></h4>
             <table class="table table-striped">
               <thead>
                 <tr><% unless @caterer.contactable_hours.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @caterer.contactable_hours %></p></td><% end %></tr>
