@@ -13,7 +13,7 @@
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="col-xs-12 col-sm-12 col-md-10">
-        <h5 style="padding:20px 0">SHOWING <b><%= @suppliers.distinct.count(:friends_terms) %></b> FRIENDS REWARDS IN, <u>SUPPLIERS</u>, ALL CITIES, SINGAPORE</h5>
+        <h5 style="padding:20px 0">SHOWING <b><%= @suppliers.where.not(friends_reward_id: nil).distinct.count(:friends_terms) %></b> FRIENDS REWARDS IN, <u>SUPPLIERS</u>, ALL CITIES, SINGAPORE</h5>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-2 text-right" style="margin-top:20px;">
         <div class="dropdown">
