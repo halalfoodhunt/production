@@ -16,7 +16,6 @@
 </div>
 <div class="container-fluid" style="padding:20px 0 50px 0; background:#fff;">
   <div class="container">
-    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7">
        <div class="media">
         <div class="media-left">
@@ -68,6 +67,28 @@
       <p><%= h(@online_grocer.question_5).gsub(/\n/, '<br>').html_safe %></p>
     </div>  
     <div class="col-xs-12 col-sm-12 col-md-5">
+      <% unless @online_grocer.qualifying_type.blank? %>
+      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="avatar"><center>
+            <% if @online_grocer.verified == true %>
+            <%= image_tag @online_grocer.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+            <% else %>
+            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+            <% end %>
+          </center></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h4 class="title">Halal Verification</h4>
+          <p><% if @online_grocer.verified == true %>
+            <%= @online_grocer.qualifying_type.halal_summary %>
+            <% else %>
+            This business has yet to submit documents for official verification.
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <% end %>
       <br>
       <p><%= link_to "Order NOW!", raw(@online_grocer.ordering_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %></p>
       <div class="row">
