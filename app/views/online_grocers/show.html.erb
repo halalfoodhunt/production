@@ -24,7 +24,7 @@
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading title"><%= @online_grocer.brand_name %> (<%= @online_grocer.qualifying_type.name %>)</h4>
+          <h4 class="media-heading title"><%= @online_grocer.brand_name %></h4>
           <table class="table table-striped">
             <thead>
               <tr><% unless @online_grocer.location.name.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @online_grocer.contactable_hours %></p></td><% end %></tr>
