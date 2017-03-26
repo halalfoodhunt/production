@@ -1,0 +1,44 @@
+<div class="col-md-10 col-md-offset-1">
+<%= search_form_for @search, url: pages_ecommers_friends_rewards_path do |f| %>
+  <div class="col-xs-12 col-sm-12 col-md-5" style="padding:0">
+    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+      <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
+    </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-1" style="padding:0"><%= f.submit "Search", class: "btn btn-raised btn-block btn-primary" %>
+     </div>
+<% end %>
+  <div class="col-xs-12 col-sm-12 col-md-3" style="padding-right:0;">
+    <div class="dropdown">
+      <button class="btn btn-block btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Listings
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><center><h4><%= link_to 'All Friends Rewards', pages_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Places', pages_places_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Ecommers', pages_ecommers_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Caterers', pages_caterers_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Academy', pages_lessons_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Suppliers', pages_suppliers_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Food Deliveries', pages_food_deliveries_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Online Grocers', pages_online_grocers_friends_rewards_path %></h4></center></li>
+          <li><center><h4><%= link_to 'Supermarkets', pages_supermarkets_friends_rewards_path %></h4></center></li>
+        </ul>
+      </div>
+      <br>
+    </div>
+    <div class="col-sm-12 col-md-3" style="padding-right:0">
+     <div class="dropdown">
+      <button class="btn btn-block btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rewards
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><center><h4><%= link_to 'All Friends Rewards', pages_friends_rewards_path %></h4></center></li>
+          <% FriendsReward.all.each do |reward| %>
+          <li>
+            <center><h4><%= link_to reward.name, pages_ecommers_friends_rewards_path(friends_reward: reward.name) %></h4></center>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
