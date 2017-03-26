@@ -90,7 +90,7 @@ def friends_rewards
     @search = Place.ransack(params[:q])
     @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
   if params[:friends_reward].blank?
-    @places = Place.all.order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
+    @places = Place.order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
     @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
     @caterers = Caterer.all.order("created_at DESC").where(draft: false)
     @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
@@ -114,7 +114,7 @@ end
 
 def places_friends_rewards
     @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
+    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
   if params[:friends_reward].blank?
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false).where.not(friends_reward_id: nil)
@@ -129,7 +129,7 @@ def ecommers_friends_rewards
     @ecommers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
     @search = Ecommer.ransack(params[:q])
-    @ecommers = @search.result.where(draft: false).where.not(friends_rewards_terms: nil)
+    @ecommers = @search.result.where(draft: false).where.not(friends_reward_id: nil)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
@@ -141,7 +141,7 @@ def caterers_friends_rewards
     @caterers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_rewards_terms: nil)
   if params[:friends_reward].blank?
     @search = Caterer.ransack(params[:q])
-    @caterers = @search.result.where(draft: false).where.not(friends_rewards_terms: nil)
+    @caterers = @search.result.where(draft: false).where.not(friends_reward_id: nil)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @search = Caterer.ransack(params[:q])
