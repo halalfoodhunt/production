@@ -3,11 +3,13 @@
     <h6 style="text-align:left">Search for a place</h6>
   </div>
   <%= search_form_for @search, url: pages_places_path do |f| %>
-  <div class="col-sm-12 col-md-10" style="padding:0">
+  <div class="col-sm-12 col-md-6" style="padding:0">
     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
       <%= f.text_field :business_name_or_operating_address_cont, class: "form-control" %>
     </div>
     <br>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-1" style="padding:0"><%= f.submit "Search", class: "btn btn-raised btn-block btn-primary" %>
 </div>
 <% end %>
 </div>
