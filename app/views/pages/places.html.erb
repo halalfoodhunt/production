@@ -39,7 +39,7 @@
               <div class="table">
                 <div class="table-cell numbers">
                   <center>
-                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @places.distinct.count(:friends_rewards_terms) %></h1>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @places.where.not(friends_reward_id: nil).count %></h1>
                     <h4>FRIENDS REWARDS</h4>
                   </center>
                 </div>
@@ -53,7 +53,7 @@
               <div class="table">
                 <div class="table-cell numbers">
                   <center>
-                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @places.distinct.count(:verified => 'true') %></h1>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @places.where(verified: true).count %></h1>
                     <h4>VERIFIED</h4>
                   </center>
                 </div>
@@ -62,6 +62,7 @@
           </div>
         </div>
       </div>
+      <%= render 'places_search' %>
       <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
         <hr>
         <%= form_tag edit_multiple_places_path, method: :get do %>

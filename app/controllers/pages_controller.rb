@@ -60,7 +60,8 @@ end
 
 def places
    if params[:special_tag].blank? 
-    @places = Place.all
+   @search = Place.ransack(params[:q])
+   @places = @search.result
    else
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.joins(:admin_tags).where(admin_tags: {special_tag_id: @special_tag_id})
