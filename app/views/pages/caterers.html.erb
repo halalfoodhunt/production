@@ -26,7 +26,7 @@
                 <div class="table-cell numbers">
                   <center>
                     <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @caterers.count %></h1>
-                    <h4>catererS</h4>
+                    <h4>CATERERS</h4>
                   </center>
                 </div>
               </div>
@@ -39,7 +39,7 @@
               <div class="table">
                 <div class="table-cell numbers">
                   <center>
-                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @caterers.distinct.count(:friends_rewards_terms) %></h1>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @caterers.where.not(friends_reward_id: nil).count %></h1>
                     <h4>FRIENDS REWARDS</h4>
                   </center>
                 </div>
@@ -53,7 +53,7 @@
               <div class="table">
                 <div class="table-cell numbers">
                   <center>
-                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @caterers.distinct.count(:verified => 'true') %></h1>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @caterers.where(verified: true).count %></h1>
                     <h4>VERIFIED</h4>
                   </center>
                 </div>
@@ -63,6 +63,7 @@
         </div>
       </div>
       <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <%= render 'caterers_search' %>
         <hr>
         <%= form_tag edit_multiple_caterers_path, method: :get do %>
         <table class="table table-striped table-responsive">
