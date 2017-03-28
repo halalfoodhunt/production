@@ -294,6 +294,7 @@
    <%= f.select :highlight_ids, Highlight.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'highlight' %>
    <%= f.select :places_menu_ids, PlacesMenu.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'places-menu' %>
    <%= f.collection_select :price_range_id, PriceRange.all, :id, :price, autofocus: true, layout: :inline %>
+   <%= f.collection_select :place_type_id, PlaceType.all, :id, :place_type, autofocus: true, layout: :inline %>
  </div>
 </div>
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
