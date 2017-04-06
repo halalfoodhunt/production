@@ -7,7 +7,7 @@
       <div class="box" style="border:2px solid #ccc;">
         <center>
           <h3 style="color:#cc3333; text-transform:uppercase;"><%= plan.name %></h3>
-          <h4 style="color:#3e414a; font-weight:400;">SGD<%= number_to_currency plan.price, :precision => 0 %><br>Per Year</h4>
+          <h4 style="color:#3e414a; font-weight:400;">SGD <%= number_to_currency plan.price, :precision => 0 %><br>Per Year</h4>
           <p>
             <% if Koudoku.free_trial? %>
             <%= Koudoku.free_trial_length %>-day Free Trial
