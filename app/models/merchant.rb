@@ -1,6 +1,6 @@
 class Merchant < ActiveRecord::Base
 # Added by Koudoku.
-  enum role: [:free, :basic, :basic_plus, :social, :admin, :custom]
+  enum role: [:free, :basic, :basic_plus, :pair, :bundle, :admin, :custom]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
