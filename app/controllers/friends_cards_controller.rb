@@ -30,7 +30,7 @@ class FriendsCardsController < ApplicationController
 
     respond_to do |format|
       if @friends_card.save
-        format.html { redirect_to @friends_card, notice: 'Friends card was successfully created.' }
+        format.html { redirect_to @friends_card, notice: 'Please make payment for your FRIENDS Reward Card' }
         format.json { render :show, status: :created, location: @friends_card }
       else
         format.html { render :new }
