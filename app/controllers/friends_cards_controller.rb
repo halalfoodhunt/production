@@ -75,7 +75,7 @@ class FriendsCardsController < ApplicationController
     end
     
     def is_admin?
-      if current_friend && current_friend.free? && current_friend.friends?
+      if current_friend && current_friend.admin?
       render "layouts/unauthorised"
     end
 end
