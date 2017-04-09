@@ -1,4 +1,4 @@
-<%= form_for(@friends_card) do |f| %>
+<%= bootstrap_form_for(@friends_card) do |f| %>
   <% if @friends_card.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@friends_card.errors.count, "error") %> prohibited this friends_card from being saved:</h2>
@@ -12,42 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :ic_number %><br>
     <%= f.text_field :ic_number %>
   </div>
   <div class="field">
-    <%= f.label :date_of_birth %><br>
-    <%= f.datetime_select :date_of_birth %>
+    <%= f.date_select :date_of_birth %>
   </div>
   <div class="field">
-    <%= f.label :contact_number %><br>
     <%= f.text_field :contact_number %>
   </div>
   <div class="field">
-    <%= f.label :shipping_address %><br>
     <%= f.text_area :shipping_address %>
   </div>
   <div class="field">
-    <%= f.label :expiry_date %><br>
-    <%= f.datetime_select :expiry_date %>
-  </div>
-  <div class="field">
-    <%= f.label :gift %><br>
     <%= f.check_box :gift %>
   </div>
-  <div class="field">
-    <%= f.label :paid %><br>
-    <%= f.text_field :paid %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Subscribe" %>
   </div>
 <% end %>
