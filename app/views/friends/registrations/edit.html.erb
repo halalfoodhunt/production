@@ -14,11 +14,14 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8" style="background:rgba(255,255,255,0.6);">
           <p><center><img src="http://halalfoodhunt.com/wp-content/uploads/2016/03/HFFH_LOGO.png" alt="halalfoodhunt logo" class="img-rounded" style="width:100px; height:80px;"></center></p>
-          <h3><center>EDIT PROFILE</center></h3>
-          <p><center>Edit your profile</center>
+          <h3><center>FRIENDS PROFILE</center></h3>
+          <p><center>Edit your FRIENDS profile here.</center>
           </p><hr>
         </center>
         <%= devise_error_messages! %>
+         <div class="field">
+          <%= f.text_field :name, autofocus: true %>
+        </div>
         <div class="field">
           <%= f.email_field :email, autofocus: true %>
         </div>
