@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @friends_card.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @friends_card.email %>
+</p>
+
+<p>
+  <strong>Ic number:</strong>
+  <%= @friends_card.ic_number %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @friends_card.date_of_birth %>
+</p>
+
+<p>
+  <strong>Contact number:</strong>
+  <%= @friends_card.contact_number %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @friends_card.shipping_address %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @friends_card.expiry_date %>
+</p>
+
+<p>
+  <strong>Gift:</strong>
+  <%= @friends_card.gift %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @friends_card.paid %>
+</p>
+
+<%= link_to 'Edit', edit_friends_card_path(@friends_card) %> |
+<%= link_to 'Back', friends_cards_path %>

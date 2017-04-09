@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Friends Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Ic number</th>
+      <th>Date of birth</th>
+      <th>Contact number</th>
+      <th>Shipping address</th>
+      <th>Expiry date</th>
+      <th>Gift</th>
+      <th>Paid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends_cards.each do |friends_card| %>
+      <tr>
+        <td><%= friends_card.name %></td>
+        <td><%= friends_card.email %></td>
+        <td><%= friends_card.ic_number %></td>
+        <td><%= friends_card.date_of_birth %></td>
+        <td><%= friends_card.contact_number %></td>
+        <td><%= friends_card.shipping_address %></td>
+        <td><%= friends_card.expiry_date %></td>
+        <td><%= friends_card.gift %></td>
+        <td><%= friends_card.paid %></td>
+        <td><%= link_to 'Show', friends_card %></td>
+        <td><%= link_to 'Edit', edit_friends_card_path(friends_card) %></td>
+        <td><%= link_to 'Destroy', friends_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Friends card', new_friends_card_path %>

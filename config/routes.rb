@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friends_cards
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
