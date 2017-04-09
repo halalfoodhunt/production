@@ -15,9 +15,9 @@
   <li role="presentation"><a href="#">Messages</a></li>
   <li role="presentation"><a href="#">Comments</a></li>
   <li role="presentation"><a href="#">Bookmarks</a></li>
-  <li role="presentation"><a href="#">Buy FRIENDS Card</a></li>
-  <li role="presentation"><a href="#">Logout</a></li>
-            </ul>
+  <% if current_friend.friends? %><li role="presentation" class="active"><a href="#">Buy FRIENDS Card</a></li><% end %>
+  <li role="presentation"><%= link_to 'Logout', destroy_friend_session_path, method: :delete %></li>
+            </ul>   
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8" style="background:rgba(255,255,255,0.6); padding:25px;">
           <p><center><img src="http://halalfoodhunt.com/wp-content/uploads/2016/03/HFFH_LOGO.png" alt="halalfoodhunt logo" class="img-rounded" style="width:100px; height:80px;"></center></p>
