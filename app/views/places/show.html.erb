@@ -126,6 +126,8 @@
         <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
       </div>
       <br>
+      <%= commontator_thread(@commontable) %>
+      <%= commontator_thread_show(@commontable) %>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <% unless @place.qualifying_type.blank? %>
