@@ -18,11 +18,11 @@
         <% if current_merchant.basic? %>
         <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
         <% elsif current_merchant.basic_plus? %>
-        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/2</strong></p>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/1</strong></p>
         <% elsif current_merchant.pair? %>
-        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/3</strong></p>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/2</strong></p>
         <% elsif current_merchant.bundle? %>
-        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/5</strong></p>
+        <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %>/3</strong></p>
         <% else current_merchant.custom? %>
         <p style="margin-top:5px;"><strong>Current Listings:<%= current_merchant.listings.count %></strong></p>
         <% end %>
