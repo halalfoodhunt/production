@@ -1,4 +1,4 @@
-class Friend::ConfirmationsController < Devise::ConfirmationsController
+class Friends::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation/new
   # def new
   #   super
