@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :friends_cards
+  mount Commontator::Engine => '/commontator'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
@@ -66,6 +67,7 @@ Rails.application.routes.draw do
   
   get 'pages/friends_rewards_results'
   
+  resources :friends_cards
   resources :verifying_types
   resources :users_testimonials
   resources :featured_articles
