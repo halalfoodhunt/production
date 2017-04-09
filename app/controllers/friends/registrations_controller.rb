@@ -11,7 +11,9 @@ class Friends::RegistrationsController < Devise::RegistrationsController
 	end
   # def new
   #   super
-  # end
+  def after_sign_in_path_for(friends)
+  root_path
+  end# end
 
   # POST /resource
   # def create
