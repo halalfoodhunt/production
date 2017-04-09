@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-
-  devise_for :friends
-  resources :food_items
-  resources :places_menus
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
@@ -157,8 +153,11 @@ Rails.application.routes.draw do
   end
   resources :special_tags
   resources :days
+  resources :food_items
+  resources :places_menus
  
   devise_for :merchants, controllers: { registrations: "merchants/registrations" }
+  devise_for :friends, controllers: { registrations: "friends/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
