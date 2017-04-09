@@ -62,6 +62,11 @@ class FriendsCardsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def is_admin?
+      if current_friend && current_friend.admin?
+      render "layouts/unauthorised"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -72,11 +77,6 @@ class FriendsCardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def friends_card_params
       params.require(:friends_card).permit(:name, :email, :ic_number, :date_of_birth, :contact_number, :shipping_address, :expiry_date, :gift, :paid, :direct_bank_transfer, :paypal, :price)
-    end
-    
-    def is_admin?
-      if current_friend && current_friend.admin?
-      render "layouts/unauthorised"
     end
 end
 end
