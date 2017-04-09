@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :friends
   resources :food_items
   resources :places_menus
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
