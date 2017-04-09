@@ -8,8 +8,8 @@ class CreateFriendsCards < ActiveRecord::Migration
       t.string :contact_number
       t.text :shipping_address
       t.datetime :expiry_date
-      t.boolean :gift
-      t.string :paid
+      t.boolean :gift, default: false
+      t.string :paid, default: false
 
       t.timestamps null: false
     end
