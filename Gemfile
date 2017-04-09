@@ -56,7 +56,7 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 gem 'rails_admin_rollincode', '~> 1.0'
 
-gem 'acts_as_commentable'
+gem 'commontator', '~> 4.11.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
