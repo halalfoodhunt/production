@@ -51,6 +51,7 @@
         <div class="col-xs-12 col-sm-12 col-md-8">
           <h4 class="title">Friends Card Holders Only</h4>
           <p><%= @ecommer.friends_rewards_terms %></p>
+          <p><% if current_friend.friends? %><%= @ecommer.friends_code %><% end %></p>
         </div>
       </div>
       <% end %><br>
