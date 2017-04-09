@@ -1,7 +1,7 @@
 <div class="container-fluid" style="background:#c11525;">
   <div class="container container-table">
     <div class="row vertical-center-row">
-      <div class="col-xs-12 col-md-12" style="padding-left:0px; padding-right:0px; box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22);">
+      <div class="col-xs-12 col-md-12" style="padding-left:0px; padding-right:0px; box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22); background:#ccc;">
         <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left:0px; padding-right:0px; background: #ccc;">
             <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <p><center><%= image_tag(current_friend.avatar.url(:large), :class => "img_circle", :style => "width:150px; height:150px;") %>
@@ -19,7 +19,7 @@
   <li role="presentation"><%= link_to 'Logout', destroy_friend_session_path, method: :delete %></li>
             </ul>   
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-8" style="background:rgba(255,255,255,0.6); padding:25px;">
+        <div class="col-xs-12 col-sm-6 col-md-8" style="background:#fff; padding:25px;">
           <h3><center>FRIENDS PROFILE</center></h3>
           <p><center>Edit your FRIENDS profile here.</center>
           </p><hr>
