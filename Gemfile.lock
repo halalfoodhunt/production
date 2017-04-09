@@ -65,6 +65,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_commentable (4.0.2)
     arel (6.0.4)
     autoprefixer-rails (6.7.5)
       execjs
@@ -284,6 +285,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable
   aws-sdk (~> 2.3)
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
