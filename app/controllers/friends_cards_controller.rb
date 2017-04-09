@@ -66,6 +66,7 @@ class FriendsCardsController < ApplicationController
   def is_admin?
       if current_friend && current_friend.admin?
       render "layouts/unauthorised"
+      end
   end
 
   private
@@ -78,5 +79,4 @@ class FriendsCardsController < ApplicationController
     def friends_card_params
       params.require(:friends_card).permit(:name, :email, :ic_number, :date_of_birth, :contact_number, :shipping_address, :expiry_date, :gift, :paid, :direct_bank_transfer, :paypal, :price)
     end
-end
 end
