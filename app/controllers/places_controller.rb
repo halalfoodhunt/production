@@ -44,11 +44,6 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
-    commentable = Place.create
-    comment = commentable.comments.create
-    comment.title = "First comment."
-    comment.comment = "This is the first comment."
-    comment.save
   end
 
   # GET /places/new
