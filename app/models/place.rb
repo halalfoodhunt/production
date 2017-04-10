@@ -1,8 +1,7 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
-  
-  acts_as_commontator
+  acts_as_commontable
   
   before_create :set_expiration_date
   before_create :set_halal_expiry

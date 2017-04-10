@@ -1,5 +1,6 @@
 class Friend < ActiveRecord::Base
-  acts_as_commontable
+  acts_as_commontator
+  acts_as_liker
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
