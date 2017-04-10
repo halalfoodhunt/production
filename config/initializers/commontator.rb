@@ -6,13 +6,13 @@
 Commontator.configure do |config|
   # Engine Configuration
 
-  # current_user_proc
+  # current_friend_proc
   # Type: Proc
   # Arguments: the current controller (ActionController::Base)
-  # Returns: the current user (acts_as_commontator)
+  # Returns: the current friend (acts_as_commontator)
   # The default works for Devise and similar authentication plugins
-  # Default: lambda { |controller| controller.current_user }
-  config.current_user_proc = lambda { |controller| controller.current_user }
+  # Default: lambda { |controller| controller.current_friend }
+  config.current_friend_proc = lambda { |controller| controller.current_friend }
 
   # javascript_proc
   # Type: Proc
@@ -28,56 +28,56 @@ Commontator.configure do |config|
 
 
 
-  # User (acts_as_commontator) Configuration
+  # friend (acts_as_commontator) Configuration
 
-  # user_name_proc
+  # friend_name_proc
   # Type: Proc
-  # Arguments: a user (acts_as_commontator)
-  # Returns: the user's name (String)
-  # Default: lambda { |user| I18n.t('commontator.anonymous') } (all users are anonymous)
-  config.user_name_proc = lambda { |user| I18n.t('commontator.anonymous') }
+  # Arguments: a friend (acts_as_commontator)
+  # Returns: the friend's name (String)
+  # Default: lambda { |friend| I18n.t('commontator.anonymous') } (all friends are anonymous)
+  config.friend_name_proc = lambda { |friend| I18n.t('commontator.anonymous') }
 
-  # user_link_proc
+  # friend_link_proc
   # Type: Proc
-  # Arguments: a user (acts_as_commontator),
+  # Arguments: a friend (acts_as_commontator),
   #            the app_routes (ActionDispatch::Routing::RoutesProxy)
-  # Returns: a path to the user's `show` page (String)
-  # If anything non-blank is returned, the user's name in comments
+  # Returns: a path to the friend's `show` page (String)
+  # If anything non-blank is returned, the friend's name in comments
   # comments will become a hyperlink pointing to this path
   # The main application's routes can be accessed through the app_routes object
-  # Default: lambda { |user, app_routes| '' } (no link)
-  config.user_link_proc = lambda { |user, app_routes| '' }
+  # Default: lambda { |friend, app_routes| '' } (no link)
+  config.friend_link_proc = lambda { |friend, app_routes| '' }
 
-  # user_avatar_proc
+  # friend_avatar_proc
   # Type: Proc
-  # Arguments: a user (acts_as_commontator), a view (ActionView::Base)
-  # Returns: a String containing a HTML <img> tag pointing to the user's avatar image
-  # The commontator_gravatar_image_tag helper takes a user object,
+  # Arguments: a friend (acts_as_commontator), a view (ActionView::Base)
+  # Returns: a String containing a HTML <img> tag pointing to the friend's avatar image
+  # The commontator_gravatar_image_tag helper takes a friend object,
   # a border size and an options hash for Gravatar, and produces a Gravatar image tag
   # See available options at http://en.gravatar.com/site/implement/images/)
-  # Note: Gravatar has several security implications for your users
-  #       It makes your users trackable across different sites and
+  # Note: Gravatar has several security implications for your friends
+  #       It makes your friends trackable across different sites and
   #       allows de-anonymization attacks against their email addresses
-  #       If you absolutely want to keep users' email addresses or identities secret,
+  #       If you absolutely want to keep friends' email addresses or identities secret,
   #       do not use Gravatar or similar services
-  # Default: lambda { |user, view|
+  # Default: lambda { |friend, view|
   #            view.commontator_gravatar_image_tag(
-  #              user, 1, :s => 60, :d => 'mm') }
-  config.user_avatar_proc = lambda { |user, view|
+  #              friend, 1, :s => 60, :d => 'mm') }
+  config.friend_avatar_proc = lambda { |friend, view|
                                      view.commontator_gravatar_image_tag(
-                                       user, 1, :s => 60, :d => 'mm') }
+                                       friend, 1, :s => 60, :d => 'mm') }
 
-  # user_email_proc
+  # friend_email_proc
   # Type: Proc
-  # Arguments: a user (acts_as_commontator), a mailer (ActionMailer::Base)
-  # Returns: the user's email address (String)
+  # Arguments: a friend (acts_as_commontator), a mailer (ActionMailer::Base)
+  # Returns: the friend's email address (String)
   # The default works for Devise's defaults
   # If the mailer argument is nil, Commontator intends to hash the email and send the hash
-  # to Gravatar, so you should always return the user's email address (if using Gravatar)
+  # to Gravatar, so you should always return the friend's email address (if using Gravatar)
   # If the mailer argument is not nil, then Commontator intends to send an email to
   # the address returned; you can prevent it from being sent by returning a blank String
-  # Default: lambda { |user, mailer| user.try(:email) || '' }
-  config.user_email_proc = lambda { |user, mailer| user.try(:email) || '' }
+  # Default: lambda { |friend, mailer| friend.try(:email) || '' }
+  config.friend_email_proc = lambda { |friend, mailer| friend.try(:email) || '' }
 
 
 
@@ -97,23 +97,23 @@ Commontator.configure do |config|
 
   # thread_read_proc
   # Type: Proc
-  # Arguments: a thread (Commontator::Thread), a user (acts_as_commontator)
-  # Returns: a Boolean, true if and only if the user should be allowed to read that thread
-  # Note: can be called with a user object that is nil (if they are not logged in)
-  # Default: lambda { |thread, user| true } (anyone can read any thread)
-  config.thread_read_proc = lambda { |thread, user| true }
+  # Arguments: a thread (Commontator::Thread), a friend (acts_as_commontator)
+  # Returns: a Boolean, true if and only if the friend should be allowed to read that thread
+  # Note: can be called with a friend object that is nil (if they are not logged in)
+  # Default: lambda { |thread, friend| true } (anyone can read any thread)
+  config.thread_read_proc = lambda { |thread, friend| true }
 
   # thread_moderator_proc
   # Type: Proc
-  # Arguments: a thread (Commontator::Thread), a user (acts_as_commontator)
-  # Returns: a Boolean, true if and only if the user is a moderator for that thread
+  # Arguments: a thread (Commontator::Thread), a friend (acts_as_commontator)
+  # Returns: a Boolean, true if and only if the friend is a moderator for that thread
   # If you want global moderators, make this proc true for them regardless of thread
-  # Default: lambda { |thread, user| false } (no moderators)
-  config.thread_moderator_proc = lambda { |thread, user| false }
+  # Default: lambda { |thread, friend| false } (no moderators)
+  config.thread_moderator_proc = lambda { |thread, friend| false }
 
   # comment_editing
   # Type: Symbol
-  # Whether users can edit their own comments
+  # Whether friends can edit their own comments
   # Valid options:
   #   :a (always)
   #   :l (only if it's the latest comment)
@@ -123,7 +123,7 @@ Commontator.configure do |config|
 
   # comment_deletion
   # Type: Symbol
-  # Whether users can delete their own comments
+  # Whether friends can delete their own comments
   # Valid options:
   #   :a (always)
   #   :l (only if it's the latest comment)
@@ -144,7 +144,7 @@ Commontator.configure do |config|
 
   # comment_voting
   # Type: Symbol
-  # Whether users can vote on other users' comments
+  # Whether friends can vote on other friends' comments
   # Valid options:
   #   :n  (no voting)
   #   :l  (likes - requires acts_as_votable gem)
@@ -203,7 +203,7 @@ Commontator.configure do |config|
 
   # thread_subscription
   # Type: Symbol
-  # Whether users can subscribe to threads to receive activity email notifications
+  # Whether friends can subscribe to threads to receive activity email notifications
   # Valid options:
   #   :n (no subscriptions)
   #   :a (automatically subscribe when you comment; cannot do it manually)
@@ -249,31 +249,31 @@ Commontator.configure do |config|
 
   # mentions_enabled
   # Type: Boolean
-  # Whether users can mention other users to subscribe them to the thread
+  # Whether friends can mention other friends to subscribe them to the thread
   # Valid options:
   #   false (no mentions)
   #   true  (mentions enabled)
   # Default: false
   config.mentions_enabled = false
 
-  # user_mentions_proc
+  # friend_mentions_proc
   # Type: Proc
   # Arguments:
-  #   the current user (acts_as_commontator)
-  #   the search query inputted by user (String)
+  #   the current friend (acts_as_commontator)
+  #   the search query inputted by friend (String)
   # Returns: an ActiveRecord Relation object
   # Important notes:
   #
   #  - The proc will be called internally with an empty search string.
-  #    In that case, it MUST return all users that can be mentioned.
+  #    In that case, it MUST return all friends that can be mentioned.
   #
-  #  - With mentions enabled, any registered user in your app is able
+  #  - With mentions enabled, any registered friend in your app is able
   #    to call this proc with any search query >= 3 characters.
   #    Make sure to handle SQL escaping properly and that the
   #    attribute being searched does not contain sensitive information.
   #
-  # Default: lambda { |current_user, query|
-  #                   current_user.class.where('username LIKE ?', "#{query}%") }
-  config.user_mentions_proc = lambda { |current_user, query|
-    current_user.class.where('username LIKE ?', "#{query}%") }
+  # Default: lambda { |current_friend, query|
+  #                   current_friend.class.where('friendname LIKE ?', "#{query}%") }
+  config.friend_mentions_proc = lambda { |current_friend, query|
+    current_friend.class.where('friendname LIKE ?', "#{query}%") }
 end
