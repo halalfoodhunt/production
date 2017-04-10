@@ -120,6 +120,13 @@ class PlacesController < ApplicationController
     render "edit_multiple"
   end
   end
+  
+  def likes
+  @friend = current_friend # before_action :authenticate_user, only: [:likes]
+  @place = Place.friendly.find(params[:id])
+  @friend.like!(@place)
+  redirect_to :back, notice: "Added this place to your wishlist successfully!"
+  end
 
 
   private
