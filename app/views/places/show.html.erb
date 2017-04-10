@@ -128,7 +128,7 @@
       <br>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <%= link_to likes_path(@place), {class: "btn btn-block btn-default"} do %>
+      <%= link_to likes_path(@place), class: "btn btn-block btn-default" do %>
        <i class="fa fa-heart-o"></i> <b>Add To Wishlist</b>
       <% end %><br>
       <center><p><%= @place.likers_count %> food hunters saved this place</p></center>
