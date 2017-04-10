@@ -127,6 +127,7 @@ def places_friends_rewards
 end
 
 def ecommers_friends_rewards
+    @current_friend = current_friend
     @search = Ecommer.ransack(params[:q])
     @ecommers = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   if params[:friends_reward].blank?
