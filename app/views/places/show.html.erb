@@ -128,8 +128,9 @@
       <br>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <%= button_to "<i class=\"glyphicon glyphicon-heart\">Add To Wishlist</i>".html_safe, likes_path(@place), 
-          class: "btn btn-default" %>
+      <%= button_to likes_path(@place), {remote: true, class: "btn btn-default"} do %>
+       <i class="fa fa-heart-o"></i> Add To Wishlist 
+      <% end %>
       <% unless @place.qualifying_type.blank? %>
       <div class="container-fluid hidden-sm hidden-xs" style="background: white; padding:10px; border:1px solid #ccc;">
         <div class="col-xs-12 col-sm-12 col-md-3">
