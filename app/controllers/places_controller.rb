@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_friend!, only: [:likes]
+  before_action :authenticate_friend, only: [:likes]
   before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
@@ -124,7 +124,7 @@ class PlacesController < ApplicationController
   def likes
   @friend = current_friend # before_action :authenticate_user, only: [:likes]
   @place = Place.friendly.find(params[:id])
-  @friend.like!(@place)
+  @friend.toggle_like!(@place)
   redirect_to :back, notice: "Added this place to your wishlist successfully!"
   end
 
