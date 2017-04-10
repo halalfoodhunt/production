@@ -1,10 +1,12 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
+  acts_as_likeable
   
   before_create :set_expiration_date
   before_create :set_halal_expiry
   after_create :send_admin_email
+  
   def send_admin_email
     AdminNotifier.new_place_notification(self.merchant).deliver
   end
@@ -24,7 +26,6 @@ class Place < ActiveRecord::Base
   validates_presence_of :location
   validates_presence_of :region
   validates_presence_of :listing_id
-  
   
   belongs_to :merchant
   belongs_to :qualifying_type
@@ -69,13 +70,13 @@ class Place < ActiveRecord::Base
   has_attached_file :document_1, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
   validates_attachment_content_type :document_1, content_type: /\Aimage\/.*\Z/
 
-      has_attached_file :document_2, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  has_attached_file :document_2, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
   validates_attachment_content_type :document_2, content_type: /\Aimage\/.*\Z/
 
-      has_attached_file :document_3, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  has_attached_file :document_3, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
   validates_attachment_content_type :document_3, content_type: /\Aimage\/.*\Z/
 
-      has_attached_file :document_4, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
+  has_attached_file :document_4, styles: { large: "2480x3508>", medium: "500x800>", square: "500x500>", thumb: "67x100>" }, default_url: "/images/:style/image-placeholder.jpg"
   validates_attachment_content_type :document_4, content_type: /\Aimage\/.*\Z/
   
   geocoded_by :operating_address
