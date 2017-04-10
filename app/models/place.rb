@@ -1,7 +1,6 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
-  acts_as_likeable
   
   before_create :set_expiration_date
   before_create :set_halal_expiry
@@ -26,7 +25,8 @@ class Place < ActiveRecord::Base
   validates_presence_of :location
   validates_presence_of :region
   validates_presence_of :listing_id
-  
+
+  acts_as_likeable
   belongs_to :merchant
   belongs_to :qualifying_type
   belongs_to :place_type
