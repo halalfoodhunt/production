@@ -41,7 +41,6 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    @current_friend = current_friend
     @places = Place.where(draft: false).limit(4)
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)

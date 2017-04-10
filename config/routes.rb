@@ -65,6 +65,8 @@ Rails.application.routes.draw do
   
   get 'pages/friends_rewards_results'
   
+  get 'place/:id/likes', to: 'places#likes', as: :likes
+  
   resources :friends_cards
   resources :verifying_types
   resources :users_testimonials
