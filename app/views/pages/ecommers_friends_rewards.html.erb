@@ -62,7 +62,7 @@
                 <hr>
                 <p><%= ecommer.friends_rewards_terms %></p>
                 <hr>
-                <p><% if current_friend.friends? %><b>FRIENDS CODE:</b><%= @ecommer.friends_code %><% end %></p>
+                <p><% unless current_friend.try(:friends?) %><b>FRIENDS CODE:</b><%= @ecommer.friends_code %><% end %></p>
                 <hr>
                 <!--Triggering button-->
                 <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
