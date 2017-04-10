@@ -128,7 +128,7 @@
       <br>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <%= button_to likes_path(@place), {remote: true, class: "btn btn-default"} do %>
+      <%= button_to likes_path(@place), {remote: true, class: "btn btn-block btn-default"} do %>
        <i class="fa fa-heart-o"></i> Add To Wishlist 
       <% end %>
       <% unless @place.qualifying_type.blank? %>
