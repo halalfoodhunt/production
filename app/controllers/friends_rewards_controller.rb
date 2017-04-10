@@ -77,6 +77,13 @@ class FriendsRewardsController < ApplicationController
 			@places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC")
 			end
 	end
+	
+	def likes
+  @friend = current_friend # before_action :authenticate_user, only: [:likes]
+  @place = Place.friendly.find(params[:id])
+  @friend.like!(@place)
+  redirect_to :back, notice: "Added this place to your wishlist successfully!"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
