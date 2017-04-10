@@ -42,7 +42,7 @@
               <% end %>
             </span>
             <div style="padding:0px; height:380px; position:relative;" class="thumbnail">
-              <%= link_to place_path(place) %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
+              <%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
               <div class="caption">
                 <div class="media">
                   <div class="media-left">
