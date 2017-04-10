@@ -1,5 +1,4 @@
 class Merchant < ActiveRecord::Base
-  acts_as_commontator
 # Added by Koudoku.
   enum role: [:free, :basic, :basic_plus, :pair, :bundle, :admin, :custom]
   after_initialize :set_default_role, :if => :new_record?
