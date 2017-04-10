@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_friend!, only: [:likes, :show]
+  before_action :authenticate_friend!, only: [:likes]
   before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
