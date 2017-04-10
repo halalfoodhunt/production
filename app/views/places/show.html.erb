@@ -129,7 +129,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
       <%= button_to likes_path(@place), {remote: true, class: "btn btn-block btn-default"} do %>
-       <h5><i class="fa fa-heart-o"></i> Add To Wishlist</h5>
+       <i class="fa fa-heart-o"></i> Add To Wishlist
       <% end %><br>
       <% unless @place.qualifying_type.blank? %>
       <div class="container-fluid hidden-sm hidden-xs" style="background: white; padding:10px; border:1px solid #ccc;">
