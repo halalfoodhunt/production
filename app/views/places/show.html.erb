@@ -128,7 +128,7 @@
       <br>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <%= link_to 'Add To Wishlist', likes_path(@place) %>
+      <%= link_to 'Add To Wishlist', likes_path(@place), class: "btn btn-raised btn-block btn-default" %>
       <center><p><%= @place.likers_count %> food hunters saved this place</p></center>
       <% unless @place.qualifying_type.blank? %>
       <div class="container-fluid hidden-sm hidden-xs" style="background: white; padding:10px; border:1px solid #ccc;">
