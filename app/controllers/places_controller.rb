@@ -44,7 +44,6 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
-    commontator_thread_show(@commontable)
   end
 
   # GET /places/new

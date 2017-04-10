@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  mount Commontator::Engine => '/commontator'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
