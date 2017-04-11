@@ -128,8 +128,6 @@
       <br>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5">
-      <%= link_to likes_path(@place), class: "btn btn-block btn-default" do %><i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
-      <center><p><%= @place.likers_count %> food hunters saved this place</p></center>
       <% unless @place.qualifying_type.blank? %>
       <div class="container-fluid hidden-sm hidden-xs" style="background: white; padding:10px; border:1px solid #ccc;">
         <div class="col-xs-12 col-sm-12 col-md-3">
@@ -183,6 +181,8 @@
        <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
        <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
      </div>
+     <%= link_to likes_path(@place), class: "btn btn-block btn-default" do %><i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
+      <center><p><%= @place.likers_count %> food hunters saved this place</p></center>
    </div>
  </div>
 </div>
