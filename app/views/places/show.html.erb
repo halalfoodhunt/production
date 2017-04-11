@@ -174,7 +174,7 @@
       <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => "border:1px solid #cc3333;" %>
         <% end %>
       </p>
-      <div class="col-md-12">
+      <div class="col-xs-12 col-md-12">
       <div class="col-xs-6">
         <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
         <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
@@ -184,7 +184,7 @@
        <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
      </div>
      </div>
-     <div class="col-md-12">
+     <div class="col-xs-12 col-md-12">
      <p><br><%= link_to likes_path(@place), class: "btn btn-block btn-default" do %><i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
       <center><p><%= @place.likers_count %> food hunters saved this place</p></center></p>
       </div>
