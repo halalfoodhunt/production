@@ -150,7 +150,7 @@
         </div>
       </div>
       <% end %><br>
-      <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
+      
         <h4 class="title">Opening Hours</h4>
         <% @place.opening_hours.each do |time| %>
         <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
@@ -182,10 +182,12 @@
        <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
      </div>
    </div>
- </div>
- <%= link_to likes_path(@place), class: "btn btn-block btn-default" do %>
+   <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
+      <%= link_to likes_path(@place), class: "btn btn-block btn-default" do %>
     <i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
       <center><p><%= @place.likers_count %> food hunters saved this place</p></center>
+   </div>
+ </div>
 </div>
 <div class="container-fluid" style="padding:0; background:#ececec;">
   <div class="container">
