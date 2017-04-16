@@ -6,9 +6,9 @@
    <% end %>
    <%= bootstrap_form_for @subscription, url: url, html: {id: 'payment-form', class: 'form-horizontal'} do |f| %>
    <fieldset>
-    <div class="control-group">
-      <label class="control-label">Card Number</label>
-      <div class="controls">
+    <div class="form-group">
+      <label class="label">Card Number</label>
+      <div class="form-control">
         <input type="text" size="20" autocomplete="off" class="card-number"/>
       </div>
     </div>
