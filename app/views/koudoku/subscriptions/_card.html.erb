@@ -27,14 +27,16 @@
     <div class="form-group">
       <label class="control-label">CVC</label>
       <div class="controls">
-        <input type="text" size="4" autocomplete="off" class="card-cvc input-small"/>
+        <div class="col-md-6 col-sm-6 col-md-1 col-lg-2">
+        <input type="text" size="4" autocomplete="off" class="form-control card-cvc input-small"/>
+        </div>
       </div>
     </div>
     <div class="alert alert-error payment-errors"></div>
     <%= f.hidden_field :plan_id %>
   </fieldset>
   <br>
-  <div class="control-group">
+  <div class="form-group">
     <div class="controls">
       <% if Koudoku.free_trial? %>
       <button type="submit" class="btn btn-primary submit-button">Save Billing Information</button>
