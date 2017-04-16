@@ -2,7 +2,6 @@
 <div class="container" style="padding-bottom:50px; margin-top;80px;">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
-    <% unless current_merchant.free? %>
     <ul class="nav nav-pills nav-justified" style="border:1px solid #ccc; margin: 20px 0 20px 0;">
       <li class="<%= 'active' if current_page?(main_app.edit_merchant_registration_path) %>"><%= link_to 'My Profile', main_app.edit_merchant_registration_path %></li>
       <li class="<%= 'active' if current_page?(main_app.listings_path) %>"> <%= link_to 'My Current Listings Plan', main_app.listings_path %>
@@ -225,52 +224,6 @@
 <% end %>
 <% end %>
 </div>
-      <% else %>
-      <div class="container">
-        <div class="row bs-wizard" style="background:#fff; border: 1px solid #ccc;">
-          <h3><center>WELCOME TO YOUR MERCHANT DASHBOARD!</center></h3>
-          <div class="col-xs-3 bs-wizard-step complete">
-            <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
-            <div class="bs-wizard-info text-center"><h5 style="color:#22211d; font-weight:700;">CREATE AN ACCOUNT</h5></div>
-          </div>
-
-          <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
-            <div class="text-center bs-wizard-stepnum"></div>
-            <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
-            <div class="bs-wizard-info text-center"><h5>ABOUT YOUR BUSINESS</h5></div>
-          </div>
-
-          <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
-            <div class="text-center bs-wizard-stepnum"></div>
-            <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
-            <div class="bs-wizard-info text-center"><h5>SUBSCRIBE</h5></div>
-          </div>
-
-          <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
-            <div class="text-center bs-wizard-stepnum"></div>
-            <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
-            <div class="bs-wizard-info text-center"><h5>CREATE LISTING</h5></div>
-          </div>
-        </div>
-      </div>
-      <h4>YOUR LISTINGS</h4>
-      <center><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/howitworks-01.jpg" class="img-responsive" alt="Responsive image">
-      </center><h4>How many listings do you want to attach to your profile?</h4>
-      <%= bootstrap_form_for(@current_merchant, as: current_merchant, url: registration_path(current_merchant), html: { method: :put }) do |f| %>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :basic, label: "1 Listing" %>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :basic_plus, label: "2 Listings" %>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <%= f.radio_button :role, :social, label: "3 Listings" %>
-      </div>
-      <%= f.submit "Next" %>
       <% end %>
       <% end %>
 </div>
