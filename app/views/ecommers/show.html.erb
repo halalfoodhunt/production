@@ -84,16 +84,12 @@
   </div>
   <br>
     <h4 class="form-subtitle" style="color:#D04E2E;">FAQ</h4>
-    <h5 class="question">What type of food do you make and which are the highly recommeneded ones? What is the price range of the main items on your menu?</h5>
+    <h5 class="question">What type of food do you make and which are the highly recommended ones?</h5>
     <p><%= h(@ecommer.question_1).gsub(/\n/, '<br>').html_safe %></p>
-    <h5 class="question">How do I ecommer an order with you?</h5>
-    <p><%= h(@ecommer.question_2).gsub(/\n/, '<br>').html_safe %></p>
     <h5 class="question">How will my order reach me? Do you provide delivery services and what are the charges?</h5>
-    <p><%= h(@ecommer.question_3).gsub(/\n/, '<br>').html_safe %></p>
+    <p><%= h(@ecommer.question_2).gsub(/\n/, '<br>').html_safe %></p>
     <h5 class="question">Am I able to do a self-collection for my orders? If so, where?</h5>
-    <p><%= h(@ecommer.question_4).gsub(/\n/, '<br>').html_safe %></p>
-    <h5 class="question">Please provide me with links to reviews about you.</h5>
-    <p><%= h(@ecommer.question_5).gsub(/\n/, '<br>').html_safe %></p>
+    <p><%= h(@ecommer.question_3).gsub(/\n/, '<br>').html_safe %></p>
   </div>  
   <div class="col-xs-12 col-sm-12 col-md-5">
     <% unless @ecommer.qualifying_type.blank? %>
