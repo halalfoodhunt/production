@@ -196,7 +196,7 @@
    <div class="col-xs-12 col-sm-12 col-md-12">
     <h4 class="title">Nearby Places</h4>
     <div class="scroller">
-      <% for place in @place.nearbys(1).try(:limit, 4) %>
+      <% for place in @place.nearbys(1).try(:limit, 4).where(draft: false) %>
       <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
         <% if place.verified == true %>
         <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
