@@ -78,7 +78,7 @@ class FriendsCardsController < ApplicationController
   @friends_cards = FriendsCard.update(params[:friends_cards].keys, params[:friends_cards].values)
   @friends_cards.reject! { |p| p.errors.empty? }
   if @friends_cards.empty?
-    redirect_to pages_friends_cards_path
+    redirect_to friends_cards_path
   else
     render "edit_multiple"
   end
