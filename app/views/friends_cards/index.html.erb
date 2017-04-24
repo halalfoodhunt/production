@@ -91,7 +91,7 @@
               <td><%= friends_card.date_of_birth %></td>
               <td><%= friends_card.contact_number %></td>
               <td><%= friends_card.shipping_address %></td>
-              <td><%= friends_card.expiry_date.strftime("%m/%d/%Y") %></td>
+              <td><%= friends_card.expiry_date.try(:strftime, '%m/%d/%Y') %></td>
               <td><% if friends_card.paypal == true %>
                 <span class="label label-success">PAYPAL</span>
                 <% else %>
