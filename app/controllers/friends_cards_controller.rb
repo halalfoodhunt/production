@@ -1,5 +1,6 @@
 class FriendsCardsController < ApplicationController
-  before_action :authenticate_friend!, only: [:index, :edit, :create, :update, :destroy]
+  before_action :authenticate_merchant!, only: [:index, :edit]
+  before_action :authenticate_friend!, only: [:create, :update, :destroy]
   before_action :set_friends_card, only: [:show, :edit, :update, :destroy]
   before_filter :is_admin?, only: [:index, :edit]
 
