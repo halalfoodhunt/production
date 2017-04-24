@@ -110,7 +110,7 @@
                 <span class="label label-danger">PROCESSING</span>
                 <% end %>
               </td>
-              <td><%= link_to edit_friends_card_path(friends_card), remote: true do %>
+              <td><%= link_to edit_friends_card_path(friends_card) do %>
                 <i class="fa fa-pencil"></i><% end %>
               </td>
               <td><%= link_to friends_card, method: :delete, data: { confirm: 'Are you sure?' } do %>
