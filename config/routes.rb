@@ -67,7 +67,12 @@ Rails.application.routes.draw do
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
   
-  resources :friends_cards
+  resources :friends_cards do
+   collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :verifying_types
   resources :users_testimonials
   resources :featured_articles

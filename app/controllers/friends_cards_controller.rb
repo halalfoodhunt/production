@@ -68,6 +68,20 @@ class FriendsCardsController < ApplicationController
       render "layouts/unauthorised"
       end
   end
+  
+  def edit_multiple
+  @friends_cards = FriendsCard.find(params[:friends_card_ids])
+  end
+
+  def update_multiple
+  @friends_cards = FriendsCard.update(params[:friends_cards].keys, params[:friends_cards].values)
+  @friends_cards.reject! { |p| p.errors.empty? }
+  if @friends_cards.empty?
+    redirect_to pages_friends_cards_path
+  else
+    render "edit_multiple"
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
