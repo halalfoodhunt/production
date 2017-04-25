@@ -158,6 +158,7 @@ Rails.application.routes.draw do
       get :edit_multiple
       put :update_multiple
     end
+    resources :comments
   end
   resources :special_tags
   resources :days
