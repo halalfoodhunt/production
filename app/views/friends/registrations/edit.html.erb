@@ -15,7 +15,7 @@
   <li role="presentation"><a href="#">Messages</a></li>
   <li role="presentation"><a href="#">Comments</a></li>
   <li role="presentation"><a href="#">Bookmarks</a></li>
-  <% if current_friend.free? %><li role="presentation" class="active"><%= link_to 'Buy Friends Card', new_friends_cards_path %><% end %></li><% end %>
+  <% if current_friend.free? %><li role="presentation" class="active">BUY FRIENDS CARD</li><% end %>
   <li role="presentation"><%= link_to 'Logout', destroy_friend_session_path, method: :delete %></li>
             </ul>   
         </div>
