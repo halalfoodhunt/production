@@ -14,6 +14,14 @@ class Friends::RegistrationsController < Devise::RegistrationsController
   def after_sign_in_path_for(friends)
   root_path
   end# end
+  
+   def update_resource(resource, params)
+      if params[:password].blank? && params[:password_confirmation].blank? && params[:current_password].blank?
+      resource.update_without_password(params)
+      else
+        super
+      end
+    end
 
   # POST /resource
   # def create
