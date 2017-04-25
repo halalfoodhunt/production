@@ -128,8 +128,9 @@
       <br>
       <div id="comments">
 		<h4><%= @place.comments.count %> Comments</h4>
+		<div class="well">
 		<%= render @place.comments %>
-
+		</div>
 		<%= render "comments/form" %>
 </div>
     </div>
