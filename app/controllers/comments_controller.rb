@@ -3,8 +3,9 @@ class CommentsController < ApplicationController
     
     def create
 		@place = Place.find(params[:place_id])
-		@current_friend = current_friend
-		@comment = @place.comments.create(params[:comment].permit(:content))
+		@comment = @place.comments.create(params[:comment].permit(:content, :place_id, :friend_id))
+		@comment.friend_id = current_friend.id
+		@comment.save
 
 		redirect_to place_path(@place)
 	end
