@@ -45,6 +45,8 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
+    @place = Place.friendly.find(params[:id])
+    @friend = Friend.find(params[:id])
   end
 
   # GET /places/new
