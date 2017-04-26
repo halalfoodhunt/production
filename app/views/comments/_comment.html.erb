@@ -1,8 +1,8 @@
 <div class="comment clearfix">
 	<div class="comment_content">
-		 <p><%= image_tag(comment.friend.avatar.url(:thumb), :class => "img_circle", :style => "width:30px; height:30px;") %><%= comment.friend.name %></p>
+		 <p><%= image_tag(comment.friend.avatar.url(:thumb), :class => "img_circle", :style => "width:30px; height:30px;") %> <%= comment.friend.name %> <small><%= time_ago_in_words(comment.created_at) %> ago</small></p>
 		 <p><%= comment.content %></p>
-		 <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago</p>
+		 <p class="comment_time"></p>
 	</div>
 
 	<% if (friend_signed_in? && (current_friend.id == comment.friend.id)) %>
