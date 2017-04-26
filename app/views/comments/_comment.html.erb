@@ -1,10 +1,13 @@
 <div class="comment clearfix">
 	<div class="comment_content">
-		<p><%= comment.content %></p>
-		<p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago</p>
+		<% @friend.comment.each do |comment| %>
+		 <p><%= image_tag(comment.friend.avatar.url(:thumb), :class => "img_circle", :style => "width:30px; height:30px;") %><%= comment.friend.name %></p>
+		 <p><%= comment.content %></p>
+		 <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago</p>
+		<% end %>
 	</div>
 
-	<% if friend_signed_in? %>
+	<% if current_friend_signed_in? %>
 	<p><%= link_to 'Delete', [comment.place, comment], method: :delete, class: "button", data: { confirm: 'Are you sure?' } %></p>
  	<% end %>
 </div>
