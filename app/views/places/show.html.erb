@@ -126,7 +126,7 @@
         <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
       </div>
       <br>
-      <div id="comments">
+      <div id="comments" class="hidden-sm hidden-xs">
 		<h4><%= @place.comments.count %> Comments</h4>
 		<div class="well">
 		  <% if @place.comments.empty? %>
@@ -200,6 +200,19 @@
      <div class="col-xs-12 col-md-12">
      <p><br><%= link_to likes_path(@place), class: "btn btn-block btn-default" do %><i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
       <center><p><%= @place.likers_count %> food hunters saved this place</p></center></p>
+      <div id="comments" class="hidden-md hidden-lg">
+		<h4><%= @place.comments.count %> Comments</h4>
+		<div class="well">
+		  <% if @place.comments.empty? %>
+		  <p>No comments available.</p>
+		  <% else %>
+		<%= render @place.comments %>
+		<% end %>
+		</div>
+		<div class="well">
+		<%= render "comments/form" %>
+		</div>
+</div>
       </div>
    </div>
  </div>
