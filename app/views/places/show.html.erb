@@ -112,27 +112,27 @@
       </div>
       <div class="container-fluid">
         <h4 class="title" style="color:#D04E2E;">FAQ</h4>
-        <% unless @place.question_1? %>
+        <% unless @place.question_1.blank? %>
         <h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
         <p><%= h(@place.question_1).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
-        <% unless @place.question_2? %>
+        <% unless @place.question_2.blank? %>
         <h5 class="question">What is the easiest way to get to your place by public transport?</h5>
         <p><%= h(@place.question_2).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
-        <% unless @place.question_3? %>
+        <% unless @place.question_3.blank? %>
         <h5 class="question">Where is the nearest and easiest parking spot near your place?</h5>
         <p><%= h(@place.question_3).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
-        <% unless @place.question_4? %>
+        <% unless @place.question_4.blank? %>
         <h5 class="question">Do you have a prayer space for me? If not, where is the nearest mosque or place that I can perform my prayers at?</h5>
         <p><%= h(@place.question_4).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
-        <% unless @place.question_5? %>
+        <% unless @place.question_5.blank? %>
         <h5 class="question">How baby/child/family-friendly are you?</h5>
         <p><%= h(@place.question_5).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
-        <% unless @place.question_6? %>
+        <% unless @place.question_6.blank? %>
         <h5 class="question">Please provide me with links to reviews about you.</h5>
         <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
