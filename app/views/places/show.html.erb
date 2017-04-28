@@ -136,6 +136,8 @@
         <h5 class="question">Please provide me with links to reviews about you.</h5>
         <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
         <% end %>
+        <% else %>
+        <p>No FAQs available at this time.</p>
       </div>
       <br>
       <div id="comments" class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" >
