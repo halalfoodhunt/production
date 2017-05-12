@@ -25,6 +25,6 @@ class OrdersController < ApplicationController
   private
 
     def order_params
-    	params.require(:order).permit(:product_id, friends_cards_attributes: [:id, :name, :email, :date_of_birth])
+    	params.require(:order).permit(:product_id, friends_cards_attributes: [:id, :name, :email, :ic_number, :date_of_birth, :contact_number, :shipping_address, :expiry_date, :gift, :paid, :direct_bank_transfer, :paypal, :price])
     end
 end
