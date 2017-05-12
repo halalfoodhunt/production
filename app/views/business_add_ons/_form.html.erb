@@ -1,0 +1,41 @@
+<%= bootstrap_form_for(@business_add_on) do |f| %>
+  <% if @business_add_on.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business_add_on.errors.count, "error") %> prohibited this business_add_on from being saved:</h2>
+
+      <ul>
+      <% @business_add_on.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.check_box :business_matching %>
+  </div>
+  <div class="field">
+    <%= f.check_box :muslim_owner_collaboration %>
+  </div>
+  <div class="field">
+    <%= f.check_box :business_advertising %>
+  </div>
+  <div class="field">
+    <%= f.check_box :business_consultation %>
+  </div>
+  <div class="field">
+    <%= f.check_box :legal_consulting %>
+  </div>
+  <div class="field">
+    <%= f.check_box :digital_communication %>
+  </div>
+  <div class="field">
+    <%= f.check_box :jumaiyah_exclusive %>
+  </div>
+  <div class="field">
+    <%= f.check_box :offer_friends_rewards %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

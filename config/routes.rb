@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :business_add_ons
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'

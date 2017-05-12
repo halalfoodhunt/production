@@ -1,6 +1,8 @@
 <% if @subscription.plan.present? %>
 <center><h3>CONGRATULATIONS! YOU’RE SUBSCRIBED!</h3>
-  <p>You're currently subscribed to the <strong><%= @subscription.plan.name %></strong> plan.</p></center>
+  <p>You're currently subscribed to the <strong><%= @subscription.plan.name %></strong> plan.</p></center><br>
+  <h5>Do you need any business add-ons?</h5>
+  <%= render "comments/form" %>
   <table class="table table-bordered table-responsive">
     <thead>
       <tr>

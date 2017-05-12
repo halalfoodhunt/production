@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Business Add Ons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business matching</th>
+      <th>Muslim owner collaboration</th>
+      <th>Business advertising</th>
+      <th>Business consultation</th>
+      <th>Legal consulting</th>
+      <th>Digital communication</th>
+      <th>Jumaiyah exclusive</th>
+      <th>Offer friends rewards</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @business_add_ons.each do |business_add_on| %>
+      <tr>
+        <td><%= business_add_on.business_matching %></td>
+        <td><%= business_add_on.muslim_owner_collaboration %></td>
+        <td><%= business_add_on.business_advertising %></td>
+        <td><%= business_add_on.business_consultation %></td>
+        <td><%= business_add_on.legal_consulting %></td>
+        <td><%= business_add_on.digital_communication %></td>
+        <td><%= business_add_on.jumaiyah_exclusive %></td>
+        <td><%= business_add_on.offer_friends_rewards %></td>
+        <td><%= link_to 'Show', business_add_on %></td>
+        <td><%= link_to 'Edit', edit_business_add_on_path(business_add_on) %></td>
+        <td><%= link_to 'Destroy', business_add_on, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Business add on', new_business_add_on_path %>

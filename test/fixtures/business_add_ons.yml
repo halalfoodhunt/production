@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_matching: false
+  muslim_owner_collaboration: false
+  business_advertising: false
+  business_consultation: false
+  legal_consulting: false
+  digital_communication: false
+  jumaiyah_exclusive: false
+  offer_friends_rewards: false
+
+two:
+  business_matching: false
+  muslim_owner_collaboration: false
+  business_advertising: false
+  business_consultation: false
+  legal_consulting: false
+  digital_communication: false
+  jumaiyah_exclusive: false
+  offer_friends_rewards: false
