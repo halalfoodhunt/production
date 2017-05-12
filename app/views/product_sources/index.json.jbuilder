@@ -1,1 +1,0 @@
-json.array! @product_sources, partial: 'product_sources/product_source', as: :product_source
