@@ -13,7 +13,7 @@
               <tbody>
                 <tr>
                   <td><%= @product.name %></td>
-                  <td><%= params[:order_details] %></td>
+                  <td><%= params[:friends_cards] %></td>
                   <td><%= @product.price %></td>
                 </tr>
               </tbody>
@@ -37,33 +37,33 @@
             </ul>
           </div>
         <% end %>
-        <% order_details = @order.order_details.count %>
-        <% order_detail_num = 1 %>
+        <% friends_cards = @order.friends_cards.count %>
+        <% friends_card_num = 1 %>
 
-        <%= product.fields_for :order_details do |order_detail| %>
+        <%= product.fields_for :friends_cards do |friends_card| %>
           <div class="row">
-            <div class="col-md-12 well order_detail-box">
-              <h3>order_detail <%= order_detail_num %></h3>
-              <% order_detail_num += 1 %>
+            <div class="col-md-12 well friends_card-box">
+              <h3>friends_card <%= friends_card_num %></h3>
+              <% friends_card_num += 1 %>
 
               <div class="form-group">
-		            <%= order_detail.label :name, "Name:", class: "control-label col-sm-2"%>
+		            <%= friends_card.label :name, "Name:", class: "control-label col-sm-2"%>
                 <div class="col-md-9">
-		              <%= order_detail.text_field :name, class: "form-control"%>
+		              <%= friends_card.text_field :name, class: "form-control"%>
                 </div>
               </div>
 
               <div class="form-group">
-		            <%= order_detail.label :email, "Email:", class: "control-label col-sm-2" %>
+		            <%= friends_card.label :email, "Email:", class: "control-label col-sm-2" %>
                 <div class="col-md-9">
-		              <%= order_detail.text_field :email, class: "form-control" %>
+		              <%= friends_card.text_field :email, class: "form-control" %>
                 </div>
               </div>
             </div>
           </div>
 	     <% end %>
 
-        <%= hidden_field_tag(:order_details, params[:order_details]) %>
+        <%= hidden_field_tag(:friends_cards, params[:friends_cards]) %>
         <%= product.hidden_field :product_id, value: params[:product_id] %>
         <%= hidden_field_tag(:product_id, params[:product_id]) %>
         <div class="actions"><script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
