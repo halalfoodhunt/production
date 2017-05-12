@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
@@ -67,6 +68,8 @@ Rails.application.routes.draw do
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
   
+  resources :products, only: [:index]
+  resources :orders, only: [:new, :create, :show]
   resources :friends_cards do
    collection do
       get :edit_multiple
