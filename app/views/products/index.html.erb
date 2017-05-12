@@ -10,7 +10,6 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8" style="background:#fff; padding:25px;">
-          <h4 style="color:#22211d;">REGISTRATION FORM</h4><hr>
           <%= form_tag(new_order_path, method: "get") do %>
             <% @products.each do |product| %>
               <%= radio_button_tag(:product_id, product.id, class: "product_select")  %>
