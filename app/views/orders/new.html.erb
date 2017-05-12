@@ -45,18 +45,30 @@
   <div class="col-md-12 well friends_card-box">
     <h3>friends_card <%= friends_card_num %></h3>
     <% friends_card_num += 1 %>
-
-    <div class="field">
-      <%= f.text_field :name %>
+    
+    <div class="form-group">
+      <%= f.label :name, "Name:", class: "control-label col-sm-2"%>
+      <div class="col-md-9">
+        <%= f.text_field :name, class: "form-control"%>
+      </div>
     </div>
-    <div class="field">
-      <%= f.email_field :email %>
+    <div class="form-group">
+      <%= f.label :email, "Email:", class: "control-label col-sm-2"%>
+      <div class="col-md-9">
+        <%= f.email_field :email, class: "form-control"%>
+      </div>
     </div>
-    <div class="field">
-      <%= f.text_field :ic_number %>
+    <div class="form-group">
+      <%= f.label :ic_number, "IC Number:", class: "control-label col-sm-2"%>
+      <div class="col-md-9">
+        <%= f.text_field :ic_number, class: "form-control"%>
+      </div>
     </div>
-    <div class="field">
-      <%= f.date_select :date_of_birth, start_year: 1950, order: [:day, :month, :year] %>
+     <div class="form-group">
+      <%= f.label :date_of_birth, "Date of Birth", class: "control-label col-sm-2"%>
+      <div class="col-md-9">
+        <%= f.date_select :date_of_birth, start_year: 1950, order: [:day, :month, :year], class: "form-control"%>
+      </div>
     </div>
     <div class="field">
       <%= f.text_field :contact_number %>
