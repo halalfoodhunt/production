@@ -123,7 +123,6 @@ Rails.application.routes.draw do
   end
   resources :product_types
   resources :product_sources
-  resources :products
   resources :establishment_types
   resources :culinary_skills
   resources :class_types
