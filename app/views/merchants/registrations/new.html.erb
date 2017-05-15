@@ -1,6 +1,5 @@
 <%= render 'layouts/merchant_header' %>
-<div style="padding-left:0; padding-right:0; padding-top:50px;" class="container-fluid merchant-sign-up">
-  <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div style="padding-left:0; padding-right:0; padding-top:50px;" class="container-fluid sign-up">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin-bottom:20px;">
     <div class="text-center">
       <h2 style="color:white; margin-top:60px; font-weight:500; font-size:2em; text-transform:uppercase; text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);">What is halalfoodhunt.com?</h2>
@@ -9,7 +8,7 @@
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: rgba(0,0,0,0.5);">
     <h4 style="color:white; margin-top:60px; text-transform:uppercase; text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);"><center>CREATE AN AFFILIATE MERCHANT ACCOUNT</center></h4>
-    <center><p style="color:white;">This information will not appear on your listing page.<br> Have an account? <%= render "devise/shared/links" %>.</center></p>
+    <center><p style="color:white;">Please fill in your information to create an account with us. <br>This information will not appear on your listing page. Have an account? <%= render "devise/shared/links" %>.</center></p>
   </center>
   <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), label_errors: true, inline_errors: true) do |f| %>
   <div class="field label-form">
@@ -33,5 +32,6 @@
   <% end %>
   <p><center>By creating an account, you agree to our <a href="#">terms.</a></center></p>
   <p><center>Have an account? <%= render "devise/shared/links" %>.</center></p>
+  </div>
 </div>
 </div>
