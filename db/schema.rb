@@ -773,29 +773,10 @@ ActiveRecord::Schema.define(version: 20161220032957) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "business_name"
-    t.string   "general_contact_number"
-    t.string   "general_email"
-    t.string   "operating_address"
-    t.string   "facebook"
-    t.string   "instagram"
-    t.string   "website"
-    t.string   "preferred_contact"
-    t.text     "preferred_order_method"
-    t.text     "question_1"
-    t.text     "question_2"
-    t.string   "delivery_url"
-    t.datetime "expiry_date"
-    t.text     "friends_terms"
-    t.string   "merchant_id"
-    t.boolean  "draft",                  default: true
-    t.boolean  "verified",               default: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.integer  "product_source_id"
-    t.integer  "product_type_id"
-    t.integer  "friends_reward_id"
-    t.integer  "region_id"
+    t.string   "name"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "qualifying_types", force: :cascade do |t|
