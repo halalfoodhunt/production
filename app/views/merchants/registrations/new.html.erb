@@ -11,33 +11,40 @@
     <center><p style="color:white;">Please fill in your information to create an account with us. <br><%= render "devise/shared/links" %>.</center></p>
   </center>
   <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), label_errors: true, inline_errors: true) do |f| %>
-  <div class="field label-form">
-    <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <%= f.text_field :contact_person_name, autofocus: true, label: "Your Name" %>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="field label-form">
+      <%= f.text_field :contact_person_name, autofocus: true, label: "Your Name" %>
     </div>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-  <div class="field label-form">
-    <%= f.phone_field :mobile_number, label: "Your Mobile Number" %>
-  </div>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-  <div class="field label-form">
-    <%= f.email_field :email, label: "Your Email" %>
-  </div>
+    <div class="field label-form">
+      <%= f.phone_field :mobile_number, label: "Your Mobile Number" %>
+    </div>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-  <div class="field label-form">
-    <%= f.password_field :password, autocomplete: "off", help: "Must be at least 6 characters long" %>
+    <div class="field label-form">
+      <%= f.email_field :email, label: "Your Email" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit "Next", :class => 'btn btn-block btn-raised btn-danger' %>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="field label-form">
+      <%= f.password_field :password, autocomplete: "off", help: "Must be at least 6 characters long" %>
+    </div>
   </div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="field label-form">
+      <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
+    </div>
   </div>
-  <% end %>
-  <p><center>By creating an account, you agree to our <a href="#">terms.</a></center></p>
-  <p><center>Have an account? <%= render "devise/shared/links" %>.</center></p>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="actions">
+      <%= f.submit "Next", :class => 'btn btn-block btn-raised btn-danger' %>
+    </div>
   </div>
+</div>
+<% end %>
+<p><center>By creating an account, you agree to our <a href="#">terms.</a></center></p>
+<p><center>Have an account? <%= render "devise/shared/links" %>.</center></p>
+</div>
 </div>
 </div>
