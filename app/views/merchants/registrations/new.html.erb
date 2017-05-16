@@ -8,11 +8,11 @@
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: rgba(0,0,0,0.5); padding:50px;">
     <h4 style="color:white; margin-top:60px; text-transform:uppercase; text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);"><center>CREATE AN AFFILIATE MERCHANT ACCOUNT</center></h4>
-    <center><p style="color:white;">Please fill in your information to create an account with us. <br><p><center>Have an account? <%= render "devise/shared/links" %>.</center></p></center></p>
+    <center><p style="color:white;">Please fill in your information to create an account with us. <br><p style="color:white;"><center>Have an account? <%= render "devise/shared/links" %>.</center></p></center></p>
   </center>
   <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), label_errors: true, inline_errors: true) do |f| %>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <div class="field label-form">
+    <div class="field label-form" style="color:white;">
       <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
     </div>
   </div>
@@ -28,7 +28,7 @@
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <div class="field label-form">
-      <%= f.password_field :password, autocomplete: "off", help: "Must be at least 6 characters long" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "Must be at least 6 characters long" %>
     </div>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
