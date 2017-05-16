@@ -21,7 +21,12 @@ class Friends::RegistrationsController < Devise::RegistrationsController
       else
         super
       end
-    end
+   end
+   
+  def new
+    @plans = Plan.all
+    super
+  end
 
   # POST /resource
   # def create
