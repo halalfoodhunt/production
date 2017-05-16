@@ -633,6 +633,10 @@ body {
 
 .merchant-sign-up {
     background: url("http://halalfoodhunt.com/friends/wp-content/uploads/2017/02/1.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .sign-up-left {
