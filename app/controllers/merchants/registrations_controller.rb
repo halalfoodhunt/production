@@ -29,5 +29,10 @@ class Merchants::RegistrationsController < Devise::RegistrationsController
     def after_update_path_for(merchant)
       main_app.pricing_path
     end
+  
+    def new
+    @plans = Plan.all
+    super
+  end
 	
 end

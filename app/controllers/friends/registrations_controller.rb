@@ -22,11 +22,6 @@ class Friends::RegistrationsController < Devise::RegistrationsController
         super
       end
    end
-   
-  def new
-    @plans = ::Plan.order(:display_order)
-    super
-  end
 
   # POST /resource
   # def create
