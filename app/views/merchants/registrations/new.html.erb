@@ -132,7 +132,7 @@
           <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1p>').html_safe %>
         </p>
       </center>
-      <%= link_to 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-places btn-block" %>
+      <%= link_to 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-buy btn-block" %>
     </div>
   </div>
   <% end %>
