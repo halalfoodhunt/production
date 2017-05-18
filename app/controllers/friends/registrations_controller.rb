@@ -24,7 +24,7 @@ class Friends::RegistrationsController < Devise::RegistrationsController
    end
    
   def new
-    @plans = Plan.all
+    @plans = ::Plan.order(:display_order)
     super
   end
 
