@@ -1,3 +1,4 @@
+module Koudoku
 class Merchants::RegistrationsController < Devise::RegistrationsController
 
 	def sign_up_params
