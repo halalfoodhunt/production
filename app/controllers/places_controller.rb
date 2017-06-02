@@ -44,7 +44,7 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @meta_title = meta_title @place.business_name
-    @canonical_url = canonical_url "/places/#{@place.slug}"
+    @canonical_url = places_path(@place)
     @og_properties = {
       title: @meta_title,
       type:  'website',
