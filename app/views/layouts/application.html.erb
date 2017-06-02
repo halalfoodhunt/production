@@ -16,6 +16,9 @@
   <meta property="og:title"         content="sg.halalfoodhunt.com" />
   <meta property="og:description"   content="halalfoodhunt.com is THE hunting ground for you to scout for halal food places in Singapore, make reservations at restaurants, and to get your latest cravings delivered to you. Be handsomely rewarded for choosing halal when you take it one step further by being our FRIEND. Check us out at halalfoodhunt.com!" />
   <meta property="og:image" content="http://halalfoodhunt.com/friends/wp-content/uploads/2017/04/haloalfoodhunt-front-page.png" />
+  <% if @og_properties.present? %>
+ <%= meta_og_tags @og_properties %>
+ <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'https://js.stripe.com/v2/', 'data-turbolinks-track' => true %>
   <script>

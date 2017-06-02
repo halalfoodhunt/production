@@ -44,6 +44,13 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @meta_title = meta_title @place.business_name
+    @canonical_url = canonical_url "/places/#{@place.slug}"
+    @og_properties = {
+      title: @meta_title,
+      type:  'website',
+      image: @place.image.url(:large),  # this file should exist in /app/assets/images/logo.png
+      url: @canonical_url
+    }
     @places = Place.where(draft: false).limit(4)
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
