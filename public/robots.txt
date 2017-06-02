@@ -4,4 +4,4 @@
 # User-agent: *
 # Disallow: /
 User-agent: *
-Sitemap: https://2017doneright.com/sitemap.xml.gz
+Sitemap: https://halalfoodhunt.com/sitemap.xml.gz
