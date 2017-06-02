@@ -36,11 +36,14 @@ class PlacesController < ApplicationController
     format.html
     format.json { render json: @places }
   end
+  @meta_title = meta_title 'Halalfoodhunt.com | Singapore | Places'
+  @meta_description = 'Find the right halal food places for every occasion'
   end
 
   # GET /places/1
   # GET /places/1.json
   def show
+    @meta_title = meta_title @place.business_name
     @places = Place.where(draft: false).limit(4)
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
