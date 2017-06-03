@@ -47,7 +47,7 @@ class PlacesController < ApplicationController
     @canonical_url = places_path(@place)
     @og_properties = {
       title: @meta_title,
-      type:  'website',
+      type:  'article',
       image: @place.image.url(:thumb),  # this file should exist in /app/assets/images/logo.png
       url: @canonical_url
     }
