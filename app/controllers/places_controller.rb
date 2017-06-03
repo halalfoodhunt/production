@@ -48,8 +48,9 @@ class PlacesController < ApplicationController
     @og_properties = {
       title: @meta_title,
       type:  'website',
-      image: @place.image.url(:square),  # this file should exist in /app/assets/images/logo.png
-      url: @canonical_url
+      image: @place.image.url(:thumb),  # this file should exist in /app/assets/images/logo.png
+      url: @canonical_url,
+      description: @place.question_1
     }
     @places = Place.where(draft: false).limit(4)
     @search = Place.ransack(params[:q])
