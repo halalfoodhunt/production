@@ -83,7 +83,7 @@ end
 
 def suppliers
   @search = Supplier.ransack(params[:q])
-  @suppliers = @search.result.where(draft: false)
+  @suppliers = @search.result
   @friends_rewards = FriendsReward.all.where(draft: false)
 end
 

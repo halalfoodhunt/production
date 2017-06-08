@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def meta_og_tags(properties = {})
+  def meta_og_tags(properties = {})
     return unless properties.is_a? Hash
 
     tags = []
