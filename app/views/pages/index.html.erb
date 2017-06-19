@@ -7,44 +7,48 @@
         <div class="col-xs-12 col-sm-12 col-md-6"></div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 border-2 padding-8">
-         <%= search_form_for @search do |f| %>
-        <div class="col-xs-12 col-sm-12 col-md-8">
-          <label for="Search" class="label-front">What kind of food are you looking for?</label>
-           <%= f.text_field :business_name_or_operating_address_or_question_1_cont, class: "form-control input-lg", placeholder: "Type: Nasi, Rojak, etc." %>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-2">
-         <label for="Category" class="label-front">Where?</label>
-         <select class="form-control input-lg">Categories</select>
-       </div>
-       <div class="col-xs-12 col-sm-12 col-md-2">
-        <label for="Search" class="label-front"></label>
-        <%= f.submit "Search", class: "btn btn-block btn-raised btn-danger" %>
+       <%= search_form_for @search do |f| %>
+       <div class="col-xs-12 col-sm-12 col-md-8">
+        <label for="Search" class="label-front">What kind of food are you looking for?</label>
+        <%= f.text_field :business_name_or_operating_address_or_question_1_cont, class: "form-control input-lg", placeholder: "Type: Nasi, Rojak, etc." %>
       </div>
-      <% end %>
+      <div class="col-xs-12 col-sm-12 col-md-2">
+       <label for="Category" class="label-front">Where?</label>
+       <select class="form-control input-lg">Categories</select>
+     </div>
+     <div class="col-xs-12 col-sm-12 col-md-2">
+      <label for="Search" class="label-front"></label>
+      <%= f.submit "Search", class: "btn btn-block btn-raised btn-danger" %>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-      <br><br>
-      <ul class="nav nav-tabs responsive" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Places</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Homies</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Caterers</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Food Deliveries</a></li>
-      </ul>
+    <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <br><br>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Places</a></li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Homies</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Caterers</a></li>
+      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Food Deliveries</a></li>
+    </ul>
 
-      <!-- Tab panes -->
-      <div class="tab-content responsive">
-        <div role="tabpanel" class="tab-pane active" id="home">
-          <br>
-         <div class="scroller">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <br>
+        <div class="scroller">
           <%= render "places/place" %>
         </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="profile"><div class="scroller"><%= render "ecommers/ecommers" %></div></div>
-        <div role="tabpanel" class="tab-pane" id="messages">...</div>
-        <div role="tabpanel" class="tab-pane" id="settings">...</div>
       </div>
+      <div role="tabpanel" class="tab-pane" id="profile">
+        <div class="scroller">
+          <%= render "ecommers/ecommers" %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="messages">...</div>
+      <div role="tabpanel" class="tab-pane" id="settings">...</div>
     </div>
   </div>
+</div>
 </div>
 <div class="container-fluid friends">
   <div class="col-md-10 col-md-offset-1">
@@ -57,11 +61,11 @@
       <center><h3 style="margin-top:15px; color:#397158;">The FRIENDS Rewards Card</h3></center>
       <p>With the FRIENDS Rewards Card, you will unlock discounts, savings and other benefits at more than 50 halal places in Singapore. This list keeps on growing so keep checking back at the Rewards Page!</p>
       <div class="col-xs-12 col-sm-12 col-md-6">
-            <a class="btn btn-block btn-success" href="http://friends.halalfoodhunt.com" style="color:white;" role="button">Let's be FRIENDS!</a>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-6">
-            <%= link_to "See Rewards", pages_friends_rewards_path, :class => "btn btn-block btn-success" %>
-          </div>
+        <a class="btn btn-block btn-success" href="http://friends.halalfoodhunt.com" style="color:white;" role="button">Let's be FRIENDS!</a>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <%= link_to "See Rewards", pages_friends_rewards_path, :class => "btn btn-block btn-success" %>
+      </div>
     </div>
   </div>
 </div>
