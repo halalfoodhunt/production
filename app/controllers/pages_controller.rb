@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def index
    @search = Place.ransack(params[:q])
    @places = @search.result.where(draft: false)
+   @search = Ecommer.ransack(params[:q])
+   @ecommers = @search.result.where(draft: false)
+   @friends_rewards = FriendsReward.all
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
    @friends_rewards = FriendsReward.all
