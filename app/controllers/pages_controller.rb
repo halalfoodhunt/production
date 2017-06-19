@@ -3,9 +3,9 @@ class PagesController < ApplicationController
   before_filter :is_admin?, only: [:admin_dashboard, :merchant_dashboard, :categories, :places, :ecommers, :food_deliveries, :caterers, :online_grocers, :lessons, :suppliers, :supermarkets]
   
   def index
-   @search = Place.ransack(params[:q])
-   @places = @search.result.where(draft: false)
-   @ecommers = Ecommer.all.order("created_at DESC").where(draft: false).limit(4)
+   q = params[:q]
+   @places = Place.search(business_name_or_operating_address_or_question_1_cont: q).result.where(draft: false)
+   @ecommers = Ecommer.search(business_name_or_operating_address_cont: q).result.where(draft: false).limit(4)
    @caterers = Caterer.all.order("created_at DESC").where(draft: false).limit(4)
    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false).limit(4)
    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false).limit(4)
