@@ -5,8 +5,13 @@ class PagesController < ApplicationController
   def index
    @search = Place.ransack(params[:q])
    @places = @search.result.where(draft: false)
-   @search = Ecommer.ransack(params[:q])
-   @ecommers = @search.result.where(draft: false)
+   @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
+   @caterers = Caterer.all.order("created_at DESC").where(draft: false)
+   @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
+   @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
+   @lessons = Lesson.all.order("created_at DESC").where(draft: false)
+   @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
+   @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
    @friends_rewards = FriendsReward.all
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
