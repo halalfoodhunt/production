@@ -26,9 +26,13 @@
     <br><br>
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Places</a></li>
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Homies</a></li>
-      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Caterers</a></li>
-      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Food Deliveries</a></li>
+      <li role="presentation"><a href="#homies" aria-controls="profile" role="tab" data-toggle="tab">Homies</a></li>
+      <li role="presentation"><a href="#caterers" aria-controls="messages" role="tab" data-toggle="tab">Caterers</a></li>
+      <li role="presentation"><a href="#food-deliveries" aria-controls="settings" role="tab" data-toggle="tab">Food Deliveries</a></li>
+      <li role="presentation"><a href="#supermarkets" aria-controls="messages" role="tab" data-toggle="tab">Supermarkets</a></li>
+      <li role="presentation"><a href="#lessons" aria-controls="messages" role="tab" data-toggle="tab">Lessons</a></li>
+      <li role="presentation"><a href="#online-grocers" aria-controls="messages" role="tab" data-toggle="tab">Online Grocers</a></li>
+      <li role="presentation"><a href="#suppliers" aria-controls="messages" role="tab" data-toggle="tab">Suppliers</a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -39,17 +43,33 @@
           <%= render "places/place" %>
         </div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="profile">
+      <div role="tabpanel" class="tab-pane" id="homies">
           <br>
           <%= render "ecommers/ecommers" %>
       </div>
-      <div role="tabpanel" class="tab-pane" id="messages">
+      <div role="tabpanel" class="tab-pane" id="caterers">
           <br>
           <%= render "caterers/caterers" %>
       </div>
-      <div role="tabpanel" class="tab-pane" id="settings">
+      <div role="tabpanel" class="tab-pane" id="food-deliveries">
           <br>
           <%= render "food_deliveries/food_delivery" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="supermarkets">
+          <br>
+          <%= render "supermarkets/supermarket" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="lessons">
+          <br>
+          <%= render "lessons/lessons" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="online-grocers">
+          <br>
+          <%= render "online_grocers/online_grocer" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="suppliers">
+          <br>
+          <%= render "suppliers/suppliers" %>
       </div>
     </div>
   </div>
