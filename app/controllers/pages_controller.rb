@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def index
    @search = Place.ransack(params[:q])
    @places = @search.result.where(draft: false)
-   @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
+   @ecommers = Ecommer.all.order("created_at DESC").where(draft: false).limit(4)
    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
