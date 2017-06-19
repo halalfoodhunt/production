@@ -39,7 +39,7 @@
           <%= render "places/place" %>
         </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="profile"><br><div class="scroller"><%= render "ecommers/ecommers" %></div></div>
+        <div role="tabpanel" class="tab-pane" id="profile"><div class="scroller"><%= render "ecommers/ecommers" %></div></div>
         <div role="tabpanel" class="tab-pane" id="messages">...</div>
         <div role="tabpanel" class="tab-pane" id="settings">...</div>
       </div>
@@ -126,9 +126,3 @@
     </ul>
   </div>
 </nav>
-
-<script type="text/javascript">
-  (function($) {
-      fakewaffle.responsiveTabs(['xs', 'sm']);
-  })(jQuery);
-</script>
