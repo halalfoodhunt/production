@@ -1,7 +1,6 @@
 
 class Merchants::RegistrationsController < Devise::RegistrationsController
   before_action :load_plans, only: [:new]
-  before_create :load_plans, only: [:new]
   
   def load_plans
       @plans = ::Plan.order(:display_order)
