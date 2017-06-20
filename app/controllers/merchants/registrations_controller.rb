@@ -6,8 +6,8 @@ class Merchants::RegistrationsController < Devise::RegistrationsController
   end
   
 def new
-  @plans = ::Plan.order(:display_order)
   super
+  @plans = ::Plan.order(:display_order)
 end
 
 	def sign_up_params
