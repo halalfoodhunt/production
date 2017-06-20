@@ -122,20 +122,122 @@
 </div>
 <br>
 <div class="container"><h3><center>Select the plan that suits you.<br> Upgrade, downgrade or cancel anytime.</center></h3><br>
-  <% @plans.each do |plan| %>
-  <div class="col-xs-12 col-sm-12 col-md-3 <%= 'plan-primary' if plan.highlight? %>">
+  <div class="col-xs-12 col-sm-12 col-md-3 plan-primary">
     <div class="box" style="border:2px solid #ccc;">
       <center>
-        <h3 style="color:#cc3333; text-transform:uppercase;"><%= plan.name %></h3>
-        <h4 style="color:#3e414a; font-weight:400;">SGD <%= number_to_currency plan.price, :precision => 0 %><br>Per Year</h4>
+        <h3 style="color:#cc3333; text-transform:uppercase;">basic</h3>
+        <h4 style="color:#3e414a; font-weight:400;">SGD $100<br>Per Year</h4>
         <p>
-          <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1p>').html_safe %>
+          <p>1 Halal Verified Listing</p>
+
+<p>Unlimited Categories</p>
+
+<p>Unlimited Highlights</p>
+
+<p>Unlimited Locations</p>
+
+<p>5 Featured Questions</p>
+
+<p>Reservation Listing</p>
+
+<p>Delivery Listing</p>
+
+<p>FRIENDS Loyalty Programme</p>
         </p>
       </center>
-      <%= link_to 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-buy btn-block" %>
+      <a class="btn btn-buy btn-block" href="/koudoku/subscriptions/new?plan=14">Sign Up</a>
     </div>
   </div>
-  <% end %>
+  <div class="col-xs-12 col-sm-12 col-md-3 ">
+    <div class="box" style="border:2px solid #ccc;">
+      <center>
+        <h3 style="color:#cc3333; text-transform:uppercase;">basic_plus</h3>
+        <h4 style="color:#3e414a; font-weight:400;">SGD $150<br>Per Year</h4>
+        <p>
+          <p>1 Halal Verified Listing</p>
+
+<p>Unlimited Categories</p>
+
+<p>Unlimited Highlights</p>
+
+<p>5 Featured Questions</p>
+
+<p>Reservation Listing</p>
+
+<p>Delivery Listing</p>
+
+<p>FRIENDS Loyalty Programme</p>
+
+<p>Meta Word Search</p>
+
+<p>User Review/Feedback</p>
+
+<p>Message Box</p>
+        </p>
+      </center>
+      <a class="btn btn-buy btn-block" href="/koudoku/subscriptions/new?plan=15">Sign Up</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-3 ">
+    <div class="box" style="border:2px solid #ccc;">
+      <center>
+        <h3 style="color:#cc3333; text-transform:uppercase;">pair</h3>
+        <h4 style="color:#3e414a; font-weight:400;">SGD $180<br>Per Year</h4>
+        <p>
+          <p>2 Halal Verified Listings</p>
+
+<p>Unlimited Categories</p>
+
+<p>Unlimited Highlights</p>
+
+<p>5 Featured Questions</p>
+
+<p>Reservation Listing</p>
+
+<p>Delivery Listing</p>
+
+<p>FRIENDS Loyalty Programme</p>
+
+<p>Meta Word Search</p>
+
+<p>User Review/Feedback</p>
+
+<p>Message Box</p>
+        </p>
+      </center>
+      <a class="btn btn-buy btn-block" href="/koudoku/subscriptions/new?plan=16">Sign Up</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-3 ">
+    <div class="box" style="border:2px solid #ccc;">
+      <center>
+        <h3 style="color:#cc3333; text-transform:uppercase;">bundle</h3>
+        <h4 style="color:#3e414a; font-weight:400;">SGD $280<br>Per Year</h4>
+        <p>
+          <p>3 Halal Verified Listings</p>
+
+<p>Unlimited Categories</p>
+
+<p>Unlimited Highlights</p>
+
+<p>5 Featured Questions</p>
+
+<p>Reservation Listing</p>
+
+<p>Delivery Listing</p>
+
+<p>Meta Word Search</p>
+
+<p>User Review/Feedback</p>
+
+<p>FRIENDS Loyalty Programme</p>
+
+<p>Message Box</p>
+        </p>
+      </center>
+      <a class="btn btn-buy btn-block" href="/koudoku/subscriptions/new?plan=17">Sign Up</a>
+    </div>
+  </div>
 </div>
 <br>
 <div class="container-fluid" style="background:#fff;">
