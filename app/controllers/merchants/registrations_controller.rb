@@ -1,4 +1,4 @@
-module Koudoku
+
 class Merchants::RegistrationsController < Devise::RegistrationsController
   before_action :load_plans, only: [:new]
   
