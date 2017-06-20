@@ -6,6 +6,7 @@ class Merchants::RegistrationsController < Devise::RegistrationsController
   end
   
 def new
+  @plans = ::Plan.order(:display_order)
   super
 end
 
