@@ -25,6 +25,7 @@
   <div class="col-xs-12 col-sm-12 col-md-12">
     <br><br>
     <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">All</a></li>
       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Places</a></li>
       <li role="presentation"><a href="#homies" aria-controls="profile" role="tab" data-toggle="tab">Homies</a></li>
       <li role="presentation"><a href="#caterers" aria-controls="messages" role="tab" data-toggle="tab">Caterers</a></li>
@@ -39,9 +40,13 @@
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="home">
         <br>
+        <h5>PLACES</h5>
         <div class="scroller">
           <%= render "places/place" %>
         </div>
+        <br>
+        <h5>HOMIES</h5>
+          <%= render "ecommers/ecommers" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="homies">
           <br>
