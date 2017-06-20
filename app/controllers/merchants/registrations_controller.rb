@@ -1,10 +1,4 @@
-
 class Merchants::RegistrationsController < Devise::RegistrationsController
-  before_action :load_plans, only: [:new]
-  
-  def load_plans
-      @plans = ::Plan.order(:display_order)
-  end
 
 	def sign_up_params
 		params.require(:merchant).permit(:registered_business_name, :email, :password, :uen_roc_fhc, :contact_person_name, :contact_person_position, :office_number, :mobile_number, :office_mailing_address, :region_id)
