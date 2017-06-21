@@ -10,7 +10,7 @@
               <% end %>
             </span>
       <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
-        <%= image_tag food_delivery.featured_image.url(:medium), :class => "img_responsive" %>
+        <%= link_to food_delivery_path(food_delivery) do %><%= image_tag food_delivery.featured_image.url(:medium), :class => "img_responsive" %><% end %>
         <div class="caption">
           <div class="media">
             <div class="media-left">
