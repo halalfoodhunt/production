@@ -47,25 +47,25 @@
           </div>
         <br>
         <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies</h4></div>
-        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right">See All <i class="fa fa-angle-right fa-lg"></i></p></div>
+        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
         <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
           <%= render "ecommers/ecommers" %>
         </div>
         <br>
         <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Food Deliveries</h4></div>
-        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right">See All <i class="fa fa-angle-right fa-lg"></i></p></div>
+        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to food_deliveries_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
         <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
           <%= render 'food_deliveries/food_delivery_home' %>
         </div>
         <br>
         <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Grocers</h4></div>
-        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
         <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
           <%= render "online_grocers/online_grocer" %>
         </div>
         <br>
         <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
-        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right">See All <i class="fa fa-angle-right fa-lg"></i></p></div>
+        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
         <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
           <%= render "suppliers/suppliers" %>
         </div>
