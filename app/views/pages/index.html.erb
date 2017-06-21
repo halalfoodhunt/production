@@ -24,7 +24,7 @@
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
     <br><br>
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs responsive-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><b>RECOMMENDED</b></a></li>
       <li role="presentation"><a href="http://sg.halalfoodhunt.com/places">PLACES</a></li>
       <li role="presentation"><a href="#homies" aria-controls="profile" role="tab" data-toggle="tab">HOMIES</a></li>
@@ -182,3 +182,8 @@
     </ul>
   </div>
 </nav>
+<script>
+$('.responsive-tabs').responsiveTabs({
+  accordionOn: ['xs', 'sm'] // xs, sm, md, lg 
+});
+</script>
