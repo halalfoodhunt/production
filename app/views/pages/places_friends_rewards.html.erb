@@ -51,7 +51,7 @@
           <h5 style="margin:0;"><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></h5>
           <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p><br>
           <!--Triggering button-->
-          <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
+          <p><a class="rotate-btn btn btn-default btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
         </div>
       </div>
       <!--/.Front Side-->
@@ -63,8 +63,8 @@
         <p><%= place.friends_rewards_terms %></p>
         <hr>
         <!--Triggering button-->
-        <a class="rotate-btn btn btn-primary btn-block" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
-         <%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-block btn-danger" %>
+        <a class="rotate-btn btn btn-default btn-block" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
+         <%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-block btn-success" %>
       </div>
       <!--/.Back Side-->
     </div>
