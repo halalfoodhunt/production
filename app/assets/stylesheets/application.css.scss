@@ -158,6 +158,12 @@ hr {
 
 .btn-success {
     background: #008667;
+    border: 0;
+}
+
+.btn-success:hover {
+    background: #003e2c;
+    border: 0;
 }
 
 .btn-info.btn-outline {
