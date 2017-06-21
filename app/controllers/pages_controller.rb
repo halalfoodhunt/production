@@ -17,7 +17,7 @@ class PagesController < ApplicationController
    @featured_articles = FeaturedArticle.all
    @friends_rewards = FriendsReward.all
    if params[:special_tags].blank? 
-    @places = Place.all.where(draft: false)
+    @places = Place.all.order("created_at DESC").where(draft: false).limit(4)
    else
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.filter_by_params(params)
