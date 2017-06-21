@@ -45,7 +45,7 @@
               </div>
               <!--Content-->
               <div class="card-block" style="padding:0 5px 0 5px;">
-                <h5 style="margin:0;"><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></h5>
+                <p style="margin:0;"><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></p>
                 <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p><br>
                 <!--Triggering button-->
                 <p><a class="rotate-btn btn btn-default btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
@@ -61,7 +61,7 @@
               <hr>
               <!--Triggering button-->
               <a class="rotate-btn btn btn-default btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a><br>
-              <p><%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-sm btn-sucess" %></p>
+              <p><%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-sm btn-success" %></p>
             </div>
             <!--/.Back Side-->
           </div>
