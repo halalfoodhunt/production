@@ -17,7 +17,7 @@
           <%= image_tag supplier.logo.url(:medium), :class => "img-circle-40" %>
         </div>
         <div class="media-body">
-          <h5 class="media-heading"><%= link_to supplier.business_name, supplier_path(supplier) %></h5>
+          <p class="media-heading"><b><%= link_to supplier.business_name, supplier_path(supplier) %></b></p>
           <p><%= image_tag supplier.supplier_type.icon.url(:thumb) %> <%= supplier.supplier_type.name %></p>
         </div>
       </div>
