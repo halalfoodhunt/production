@@ -17,7 +17,7 @@
           <%= image_tag ecommer.logo.url(:medium), :class => "img-circle-40" %>
         </div>
         <div class="media-body">
-          <h5 class="media-heading"><%= link_to ecommer.business_name, ecommer_path(ecommer) %></h5>
+          <h5 class="media-heading"><b><%= link_to ecommer.business_name, ecommer_path(ecommer) %></b></h5>
           <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
         </div>
       </div>
