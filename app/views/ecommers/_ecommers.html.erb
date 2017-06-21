@@ -10,14 +10,14 @@
               <% end %>
             </span>
   <div style="padding:0px; height:320px; position:relative;" class="thumbnail">
-    <%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %>
+    <%= link_to ecommer_path(ecommer) do %><%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %><% end %>
     <div class="caption">
       <div class="media">
         <div class="media-left">
           <%= image_tag ecommer.logo.url(:medium), :class => "img-circle-40" %>
         </div>
         <div class="media-body">
-          <h5 class="media-heading"><b><%= link_to ecommer.business_name, ecommer_path(ecommer) %></b></h5>
+          <p class="media-heading"><b><%= link_to ecommer.business_name, ecommer_path(ecommer) %></b></p>
           <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
         </div>
       </div>
