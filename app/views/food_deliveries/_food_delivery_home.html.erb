@@ -18,10 +18,6 @@
             </div>
             <div class="media-body">
               <p class="media-heading"><b><%= link_to food_delivery.brand_name, food_delivery_path(food_delivery) %></b></p>
-              <p><% food_delivery.cuisine_types.each do |cuisine_type| %>
-              <%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %>
-              <% end %>
-              </p>
             </div>
           </div>
         </div>
