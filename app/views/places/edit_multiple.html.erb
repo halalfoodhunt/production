@@ -14,6 +14,7 @@
           <th><h6><strong>Halal Expiry</strong></h6></th>
           <th><h6><strong>Verify?</strong></h6></th>
           <th><h6><strong>Expiry Date</strong></h6></th>
+          <th><h6><strong>Featured?</strong></h6></th>
           <th><h6><strong>Draft</strong></h6></th>
         </tr>
       </thead>
@@ -37,6 +38,7 @@
           <td><%= f.date_select :halal_expiry %></td>
           <td><%= f.check_box :verified %></td>
           <td><%= f.date_select :expiry_date %></td>
+          <td><%= f.check_box :featured %></td>
           <td><%= f.check_box :draft %></td>
         </tr>
                           <% end %>
