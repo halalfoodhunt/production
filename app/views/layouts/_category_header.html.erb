@@ -12,23 +12,9 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to 'Places', places_path %></li>
-            <li><%= link_to 'Ecommers', ecommers_path %></li>
-            <li><%= link_to 'Caterers', caterers_path %></li>
-            <li><%= link_to 'Food Deliveries', food_deliveries_path %></li>
-            <li><%= link_to 'Online Grocers', online_grocers_path %></li>
-            <li><%= link_to 'Supermarkets', supermarkets_path %></li>
-            <li><%= link_to 'Suppliers', suppliers_path %></li>
-            <li><%= link_to 'Academy', lessons_path %></li>
-          </ul>
-        </li>
-        <li><%= link_to "Friends Rewards", pages_friends_rewards_path %></li>
+        <li><a href="http://friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
+        <li><%= link_to "Get rewarded", pages_friends_rewards_path %></li>
         <% if current_merchant.try(:admin?) %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
@@ -37,11 +23,50 @@
             <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
           </ul>
         </li>
-        <% elsif current_merchant %>
+        <% elsif current_merchant.try(:free?) %>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.registered_business_name %></strong>!<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Merchant Dashboard', main_app.pricing_path %></li>
+            <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% elsif current_merchant.try(:basic?) %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Merchant Dashboard', listings_path %></li>
+            <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% elsif current_merchant.try(:basic_plus?) %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Merchant Dashboard', listings_path %></li>
+            <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% elsif current_merchant.try(:pair?) %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Merchant Dashboard', listings_path %></li>
+            <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% elsif current_merchant.try(:bundle?) %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Merchant Dashboard', listings_path %></li>
+            <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% elsif current_merchant.try(:custom?) %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Merchant Dashboard', listings_path %></li>
             <li><%= link_to 'Logout', destroy_merchant_session_path, method: :delete %></li>
           </ul>
         </li>
@@ -54,6 +79,7 @@
           </ul>
         </li>
         <% else %>
+        <li style="color:#397158;"><%= link_to 'Get listed', new_merchant_registration_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
           <ul class="dropdown-menu">
