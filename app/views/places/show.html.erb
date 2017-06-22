@@ -78,7 +78,7 @@
           <div class="avatar">
             <center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
           </div>
-          <center><p><%= link_to 'View More Rewards', pages_places_friends_rewards_path, class: "btn btn-raised btn-block btn-primary" %></p></center>
+          <center><p><%= link_to 'View More Rewards', pages_places_friends_rewards_path, class: "btn btn-raised btn-block btn-success" %></p></center>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8">
           <h4 class="title">Friends Card Holders Only</h4>
@@ -193,10 +193,10 @@
       </div>
       <% end %>
     </div>
-    <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-primary" %>
+    <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-success" %>
       <% end %>
     </p>
-    <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger", :style => "border:1px solid #cc3333;" %>
+    <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger" %>
       <% end %>
     </p>
     <div class="col-xs-12 col-md-12 padding-0">
