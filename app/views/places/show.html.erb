@@ -241,7 +241,7 @@
                 <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
               </div>
               <div class="media-body">
-                <h5 class="media-heading title"><%= link_to place.business_name, place_path(place) %></h5>
+                <p class="media-heading title"><b><%= link_to place.business_name, place_path(place) %></b></p>
                 <p><i class="fa fa-map-marker"></i> <%= place.operating_address %><br>(<%= place.distance.round(2) %> miles)</p>
               </div>
             </div>
