@@ -14,7 +14,20 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-2">
 					<label for="Category" class="label-front">Where?</label>
-					<select class="form-control input-lg">Categories</select>
+					<div class="dropdown">
+      <button class="btn btn-lg btn-default dropdown-toggle" type="button" data-toggle="dropdown">Listings
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><center><p><%= link_to 'Places', places_path %></p></center></li>
+          <li><center><p><%= link_to 'Ecommers', ecommers_path %></p></center></li>
+          <li><center><p><%= link_to 'Caterers', caterers_path %></p></center></li>
+          <li><center><p><%= link_to 'Academy', lessons_path %></p></center></li>
+          <li><center><p><%= link_to 'Suppliers', suppliers_path %></p></center></li>
+          <li><center><p><%= link_to 'Food Deliveries', food_deliveries_path %></p></center></li>
+          <li><center><p><%= link_to 'Online Grocers', online_grocers_path %></p></center></li>
+          <li><center><p><%= link_to 'Supermarkets', supermarkets_path %></p></center></li>
+        </ul>
+      </div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-2">
 					<label for="Search" class="label-front"></label>
