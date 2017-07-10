@@ -1,6 +1,5 @@
 class FriendsCard < ActiveRecord::Base
     has_many :orders
-    has_many :order_items
     has_many :products
     
     before_create :set_expiration_date
