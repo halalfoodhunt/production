@@ -1,6 +1,5 @@
 class Order < ActiveRecord::Base
-  
-  belongs_to :product
+  has_many :products
   belongs_to :friend
   has_many :order_items
   has_many :friends_cards, :through => :order_items
