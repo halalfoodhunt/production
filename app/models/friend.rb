@@ -13,7 +13,6 @@ class Friend < ActiveRecord::Base
   end
   
   has_many :comments, dependent: :destroy
-  has_many :orders
   has_many :friends_cards
   
   has_attached_file :avatar, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
