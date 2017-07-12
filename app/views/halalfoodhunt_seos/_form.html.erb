@@ -1,0 +1,21 @@
+<%= form_for(@halalfoodhunt_seo) do |f| %>
+  <% if @halalfoodhunt_seo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@halalfoodhunt_seo.errors.count, "error") %> prohibited this halalfoodhunt_seo from being saved:</h2>
+
+      <ul>
+      <% @halalfoodhunt_seo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :meta_description %><br>
+    <%= f.text_area :meta_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
