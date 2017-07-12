@@ -69,6 +69,6 @@ class HalalfoodhuntSeosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def halalfoodhunt_seo_params
-      params.require(:halalfoodhunt_seo).permit(:meta_description)
+      params.require(:halalfoodhunt_seo).permit(:meta_description, :about_us, :corporate_services, :caterers_friends_rewards, :ecommers_friends_rewards, :food_deliveries_friends_rewards, :friends, :boolean, :friends_rewards, :getting_listed, :home, :lessons_friends_rewards, :online_grocers_friends_rewards, :places_friends_rewards, :boolean, :supermarkets_friends_rewards, :suppliers_friends_rewards)
     end
 end
