@@ -1,10 +1,13 @@
+<%= render 'layouts/header' %>
+<div class='container'>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Halalfoodhunt Seos</h1>
+<h1>Halalfoodhunt SEO</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Page</th>
       <th>Meta description</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +16,10 @@
   <tbody>
     <% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
       <tr>
+        <td><% if halalfoodhunt_seo.about_us == true %>
+        <span class="label label-success">ABOUT US</span>
+        <% end %>
+        </td>
         <td><%= halalfoodhunt_seo.meta_description %></td>
         <td><%= link_to 'Show', halalfoodhunt_seo %></td>
         <td><%= link_to 'Edit', edit_halalfoodhunt_seo_path(halalfoodhunt_seo) %></td>
@@ -25,3 +32,4 @@
 <br>
 
 <%= link_to 'New Halalfoodhunt seo', new_halalfoodhunt_seo_path %>
+</div>
