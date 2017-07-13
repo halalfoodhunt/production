@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :meta_description %><br>
     <%= f.text_area :meta_description %>
+  </div>
+  <div class="field">
+    <%= f.check_box :about_us %>
   </div>
   <div class="actions">
     <%= f.submit %>
