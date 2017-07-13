@@ -1,4 +1,5 @@
 class HalalfoodhuntSeosController < ApplicationController
+  before_filter :is_admin?, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_halalfoodhunt_seo, only: [:show, :edit, :update, :destroy]
 
   # GET /halalfoodhunt_seos
@@ -59,6 +60,12 @@ class HalalfoodhuntSeosController < ApplicationController
       format.html { redirect_to halalfoodhunt_seos_url, notice: 'Halalfoodhunt seo was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
+  end
   end
 
   private
