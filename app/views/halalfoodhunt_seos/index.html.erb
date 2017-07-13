@@ -20,6 +20,14 @@
         <span class="label label-success">ABOUT US</span>
         <% end %>
         </td>
+        <td><% if halalfoodhunt_seo.corporate_servicess == true %>
+        <span class="label label-success">CORPORATE SERVICES</span>
+        <% end %>
+        </td>
+        <td><% if halalfoodhunt_seo.caterers_friends_rewards == true %>
+        <span class="label label-success">CATERERS FRIENDS REWARDS</span>
+        <% end %>
+        </td>
         <td><%= halalfoodhunt_seo.meta_description %></td>
         <td><%= link_to 'Show', halalfoodhunt_seo %></td>
         <td><%= link_to 'Edit', edit_halalfoodhunt_seo_path(halalfoodhunt_seo) %></td>
