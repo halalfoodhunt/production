@@ -29,7 +29,7 @@ class HalalfoodhuntSeosController < ApplicationController
 
     respond_to do |format|
       if @halalfoodhunt_seo.save
-        format.html { redirect_to @halalfoodhunt_seo, notice: 'Halalfoodhunt seo was successfully created.' }
+        format.html { redirect_to halalfoodhunt_seos_path, notice: 'Halalfoodhunt seo was successfully created.' }
         format.json { render :show, status: :created, location: @halalfoodhunt_seo }
       else
         format.html { render :new }
