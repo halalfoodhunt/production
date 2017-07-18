@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://sg.halalfoodhunt.com"
+SitemapGenerator::Sitemap.default_host = "http://halalfoodhunt.com"
 
 SitemapGenerator::Sitemap.create do
   
