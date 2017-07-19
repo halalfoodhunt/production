@@ -30,10 +30,10 @@
               <thead>
                 <tr><td><p><%= image_tag @supplier.supplier_type.icon.url(:thumb) %> <%= @supplier.supplier_type.name %></p></td></tr>
                 <tr style="border-top:#ccc solid 1px"><% unless @supplier.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @supplier.operating_address %>, <%= image_tag @supplier.location.icon.url(:thumb) %> <%= @supplier.location.name %> </p></td><% end %></tr>
-                <% unless @supplier.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr><% end %>
-                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @supplier.general_contact_number %></p></td></tr>
+                <% unless @supplier.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @supplier.general_email %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @supplier.general_contact_number %></p></td></tr>
                 <% unless @supplier.website.blank? %><tr style="border-top:#ccc solid 1px">
-                <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %></p></td></tr><% end %>
+                <td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @supplier.website, "#{@supplier.website}" %></p></td></tr><% end %>
                 <tr style="border-top:#ccc solid 1px"><td><p><b>Preferred Order Method:</b> <%= h(@supplier.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p></td></tr>
               </thead>
             </table>

@@ -14,7 +14,7 @@ class SupermarketsController < ApplicationController
     marker.lng supermarket.longitude
     marker.json({operating_address: supermarket.operating_address})
     marker.picture({
-     "url" => "http://halalfoodhunt.com/friends/wp-content/uploads/2016/10/shadows-marker.png",
+     "url" => "http://friends.jumaiyah.com/wp-content/uploads/2016/10/shadows-marker.png",
      "width" =>  52,
      "height" => 52})
     marker.infowindow render_to_string(:partial => "/layouts/infobox2", :locals => { :supermarket => supermarket})

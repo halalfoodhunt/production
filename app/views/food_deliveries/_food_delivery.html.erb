@@ -15,10 +15,10 @@
             <table class="table table-striped">
               <thead>
                 <tr><% unless @food_delivery.contactable_hours.blank? %><td><p><i class="fa fa-clock-o"></i> <%= @food_delivery.contactable_hours %></p></td><% end %></tr>
-                <% unless @food_delivery.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr><% end %>
-                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
+                <% unless @food_delivery.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @food_delivery.general_email %></p></td></tr><% end %>
+                <tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @food_delivery.general_contact_number %></p></td></tr>
                 <% unless @food_delivery.website.blank? %><tr style="border-top:#ccc solid 1px">
-                <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr><% end %>
+                <td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @food_delivery.website, "#{@food_delivery.website}" %></p></td></tr><% end %>
               </thead>
             </table>
           </div>
@@ -29,7 +29,7 @@
             <div class="avatar"><center><%= image_tag @food_delivery.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
             </div>
             <center>
-              <a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+              <a href="http://www.friends.jumaiyah.com" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
             </center>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-9">

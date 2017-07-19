@@ -29,10 +29,10 @@
         <table class="table table-striped">
           <thead>
             <tr><% unless @ecommer.operating_address.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @ecommer.operating_address %></p></td><% end %></tr>
-            <% unless @ecommer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @ecommer.general_email %></p></td></tr><% end %>
-            <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @ecommer.general_contact_number %></p></td></tr>
+            <% unless @ecommer.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @ecommer.general_email %></p></td></tr><% end %>
+            <tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @ecommer.general_contact_number %></p></td></tr>
             <% unless @ecommer.website.blank? %><tr style="border-top:#ccc solid 1px">
-            <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %></p></td></tr><% end %>
+            <td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @ecommer.website, "#{@ecommer.website}" %></p></td></tr><% end %>
             <tr style="border-top:#ccc solid 1px">
               <td> <p><b>Preferred Order Method:</b> <%= h(@ecommer.preferred_order_method).gsub(/\n/, '<br>').html_safe %></p></td>
             </tr>

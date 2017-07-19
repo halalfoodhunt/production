@@ -27,10 +27,10 @@
           <table class="table table-striped">
             <thead>
               <tr><% unless @lesson.preferred_contact.blank? %><td><p><i class="fa fa-map-marker"></i> <%= @lesson.preferred_contact %></p></td><% end %></tr>
-              <% unless @lesson.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @lesson.general_email %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @lesson.general_contact_number %></p></td></tr>
+              <% unless @lesson.general_email.blank? %><tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/envelope.png" title="Email" width="16"> <%= @lesson.general_email %></p></td></tr><% end %>
+              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> +65  <%= @lesson.general_contact_number %></p></td></tr>
               <% unless @lesson.website.blank? %><tr style="border-top:#ccc solid 1px">
-              <td><p><img src="http://halalfoodhunt.com/friends/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @lesson.website, "#{@lesson.website}" %></p></td></tr><% end %>
+              <td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @lesson.website, "#{@lesson.website}" %></p></td></tr><% end %>
               <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @lesson.facebook.blank? %><%= link_to @lesson.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
                 <% unless @lesson.instagram.blank? %><%= link_to @lesson.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
               </tr>
@@ -44,7 +44,7 @@
             <div class="avatar">
               <center><%= image_tag @lesson.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
             </div>
-            <center><a href="http://www.halalfoodhunt.com/friends" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
+            <center><a href="http://www.friends.jumaiyah.com" class="btn btn-raised btn-primary" role="button">Be a FRIEND</a>
             </center>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-9">
