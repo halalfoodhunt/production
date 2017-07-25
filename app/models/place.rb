@@ -5,8 +5,13 @@ class Place < ActiveRecord::Base
   before_create :set_expiration_date
   before_create :set_halal_expiry
   after_create :send_admin_email
+  after_create :send_merchant_listing_email
   
   def send_admin_email
+    AdminNotifier.new_place_notification(self.merchant).deliver
+  end
+  
+  def send_merchant_listing_email
     AdminNotifier.new_place_notification(self.merchant).deliver
   end
   
