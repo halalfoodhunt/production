@@ -12,7 +12,7 @@ class Place < ActiveRecord::Base
   end
   
   def send_merchant_listing_email
-    AdminNotifier.new_place_notification(self.merchant).deliver
+    MerchantListingMailer.send_merchant_listing_email(self.merchant).deliver
   end
   
   def set_expiration_date
