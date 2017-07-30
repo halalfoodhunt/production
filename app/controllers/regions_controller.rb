@@ -66,7 +66,7 @@ class RegionsController < ApplicationController
   unless current_merchant && current_merchant.admin?
    render "layouts/unauthorised"
   end
-  end
+ end
   
   private
     # Use callbacks to share common setup or constraints between actions.
