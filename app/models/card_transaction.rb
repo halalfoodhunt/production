@@ -1,0 +1,3 @@
+class CardTransaction < ActiveRecord::Base
+  belongs_to :card
+end

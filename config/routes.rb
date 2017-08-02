@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'registrations/index'
+
+  get 'friends_cards/index'
+
   resources :halalfoodhunt_seos
   resources :business_add_ons
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
