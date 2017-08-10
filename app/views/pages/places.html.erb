@@ -105,10 +105,10 @@
                 <span><i class="fa fa-check-circle fa-lg" aria-hidden="true" style="color:#5cb85c"></i></span>
                 <% end %>
               </td>
-              <td><%= link_to edit_place_path(place), remote: true do %>
+              <td><%= link_to edit_place_path(place), style:'color:white;', remote: true do %>
                 <i class="fa fa-pencil"></i><% end %>
               </td>
-              <td><%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <td><%= link_to place, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <i class="fa fa-trash-o"></i><% end %>
               </td>
             </tr>
