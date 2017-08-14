@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://friends.halalfoodhunt.com">Get FRIENDS Card</a></li>
-        <li><%= link_to "Get rewarded", pages_friends_rewards_path %></li>
+        <li><%= link_to "Friends Rewards", pages_friends_rewards_path %></li>
         <% if current_merchant.try(:admin?) %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <strong><%= current_merchant.contact_person_name %></strong>!<span class="caret"></span></a>
