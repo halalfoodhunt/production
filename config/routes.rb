@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'registrations/index'
-
-  get 'friends_cards/index'
-
-  resources :halalfoodhunt_seos
-  resources :business_add_ons
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
   mount Koudoku::Engine, at: 'koudoku'
@@ -73,6 +67,13 @@ Rails.application.routes.draw do
   get 'pages/friends_rewards_results'
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
+  
+  resources :registrations
+  post "/hook" => "registrations#hook"
+  post "/registrations/:id" => "registrations#show"
+
+  resources :halalfoodhunt_seos
+  resources :business_add_ons
   
   resources :friends_cards do
    collection do
