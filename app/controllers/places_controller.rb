@@ -15,10 +15,8 @@ class PlacesController < ApplicationController
     @highlight_id = Highlight.find_by(name: params[:highlight]).id
     @places = Place.joins(:features).where(features: {highlight_id: @highlight_id})
     @search = Place.ransack(params[:q])
-    @search.sorts = 'created_at DESC' if @search.sorts.empty?
     else
     @search = Place.ransack(params[:q])
-    @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @places = @search.result.where(draft: false)
     end
     @qualifying_type = QualifyingType.all
