@@ -692,6 +692,25 @@ body {
     background-size: cover;
 }
 
+@media (min-width: 768px) {
+    #left-friend {
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        width: 65%;
+        overflow-y: hidden;
+    }
+    #right-friend {
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        right: 0;
+        width: 35%;
+    }
+}
+
+
 .col-center {
     float: none;
     margin-right: auto;
