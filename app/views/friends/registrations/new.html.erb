@@ -20,10 +20,10 @@
           <%= f.email_field :email, autofocus: true %>
         </div>
         <div class="field">
-          <% if @minimum_password_length %>
+          <%= f.password_field :password, autocomplete: "off" %>
+          % if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
         </div>
         <div class="actions">
           <%= f.submit "Sign Up", { class: 'btn btn-block btn-raised btn-primary' } %>
