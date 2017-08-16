@@ -67,65 +67,16 @@ Rails.application.routes.draw do
   get 'pages/friends_rewards_results'
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
-  
-  resources :registrations
-  post "/hook" => "registrations#hook"
-  post "/registrations/:id" => "registrations#show"
 
   resources :halalfoodhunt_seos
-  resources :business_add_ons
-  
-  resources :friends_cards do
-   collection do
-      get :edit_multiple
-      put :update_multiple
-    end
-  end
-  resources :verifying_types
-  resources :users_testimonials
-  resources :featured_articles
-  resources :listings
-  resources :supermarket_highlights
-  resources :supermarkets do
-     collection do
-      get :edit_multiple
-      put :update_multiple
-    end
-  end
   resources :grocer_service_types
-  resources :food_delivery_types
-  resources :food_deliveries do
-     collection do
-      get :edit_multiple
-      put :update_multiple
-    end
-  end
   resources :supplier_highlights
   resources :grocer_types
-  resources :online_grocers do
-     collection do
-      get :edit_multiple
-      put :update_multiple
-    end
-  end
   resources :catering_types
   resources :open_or_closes
   resources :price_ranges
   resources :place_types
   resources :regions
-  resources :supplier_types
-  resources :friends_rewards do
-     collection do
-      get :all
-      put :update_all
-    end
-  end
-  resources :suppliers do
-     collection do
-      get :edit_multiple
-      put :update_multiple
-    end
-  end
   resources :product_types
   resources :product_sources
   resources :establishment_types
@@ -141,6 +92,48 @@ Rails.application.routes.draw do
   resources :locations
   resources :qualifying_types
   resources :qualifyings
+  resources :special_tags
+  resources :days
+  resources :food_items
+  resources :places_menus
+  resources :supplier_types
+  resources :food_delivery_types
+  resources :business_add_ons
+  resources :verifying_types
+  resources :users_testimonials
+  resources :featured_articles
+  resources :listings
+  resources :supermarket_highlights
+  resources :supermarkets do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
+  resources :food_deliveries do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
+  resources :online_grocers do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
+  resources :friends_rewards do
+     collection do
+      get :all
+      put :update_all
+    end
+  end
+  resources :suppliers do
+     collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
   resources :lessons do
      collection do
       get :edit_multiple
@@ -167,13 +160,18 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-  resources :special_tags
-  resources :days
-  resources :food_items
-  resources :places_menus
+  resources :friends_cards do
+   collection do
+      get :edit_multiple
+      put :update_multiple
+    end
+  end
+  resources :registrations
+  post "/hook" => "registrations#hook"
+  post "/registrations/:id" => "registrations#show"
  
-  devise_for :merchants, controllers: { registrations: "merchants/registrations" }
-  devise_for :friends, controllers: { registrations: "friends/registrations" }
+  devise_for :merchants, controllers: { registrations: "merchants/registrations", sessions: "merchants/sessions" }
+  devise_for :friends, controllers: { registrations: "friends/registrations", sessions: "friends/sessions" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
