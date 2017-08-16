@@ -686,7 +686,14 @@ body {
 }
 
 .sign-up-left {
-    background: url(http://friends.jumaiyah.com/wp-content/uploads/2017/08/FRIENDS-Card-bg.jpg) no-repeat left bottom;
+    background: url(http://friends.jumaiyah.com/wp-content/uploads/2017/08/FRIENDS-Card.jpg) no-repeat left bottom;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.sign-in-left {
+    background: url(http://friends.jumaiyah.com/wp-content/uploads/2017/08/FRIENDS-Card-green.jpg) no-repeat left bottom;
     height: 100%;
     width: 100%;
     background-size: cover;
