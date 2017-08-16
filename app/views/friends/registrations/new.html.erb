@@ -26,10 +26,10 @@
           <% end %><br />
         </div>
         <br>
-        <div class="actions">
-          <%= f.submit "Sign Up", { class: 'btn btn-block btn-raised btn-primary' } %>
-        </div>
-        <% end %>
+        <p>By creating an account, you agree to our <a href="#">terms.</a></p>
+			<%= f.submit 'Continue', :class => 'btn btn-block btn-primary' %><br>
+			<p>Have an account? <%= render "friends/shared/links" %></p>
+			<% end %>
 		</div>
 	</div>
 </div>
