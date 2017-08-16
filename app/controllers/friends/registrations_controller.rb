@@ -11,7 +11,7 @@ class Friends::RegistrationsController < Devise::RegistrationsController
 	end
   # def new
   #   super
-  def after_sign_in_path_for(friends)
+  def after_sign_in_path_for(friend)
   root_path
   end# end
   
