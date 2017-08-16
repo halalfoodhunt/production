@@ -702,6 +702,7 @@ body {
 @media (min-width: 768px) {
     #left-friend {
         position: absolute;
+        top: 0;
         bottom: 0;
         left: 0;
         width: 65%;
@@ -709,6 +710,7 @@ body {
     }
     #right-friend {
         position: absolute;
+        top: 0;
         bottom: 0;
         right: 0;
         width: 35%;
