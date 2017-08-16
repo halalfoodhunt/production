@@ -1,4 +1,5 @@
 class Registration < ActiveRecord::Base
+  belongs_to :friend
   belongs_to :friends_card
   has_one :card
   accepts_nested_attributes_for :card

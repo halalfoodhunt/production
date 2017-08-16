@@ -1,13 +1,14 @@
-<div class="container-fluid sign-up" style="background:#e72436;">
-  <div class="container container-table">
-    <div class="row vertical-center-row">
-      <div class="col-md-6 col-md-offset-3" style="padding:25px; box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22); background:rgba(255,255,255,0.6);">
-        <p><center><img src="http://halalfoodhunt.com/wp-content/uploads/2016/03/HFFH_LOGO.png" alt="halalfoodhunt logo" class="img-rounded" style="width:100px; height:80px;"></center></p>
-        <h3><center>FRIENDS LOGIN</center></h3>
-        <p><center>Login here if you already have an account with us!</center>
-        </p><hr>
-      </center>
-      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render 'layouts/header' %>
+<div class="container-fluid">
+	<div class="row">
+		<div style="padding:0; background:none;" class="col-md-12" id="left-friend">
+			<div class="sign-in-left"></div>
+		</div>
+		<div class="col-md-12 container padding-55" id="right-friend" style="background:#fff;" >
+			<h3>FRIENDS LOGIN</h3>
+			<h5><br>Login here if you already have an account with us!</h5>
+			<br>
+			 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.email_field :email, autofocus: true %>
       </div>
@@ -28,6 +29,6 @@
       <% end %>
       <hr>
       <p><center><%= render "devise/shared/links" %></center></p>
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
