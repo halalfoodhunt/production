@@ -11,8 +11,8 @@ class Friends::RegistrationsController < Devise::RegistrationsController
 	end
   # def new
   #   super
-  def after_sign_in_path_for(friend)
-  root_path
+  def after_sign_up_path_for(friends)
+  friends_cards_path
   end# end
   
    def update_resource(resource, params)
