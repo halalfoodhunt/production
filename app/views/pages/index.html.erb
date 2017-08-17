@@ -197,7 +197,11 @@
 						<li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
 						<li><a href="http://friends.jumaiyah.com">Friends</a></li>
 					</ul>
-					
+					<% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
+        				<% if halalfoodhunt_seo.home == true %>
+        					<p><%= halalfoodhunt_seo.meta_description %></p>
+        				<% end %>
+        			<% end %>
 				</div>
 			</nav>
 <script>
