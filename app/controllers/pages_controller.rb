@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   before_filter :is_admin?, only: [:admin_dashboard, :merchant_dashboard, :categories, :places, :ecommers, :food_deliveries, :caterers, :online_grocers, :lessons, :suppliers, :supermarkets]
   
   def index
-   @halalfoodhunt_seos = HalalfoodhuntSeos.all
    @search = Place.ransack(params[:q])
    @places = @search.result.where(draft: false).where(featured: true).limit(4)
    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false).where(featured: true).limit(4)
