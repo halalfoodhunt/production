@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   
   get 'pages/friends_rewards'
   
-  get 'pages/friends'
+  get 'friends', to: 'pages#friends'
   
   get 'pages/places_friends_rewards'
   
