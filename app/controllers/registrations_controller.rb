@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  before_action :authenticate_friend!, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
   # GET /registrations
