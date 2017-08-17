@@ -37,6 +37,7 @@ class PagesController < ApplicationController
  end
 
  def about_us
+     @halalfoodhunt_seos = HalalfoodhuntSeo.all
  end
 
  def terms_of_use
