@@ -197,6 +197,9 @@
 						<li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
 						<li><a href="http://friends.jumaiyah.com">Friends</a></li>
 					</ul>
+					<% @halalfoodhunt_seos.each do |seo| %>
+					<%= seo.meta_description %>
+					<% end %>
 				</div>
 			</nav>
 <script>

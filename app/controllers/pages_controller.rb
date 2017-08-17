@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.filter_by_params(params)
    end
+   @halalfoodhunt_seos = HalalfoodhuntSeos.where(home: true)
   end 
 
  def merchant_dashboard
