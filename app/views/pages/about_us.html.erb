@@ -1,5 +1,7 @@
 <h1>Pages#about_us</h1>
 <p>Find me in app/views/pages/about_us.html.erb</p>
+<% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
         <% if halalfoodhunt_seo.home == true %>
         <p><%= halalfoodhunt_seo.meta_description %></p>
+        <% end %>
         <% end %>
