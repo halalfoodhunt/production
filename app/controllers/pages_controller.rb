@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_filter :is_admin?, only: [:admin_dashboard, :merchant_dashboard, :categories, :places, :ecommers, :food_deliveries, :caterers, :online_grocers, :lessons, :suppliers, :supermarkets]
   
   def index
+   @halalfoodhunt_seos = HalalfoodhuntSeos.all
    @search = Place.ransack(params[:q])
    @places = @search.result.where(draft: false).where(featured: true).limit(4)
    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false).where(featured: true).limit(4)
@@ -22,7 +23,6 @@ class PagesController < ApplicationController
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.filter_by_params(params)
    end
-   @halalfoodhunt_seos = HalalfoodhuntSeos.all
   end 
 
  def merchant_dashboard
