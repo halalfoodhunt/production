@@ -5,6 +5,7 @@ class CaterersController < ApplicationController
   # GET /caterers
   # GET /caterers.json
   def index
+    @halalfoodhunt_seos = HalalfoodhuntSeo.all
     @search = Caterer.ransack(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @caterers = @search.result.where(draft: false)
