@@ -18,9 +18,23 @@
         <% if halalfoodhunt_seo.home == true %>
         <span class="label label-success">HOME</span>
         <% end %>
-        <% if halalfoodhunt_seo.places == true %>
+        </td>
+        <td><%= halalfoodhunt_seo.meta_description %></td>
+        <td><%= link_to 'Show', halalfoodhunt_seo %></td>
+        <td><%= link_to 'Edit', edit_halalfoodhunt_seo_path(halalfoodhunt_seo) %></td>
+        <td><%= link_to 'Destroy', halalfoodhunt_seo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      
+          <% if halalfoodhunt_seo.places == true %>
         <span class="label label-success">PLACES</span>
         <% end %>
+        </td>
+        <td><%= halalfoodhunt_seo.meta_description %></td>
+        <td><%= link_to 'Show', halalfoodhunt_seo %></td>
+        <td><%= link_to 'Edit', edit_halalfoodhunt_seo_path(halalfoodhunt_seo) %></td>
+        <td><%= link_to 'Destroy', halalfoodhunt_seo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+     <tr>
         <% if halalfoodhunt_seo.ecommers == true %>
         <span class="label label-success">ECOMMERS</span>
         <% end %>
@@ -78,13 +92,8 @@
         <% if halalfoodhunt_seo.suppliers_friends_rewards == true %>
         <span class="label label-success">SUPPLIERS FRIENDS REWARDS</span>
         <% end %>
-        </td>
-        <td><%= halalfoodhunt_seo.meta_description %></td>
-        <td><%= link_to 'Show', halalfoodhunt_seo %></td>
-        <td><%= link_to 'Edit', edit_halalfoodhunt_seo_path(halalfoodhunt_seo) %></td>
-        <td><%= link_to 'Destroy', halalfoodhunt_seo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
+    </tr>
   </tbody>
 </table>
 
