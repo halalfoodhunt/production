@@ -58,13 +58,23 @@
    </div></center>
 </div>
   <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
-    <div class="container">
-     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Be A Merchant</a></li>
-      <li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
-      <li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
-      <li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
-      <li><a href="http://friends.jumaiyah.com">Friends</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://sg.halalfoodhunt.com/corporate">Corporate Services</a></li>
+          <li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Merchant Listing</a></li>
+          <li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
+          <li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
+          <li><a href="http://friends.jumaiyah.com">Friends</a></li>
+        </ul>
+      </div>
+      <div class="container">
+        <% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
+        <% if halalfoodhunt_seo.ecommers == true %>
+        <small class="text-justify"><%= halalfoodhunt_seo.meta_description %></small>
+        <% end %>
+        <% end %>
+      </div>
+      <br>
+    </div>
+  </nav>
