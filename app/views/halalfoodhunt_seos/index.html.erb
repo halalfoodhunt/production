@@ -15,6 +15,33 @@
   <tbody>
     <% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
       <tr>
+        <% if halalfoodhunt_seo.home == true %>
+        <span class="label label-success">HOME</span>
+        <% end %>
+        <% if halalfoodhunt_seo.places == true %>
+        <span class="label label-success">PLACES</span>
+        <% end %>
+        <% if halalfoodhunt_seo.ecommers == true %>
+        <span class="label label-success">ECOMMERS</span>
+        <% end %>
+        <% if halalfoodhunt_seo.caterers == true %>
+        <span class="label label-success">CATERERS</span>
+        <% end %>
+        <% if halalfoodhunt_seo.food_deliveries == true %>
+        <span class="label label-success">FOOD DELIVERIES</span>
+        <% end %>
+        <% if halalfoodhunt_seo.online_grocers == true %>
+        <span class="label label-success">ONLINE GROCERS</span>
+        <% end %>
+        <% if halalfoodhunt_seo.academies == true %>
+        <span class="label label-success">ACADEMIES</span>
+        <% end %>
+        <% if halalfoodhunt_seo.suppliers== true %>
+        <span class="label label-success">SUPPLIERS</span>
+        <% end %>
+        <% if halalfoodhunt_seo.supermarkets == true %>
+        <span class="label label-success">SUPERMARKETS</span>
+        <% end %>
         <td><% if halalfoodhunt_seo.about_us == true %>
         <span class="label label-success">ABOUT US</span>
         <% end %>
@@ -38,9 +65,6 @@
         <% end %>
         <% if halalfoodhunt_seo.getting_listed == true %>
         <span class="label label-success">GETTING LISTED</span>
-        <% end %>
-        <% if halalfoodhunt_seo.home == true %>
-        <span class="label label-success">HOME</span>
         <% end %>
         <% if halalfoodhunt_seo.lessons_friends_rewards == true %>
         <span class="label label-success">LESSONS FRIENDS REWARDS</span>

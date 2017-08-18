@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
+    @halalfoodhunt_seos = HalalfoodhuntSeo.all
     if params[:special_tag].present? 
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.joins(:admin_tags).where(admin_tags: {special_tag_id: @special_tag_id})
