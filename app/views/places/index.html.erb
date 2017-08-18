@@ -13,78 +13,82 @@
       <%= render 'places/advanced_search' %>
       <br>
       <div class="col-md-12">
-       <div class="row">
-        <div class="col-md-9"><h5 style="padding:20px 0">SHOWING <b><%= @places.count %></b> Halal establishments IN ALL CITIES, SINGAPORE</h5></div>
-        <div class="col-md-3 text-right" style="margin-top:20px;">
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><center><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                <li><center><h5><%= sort_link(@search, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                <li><center><h5><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                <li><center><h5><%= sort_link(@search, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-              </ul>
+        <div class="row">
+          <div class="col-md-9"><h5 style="padding:20px 0">SHOWING <b><%= @places.count %></b> Halal establishments IN ALL CITIES, SINGAPORE</h5></div>
+          <div class="col-md-3 text-right" style="margin-top:20px;">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><center><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <% @places.each do |place| %>
-          <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
-            <% if place.verified == true %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
-            <% else %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span> 
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
-              <% unless place.friends_rewards_terms.blank? %>
-              <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
-              <% end %>
-            </span>
-            <div style="padding:0px; height:380px; position:relative;" class="thumbnail">
-              <%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
-              <div class="caption">
-                <div class="media">
-                  <div class="media-left">
-                    <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
-                  </div>
-                  <div class="media-body">
-                    <h5 class="media-heading title"><%= link_to place.business_name, place_path(place) %></h5>
-                    <p><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+          <div class="row">
+            <% @places.each do |place| %>
+            <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
+              <% if place.verified == true %>
+              <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
+              <% else %>
+              <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
+              <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span> 
+              <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
+                <% unless place.friends_rewards_terms.blank? %>
+                <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
+                <% end %>
+              </span>
+              <div style="padding:0px; height:380px; position:relative;" class="thumbnail">
+                <%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
+                <div class="caption">
+                  <div class="media">
+                    <div class="media-left">
+                      <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
+                    </div>
+                    <div class="media-body">
+                      <h5 class="media-heading title"><%= link_to place.business_name, place_path(place) %></h5>
+                      <p><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
-      <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
-				<div class="container">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="http://sg.halalfoodhunt.com/corporate">Corporate Services</a></li>
-						<li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Merchant Listing</a></li>
-						<li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
-						<li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
-						<li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
-						<li><a href="http://friends.jumaiyah.com">Friends</a></li>
-					</ul>
-					</div>
-					<div class="container">
-					<% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
-        				<% if halalfoodhunt_seo.places == true %>
-        					<small class="text-justify"><%= halalfoodhunt_seo.meta_description %></small>
-        				<% end %>
-        			<% end %>
-        			</div>
-        			<br>
-				</div>
-			</nav>
-      <script type="text/javascript">
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {do_clustering: false}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-      </script>
+    </div>
+  </div>
+</div>
+    <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://sg.halalfoodhunt.com/corporate">Corporate Services</a></li>
+          <li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Merchant Listing</a></li>
+          <li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
+          <li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
+          <li><a href="http://friends.jumaiyah.com">Friends</a></li>
+        </ul>
+      </div>
+      <div class="container">
+        <% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
+        <% if halalfoodhunt_seo.places == true %>
+        <small class="text-justify"><%= halalfoodhunt_seo.meta_description %></small>
+        <% end %>
+        <% end %>
+      </div>
+      <br>
+    </div>
+  </nav>
+  <script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {do_clustering: false}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+  </script>
