@@ -12,7 +12,7 @@ class Friend < ActiveRecord::Base
   end
   
   belongs_to :friends_card
-  has_many :registrations
+  has_many :registrations, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   acts_as_liker
