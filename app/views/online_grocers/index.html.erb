@@ -68,4 +68,12 @@
       <li><a href="http://friends.jumaiyah.com">Friends</a></li>
     </ul>
   </div>
+   <div class="container">
+        <% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
+        <% if halalfoodhunt_seo.online_grocers == true %>
+        <small class="text-justify"><%= halalfoodhunt_seo.meta_description %></small>
+        <% end %>
+        <% end %>
+      </div>
+      <br>
 </nav>
