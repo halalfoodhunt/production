@@ -76,42 +76,17 @@
   <br>
   <%= radio_button_tag :payment_method, "paypal" %>
   <%= image_tag "http://friends.jumaiyah.com/wp-content/uploads/2017/08/196566.png" %><br>
-  <%= radio_button_tag :payment_method, "card", checked: true %>
-  <%= image_tag "http://friends.jumaiyah.com/wp-content/uploads/2017/08/credit-card-visa-and-master-card-transparent-png.png", style: "max-width: 100px;" %>
   <script>
-  $(document).on("click", "#new_registration input[type='radio']",
-    function(e) {
-      if ($("#payment_method_card:checked").val() == "card") {
-        $("fieldset.card_info").show();
-      }
-      else {
-        $("fieldset.card_info").hide();
-      }
-    });
+              $(document).on("click", "#new_registration input[type='radio']",
+                function(e) {
+                  if ($("#payment_method_card:checked").val() == "card") {
+                    $("fieldset.card_info").show();
+                  }
+                  else {
+                    $("fieldset.card_info").hide();
+                  }
+                });
   </script>
-  <fieldset class="card_info">
-    <legend>Credit Card Details</legend>
-    <%= f.fields_for :card do |c| %>
-    <div class="field">
-      <%= c.text_field :first_name %>
-    </div>
-    <div class="field">
-      <%= c.text_field :last_name %>
-    </div>
-    <div class="field">
-      <%= c.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
-    </div>
-    <div class="field">
-      <%= c.text_field :card_number %>
-    </div>
-    <div class="field">
-      <%= c.text_field :card_verification, label: "Card Verification Value (CVV)" %>
-    </div>
-    <div class="field">
-      <%= c.date_select :card_expires_on, discard_day: true, start_year: Date.today.year, end_year: (Date.today.year+10), add_month_numbers: true %>
-    </div>
-    <% end %>
-  </fieldset>
 </div>
 <div class="actions">
   <%= f.submit "Proceed To Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);" %>
