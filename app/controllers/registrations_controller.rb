@@ -66,7 +66,7 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:name, :ic_number, :date_of_birth, :contact_number, :email, :instagram_account, :facebook_ads, :facebook_newsfeed, :facebook_video, :instagram, :friends_card_id, :expiry_date, :card_number, :processing, :pending, :completed, card_attributes: [:first_name, :last_name, :card_type, :card_number, :card_verification, :card_expires_on] )
+      params.require(:registration).permit(:name, :ic_number, :date_of_birth, :contact_number, :email, :instagram_account, :facebook_ads, :facebook_newsfeed, :facebook_video, :instagram, :friends_card_id, :expiry_date, :card_number, :processing, :pending, :completed, :address_1, :address_1, :city, :zipcode, :notes, card_attributes: [:first_name, :last_name, :card_type, :card_number, :card_verification, :card_expires_on] )
     end
 end
 
