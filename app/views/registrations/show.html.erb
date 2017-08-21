@@ -14,15 +14,7 @@
     <li class="list-group-item"><strong>Name:</strong> <%= @registration.name %></li>
       <% if @registration.payment_method == "paypal" %>
     <li class="list-group-item"><strong>Payment method:</strong><%= @registration.payment_method.capitalize %></li>
-    <li class="list-group-item"><strong>Payment status:</strong><%= @registration.status %></li>
-    <li class="list-group-item"><strong>Paypal Transaction Identifier:</strong><%= @registration.transaction_id %></li>
-        <% else %>
-      <% end %>
-      <% if @registration.friends_card.recurring %>
-    <li class="list-group-item"><strong>Profile Identifier:</strong> <%= @registration.card.card_transaction.params["profile_id"] %></li>
-        <% else %>
-      <% end %>
-    <li class="list-group-item"><strong>Transaction Identifier:</strong><%= @registration.card.card_transaction.params["transaction_id"] %></li>
+    <% end %>
   </ul>
   </div>
   <div class="panel-footer"><small>NON-TRANSFERABLE
