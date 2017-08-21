@@ -31,16 +31,10 @@ class RegistrationsController < ApplicationController
    @registration = current_friend.registration.new(registration_params)
 
    @registration.card.ip_address = request.remote_ip
-    if @registration.save
+   if @registration.save
       case params['payment_method']
         when "paypal"
           redirect_to @registration.paypal_url(registration_path(@registration))
-        when "card"
-          if @registration.card.purchase
-            redirect_to registration_path(@registration), notice: @registration.card.card_transaction.message
-          else
-            redirect_to registration_path(@registration), alert: @registration.card.card_transaction.message
-          end
       end
     else
       render :new
