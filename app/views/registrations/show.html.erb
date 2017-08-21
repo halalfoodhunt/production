@@ -12,8 +12,17 @@
     <p>Thank you for subscribing with us! Cards are issued out every Monday. If you do not receive your card within 2 weeks of placing your order, please alert us at friends@halalfoodhunt.com.</p>
      <ul class="list-group">
     <li class="list-group-item"><strong>Name:</strong> <%= @registration.name %></li>
-      <% if @registration.payment_method == "paypal" %>
-    <li class="list-group-item"><strong>Payment method:</strong><%= @registration.payment_method.capitalize %></li>
+    <li class="list-group-item"><strong>Payment method:</strong> <%= @registration.payment_method.capitalize %></li>
+    <li class="list-group-item"><strong>Address 1:</strong> <%= @registration.address_1 %></li>
+    <li class="list-group-item"><strong>Address 2:</strong> <%= @registration.address_2 %></li>
+    <li class="list-group-item"><strong>City:</strong> <%= @registration.city %></li>
+    <li class="list-group-item"><strong>Zipcode:</strong> <%= @registration.zipcode %></li>
+    <li class="list-group-item"><strong>Notes:</strong> <%= @registration.notes %></li>
+    <% if @registration.payment_method == "paypal" %>
+    <li class="list-group-item">
+    <p><strong>Payment status:</strong><%= @registration.status %></p>
+    <li class="list-group-item">
+    <p><strong>Paypal Transaction Identifier:</strong><%= @registration.transaction_id %></p></li>
     <% end %>
   </ul>
   </div>
