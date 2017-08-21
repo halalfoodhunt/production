@@ -39,7 +39,5 @@ class Registration < ActiveRecord::Base
   end
 
   def payment_method
-    if card.first_name.empty? then "paypal"; else "card"; end
-  end
-
+    "paypal"
 end
