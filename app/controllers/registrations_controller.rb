@@ -15,7 +15,6 @@ class RegistrationsController < ApplicationController
 
   # GET /registrations/new
   def new
-    @current_friend = current_friend
     @registration = Registration.new
     @registration.build_card
     @friends_card = FriendsCard.find_by id: params["friends_card_id"]
@@ -28,7 +27,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations
   # POST /registrations.json
   def create
-   @registration = current_friend.registration.new(registration_params)
+   @registration = Registration.new(registration_params)
 
    @registration.card.ip_address = request.remote_ip
    if @registration.save
