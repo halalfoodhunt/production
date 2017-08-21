@@ -41,3 +41,4 @@ class Registration < ActiveRecord::Base
   def payment_method
     "paypal"
 end
+end
