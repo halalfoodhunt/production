@@ -11,6 +11,7 @@ class Friend < ActiveRecord::Base
     self.role ||= :free
   end
   
+  has_many :registrations, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   acts_as_liker
