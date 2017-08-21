@@ -27,10 +27,8 @@ class RegistrationsController < ApplicationController
   # POST /registrations
   # POST /registrations.json
   def create
-   @registration = Registration.new(registration_params)
-
-   @registration.card.ip_address = request.remote_ip
-   if @registration.save
+  @registration = Registration.new(registration_params)
+    if @registration.save
       case params['payment_method']
         when "paypal"
           redirect_to @registration.paypal_url(registration_path(@registration))
