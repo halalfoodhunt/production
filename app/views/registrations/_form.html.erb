@@ -14,6 +14,8 @@
   </ul>
 </div>
 <% end %>
+<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+<h4>Friends Card Details</h4>
 <div class="field">
   <%= f.hidden_field :friends_card_id, value: @friends_card.id %>
 </div>
@@ -48,12 +50,33 @@
 <div class="field">
   <%= f.check_box :instagram %>
 </div>
+</div>
+<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+<h4>Shipping Details</h4>
+<div class="field">
+  <%= f.text_field :address_1 %>
+</div>
+<div class="field">
+  <%= f.text_field :address_2 %>
+</div>
+<div class="field">
+  <%= f.text_field :city %>
+</div>
+<div class="field">
+  <%= f.text_field :zipcode %>
+</div>
+<div class="field">
+  <%= f.text_area :notes %>
+</div
+</div>
+<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+<h4>Payment Details</h4>
 <div class="field payment_method">
   <%= label_tag :payment_method %>
   <%= radio_button_tag :payment_method, "paypal" %>
-  <%= image_tag "ppcom.svg" %>
+  <%= image_tag "http://friends.jumaiyah.com/wp-content/uploads/2017/08/196566.png" %>
   <%= radio_button_tag :payment_method, "card", checked: true %>
-  <%= image_tag "credit-card.jpg", style: "max-width: 100px;" %>
+  <%= image_tag "http://friends.jumaiyah.com/wp-content/uploads/2017/08/credit-card-visa-and-master-card-transparent-png.png", style: "max-width: 100px;" %>
   <script>
   $(document).on("click", "#new_registration input[type='radio']",
     function(e) {
@@ -66,7 +89,7 @@
     });
   </script>
   <fieldset class="card_info">
-    <legend>Card info</legend>
+    <legend>Credit Card Details</legend>
     <%= f.fields_for :card do |c| %>
     <div class="field">
       <%= c.text_field :first_name %>
@@ -90,7 +113,8 @@
   </fieldset>
 </div>
 <div class="actions">
-  <%= f.submit "Registration Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);" %>
+  <%= f.submit "Proceed To Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);" %>
+  </div>
   <script>
   
   $("form#new_registration").submit( function() {
