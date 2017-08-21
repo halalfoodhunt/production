@@ -171,7 +171,7 @@ Rails.application.routes.draw do
   post "/registrations/:id" => "registrations#show"
  
   devise_for :merchants, controllers: { registrations: "merchants/registrations" }
-  devise_for :friends, controllers: { registrations: "friends/registrations", sessions: "friends/sessions" }
+  devise_for :friends, controllers: { registrations: "friends/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
