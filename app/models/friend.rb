@@ -11,7 +11,6 @@ class Friend < ActiveRecord::Base
     self.role ||= :free
   end
   
-  belongs_to :friends_card
   has_many :registrations, dependent: :destroy
   has_many :comments, dependent: :destroy
 
