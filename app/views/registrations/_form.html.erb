@@ -69,27 +69,21 @@
     <legend>Card info</legend>
     <%= f.fields_for :card do |c| %>
     <div class="field">
-      <%= c.label :first_name %>
       <%= c.text_field :first_name %>
     </div>
     <div class="field">
-      <%= c.label :last_name %>
       <%= c.text_field :last_name %>
     </div>
     <div class="field">
-      <%= c.label :card_type %>
       <%= c.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
     </div>
     <div class="field">
-      <%= c.label :card_number %>
       <%= c.text_field :card_number %>
     </div>
     <div class="field">
-      <%= c.label :card_verification, "Card Verification Value (CVV)" %>
-      <%= c.text_field :card_verification %>
+      <%= c.text_field :card_verification, label: "Card Verification Value (CVV)" %>
     </div>
     <div class="field">
-      <%= c.label :card_expires_on %>
       <%= c.date_select :card_expires_on, discard_day: true, start_year: Date.today.year, end_year: (Date.today.year+10), add_month_numbers: true %>
     </div>
     <% end %>
