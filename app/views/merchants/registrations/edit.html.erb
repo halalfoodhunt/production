@@ -39,7 +39,7 @@
   <% end %>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin:20px 0 20px 0;">
     <h4>Welcome, <strong><%= current_merchant.contact_person_name %></strong>!</h4>
-     <%= bootstrap_form_for(@merchant, as: merchant, url: merchant_registration_path(merchant), html: { method: :put }) do |f| %>
+     <%= bootstrap_form_for(@merchant, as: @merchant, url: merchant_registration_path(@merchant), html: { method: :put }) do |f| %>
     <p>All the information that you share with us here will not be shared with the public. It is only meant for us to contact you.<br>
       <%= devise_error_messages! %></p>
     </div>
