@@ -1,6 +1,6 @@
 <h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= bootstrap_form_for(@merchant, as: @merchant, url: merchant_password_path(@merchant), label_errors: true, inline_errors: true) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
