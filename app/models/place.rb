@@ -41,17 +41,17 @@ class Place < ActiveRecord::Base
   belongs_to :friends_reward
   belongs_to :verifying_type
   belongs_to :listing
-  has_many :highlights, :through => :features
-  has_many :features
+  has_many :highlights, :through => :features, dependent: :destroy
+  has_many :features, dependent: :destroy
   has_many :places_menus, :through => :places_menus_categories
-  has_many :places_menus_categories
-  has_many :special_tags, :through => :admin_tags
-  has_many :admin_tags
-  has_many :cuisine_types, :through => :menu_types
-  has_many :menu_types
-  has_many :dining_types, :through => :eateries
-  has_many :eateries
-  has_many  :opening_hours
+  has_many :places_menus_categories, dependent: :destroy
+  has_many :special_tags, :through => :admin_tags, dependent: :destroy
+  has_many :admin_tags, dependent: :destroy
+  has_many :cuisine_types, :through => :menu_types, dependent: :destroy
+  has_many :menu_types, dependent: :destroy
+  has_many :dining_types, :through => :eateries, dependent: :destroy
+  has_many :eateries, dependent: :destroy
+  has_many  :opening_hours, dependent: :destroy
   accepts_nested_attributes_for  :opening_hours
   has_many :comments, dependent: :destroy
 
