@@ -7,7 +7,8 @@
 			<h3>FRIENDS LOGIN</h3>
 			<h5><br>Login here if you already have an account with us!</h5>
 			<br>
-			 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			
+			 <%= bootstrap_form_for(@friend, as: @friend, url: friend_session_path(@friend), label_errors: true, inline_errors: true) do |f| %>
       <div class="field">
         <%= f.email_field :email, autofocus: true %>
       </div>
