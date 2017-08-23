@@ -142,7 +142,9 @@ class PlacesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
-      @place = Place.friendly.find(params[:id])
+      @place = Place.publish.friendly.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        redirect_to root_path
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

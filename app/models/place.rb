@@ -2,6 +2,13 @@ class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
   
+  scope :publish, -> {
+    where(:draft => false)
+  }
+  scope :pending, -> {
+    where(:draft => true)
+  }
+  
   before_create :set_expiration_date
   before_create :set_halal_expiry
   after_create :send_admin_email
