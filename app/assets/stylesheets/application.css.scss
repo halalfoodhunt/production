@@ -823,14 +823,6 @@ body {
 
 
 /* Sidebar navigation */
-.nav-pills>li>a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    color:#22211d;
-    border-left: 8px solid #89222b;
-    border-radius: 0px;
-}
 
 .nav-sidebar {
     margin-right: -21px;
@@ -1338,22 +1330,11 @@ img.color_flip:hover {
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
 /*END Form Wizard*/
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-    font-family: 'Montserrat', sans-serif;
-    font-weight:500;
-    text-transform: uppercase;
-}
 
 .nav-justified>li>a, .nav-tabs.nav-justified>li>a {
     font-family: 'Montserrat', sans-serif;
     font-weight:500;
     text-transform: uppercase;
-}
-
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-    border-radius: 0;
-    background-color: #cc3333;
-    color: #fff;
 }
 
 .messages {
