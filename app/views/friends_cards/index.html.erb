@@ -9,15 +9,13 @@
       </center>
       </div>
        <div class="col-sm-12 col-md-8" style="padding:25px; background:#ececec;">
-         <p class="p-15"><center>FRIENDS Card</center></p>
-        <h4><center><code>$18.00/Year</code></center></h4>
-        <div class="col-sm-12 col-md-12" style="padding:25px; background:white;">
+         <p class="p-15"><b>FRIENDS Card</b></p>
+        <h4><code>$18.00/Year</code></h4>
 <% @friends_cards.each do |friends_card| %>
         <%= link_to new_registration_path(friends_card_id: friends_card.id), class: "ruby" do %>
-           <center><button class="btn btn-primary" style="color: white;background: rgb(242, 118, 73);">Subscribe Now!</button></center>
+           <center><button class="btn btn-block btn-primary">Subscribe Now!</button></center>
         <% end %>
       <% end %>
-     </div>
       </div>
    </div>
  </div>
