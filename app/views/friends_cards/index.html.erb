@@ -9,8 +9,32 @@
       </center>
       </div>
        <div class="col-sm-12 col-md-8" style="padding:25px; background:#ececec;">
-         <p class="p-15"><b>FRIENDS Card</b></p>
-        <h4><code>$18.00/Year</code></h4>
+         <p class="p-15"><b>Subscription</b></p>
+         <p class="p-25"><b>FRIENDS Rewards Card</b></p>
+        <h3>$18.00/Year</h4>
+        <ul class="nav nav-pills">
+  <li class="active"><a data-toggle="pill" href="#home">Description</a></li>
+  <li><a data-toggle="pill" href="#menu1">Terms & Conditions</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>Description</h3>
+    <p>DEAR HALAL FOODIES, EATERS OF HALAL FOOD, FRIENDS. YOU WILL BE REWARDED FOR CHOOSING HALAL.
+We made this one with all our halal food hunters in mind. All merchants listed with halalfoodhunt.com are either halal-certified or Muslim-owned.
+
+BE OUR FRIEND, FOR ONLY $18/YEAR.
+Scroll down and fill in the form to get one for yourself today!
+
+Note: Cards are issued out every Monday. If you do not receive your card within 2 weeks of placing your order, please alert us at friends@halalfoodhunt.com.</p>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Terms</h3>
+    <p>VALIDITY OF USE
+• Card is valid for use at all affiliate merchants of halalfoodhunt.com that bear the “We reward FRIENDS of halalfoodhunt.com” decal, and/or those that are listed on the rewards page here.
+• The FRIENDS Rewards membership card must be presented to affiliate merchants BEFORE payment in order for the cardholder to be eligible for associated rewards.</p>
+  </div>
+</div>
 <% @friends_cards.each do |friends_card| %>
         <%= link_to new_registration_path(friends_card_id: friends_card.id), class: "ruby" do %>
            <center><button class="btn btn-block btn-primary">Subscribe Now!</button></center>
