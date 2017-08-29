@@ -1,22 +1,23 @@
 <div class="container-fluid friends-purchase">
   <div class="container container-table">
     <div class="row vertical-center-row">
-      <div class="col-md-4 col-md-offset-4" style="padding:0px; box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22); background:rgba(255,255,255,1);">
-        <div class="col-sm-12 col-md-12" style="padding:25px; background:#ececec;">
+      <div class="col-md-8 col-md-offset-2" style="padding:0px; box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22); background:rgba(255,255,255,1);">
+        <div class="col-sm-12 col-md-4" style="padding:25px; background:#ececec;">
         <p><center> <img class="img-responsive" src="http://friends.jumaiyah.com/wp-content/uploads/2017/04/friendscard_card-01.png" alt="Chania"></center></p>
-        <h3><center>FRIENDS Card</center></h3>
-        <h4><center><code>$18.00/Year</code></center></h4>
         </p>
       </center>
       </div>
-      <div class="wave"></div>
-      <div class="col-sm-12 col-md-12" style="padding:25px; background:white;">
+       <div class="col-sm-12 col-md-8" style="padding:25px; background:#ececec;">
+         <h3><center>FRIENDS Card</center></h3>
+        <h4><center><code>$18.00/Year</code></center></h4>
+        <div class="col-sm-12 col-md-12" style="padding:25px; background:white;">
 <% @friends_cards.each do |friends_card| %>
         <%= link_to new_registration_path(friends_card_id: friends_card.id), class: "ruby" do %>
            <center><button class="btn btn-primary" style="color: white;background: rgb(242, 118, 73);">Subscribe Now!</button></center>
         <% end %>
       <% end %>
      </div>
+      </div>
    </div>
  </div>
 </div>
