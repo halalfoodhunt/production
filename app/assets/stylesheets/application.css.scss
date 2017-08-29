@@ -1467,11 +1467,13 @@ small {
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-    background-color: none;
-    border-bottom: 2px solid #e73c25;
+    background-color: transparent;
+    color: #22211d;
+    border-bottom: 3px solid #e73c25;
 }
 
 .nav-pills>li>a {
     border-radius: 0;
-    padding: 10px 15px 10px 0;
+    padding: 8px 15px 8px 0;
+    border-bottom: 3px solid #ececec;
 }
