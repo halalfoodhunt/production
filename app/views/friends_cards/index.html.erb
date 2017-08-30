@@ -11,7 +11,7 @@
     <div class="col-sm-12 col-md-8" style="padding:25px; background:#ececec;">
      <p class="p-15"><b>Subscription</b></p>
      <p class="p-20"><b>FRIENDS Rewards Card</b></p>
-     <h4>$18.00/Year</h4>
+     <h4 style="color:#e73c25">$18.00/Year</h4>
      <ul class="nav nav-pills">
       <li class="active"><a data-toggle="pill" href="#home">DESCRIPTION</a></li>
       <li><a data-toggle="pill" href="#menu1">TERMS OF USE</a></li>
@@ -42,7 +42,7 @@
     </div>
     <% @friends_cards.each do |friends_card| %>
     <%= link_to new_registration_path(friends_card_id: friends_card.id), class: "ruby" do %>
-    <center><button class="btn btn-block btn-primary">Proceed to register</button></center>
+    <center><button class="btn btn-block btn-danger">Proceed to register</button></center>
     <% end %>
     <% end %>
   </div>
