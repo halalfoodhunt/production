@@ -30,12 +30,19 @@
       <div id="menu1" class="tab-pane fade">
         <br><p><b>VALIDITY OF USE</b><br>
         • Card is valid for use at all affiliate merchants of halalfoodhunt.com that bear the “We reward FRIENDS of halalfoodhunt.com” decal, and/or those that are listed on the rewards page here.<br>
-        • The FRIENDS Rewards membership card must be presented to affiliate merchants BEFORE payment in order for the cardholder to be eligible for associated rewards.</p>
+        • The FRIENDS Rewards membership card must be presented to affiliate merchants BEFORE payment in order for the cardholder to be eligible for associated rewards.<br>
+        <br><b>VALIDITY DATE</b><br>
+        • 1 year from the date of issue.<br>
+        <br><b>PROCESSING LEADTIME</b><br>
+• Applications without the compulsory information duly completed will not be processed.<br>
+• Processing of the card will take 2‐4 weeks after payment is made.<br>
+• Please call Membership Hotline at 6814 4923 or email to friends@halalfoodhunt.com immediately if you did not receive the card after 4 weeks.<br>
+        </p>
       </div>
     </div>
     <% @friends_cards.each do |friends_card| %>
     <%= link_to new_registration_path(friends_card_id: friends_card.id), class: "ruby" do %>
-    <center><button class="btn btn-block btn-primary">Next</button></center>
+    <center><button class="btn btn-block btn-primary">Proceed to register</button></center>
     <% end %>
     <% end %>
   </div>
