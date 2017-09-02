@@ -18,7 +18,7 @@
           <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
         </div>
         <div class="media-body">
-          <h6 class="media-heading place-title"><%= link_to place.business_name, place_path(place) %></h6>
+          <p class="media-heading label-list"><b><%= link_to place.business_name, place_path(place) %></b></p>
           <p><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
         </div>
       </div>
