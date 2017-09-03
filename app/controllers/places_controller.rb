@@ -62,7 +62,7 @@ class PlacesController < ApplicationController
     @current_merchant = current_merchant
     @listing = Listing.all.order('created_at DESC').limit(1)
     @place = Place.new(listing_id: params[:listing_id])
-    @place.opening_hours.build
+    7.times { @place.opening_hours.build }
   end
 
   # GET /places/1/edit
@@ -104,7 +104,7 @@ class PlacesController < ApplicationController
     @place.highlight_ids = params[:place][:highlight_ids]
     @place.dining_type_ids = params[:place][:dining_type_ids]
     @place.places_menu_ids = params[:place][:places_menu_ids]
-    @place.opening_hours.build
+    7.times { @place.opening_hours.build }
   end
 
   # DELETE /places/1
