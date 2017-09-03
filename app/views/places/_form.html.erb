@@ -272,21 +272,15 @@
  <div class="col-xs-6 col-md-4"><h5><strong>OPENING HOURS</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
     <div class="field">
-    <%= f.fields_for :opening_hours do |time| %> 
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.collection_select :open_or_close_id, OpenOrClose.all, :id, :name, autofocus: true, layout: :inline, label: "Open/Close" %>
+    
+    <div id="opening_hours">
+      <%= f.fields_for :opening_hours do |time| %> 
+        <%= render 'day_fields', f: time %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add opening hour', f, :opening_hours %>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :opening, label: "From" %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :closing, label: "To" %>
-      <%= link_to_remove_fields "remove", f %>
-    </div>
-    <% end %>
 </div>
 </div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">

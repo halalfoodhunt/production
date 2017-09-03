@@ -1,16 +1,16 @@
-<div class="field">
-    <%= f.fields_for :opening_hours do |time| %> 
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.collection_select :open_or_close_id, OpenOrClose.all, :id, :name, autofocus: true, layout: :inline, label: "Open/Close" %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :opening, label: "From" %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :closing, label: "To" %>
-    </div>
-    <% end %>
+<div class="nested-fields">
+	<div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+		<%= time.collection_select :open_or_close_id, OpenOrClose.all, :id, :name, autofocus: true, layout: :inline, label: "Open/Close" %>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+		<%= time.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+		<%= time.time_select :opening, label: "From" %>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
+		<%= time.time_select :closing, label: "To" %>
+		<%= time.check_box :_destroy %>
+		<%= link_to_remove_association "Remove Opening Hour", f %>
+	</div>
 </div>

@@ -15,7 +15,10 @@
 //= require jquery-fileupload
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery-ui/effect-highlight
 //= require jquery.slick
+//= require cocoon
+//= require global
 //= require initialize
 //= require underscore
 //= require gmaps/google

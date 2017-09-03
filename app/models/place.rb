@@ -59,7 +59,7 @@ class Place < ActiveRecord::Base
   has_many :dining_types, :through => :eateries, dependent: :destroy
   has_many :eateries, dependent: :destroy
   has_many  :opening_hours, dependent: :destroy
-  accepts_nested_attributes_for  :opening_hours
+  accepts_nested_attributes_for  :opening_hours, reject_if: :all_blank
   has_many :comments, dependent: :destroy
 
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
