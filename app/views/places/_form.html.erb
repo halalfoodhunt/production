@@ -272,13 +272,12 @@
  <div class="col-xs-6 col-md-4"><h5><strong>OPENING HOURS</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
     <div class="field">
-    
     <div id="opening_hours">
       <%= f.fields_for :opening_hours do |opening_hour| %> 
         <%= render 'day_fields', f: opening_hour %>
       <% end %>
       <div class="links">
-        <%= link_to_add_association 'add opening hour', f, :opening_hour %>
+        <%= link_to_add_association 'add opening hour', f, :opening_hours %>
       </div>
     </div>
 </div>
