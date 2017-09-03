@@ -220,11 +220,63 @@
 					</div><!-- /.modal-dialog -->
 				</div><!-- /.modal mixer image -->
 				<br><br>
-				<%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
+				<a href="#" data-toggle="modal" data-target=".pop-up-2">
+					<%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
+				</a>
+				<!--  Modal content for the mixer image example -->
+				<div class="modal fade pop-up-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-2" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h4 class="modal-title" id="myLargeModalLabel-2"><%= @place.business_name %></h4>
+							</div>
+							<div class="modal-body">
+								<%= image_tag @place.image_2.url(:square), :class => "img-responsive center-block" %>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal mixer image -->
 			</div>
 			<div class="col-xs-6">
-				<%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-				<%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
+			  <a href="#" data-toggle="modal" data-target=".pop-up-3">
+					<%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %>
+				</a>
+				<!--  Modal content for the mixer image example -->
+				<div class="modal fade pop-up-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-3" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h4 class="modal-title" id="myLargeModalLabel-3"><%= @place.business_name %></h4>
+							</div>
+							<div class="modal-body">
+								<%= image_tag @place.image_3.url(:large), :class => "img-responsive center-block" %>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal mixer image -->
+				<br><br>
+				<a href="#" data-toggle="modal" data-target=".pop-up-2">
+					<%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
+				</a>
+					<!--  Modal content for the mixer image example -->
+				<div class="modal fade pop-up-4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-4" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h4 class="modal-title" id="myLargeModalLabel-4"><%= @place.business_name %></h4>
+							</div>
+							<div class="modal-body">
+								<%= image_tag @place.image_4.url(:large), :class => "img-responsive center-block" %>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal mixer image -->
 			</div>
 		</div>
 		<div class="col-xs-12 col-md-12">
