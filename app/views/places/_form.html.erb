@@ -274,8 +274,8 @@
     <div class="field">
     
     <div id="opening_hours">
-      <%= f.fields_for :opening_hours do |time| %> 
-        <%= render 'day_fields', f: time %>
+      <%= f.fields_for :opening_hours do |opening_hour| %> 
+        <%= render 'day_fields', f: opening_hour %>
       <% end %>
       <div class="links">
         <%= link_to_add_association 'add opening hour', f, :opening_hours %>
