@@ -284,8 +284,7 @@
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
       <%= time.time_select :closing, label: "To" %>
-      <%= f.hidden_field :_destroy %>
-      <%= link_to_function "remove", "remove_fields(this)" %>
+      <%= link_to_remove_fields "remove", f %>
     </div>
     <% end %>
 </div>
@@ -451,8 +450,4 @@ $(document).ready(function() {
     allowClear: true
   });
 });
-function remove_fields(link) {
-        $(link).previous("input[type=hidden]").value = "1";
-        $(link).up(".fields").hide();
-}
 </script>
