@@ -40,12 +40,11 @@
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#home">RECOMMENDED</a></li>
 						<li><%= link_to 'PLACES', places_path %></li>
-						<li><%= link_to 'HOMIES', ecommers_path %></li>
+						<li><%= link_to 'HOMIES & POP-UPS', ecommers_path %></li>
 						<li><%= link_to 'CATERERS', caterers_path %></li>
 						<li><%= link_to 'FOOD DELIVERIES', food_deliveries_path %></li>
-						<li><%= link_to 'SUPERMARKETS', supermarkets_path %></li>
-						<li><%= link_to 'ONLINE GROCERS', online_grocers_path %></li>
-						<li><%= link_to 'SUPPLIERS', suppliers_path %></li>
+						<li><%= link_to 'ONLINE RETAIL', online_grocers_path %></li>
+						<li><%= link_to 'RETAIL SUPPLIERS', suppliers_path %></li>
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content padding-0">
@@ -57,7 +56,7 @@
 								<%= render "places/place" %>
 							</div>
 							<br>
-							<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies</h4></div>
+							<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies & Pop-Ups</h4></div>
 							<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
 							<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
 								<%= render "ecommers/ecommers" %>
@@ -69,13 +68,13 @@
 								<%= render 'food_deliveries/food_delivery_home' %>
 							</div>
 							<br>
-							<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Grocers</h4></div>
+							<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Retail</h4></div>
 							<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
 							<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
 								<%= render "online_grocers/online_grocer" %>
 							</div>
 							<br>
-							<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
+							<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Retail Suppliers</h4></div>
 							<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
 							<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
 								<%= render "suppliers/suppliers" %>
