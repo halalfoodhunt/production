@@ -1,273 +1,291 @@
 <%= render 'layouts/friends_header' %>
 <div class="col-xs-12 col-sm-12 col-md-12 hidden-xs hidden-sm" style="padding:10px 0 10px 0; background:#f8f3f0; border-bottom:1px solid #ccc; margin-top:50px;">
-  <%= render 'show_search' %>
+	<%= render 'show_search' %>
 </div>
 <div class="col-md-10 col-md-offset-1 hidden-xs hidden-sm">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://sg.halalfoodhunt.com">HOME</a></li>
-    <li class="breadcrumb-item"><%= link_to 'PLACES', places_path %></li>
-    <li class="breadcrumb-item active"><%= @place.business_name %> </li>
-  </ol>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="http://sg.halalfoodhunt.com">HOME</a></li>
+		<li class="breadcrumb-item"><%= link_to 'PLACES', places_path %></li>
+		<li class="breadcrumb-item active"><%= @place.business_name %> </li>
+	</ol>
 </div>
 <div style="padding-left:0; padding-right:0;" class="container-fluid">
-  <div id="map" style="width:100%; height:400px;"></div>
-  <script type="text/javascript">
-  var map;
-  var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: myCenter,
-      zoom: 15
-    });
-    var marker = new google.maps.Marker({
-      position: myCenter,
-      map: map,
-    });
-  }
-  </script>
+	<div id="map" style="width:100%; height:400px;"></div>
+	<script type="text/javascript">
+	var map;
+	var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: myCenter,
+			zoom: 15
+		});
+		var marker = new google.maps.Marker({
+			position: myCenter,
+			map: map,
+		});
+	}
+	</script>
 </div>
 <div class="container-fluid" style="padding-bottom:50px; background: #fff;">
-  <div class="container form-style">
-    <div class="col-xs-12 col-sm-12 col-md-7">
-      <div class="container-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar">
-            <center><%= image_tag @place.logo.url(:medium), :class => "media-object img-circle" %></center>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h4 class="title"><%= @place.business_name %></h4>
-          <table class="table table-striped">
-            <thead>
-              <tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
-              <tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_contact_number %></p></td></tr>
-              <% unless @place.website.blank? %><tr style="border-top:#ccc solid 1px">
-              <td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @place.website, "#{@place.website}" %></p></td></tr><% end %>
-              <tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @place.facebook.blank? %><%= link_to @place.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-                <% unless @place.instagram.blank? %><%= link_to @place.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div><br>
-      <% unless @place.qualifying_type.blank? %>
-      <div class="container-fluid hidden-md hidden-lg" style="background: white; padding:10px; border:1px solid #ccc;">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar"><center>
-            <% if @place.verified == true %>
-            <%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
-            <% else %>
-            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
-            <% end %>
-          </center></div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h4 class="title">Halal Verification</h4>
-          <p><% if @place.verified == true %>
-            <%= @place.qualifying_type.halal_summary %>
-            <% else %>
-            This business has yet to submit documents for official verification.
-            <% end %>
-          </p>
-        </div>
-      </div>
-      <% end %><br>
-      <% unless @place.friends_rewards_terms.blank? %>
-      <div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
-        <div class="col-xs-12 col-sm-12 col-md-4">
-          <div class="avatar">
-            <center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
-          </div>
-          <center><p><%= link_to 'View More Rewards', pages_places_friends_rewards_path, class: "btn btn-raised btn-block btn-success" %></p></center>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-8">
-          <h4 class="title">Friends Card Holders Only</h4>
-          <p><%= @place.friends_rewards_terms %></p>
-        </div>
-      </div>
-      <% end %>
-      <br>
-      <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-        <h4 class="title">Highlights</h4>
-        <% @place.highlights.each do |highlight| %>
-        <div class="col-xs-12 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p>
-        </div>
-        <% end %>
-      </div>
-      <br>
-      <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-        <h4 class="title">Dining Types</h4>
-        <% @place.dining_types.each do |dining_type| %>
-        <div class="col-xs-12 col-md-4" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= dining_type.name %></p>
-        </div>
-        <% end %>
-      </div>
-      <br>
-      <div class="container-fluid" style="border:#ccc solid 1px; background: white;">
-        <h4 class="title">Cuisine Types</h4>
-        <% @place.cuisine_types.each do |cuisine_type| %>
-        <div class="col-xs-12 col-md-4" style="padding:0;"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p>
-        </div>
-        <% end %>
-      </div>
-      <div class="container-fluid">
-        <% unless @place.question_1.blank? %>
-        <h4 class="title" style="color:#D04E2E;">FAQ</h4>
-        <h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
-        <p><%= h(@place.question_1).gsub(/\n/, '<br>').html_safe %></p>
-        <% end %>
-        <% unless @place.question_2.blank? %>
-        <h5 class="question">What is the easiest way to get to your place by public transport?</h5>
-        <p><%= h(@place.question_2).gsub(/\n/, '<br>').html_safe %></p>
-        <% end %>
-        <% unless @place.question_3.blank? %>
-        <h5 class="question">Where is the nearest and easiest parking spot near your place?</h5>
-        <p><%= h(@place.question_3).gsub(/\n/, '<br>').html_safe %></p>
-        <% end %>
-        <% unless @place.question_4.blank? %>
-        <h5 class="question">Do you have a prayer space for me? If not, where is the nearest mosque or place that I can perform my prayers at?</h5>
-        <p><%= h(@place.question_4).gsub(/\n/, '<br>').html_safe %></p>
-        <% end %>
-        <% unless @place.question_5.blank? %>
-        <h5 class="question">How baby/child/family-friendly are you?</h5>
-        <p><%= h(@place.question_5).gsub(/\n/, '<br>').html_safe %></p>
-        <% end %>
-        <% unless @place.question_6.blank? %>
-        <h5 class="question">Please provide me with links to reviews about you.</h5>
-        <p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
-        <% end %>
-      </div>
-      <br>
-      <div id="comments" class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" >
-        <h4><%= @place.comments.count %> Comments</h4>
-        <div class="well">
-          <% if @place.comments.empty? %>
-          <p>No comments available.</p>
-          <% else %>
-          <%= render @place.comments %>
-          <% end %>
-        </div>
-        <div class="well">
-          <%= render "comments/form" %>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-5">
-      <% unless @place.qualifying_type.blank? %>
-      <div class="container-fluid hidden-sm hidden-xs" style="background: white; padding:10px; border:1px solid #ccc;">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <div class="avatar"><center>
-            <% if @place.verified == true %>
-            <%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
-            <% else %>
-            <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
-            <% end %>
-          </center>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-9">
-        <h4 class="title">Halal Verification</h4>
-        <p><% if @place.verified == true %>
-          <%= @place.qualifying_type.halal_summary %>
-          <% else %>
-          This business has yet to submit documents for official verification.
-          <% end %>
-        </p>
-      </div>
-    </div>
-    <% end %><br>
-    <div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
-      <h4 class="title">Opening Hours</h4>
-      <% @place.opening_hours.each do |time| %>
-      <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
-        <%= time.day.name %>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <%= time.opening.strftime("%I:%M %p") %>
-      </div>
-      <div class="col-xs-2 col-sm-2 col-md-2">
-        <p>-</p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <%= time.closing.strftime("%I:%M %p") %>
-      </div>
-      <% end %>
-    </div>
-    <p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-success" %>
-      <% end %>
-    </p>
-    <p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger" %>
-      <% end %>
-    </p>
-    <div class="col-xs-12 col-md-12 padding-0">
-      <div class="col-xs-6">
-        <%= image_tag @place.image.url(:square), :class => "img-thumbnail" %><br><br>
-        <%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
-      </div>
-      <div class="col-xs-6">
-       <%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
-       <%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
-     </div>
-   </div>
-   <div class="col-xs-12 col-md-12">
-     <p><br><%= link_to likes_path(@place), class: "btn btn-block btn-default" do %><i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
-      <center><p><%= @place.likers_count %> food hunters saved this place</p></center></p>
-    </div>
-  </div>
-</div>
+	<div class="container form-style">
+		<div class="col-xs-12 col-sm-12 col-md-7">
+			<div class="container-fluid">
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<div class="avatar">
+						<center><%= image_tag @place.logo.url(:medium), :class => "media-object img-circle" %></center>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-9">
+					<h4 class="title"><%= @place.business_name %></h4>
+					<table class="table table-striped">
+						<thead>
+							<tr><td><p><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p></td></tr>
+							<tr style="border-top:#ccc solid 1px"><td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_contact_number %></p></td></tr>
+							<% unless @place.website.blank? %><tr style="border-top:#ccc solid 1px">
+							<td><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16"> <%= link_to @place.website, "#{@place.website}" %></p></td></tr><% end %>
+							<tr style="border-top:#ccc solid 1px"><td><p>Social sites: <% unless @place.facebook.blank? %><%= link_to @place.facebook do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+								<% unless @place.instagram.blank? %><%= link_to @place.instagram do %><i class="fa fa-instagram"></i><% end %><% end %></p></td>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div><br>
+			<% unless @place.qualifying_type.blank? %>
+			<div class="container-fluid hidden-md hidden-lg" style="background: white; padding:10px; border:1px solid #ccc;">
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<div class="avatar"><center>
+						<% if @place.verified == true %>
+						<%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+						<% else %>
+						<img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+						<% end %>
+					</center></div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-9">
+					<h4 class="title">Halal Verification</h4>
+					<p><% if @place.verified == true %>
+						<%= @place.qualifying_type.halal_summary %>
+						<% else %>
+						This business has yet to submit documents for official verification.
+						<% end %>
+					</p>
+				</div>
+			</div>
+			<% end %><br>
+			<% unless @place.friends_rewards_terms.blank? %>
+			<div class="container-fluid" style="background: white; padding:10px; border:1px solid #ccc;">
+				<div class="col-xs-12 col-sm-12 col-md-4">
+					<div class="avatar">
+						<center><%= image_tag @place.friends_reward.icon.url(:medium), :class => "img-circle img_responsive" %></center>
+					</div>
+					<center><p><%= link_to 'View More Rewards', pages_places_friends_rewards_path, class: "btn btn-raised btn-block btn-success" %></p></center>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-8">
+					<h4 class="title">Friends Card Holders Only</h4>
+					<p><%= @place.friends_rewards_terms %></p>
+				</div>
+			</div>
+			<% end %>
+			<br>
+			<div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+				<h4 class="title">Highlights</h4>
+				<% @place.highlights.each do |highlight| %>
+				<div class="col-xs-12 col-md-6" style="padding:0;"><p><%= image_tag highlight.icon.url(:thumb) %> <%= link_to highlight.name, places_path(highlight: highlight.name) %></p>
+				</div>
+				<% end %>
+			</div>
+			<br>
+			<div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+				<h4 class="title">Dining Types</h4>
+				<% @place.dining_types.each do |dining_type| %>
+				<div class="col-xs-12 col-md-4" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= dining_type.name %></p>
+				</div>
+				<% end %>
+			</div>
+			<br>
+			<div class="container-fluid" style="border:#ccc solid 1px; background: white;">
+				<h4 class="title">Cuisine Types</h4>
+				<% @place.cuisine_types.each do |cuisine_type| %>
+				<div class="col-xs-12 col-md-4" style="padding:0;"><p><%= image_tag cuisine_type.icon.url(:thumb) %> <%= cuisine_type.name %></p>
+				</div>
+				<% end %>
+			</div>
+			<div class="container-fluid">
+				<% unless @place.question_1.blank? %>
+				<h4 class="title" style="color:#D04E2E;">FAQ</h4>
+				<h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
+				<p><%= h(@place.question_1).gsub(/\n/, '<br>').html_safe %></p>
+				<% end %>
+				<% unless @place.question_2.blank? %>
+				<h5 class="question">What is the easiest way to get to your place by public transport?</h5>
+				<p><%= h(@place.question_2).gsub(/\n/, '<br>').html_safe %></p>
+				<% end %>
+				<% unless @place.question_3.blank? %>
+				<h5 class="question">Where is the nearest and easiest parking spot near your place?</h5>
+				<p><%= h(@place.question_3).gsub(/\n/, '<br>').html_safe %></p>
+				<% end %>
+				<% unless @place.question_4.blank? %>
+				<h5 class="question">Do you have a prayer space for me? If not, where is the nearest mosque or place that I can perform my prayers at?</h5>
+				<p><%= h(@place.question_4).gsub(/\n/, '<br>').html_safe %></p>
+				<% end %>
+				<% unless @place.question_5.blank? %>
+				<h5 class="question">How baby/child/family-friendly are you?</h5>
+				<p><%= h(@place.question_5).gsub(/\n/, '<br>').html_safe %></p>
+				<% end %>
+				<% unless @place.question_6.blank? %>
+				<h5 class="question">Please provide me with links to reviews about you.</h5>
+				<p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
+				<% end %>
+			</div>
+			<br>
+			<div id="comments" class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" >
+				<h4><%= @place.comments.count %> Comments</h4>
+				<div class="well">
+					<% if @place.comments.empty? %>
+					<p>No comments available.</p>
+					<% else %>
+					<%= render @place.comments %>
+					<% end %>
+				</div>
+				<div class="well">
+					<%= render "comments/form" %>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-5">
+			<% unless @place.qualifying_type.blank? %>
+			<div class="container-fluid hidden-sm hidden-xs" style="background: white; padding:10px; border:1px solid #ccc;">
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<div class="avatar"><center>
+						<% if @place.verified == true %>
+						<%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+						<% else %>
+						<img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+						<% end %>
+					</center>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-9">
+				<h4 class="title">Halal Verification</h4>
+				<p><% if @place.verified == true %>
+					<%= @place.qualifying_type.halal_summary %>
+					<% else %>
+					This business has yet to submit documents for official verification.
+					<% end %>
+				</p>
+			</div>
+		</div>
+		<% end %><br>
+		<div class="container-fluid" style="border:#ccc solid 1px; padding-bottom:15px; margin-bottom:25px;">
+			<h4 class="title">Opening Hours</h4>
+			<% @place.opening_hours.each do |time| %>
+			<div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
+				<%= time.day.name %>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3">
+				<%= time.opening.strftime("%I:%M %p") %>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2">
+				<p>-</p>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3">
+				<%= time.closing.strftime("%I:%M %p") %>
+			</div>
+			<% end %>
+		</div>
+		<p><% unless @place.delivery_link.blank? %><%= link_to "Order NOW!", raw(@place.delivery_link), :class => "btn btn-block btn-raised btn-success" %>
+			<% end %>
+		</p>
+		<p><% unless @place.reservation_link.blank? %><%= link_to "Reserve NOW!", raw(@place.reservation_link), :class => "btn btn-block btn-raised btn-danger" %>
+			<% end %>
+		</p>
+		<div class="col-xs-12 col-md-12 padding-0">
+			<div class="col-xs-6">
+				<a href="#" data-toggle="modal" data-target=".pop-up-1">
+					<%= image_tag @place.image.url(:square), :class => "img-thumbnail" %>
+				</a>
+				<!--  Modal content for the mixer image example -->
+				<div class="modal fade pop-up-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h4 class="modal-title" id="myLargeModalLabel-1"><%= @place.business_name %></h4>
+							</div>
+							<div class="modal-body">
+								<%= image_tag @place.image.url(:large) %>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal mixer image -->
+				<br><br>
+				<%= image_tag @place.image_2.url(:square), :class => "img-thumbnail" %>
+			</div>
+			<div class="col-xs-6">
+				<%= image_tag @place.image_3.url(:square), :class => "img-thumbnail" %><br><br>
+				<%= image_tag @place.image_4.url(:square), :class => "img-thumbnail" %>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-12">
+			<p><br><%= link_to likes_path(@place), class: "btn btn-block btn-default" do %><i class="fa fa-heart-o"></i> <b>ADD TO WISHLIST</b><% end %>
+				<center><p><%= @place.likers_count %> food hunters saved this place</p></center></p>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="container-fluid" style="padding:0; background:#ececec;">
-  <div class="container">
-   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4 class="title">Nearby Places</h4>
-    <div class="scroller">
-      <% for place in @place.nearbys(1).try(:limit, 4).where(draft: false) %>
-      <div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
-        <% if place.verified == true %>
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
-        <% else %>
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span> 
-        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
-          <% unless place.friends_rewards_terms.blank? %>
-          <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
-          <% end %>
-        </span>
-        <div style="padding:0px; height:300px; position:relative;" class="thumbnail">
-          <%= image_tag place.featured_image.url(:large), :class => "img_responsive" %>
-          <div class="caption">
-            <div class="media">
-              <div class="media-left">
-                <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
-              </div>
-              <div class="media-body">
-                <p class="media-heading label-list"><b><%= link_to place.business_name, place_path(place) %></b></p>
-                <p><i class="fa fa-map-marker"></i> <%= place.operating_address %><br>(<%= place.distance.round(2) %> miles)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
-				<div class="container">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="http://sg.halalfoodhunt.com/corporate">Corporate Services</a></li>
-						<li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Merchant Listing</a></li>
-						<li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
-						<li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
-						<li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
-						<li><a href="http://friends.jumaiyah.com">Friends</a></li>
-					</ul>
+	<div class="container">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+			<h4 class="title">Nearby Places</h4>
+			<div class="scroller">
+				<% for place in @place.nearbys(1).try(:limit, 4).where(draft: false) %>
+				<div class="col-xs-12 col-sm-6 col-md-6 padding-bottom">
+					<% if place.verified == true %>
+					<span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
+					<% else %>
+					<span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
+					<span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span> 
+					<span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
+						<% unless place.friends_rewards_terms.blank? %>
+						<%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
+						<% end %>
+					</span>
+					<div style="padding:0px; height:300px; position:relative;" class="thumbnail">
+						<%= image_tag place.featured_image.url(:large), :class => "img_responsive" %>
+						<div class="caption">
+							<div class="media">
+								<div class="media-left">
+									<%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
+								</div>
+								<div class="media-body">
+									<p class="media-heading label-list"><b><%= link_to place.business_name, place_path(place) %></b></p>
+									<p><i class="fa fa-map-marker"></i> <%= place.operating_address %><br>(<%= place.distance.round(2) %> miles)</p>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="container">
-        					<small class="text-justify"><%= @place.meta_description %></small>
-        			</div>
-        			<br>
 				</div>
-			</nav>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
+		<div class="container">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://sg.halalfoodhunt.com/corporate">Corporate Services</a></li>
+				<li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Merchant Listing</a></li>
+				<li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
+				<li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
+				<li><a href="http://halalfoodhunt.com/feedback/">Feedback</a></li>
+				<li><a href="http://friends.jumaiyah.com">Friends</a></li>
+			</ul>
+		</div>
+		<div class="container">
+			<small class="text-justify"><%= @place.meta_description %></small>
+		</div>
+		<br>
+	</div>
+</nav>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDps1UVNSRCldU_6BMPoJ09xuoHjvrqEGU&callback=initMap"
 async defer></script>
