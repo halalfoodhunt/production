@@ -271,8 +271,6 @@
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
  <div class="col-xs-6 col-md-4"><h5><strong>OPENING HOURS</strong></h5> <p>Indicate your daily opening hours so customers can visit you at the right time. </p></div>
  <div class="col-xs-12 col-sm-6 col-md-8" style="background:#ededed; border-left:1px solid #979797; padding:30px;">
-   <div class="input_fields_wrap">
-    <button class="add_field_button">Add More Fields</button>
     <div class="field">
     <%= f.fields_for :opening_hours do |time| %> 
     <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
@@ -288,8 +286,6 @@
       <%= time.time_select :closing, label: "To" %>
     </div>
     <% end %>
-  </div>
-   </div>
 </div>
 </div> 
 <div class="col-md-12" style="background:#fff; border:1px solid #979797; margin:0px 0 30px 0; padding:0;">
@@ -452,38 +448,5 @@ $(document).ready(function() {
     placeholder: "Select highlights",
     allowClear: true
   });
-});
-$(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-    var add_button      = $(".add_field_button"); //Add button ID
-    
-    var x = 1; //initlal text box count
-    $(add_button).click(function(e){ //on add input button click
-        e.preventDefault();
-        if(x < max_fields){ //max input box allowed
-            x++; //text box increment
-            $(wrapper).append('<div><div class="field">
-    <%= f.fields_for :opening_hours do |time| %> 
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.collection_select :open_or_close_id, OpenOrClose.all, :id, :name, autofocus: true, layout: :inline, label: "Open/Close" %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :opening, label: "From" %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
-      <%= time.time_select :closing, label: "To" %>
-    </div>
-    <% end %>
-  </div><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        }
-    });
-    
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
 });
 </script>
