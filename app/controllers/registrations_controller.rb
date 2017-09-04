@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
-  before_action :authenticate_friend!, only: [:show, :edit, :update, :destroy, :new]
-  before_action :authenticate_merchant!, only: [:index]
+  before_action :authenticate_friend!, only: [:show, :new]
+  before_action :authenticate_merchant!, only: [:index, :edit, :update, :destroy,]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
   # GET /registrations
