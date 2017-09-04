@@ -1,7 +1,7 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
-  ratyrate_rateable "Accessibility", "Date Worthiness", "Baby/Child Friendliness", "Family/Big Group Friendly", "Handicap/Elderly Friendly", "FRIENDS Recommend"
+  ratyrate_rateable "accessibility", "dateworthiness", "babyfriendly", "familyfriendly", "handicapfriendly", "friendsrecommend"
   
   scope :publish, -> {
     where(:draft => false)
@@ -62,7 +62,6 @@ class Place < ActiveRecord::Base
   has_many  :opening_hours, dependent: :destroy, inverse_of: :place
   accepts_nested_attributes_for  :opening_hours, reject_if: :all_blank, allow_destroy: true
   has_many :comments, dependent: :destroy
-  has_many :accessibilities, dependent: :destroy
 
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
