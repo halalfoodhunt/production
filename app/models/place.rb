@@ -1,7 +1,7 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
   friendly_id :business_name, use: :slugged
-  ratyrate_rateable "accessibility", "dateworthiness", "babyfriendly", "familyfriendly", "handicapfriendly", "friendsrecommend", "food-quality", "service", "worth-the-price"
+  ratyrate_rateable "accessibility", "dateworthiness", "babyfriendly", "familyfriendly", "handicapfriendly", "friendsrecommend", "foodquality", "service", "worththeprice"
   
   scope :publish, -> {
     where(:draft => false)
