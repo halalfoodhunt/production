@@ -138,13 +138,6 @@
 				<% end %>
 			</div>
 			<br>
-			<div class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs"><h3>Reviews by People</h3>
-<% if current_friend %>
-<h5>New Rating</h5>
-<%= render "accessibilities/form" %>
-<% end %>
-<h5>All Ratings</h5>
-<%= render @accessibilities %></div>
 			<div id="comments" class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" >
 				<h4><%= @place.comments.count %> Comments</h4>
 				<div class="well">
