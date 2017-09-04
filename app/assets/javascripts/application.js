@@ -17,6 +17,8 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require jquery-ui/effect-highlight
 //= require jquery.slick
+//= require jquery.raty
+//= require ratyrate
 //= require cocoon
 //= require global
 //= require initialize

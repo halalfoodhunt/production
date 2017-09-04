@@ -13,6 +13,8 @@ class Friend < ActiveRecord::Base
   
   has_many :registrations, dependent: :destroy
   has_many :comments, dependent: :destroy
+  
+  ratyrate_rater
 
   acts_as_liker
   
