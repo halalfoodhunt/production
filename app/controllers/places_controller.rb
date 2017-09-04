@@ -55,10 +55,6 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
-    @accesibilities = @place.accessibilities
-    if current_friend
-      @accesibility = Accessibility.new
-    end
   end
 
   # GET /places/new

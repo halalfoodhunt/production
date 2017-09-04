@@ -29,12 +29,6 @@ class Place < ActiveRecord::Base
   def set_halal_expiry
     self.halal_expiry =  Date.today + 365.days
   end
-  
-  def average_rating
-		self.accessibilities.sum(:score) / accessibilities.size
-	rescue ZeroDivisionError
-		0
-	end
 
   validates_presence_of :merchant_id
   validates_presence_of :business_name
