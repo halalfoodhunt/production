@@ -3,6 +3,8 @@ class Friend < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  ratyrate_rater
          
   enum role: [:free, :friends]
   after_initialize :set_default_role, :if => :new_record?
@@ -13,8 +15,6 @@ class Friend < ActiveRecord::Base
   
   has_many :registrations, dependent: :destroy
   has_many :comments, dependent: :destroy
-  
-  ratyrate_rater
 
   acts_as_liker
   
