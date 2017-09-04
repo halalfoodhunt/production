@@ -55,7 +55,6 @@ class PlacesController < ApplicationController
     @search = Place.ransack(params[:q])
     @places = @search.result.where(draft: false)
     @friends_rewards = FriendsReward.all
-    @current_friend = current_friend
   end
 
   # GET /places/new
@@ -137,6 +136,10 @@ class PlacesController < ApplicationController
   @place = Place.friendly.find(params[:id])
   @friend.toggle_like!(@place)
   redirect_to :back, notice: "Added this place to your wishlist successfully!"
+  end
+  
+  def current_user
+    current_friend
   end
 
 
