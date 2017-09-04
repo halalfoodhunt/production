@@ -42,6 +42,8 @@ gem 'geocoder'
 
 gem 'gmaps4rails'
 
+gem 'ratyrate'
+
 gem 'devise'
 
 gem 'koudoku'
