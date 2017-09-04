@@ -110,6 +110,7 @@
 				</div>
 				<% end %>
 			</div>
+			<br>
 			<div class="container-fluid" style="border:#ccc solid 1px; background: white;">
 				<% unless @place.question_1.blank? %>
 				<h4 class="title" style="color:#D04E2E;">FAQ</h4>
@@ -137,6 +138,7 @@
 				<p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
 				<% end %>
 			</div>
+			<br>
 			<div class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" style="border:#ccc solid 1px; background: white;">
 				<h5 class="question"><b>Ratings</b></h5>
 				Accessibility  : <%= rating_for @place, 'accessibility', star: 5, star_path: '/images/ratyrate', disable_after_rate: true, cancel: true %>
