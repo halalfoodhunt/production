@@ -139,12 +139,12 @@
 			</div>
 			<br>
 			<div class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs">
-				Accessibility  : <%= rating_for @place, 'Accessibility', star: 5, disable_after_rate: true, cancel: true %>
-				Date Worthiness : <%= rating_for @place, 'Date Worthiness', star: 5, disable_after_rate: true, cancel: true %>
-				Baby/Child Friendliness  : <%= rating_for @place, 'Baby/Child Friendliness', star: 5, disable_after_rate: true, cancel: true %>
-				Family/Big Group Friendly  : <%= rating_for @place, 'Family/Big Group Friendly', star: 5, disable_after_rate: true, cancel: true %>
-				Handicap/Elderly Friendly : <%= rating_for @place, 'Handicap/Elderly Friendly', star: 5, disable_after_rate: true, cancel: true %>
-				Price  : <%= rating_for @place, 'FRIENDS Recommend', star: 5, disable_after_rate: true, cancel: true %>
+				Accessibility  : <%= rating_for @place, 'accessibility', star: 5, disable_after_rate: true, cancel: true %>
+				Date Worthiness : <%= rating_for @place, 'dateworthiness', star: 5, disable_after_rate: true, cancel: true %>
+				Baby/Child Friendliness  : <%= rating_for @place, 'babyfriendly', star: 5, disable_after_rate: true, cancel: true %>
+				Family/Big Group Friendly  : <%= rating_for @place, 'familyfriendly', star: 5, disable_after_rate: true, cancel: true %>
+				Handicap/Elderly Friendly : <%= rating_for @place, 'handicapfriendly', star: 5, disable_after_rate: true, cancel: true %>
+				Price  : <%= rating_for @place, 'friendsrecommend', star: 5, disable_after_rate: true, cancel: true %>
 				</div>
 			<div id="comments" class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" >
 				<h4><%= @place.comments.count %> Comments</h4>
