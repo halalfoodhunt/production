@@ -137,11 +137,6 @@ class PlacesController < ApplicationController
   @friend.toggle_like!(@place)
   redirect_to :back, notice: "Added this place to your wishlist successfully!"
   end
-  
-  def current_user
-    current_friend
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

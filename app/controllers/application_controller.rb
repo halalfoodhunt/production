@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
   def meta_title(title)
     [title, BRAND_NAME].reject(&:empty?).join(' | ')
   end
+  
+  def current_user
+  current_friend
+  end
+
+  helper_method :current_user
 end
