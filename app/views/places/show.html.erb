@@ -139,6 +139,7 @@
 			</div>
 			<br>
 			<div id="comments" class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" >
+				<p>Accessibility <div class="score_<%= accessibility.id %>"></div></p>
 				<h4><%= @place.comments.count %> Comments</h4>
 				<div class="well">
 					<% if @place.comments.empty? %>

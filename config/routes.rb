@@ -104,6 +104,7 @@ Rails.application.routes.draw do
   resources :featured_articles
   resources :listings
   resources :supermarket_highlights
+  resources :accessibilities
   resources :supermarkets do
      collection do
       get :edit_multiple
