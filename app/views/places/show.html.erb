@@ -110,7 +110,7 @@
 				</div>
 				<% end %>
 			</div>
-			<div class="container-fluid">
+			<div class="container-fluid" style="border:#ccc solid 1px; background: white;">
 				<% unless @place.question_1.blank? %>
 				<h4 class="title" style="color:#D04E2E;">FAQ</h4>
 				<h5 class="question">Do you have a theme for your restaurant? What type of dishes do you serve, and which are the highly recommended ones? What is the price range of the main items on your menu?</h5>
@@ -137,7 +137,7 @@
 				<p><%= h(@place.question_6).gsub(/\n/, '<br>').html_safe %></p>
 				<% end %>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs">
+			<div class="col-xs-12 col-sm-12 col-md-12 hidden-sm hidden-xs" style="border:#ccc solid 1px; background: white;">
 				<h5 class="question"><b>Ratings</b></h5>
 				Accessibility  : <%= rating_for @place, 'accessibility', star: 5, star_path: '/images/ratyrate', disable_after_rate: true, cancel: true %>
 				Date Worthiness : <%= rating_for @place, 'dateworthiness', star: 5, star_path: '/images/ratyrate', disable_after_rate: true, cancel: true %>
