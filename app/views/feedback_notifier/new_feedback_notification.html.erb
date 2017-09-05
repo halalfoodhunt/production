@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-  <style>
-    h1,h2,h3,h4,h5,h6 {font-family: 'Montserrat Subrayada', sans-serif;}
-    p {font-family: 'Muli', sans-serif; color: #22211d;}
-</style>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+	<style>
+	h1,h2,h3,h4,h5,h6 {font-family: 'Montserrat Subrayada', sans-serif;}
+	p {font-family: 'Muli', sans-serif; color: #22211d;}
+	</style>
 </head>
 <body>
-    <div style="background:#e73c25; height:100px; padding:20px;">
-        <h3><strong>New Feedback!</strong></h3>
-    </div>
-    <div style="background:#ececec; padding:20px;">
-        <p>Name: <%= @feedback.name %> <br>
-        Email: <%= @feedback.email %> <br>
-        Subject: <%= @feedback.subject %> <br>
-        Message: <%= @feedback.content %> <br>
-        </p>
-    </div>
-  </body>
-  </html>
+	<div style="background:#f5f5f5; padding:70px;">
+		<div style="border:1px solid #ccc; padding:0; border-radius:10px;" >
+			<div style="background:#df5b3e;">
+				<h3 style="font-family:'Montserrat Subrayada', sans-serif; font-size:30px; line-height:150%"><strong><center>New Feedback!</center></strong></h3>
+			</div>
+			<div style="background:#fff; padding:20px;">
+				<p style="font-family: 'Muli', sans-serif; color: #22211d; font-size:14px; line-height:18px;">
+					<b>Name:</b> <%= @feedback.name %> <br>
+					<b>Email:</b> <%= @feedback.email %> <br>
+					<b>Subject:</b> <%= @feedback.subject %> <br>
+					<b>Message:</b> <%= @feedback.content %> <br>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
