@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <style>
+    h1,h2,h3,h4,h5,h6 {font-family: 'Montserrat Subrayada', sans-serif;}
+    p {font-family: 'Muli', sans-serif; color: #22211d;}
+</style>
+</head>
+<body>
+    <div style="background:#e73c25; height:100px; padding:20px;">
+        <h3><strong>New Feedback!</strong></h3>
+    </div>
+    <div style="background:#ececec; padding:20px;">
+        <p>Name: <%= @feedback.name %> <br>
+        Email: <%= @feedback.email %> <br>
+        Subject: <%= @feedback.subject %> <br>
+        Message: <%= @feedback.content %> <br>
+        </p>
+    </div>
+  </body>
+  </html>
