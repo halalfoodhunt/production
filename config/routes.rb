@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :feedbacks
   post '/rate' => 'rater#create', :as => 'rate'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
