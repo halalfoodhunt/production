@@ -14,8 +14,7 @@
   </ul>
 </div>
 <% end %>
-<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
-<h4>Friends Card Details</h4>
+<h4>Registration Details</h4>
 <div class="field">
   <%= f.hidden_field :friends_card_id, value: @friends_card.id %>
 </div>
@@ -50,8 +49,6 @@
 <div class="field">
   <%= f.check_box :instagram %>
 </div>
-</div>
-<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
 <h4>Shipping Details</h4>
 <div class="field">
   <%= f.text_field :address_1 %>
@@ -68,8 +65,6 @@
 <div class="field">
   <%= f.text_area :notes, label:"Order Notes" %>
 </div>
-</div>
-<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
 <h4>Payment Details</h4>
 <div class="field payment_method">
   <%= label_tag :payment_method %>
@@ -87,7 +82,6 @@
                   }
                 });
   </script>
-</div>
 <div class="actions">
   <%= f.submit "Proceed To Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);" %>
   </div>
