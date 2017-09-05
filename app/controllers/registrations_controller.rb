@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-  before_action :authenticate_friend!, only: [:show, :new]
+  before_action :authenticate_friend!, :unless => :devise_controller?, only: [:show, :new]
   before_action :authenticate_merchant!, only: [:index, :edit, :update, :destroy,]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
