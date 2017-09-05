@@ -249,6 +249,7 @@ def friends_rewards_results
 end
 
 def friends
+    @friends_cards = FriendsCard.all
     if params[:friends_reward].blank?
     @places = Place.all.order("created_at DESC").where(draft: false)
     @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
