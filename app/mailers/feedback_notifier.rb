@@ -1,5 +1,5 @@
 class FeedbackNotifier < ApplicationMailer
-    default from: "dee@halalfoodhunt.com"
+    default from: "info@halalfoodhunt.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,6 +8,6 @@ class FeedbackNotifier < ApplicationMailer
   #
   def new_feedback_notification (feedback)
     @feedback = feedback
-    mail to: "dee@halalfoodhunt.com", subject: "New Feedback"
+    mail to: "info@halalfoodhunt.com", subject: "New Feedback"
   end
 end
