@@ -2,6 +2,11 @@ class Friends::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
 
+  def new
+    super
+    @friends_cards = FriendsCard.all
+  end
+  
   def sign_up_params
 		params.require(:friend).permit(:email, :password, :password_confirmation, :name)
 	end

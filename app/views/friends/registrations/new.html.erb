@@ -1,33 +1,82 @@
+<%= render 'layouts/friends_header' %>
 <div class="container-fluid">
-	<div class="row">
-		<div style="padding:0; background:none;" class="col-md-12" id="left-friend">
-			<div class="sign-up-left"></div>
+	<div class="container">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<center>
+				<div style="border-radius:10px; background:#df5b3e;">
+					<h5>1</h5>
+					<p>Sign Up</p>
+				</div>
+			</center>
 		</div>
-		<div class="col-md-12 container padding-55" id="right-friend" style="background:#fff;" >
-			<h3>Welcome!</h3>
-			<h5><br>Thank you for applying the FRIENDS Card.<br><br> We are excited to get you onboard.</h5>
-			<p>Before purchasing our FRIENDS Card, you'll need to...</p>
-			<li>Create an account</li>
-			<li>Submit registration details for the FRIENDS Card</li>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<center>
+				<div style="border-radius:10px; background:#ececec;">
+					<h5>2</h5>
+					<p>Payment Details</p>
+				</div>
+			</center>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<center>
+				<div style="border-radius:10px; background:#ececec;">
+					<h5>3</h5>
+					<p>Transaction Complete</p>
+				</div>
+			</center>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="container">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<center>
+				<p><b>Create an Account</b></p>
+				<p>Already have an account? <%= render "devise/shared/links" %></p>
+			</center>
+			<%= bootstrap_form_for(@friend, as: @friend, url: friend_registration_path(@friend), label_errors: true, inline_errors: true) do |f| %>
+			<div class="field">
+				<%= f.text_field :name, autofocus: true %>
+			</div>
+			<div class="field">
+				<%= f.email_field :email, autofocus: true %>
+			</div>
+			<div class="field">
+				<%= f.password_field :password, autocomplete: "off" %>
+				<% if @minimum_password_length %>
+				<em>(<%= @minimum_password_length %> characters minimum)</em>
+				<% end %><br />
+			</div>
 			<br>
-<%= bootstrap_form_for(@friend, as: @friend, url: friend_registration_path(@friend), label_errors: true, inline_errors: true) do |f| %>
-        <div class="field">
-          <%= f.text_field :name, autofocus: true %>
-        </div>
-        <div class="field">
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "off" %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-        </div>
-        <br>
-        <p>By creating an account, you agree to our <a href="#">terms.</a></p>
+			<p>By creating an account, you agree to our <a href="#">terms.</a></p>
 			<%= f.submit 'Continue', :class => 'btn btn-block btn-primary' %><br>
-			<p>Have an account? <%= render "devise/shared/links" %></p>
 			<% end %>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<div style="border: 1px solid #ccc; background:#ececec;">
+				<h4>Order Summary</h4>
+				<hr>
+				<!-- Left-aligned -->
+				<div class="media">
+					<div class="media-left">
+						<img src="http://friends.jumaiyah.com/wp-content/uploads/2017/04/friendscard_card-01.png" class="media-object" style="width:60px">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Subscription</h4>
+						<p>FRIENDS Rewards Card</p>
+						<h6>$18.00/Year</h6>
+						<hr>
+						<div><p class="text-left">Subtotal</p><p class="text-right">$18/Year</p></div>
+						<hr>
+						<div><p class="text-left">Total</p><p class="text-right">$18/Year</p></div>
+					</div>
+				</div>
+				<% @friends_cards.each do |friends_card| %>
+				<%= link_to new_registration_path(friends_card_id: friends_card.id), class: "ruby" do %>
+				<center><button class="btn btn-block btn-primary">Proceed to Register</button></center>
+				<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
