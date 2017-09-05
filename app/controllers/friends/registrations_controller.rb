@@ -3,8 +3,8 @@ class Friends::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_account_update_params, only: [:update]
 
   def new
-    super
     @friends_cards = FriendsCard.all
+    super
   end
   
   def sign_up_params
