@@ -4,7 +4,7 @@ class Registration < ActiveRecord::Base
   has_one :card
   accepts_nested_attributes_for :card
   
-  validates :name, :date_of_birth,  :contact_number, :instagram_account, presence: true
+  validates :name, :date_of_birth,  :contact_number, :instagram_account, :address_1, :zipcode, presence: true
 
   serialize :notification_params, Hash
   def paypal_url(return_path)
