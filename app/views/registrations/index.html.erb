@@ -3,6 +3,7 @@
         <table class="table table-hover">
           <thead>
             <tr>
+              <th>Invoice ID</th>
              <th>Name</th>
       <th>Ic number</th>
       <th>Date of birth</th>
@@ -21,6 +22,7 @@
           <tbody>
              <% @registrations.each do |registration| %>
               <tr>
+                <td>OOO<%= registration.id %></td>
                 <td><%= registration.name %></td>
         <td><%= registration.ic_number %></td>
         <td><%= registration.date_of_birth %></td>
