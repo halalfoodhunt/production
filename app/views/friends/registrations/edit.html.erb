@@ -1,20 +1,23 @@
-<div class="container-fluid" style="background:#c11525; height:100%;">
+<%= render 'layouts/header' %>
+<div class="container-fluid">
   <div class="container container-table">
     <div class="row vertical-center-row">
       <div class="col-xs-12 col-md-12" style="padding-left:0px; padding-right:0px; box-shadow: 0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22); background:#ccc;">
         <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left:0px; padding-right:0px; background: #ccc;">
-            <%= bootstrap_form_for(@current_friend, as: current_friend, url: friend_registration_path, html: { method: :put }) do |f| %>
-            <p><center><%= image_tag(current_friend.avatar.url(:large), :class => "img_circle", :style => "width:150px; height:150px;") %>
+          <%= bootstrap_form_for(@current_friend, as: current_friend, url: friend_registration_path, html: { method: :put }) do |f| %>
+          <p><center><%= image_tag(current_friend.avatar.url(:large), :class => "img_circle", :style => "width:150px; height:150px;") %>
             <p>Drag and drop or <%= f.file_field :avatar, hide_label: true %> to upload avatar</p>
             <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p>
             <h6 style="margin:10px 0 0 0;"><h6 class="label label-success"><%= current_friend.role %></h6></h6></center>
-            </p>
-            <h3><center>FRIENDS PROFILE</center></h3>
+          </p>
+          <h3><center>FRIENDS PROFILE</center></h3>
           <p><center>Edit your FRIENDS profile here.</center>
           </p><hr>
         </center>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-8" style="background: #fff;">
         <%= devise_error_messages! %>
-         <div class="field">
+        <div class="field">
           <%= f.text_field :name, autofocus: true %>
         </div>
         <div class="field">
@@ -42,6 +45,7 @@
           <%= f.submit "Update" %>
         </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>
