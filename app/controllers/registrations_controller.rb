@@ -40,6 +40,14 @@ class RegistrationsController < ApplicationController
     end
   end
   
+  def destroy
+    @registration.destroy
+    respond_to do |format|
+      format.html { redirect_to registrations_url, notice: 'Place was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+  
   def edit_multiple
   @registrations = Registration.find(params[:registration_ids])
   end
