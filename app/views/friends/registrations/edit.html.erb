@@ -9,18 +9,7 @@
             <p><i>Dimension 250 by 250 pixels. JPEG or PNG files only.</i></p>
             <h6 style="margin:10px 0 0 0;"><h6 class="label label-success"><%= current_friend.role %></h6></h6></center>
             </p>
-            <ul class="nav nav-pills nav-stacked">
-  <li role="presentation"><%= link_to 'Home', root_path %></a></li>
-  <li role="presentation" class="active"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-  <li role="presentation"><a href="#">Comments</a></li>
-  <li role="presentation"><a href="#">Bookmarks</a></li>
-  <li role="presentation"><a href="http://friends.jumaiyah.com_cards">BUY FRIENDS CARD</a></li>
-  <li role="presentation"><%= link_to 'Logout', destroy_friend_session_path, method: :delete %></li>
-            </ul>   
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-8" style="background:#fff; padding:25px;">
-          <h3><center>FRIENDS PROFILE</center></h3>
+            <h3><center>FRIENDS PROFILE</center></h3>
           <p><center>Edit your FRIENDS profile here.</center>
           </p><hr>
         </center>
@@ -53,7 +42,6 @@
           <%= f.submit "Update" %>
         </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
