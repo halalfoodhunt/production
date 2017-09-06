@@ -27,6 +27,8 @@ class Friends::RegistrationsController < Devise::RegistrationsController
         super
       end
    end
+   
+   
 
   # POST /resource
   # def create

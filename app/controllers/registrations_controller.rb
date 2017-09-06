@@ -51,6 +51,13 @@ class RegistrationsController < ApplicationController
   end
 
   private
+
+  def authenticate_friend!
+    unless friend_signed_in?
+    store_location_for(:friend, request.url)
+    redirect_to new_friend_registration_url
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_registration
       @registration = Registration.find(params[:id])

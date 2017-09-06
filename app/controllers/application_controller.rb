@@ -18,12 +18,4 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   
-  protected
-
-  def authenticate_friend!
-    unless friend_signed_in?
-    store_location_for(:friend, request.url)
-    redirect_to new_friend_registration_url
-    end
-  end
 end
