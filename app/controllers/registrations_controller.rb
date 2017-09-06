@@ -6,7 +6,8 @@ class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all
+   @search = Registration.ransack(params[:q])
+   @registrations = @search.result
   end
 
   # GET /registrations/1
