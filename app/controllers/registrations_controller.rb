@@ -42,7 +42,7 @@ class RegistrationsController < ApplicationController
   
   def update
     respond_to do |format|
-      if @registration.update(place_params)
+      if @registration.update(registration_params)
         format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
         format.json { render :show, status: :ok, location: @registration }
       else
@@ -55,7 +55,7 @@ class RegistrationsController < ApplicationController
   def destroy
     @registration.destroy
     respond_to do |format|
-      format.html { redirect_to registrations_url, notice: 'Place was successfully destroyed.' }
+      format.html { redirect_to registrations_url, notice: 'Registration was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
