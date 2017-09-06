@@ -40,6 +40,18 @@ class RegistrationsController < ApplicationController
     end
   end
   
+  def update
+    respond_to do |format|
+      if @registration.update(place_params)
+        format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
+        format.json { render :show, status: :ok, location: @registration }
+      else
+        format.html { render :edit }
+        format.json { render json: @registration.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   def destroy
     @registration.destroy
     respond_to do |format|
