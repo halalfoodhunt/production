@@ -1,0 +1,27 @@
+<div class="col-sm-12 col-md-12" style="padding:0">
+  <div class="col-sm-12 col-md-2" style="padding:0">
+    <h6 style="text-align:left">Search for registration</h6>
+  </div>
+  <%= search_form_for @search, url: registrations_path do |f| %>
+  <div class="col-sm-12 col-md-7" style="padding:0">
+    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+      <%= f.text_field :name_cont_any, class: "form-control" %>
+    </div>
+    <br>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-1" style="padding:0"><%= f.submit "Search", class: "btn btn-raised btn-block btn-primary" %>
+</div>
+<% end %>
+<div class="col-xs-12 col-sm-12 col-md-2 text-right" style="padding-right:0;">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><center><p><%= sort_link(@search, :name, 'A-Z', default_order: :asc) %></p></center></li>
+              <li><center><p><%= sort_link(@search, :name, 'Z-A', default_order: :desc) %></p></center></li>
+              <li><center><p><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></p></center></li>
+              <li><center><p><%= sort_link(@search, :expiry_date, 'Expiring', default_order: :asc) %></p></center></li>
+            </ul>
+          </div>
+        </div>
+</div>

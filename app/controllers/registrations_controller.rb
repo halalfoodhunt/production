@@ -39,6 +39,20 @@ class RegistrationsController < ApplicationController
     end
   end
   
+  def edit_multiple
+  @registrations = Registration.find(params[:registration_ids])
+  end
+
+  def update_multiple
+  @registrations = Registration.update(params[:registrations].keys, params[:registrations].values)
+  @registrations.reject! { |p| p.errors.empty? }
+  if @registrations.empty?
+    redirect_to registrations_path
+  else
+    render "edit_multiple"
+  end
+  end
+  
   protect_from_forgery except: [:hook]
   def hook
     params.permit! # Permit all Paypal input params

@@ -96,6 +96,7 @@ Rails.application.routes.draw do
   resources :qualifyings
   resources :special_tags
   resources :days
+  resources :caterer_packages
   resources :food_items
   resources :places_menus
   resources :supplier_types
@@ -106,6 +107,7 @@ Rails.application.routes.draw do
   resources :featured_articles
   resources :listings
   resources :supermarket_highlights
+  resources :friends_cards 
   resources :supermarkets do
      collection do
       get :edit_multiple
@@ -142,7 +144,6 @@ Rails.application.routes.draw do
       put :update_multiple
     end
   end
-  resources :caterer_packages
   resources :caterers do
      collection do
       get :edit_multiple
@@ -162,13 +163,12 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-  resources :friends_cards do
+  resources :registrations do
    collection do
       get :edit_multiple
       put :update_multiple
     end
   end
-  resources :registrations
   post "/hook" => "registrations#hook"
   post "/registrations/:id" => "registrations#show"
  

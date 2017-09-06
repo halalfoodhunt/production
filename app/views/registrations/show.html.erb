@@ -30,6 +30,7 @@
 <div class="container-fluid">
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+      <br><br>
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h3 class="panel-title">Invoice #000<%= @registration.id %></h3>
@@ -46,7 +47,7 @@
             <li class="list-group-item"><strong>Zipcode:</strong> <%= @registration.zipcode %></li>
             <li class="list-group-item"><strong>Notes:</strong> <%= @registration.notes %></li>
             <% if @registration.payment_method == "paypal" %>
-            <li class="list-group-item"><p><strong>Payment status:</strong><%= @registration.status %></p></li>
+            <li class="list-group-item"><p><strong>Payment Status:</strong><%= @registration.status %></p></li>
             <li class="list-group-item"><p><strong>Paypal Transaction Identifier:</strong><%= @registration.transaction_id %></p></li>
             <% end %>
           </ul>

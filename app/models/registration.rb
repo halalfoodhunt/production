@@ -5,6 +5,12 @@ class Registration < ActiveRecord::Base
   accepts_nested_attributes_for :card
   
   validates :name, :date_of_birth,  :contact_number, :instagram_account, :address_1, :zipcode, presence: true
+  
+  before_create :set_expiration_date
+  
+  def set_expiration_date
+    self.expiry_date =  Date.today + 365.days
+  end
 
   serialize :notification_params, Hash
   def paypal_url(return_path)
@@ -40,5 +46,5 @@ class Registration < ActiveRecord::Base
 
   def payment_method
     "paypal"
-end
+  end
 end

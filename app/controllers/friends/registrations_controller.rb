@@ -18,7 +18,11 @@ class Friends::RegistrationsController < Devise::RegistrationsController
   #   super
   def after_sign_up_path_for(friends)
   friends_cards_path
-  end# end
+  end
+  
+  def after_sign_in_path_for(friends)
+  edit_friends_registrations_path
+  end
   
    def update_resource(resource, params)
       if params[:password].blank? && params[:password_confirmation].blank? && params[:current_password].blank?

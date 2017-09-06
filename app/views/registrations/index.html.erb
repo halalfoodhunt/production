@@ -1,44 +1,125 @@
-<div class="container">
-        <h3 class="title">Registrations</h3>
-        <table class="table table-hover">
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; padding:10px; margin-bottom:20px;">
+        <h5><i class="fa fa-list fa-1x"></i> Registrations</h5>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#EF6C3D">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= Friend.count %></h1>
+                    <h4>FRIENDS</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#FFB20E">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(processing: true).count %></h1>
+                    <h4>PROCESSING</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#C4A276">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(pending: true).count %></h1>
+                    <h4>PENDING</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#4C4743">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(completed: true).count %></h1>
+                    <h4>COMPLETED</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <%= render 'registrations_search' %>
+        <hr>
+        <%= form_tag edit_multiple_registrations_path, method: :get do %>
+        <table class="table table-striped table-responsive">
           <thead>
             <tr>
-              <th>Invoice ID</th>
-              <th>Order Date</th>
-             <th>Name</th>
-      <th>Ic number</th>
-      <th>Date of birth</th>
-      <th>Contact number</th>
-      <th>Email</th>
-      <th>Address 1</th>
-      <th>Address 2</th>
-      <th>City</th>
-      <th>Zipcode</th>
-      <th>Notes</th>
-      <th>Registration Status</th>
-      <th>Transaction Id</th>
-              <th colspan="3"></th>
+              <th></th>
+              <th><h6><strong>Name</strong></h6></th>
+              <th><h6><strong>Contact Number</strong></h6></th>
+              <th><h6><strong>Date of Birth</strong></h6></th>
+              <th><h6><strong>Address 1</strong></h6></th>
+              <th><h6><strong>Address 2</strong></h6></th>
+              <th><h6><strong>City</strong></h6></th>
+              <th><h6><strong>Zipcode</strong></h6></th>
+              <th><h6><strong>Notes</strong></h6></th>
+              <th><h6><strong>Payment Status</strong></h6></th>
+              <th><h6><strong>Delivery Status</strong></h6></th>
+              <th><h6><strong>Expiry Date</strong></h6></th>
+              <th><h6><strong>Friends Card Number</strong></h6></th>
+              <th colspan="2"></th>
             </tr>
           </thead>
           <tbody>
-             <% @registrations.each do |registration| %>
-              <tr>
-                <td><%= registration.created_at %></td>
-                <td>#OOO<%= registration.id %></td>
-                <td><%= registration.name %></td>
-        <td><%= registration.ic_number %></td>
-        <td><%= registration.date_of_birth %></td>
-        <td><%= registration.contact_number %></td>
-        <td><%= registration.email %></td>
-        <td><%= registration.address_1 %></td>
-        <td><%= registration.address_2 %></td>
-        <td><%= registration.city %></td>
-        <td><%= registration.zipcode %></td>
-        <td><%= registration.notes %></td>
-        <td><%= registration.status %></td>
-        <td><%= registration.transaction_id %></td>
-              </tr>
+            <% @registrations.each do |registration| %>
+            <tr>
+              <td><%= check_box_tag "registration_ids[]", registration.id %>
+              </td>
+              <td><%= link_to registration.name, edit_registration_path(registration), class:'table-text' %></td>
+              <td><%= registration.contact_number %></td>
+              <td><%= registration.date_of_birth %></td>
+              <td><%= registration.address_1 %></td>
+              <td><%= registration.address_2 %></td>
+              <td><%= registration.city %></td>
+              <td><%= registration.zipcode %></td>
+              <td><%= registration.notes %></td>
+              <td><%= registration.status %></td>
+              <td><% if registration.completed == true %>
+                <span class="label label-success">COMPLETED</span>
+                <% else %>
+                <span class="label label-danger">PROCESSING</span>
+                <% end %>
+              </td>
+              <td><%= registration.expiry_date.try(:strftime, '%m/%d/%Y') %></td>
+              <td><%= registration.card_number %></td>
+              <td><%= link_to edit_registration_path(registration), style:'color:white;', remote: true do %>
+                <i class="fa fa-pencil"></i><% end %>
+              </td>
+              <td><%= link_to registration, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash-o"></i><% end %>
+              </td>
+            </tr>
             <% end %>
           </tbody>
         </table>
+        <center><%= submit_tag "Edit Registration", class: "btn btn-large btn-raised btn-primary" %></center>
+        <% end %>
       </div>
+    </div>
+  </div>
+</div>

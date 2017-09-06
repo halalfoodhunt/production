@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+        <%= form_tag update_multiple_registrations_path, method: :put do %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><h6><strong>Name</strong></h6></th>
+          <th><h6><strong>Friends Card Number</strong></h6></th>
+          <th><h6><strong>Expiry Date</strong></h6></th>
+          <th><h6><strong>Delivery Status</strong></h6></th>
+          <th><h6><strong>Payment Status</strong></h6></th>
+          <th><h6><strong>Transaction Id</strong></h6></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @registrations.each do |registration| %>
+      <%= fields_for "registrations[]", registration do |f| %>
+      <% if registration.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+        <ul>
+          <% registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+        <tr>
+          <td><%= registration.name %></td>
+          <td><%= f.text_field :card_number %></td>
+          <td><%= f.date_select :expiry_date %></td>
+          <td><%= f.check_box :completed %></td>
+          <td><%= f.text_field :status %></td>
+          <td><%= f.text_field :transaction_id %></td>
+        </tr>
+       <% end %>
+    <% end %>
+      </tbody>
+      </table>
+    <div class="actions">
+      <center><%= submit_tag "Update", class: 'btn btn-large btn-raised btn-primary' %></center>
+    </div>
+  </div>
+  <% end %>
+      </div>
+    </div>
+  </div>
+</div>
