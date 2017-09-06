@@ -10,7 +10,69 @@
     <section class="detailed-syllabus">
       <div class="wrapper-inside">
         <p>Please fill in these details for your friends card subscription.</p>
-       <%= render 'form' %>
+       <%= bootstrap_form_for @registration do |f| %>
+ <% if @registration.errors.any? %>
+ <div id="error_explanation">
+  <h2>
+    <%= pluralize(@registration.errors.count, "error") %>
+    prohibited this registration from being saved:
+  </h2>
+  <ul>
+    <% @registration.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<h4>Registration Details</h4>
+<div class="field">
+  <%= f.hidden_field :friends_card_id, value: @friends_card.id %>
+</div>
+<div class="field">
+  <%= f.text_field :name, label: 'Name on card' %>
+</div>
+<div class="field">
+  <%= f.date_select :date_of_birth, start_year: 1950, order: [:day, :month, :year] %>
+</div>
+<div class="field">
+  <%= f.text_field :contact_number %>
+</div>
+<div class="field">
+  <%= f.text_field :instagram_account %>
+</div>
+<label>Where did you hear about us?</label>
+<div class="field">
+  <%= f.check_box :facebook_ads %>
+</div>
+<div class="field">
+  <%= f.check_box :facebook_newsfeed %>
+</div>
+<div class="field">
+  <%= f.check_box :facebook_video %>
+</div>
+<div class="field">
+  <%= f.check_box :instagram %>
+</div>
+<h4>Shipping Details</h4>
+<div class="field">
+  <%= f.text_field :address_1 %>
+</div>
+<div class="field">
+  <%= f.text_field :address_2 %>
+</div>
+<div class="field">
+  <%= f.text_field :city %>
+</div>
+<div class="field">
+  <%= f.text_field :zipcode %>
+</div>
+<div class="field">
+  <%= f.text_area :notes, label:"Order Notes" %>
+</div>
+<%= f.submit "Proceed To Payment", class: "btn btn-block", style: "color: white;background: rgb(242, 118, 73);" %>
+<% end %>
       </div>
     </section>
   </section>
