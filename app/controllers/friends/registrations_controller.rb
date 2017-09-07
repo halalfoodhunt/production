@@ -22,7 +22,7 @@ force_ssl
   end
   
   def after_sign_in_path_for(friends)
-  edit_friends_registrations_path
+   root_path
   end
   
    def update_resource(resource, params)

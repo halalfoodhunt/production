@@ -37,6 +37,7 @@ class RegistrationsController < ApplicationController
         when "paypal"
           redirect_to @registration.paypal_url(registration_path(@registration))
       end
+    FriendCardNotifier.new_friends_card_purchase_notification(self).deliver
     else
       render :new
     end
@@ -83,7 +84,6 @@ class RegistrationsController < ApplicationController
     if status == "Completed"
       @registration = Registration.find params[:invoice]
       @registration.update_attributes notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now
-      FriendCardNotifier.new_friends_card_purchase_notification(self).deliver
     end
     render nothing: true
   end
