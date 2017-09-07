@@ -7,13 +7,13 @@ class Registration < ActiveRecord::Base
   validates :name, :date_of_birth,  :contact_number, :instagram_account, :address_1, :zipcode, presence: true
   
   before_create :set_expiration_date
-  after_create :send_new_friends_card_purchase_email
+  after_create :new_friends_card_purchase_notification
   
   def set_expiration_date
     self.expiry_date =  Date.today + 365.days
   end
     
-  def send_new_friends_card_purchase_email
+  def new_friends_card_purchase_notification
     FriendCardNotifier.new_friends_card_purchase_notification(self).deliver
   end
 
