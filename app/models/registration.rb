@@ -10,7 +10,7 @@ class Registration < ActiveRecord::Base
   after_create :send_friends_card_purchase_email
     
   def send_friends_card_purchase_email
-    FriendCardNotifier.new_friends_card_purchase_notification(self).deliver
+    FriendCardNotifier.new_friends_card_purchase_notification(@friend, @registration).deliver
   end
   
   def set_expiration_date
