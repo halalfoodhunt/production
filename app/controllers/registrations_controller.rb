@@ -32,7 +32,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations
   # POST /registrations.json
   def create
-  @registration = current_friend.registration.new(registration_params)
+  @registration = current_friend.registrations.new(registration_params)
     if @registration.save
       case params['payment_method']
         when "paypal"
