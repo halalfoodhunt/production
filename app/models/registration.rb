@@ -12,10 +12,6 @@ class Registration < ActiveRecord::Base
   def set_expiration_date
     self.expiry_date =  Date.today + 365.days
   end
-    
-  def new_friends_card_purchase_notification
-    FriendCardNotifier.new_friends_card_purchase_notification(self).deliver
-  end
 
   serialize :notification_params, Hash
   def paypal_url(return_path)
