@@ -4,7 +4,7 @@ class Registration < ActiveRecord::Base
   has_one :card
   accepts_nested_attributes_for :card
   
-  validates :name, :date_of_birth,  :contact_number, :address_1, :zipcode, presence: true
+  validates :name, :date_of_birth,  :contact_number, :email, :address_1, :zipcode, presence: true
   
   before_create :set_expiration_date
   
