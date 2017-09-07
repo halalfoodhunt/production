@@ -4,14 +4,9 @@ class Registration < ActiveRecord::Base
   has_one :card
   accepts_nested_attributes_for :card
   
-  validates :name, :date_of_birth,  :contact_number, :instagram_account, :address_1, :zipcode, presence: true
+  validates :name, :date_of_birth,  :contact_number, :address_1, :zipcode, presence: true
   
   before_create :set_expiration_date
-  after_create :send_friends_card_purchase_email
-    
-  def send_friends_card_purchase_email
-    FriendCardNotifier.new_friends_card_purchase_notification(@friend, @registration).deliver
-  end
   
   def set_expiration_date
     self.expiry_date =  Date.today + 365.days
