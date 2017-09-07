@@ -6,7 +6,7 @@ class FriendCardNotifier < ApplicationMailer
   #
   #   en.user_mailer.signup_confirmation.subject
   #
-  def new_friends_card_purchase_notification (friend)
+  def new_friends_card_purchase_notification (registration)
     @registration = registration
     @friend = friend
     mail(to: @friend.email, subject: 'Your Friends Card Order Receipt')
