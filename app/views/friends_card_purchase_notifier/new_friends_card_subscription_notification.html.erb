@@ -18,7 +18,7 @@
 		<div style="border:1px solid #ccc; padding:0; border-radius:5px; background:#df5b3e;" >
 			<h3 style="font-family:'Montserrat', sans-serif; font-size:30px; line-height:150%; color:white; padding:10px;"><b>An order has been made!</b></h3>
 			<div style="background:#fff; padding:20px; border-radius-bottom:5px;">
-				<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">These are the details for your reference:</p>
+				<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">Dear Admin, an order has been made. These are the details for your reference. Please ensure payment is stated as complete before issuance of FRIENDS card.</p>
 				<p style="font-family: 'Muli', sans-serif; color: #df5b3e; font-size:20px;"><b>Receipt #21<%= @registration.id %></b></p>
 				<table class="table">
 					<thead>
@@ -33,15 +33,18 @@
 							<td>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Name:</strong> <%= @registration.name %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Email:</strong> <%= @registration.email %></p>
-								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Address 1:</strong> <%= @registration.address_1 %></p>
-								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Address 2:</strong> <%= @registration.address_2 %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Shipping Address 1:</strong> <%= @registration.address_1 %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Shipping Address 2:</strong> <%= @registration.address_2 %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>City:</strong> <%= @registration.city %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Zipcode:</strong> <%= @registration.zipcode %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Expiry Date:</strong> <%= @registration.expiry_date %></p>
-								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Notes:</strong> <%= @registration.notes %></p>
 							</td>
 							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">Yearly</p></td>
 							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Notes:</strong></p></td>
+							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.notes %></p></td>
 						</tr>
 						<tr>
 							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Method</b></p></td>

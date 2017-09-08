@@ -1,5 +1,5 @@
 class FriendsCardPurchaseNotifier < ApplicationMailer
-     default from: "dee@halalfoodhunt.com"
+     default from: "info@halalfoodhunt.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,6 +8,6 @@ class FriendsCardPurchaseNotifier < ApplicationMailer
   #
   def new_friends_card_subscription_notification (registration)
     @registration = registration
-    mail to: "dee@halalfoodhunt.com", subject: "New Friends Card Subscription"
+    mail to: "info@halalfoodhunt.com", subject: "New Friends Card Subscription"
   end
 end
