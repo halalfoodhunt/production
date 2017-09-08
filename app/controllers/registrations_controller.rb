@@ -38,7 +38,7 @@ class RegistrationsController < ApplicationController
         when "paypal"
           redirect_to @registration.paypal_url(registration_path(@registration))
       end
-      FriendCardNotifier.new_friends_card_purchase_notification(@registration).deliver_later
+      FriendCardNotifier.new_friends_card_purchase_notification(@registration, @friend).deliver_later
     else
       render :new
     end
