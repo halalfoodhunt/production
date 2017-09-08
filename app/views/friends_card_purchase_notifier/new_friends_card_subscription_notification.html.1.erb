@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+	<style>
+	table, th, td {
+    border: 1px solid #22211d;
+    border-collapse: collapse;
+	}
+	h1,h2,h3,h4,h5,h6 {font-family: 'Montserrat', sans-serif;}
+	p {font-family: 'Muli', sans-serif; color: #22211d;}
+	</style>
+</head>
+<body>
+	<div style="background:#f5f5f5; padding:70px;">
+		<div style="border:1px solid #ccc; padding:0; border-radius:5px; background:#df5b3e;" >
+			<h3 style="font-family:'Montserrat', sans-serif; font-size:30px; line-height:150%; color:white; padding:10px;"><b>An order has been made!</b></h3>
+			<div style="background:#fff; padding:20px; border-radius-bottom:5px;">
+				<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">These are the details for your reference:</p>
+				<p style="font-family: 'Muli', sans-serif; color: #df5b3e; font-size:20px;"><b>Receipt #21<%= @registration.id %></b></p>
+				<table class="table">
+					<thead>
+						<tr>
+							<th><p style="font-family: 'Montserrat', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Product</strong></p></th>
+							<th><p style="font-family: 'Montserrat', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Subscription</strong></p></th>
+							<th><p style="font-family: 'Montserrat', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Price</strong></p></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Name:</strong> <%= @registration.name %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Email:</strong> <%= @registration.email %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Address 1:</strong> <%= @registration.address_1 %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Address 2:</strong> <%= @registration.address_2 %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>City:</strong> <%= @registration.city %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Zipcode:</strong> <%= @registration.zipcode %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Expiry Date:</strong> <%= @registration.expiry_date %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Notes:</strong> <%= @registration.notes %></p>
+							</td>
+							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">Yearly</p></td>
+							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Method</b></p></td>
+							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.payment_method.capitalize %></p></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Status</b></p></td>
+							<td><% if @registration.payment_method == "paypal" %><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.status %></p></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Transaction Id</b></p></td>
+							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.transaction_id %></p><% end %></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Total</b></p></td>
+							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

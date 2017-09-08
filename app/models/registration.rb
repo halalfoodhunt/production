@@ -7,9 +7,18 @@ class Registration < ActiveRecord::Base
   validates :name, :date_of_birth,  :contact_number, :email, :address_1, :zipcode, presence: true
   
   before_create :set_expiration_date
+  after_create :purchase_complete
   
   def set_expiration_date
     self.expiry_date =  Date.today + 365.days
+  end
+  
+  def purchase_complete
+    if status == "Completed"
+      @registration.update_attributes notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now
+      FriendCardNotifier.new_friends_card_purchase_notification(registration).deliver
+      FriendsCardPurchaseNotifier.new_friends_card_subscription_notification(registration).deliver
+    end
   end
 
   serialize :notification_params, Hash
