@@ -14,11 +14,7 @@ class Registration < ActiveRecord::Base
   end
   
   def purchase_complete
-    if status == "Completed"
-      @registration.update_attributes notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now
-      FriendCardNotifier.new_friends_card_purchase_notification(registration).deliver
       FriendsCardPurchaseNotifier.new_friends_card_subscription_notification(registration).deliver
-    end
   end
 
   serialize :notification_params, Hash
