@@ -30,7 +30,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>
+							<td style="padding:25px;">
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>FRIENDS Rewards Card</strong></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Name:</strong> <%= @registration.name %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Email:</strong> <%= @registration.email %></p>
@@ -41,24 +41,24 @@
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Expiry Date:</strong> <%= @registration.expiry_date %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Notes:</strong> <%= @registration.notes %></p>
 							</td>
-							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">Yearly</p></td>
-							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
+							<td style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">Yearly</p></td>
+							<td style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
 						</tr>
 						<tr>
-							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Method</b></p></td>
-							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.payment_method.capitalize %></p></td>
+							<td colspan="2" style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Method</b></p></td>
+							<td style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.payment_method.capitalize %></p></td>
 						</tr>
 						<tr>
-							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Status</b></p></td>
-							<td><% if @registration.payment_method == "paypal" %><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.status %></p></td>
+							<td colspan="2" style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Payment Status</b></p></td>
+							<td style="padding:25px;"><% if @registration.payment_method == "paypal" %><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.status %></p></td>
 						</tr>
 						<tr>
-							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Transaction Id</b></p></td>
+							<td colspan="2" style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Transaction Id</b></p></td>
 							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><%= @registration.transaction_id %></p><% end %></td>
 						</tr>
 						<tr>
-							<td colspan="2"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Total</b></p></td>
-							<td><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
+							<td colspan="2" style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><b>Total</b></p></td>
+							<td style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">$18/Year</p></td>
 						</tr>
 					</tbody>
 				</table>
