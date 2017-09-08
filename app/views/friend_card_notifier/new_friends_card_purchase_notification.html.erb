@@ -38,7 +38,7 @@
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Address 2:</strong> <%= @registration.address_2 %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>City:</strong> <%= @registration.city %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Zipcode:</strong> <%= @registration.zipcode %></p>
-								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Expiry Date:</strong> <%= @registration.expiry_date %></p>
+								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Expiry Date:</strong> <%= @registration.expiry_date.try(:strftime, '%m/%d/%Y') %></p>
 								<p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;"><strong>Notes:</strong> <%= @registration.notes %></p>
 							</td>
 							<td style="padding:25px;"><p style="font-family: 'Muli', sans-serif; color: #737373; font-size:16px; line-height:24px;">Yearly</p></td>
