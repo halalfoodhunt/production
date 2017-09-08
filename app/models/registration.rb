@@ -14,7 +14,7 @@ class Registration < ActiveRecord::Base
   end
   
   def purchase_complete
-      FriendsCardPurchaseNotifier.new_friends_card_subscription_notification(registration).deliver
+      FriendsCardPurchaseNotifier.new_friends_card_subscription_notification(self).deliver
   end
 
   serialize :notification_params, Hash
