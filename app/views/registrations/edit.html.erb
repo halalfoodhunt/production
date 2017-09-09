@@ -67,7 +67,6 @@
 				<section id="ruby">
 					<section class="detailed-syllabus">
 						<div class="wrapper-inside">
-							<p>Edit Order</p>
 							<%= bootstrap_form_for @registration do |f| %>
 							<% if @registration.errors.any? %>
 							<div id="error_explanation">
@@ -84,7 +83,7 @@
 								</ul>
 							</div>
 							<% end %>
-							<h4>Registration Details</h4>
+							<h4>Edit Order</h4>
 							<div class="field">
 								<%= f.text_field :name, label: 'Name on card' %>
 							</div>
