@@ -1,142 +1,139 @@
 <div class="container-fluid">
-	<div class="row">
-		<%= render 'layouts/admin_sidebar' %>
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
-			<%= render 'layouts/topbar' %>
-			<div class="col-md-10 col-md-offset-1" style="color:white; padding:10px; margin-bottom:20px;">
-				<h5><i class="fa fa-list fa-1x"></i> Registrations</h5>
-				<div class="col-xs-6 col-sm-3">
-					<div class="square" style="background:#EF6C3D">
-						<div class="content">
-							<div class="table">
-								<div class="table-cell numbers">
-									<center>
-										<h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= Friend.count %></h1>
-										<h4>FRIENDS</h4>
-									</center>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-3">
-					<div class="square" style="background:#FFB20E">
-						<div class="content">
-							<div class="table">
-								<div class="table-cell numbers">
-									<center>
-										<h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(processing: true).count %></h1>
-										<h4>PROCESSING</h4>
-									</center>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-3">
-					<div class="square" style="background:#C4A276">
-						<div class="content">
-							<div class="table">
-								<div class="table-cell numbers">
-									<center>
-										<h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(pending: true).count %></h1>
-										<h4>PENDING</h4>
-									</center>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-3">
-					<div class="square" style="background:#4C4743">
-						<div class="content">
-							<div class="table">
-								<div class="table-cell numbers">
-									<center>
-										<h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(completed: true).count %></h1>
-										<h4>COMPLETED</h4>
-									</center>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-10 col-md-offset-1">
-			  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding-35" style="background:#fff;">
-				<section id="ruby">
-					<section class="detailed-syllabus">
-						<div class="wrapper-inside">
-							<%= bootstrap_form_for @registration do |f| %>
-							<% if @registration.errors.any? %>
-							<div id="error_explanation">
-								<h2>
-									<%= pluralize(@registration.errors.count, "error") %>
-									prohibited this registration from being saved:
-								</h2>
-								<ul>
-									<% @registration.errors.full_messages.each do |message| %>
-									<li>
-										<%= message %>
-									</li>
-									<% end %>
-								</ul>
-							</div>
-							<% end %>
-							<h4>Order #21<%= @registration.id %> Details</h4>
-							<h5>Payment via <%= @registration.payment_method %> (<%= @registration.transaction_id %>) on <%= @registration.created_at.strftime("%b %d, %Y") %> </h5>
-							<p>General Details</p>
-							<div class="field">
-								<%= f.date_select :created_at, order: [:day, :month, :year], label:'Order Date:' %>
-							</div>
-							<div class="field">
-								<%= f.check_box :completed, label: 'Completed' %>
-							</div>
-							<div class="field">
-								<%= f.text_field :name, label: 'Customer:' %>
-							</div>
-							<label>Shipping Details</label>
-							<div class="field">
-								<%= f.text_field :contact_number %>
-							</div>
-							<div class="field">
-								<%= f.text_field :instagram_account %>
-							</div>
-							<label>Where did you hear about us?</label>
-							<div class="field">
-								<%= f.check_box :facebook_ads %>
-							</div>
-							<div class="field">
-								<%= f.check_box :facebook_newsfeed %>
-							</div>
-							<div class="field">
-								<%= f.check_box :facebook_video %>
-							</div>
-							<div class="field">
-								<%= f.check_box :instagram %>
-							</div>
-							<h4>Shipping Details</h4>
-							<div class="field">
-								<%= f.text_field :address_1 %>
-							</div>
-							<div class="field">
-								<%= f.text_field :address_2 %>
-							</div>
-							<div class="field">
-								<%= f.text_field :city %>
-							</div>
-							<div class="field">
-								<%= f.text_field :zipcode %>
-							</div>
-							<div class="field">
-								<%= f.text_area :notes, label:"Order Notes" %>
-							</div>
-							<%= f.submit "Update", class: "btn btn-block", style: "color: white;background: rgb(242, 118, 73);" %>
-							<% end %>
-						</div>
-					</section>
-				</section>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <%= render 'layouts/admin_sidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-admin" style="padding:0;">
+      <%= render 'layouts/topbar' %>
+      <div class="col-md-10 col-md-offset-1" style="color:white; padding:10px; margin-bottom:20px;">
+        <h5><i class="fa fa-list fa-1x"></i> Registrations</h5>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#EF6C3D">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= Friend.count %></h1>
+                    <h4>FRIENDS</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#FFB20E">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(processing: true).count %></h1>
+                    <h4>PROCESSING</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#C4A276">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(pending: true).count %></h1>
+                    <h4>PENDING</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="square" style="background:#4C4743">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell numbers">
+                  <center>
+                    <h1 style="font-size:6em; font-weight:100; line-height:1em;"><%= @registrations.where(completed: true).count %></h1>
+                    <h4>COMPLETED</h4>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding-35" style="background:#fff;">
+          <section id="ruby">
+            <section class="detailed-syllabus">
+              <div class="wrapper-inside">
+                <%= bootstrap_form_for @registration do |f| %>
+                <% if @registration.errors.any? %>
+                <div id="error_explanation">
+                  <h2>
+                    <%= pluralize(@registration.errors.count, "error") %>
+                    prohibited this registration from being saved:
+                  </h2>
+                  <ul>
+                    <% @registration.errors.full_messages.each do |message| %>
+                    <li>
+                      <%= message %>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div>
+                <% end %>
+                <h4>Order #21<%= @registration.id %> Details</h4>
+                <h5>Payment via <%= @registration.payment_method %> (<%= @registration.transaction_id %>) on <%= @registration.created_at.strftime("%b %d, %Y") %> </h5>
+                <p><strong>General Details</strong></p>
+                <div class="field">
+                  <%= f.date_select :created_at, order: [:day, :month, :year], label:'Order Date:' %>
+                </div>
+                <div class="field">
+                  <%= f.check_box :completed, label: 'Completed' %>
+                </div>
+                <div class="field">
+                  <%= f.text_field :name, label: 'Customer:' %>
+                </div>
+                <p><strong>Shipping Details</strong></p>
+                <label>Address</label>
+                <p><%= @registration.name %></p>
+                <p><%= @registration.address_1 %></p>
+                <p><%= @registration.city %></p>
+                <p><%= @registration.zipcode %></p><br><br>
+                <label>Email Address</label>
+                <p><%= @registration.email %></p><br><br>
+                <label>Phone</label>
+                <p><%= @registration.contact_number %></p>
+                <div class="field">
+                  <%= f.text_field :instagram_account %>
+                </div>
+              </section>
+            </section>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <label>Where did you hear about us?</label>
+            <div class="field">
+              <%= f.check_box :facebook_ads %>
+            </div>
+            <div class="field">
+              <%= f.check_box :facebook_newsfeed %>
+            </div>
+            <div class="field">
+              <%= f.check_box :facebook_video %>
+            </div>
+            <div class="field">
+              <%= f.check_box :instagram %>
+            </div>
+            
+            <div class="field">
+              <%= f.text_area :notes, label:"Order Notes" %>
+            </div>
+            <%= f.submit "Update", class: "btn btn-block", style: "color: white;background: rgb(242, 118, 73);" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
