@@ -100,7 +100,7 @@
               </td>
               <td><%= registration.notes %></td>
               <td><%= registration.created_at %><br>
-              Via <%= @registration.payment_method %>
+              Via <%= registration.payment_method %>
               </td>
               <td><%= registration.status %></td>
               <td><% if registration.completed == true %>
