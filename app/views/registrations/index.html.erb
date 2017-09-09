@@ -72,12 +72,12 @@
               <th></th>
               <th></th>
               <th><h6><strong>Order</strong></h6></th>
-              <th><h6><strong>Contact Number</strong></h6></th>
-              <th><h6><strong>Address 1</strong></h6></th>
-              <th><h6><strong>City</strong></h6></th>
-              <th><h6><strong>Zipcode</strong></h6></th>
+              <th><h6><strong>Deliver To</strong></h6></th>
               <th><h6><strong>Notes</strong></h6></th>
+              <th><h6><strong>Date</strong></h6></th>
+              <th><h6><strong>Total</strong></h6></th>
               <th><h6><strong>Payment Status</strong></h6></th>
+              <th><h6><strong>Delievry Status</strong></h6></th>
               <th><h6><strong>Delivery Status</strong></h6></th>
               <th><h6><strong>Expiry Date</strong></h6></th>
               <th><h6><strong>Friends Card Number</strong></h6></th>
@@ -90,26 +90,24 @@
               <td><%= check_box_tag "registration_ids[]", registration.id %></td>
               <td><%= link_to edit_registration_path(registration), style:'color:white;' do %>
                 <i class="fa fa-ellipsis-h"></i><% end %></td>
-              <td><%= link_to registration.name, edit_registration_path(registration), class:'table-text' %></td>
-              <td><%= registration.contact_number %></td>
-              <td><%= registration.address_1 %></td>
-              <td><%= registration.city %></td>
-              <td><%= registration.zipcode %></td>
+              <td>#21<%= registration.id %> by <%= link_to registration.name %>
+              <br><%= registration.contact_number %>
+              <br><%= registration.email %><br>
+              <%= link_to 'Edit', edit_registration_path(registration), style:'color:white;' %> | <%= link_to registration, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } %>  
+              </td>
+              <td><%= registration.address_1 %><br>
+              <%= registration.city %> <%= registration.zipcode %>
+              </td>
               <td><%= registration.notes %></td>
+              <td><%= registration.created_at %><br>
+              Via <%= @registration.payment_method %>
+              </td>
               <td><%= registration.status %></td>
               <td><% if registration.completed == true %>
                 <span class="label label-success">COMPLETED</span>
                 <% else %>
                 <span class="label label-danger">PROCESSING</span>
                 <% end %>
-              </td>
-              <td><%= registration.expiry_date.try(:strftime, '%m/%d/%Y') %></td>
-              <td><%= registration.card_number %></td>
-              <td><%= link_to edit_registration_path(registration), style:'color:white;', remote: true do %>
-                <i class="fa fa-pencil"></i><% end %>
-              </td>
-              <td><%= link_to registration, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fa fa-trash-o"></i><% end %>
               </td>
             </tr>
             <% end %>
