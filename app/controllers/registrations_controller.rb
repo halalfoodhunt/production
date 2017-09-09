@@ -27,6 +27,7 @@ class RegistrationsController < ApplicationController
 
   # GET /registrations/1/edit
   def edit
+    @registrations = Registration.all
   end
 
   # POST /registrations
