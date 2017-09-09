@@ -71,13 +71,13 @@
             <tr>
               <th></th>
               <th></th>
-              <th><p>Order</p></th>
-              <th><p><strong>Deliver To</strong></p></th>
-              <th><h6><strong>Notes</strong></h6></th>
-              <th><h6><strong>Date</strong></h6></th>
-              <th><h6><strong>Total</strong></h6></th>
-              <th><h6><strong>Payment Status</strong></h6></th>
-              <th><h6><strong>Delievry Status</strong></h6></th>
+              <th>Order</th>
+              <th>Deliver To</th>
+              <th>Notes</th>
+              <th>Date</th>
+              <th>Total</th>
+              <th>Payment Status</th>
+              <th>Delievry Status</th>
             </tr>
           </thead>
           <tbody>
@@ -87,7 +87,7 @@
               <td><%= link_to edit_registration_path(registration), style:'color:white;' do %>
                 <i class="fa fa-ellipsis-h"></i><% end %></td>
               <td><%= link_to edit_registration_path(registration), style:'color:#d9534f;' do %>
-              #21<%= registration.id %> <% end %> by <%= registration.name %>
+              #21<%= registration.id %> <% end %> by <%= link_to edit_friend_registration_path, style:'color:#d9534f;' do %><%= registration.name %><% end %>
               <br><%= registration.contact_number %>
               <br><%= registration.email %><br>
               <%= link_to 'Edit', edit_registration_path(registration), style:'color:white;' %> | <%= link_to 'Thrash', registration, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } %>  
@@ -99,7 +99,7 @@
               <td><%= registration.created_at.try(:strftime, '%d/%m/%Y') %><br>
               Via <%= registration.payment_method %>
               </td>
-              <td>$18/Year</td>
+              <td>$18.00</td>
               <td><%= registration.status %></td>
               <td><% if registration.completed == true %>
                 <span class="label label-success">COMPLETED</span>
