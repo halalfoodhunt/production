@@ -90,11 +90,12 @@
 								<%= f.date_select :created_at, order: [:day, :month, :year], label:'Order Date:' %>
 							</div>
 							<div class="field">
-								<%= f.text_field :name, label: 'Name on card' %>
+								<%= f.check_box :completed, label: 'Completed' %>
 							</div>
 							<div class="field">
-								<%= f.date_select :date_of_birth, start_year: 1950, order: [:day, :month, :year] %>
+								<%= f.text_field :name, label: 'Customer:' %>
 							</div>
+							<label>Shipping Details</label>
 							<div class="field">
 								<%= f.text_field :contact_number %>
 							</div>
