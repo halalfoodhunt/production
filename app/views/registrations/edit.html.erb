@@ -96,13 +96,13 @@
                   <%= f.text_field :name, label: 'Customer:' %>
                 </div>
                 <p><strong>Shipping Details</strong></p>
-                <label>Address</label>
+                <strong><label>Address</label></strong>
                 <p><%= @registration.name %></p>
                 <p><%= @registration.address_1 %></p>
                 <p><%= @registration.city %></p>
-                <p><%= @registration.zipcode %></p><br><br>
+                <p><%= @registration.zipcode %></p><br>
                 <label>Email Address</label>
-                <p><%= @registration.email %></p><br><br>
+                <p><%= @registration.email %></p><br>
                 <label>Phone</label>
                 <p><%= @registration.contact_number %></p>
                 <div class="field">
