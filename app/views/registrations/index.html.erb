@@ -86,7 +86,8 @@
               <td><%= check_box_tag "registration_ids[]", registration.id %></td>
               <td><%= link_to edit_registration_path(registration), style:'color:white;' do %>
                 <i class="fa fa-ellipsis-h"></i><% end %></td>
-              <td>#21<%= registration.id %> by <%= registration.name %>
+              <td><%= link_to edit_registration_path(registration), style:'color:#d9534f;' do %>
+              #21<%= registration.id %> <% end %> by <%= registration.name %>
               <br><%= registration.contact_number %>
               <br><%= registration.email %><br>
               <%= link_to 'Edit', edit_registration_path(registration), style:'color:white;' %> | <%= link_to 'Thrash', registration, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } %>  
