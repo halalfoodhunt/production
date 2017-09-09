@@ -84,7 +84,7 @@
 							</div>
 							<% end %>
 							<h4>Order #21 <%= @registration.id %> Details</h4>
-							<h5>Payment via <%= @registration.payment_method %> (<%= @registration.transaction_id %>) on <%= @registration.created_at.try(:strftime("%b %d, %Y")) %> </h5>
+							<h5>Payment via <%= @registration.payment_method %> (<%= @registration.transaction_id %>) on <%= @registration.created_at.strftime("%b %d, %Y") %> </h5>
 							<div class="field">
 								<%= f.text_field :name, label: 'Name on card' %>
 							</div>
