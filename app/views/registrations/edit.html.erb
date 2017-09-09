@@ -83,9 +83,12 @@
 								</ul>
 							</div>
 							<% end %>
-							<h4>Order #21 <%= @registration.id %> Details</h4>
+							<h4>Order #21<%= @registration.id %> Details</h4>
 							<h5>Payment via <%= @registration.payment_method %> (<%= @registration.transaction_id %>) on <%= @registration.created_at.strftime("%b %d, %Y") %> </h5>
 							<p>General Details</p>
+							<div class="field">
+								<%= f.date_select :created_at, order: [:day, :month, :year], label:'Order Date:' %>
+							</div>
 							<div class="field">
 								<%= f.text_field :name, label: 'Name on card' %>
 							</div>
