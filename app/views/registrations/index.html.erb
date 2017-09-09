@@ -95,9 +95,10 @@
               <%= registration.city %> <%= registration.zipcode %>
               </td>
               <td><%= registration.notes %></td>
-              <td><%= registration.created_at.try(:strftime, '%m/%d/%Y') %><br>
+              <td><%= registration.created_at.try(:strftime, '%d/%m/%Y') %><br>
               Via <%= registration.payment_method %>
               </td>
+              <td>$18/Year</td>
               <td><%= registration.status %></td>
               <td><% if registration.completed == true %>
                 <span class="label label-success">COMPLETED</span>
