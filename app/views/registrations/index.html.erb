@@ -90,7 +90,7 @@
               #21<%= registration.id %> <% end %> by <%= link_to edit_friend_registration_path, style:'color:#d9534f;' do %><%= registration.name %><% end %>
               <br><%= registration.contact_number %>
               <br><%= registration.email %><br>
-              <%= link_to 'Edit', edit_registration_path(registration), style:'color:white;' %> | <%= link_to 'Thrash', registration, style:'color:white;', method: :delete, data: { confirm: 'Are you sure?' } %>  
+              <%= link_to 'Edit', edit_registration_path(registration), style:'color:ececec;' %> | <%= link_to 'Thrash', registration, style:'color:#ccc;', method: :delete, data: { confirm: 'Are you sure?' } %>  
               </td>
               <td><%= registration.address_1 %><br>
               <%= registration.city %> <%= registration.zipcode %>
