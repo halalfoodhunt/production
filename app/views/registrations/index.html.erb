@@ -89,7 +89,7 @@
             <tr>
               <td><%= check_box_tag "registration_ids[]", registration.id %></td>
               <td><%= link_to edit_registration_path(registration), style:'color:white;' do %>
-                <i class="fa fa-plus"></i><% end %></td>
+                <i class="fa fa-ellipsis-h"></i><% end %></td>
               <td><%= link_to registration.name, edit_registration_path(registration), class:'table-text' %></td>
               <td><%= registration.contact_number %></td>
               <td><%= registration.address_1 %></td>
