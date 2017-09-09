@@ -36,7 +36,7 @@ class RegistrationsController < ApplicationController
   @registration = current_friend.registrations.new(registration_params)
     if @registration.save
       case params['payment_method']
-        when "paypal"
+        when "Paypal"
           redirect_to @registration.paypal_url(registration_path(@registration))
       end
       FriendCardNotifier.new_friends_card_purchase_notification(@friend, @registration,).deliver_later
