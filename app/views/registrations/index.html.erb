@@ -70,7 +70,8 @@
           <thead>
             <tr>
               <th></th>
-              <th><h6><strong>Name</strong></h6></th>
+              <th></th>
+              <th><h6><strong>Order</strong></h6></th>
               <th><h6><strong>Contact Number</strong></h6></th>
               <th><h6><strong>Address 1</strong></h6></th>
               <th><h6><strong>City</strong></h6></th>
@@ -86,8 +87,10 @@
           <tbody>
             <% @registrations.each do |registration| %>
             <tr>
-              <td><%= check_box_tag "registration_ids[]", registration.id %>
-              </td>
+              <td><%= check_box_tag "registration_ids[]", registration.id %></td>
+              <td><% link_to edit_registration_path(registration) do %> 
+              <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+</span></i><% end %></td>
               <td><%= link_to registration.name, edit_registration_path(registration), class:'table-text' %></td>
               <td><%= registration.contact_number %></td>
               <td><%= registration.address_1 %></td>
