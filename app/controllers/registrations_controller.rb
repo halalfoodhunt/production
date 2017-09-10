@@ -1,9 +1,8 @@
 class RegistrationsController < ApplicationController
+  before_filter :is_admin?, only: [:index, :edit, :update, :destroy]
   before_action :authenticate_friend!, :unless => :devise_controller?, only: [:new]
   before_action :authenticate_merchant!, only: [:index, :edit, :update, :destroy,]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
-  
-  force_ssl
 
   # GET /registrations
   # GET /registrations.json
@@ -63,6 +62,11 @@ class RegistrationsController < ApplicationController
       format.html { redirect_to registrations_url, notice: 'Registration was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def is_admin?
+  unless current_merchant && current_merchant.admin?
+   render "layouts/unauthorised"
   end
   
   def edit_multiple

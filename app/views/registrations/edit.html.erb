@@ -96,6 +96,7 @@
                 <div class="field">
                   <%= f.text_field :name, label: 'Customer:' %>
                 </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <p><strong>Shipping Details</strong></p>
                 <label><strong>Address</strong></label>
                 <p><%= @registration.name %></p>
@@ -108,6 +109,22 @@
                 <p><%= @registration.contact_number %></p>
                 <label><strong>Instagram Handle</strong></label>
                 <p><%= @registration.instagram_account %></p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <p><strong>FRIENDS Card Details</strong></p>
+                <div class="field">
+                  <%= f.text_field :name, label:'Name on Card' %>
+                </div>
+                <div class="field">
+                  <%= f.date_select :date_of_birth, start_year: 1950, order: [:day, :month, :year] %>
+                </div>
+                <div class="field">
+                  <%= f.text_field :card_number, label:'FRIENDS Card Number' %>
+                </div>
+                <div class="field">
+                  <%= f.date_select :expiry_date, order: [:day, :month, :year] %>
+                </div>
+                </div>
               </section>
             </section>
           </div>
