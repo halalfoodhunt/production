@@ -69,8 +69,6 @@ Rails.application.routes.draw do
   get 'pages/friends_rewards_results'
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
-  
-  get '*path' => redirect('/')
 
   resources :halalfoodhunt_seos
   resources :grocer_service_types
