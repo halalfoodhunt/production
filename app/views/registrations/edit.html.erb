@@ -103,8 +103,9 @@
                 <p><%= @registration.address_1 %></p>
                 <p><%= @registration.city %></p>
                 <p><%= @registration.zipcode %></p>
-                <label><strong>Email Address</strong></label>
-                <p><%= @registration.email %></p>
+                <div class="field">
+                  <%= f.email_field :email %>
+                </div>
                 <label><strong>Phone</strong></label>
                 <p><%= @registration.contact_number %></p>
                 <label><strong>Instagram Handle</strong></label>
