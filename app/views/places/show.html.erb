@@ -6,7 +6,7 @@
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="http://sg.halalfoodhunt.com">HOME</a></li>
 		<li class="breadcrumb-item"><%= link_to 'PLACES', places_path %></li>
-		<li class="breadcrumb-item active"><%= @place.business_name %> </li>
+		<li class="breadcrumb-item active"><%= @place.business_name %> (<%= @place.listing.id %><%= @place.id %>)</li>
 	</ol>
 </div>
 <div style="padding-left:0; padding-right:0;" class="container-fluid">
