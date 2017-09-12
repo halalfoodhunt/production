@@ -6,7 +6,7 @@
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="http://sg.halalfoodhunt.com">HOME</a></li>
 		<li class="breadcrumb-item"><%= link_to 'PLACES', places_path %></li>
-		<li class="breadcrumb-item active"><%= @place.business_name %> (<%= @place.listing.id %><%= @place.id %>)</li>
+		<li class="breadcrumb-item active"><%= @place.business_name %></li>
 	</ol>
 </div>
 <div style="padding-left:0; padding-right:0;" class="container-fluid">
@@ -33,6 +33,7 @@
 				<div class="col-xs-12 col-sm-12 col-md-3">
 					<div class="avatar">
 						<center><%= image_tag @place.logo.url(:medium), :class => "media-object img-circle" %></center>
+						<p>(<%= merchant.id %><%= @place.listing.id %><%= @place.id %>)</p>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-9">
