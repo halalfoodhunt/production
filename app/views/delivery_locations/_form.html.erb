@@ -1,0 +1,21 @@
+<%= form_for(@delivery_location) do |f| %>
+  <% if @delivery_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@delivery_location.errors.count, "error") %> prohibited this delivery_location from being saved:</h2>
+
+      <ul>
+      <% @delivery_location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
