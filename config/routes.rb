@@ -174,6 +174,8 @@ Rails.application.routes.draw do
  
   devise_for :merchants, controllers: { registrations: "merchants/registrations" }
   devise_for :friends, controllers: { registrations: "friends/registrations" }
+  
+  get '*path' => redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
