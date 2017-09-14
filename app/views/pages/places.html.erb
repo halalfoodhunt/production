@@ -70,8 +70,8 @@
           <thead>
             <tr>
               <th></th>
+              <th><h6><strong>Id</strong></h6></th>
               <th><h6><strong>Business Name</strong></h6></th>
-              <th><h6><strong>Special Tags</strong></h6></th>
               <th><h6><strong>Halal Status</strong></h6></th>
               <th><h6><strong>Halal Expiry</strong></h6></th>
               <th><h6><strong>Verify?</strong></h6></th>
@@ -85,11 +85,8 @@
             <tr>
               <td><%= check_box_tag "place_ids[]", place.id %>
               </td>
+              <td><%= place.merchant.id %>/<%= place.listing.id %>/<%= place.id %>)</td>
               <td><%= link_to place.business_name, edit_place_path(place), class:'table-text' %></td>
-              <td><% place.special_tags.all.each do |tag| %>
-  <span class="label label-warning"><%= link_to tag.name, pages_places_path(special_tag: tag.name), style:'color:white;' %></span>
-  <% end %>
-</td>
               <td class="table-text"><%= place.qualifying_type.name %></td>
               <td><%= place.halal_expiry.try(:strftime, '%m/%d/%Y') %></td>
               <td><% if place.verified == true %>
