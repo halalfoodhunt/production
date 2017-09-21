@@ -18,7 +18,7 @@ force_ssl
   # def new
   #   super
   def after_sign_up_path_for(friends)
-  https://halalfoodhunt.chargebee.com/hosted_pages/plans/friends
+  'https://halalfoodhunt.chargebee.com/hosted_pages/plans/friends'
   end
   
   def after_sign_in_path_for(friends)
