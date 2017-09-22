@@ -22,7 +22,7 @@ force_ssl
   end
   
   def after_sign_in_path_for(friends)
-   root_path
+   'https://halalfoodhunt.chargebee.com/hosted_pages/plans/friends'
   end
   
    def update_resource(resource, params)
