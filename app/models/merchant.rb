@@ -7,15 +7,16 @@ class Merchant < ActiveRecord::Base
     self.role ||= :free
   end
   
-  after_create :send_admin_mail
-  def send_admin_mail
-    MerchantNotifier.send_new_listing_notification(self).deliver
-  end
+  #after_create :send_admin_mail
+  #def send_admin_mail
+    #MerchantNotifier.send_new_listing_notification(self).deliver
+  #end
   
-  after_create :send_merchant_email
-  def send_merchant_email
-    MerchantMailer.send_welcome_email(self).deliver
-  end
+  #after_create :send_merchant_email
+  #def send_merchant_email
+    #MerchantMailer.send_welcome_email(self).deliver
+  #end
+
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

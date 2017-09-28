@@ -12,16 +12,16 @@ class Place < ActiveRecord::Base
   
   before_create :set_expiration_date
   before_create :set_halal_expiry
-  after_create :send_admin_email
-  after_create :send_merchant_listing_email
+  #after_create :send_admin_email
+  #after_create :send_merchant_listing_email
   
-  def send_admin_email
-    AdminNotifier.new_place_notification(self.merchant).deliver
-  end
+  #def send_admin_email
+    #AdminNotifier.new_place_notification(self.merchant).deliver
+  #end
   
-  def send_merchant_listing_email
-    MerchantListingMailer.send_merchant_listing_email(self.merchant).deliver
-  end
+  #def send_merchant_listing_email
+    #MerchantListingMailer.send_merchant_listing_email(self.merchant).deliver
+  #end
   
   def set_expiration_date
     self.expiry_date =  Date.today + 365.days
