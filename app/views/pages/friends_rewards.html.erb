@@ -45,7 +45,7 @@
               </div>
               <!--Content-->
               <div class="card-block" style="padding:0 5px 0 5px;">
-                <h6 style="margin:0;"><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></h6>
+                <h5 style="margin:0;"><%= link_to place_path(place) do %><%= place.business_name %><% end %></h5>
                 <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p><br>
                 <!--Triggering button-->
                 <p><a class="rotate-btn btn btn-default btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
