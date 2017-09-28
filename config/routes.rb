@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   mount StripeEvent::Engine, at: '/stripe/webhook'
 
-  root 'page#index'
+  root 'pages#index'
   
   get 'pages/merchant_dashboard'
 
