@@ -69,7 +69,7 @@ Rails.application.routes.draw do
   
   get 'pages/friends_rewards_results'
   
-  root 'layouts#unauthorised'
+  root 'pages#maintenance'
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
 
