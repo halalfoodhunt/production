@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :delivery_locations
-  resources :feedbacks
   post '/rate' => 'rater#create', :as => 'rate'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Added by Koudoku.
@@ -13,7 +11,7 @@ Rails.application.routes.draw do
 
   mount StripeEvent::Engine, at: '/stripe/webhook'
 
-  root 'page#/index'
+  root 'page#index'
   
   get 'pages/merchant_dashboard'
 
@@ -74,6 +72,8 @@ Rails.application.routes.draw do
   get 'place/:id/likes', to: 'places#likes', as: :likes
 
   resources :halalfoodhunt_seos
+  resources :delivery_locations
+  resources :feedbacks
   resources :grocer_service_types
   resources :supplier_highlights
   resources :grocer_types
