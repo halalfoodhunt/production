@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   mount StripeEvent::Engine, at: '/stripe/webhook'
 
-  root 'pages#index'
+  get 'pages/index'
   
   get 'pages/merchant_dashboard'
 
@@ -67,7 +67,7 @@ Rails.application.routes.draw do
   
   get 'pages/friends_rewards_results'
   
-  get 'pages/maintenance'
+  root 'pages#maintenance'
   
   get 'place/:id/likes', to: 'places#likes', as: :likes
 
