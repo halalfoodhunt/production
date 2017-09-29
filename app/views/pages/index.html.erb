@@ -58,7 +58,7 @@
               <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
             </div>
             <div>
-              <%= f.submit "Search", class: "btn btn-raised btn-block btn-danger" %>
+              <%= f.submit "Search", class: "btn btn-block btn-danger" %>
             </div>
           </div>
           <% end %>

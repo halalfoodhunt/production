@@ -1303,7 +1303,6 @@ you can use the generic selector below, but it's slower:
     margin-left: 0;
 }
 .nav-tabs {
-    margin-bottom: 20px;
     border-bottom-width: 2px;
     border-bottom-color: #e1e4e7;
 }
