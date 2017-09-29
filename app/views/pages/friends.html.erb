@@ -124,49 +124,17 @@
     <div class="sixteen columns">
       <span class="pix_text" style="color: rgb(51, 51, 51); font-size: 35px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif; font-weight:600;" rel="">Where to enjoy your card?</span><br><br>
       <span class="editContent" style="font-weight:900; color:#e73c25; font-size:22px;"><p class="agency_text">Enjoy discounts at all these places!</p></span>
-      <% @rewards.take(4).each do |reward| %>
-      <div class="four columns alpha">
-       <div class="card-container">
-        <div class="card">
-          <div class="front">
-            <div class="cover">
-              <%= image_tag reward.at_css('.card-up img').attr('src') %>
-            </div>
-            <div class="user">
-              <%= image_tag reward.at_css('.avatar img').attr('src') %>
-            </div>
-            <div class="content">
-              <div class="main">
-                <a href="<%= reward.at_css('h5 a')[:href] %>"><h6 class="name"><%= reward.at_css('h5').text %></h6></a>
-                <small class="profession"><i class="fa fa-map-marker"></i><%= reward.at_css('p').text %></small>
-              </div>
-            </div>
-          </div> <!-- end front panel -->
-          <div class="back">
-            <div class="header">
-              <h5 class="motto"></h5>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h4 class="text-center"><%= reward.at_css('h4').text %></h4>
-                <hr>
-                <small class="text-center"><%= reward.at_css('.face.back p').text %></small><br><br>
-                <a href="https://www.halalfoodhunt.com<%= reward.at_css('h5 a')[:href] %>" class="btn_normal padding_5">View Merchant Details</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="scroller">
+        <%= render "places/friends" %>
       </div>
+      <br>
+      <center>
+        <a href="#" class="main_button pix_text">
+          <span class="editContent">VIEW MORE REWARDS</span>
+        </a>
+      </center>
     </div>
-    <% end %>
-    <br>
-    <center>
-      <a href="#" class="main_button pix_text">
-        <span class="editContent">VIEW MORE REWARDS</span>
-      </a>
-    </center>
   </div>
-</div>
 </div>
 <div class="pixfort_corporate_2" id="section_corporate_4">
   <div class="amazing_style pix_builder_bg" style="background-image: none; background-color: rgb(238, 238, 238); padding-top: 0px; padding-bottom: 60px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: cover; background-attachment: scroll; background-repeat: repeat;" src="images/uploads/store.png">
