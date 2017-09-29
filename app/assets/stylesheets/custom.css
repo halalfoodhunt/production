@@ -85,3 +85,22 @@
     color: #fff;
     font-size: 14px;
 }
+
+@media (min-width: 768px) {
+    #left {
+        position: absolute;
+        top: 52px;
+        bottom: 0;
+        left: 0;
+        width: 40%;
+        overflow-y: hidden;
+    }
+    #right {
+        position: absolute;
+        top: 52px;
+        bottom: 0;
+        right: 0;
+        overflow-y: scroll;
+        width: 60%;
+    }
+}
