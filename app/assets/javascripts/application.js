@@ -37,4 +37,5 @@
 //= require jquery.vide
 //= require ticker
 //= require card
+//= require bootstrap-sprockets
 //= require_tree .
