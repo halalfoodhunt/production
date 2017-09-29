@@ -2324,6 +2324,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 .navbar-lg .navbar-nav > li > a {
     font-size: 15px;
     line-height: 1.6;
+    
 }
 @media (min-width: 768px) {
     .navbar-lg .navbar-nav > li > a,
