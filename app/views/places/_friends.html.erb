@@ -1,36 +1,38 @@
-<% @places.each do |place| %>
-    <% unless place.friends_rewards_terms.blank? %>
-      <div class="four columns alpha">
-       <div class="card-container">
-        <div class="card">
-          <div class="front">
-            <div class="cover">
-              <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
-            </div>
-            <div class="user">
-              <%= image_tag place.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h6><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></h6>
-                <small class="profession"><i class="fa fa-map-marker"></i><%= place.operating_address %></small>
-              </div>
-            </div>
-          </div> <!-- end front panel -->
-          <div class="back">
-            <div class="header">
-              <h5 class="motto"></h5>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h4 class="text-center"><%= place.friends_reward.name %></h4>
-                <hr>
-                <small class="text-center"><%= place.friends_rewards_terms %></small><br><br>
-                <h6><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></h6>
-            </div>
+<div class="sixteen columns alpha">
+  <% @places.take(4).each do |place| %>
+  <% unless place.friends_rewards_terms.blank? %>
+  <div class="four columns alpha">
+   <div class="card-container">
+    <div class="card">
+      <div class="front">
+        <div class="cover">
+          <%= image_tag place.featured_image.url(:square) %>
+        </div>
+        <div class="user">
+          <%= image_tag place.friends_reward.icon.url(:large) %>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h6><strong><%= place.business_name %></strong></h6>
+            <small class="profession"><i class="fa fa-map-marker"></i><%= place.operating_address %></small>
+          </div>
+        </div>
+      </div> <!-- end front panel -->
+      <div class="back">
+        <div class="header">
+          <h5 class="motto"></h5>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h4 class="text-center"><%= place.friends_reward.name %></h4>
+            <hr>
+            <small class="text-center"><%= place.friends_rewards_terms %></small><br><br>
+            <h6><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></h6>
           </div>
         </div>
       </div>
     </div>
-    <% end %>
-    <% end %>
+  </div>
+</div>
+<% end %>
+<% end %>
