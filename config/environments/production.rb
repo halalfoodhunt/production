@@ -79,15 +79,6 @@ config.i18n.fallbacks = true
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.after_initialize do
-    ActiveMerchant::Billing::Base.mode = :production  # :production when you will use a real Pro Account
-    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-        login: "halalfoodhunt-facilitator_api1.gmail.com",
-        password: "NNCFP2RUTNKK9LQ5",
-        signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31A7oC79Cj0RNLSIxfI1V3UVwiwZzA"
-    )
-  end
-  
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {

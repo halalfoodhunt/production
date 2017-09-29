@@ -12,22 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-fileupload
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
-//= require jquery-ui/effect-highlight
-//= require jquery.slick
 //= require jquery.raty
 //= require ratyrate
-//= require cocoon
 //= require global
-//= require initialize
 //= require underscore
 //= require gmaps/google
-//= require bootstrap-sprockets
-//= require bootstrap/scrollspy
-//= require bootstrap/modal
-//= require bootstrap/dropdown
 //= require bootstrap.min
 //= require bootstrap-switch
 //= require select2

@@ -12,11 +12,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'bootstrap-sass', '~> 3.3.6'
-
-gem 'font-awesome-sass', '~> 4.6.2'
-
-gem 'bootstrap_form'
 
 gem "cancan"
 
@@ -29,8 +24,6 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2.3'
 
 gem 'friendly_id'
-
-gem "jquery-fileupload-rails"
 
 gem 'stripe_event'
 
@@ -52,8 +45,6 @@ gem 'jquery-rails'
 
 gem 'jquery-ui-rails'
 
-gem "jquery-slick-rails"
-
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 gem 'rails_admin_rollincode', '~> 1.0'
@@ -62,14 +53,10 @@ gem "socialization"
 
 gem "sitemap_generator"
 
-gem "cocoon"
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-
-gem 'activemerchant'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
