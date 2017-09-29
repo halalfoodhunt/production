@@ -125,9 +125,10 @@
       <span class="pix_text" style="color: rgb(51, 51, 51); font-size: 35px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif; font-weight:600;" rel="">Where to enjoy your card?</span><br><br>
       <span class="editContent" style="font-weight:900; color:#e73c25; font-size:22px;"><p class="agency_text">Enjoy discounts at all these places!</p></span>
       <br>
+      <div class="four columns alpha">
 <% @places.each do |place| %>
 <% unless place.friends_rewards_terms.blank? %>
-<div class="four columns alpha">
+
  <div class="card-container">
   <div class="card">
     <div class="front">
@@ -158,9 +159,10 @@
       </div>
     </div>
   </div>
+
+<% end %>
+<% end %>
 </div>
-<% end %>
-<% end %>
      <div class="four columns  alpha">
       <div class="bg_Homes">
         <div class="img_homes_st"><img src="images/5_hotel/image-1.png" class="" alt=""></div>
