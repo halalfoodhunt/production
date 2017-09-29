@@ -59,7 +59,6 @@ ga('send', 'pageview');
    <%= yield :koudoku %>
 </head>
 <body>
-  <div id="page" class="page">
       <% flash.each do |type, message|  %>
       <div class="alert alert-danger fade-in" style="margin-top:50px;">
         <button class="close" data-dismiss="alert">x</button>
@@ -67,6 +66,5 @@ ga('send', 'pageview');
     </div>
     <% end %>
     <%= yield %>
-</div>
 </body>
 </html>
