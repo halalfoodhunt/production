@@ -61,14 +61,14 @@
               <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
             </div>
             <div>
-              <%= f.submit "Search", class: "btn btn-block btn-danger" %>
+              <%= f.submit "Search", class: "submit_btn orange_bg pix_text" %>
             </div>
           </div>
           <% end %>
         </div>
       </div>
     <div id="menu1" class="tab-pane fade">
-      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0;">
+      <div class="col-md-12" style="background:#ccc; padding-left:0; padding-right:0;">
             <%= search_form_for @search do |f| %>
             <div class="col-sm-12 col-md-12" style="padding:20px">
               <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">

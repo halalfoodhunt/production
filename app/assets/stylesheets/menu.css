@@ -1306,6 +1306,7 @@ you can use the generic selector below, but it's slower:
     margin-bottom: 0px;
     border-bottom-width: 2px;
     border-bottom-color: #e1e4e7;
+    background: #ccc;
 }
 .nav-tabs.nav-append-content {
     border-bottom: none;
@@ -1375,7 +1376,7 @@ you can use the generic selector below, but it's slower:
     border-width: 2px;
     font-size: 14px;
     font-weight: 700;
-    padding: 7px 21px 8px;
+    padding: 5px 10px;
     color: #7f8c9a;
     border-radius: 6px 6px 0 0;
     -webkit-transition: none;
