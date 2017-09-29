@@ -125,7 +125,7 @@
       <span class="pix_text" style="color: rgb(51, 51, 51); font-size: 35px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif; font-weight:600;" rel="">Where to enjoy your card?</span><br><br>
       <span class="editContent" style="font-weight:900; color:#e73c25; font-size:22px;"><p class="agency_text">Enjoy discounts at all these places!</p></span>
       <% @places.take(4).each do |place| %>
-    <% unless place.friends_rewards_terms.blank? %>
+      <% unless place.friends_rewards_terms.blank? %>
       <div class="four columns alpha">
        <div class="card-container">
         <div class="card">
@@ -153,21 +153,21 @@
                 <hr>
                 <small class="text-center"><%= place.friends_rewards_terms %></small><br><br>
                 <h6><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <% end %>
+      <% end %>
+      <br>
+      <center>
+        <a href="#" class="main_button pix_text">
+          <span class="editContent">VIEW MORE REWARDS</span>
+        </a>
+      </center>
     </div>
-    <% end %>
-    <% end %>
-    <br>
-    <center>
-      <a href="#" class="main_button pix_text">
-        <span class="editContent">VIEW MORE REWARDS</span>
-      </a>
-    </center>
   </div>
-</div>
 </div>
 <div class="pixfort_corporate_2" id="section_corporate_4">
   <div class="amazing_style pix_builder_bg" style="background-image: none; background-color: rgb(238, 238, 238); padding-top: 0px; padding-bottom: 60px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: cover; background-attachment: scroll; background-repeat: repeat;" src="images/uploads/store.png">
@@ -192,12 +192,13 @@
       </div>
     </div>
   </div>
-</div><div class="light_gray_bg normal_padding padding_top_60 pix_builder_bg" id="section_text_2" style="background-image: none; background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: auto; background-attachment: scroll; background-repeat: repeat;" src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/iMAc.png">
-<div class="container center_text">       
-  <div class="sixteen columns">
-    <span class="editContent" style="font-weight:900; color:#e73c25; font-size:22px;"><p class="agency_text">2. Walk into these places to get your cards</p></span>
-  </div>
 </div>
+<div class="light_gray_bg normal_padding padding_top_60 pix_builder_bg" id="section_text_2" style="background-image: none; background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: auto; background-attachment: scroll; background-repeat: repeat;" src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/iMAc.png">
+  <div class="container center_text">       
+    <div class="sixteen columns">
+      <span class="editContent" style="font-weight:900; color:#e73c25; font-size:22px;"><p class="agency_text">2. Walk into these places to get your cards</p></span>
+    </div>
+  </div>
 </div><div class="center_text big_padding pix_builder_bg" id="section_intro_title" style="background-image: none; background-color: rgba(0, 0, 0, 0); padding-top: 0px; padding-bottom: 60px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: auto; background-attachment: scroll; background-repeat: repeat;" src="http://friends.jumaiyah.com/wp-content/uploads/2017/01/JulieBakes_Pink_New-e1463074805327.png">
 <div class="container ">       
   <div class="one-third column">
@@ -253,7 +254,6 @@
     </ul>
   </div>
 </div>
-</div>
 <div class="one-third column">
   <div class="simple_team">
     <div class="simple_team_img ">
@@ -277,116 +277,114 @@
     </div>
   </div>
 </div>
-</div>
-</div><div class="pix_call_1 dark pix_builder_bg" id="section_call_1_dark">
-<div class="container ">
-  <div class="two-thirds column pix_area1">
-    <div class="call_text">
-      <h2 class="editContent" style="font-size: 30px;">GET MY FRIENDS CARD AT $18/YEAR</h2>
+<div class="pix_call_1 dark pix_builder_bg" id="section_call_1_dark">
+  <div class="container ">
+    <div class="two-thirds column pix_area1">
+      <div class="call_text">
+        <h2 class="editContent" style="font-size: 30px;">GET MY FRIENDS CARD AT $18/YEAR</h2>
+      </div>
+    </div>
+    <div class="one-third column pix_area2">
+      <a href="#" class="main_button pix_text"><span class="editContent">SIGN UP NOW!</span></a>
     </div>
   </div>
-  <div class="one-third column pix_area2">
-    <a href="#" class="main_button pix_text"><span class="editContent">SIGN UP NOW!</span></a>
-  </div>
-</div>
-</div><div class="light_gray_bg big_padding pix_builder_bg" id="section_testimonials_1">
-<div class="container ">
-  <div class="one-third column">
-    <div class="content_div">
-      <blockquote class="embedly-card" data-card-controls="0"><h4><a href="https://www.instagram.com/p/BOTnpYnhVIf/">This friends card by @halalfoodhunt is really reallly useful! With many merchants listed, you can enjoy discounts from 10% and above off your bill. I've been using this card for two days in a row at Chulop and Casuarina Curry. You can head over to their IG to check out how to apply the card.</a></h4><p>22 Likes, 4 Comments - N I S A R A H M A D H O (@nisarahmadho) on Instagram: "This friends card by @halalfoodhunt is really reallly useful! With many merchants listed, you can..."</p></blockquote>
-      <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-    </div>
-  </div>
-  <div class="one-third column">
-    <div class="content_div">
-      <blockquote class="embedly-card" data-card-controls="0"><h4><a href="https://www.instagram.com/p/BLyN8mShCPU/">#FRIENDSwithHalalFoodHunt // Bugis is the land of cafes and Muslim whereabouts, so I got myself a card so that I can go to these places more! Places like KawKawSG or Fika or Juliebakes will be the death of me with this card in my possession. 😂 #herestofood #cafehoppingisexpensivebutiloveit #supportlocalsg #supporthalal #halallife #blessed #morecardstofillmywallet #ig_sg #singapore #asia</a></h4><p>16 Likes, 3 Comments - N. Alyssha 'Alleycat' Nasron (@alyyiskiwi) on Instagram: "#FRIENDSwithHalalFoodHunt // Bugis is the land of cafes and Muslim whereabouts, so I got myself a..."</p></blockquote>
-      <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-    </div>
-  </div>
-  <div class="one-third column omega">
-    <div class="content_div">
-      <blockquote class="embedly-card" data-card-controls="0"><h4><a href="https://www.instagram.com/p/BNesfLzh9OS/">Whoop Whoop ☺️ #worthwaiting #friendswithhalalfoodhunt</a></h4><p>33 Likes, 1 Comments - Hanisah Sahari (@haannisss) on Instagram: "Whoop Whoop ☺️ #worthwaiting #friendswithhalalfoodhunt"</p></blockquote>
-      <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="pixfort_text_4 dark pix_builder_bg" id="section_footer_3_dark">
-  <div class="footer3">
+  <div class="light_gray_bg big_padding pix_builder_bg" id="section_testimonials_1">
     <div class="container ">
-      <div class="five columns alpha pix_text">
-        <div class="content_div area_1">
-          <img src="images/main/footer-logo-3.png" class="pix_footer_logo" alt="">                
-          <p class="small_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmoda tempor incididunt.</p>
-          <ul class="bottom-icons">
-            <li><a class="pi pixicon-facebook2" href="#fakelink"></a></li>
-            <li><a class="pi pixicon-twitter2" href="#fakelink"></a></li>
-            <li><a class="pi pixicon-instagram" href="#fakelink"></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="content_div area_2">
-          <span class="pix_text"><span class="editContent footer3_title">Halalfoodhunt.com</span></span>
-          <ul class="footer3_menu">
-            <li><a href="#" class="pix_text"><span class="editContent">Home</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Terms of Use</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Privacy Policy </span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Feedback</span></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="content_div area_3">
-          <span class="pix_text"><span class="editContent footer3_title">Discover</span></span>
-          <ul class="footer3_menu">
-            <li><a href="#" class="pix_text"><span class="editContent">Places</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Homies & Pop-ups</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Caterers</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Food Deliveries</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Online Retails</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Suppliers</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Bakes & Confectioners</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Raw Ingredients</span></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="three columns">
+      <div class="one-third column">
         <div class="content_div">
-          <span class="pix_text"><span class="editContent footer3_title">For Merchants</span></span>
-          <ul class="footer3_menu">
-            <li><a href="#" class="pix_text"><span class="editContent">Be a Merchant</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Login</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Pricing</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Corporate Services</span></a></li>
-            <li><a href="#" class="pix_text"><span class="editContent">Support</span></a></li>
-          </ul>
+          <blockquote class="embedly-card" data-card-controls="0"><h4><a href="https://www.instagram.com/p/BOTnpYnhVIf/">This friends card by @halalfoodhunt is really reallly useful! With many merchants listed, you can enjoy discounts from 10% and above off your bill. I've been using this card for two days in a row at Chulop and Casuarina Curry. You can head over to their IG to check out how to apply the card.</a></h4><p>22 Likes, 4 Comments - N I S A R A H M A D H O (@nisarahmadho) on Instagram: "This friends card by @halalfoodhunt is really reallly useful! With many merchants listed, you can..."</p></blockquote>
+          <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+        </div>
+      </div>
+      <div class="one-third column">
+        <div class="content_div">
+          <blockquote class="embedly-card" data-card-controls="0"><h4><a href="https://www.instagram.com/p/BLyN8mShCPU/">#FRIENDSwithHalalFoodHunt // Bugis is the land of cafes and Muslim whereabouts, so I got myself a card so that I can go to these places more! Places like KawKawSG or Fika or Juliebakes will be the death of me with this card in my possession. 😂 #herestofood #cafehoppingisexpensivebutiloveit #supportlocalsg #supporthalal #halallife #blessed #morecardstofillmywallet #ig_sg #singapore #asia</a></h4><p>16 Likes, 3 Comments - N. Alyssha 'Alleycat' Nasron (@alyyiskiwi) on Instagram: "#FRIENDSwithHalalFoodHunt // Bugis is the land of cafes and Muslim whereabouts, so I got myself a..."</p></blockquote>
+          <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+        </div>
+      </div>
+      <div class="one-third column omega">
+        <div class="content_div">
+          <blockquote class="embedly-card" data-card-controls="0"><h4><a href="https://www.instagram.com/p/BNesfLzh9OS/">Whoop Whoop ☺️ #worthwaiting #friendswithhalalfoodhunt</a></h4><p>33 Likes, 1 Comments - Hanisah Sahari (@haannisss) on Instagram: "Whoop Whoop ☺️ #worthwaiting #friendswithhalalfoodhunt"</p></blockquote>
+          <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="pixfort_footer_1" id="section_footer_1">
-  <div class="new_footer_1 pix_footers pix_builder_bg">
-    <div class="container ">
-      <div class="sixteen columns bg_foot">
-        <div class="seven columns alpha desk_left">
-          <div class="footer_1_text">
-            <span class="editContent">
-              <span class="pix_text">All rights reserved © 2017 </span>
-              <strong><span class="pix_text">Chooosie Group</span></strong>
-            </span>
+  <div class="pixfort_text_4 dark pix_builder_bg" id="section_footer_3_dark">
+    <div class="footer3">
+      <div class="container ">
+        <div class="five columns alpha pix_text">
+          <div class="content_div area_1">
+            <img src="images/main/footer-logo-3.png" class="pix_footer_logo" alt="">                
+            <p class="small_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmoda tempor incididunt.</p>
+            <ul class="bottom-icons">
+              <li><a class="pi pixicon-facebook2" href="#fakelink"></a></li>
+              <li><a class="pi pixicon-twitter2" href="#fakelink"></a></li>
+              <li><a class="pi pixicon-instagram" href="#fakelink"></a></li>
+            </ul>
           </div>
         </div>
-        <div class="nine columns omega desk_right">
-          <ul class="bottom-icons">
-            <li><a class="pi pixicon-facebook2" href="http://www.facebook.com/halalfoodhunt"></a></li>
-            <li><a class="pi pixicon-instagram" href="http://www.instagram.com/halalfoodhunt"></a></li>
-          </ul>
+        <div class="four columns">
+          <div class="content_div area_2">
+            <span class="pix_text"><span class="editContent footer3_title">Halalfoodhunt.com</span></span>
+            <ul class="footer3_menu">
+              <li><a href="#" class="pix_text"><span class="editContent">Home</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Terms of Use</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Privacy Policy </span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Feedback</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="content_div area_3">
+            <span class="pix_text"><span class="editContent footer3_title">Discover</span></span>
+            <ul class="footer3_menu">
+              <li><a href="#" class="pix_text"><span class="editContent">Places</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Homies & Pop-ups</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Caterers</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Food Deliveries</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Online Retails</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Suppliers</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Bakes & Confectioners</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Raw Ingredients</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="three columns">
+          <div class="content_div">
+            <span class="pix_text"><span class="editContent footer3_title">For Merchants</span></span>
+            <ul class="footer3_menu">
+              <li><a href="#" class="pix_text"><span class="editContent">Be a Merchant</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Login</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Pricing</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Corporate Services</span></a></li>
+              <li><a href="#" class="pix_text"><span class="editContent">Support</span></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="pixfort_footer_1" id="section_footer_1">
+    <div class="new_footer_1 pix_footers pix_builder_bg">
+      <div class="container ">
+        <div class="sixteen columns bg_foot">
+          <div class="seven columns alpha desk_left">
+            <div class="footer_1_text">
+              <span class="editContent">
+                <span class="pix_text">All rights reserved © 2017 </span>
+                <strong><span class="pix_text">Chooosie Group</span></strong>
+              </span>
+            </div>
+          </div>
+          <div class="nine columns omega desk_right">
+            <ul class="bottom-icons">
+              <li><a class="pi pixicon-facebook2" href="http://www.facebook.com/halalfoodhunt"></a></li>
+              <li><a class="pi pixicon-instagram" href="http://www.instagram.com/halalfoodhunt"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
