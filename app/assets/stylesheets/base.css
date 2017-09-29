@@ -232,7 +232,7 @@
 		max-width: 100%;
 		display: block;
 		margin-bottom: 20px;
-		border:0px;
+		border:1px solid #ccc;
 		background: #fff;
 	}
 	select {
