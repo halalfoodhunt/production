@@ -10,15 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree 
  *= require_self
  *= require_pixicon
+ *= require_base
  *= require font-awesome
  *= require select2
  *= require select2-bootstrap
  *= require_animations
  *= require_animations.min
  *= require_style.min
- *= require_base
  *= require_box
  *= require_flat-ui-slider
  *= require_landings
@@ -27,5 +28,4 @@
  *= require_main
  *= require_menu
  *= require_skeleton
- *= require_tree 
  */
