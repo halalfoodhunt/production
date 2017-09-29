@@ -98,30 +98,7 @@
   </div>
 </div>
 <div class="clearfix"></div>
-</div>
-</div>
-<div class="four columns omega padding_top_30">
-  <p class="big_title editContent" style="color: rgb(255, 255, 255); font-size: 36px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif;" src="images/media/pexels-photo-376464.jpeg"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="hidden_pix_4" class="confirm_page confirm_page_4 green_1_bg pix_builder_bg ">
- <div class="pixfort_real_estate_4">
-   <div class="confirm_header"><span class="editContent"><span class="pix_text">Thank You Very Much!</span></span></div>
-   <div class="confirm_text">
-     <span class="editContent"><span class="pix_text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</span></span>
-   </div>
-   <div class="center_text padding_bottom_60">
-     <ul class="bottom-icons confirm_icons center_text big_title pix_inline_block">
-       <li><a class="pi pixicon-facebook6 white" href="#fakelink"></a></li>
-       <li><a class="pi pixicon-twitter6 white" href="#fakelink"></a></li>
-       <li><a class="pi pixicon-googleplus7 white" href="#fakelink"></a></li>
-     </ul>
-   </div>
- </div>
-</div><div class="pixfort_hotel_5" id="section_hotel_4_1">
+<div class="pixfort_hotel_5" id="section_hotel_4_1">
 <div class="Homes pix_builder_bg">
  <div class="container">
   <div class="sixteen columns">
@@ -129,159 +106,86 @@
     <p class="subtitle_homes editContent">
       Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.
     </p>
-    <%= render 'places/place' %>
-  </div>
-</div>
-</div>
-</div><div class="pixfort_hotel_5" id="section_hotel_4_1">
-<div class="Homes pix_builder_bg" style="background-image: none; background-color: rgb(255, 255, 255); padding-top: 50px; padding-bottom: 0px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: cover; background-attachment: scroll; background-repeat: repeat;">
- <div class="container">
-  <div class="sixteen columns">
-    <div class="four columns  alpha">
-      <div class="bg_Homes">
-        <div class="img_homes_st"><img src="images/5_hotel/image-1.png" class="" alt=""></div>
-        <div class="text_homes_style">
-         <p class="calc_homes_st editContent">Welcome to Hotel</p>
-         <p class="calc_homes_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-       </div>
-       <span class="perday_btn editContent">  <a class="pix_text" href="#">$45 per day</a>  </span>
-     </div>
-   </div>
-
-   <div class="four columns column ">
-    <div class="bg_Homes">
-      <div class="img_homes_st"><img src="images/5_hotel/image-2.png" class="" alt=""></div>
-      <div class="text_homes_style">
-       <p class="calc_homes_st editContent">Best Services</p>
-       <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-     </div>
-     <span class="perday_btn editContent">  <a class="pix_text" href="#">$30 per day</a>  </span>
-   </div>
- </div>
- <div class="four columns column ">
-  <div class="bg_Homes">
-    <div class="img_homes_st"><img src="images/5_hotel/image-3.png" class="" alt=""></div>
-    <div class="text_homes_style">
-      <p class="calc_homes_st editContent">Daily Trips</p>
-      <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+          <br><br>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#home">RECOMMENDED</a></li>
+            <li><%= link_to 'PLACES', places_path %></li>
+            <li><%= link_to 'HOMIES & POP-UPS', ecommers_path %></li>
+            <li><%= link_to 'CATERERS', caterers_path %></li>
+            <li><%= link_to 'FOOD DELIVERIES', food_deliveries_path %></li>
+            <li><%= link_to 'ONLINE RETAIL', online_grocers_path %></li>
+            <li><%= link_to 'SUPPLIERS', suppliers_path %></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content padding-0">
+            <div class="tab-pane active padding-0" id="home">
+              <br>
+              <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Places</h4></div>
+              <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+                <%= render "places/place" %>
+              </div>
+              <br>
+              <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies & Pop-Ups</h4></div>
+              <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+                <%= render "ecommers/ecommers" %>
+              </div>
+              <br>
+              <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Food Deliveries</h4></div>
+              <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to food_deliveries_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+                <%= render 'food_deliveries/food_delivery_home' %>
+              </div>
+              <br>
+              <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Retail</h4></div>
+              <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+                <%= render "online_grocers/online_grocer" %>
+              </div>
+              <br>
+              <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
+              <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+                <%= render "suppliers/suppliers" %>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="homies">
+              <br>
+              <%= render "ecommers/ecommers" %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="caterers">
+              <br>
+              <%= render "caterers/caterers" %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="food-deliveries">
+              <br>
+              <%= render 'food_deliveries/food_delivery_home' %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="supermarkets">
+              <br>
+              <%= render "supermarkets/supermarket" %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="lessons">
+              <br>
+              <%= render "lessons/lessons" %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="online-grocers">
+              <br>
+              <%= render "online_grocers/online_grocer" %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="suppliers">
+              <br>
+              <%= render "suppliers/suppliers" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <span class="perday_btn editContent">  <a class="pix_text" href="#">$75 per day</a>  </span>
   </div>
 </div>
-<div class="four columns column  omega">
-  <div class="bg_Homes">
-    <div class="img_homes_st"><img src="images/5_hotel/image-4.png" class="" alt=""></div>
-    <div class="text_homes_style">
-      <p class="calc_homes_st editContent">Great Support</p>
-      <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-    </div>
-    <span class="perday_btn editContent">  <a class="pix_text" href="#">$125 per day</a>  </span>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="pixfort_hotel_5" id="section_hotel_4_1">
-<div class="Homes pix_builder_bg" style="background-image: none; background-color: rgb(255, 255, 255); padding-top: 0px; padding-bottom: 50px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: cover; background-attachment: scroll; background-repeat: repeat;">
- <div class="container">
-  <div class="sixteen columns">
-
-
-    <div class="four columns  alpha">
-      <div class="bg_Homes">
-        <div class="img_homes_st"><img src="images/5_hotel/image-1.png" class="" alt=""></div>
-        <div class="text_homes_style">
-         <p class="calc_homes_st editContent">Welcome to Hotel</p>
-         <p class="calc_homes_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-       </div>
-       <span class="perday_btn editContent">  <a class="pix_text" href="#">$45 per day</a>  </span>
-     </div>
-   </div>
-
-   <div class="four columns column ">
-    <div class="bg_Homes">
-      <div class="img_homes_st"><img src="images/5_hotel/image-2.png" class="" alt=""></div>
-      <div class="text_homes_style">
-       <p class="calc_homes_st editContent">Best Services</p>
-       <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-     </div>
-     <span class="perday_btn editContent">  <a class="pix_text" href="#">$30 per day</a>  </span>
-   </div>
- </div>
- <div class="four columns column ">
-  <div class="bg_Homes">
-    <div class="img_homes_st"><img src="images/5_hotel/image-3.png" class="" alt=""></div>
-    <div class="text_homes_style">
-      <p class="calc_homes_st editContent">Daily Trips</p>
-      <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-    </div>
-    <span class="perday_btn editContent">  <a class="pix_text" href="#">$75 per day</a>  </span>
-  </div>
-</div>
-<div class="four columns column  omega">
-  <div class="bg_Homes">
-    <div class="img_homes_st"><img src="images/5_hotel/image-4.png" class="" alt=""></div>
-    <div class="text_homes_style">
-      <p class="calc_homes_st editContent">Great Support</p>
-      <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-    </div>
-    <span class="perday_btn editContent">  <a class="pix_text" href="#">$125 per day</a>  </span>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="pixfort_hotel_5" id="section_hotel_4_1">
-<div class="Homes pix_builder_bg" style="background-image: none; background-color: rgb(255, 255, 255); padding-top: 0px; padding-bottom: 50px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: cover; background-attachment: scroll; background-repeat: repeat;">
- <div class="container">
-  <div class="sixteen columns">
-
-
-    <div class="four columns  alpha">
-      <div class="bg_Homes">
-        <div class="img_homes_st"><img src="images/5_hotel/image-1.png" class="" alt=""></div>
-        <div class="text_homes_style">
-         <p class="calc_homes_st editContent">Welcome to Hotel</p>
-         <p class="calc_homes_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-       </div>
-       <span class="perday_btn editContent">  <a class="pix_text" href="#">$45 per day</a>  </span>
-     </div>
-   </div>
-
-   <div class="four columns column ">
-    <div class="bg_Homes">
-      <div class="img_homes_st"><img src="images/5_hotel/image-2.png" class="" alt=""></div>
-      <div class="text_homes_style">
-       <p class="calc_homes_st editContent">Best Services</p>
-       <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-     </div>
-     <span class="perday_btn editContent">  <a class="pix_text" href="#">$30 per day</a>  </span>
-   </div>
- </div>
- <div class="four columns column ">
-  <div class="bg_Homes">
-    <div class="img_homes_st"><img src="images/5_hotel/image-3.png" class="" alt=""></div>
-    <div class="text_homes_style">
-      <p class="calc_homes_st editContent">Daily Trips</p>
-      <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-    </div>
-    <span class="perday_btn editContent">  <a class="pix_text" href="#">$75 per day</a>  </span>
-  </div>
-</div>
-<div class="four columns column  omega">
-  <div class="bg_Homes">
-    <div class="img_homes_st"><img src="images/5_hotel/image-4.png" class="" alt=""></div>
-    <div class="text_homes_style">
-      <p class="calc_homes_st editContent">Great Support</p>
-      <p class="calc_text editContent">Lorem ipsum dolor sit amet consectetur adipiscing elite.</p>
-    </div>
-    <span class="perday_btn editContent">  <a class="pix_text" href="#">$125 per day</a>  </span>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="dark big_padding pix_builder_bg" id="section_testimonials_dark">
+<div class="dark big_padding pix_builder_bg" id="section_testimonials_dark">
 <div class="container ">
  <div class="one-third column">
   <div class="content_div">
