@@ -125,7 +125,43 @@
       <span class="pix_text" style="color: rgb(51, 51, 51); font-size: 35px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif; font-weight:600;" rel="">Where to enjoy your card?</span><br><br>
       <span class="editContent" style="font-weight:900; color:#e73c25; font-size:22px;"><p class="agency_text">Enjoy discounts at all these places!</p></span>
       <br>
-      <% @places.each do |place| %>
+      <% @places.take(1).each do |place| %>
+      <% unless place.friends_rewards_terms.blank? %>
+      <div class="four columns alpha">
+       <div class="card-container">
+        <div class="card">
+          <div class="front">
+            <div class="cover">
+              <%= image_tag place.featured_image.url(:square) %>
+            </div>
+            <div class="user">
+              <%= image_tag place.friends_reward.icon.url(:large) %>
+            </div>
+            <div class="content">
+              <div class="main">
+                <h6><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></h6>
+                <small class="profession"><i class="fa fa-map-marker"></i><%= place.operating_address %></small>
+              </div>
+            </div>
+          </div> <!-- end front panel -->
+          <div class="back">
+            <div class="header">
+              <h5 class="motto"></h5>
+            </div>
+            <div class="content">
+              <div class="main">
+                <h4 class="text-center"><%= place.friends_reward.name %></h4>
+                <hr>
+                <small class="text-center"><%= place.friends_rewards_terms %></small><br><br>
+                <h6><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+       <% @places.take(2).each do |place| %>
       <% unless place.friends_rewards_terms.blank? %>
       <div class="four columns alpha">
        <div class="card-container">
