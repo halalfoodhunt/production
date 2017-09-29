@@ -22,6 +22,8 @@
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
 	@import "http://fonts.googleapis.com/css?family=Open+Sans:400,500italic,700,400";
+	@import 'https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,600,700,800,900';
+	@import 'https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900';
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -50,7 +52,7 @@
 	body{
 		background: #fff;
 		font-size: 16px;line-height: 24px;
-		font-family: 'Open Sans',sans-serif !important;
+		font-family: 'Muli', sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -61,6 +63,7 @@
 /* #Typography
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Montserrat', sans-serif !important;
 		color: #181818;
 		font-weight: normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
@@ -78,7 +81,7 @@
 
 	em { font-style: italic; }
 	strong { font-weight: bold; }
-	small { font-size: 80%; }
+	small { font-size: 80%; line-height: 80% !important; }
 
 /*	Blockquotes  */
 	blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
@@ -92,7 +95,7 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+	a, a:visited { color: #e73c25; outline: 0; text-decoration: none; }
 	a:hover, a:focus { color: #000; }
 	p a, p a:visited { line-height: inherit; }
 
@@ -223,7 +226,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 14px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 14px "Muli", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #777;
 		margin: 0;
 		max-width: 100%;

@@ -194,7 +194,7 @@
 
 
 		.pix_header_button {
-			background: #59a3fc;
+			background: #e73c25;
 			border-radius: 3px;
 			padding: 10px 15px;
 			color: #fff;
@@ -371,7 +371,7 @@
 		}
 		.creative_video_header .section_wrapper{
 			background: rgba(0,0,0,0.5);
-			padding: 100px 0;
+			padding: 10px 0;
 		}
 		.creative_video_header .subscribe_btn {
 			background: rgb(241, 194, 50);
@@ -659,6 +659,7 @@ color: rgb(255, 255, 255); font-size: 18px;  background-color: rgb(247, 148, 29)
 	.event_div {  }
 	.event_box { background: #fff;border: 2px solid #ddd;border-radius: 4px;padding: 30px;margin: 30px 0; }
 	.padding_15 { padding: 0 20px }
+	.padding_5 { padding: 5px }
 	.hor_padding { padding-top: 10px;padding-bottom: 10px; }
 	.event_box_1 { display: block;float: left;width: 15%; }
 	.event_box_2 { display: block;float: left;width: 46%; }
@@ -869,6 +870,7 @@ color: rgb(255, 255, 255); font-size: 18px;  background-color: rgb(247, 148, 29)
 	@media only screen and (max-width: 767px){
 		.highlight-left,
 		.highlight-right { width:100%;}
+		.pixfort_normal_1 .title_style { font-size:30px; }
 
 	} 
 
@@ -905,8 +907,8 @@ color: rgb(255, 255, 255); font-size: 18px;  background-color: rgb(247, 148, 29)
 	.pix_call_1 .pix_area1, .pix_call_1 .pix_area2 { padding: 10px 0; }
 	.pix_call_1 .pix_area2 { text-align: center;}
 	.call_text h2 { padding: 5px 0; }
-	.main_button, .main_button:visited { background: #ffcc33;text-decoration: none;padding: 20px 40px;border-radius: 3px;color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.15);font-weight: bold;position: relative;display: inline-block; }
-	.main_button:hover { color: #fff;background: #e4b423; }
+	.main_button, .main_button:visited { background: #e73c25;text-decoration: none;padding: 20px 40px;border-radius: 3px;color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.15);font-weight: bold;position: relative;display: inline-block; }
+	.main_button:hover { color: #fff;background: #ec6a49; }
 
 	/*  Footer 2  */
 	.footer2 { margin: 0;padding: 20px 0; }
@@ -1031,7 +1033,7 @@ color: rgb(255, 255, 255); font-size: 18px;  background-color: rgb(247, 148, 29)
 		.header_nav_1.dark .nav li a, .dark .header_nav_1 .nav li a { color: #ccc;}
 		.header_nav_1.dark .navbar-toggle:before  { color: #eee !important; }
 		.header_nav_1.dark .pix_header_button,
-		.dark .header_nav_1 .pix_header_button { background: #ffcc33; }
+		.dark .header_nav_1 .pix_header_button { background: #e73c25; }
 		.header_nav_1.dark .text_span,
 		.dark .header_nav_1 .text_span { color: #ffcc33; }
 

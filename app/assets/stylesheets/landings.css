@@ -163,12 +163,12 @@ iframe.c1 {
 }
 
 .pixfort_normal_1 .title_style {
+    font-family: 'Montserrat', sans-serif !important;
     font-size:48px;
     color:#fff;
-    
     font-weight:700;
-    padding-top:160px;
-    line-height:100%
+    padding-top:50px;
+    line-height:130%
 }
 
 .pixfort_normal_1 .subtitle_style {
@@ -8092,9 +8092,6 @@ iframe.c1 {
 }
 
 .pixfort_agency_14 .img_st {
-    padding:20px;
-    border:2px solid #5b9a68;
-    border-radius:25px;
     display:inline-block;
     position:relative
 }
@@ -8106,8 +8103,8 @@ iframe.c1 {
 
 .pixfort_agency_14 .agency_st {
     color:#696969;
-    font-weight:500;
-    font-size:22px;
+    font-weight:800;
+    font-size:40px;
     
 }
 

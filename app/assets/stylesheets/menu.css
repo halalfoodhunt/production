@@ -374,7 +374,19 @@ nav {
     float: left;
     padding: 15px 15px;
     font-size: 18px;
+    text-transform: uppercase;
     line-height: 20px;
+}
+@media (max-width: 480px) {
+    .navbar-lg .navbar-brand {
+        font-size: 18px;
+    }
+}
+@media (max-width: 480px) {
+    .navbar-lg .navbar-toggle {
+        height: 0px !important;
+        line-height: 68px !important;
+    }
 }
 .navbar-brand:hover,
 .navbar-brand:focus {

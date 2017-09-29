@@ -9,8 +9,22 @@
 	font-style: normal;
 }
 
-.pi, i {
-	font-family: 'flatpack' !important;
+.pi {
+	font-family: 'flatpack';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+i {
+	font-family: 'FontAwesome';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
