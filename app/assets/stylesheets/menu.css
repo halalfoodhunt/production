@@ -1472,9 +1472,8 @@ you can use the generic selector below, but it's slower:
     }
 }
 .tab-content {
-    border: 2px solid #ddd;
+    background: #fff;
     border-radius: 6px;
-    margin-bottom: 20px;
     padding: 20px 20px 5px;
     position: relative;
     z-index: 1;
