@@ -1,18 +1,19 @@
 <% @places.each do |place| %>
-<div class="col-xs-12 col-sm-6 col-md-3">
-  <% if place.verified == true %>
-  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
-  <% else %>
-  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:20%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span>
-  <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:37%;">
-              <% unless place.friends_rewards_terms.blank? %>
-              <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
-              <% end %>
-            </span>
-  <div style="padding:0px; height:320px; position:relative;" class="thumbnail">
-    <%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
-    <div class="caption">
+<div class="four columns  alpha">
+  <div class="bg_Homes">
+    <% if place.verified == true %>
+    <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
+    <% else %>
+    <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
+    <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:20%;"><%= image_tag place.place_type.icon.url(:square), :class => "img-responsive" %></span>
+    <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:37%;">
+      <% unless place.friends_rewards_terms.blank? %>
+      <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
+      <% end %>
+    </span>
+    <div class="img_homes_st"><%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %></div>
+    <div class="text_homes_style">
+     <div class="caption">
       <div class="media">
         <div class="media-left">
           <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
@@ -24,5 +25,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 <% end %>
