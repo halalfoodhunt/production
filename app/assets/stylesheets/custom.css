@@ -1,0 +1,87 @@
+.btn-places { 
+    border: 0;
+    border-radius: 0;
+    background-color: #FFB311;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-delivery { 
+    border: 0;
+    border-radius: 0;
+    background-color: #EF6C3D;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-ecommer { 
+    border: 0;
+    border-radius: 0;
+    background-color: #C4A276;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-caterer { 
+    border: 0;
+    border-radius: 0;
+    background-color: #D39C25;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-supermarket { 
+    border: 0;
+    border-radius: 0;
+    background-color: #C48500;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-grocer { 
+    border: 0;
+    border-radius: 0;
+    background-color: #7D3A22;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-academy { 
+    border: 0;
+    border-radius: 0;
+    background-color: #886A29 ;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-supplier { 
+    border: 0;
+    border-radius: 0;
+    background-color: #8B572A;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight:300;
+    color: #fff;
+    font-size: 14px;
+}
