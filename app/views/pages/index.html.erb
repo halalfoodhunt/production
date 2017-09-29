@@ -34,7 +34,7 @@
      <div class="twelve columns alpha">
       <div class="">
        <div class="substyle pix_builder_bg">
-        <h1 style="font-weight:900; color:#fff;"><strong>Discover and Verify your halal food choices here!</strong></h1>
+        <h1 style="font-weight:900; color:#fff;"><strong>Discover and verify your halal food choices here!</strong></h1>
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#home">Places</a></li>
           <li><a data-toggle="tab" href="#menu1">Homies</a></li>
@@ -63,7 +63,7 @@
               <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
             </div>
             <div>
-              <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25;" %>
+              <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
             </div>
           </div>
           <% end %>
