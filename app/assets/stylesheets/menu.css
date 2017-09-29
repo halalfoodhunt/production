@@ -2331,7 +2331,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
     .navbar-lg .navbar-nav > li > .text_span {
         padding-top: 26px;
         padding-bottom: 26px;
-        padding-left:0px;
+        padding-left:10px;
     }
     .navbar-left li:first-child a { padding-left: 0px}
     .right_socials { text-align: right;float: right;display: inline-block;position: relative;}
