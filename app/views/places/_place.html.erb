@@ -1,6 +1,7 @@
 <% @places.each do |place| %>
-<div class="col-xs-12 col-sm-6 col-md-3 padding-bottom">
-  <% if place.verified == true %>
+<div class="col-lg-3 col-sm-6">
+  <div class="card hovercard">
+    <div class="cardheader"> <% if place.verified == true %>
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
   <% else %>
   <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
@@ -10,18 +11,16 @@
     <%= image_tag place.friends_reward.icon.url(:square), :class => "img-responsive" %>
     <% end %>
   </span>
-  <div style="padding:0px; height:380px; position:relative;" class="thumbnail">
-    <%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
-    <div class="caption">
-      <div class="media">
-        <div class="media-left">
-          <%= image_tag place.logo.url(:medium), :class => "img-circle-40 media object" %>
-        </div>
-        <div class="media-body">
-          <h5 class="media-heading title"><%= link_to place.business_name, place_path(place) %></h5>
-          <p><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
-        </div>
+ <%= link_to place_path(place) do %><%= image_tag place.featured_image.url(:large), :class => "img_responsive" %><% end %>
+</div>
+    <div class="avatar">
+      <%= image_tag place.logo.url(:medium), :class => "img-circle-40" %>
+    </div>
+    <div class="info">
+      <div class="title">
+        <%= link_to place.business_name, place_path(place) %>
       </div>
+      <div class="desc"><%= place.operating_address %></div>
     </div>
   </div>
 </div>

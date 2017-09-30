@@ -29,5 +29,6 @@
  *= require_menu
  *= require_skeleton
  *= require_custom
+ *= require_main_card
  *= require_tree 
  */
