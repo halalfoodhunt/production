@@ -1378,7 +1378,7 @@ you can use the generic selector below, but it's slower:
 .nav-tabs > li > a {
     border-width: 2px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     padding: 15px 10px;
     color: #7f8c9a;
     border-radius: 6px 6px 0 0;
@@ -1489,7 +1489,7 @@ you can use the generic selector below, but it's slower:
     margin-left: -13px;
     margin-right: -13px;
     padding: 0 13px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.538;
 }
 .nav-list > li {
@@ -1676,7 +1676,7 @@ you can use the generic selector below, but it's slower:
     font-size: 16px;
     padding: 15px 21px;
     line-height: 23px;
-    font-weight: 700;
+    font-weight: 500;
 }
 .navbar-nav .dropdown-toggle .caret {
     border-top-color: #16a085;
