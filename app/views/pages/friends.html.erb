@@ -139,8 +139,8 @@
                 <%= image_tag place.friends_reward.icon.url(:large) %>
               </div>
               <div class="content">
-                  <h6><strong><%= place.business_name %></strong></h6>
-                  <small class="profession"><i class="fa fa-map-marker"></i> <%= place.operating_address %></small>
+                  <label><strong><%= place.business_name %></strong></label>
+                  <p class="profession"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
               </div>
             </div> <!-- end front panel -->
             <div class="back">
@@ -150,8 +150,8 @@
               <div class="content">
                   <h4 class="text-center"><%= place.friends_reward.name %></h4>
                   <hr>
-                  <small class="text-center"><%= place.friends_rewards_terms %></small><br><br>
-                  <h6><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></h6>
+                  <p class="text-center"><%= place.friends_rewards_terms %></p><br><br>
+                  <label><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></label>
               </div>
             </div>
           </div>
