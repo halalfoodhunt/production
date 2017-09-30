@@ -1,31 +1,34 @@
 <% @ecommers.each do |ecommer| %>
-<div class="col-xs-12 col-sm-6 col-md-3">
-  <% if ecommer.verified == true %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(ecommer.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
-            <% else %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-            <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:20%;">
-              <% unless ecommer.friends_rewards_terms.blank? %>
-              <%= image_tag ecommer.friends_reward.icon.url(:square), :class => "img-responsive" %>
-              <% end %>
-            </span>
-  <div style="padding:0px; height:320px; position:relative;" class="thumbnail">
-    <%= link_to ecommer_path(ecommer) do %><%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %><% end %>
-    <div class="caption">
-      <div class="media">
-        <div class="media-left">
-          <%= image_tag ecommer.logo.url(:medium), :class => "img-circle-40" %>
-        </div>
-        <div class="media-body">
-          <p class="media-heading"><b><%= link_to ecommer.business_name, ecommer_path(ecommer) %></b></p>
-          <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
-        </div>
+<div class="four columns alpha">
+ <div class="card-container manual-flip">
+  <div class="card">
+    <div class="front">
+      <div class="cover">
+        <% if ecommer.verified == true %>
+        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(ecommer.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
+        <% else %>
+        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
+        <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:20%;">
+          <% unless ecommer.friends_rewards_terms.blank? %>
+          <%= image_tag ecommer.friends_reward.icon.url(:square), :class => "img-responsive" %>
+          <% end %>
+        </span>
+        <%= link_to ecommer_path(ecommer) do %><%= image_tag ecommer.featured_image.url(:medium), :class => "img_responsive" %><% end %>
       </div>
-      <center><p><i class="fa fa-map-marker"></i> <%= ecommer.operating_address %></p>
-      <% unless ecommer.delivery_link.blank? %><%= link_to "Order NOW!", raw(ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
-      <% end %>
-      </center>
-    </div>
-  </div>
+      <div class="user">
+        <%= image_tag ecommer.logo.url(:medium), :class => "img-circle" %>
+      </div>
+      <div class="content">
+        <label><strong><%= link_to ecommer.business_name, ecommer_path(ecommer) %></strong></label>
+        <p class="profession">
+         <p><%= image_tag ecommer.establishment_type.icon.url(:thumb) %> <%= ecommer.establishment_type.name %></p>
+         <p><i class="fa fa-map-marker"></i> <%= ecommer.operating_address %></p>
+         <% unless ecommer.delivery_link.blank? %><%= link_to "Order NOW!", raw(ecommer.delivery_link), :class => "btn btn-block btn-raised btn-primary", :style => 'color:#fff;' %>
+         <% end %>
+       </p>
+     </div>
+   </div> <!-- end front panel -->
+ </div>
+</div>
 </div>
 <% end %>
