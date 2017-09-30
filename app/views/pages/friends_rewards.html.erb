@@ -29,236 +29,38 @@
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <% @places.each do |place| %>
-      <% unless place.friends_rewards_terms.blank? %>
-      <div class="col-xs-12 col-sm-6 col-md-3" >
-        <!--Rotating card-->
-        <div class="card-wrapper">
-          <div id="card-1" class="card-rotating effect__click">
-            <!--Front Side-->
-            <div class="face front">
-              <!-- Image-->
-              <div class="card-up">
-                <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
+        <% unless place.friends_rewards_terms.blank? %>
+        <div class="four columns alpha">
+         <div class="card-container">
+          <div class="card">
+            <div class="front">
+              <div class="cover">
+                <%= image_tag place.featured_image.url(:square) %>
               </div>
-              <!--Avatar-->
-              <div class="avatar"><%= image_tag place.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
+              <div class="user">
+                <%= image_tag place.friends_reward.icon.url(:large) %>
               </div>
-              <!--Content-->
-              <div class="card-block" style="padding:0 5px 0 5px;">
-                <h5 style="margin:0;"><%= link_to place_path(place) do %><b><%= place.business_name %></b><% end %></h5>
-                <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p><br>
-                <!--Triggering button-->
-                <p><a class="rotate-btn btn btn-default btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
+              <div class="content">
+                  <h6><strong><%= place.business_name %></strong></h6>
+                  <small class="profession"><i class="fa fa-map-marker"></i> <%= place.operating_address %></small>
+              </div>
+            </div> <!-- end front panel -->
+            <div class="back">
+              <div class="header">
+                <h5 class="motto"></h5>
+              </div>
+              <div class="content">
+                  <h4 class="text-center"><%= place.friends_reward.name %></h4>
+                  <hr>
+                  <small class="text-center"><%= place.friends_rewards_terms %></small><br><br>
+                  <h6><%= link_to place_path(place), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></h6>
               </div>
             </div>
-            <!--/.Front Side-->
-            <!--Back Side-->
-            <div class="face back">
-              <!--Content-->
-              <h4><%= place.friends_reward.name %></h4>
-              <hr>
-              <p><%= place.friends_rewards_terms %></p>
-              <hr>
-              <!--Triggering button-->
-              <a class="rotate-btn btn btn-default btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a><br><br>
-              <p><%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-sm btn-success" %></p>
-            </div>
-            <!--/.Back Side-->
           </div>
         </div>
-        <!--/.Rotating card-->
-      </div>
-      <% end %>
-      <% end %>
-      <% @ecommers.each do |ecommer| %>
-      <% unless ecommer.friends_rewards_terms.blank? %>
-      <div class="col-xs-12 col-sm-6 col-md-3" >
-        <!--Rotating card-->
-        <div class="card-wrapper">
-          <div id="card-1" class="card-rotating effect__click">
-            <!--Front Side-->
-            <div class="face front">
-              <!-- Image-->
-              <div class="card-up">
-                <%= image_tag ecommer.featured_image.url(:square), :class => "img-responsive" %>
-              </div>
-              <!--Avatar-->
-              <div class="avatar"><%= image_tag ecommer.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
-              </div>
-              <!--Content-->
-              <div class="card-block" style="padding:0 5px 0 5px;">
-                <h5 style="margin:0;"><%= link_to ecommer_path(ecommer) do %><strong><%= ecommer.business_name %></strong><% end %></h5>
-                <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= ecommer.operating_address %></p><br>
-                <!--Triggering button-->
-                <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
-              </div>
-            </div>
-            <!--/.Front Side-->
-            <!--Back Side-->
-            <div class="face back">
-              <!--Content-->
-              <h4><%= ecommer.friends_reward.name %></h4>
-              <hr>
-              <p><%= ecommer.friends_rewards_terms %></p>
-              <hr>
-              <!--Triggering button-->
-              <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
-            </div>
-            <!--/.Back Side-->
-          </div>
-        </div>
-        <!--/.Rotating card-->
-      </div>
-      <% end %>
-      <% end %>
-      <% @caterers.each do |caterer| %>
-      <% unless caterer.friends_rewards_terms.blank? %>
-      <div class="col-xs-12 col-sm-6 col-md-3" >
-        <!--Rotating card-->
-        <div class="card-wrapper">
-          <div id="card-1" class="card-rotating effect__click">
-            <!--Front Side-->
-            <div class="face front">
-              <!-- Image-->
-              <div class="card-up">
-                <%= image_tag caterer.featured_image.url(:square), :class => "img-responsive" %>
-              </div>
-              <!--Avatar-->
-              <div class="avatar"><%= image_tag caterer.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
-              </div>
-              <!--Content-->
-              <div class="card-block" style="padding:0 5px 0 5px;">
-                <h5 style="margin:0;"><%= link_to caterer_path(caterer) do %><strong><%= caterer.business_name %></strong><% end %></h5>
-                <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= caterer.general_contact_number %></p><br>
-                <!--Triggering button-->
-                <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
-              </div>
-            </div>
-            <!--/.Front Side-->
-            <!--Back Side-->
-            <div class="face back">
-              <!--Content-->
-              <h4><%= caterer.friends_reward.name %></h4>
-              <hr>
-              <p><%= caterer.friends_rewards_terms %></p>
-              <hr>
-              <!--Triggering button-->
-              <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
-            </div>
-            <!--/.Back Side-->
-          </div>
-        </div>
-        <!--/.Rotating card-->
-      </div>
-      <% end %>
-      <% end %>
-      <% @lessons.each do |lesson| %>
-      <% unless lesson.friends_rewards_terms.blank? %>
-      <div class="col-xs-12 col-sm-6 col-md-3" >
-        <!--Rotating card-->
-        <div class="card-wrapper">
-          <div id="card-1" class="card-rotating effect__click">
-            <!--Front Side-->
-            <div class="face front">
-              <!-- Image-->
-              <div class="card-up">
-                <%= image_tag lesson.featured_image.url(:square), :class => "img-responsive" %>
-              </div>
-              <!--Avatar-->
-              <div class="avatar"><%= image_tag lesson.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
-              </div>
-              <!--Content-->
-              <div class="card-block" style="padding:0 5px 0 5px;">
-                <h5 style="margin:0;"><%= link_to lesson_path(lesson) do %><strong><%= lesson.brand_name %></strong><% end %></h5>
-                <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= lesson.general_contact_number %></p><br>
-                <!--Triggering button-->
-                <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
-              </div>
-            </div>
-            <!--/.Front Side-->
-            <!--Back Side-->
-            <div class="face back">
-              <!--Content-->
-              <h4><%= lesson.friends_reward.name %></h4>
-              <hr>
-              <p><%= lesson.friends_rewards_terms %></p>
-              <hr>
-              <!--Triggering button-->
-              <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
-            </div>
-            <!--/.Back Side-->
-          </div>
-        </div>
-        <!--/.Rotating card-->
-      </div>
-      <% end %>
-      <% end %>
-      <% @suppliers.each do |supplier| %>
-      <% unless supplier.friends_terms.blank? %>
-      <div class="col-xs-12 col-sm-6 col-md-3" >
-        <!--Rotating card-->
-        <div class="card-wrapper">
-          <div id="card-1" class="card-rotating effect__click">
-            <!--Front Side-->
-            <div class="face front">
-              <!-- Image-->
-              <div class="card-up">
-                <%= image_tag supplier.featured_image.url(:square), :class => "img-responsive" %>
-              </div>
-              <!--Avatar-->
-              <div class="avatar"><%= image_tag supplier.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
-              </div>
-              <!--Content-->
-              <div class="card-block" style="padding:0 5px 0 5px;">
-                <h5 style="margin:0;"><%= link_to supplier_path(supplier) do %><strong><%= supplier.business_name %></strong><% end %></h5>
-                <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= supplier.general_contact_number %></p><br>
-                <!--Triggering button-->
-                <p><a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here</a></p>
-              </div>
-            </div>
-            <!--/.Front Side-->
-            <!--Back Side-->
-            <div class="face back">
-              <!--Content-->
-              <h4><%= supplier.friends_reward.name %></h4>
-              <hr>
-              <p><%= supplier.friends_terms %></p>
-              <hr>
-              <!--Triggering button-->
-              <a class="rotate-btn btn btn-primary btn-sm" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
-            </div>
-            <!--/.Back Side-->
-          </div>
-        </div>
-        <!--/.Rotating card-->
       </div>
       <% end %>
       <% end %>
     </div>
   </div>
-  <nav class="navbar navbar-inverse" style="border-radius:0px; margin-bottom:0px;">
-				<div class="container">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="http://sg.halalfoodhunt.com/corporate">Corporate Services</a></li>
-						<li><a href="http://halalfoodhunt.com/how-to-list-on-halalfoodhunt-com/">Merchant Listing</a></li>
-						<li><a href="http://halalfoodhunt.com/terms-of-use/">Terms of Use</a></li>
-						<li><a href="http://halalfoodhunt.com/privacy-policy/">Privacy Policy</a></li>
-						<li><%= link_to 'Feedback', new_feedback_path %></li>
-						<li><a href="http://friends.jumaiyah.com">Friends</a></li>
-					</ul>
-					</div>
-					<div class="container">
-					<% @halalfoodhunt_seos.each do |halalfoodhunt_seo| %>
-        				<% if halalfoodhunt_seo.friends == true %>
-        					<small class="text-justify"><%= halalfoodhunt_seo.meta_description %></small>
-        				<% end %>
-        			<% end %>
-        			</div>
-        			<br>
-				</div>
-			</nav>
-  <script>
-  $('.rotate-btn').on('click', function(){
-    $(this).closest('.card-rotating.effect__click').toggleClass('flipped');
-  });
-  </script>
+<%= render 'layouts/footer' %>
