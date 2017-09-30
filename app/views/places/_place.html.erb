@@ -1,4 +1,4 @@
- <% @places.take(3).each do |place| %>
+ <% @places.take(4).each do |place| %>
  <div class="four columns alpha">
    <div class="card-container manual-flip">
     <div class="card">
@@ -20,7 +20,7 @@
           <%= image_tag place.logo.url(:medium), :class => "img-circle" %>
         </div>
         <div class="content">
-            <p><strong><%= link_to place.business_name, place_path(place) %></strong></p>
+            <label><strong><%= link_to place.business_name, place_path(place) %></strong></label>
             <p class="profession"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p>
         </div>
       </div> <!-- end front panel -->
