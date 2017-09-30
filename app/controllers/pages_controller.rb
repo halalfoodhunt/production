@@ -5,9 +5,9 @@ class PagesController < ApplicationController
   def index
    @halalfoodhunt_seos = HalalfoodhuntSeo.all
    @search_place = Place.ransack(params[:q])
-   @places = @search_place.result.where(draft: false).where(featured: true).limit(4)
+   @places = @search_place.result.where(draft: false).where(featured: true)
    @search_ecommers = Ecommer.ransack(params[:q])
-   @ecommers = @search_ecommers.result.order("created_at DESC").where(draft: false).where(featured: true).limit(4)
+   @ecommers = @search_ecommers.result.order("created_at DESC").where(draft: false).where(featured: true)
    @caterers = Caterer.all.order("created_at DESC").where(draft: false).limit(4)
    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false).limit(4)
    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false).limit(4)
