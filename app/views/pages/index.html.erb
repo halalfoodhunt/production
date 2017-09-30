@@ -44,30 +44,30 @@
                 <%= render "places/place" %>
               </div>
             </div>
-          </div> 
-          <div id="menu1" class="tab-pane fade">
-            <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-              <%= search_form_for @search_ecommers do |f| %>
-              <div class="col-sm-12 col-md-12" style="padding:20px">
-                <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                 <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                 <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
-               </div>
-               <br>
-               <div class="col-sm-12 col-md-6" style="padding:2px">
-                 <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
-               </div>
-               <div class="col-sm-12 col-md-6" style="padding:2px">
-                <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
+            <div id="menu1" class="tab-pane fade">
+              <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                <%= search_form_for @search_ecommers do |f| %>
+                <div class="col-sm-12 col-md-12" style="padding:20px">
+                  <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                   <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                   <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
+                 </div>
+                 <br>
+                 <div class="col-sm-12 col-md-6" style="padding:2px">
+                   <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
+                 </div>
+                 <div class="col-sm-12 col-md-6" style="padding:2px">
+                  <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
+                </div>
+                <br>
+                <div>
+                  <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                </div>
               </div>
-              <br>
-              <div>
-                <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-              </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
-        </div>
+        </div> 
         <div id="menu2" class="tab-pane fade">
           <h3>Menu 2</h3>
           <p>Some content in menu 2.</p>
