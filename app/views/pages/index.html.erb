@@ -1,223 +1,175 @@
 <%= render 'layouts/header' %>
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background-image: url(https://www.halalfoodhunt.com/images/media/pexels-photo-434337.jpeg); padding-top: 80px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="https://www.halalfoodhunt.com/images/media/pexels-photo-434337.jpeg">
-  <div class="container">
-    <div class="sixteen columns">
-     <div class="sixteen columns alpha">
-      <div class="">
-       <div class="substyle pix_builder_bg">
-        <h1><strong>Discover and verify your halal food choices here!</strong></h1>
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#home">Places</a></li>
-          <li><a data-toggle="tab" href="#menu1">Homies & Pop-Ups</a></li>
-          <li><a data-toggle="tab" href="#menu2">Caterers</a></li>
-          <li><a data-toggle="tab" href="#menu2">Food Deliveries</a></li>
-          <li><a data-toggle="tab" href="#menu2">Online Retail</a></li>
-          <li><a data-toggle="tab" href="#menu2">Suppliers</a></li>
-          <li><a data-toggle="tab" href="#menu2">Bakes</a></li>
-          <li><a data-toggle="tab" href="#menu2">Ingredients</a></li>
-        </ul>
-        <div class="tab-content">
-          <div id="home" class="tab-pane fade in active">
-           <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            <%= search_form_for @search_place do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of food are you looking for?</label>
-               <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
-             </div>
-             <br>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Menu Types"}, {:class=>'form-control'}) %><br>
-               <%= f.collection_select(:dining_types_id_eq_any, DiningType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %>
-              <br>
-              <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
-            </div>
-            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-            <% end %>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-              <div class="col-xs-12 col-sm-12 col-md-8"><h4>Recommended Places</h4></div>
-              <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-              <div class="sixteen columns alpha">
-                <%= render "places/place" %>
-              </div>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                <%= search_form_for @search_ecommers do |f| %>
-                <div class="col-sm-12 col-md-12" style="padding:20px">
-                  <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                   <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                   <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
-                 </div>
-                 <br>
-                 <div class="col-sm-12 col-md-6" style="padding:2px">
-                   <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
-                 </div>
-                 <div class="col-sm-12 col-md-6" style="padding:2px">
-                  <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
-                </div>
-                <br>
-                <div>
-                  <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                </div>
-              </div>
-              <% end %>
-            </div>
-          </div>
-        </div> 
-        <div id="menu2" class="tab-pane fade">
-          <h3>Menu 2</h3>
-          <p>Some content in menu 2.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+	<div class="container">
+		<div class="sixteen columns">
+			<div class="sixteen columns alpha">
+				<div class="">
+					<div class="substyle pix_builder_bg">
+						<h1><strong>Discover and verify your halal food choices here!</strong></h1>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="tab" href="#home">Places</a></li>
+							<li><a data-toggle="tab" href="#menu1">Homies & Pop-Ups</a></li>
+							<li><a data-toggle="tab" href="#menu2">Caterers</a></li>
+							<li><a data-toggle="tab" href="#menu2">Food Deliveries</a></li>
+							<li><a data-toggle="tab" href="#menu2">Online Retail</a></li>
+							<li><a data-toggle="tab" href="#menu2">Suppliers</a></li>
+							<li><a data-toggle="tab" href="#menu2">Bakes</a></li>
+							<li><a data-toggle="tab" href="#menu2">Ingredients</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="home" class="tab-pane fade in active">
+							</div>
+							<div id="menu1" class="tab-pane fade">
+							</div>
+							<div id="menu2" class="tab-pane fade">
+								<h3>Menu 2</h3>
+								<p>Some content in menu 2.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 </div>
 </div>
 </div>
 <div id="section_hotel_4_1">
-  <div class="Homes pix_builder_bg">
-   <div class="container">
-
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies & Pop-Ups</h4></div>
-    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-      <%= render "ecommers/ecommers" %>
-    </div>
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Food Deliveries</h4></div>
-    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to food_deliveries_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-      <%= render 'food_deliveries/food_delivery_home' %>
-    </div>
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Retail</h4></div>
-    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-      <%= render "online_grocers/online_grocer" %>
-    </div>
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
-    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-      <%= render "suppliers/suppliers" %>
-    </div>
-  </div>
-</div>
+	<div class="Homes pix_builder_bg">
+		<div class="container">
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies & Pop-Ups</h4></div>
+			<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+			<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+				<%= render "ecommers/ecommers" %>
+			</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Food Deliveries</h4></div>
+			<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to food_deliveries_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+			<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+				<%= render 'food_deliveries/food_delivery_home' %>
+			</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Retail</h4></div>
+			<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+			<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+				<%= render "online_grocers/online_grocer" %>
+			</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
+			<div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+			<div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+				<%= render "suppliers/suppliers" %>
+			</div>
+		</div>
+	</div>
 </div>
 </div>
 </div>
 </div>
 <div class="dark big_padding pix_builder_bg" id="section_testimonials_dark">
-  <div class="container ">
-   <div class="one-third column">
-    <div class="content_div">
-     <div class="margin_bottom">
-      <img class="small_circle border_light" src="images/main/t1.png">
-    </div>
-    <p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
-    <h6 class="editContent bold_text dark_gray">Mark Smith</h6>
-  </div>
-</div>
-<div class="one-third column">
-  <div class="content_div">
-   <div class="margin_bottom">
-    <img class="small_circle border_light" src="images/main/t2.png">
-  </div>
-  <p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
-  <h6 class="editContent bold_text dark_gray">John Due</h6>
-</div>
-</div>
-<div class="one-third column omega">
- <div class="content_div">
-  <div class="margin_bottom">
-    <img class="small_circle border_light" src="images/main/t3.png">
-  </div>
-  <p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
-  <h6 class="editContent bold_text dark_gray">Sara Clark</h6>
-</div>
-</div>
-</div>
+	<div class="container ">
+		<div class="one-third column">
+			<div class="content_div">
+				<div class="margin_bottom">
+					<img class="small_circle border_light" src="images/main/t1.png">
+				</div>
+				<p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
+				<h6 class="editContent bold_text dark_gray">Mark Smith</h6>
+			</div>
+		</div>
+		<div class="one-third column">
+			<div class="content_div">
+				<div class="margin_bottom">
+					<img class="small_circle border_light" src="images/main/t2.png">
+				</div>
+				<p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
+				<h6 class="editContent bold_text dark_gray">John Due</h6>
+			</div>
+		</div>
+		<div class="one-third column omega">
+			<div class="content_div">
+				<div class="margin_bottom">
+					<img class="small_circle border_light" src="images/main/t3.png">
+				</div>
+				<p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
+				<h6 class="editContent bold_text dark_gray">Sara Clark</h6>
+			</div>
+		</div>
+	</div>
 </div><div class="pixfort_corporate_2" id="section_corporate_4">
 <div class="amazing_style pix_builder_bg" style="background-image: none; background-color: rgb(243, 243, 243); padding-top: 0px; padding-bottom: 60px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: cover; background-attachment: scroll; background-repeat: repeat;">
- <div class="container">
-  <div class="sixteen columns">
-   <div class="gstyle">
-    <div class="t1_style">
-     <span class="editContent">
-      <span class="pix_text">The most amazing thing is here</span>
-    </span>
-  </div>
-  <div class="t2_style">
-   <span class="editContent">
-    <span class="pix_text">Our service is astonishingly thin and light.</span>
-  </span>
-</div>
-<div class="t3_style">
- <span class="editContent">
-  <span class="pix_text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud.</span>
-</span>
-</div>
-</div>
-<span>
-  <img src="images/2_corporate/promo-image.png" class="pub_st" alt="">
-</span>
-</div>
-</div>
+	<div class="container">
+		<div class="sixteen columns">
+			<div class="gstyle">
+				<div class="t1_style">
+					<span class="editContent">
+						<span class="pix_text">The most amazing thing is here</span>
+					</span>
+				</div>
+				<div class="t2_style">
+					<span class="editContent">
+						<span class="pix_text">Our service is astonishingly thin and light.</span>
+					</span>
+				</div>
+				<div class="t3_style">
+					<span class="editContent">
+						<span class="pix_text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud.</span>
+					</span>
+				</div>
+			</div>
+			<span>
+				<img src="images/2_corporate/promo-image.png" class="pub_st" alt="">
+			</span>
+		</div>
+	</div>
 </div>
 </div><div class="center_text dark big_padding pix_builder_bg" id="section_testimonials_2_dark">
 <div class="container ">
- <div class="eight columns alpha">
-  <div class="content_div">
-   <div class="margin_bottom">
-    <img class="small_circle border_light" src="images/main/t3.png">
-  </div>
-  <p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
-  <h6 class="editContent bold_text dark_gray">Mark Smith</h6>
-</div>
-</div>
-<div class="eight columns omega">
-  <div class="content_div">
-   <div class="margin_bottom">
-    <img class="small_circle border_light" src="images/main/t2.png">
-  </div>
-  <p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
-  <h6 class="editContent bold_text dark_gray">John Due</h6>
-</div>
-</div>
-</div>
-</div><div class="pixfort_gym_13" id="section_gym_3">
-<div class="logos_sect pix_builder_bg" style="outline-offset: -3px;">
- <div class="container">
-  <div class="sixteen columns">
-   <div class="text_logos"><span class="editContent"><span class="pix_text">SOME OF THE WORLD'S MOST RESPECTED COMPANIES TRUST FLATPACK</span></span></div>
-   <div class="padd_updown">
-     <div class="one-third column  alpha"> <img src="images/13_gym/logo1.png" class="logo_width" alt=""> </div>
-     <div class="one-third column       "> <img src="images/13_gym/logo2.png" class="logo_width" alt=""> </div>
-     <div class="one-third column  omega"> <img src="images/13_gym/logo3.png" class="logo_width" alt=""> </div>
-   </div>
- </div>
-</div>
+	<div class="eight columns alpha">
+		<div class="content_div">
+			<div class="margin_bottom">
+				<img class="small_circle border_light" src="images/main/t3.png">
+			</div>
+			<p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
+			<h6 class="editContent bold_text dark_gray">Mark Smith</h6>
+		</div>
+	</div>
+	<div class="eight columns omega">
+		<div class="content_div">
+			<div class="margin_bottom">
+				<img class="small_circle border_light" src="images/main/t2.png">
+			</div>
+			<p class="editContent light_gray normal_text">Lorem ipsum dolor sit amet consectet adipiscing elit sed do eiusmoda tempo incididunt ut labore et dolore magnar aliqua Ut enim ad  voluptate velit esse.</p>                 
+			<h6 class="editContent bold_text dark_gray">John Due</h6>
+		</div>
+	</div>
 </div>
 </div><div class="pixfort_gym_13" id="section_gym_3">
 <div class="logos_sect pix_builder_bg" style="outline-offset: -3px;">
- <div class="container">
-  <div class="sixteen columns">
-   <div class="text_logos"><span class="editContent"><span class="pix_text">SOME OF THE WORLD'S MOST RESPECTED COMPANIES TRUST FLATPACK</span></span></div>
-   <div class="padd_updown">
-     <div class="one-third column  alpha"> <img src="images/13_gym/logo1.png" class="logo_width" alt=""> </div>
-     <div class="one-third column       "> <img src="images/13_gym/logo2.png" class="logo_width" alt=""> </div>
-     <div class="one-third column  omega"> <img src="images/13_gym/logo3.png" class="logo_width" alt=""> </div>
-   </div>
- </div>
+	<div class="container">
+		<div class="sixteen columns">
+			<div class="text_logos"><span class="editContent"><span class="pix_text">SOME OF THE WORLD'S MOST RESPECTED COMPANIES TRUST FLATPACK</span></span></div>
+			<div class="padd_updown">
+				<div class="one-third column  alpha"> <img src="images/13_gym/logo1.png" class="logo_width" alt=""> </div>
+				<div class="one-third column       "> <img src="images/13_gym/logo2.png" class="logo_width" alt=""> </div>
+				<div class="one-third column  omega"> <img src="images/13_gym/logo3.png" class="logo_width" alt=""> </div>
+			</div>
+		</div>
+	</div>
 </div>
+</div><div class="pixfort_gym_13" id="section_gym_3">
+<div class="logos_sect pix_builder_bg" style="outline-offset: -3px;">
+	<div class="container">
+		<div class="sixteen columns">
+			<div class="text_logos"><span class="editContent"><span class="pix_text">SOME OF THE WORLD'S MOST RESPECTED COMPANIES TRUST FLATPACK</span></span></div>
+			<div class="padd_updown">
+				<div class="one-third column  alpha"> <img src="images/13_gym/logo1.png" class="logo_width" alt=""> </div>
+				<div class="one-third column       "> <img src="images/13_gym/logo2.png" class="logo_width" alt=""> </div>
+				<div class="one-third column  omega"> <img src="images/13_gym/logo3.png" class="logo_width" alt=""> </div>
+			</div>
+		</div>
+	</div>
 </div>
 <%= render 'layouts/footer' %>
