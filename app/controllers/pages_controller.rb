@@ -24,6 +24,7 @@ class PagesController < ApplicationController
     @special_tag_id = SpecialTag.find_by(name: params[:special_tag]).id
     @places = Place.filter_by_params(params)
    end
+   @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
   end 
 
  def merchant_dashboard
