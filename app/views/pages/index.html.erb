@@ -101,8 +101,17 @@
       
       <div id="home_else" class="tab-pane fade">
         <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-8"><h4>Ecommers</h4></div>
-          <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
+          <div class="col-xs-12 col-sm-12 col-md-8"><h5 style="padding:20px 0">SHOWING <b><%= @places.count %></b> Halal establishments IN ALL CITIES, SINGAPORE</h5></div>
+          <div class="col-xs-12 col-sm-12 col-md-4 text-right"><div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><center><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                </ul>
+              </div>
           </div>
           <div class="sixteen columns">
             <%= render "ecommers/ecommers" %>
