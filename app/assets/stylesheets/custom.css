@@ -1119,28 +1119,6 @@ img.color_flip:hover {
     text-align: right;
 }
 
-.border-2 {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #f8f3f0;
-}
-
-.padding-0 {
-    padding:0px;
-}
-
-.padding-8 {
-    padding:8px;
-}
-
-.padding-55 {
-    padding: 55px;
-}
-
-.padding-35 {
-    padding: 35px;
-}
-
 .place-title {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1153,19 +1131,7 @@ img.color_flip:hover {
 }
 
 small {
-    font-size: 65%;
-}
-
-.p-15 {
-    font-size: 15px;
-}
-
-.p-20 {
-    font-size: 20px;
-}
-
-.p-25 {
-    font-size: 25px;
+    font-size: 80%;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
