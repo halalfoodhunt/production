@@ -78,10 +78,6 @@ a:focus {
  * Main content
  */
 
- .main {
-    padding: 20px;
-}
-
 @media (min-width: 768px) {
     .main {
         padding-right: 40px;
@@ -96,15 +92,6 @@ a:focus {
         padding-left: 40px;
         background: #3e414a;
     }
-}
-
-.media-heading {
-    color: #D04E2E;
-}
-
-.main .page-header {
-    margin-top: 0;
-    border-bottom: none;
 }
 
 .img-circle-40 {
@@ -457,13 +444,6 @@ button, select, textarea {
 .admin-icon {
     font-size: 96px;
     color: #8f655a;
-}
-
-.file-upload-field {
-    height: 300px;
-    background: url(http://halalfoodhunt.com/wp-content/uploads/2016/09/library-upload.png) center center no-repaet #ccc;
-    border: 3px dashed #333;
-    padding: 10px;
 }
 
 label.required:after {
