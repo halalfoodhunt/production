@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def index
    @halalfoodhunt_seos = HalalfoodhuntSeo.all
    @search_place = Place.ransack(params[:q])
-   @places = @search_place.result.where(draft: false).where(featured: true)
+   @places = @search_place.result.where(draft: false)
    @search_ecommers = Ecommer.ransack(params[:q])
    @ecommers = @search_ecommers.result.order("created_at DESC").where(draft: false).where(featured: true)
    @caterers = Caterer.all.order("created_at DESC").where(draft: false).limit(4)
