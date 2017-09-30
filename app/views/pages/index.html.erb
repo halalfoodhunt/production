@@ -20,27 +20,27 @@
              
               <div id="home" class="tab-pane fade in active">
                <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                  <%= search_form_for @search_place do |f| %>
-                  <div class="col-sm-12 col-md-12" style="padding:20px">
-                    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                     <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                     <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
-                   </div>
-                   <br>
-                   <div class="col-sm-12 col-md-6" style="padding:2px">
-                     <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Menu Types"}, {:class=>'form-control'}) %><br>
-                     <%= f.collection_select(:dining_types_id_eq_any, DiningType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
-                   </div>
-                   <div class="col-sm-12 col-md-6" style="padding:2px">
-                    <%= f.collection_select(:highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %><br>
-                    <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
-                  </div>
-                  <br>
-                  <div>
-                    <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                  </div>
-                  <% end %>
+                <%= search_form_for @search_place do |f| %>
+                <div class="col-sm-12 col-md-12" style="padding:20px">
+                  <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                   <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                   <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
+                 </div>
+                 <br>
+                 <div class="col-sm-12 col-md-6" style="padding:2px">
+                   <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Menu Types"}, {:class=>'form-control'}) %><br>
+                   <%= f.collection_select(:dining_types_id_eq_any, DiningType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
+                 </div>
+                 <div class="col-sm-12 col-md-6" style="padding:2px">
+                  <%= f.collection_select(:highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %><br>
+                  <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
                 </div>
+                <br>
+                <div>
+                  <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                </div>
+                <% end %>
+              </div>
             </div>
           </div>
           
@@ -89,44 +89,48 @@
     <div class="container">
      <br>
      <div class="tab-content">
-      
+      <div id="menu2" class="tab-pane fade">
+      <div class="sixteen columns alpha">
+      <%= render "ecommers/ecommers" %>
       </div>
-      
-      
+      </div>
+     </div>
+     
+     
      <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="col-xs-12 col-sm-12 col-md-8"><h4>Recommended Places</h4></div>
-                <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
-                </div>
-                <div class="sixteen columns alpha">
-                  <%= render "places/place" %>
-                </div>
-              </div>
-      <br>
-      <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies & Pop-Ups</h4></div>
-      <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-      <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-        <%= render "ecommers/ecommers" %>
+      <div class="col-xs-12 col-sm-12 col-md-8"><h4>Recommended Places</h4></div>
+      <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
       </div>
-      <br>
-      <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Food Deliveries</h4></div>
-      <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to food_deliveries_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-      <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-        <%= render 'food_deliveries/food_delivery_home' %>
-      </div>
-      <br>
-      <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Retail</h4></div>
-      <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-      <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-        <%= render "online_grocers/online_grocer" %>
-      </div>
-      <br>
-      <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
-      <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
-      <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
-        <%= render "suppliers/suppliers" %>
+      <div class="sixteen columns">
+        <%= render "places/place" %>
       </div>
     </div>
+    <br>
+    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Homies & Pop-Ups</h4></div>
+    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to ecommers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+      <%= render "ecommers/ecommers" %>
+    </div>
+    <br>
+    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Food Deliveries</h4></div>
+    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to food_deliveries_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+      <%= render 'food_deliveries/food_delivery_home' %>
+    </div>
+    <br>
+    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Online Retail</h4></div>
+    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to online_grocers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+      <%= render "online_grocers/online_grocer" %>
+    </div>
+    <br>
+    <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Suppliers</h4></div>
+    <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to suppliers_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
+      <%= render "suppliers/suppliers" %>
+    </div>
   </div>
+</div>
 </div>
 </div>
 </div>
