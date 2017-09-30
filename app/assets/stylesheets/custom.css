@@ -1024,9 +1024,6 @@ img.color_flip:hover {
     background: url(polina.jpg) no-repeat;
     background-size: cover;
 }
-.container h1 {
-  color: white;
-}
 
 #text-shadow {
     text-shadow: 2px 2px #22211d;
