@@ -625,15 +625,6 @@ body,
     border-radius: 25px;
 }
 
-.cover {
-    background: rgba(0, 0, 0, 0.7);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 540px;
-}
-
 .sign-up {
     background: #89222b;
     -webkit-background-size: cover;
@@ -697,10 +688,6 @@ body,
     float: none;
     margin-right: auto;
     margin-left: auto;
-}
-
-.alert {
-    margin-bottom: 0px;
 }
 
 .merchant_dashboard {
@@ -916,6 +903,7 @@ a:focus {
     border: 1px solid #ccc;
     border-radius: 2px;
     box-shadow: 0px 2px rgba(0, 0, 0, 0.15);
+    height: 42px;
 }
 
 .form-control-search {
