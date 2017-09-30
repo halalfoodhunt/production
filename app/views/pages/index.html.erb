@@ -82,33 +82,35 @@
 </div>
 </div>
 </div>
+</div>
 <div id="section_hotel_4_1">
   <div class="Homes pix_builder_bg">
     <div class="container">
      <br>
-     <div id="place" class="tab-pane fade active">
-      <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="col-xs-12 col-sm-12 col-md-8"><h4>Recommended Place</h4></div>
-        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
-        </div>
-        <div class="sixteen columns">
-          <%= render "places/place" %>
+     <div class="tab-content">
+       <div id="place" class="tab-pane fade active">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="col-xs-12 col-sm-12 col-md-8"><h4>Recommended Place</h4></div>
+          <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
+          </div>
+          <div class="sixteen columns">
+            <%= render "places/place" %>
+          </div>
         </div>
       </div>
-    </div>
-     
-     <div id="home_else" class="tab-pane fade">
-      <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="col-xs-12 col-sm-12 col-md-8"><h4>Ecommers</h4></div>
-        <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
-        </div>
-        <div class="sixteen columns">
-          <%= render "ecommers/ecommers" %>
+      
+      <div id="home_else" class="tab-pane fade">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="col-xs-12 col-sm-12 col-md-8"><h4>Ecommers</h4></div>
+          <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p>
+          </div>
+          <div class="sixteen columns">
+            <%= render "ecommers/ecommers" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 </div>
 </div>
