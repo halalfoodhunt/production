@@ -58,13 +58,13 @@
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
  	}
- 	button, select, input { font-family: 'Montserrat',sans-serif !important; }
+ 	button, select, input { font-family: 'Lato',sans-serif !important; }
 
 
 /* #Typography
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Lato', sans-serif;
 		color: #181818; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
@@ -154,7 +154,7 @@
 	  font-size: 16px;
 	  font-weight: bold;
 	  text-decoration: none;
-	  text-shadow: 0 1px rgba(255, 255, 255, .75);
+	  text-transform: uppercase;
 	  cursor: pointer;
 	  margin-bottom: 20px;
 	  line-height: normal;
