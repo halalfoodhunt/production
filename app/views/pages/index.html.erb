@@ -1,5 +1,5 @@
 <%= render 'layouts/header' %>
-<div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background-image: url(https://www.halalfoodhunt.com/images/media/pexels-photo-434337.jpeg); padding-top: 20px; padding-bottom: 20px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="https://www.halalfoodhunt.com/images/media/pexels-photo-434337.jpeg">
+<div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background-image: url(https://www.halalfoodhunt.com/images/media/pexels-photo-434337.jpeg); padding-top: 120px; padding-bottom: 120px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="https://www.halalfoodhunt.com/images/media/pexels-photo-434337.jpeg">
   <div class="container">
     <div class="sixteen columns">
      <div class="sixteen columns alpha">
@@ -80,20 +80,6 @@
 <div class="Homes pix_builder_bg">
  <div class="container">
   <div class="sixteen columns">
-          <br><br>
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#home">RECOMMENDED</a></li>
-            <li><%= link_to 'PLACES', places_path %></li>
-            <li><%= link_to 'HOMIES & POP-UPS', ecommers_path %></li>
-            <li><%= link_to 'CATERERS', caterers_path %></li>
-            <li><%= link_to 'FOOD DELIVERIES', food_deliveries_path %></li>
-            <li><%= link_to 'ONLINE RETAIL', online_grocers_path %></li>
-            <li><%= link_to 'SUPPLIERS', suppliers_path %></li>
-          </ul>
-          <!-- Tab panes -->
-          <div class="tab-content padding-0">
-            <div class="tab-pane active padding-0" id="home">
-              <br>
               <div class="col-xs-12 col-sm-12 col-md-8"><h4 class ="category-title">Places</h4></div>
               <div class="col-xs-12 col-sm-12 col-md-4"><p class ="text-right"><%= link_to places_path do %>See All <i class="fa fa-angle-right fa-lg"></i><% end %></p></div>
               <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
@@ -123,34 +109,6 @@
               <div class="col-xs-12 col-sm-12 col-md-12 padding-0">
                 <%= render "suppliers/suppliers" %>
               </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="homies">
-              <br>
-              <%= render "ecommers/ecommers" %>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="caterers">
-              <br>
-              <%= render "caterers/caterers" %>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="food-deliveries">
-              <br>
-              <%= render 'food_deliveries/food_delivery_home' %>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="supermarkets">
-              <br>
-              <%= render "supermarkets/supermarket" %>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="lessons">
-              <br>
-              <%= render "lessons/lessons" %>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="online-grocers">
-              <br>
-              <%= render "online_grocers/online_grocer" %>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="suppliers">
-              <br>
-              <%= render "suppliers/suppliers" %>
             </div>
           </div>
         </div>
