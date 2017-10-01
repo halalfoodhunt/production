@@ -93,9 +93,6 @@ nav {
 }
 .nav-tabs {
     border-bottom: 1px solid #dddddd;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 80%;
-    text-transform: uppercase;
 }
 .nav-tabs > li {
     float: left;
@@ -377,19 +374,7 @@ nav {
     float: left;
     padding: 15px 15px;
     font-size: 18px;
-    text-transform: uppercase;
     line-height: 20px;
-}
-@media (max-width: 480px) {
-    .navbar-lg .navbar-brand {
-        font-size: 18px;
-    }
-}
-@media (max-width: 480px) {
-    .navbar-lg .navbar-toggle {
-        height: 0px !important;
-        line-height: 68px !important;
-    }
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -1306,7 +1291,7 @@ you can use the generic selector below, but it's slower:
     margin-left: 0;
 }
 .nav-tabs {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     border-bottom-width: 2px;
     border-bottom-color: #e1e4e7;
 }
@@ -1328,7 +1313,6 @@ you can use the generic selector below, but it's slower:
 .nav-tabs > li {
     margin-bottom: -2px;
     position: relative;
-    background: #ccc;
 }
 .nav-tabs > li.active {
     z-index: 2;
@@ -1378,8 +1362,8 @@ you can use the generic selector below, but it's slower:
 .nav-tabs > li > a {
     border-width: 2px;
     font-size: 14px;
-    font-weight: 500;
-    padding: 15px 10px;
+    font-weight: 700;
+    padding: 7px 21px 8px;
     color: #7f8c9a;
     border-radius: 6px 6px 0 0;
     -webkit-transition: none;
@@ -1476,6 +1460,10 @@ you can use the generic selector below, but it's slower:
     }
 }
 .tab-content {
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 20px 20px 5px;
     position: relative;
     z-index: 1;
 }
@@ -1487,7 +1475,7 @@ you can use the generic selector below, but it's slower:
     margin-left: -13px;
     margin-right: -13px;
     padding: 0 13px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.538;
 }
 .nav-list > li {
@@ -1674,7 +1662,7 @@ you can use the generic selector below, but it's slower:
     font-size: 16px;
     padding: 15px 21px;
     line-height: 23px;
-    font-weight: 500;
+    font-weight: 700;
 }
 .navbar-nav .dropdown-toggle .caret {
     border-top-color: #16a085;
@@ -2322,18 +2310,14 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
     line-height: 1;
 }
 .navbar-lg .navbar-nav > li > a {
-    font-size: 80%;
+    font-size: 15px;
     line-height: 1.6;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif !important;
-    
 }
 @media (min-width: 768px) {
     .navbar-lg .navbar-nav > li > a,
     .navbar-lg .navbar-nav > li > .text_span {
         padding-top: 26px;
         padding-bottom: 26px;
-        padding-left:10px;
     }
     .navbar-left li:first-child a { padding-left: 0px}
     .right_socials { text-align: right;float: right;display: inline-block;position: relative;}
