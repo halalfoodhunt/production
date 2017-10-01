@@ -1291,7 +1291,7 @@ you can use the generic selector below, but it's slower:
     margin-left: 0;
 }
 .nav-tabs {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     border-bottom-width: 2px;
     border-bottom-color: #e1e4e7;
 }
@@ -1460,10 +1460,9 @@ you can use the generic selector below, but it's slower:
     }
 }
 .tab-content {
-    border: 2px solid #ddd;
-    border-radius: 6px;
+    border-radius: 0px;
     margin-bottom: 20px;
-    padding: 20px 20px 5px;
+    padding: 0;
     position: relative;
     z-index: 1;
 }
@@ -1608,7 +1607,7 @@ you can use the generic selector below, but it's slower:
     font-size: 19px;
     line-height: 1.042;
     font-weight: 700;
-    padding: 14px 10px;
+    padding: 14px 0px;
     font-family: "Montserrat";
 }
 .navbar-brand > [class*="fui-"] {
