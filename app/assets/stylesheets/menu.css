@@ -97,10 +97,10 @@ nav {
 .nav-tabs > li {
     float: left;
     margin-bottom: -1px;
-    font-family: 'Lato';
+    font-family: 'Lato', ;
     text-transform: uppercase;
     background: #ccc;
-    border-radius: 4px 0 0 0;
+    border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a {
     margin-right: 2px;
