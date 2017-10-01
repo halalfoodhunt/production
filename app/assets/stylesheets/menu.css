@@ -1605,10 +1605,11 @@ you can use the generic selector below, but it's slower:
     border-width: 0;
 }
 .navbar-brand {
-    font-size: 24px;
+    font-size: 19px;
     line-height: 1.042;
     font-weight: 700;
-    padding: 14px 21px;
+    padding: 14px 10px;
+    font-family: "Montserrat";
 }
 .navbar-brand > [class*="fui-"] {
     font-size: 19px;
@@ -2311,7 +2312,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 .navbar-lg .navbar-brand > [class*="fui-"] {
     font-size: 18px;
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     text-transform: uppercase;
 }
 .navbar-lg .navbar-nav > li > a {
