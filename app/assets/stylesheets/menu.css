@@ -2304,6 +2304,9 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
     line-height: 1;
     padding-top: 25px;
     padding-bottom: 26px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 .navbar-lg .navbar-brand > [class*="fui-"] {
     font-size: 18px;
