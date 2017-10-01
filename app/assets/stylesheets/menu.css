@@ -2322,7 +2322,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
     line-height: 1.6;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 12px;
 }
 @media (min-width: 768px) {
