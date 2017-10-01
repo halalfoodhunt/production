@@ -247,10 +247,6 @@ nav {
     min-height: 50px;
     margin-bottom: 20px;
     border: 1px solid transparent;
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 13px;
 }
 .navbar:before,
 .navbar:after {
