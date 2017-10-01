@@ -428,6 +428,10 @@ nav {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 20px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
 }
 .navbar-nav > li > .text_span {
     padding-top: 10px;
