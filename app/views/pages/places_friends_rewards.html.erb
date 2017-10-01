@@ -1,83 +1,222 @@
 <%= render 'layouts/header' %>
-<div class="container-fluid friends-rewards" style="margin-top:50px; padding:20px 0 20px 0;">
-  <div class="col-xs-12 col-sm-12 col-md-12">
-    <center><h3 style="color:#ffffff; text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);">Friends Rewards Card:<br>Unlock savings and privileges when you choose halal!</h3>
-      <a href="http://www.friends.halalfoodhunt.com" class="btn btn-lg btn-danger" role="button">Get FRIENDS Card Now!</a></center>
-  </div>
-</div>
-<div class="container-fluid" style="padding:0;">
-  <div class="col-xs-12 col-sm-12 col-md-12" style="padding-top:20px; background:#f8f3f0; border-bottom:1px solid #ccc;">
-    <%= render 'friends_search' %>
-  </div>
-</div>
-<div class="container">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-      <div class="col-xs-12 col-sm-12 col-md-10">
-        <h5 style="padding:20px 0">SHOWING <b><%= @places.where.not(friends_reward_id: nil).count %></b> FRIENDS REWARDS IN <u>PLACES</u>, ALL CITIES, SINGAPORE</h5>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-2 text-right" style="margin-top:20px;">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><center><h5><%= sort_link(@search, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
-              <li><center><h5><%= sort_link(@search, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
-              <li><center><h5><%= sort_link(@search, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-              <li><center><h5><%= sort_link(@search, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+<div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background-image: url(/images/media/flatlaycampaign-4.jpeg); padding-top: 80px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="/images/media/flatlaycampaign-4.jpeg">
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="sixteen columns alpha">
+        <div class="">
+          <div class="substyle pix_builder_bg">
+            <h1 style="font-family: 'Muli', sans-serif; font-weight:700; color:#444;">Discover and verify your halal food choices here!</h1>
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home" data-target="#home, #place">Places</a></li>
+              <li><a data-toggle="tab" href="#menu1" data-target="#menu1, #home_else">Homies & Pop-Ups</a></li>
+              <li><a data-toggle="tab" href="#menu2">Caterers</a></li>
+              <li><a data-toggle="tab" href="#menu2">Food Deliveries</a></li>
+              <li><a data-toggle="tab" href="#menu2">Online Retail</a></li>
+              <li><a data-toggle="tab" href="#menu2">Suppliers</a></li>
+              <li><a data-toggle="tab" href="#menu2">Bakes & Confectioners</a></li>
+              <li><a data-toggle="tab" href="#menu2"> Raw Ingredients</a></li>
             </ul>
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+               <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                <%= search_form_for @search_place do |f| %>
+                <div class="col-sm-12 col-md-12" style="padding:20px">
+                  <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                   <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                   <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
+                 </div>
+                 <br>
+                 <div class="col-sm-12 col-md-6" style="padding:2px">
+                   <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Menu Types"}, {:class=>'form-control'}) %><br>
+                   <%= f.collection_select(:dining_types_id_eq_any, DiningType.all, :id, :name, {:include_blank => "Dining Types"}, {:class=>'form-control'}) %>
+                 </div>
+                 <div class="col-sm-12 col-md-6" style="padding:2px">
+                  <%= f.collection_select(:highlights_id_eq_any, Highlight.all, :id, :name, {:include_blank => "Highlights"}, {:class=>'form-control'}) %><br>
+                  <%= f.collection_select(:location_id_eq, Location.order(:name), :id, :name, {:include_blank => "Locations"}, {:class=>'form-control'}) %><br>
+                </div>
+                <br>
+                <div>
+                  <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          
+          <div id="menu1" class="tab-pane fade">
+           <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+            
+            <%= search_form_for @search_ecommers do |f| %>
+            <div class="col-sm-12 col-md-12" style="padding:20px">
+              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+               <label for="Search" class="label-front">What kind of food are you looking for?</label>
+               <%= f.text_field :business_name_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
+             </div>
+             <br>
+             <div class="col-sm-12 col-md-6" style="padding:2px">
+               <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
+             </div>
+             <div class="col-sm-12 col-md-6" style="padding:2px">
+              <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
+            </div>
+            <div>
+             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+           </div>
+           <% end %>
+         </div>
+         
+       </div>
+     </div>
+     
+     <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Some content in menu 2.</p>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="section_hotel_4_1">
+  <div class="Homes pix_builder_bg">
+    <div class="container">
+     <br>
+     <div class="tab-content">
+       <div id="place" class="tab-pane fade in active">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="col-xs-12 col-sm-12 col-md-8">
+           <h5>SHOWING <strong><u><%= @places.where.not(friends_reward_id: nil).count %></u></strong> PLACES WITH FRIENDS REWARDS IN SINGAPORE</h5></div>
+           <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+             <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><center><h5><%= sort_link(@search_place, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_place, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_place, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_place, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                </ul>
+              </div>
+            </div>
+            <div class="sixteen columns">
+              <%= render "layouts/places_friends" %>
+            </div>
+          </div>
+        </div>
+        
+        <div id="home_else" class="tab-pane fade">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @ecommers.where.not(friends_reward_id: nil).count %></u></strong> HOMIES & POP-UPS WITH FRIENDS REWARDS IN SINGAPORE</h5></div>
+            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+             <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><center><h5><%= sort_link(@search_ecommers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_ecommers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_ecommers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_ecommers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                </ul>
+              </div>
+            </div>
+            <div class="sixteen columns">
+              <%= render "ecommers/ecommers" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="pixfort_corporate_2" id="section_corporate_4">
+  <div class="amazing_style pix_builder_bg" style="background:#eee;">
     <div class="container">
-      <div class="col-xs-12 col-sm-12 col-md-12">
-    <% @places.each do |place| %>
-    <% unless place.friends_rewards_terms.blank? %>
-<div class="col-xs-12 col-sm-6 col-md-3" >
-  <!--Rotating card-->
-  <div class="card-wrapper">
-    <div id="card-1" class="card-rotating effect__click">
-      <!--Front Side-->
-      <div class="face front">
-        <!-- Image-->
-        <div class="card-up">
-          <%= image_tag place.featured_image.url(:square), :class => "img-responsive" %>
-        </div>
-        <!--Avatar-->
-        <div class="avatar"><%= image_tag place.friends_reward.icon.url(:large), :class => "img-circle img_responsive" %>
-        </div>
-        <!--Content-->
-        <div class="card-block" style="padding:0 5px 0 5px;">
-          <p style="margin:0;"><%= link_to place_path(place) do %><strong><%= place.business_name %></strong><% end %></p>
-          <p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.operating_address %></p><br>
-          <!--Triggering button-->
-          <p><a class="rotate-btn btn btn-default btn-sm" data-card="card-1"> <i class="fa fa-repeat"></i> Read terms here.</a></p>
+      <div class="sixteen columns">
+        <div class="t1_style">
+            <span class="editContent">
+              <div class="col-md-10 col-md-offset-1 ipad">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe width="400" height="225" src="https://www.youtube.com/embed/6vm5SMkohOk?rel=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              </span>
+              </div>
+          <div class="t1_style">
+            <span class="editContent">
+              <span class="pix_text"><br><b>The FRIENDS Rewards Card</b></span>
+            </span>
+          </div>
+          <div class="t3_style">
+            <span class="editContent">
+              <span class="pix_text">With the FRIENDS Rewards Card, you will unlock discounts, savings and other benefits at more than 50 halal places in Singapore. This list keeps on growing so keep checking back at the Rewards Page</span>
+            </span>
+          </div>
         </div>
       </div>
-      <!--/.Front Side-->
-      <!--Back Side-->
-      <div class="face back">
-        <!--Content-->
-        <h4><%= place.friends_reward.name %></h4>
-        <hr>
-        <p><%= place.friends_rewards_terms %></p>
-        <hr>
-        <!--Triggering button-->
-        <a class="rotate-btn btn btn-default btn-block" data-card="card-1"><i class="fa fa-undo"></i> Click here to rotate back</a>
-         <%= link_to 'View Merchant Details', place_path(place), class: "btn btn-raised btn-block btn-success" %>
-      </div>
-      <!--/.Back Side-->
     </div>
   </div>
-  <!--/.Rotating card-->
-</div>
-<% end %>
-<% end %>
+</div><div class="center_text dark big_padding pix_builder_bg" id="section_testimonials_2_dark">
+<div class="container ">
+  <div class="eight columns alpha">
+    <div class="content_div">
+      <div class="margin_bottom">
+        <img class="small_circle border_light" src="/images/media/Testimonial1.png">
+      </div>
+      <p class="editContent light_gray normal_text">Loving halalfoodhunt.com coz i get to know more new Halal food products or places which i can checkout with my loved ones. It's convenient to browse halalfoodhunt.com</p>                 
+      <h6 class="editContent bold_text dark_gray">Nazirah</h6>
+    </div>
+  </div>
+  <div class="eight columns omega">
+    <div class="content_div">
+      <div class="margin_bottom">
+        <img class="small_circle border_light" src="/images/media/Testimonial2.png">
+      </div>
+      <p class="editContent light_gray normal_text">I love halalfoodhunt.com as it really helps me to find food I crave for since I converted. it's really one of the most comprehensive directory for halal food and all the reviews make the food extra yummylicious!</p>                 
+      <h6 class="editContent bold_text dark_gray">Jerine Akeia Teh</h6>
+    </div>
   </div>
 </div>
+</div><div class="pixfort_gym_13" id="section_gym_3">
+<div class="logos_sect pix_builder_bg" style="outline-offset: -3px;">
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="text_logos"><span class="editContent"><span class="pix_text">As featured on:</span></span></div>
+      <center>
+        <br>
+     <a href="https://suaramagazine.files.wordpress.com/2016/09/suara-sep-oct161.pdf"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/suara-logo.png" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="http://www.sassysingapore.com/5-halalfoodhunted-spots-to-break-fast-at-this-ramadan/"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/Screen-Shot-2016-11-09-at-2.02.18-PM.png" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="http://themiddleground.sg/2016/09/04/online-food-and-travel-sites-fill-niche-in-halal-food-biz/"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/logo.jpg" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="http://berita.mediacorp.sg/mobilem/singapore/haron-satay-dinobat-satay-masters/3229054.html"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/imgres.jpg" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="https://drive.google.com/file/d/0B4JZy9TCnGZFU0V6alN0cGpEdGs/view"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/Gaya-Magazine-logo.png" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmanjamagazine%2Fposts%2F1178084435574270%3A0&width=500"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/13332760_1078270675555647_1643690128616525447_n.jpg" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="https://vulcanpost.com/308221/last-minute-guide-hari-raya/"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/13112-logo1.jpg" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="#"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/bh-langgan-1.png" class="img-responsive color_flip" alt="Responsive image"></a>
+     <a href="#"><img src="http://friends.jumaiyah.com/wp-content/uploads/2017/02/logo-tnp_0.png" class="img-responsive color_flip" alt="Responsive image"></a>
+   </div></center>
+    </div>
   </div>
-<script>
-$('.rotate-btn').on('click', function(){
-  $(this).closest('.card-rotating.effect__click').toggleClass('flipped');
-});
-</script>
+</div>
+</div><div class="pixfort_gym_13" id="section_gym_3">
+<div class="logos_sect pix_builder_bg" style="outline-offset: -3px;">
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="text_logos"><span class="editContent"><span class="pix_text">We have worked with:</span></span></div>
+      <div class="padd_updown">
+        <div class="one-third column  alpha"> <img src="images/13_gym/logo1.png" class="logo_width" alt=""> </div>
+        <div class="one-third column       "> <img src="images/13_gym/logo2.png" class="logo_width" alt=""> </div>
+        <div class="one-third column  omega"> <img src="images/13_gym/logo3.png" class="logo_width" alt=""> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

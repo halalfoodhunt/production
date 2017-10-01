@@ -101,29 +101,19 @@ end
 
 def friends_rewards
     @halalfoodhunt_seos = HalalfoodhuntSeo.all
-    @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil).limit(4)
+    @search_place = Place.ransack(params[:q])
+    @places = @search_place.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_ecommers = Ecommer.ransack(params[:q])
+    @ecommers = @search_ecommers.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
   if params[:friends_reward].blank?
-    @search = Place.ransack(params[:q])
-    @places = @search.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
-    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
-    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
-    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
-    @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false)
-    @lessons = Lesson.all.order("created_at DESC").where(draft: false)
-    @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
-    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
+    @search_place = Place.ransack(params[:q])
+    @places = @search_place.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
+    @search_ecommers = Ecommer.ransack(params[:q])
+    @ecommers = @search_ecommers.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
   else
-    @search = Place.ransack(params[:q])
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
     @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @lessons = Lesson.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @suppliers = Supplier.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @supermarkets = Supermarket.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @online_grocers = OnlineGrocer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
