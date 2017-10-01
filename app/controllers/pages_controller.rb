@@ -129,14 +129,19 @@ end
 
 def places_friends_rewards
     @halalfoodhunt_seos = HalalfoodhuntSeo.all
-    @search = Place.ransack(params[:q])
-    @places = @search.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_place = Place.ransack(params[:q])
+    @places = @search_place.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_ecommers = Ecommer.ransack(params[:q])
+    @ecommers = @search_ecommers.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
   if params[:friends_reward].blank?
-    @search = Place.ransack(params[:q])
-    @places = @search.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
+    @search_place = Place.ransack(params[:q])
+    @places = @search_place.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
+    @search_ecommers = Ecommer.ransack(params[:q])
+    @ecommers = @search_ecommers.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
