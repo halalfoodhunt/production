@@ -85,7 +85,7 @@
 
 	em { font-style: italic; }
 	strong { font-weight: bold; }
-	small { font-size: 80%; line-height: 80% !important; }
+	small { font-size: 80%; line-height: 60% !important; }
 
 /*	Blockquotes  */
 	blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
