@@ -70,154 +70,154 @@
      
      <div id="caterers" class="tab-pane fade">
       <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            
-            <%= search_form_for @search_caterers do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of catering are you looking for?</label>
-               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Wedding, Seminar etc." %>
-             </div>
-             <br>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:caterer_types_id_eq_any, CatererType.all, :id, :name, {:include_blank => "Caterer Types"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %><br>
-            </div>
-            <div>
-             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-           </div>
-           <% end %>
+        
+        <%= search_form_for @search_caterers do |f| %>
+        <div class="col-sm-12 col-md-12" style="padding:20px">
+          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+           <label for="Search" class="label-front">What kind of catering are you looking for?</label>
+           <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Wedding, Seminar etc." %>
          </div>
-         
-       </div>
-    </div>
-    
-    <div id="deliveries" class="tab-pane fade">
-      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            
-            <%= search_form_for @search_food_deliveries do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of food are you looking for?</label>
-               <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Sushi, Healthy etc." %>
-             </div>
-             <br>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:food_delivery_types_id_eq_any, FoodDeliveryType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %><br>
-            </div>
-            <div>
-             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-           </div>
-           <% end %>
+         <br>
+         <div class="col-sm-12 col-md-6" style="padding:2px">
+           <%= f.collection_select(:caterer_types_id_eq_any, CatererType.all, :id, :name, {:include_blank => "Caterer Types"}, {:class=>'form-control'}) %>
          </div>
-         
+         <div class="col-sm-12 col-md-6" style="padding:2px">
+          <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %><br>
+        </div>
+        <div>
+         <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
        </div>
-    </div>
-    
-    <div id="retails" class="tab-pane fade">
-      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            
-            <%= search_form_for @search_online_grocers do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of food are you looking for?</label>
-               <%= f.text_field :brand_name_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Home-made Milk, Frozen Satay" %>
-             </div>
-             <br>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:grocer_types_id_eq_any, GrocerType.all, :id, :name, {:include_blank => "Grocer Types"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:grocer_service_types_id_eq_any, GrocerServiceType.all, :id, :name, {:include_blank => "Grocer Service Types"}, {:class=>'form-control'}) %><br>
-            </div>
-            <div>
-             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-           </div>
-           <% end %>
-         </div>
-         
-       </div>
-    </div>
-    
-    <div id="suppliers" class="tab-pane fade">
-      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            
-            <%= search_form_for @search_suppliers do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of supplier are you looking for?</label>
-               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
-             </div>
-             <br>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:supplier_type_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Type"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
-            </div>
-            <div>
-             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-           </div>
-           <% end %>
-         </div>
-         
-       </div>
-    </div>
-    
-    <div id="bakes" class="tab-pane fade">
-           <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            
-            <%= search_form_for @search_ecommers do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of bakes & confectioners are you looking for?</label>
-               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Birthday Cakes, Raya Cookies etc." %><br>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
-            </div>
-            <div>
-             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-           </div>
-           <% end %>
-         </div>
-         
-       </div>
+       <% end %>
      </div>
      
-     <div id="raw" class="tab-pane fade">
-      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-            
-            <%= search_form_for @search_suppliers do |f| %>
-            <div class="col-sm-12 col-md-12" style="padding:20px">
-              <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-               <label for="Search" class="label-front">What kind of raw ingredients are you looking for?</label>
-               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
-             </div>
-             <br>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:supplier_type_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Type"}, {:class=>'form-control'}) %>
-             </div>
-             <div class="col-sm-12 col-md-6" style="padding:2px">
-              <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
-            </div>
-            <div>
-             <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-           </div>
-           <% end %>
-         </div>
-         
-       </div>
+   </div>
+ </div>
+ 
+ <div id="deliveries" class="tab-pane fade">
+  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+    
+    <%= search_form_for @search_food_deliveries do |f| %>
+    <div class="col-sm-12 col-md-12" style="padding:20px">
+      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+       <label for="Search" class="label-front">What kind of food are you looking for?</label>
+       <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Sushi, Healthy etc." %>
+     </div>
+     <br>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+       <%= f.collection_select(:cuisine_types_id_eq_any, CuisineType.all, :id, :name, {:include_blank => "Cuisine Types"}, {:class=>'form-control'}) %>
+     </div>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+      <%= f.collection_select(:food_delivery_types_id_eq_any, FoodDeliveryType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %><br>
     </div>
+    <div>
+     <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+   </div>
+   <% end %>
+ </div>
+ 
+</div>
+</div>
 
+<div id="retails" class="tab-pane fade">
+  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+    
+    <%= search_form_for @search_online_grocers do |f| %>
+    <div class="col-sm-12 col-md-12" style="padding:20px">
+      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+       <label for="Search" class="label-front">What kind of food are you looking for?</label>
+       <%= f.text_field :brand_name_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Home-made Milk, Frozen Satay" %>
+     </div>
+     <br>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+       <%= f.collection_select(:grocer_types_id_eq_any, GrocerType.all, :id, :name, {:include_blank => "Grocer Types"}, {:class=>'form-control'}) %>
+     </div>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+      <%= f.collection_select(:grocer_service_types_id_eq_any, GrocerServiceType.all, :id, :name, {:include_blank => "Grocer Service Types"}, {:class=>'form-control'}) %><br>
+    </div>
+    <div>
+     <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+   </div>
+   <% end %>
+ </div>
+ 
+</div>
+</div>
+
+<div id="suppliers" class="tab-pane fade">
+  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+    
+    <%= search_form_for @search_suppliers do |f| %>
+    <div class="col-sm-12 col-md-12" style="padding:20px">
+      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+       <label for="Search" class="label-front">What kind of supplier are you looking for?</label>
+       <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
+     </div>
+     <br>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+       <%= f.collection_select(:supplier_type_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Type"}, {:class=>'form-control'}) %>
+     </div>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+      <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
+    </div>
+    <div>
+     <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+   </div>
+   <% end %>
+ </div>
+ 
+</div>
+</div>
+
+<div id="bakes" class="tab-pane fade">
+ <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+  
+  <%= search_form_for @search_ecommers do |f| %>
+  <div class="col-sm-12 col-md-12" style="padding:20px">
+    <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+     <label for="Search" class="label-front">What kind of bakes & confectioners are you looking for?</label>
+     <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Birthday Cakes, Raya Cookies etc." %><br>
+   </div>
+   <div class="col-sm-12 col-md-6" style="padding:2px">
+     <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
+   </div>
+   <div class="col-sm-12 col-md-6" style="padding:2px">
+    <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
   </div>
+  <div>
+   <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+ </div>
+ <% end %>
+</div>
+
+</div>
+</div>
+
+<div id="raw" class="tab-pane fade">
+  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+    
+    <%= search_form_for @search_suppliers do |f| %>
+    <div class="col-sm-12 col-md-12" style="padding:20px">
+      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+       <label for="Search" class="label-front">What kind of raw ingredients are you looking for?</label>
+       <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
+     </div>
+     <br>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+       <%= f.collection_select(:supplier_type_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Type"}, {:class=>'form-control'}) %>
+     </div>
+     <div class="col-sm-12 col-md-6" style="padding:2px">
+      <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %><br>
+    </div>
+    <div>
+     <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+   </div>
+   <% end %>
+ </div>
+ 
+</div>
+</div>
+
+</div>
 </div>
 </div>
 </div>
@@ -276,192 +276,192 @@
         </div>
         
         <div id="caterers1" class="tab-pane fade in active">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-8">
-           <h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
-           <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_caterers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_caterers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                </ul>
-              </div>
-            </div>
-            <div class="sixteen columns">
-              <%= render "caterers/caterers" %>
-            </div>
-          </div>
-        </div>
-        
-        <div id="deliveries1" class="tab-pane fade in active">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-8">
-           <h5>SHOWING <strong><u><%= @food_deliveries.count %></u></strong> FOOD DELIVERIES IN SINGAPORE</h5></div>
-           <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_food_deliveries, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_food_deliveries, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_food_deliveries, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_food_deliveries, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                </ul>
-              </div>
-            </div>
-            <div class="sixteen columns">
-              <%= render "food_deliveries/food_delivery" %>
-            </div>
-          </div>
-        </div>
-        
-        <div id="retails1" class="tab-pane fade in active">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-8">
-           <h5>SHOWING <strong><u><%= @online_grocers.count %></u></strong> ONLINE RETAIL IN SINGAPORE</h5></div>
-           <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_online_grocers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_online_grocers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_online_grocers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_online_grocers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                </ul>
-              </div>
-            </div>
-            <div class="sixteen columns">
-              <%= render "online_grocers/online_grocer" %>
-            </div>
-          </div>
-        </div>
-        
-        <div id="suppliers1" class="tab-pane fade in active">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-8">
-           <h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div>
-           <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                </ul>
-              </div>
-            </div>
-            <div class="sixteen columns">
-              <%= render "suppliers/suppliers" %>
-            </div>
-          </div>
-        </div>
-        
-        <div id="bakes1" class="tab-pane fade">
           <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @ecommers.count %></u></strong> BAKES & CONFECTIONERS IN SINGAPORE</h5></div>
-            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_ecommers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_ecommers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_ecommers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_ecommers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                </ul>
+            <div class="col-xs-12 col-sm-12 col-md-8">
+             <h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
+             <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+               <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><center><h5><%= sort_link(@search_caterers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_caterers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sixteen columns">
+                <%= render "caterers/caterers" %>
               </div>
             </div>
-            <div class="sixteen columns">
-              <%= render "ecommers/ecommers" %>
-            </div>
           </div>
-        </div>
-        
-        <div id="raw1" class="tab-pane fade in active">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-8">
-           <h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> RAW INGREDINETS IN SINGAPORE</h5></div>
-           <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                </ul>
+          
+          <div id="deliveries1" class="tab-pane fade in active">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="col-xs-12 col-sm-12 col-md-8">
+               <h5>SHOWING <strong><u><%= @food_deliveries.count %></u></strong> FOOD DELIVERIES IN SINGAPORE</h5></div>
+               <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+                 <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><center><h5><%= sort_link(@search_food_deliveries, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                      <li><center><h5><%= sort_link(@search_food_deliveries, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                      <li><center><h5><%= sort_link(@search_food_deliveries, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                      <li><center><h5><%= sort_link(@search_food_deliveries, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sixteen columns">
+                  <%= render "food_deliveries/food_delivery" %>
+                </div>
               </div>
             </div>
-            <div class="sixteen columns">
-              <%= render "suppliers/suppliers" %>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+            
+            <div id="retails1" class="tab-pane fade in active">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                 <h5>SHOWING <strong><u><%= @online_grocers.count %></u></strong> ONLINE RETAIL IN SINGAPORE</h5></div>
+                 <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+                   <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><center><h5><%= sort_link(@search_online_grocers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                        <li><center><h5><%= sort_link(@search_online_grocers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                        <li><center><h5><%= sort_link(@search_online_grocers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                        <li><center><h5><%= sort_link(@search_online_grocers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="sixteen columns">
+                    <%= render "online_grocers/online_grocer" %>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="suppliers1" class="tab-pane fade in active">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="col-xs-12 col-sm-12 col-md-8">
+                   <h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div>
+                   <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+                     <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="sixteen columns">
+                      <%= render "suppliers/suppliers" %>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="bakes1" class="tab-pane fade">
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @ecommers.count %></u></strong> BAKES & CONFECTIONERS IN SINGAPORE</h5></div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+                     <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><center><h5><%= sort_link(@search_ecommers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_ecommers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_ecommers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_ecommers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="sixteen columns">
+                      <%= render "ecommers/ecommers" %>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="raw1" class="tab-pane fade in active">
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                     <h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> RAW INGREDINETS IN SINGAPORE</h5></div>
+                     <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+                       <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_suppliers, :business_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_suppliers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="sixteen columns">
+                        <%= render "suppliers/suppliers" %>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
 
-  </div>
-</div>
-</div>
-</div>
-</div>
-<div class="pixfort_corporate_2" id="section_corporate_4">
-  <div class="amazing_style pix_builder_bg" style="background:#eee;">
-    <div class="container">
-      <div class="sixteen columns">
-        <div class="t1_style">
-          <span class="editContent">
-            <div class="col-md-10 col-md-offset-1 ipad">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="400" height="225" src="https://www.youtube.com/embed/6vm5SMkohOk?rel=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-              </div>
             </div>
-          </span>
-        </div>
-        <div class="t1_style">
-          <span class="editContent">
-            <span class="pix_text"><br><b>The FRIENDS Rewards Card</b></span>
-          </span>
-        </div>
-        <div class="t3_style">
-          <span class="editContent">
-            <span class="pix_text">With the FRIENDS Rewards Card, you will unlock discounts, savings and other benefits at more than 50 halal places in Singapore. This list keeps on growing so keep checking back at the Rewards Page</span>
-          </span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</div><div class="center_text dark big_padding pix_builder_bg" id="section_testimonials_2_dark">
-<div class="container ">
-  <div class="eight columns alpha">
-    <div class="content_div">
-      <div class="margin_bottom">
-        <img class="small_circle border_light" src="/images/media/Testimonial1.png">
+    <div class="pixfort_corporate_2" id="section_corporate_4">
+      <div class="amazing_style pix_builder_bg" style="background:#eee;">
+        <div class="container">
+          <div class="sixteen columns">
+            <div class="t1_style">
+              <span class="editContent">
+                <div class="col-md-10 col-md-offset-1 ipad">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="400" height="225" src="https://www.youtube.com/embed/6vm5SMkohOk?rel=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div class="t1_style">
+              <span class="editContent">
+                <span class="pix_text"><br><b>The FRIENDS Rewards Card</b></span>
+              </span>
+            </div>
+            <div class="t3_style">
+              <span class="editContent">
+                <span class="pix_text">With the FRIENDS Rewards Card, you will unlock discounts, savings and other benefits at more than 50 halal places in Singapore. This list keeps on growing so keep checking back at the Rewards Page</span>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="editContent light_gray normal_text">Loving halalfoodhunt.com coz i get to know more new Halal food products or places which i can checkout with my loved ones. It's convenient to browse halalfoodhunt.com</p>                 
-      <h6 class="editContent bold_text dark_gray">Nazirah</h6>
+    </div>
+  </div><div class="center_text dark big_padding pix_builder_bg" id="section_testimonials_2_dark">
+  <div class="container ">
+    <div class="eight columns alpha">
+      <div class="content_div">
+        <div class="margin_bottom">
+          <img class="small_circle border_light" src="/images/media/Testimonial1.png">
+        </div>
+        <p class="editContent light_gray normal_text">Loving halalfoodhunt.com coz i get to know more new Halal food products or places which i can checkout with my loved ones. It's convenient to browse halalfoodhunt.com</p>                 
+        <h6 class="editContent bold_text dark_gray">Nazirah</h6>
+      </div>
+    </div>
+    <div class="eight columns omega">
+      <div class="content_div">
+        <div class="margin_bottom">
+          <img class="small_circle border_light" src="/images/media/Testimonial2.png">
+        </div>
+        <p class="editContent light_gray normal_text">I love halalfoodhunt.com as it really helps me to find food I crave for since I converted. it's really one of the most comprehensive directory for halal food and all the reviews make the food extra yummylicious!</p>                 
+        <h6 class="editContent bold_text dark_gray">Jerine Akeia Teh</h6>
+      </div>
     </div>
   </div>
-  <div class="eight columns omega">
-    <div class="content_div">
-      <div class="margin_bottom">
-        <img class="small_circle border_light" src="/images/media/Testimonial2.png">
-      </div>
-      <p class="editContent light_gray normal_text">I love halalfoodhunt.com as it really helps me to find food I crave for since I converted. it's really one of the most comprehensive directory for halal food and all the reviews make the food extra yummylicious!</p>                 
-      <h6 class="editContent bold_text dark_gray">Jerine Akeia Teh</h6>
-    </div>
-  </div>
-</div>
 </div><div class="pixfort_gym_13" id="section_gym_3">
 <div class="logos_sect pix_builder_bg" style="outline-offset: -3px;">
   <div class="container">
