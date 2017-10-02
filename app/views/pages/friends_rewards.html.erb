@@ -230,10 +230,11 @@
 <div id="section_hotel_4_1">
   <div class="Homes pix_builder_bg">
     <div class="container">
+        
      <div class="tab-content">
+         
        <div id="place1" class="tab-pane fade in active">
         <div class="col-xs-12 col-sm-12 col-md-12">
-
           <div class="col-xs-12 col-sm-12 col-md-10">
            <h5>SHOWING <strong><u><%= @places.where.not(friends_reward_id: nil).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5></div>
            
@@ -249,17 +250,19 @@
                 </ul>
               </div>
             </div>
+            </div>
             
             <div class="sixteen columns">
               <%= render "pages/places_friends" %>
             </div>
             
-          </div>
         </div>
 
       <div id="homies1" class="tab-pane fade">
         <div class="col-xs-12 col-sm-12 col-md-12">
+          
           <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @ecommers.where.not(friends_reward_id: nil).count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
+          
           <div class="col-xs-12 col-sm-12 col-md-2 text-right">
            <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter by
@@ -272,16 +275,20 @@
               </ul>
             </div>
           </div>
+          
+          </div>
+          
           <div class="sixteen columns">
             <%= render "pages/ecommers_friends" %>
           </div>
+          
         </div>
-      </div>
 
       <div id="caterers1" class="tab-pane fade in active">
         <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="col-xs-12 col-sm-12 col-md-10">
-           <h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
+            
+          <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
+           
            <div class="col-xs-12 col-sm-12 col-md-2 text-right">
              <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter by
@@ -294,9 +301,11 @@
                 </ul>
               </div>
             </div>
+            
             <div class="sixteen columns">
               <%= render "caterers/caterers" %>
             </div>
+            
           </div>
         </div>
 
