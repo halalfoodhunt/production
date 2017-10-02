@@ -258,7 +258,7 @@
           </div>
         </div>
 
-      <div id="homies1" class="tab-pane fade">
+      <div id="homies1" class="tab-pane <%= 'active' if @search_ecommers %> fade">
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @ecommers.where.not(friends_reward_id: nil).count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
           <div class="col-xs-12 col-sm-12 col-md-2 text-right">
