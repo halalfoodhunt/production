@@ -111,15 +111,34 @@ def friends_rewards
     @places = @search_place.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
     @search_ecommers = Ecommer.ransack(params[:q])
     @ecommers = @search_ecommers.result.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_caterers = Caterer.ransack(params[:q])
+    @caterers = @search_caterers.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_food_deliveries = FoodDelivery.ransack(params[:q])
+    @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_online_grocers = OnlineGrocer.ransack(params[:q])
+    @online_grocers = @search_online_grocers.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_suppliers = Supplier.ransack(params[:q])
+    @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
   if params[:friends_reward].blank?
     @search_place = Place.ransack(params[:q])
     @places = @search_place.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
     @search_ecommers = Ecommer.ransack(params[:q])
     @ecommers = @search_ecommers.result.where(draft: false).where.not(friends_reward_id: nil).order("created_at DESC")
+    @search_caterers = Caterer.ransack(params[:q])
+    @caterers = @search_caterers.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_food_deliveries = FoodDelivery.ransack(params[:q])
+    @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_online_grocers = OnlineGrocer.ransack(params[:q])
+    @online_grocers = @search_online_grocers.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
+    @search_suppliers = Supplier.ransack(params[:q])
+    @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false).where.not(friends_reward_id: nil)
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @caterers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @food_deliveries = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @online_grocers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @suppliers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
