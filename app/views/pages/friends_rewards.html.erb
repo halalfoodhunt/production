@@ -345,7 +345,7 @@
               </div>
             </div>
 
-            <div id="suppliers1" class="tab-pane <%= 'active' if @suppliers.result %> fade">
+            <div id="suppliers1" class="tab-pane <%= 'active' if @suppliers %> fade">
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="col-xs-12 col-sm-12 col-md-8">
                  <h5>SHOWING <strong><u><%= @suppliers.where.not(friends_reward_id: nil).count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div>
@@ -388,7 +388,7 @@
                 </div>
               </div>
 
-              <div id="raw1" class="tab-pane <%= 'active' if @search_suppliers.result %> fade">
+              <div id="raw1" class="tab-pane <%= 'active' if @search_suppliers %> fade">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                   <div class="col-xs-12 col-sm-12 col-md-8">
                    <h5>SHOWING <strong><u><%= @suppliers.where.not(friends_reward_id: nil).count %></u></strong> RAW INGREDIENTS IN SINGAPORE</h5></div>
