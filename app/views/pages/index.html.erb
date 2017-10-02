@@ -150,11 +150,11 @@
             <div class="col-sm-12 col-md-12" style="padding:20px">
               <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                <label for="Search" class="label-front">What kind of supplier are you looking for?</label>
-               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
+               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %><br>
              </div>
              <br>
              <div class="col-sm-12 col-md-6" style="padding:2px">
-               <%= f.collection_select(:supplier_type_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Type"}, {:class=>'form-control'}) %>
+               <%= f.collection_select(:supplier_type_id_eq, SupplierType.all, :id, :name, {:include_blank => "Supplier Type"}, {:class=>'form-control'}) %><br>
              </div>
              <div class="col-sm-12 col-md-6" style="padding:2px">
               <%= f.collection_select(:food_types_id_eq_any, FoodType.all, :id, :name, {:include_blank => "Food Types"}, {:class=>'form-control'}) %>
