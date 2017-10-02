@@ -135,10 +135,11 @@ def friends_rewards
   else
     @friends_reward_id = FriendsReward.find_by(name: params[:friends_reward]).id
     @places = Place.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @caterers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @food_deliveries = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @online_grocers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
-    @suppliers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @ecommers = Ecommer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @caterers = Caterer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @food_deliveries = FoodDelivery.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @online_grocers = OnlineGrocer.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
+    @suppliers = Supplier.where(friends_reward_id: @friends_reward_id).order("created_at DESC").where(draft: false)
   end
 end
 
