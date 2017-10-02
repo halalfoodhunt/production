@@ -175,7 +175,7 @@
             <div class="col-sm-12 col-md-12" style="padding:20px">
               <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                <label for="Search" class="label-front">What kind of bakes & confectioners are you looking for?</label>
-               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Birthday Cakes, Raya Cookies etc." %>
+               <%= f.text_field :business_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Birthday Cakes, Raya Cookies etc." %><br>
              </div>
              <div class="col-sm-12 col-md-6" style="padding:2px">
                <%= f.collection_select(:service_types_id_eq_any, ServiceType.all, :id, :name, {:include_blank => "Service Types"}, {:class=>'form-control'}) %>
