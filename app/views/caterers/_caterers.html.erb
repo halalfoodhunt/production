@@ -31,31 +31,3 @@
 </div>
 </div>
 <% end %>
-
-
-
-
-
-
-
-
-
-<% @caterers.each do |caterer| %>
-<div class="col-xs-12 col-sm-6 col-md-3">
-  
-  <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
-    <%= image_tag caterer.featured_image.url(:medium), :class => "img_responsive" %>
-    <div class="caption">
-      <div class="media">
-        <div class="media-left">
-          <%= image_tag caterer.logo.url(:medium), :class => "img-circle-40" %>
-        </div>
-        <div class="media-body">
-          <h5 class="media-heading"><%= link_to caterer.business_name, caterer_path(caterer) %></h5>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
