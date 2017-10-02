@@ -7,13 +7,15 @@ class PagesController < ApplicationController
    @search_place = Place.ransack(params[:q])
    @places = @search_place.result.where(draft: false)
    @search_ecommers = Ecommer.ransack(params[:q])
-   @ecommers = @search_ecommers.result.order("created_at DESC").where(draft: false).where(featured: true)
-   @caterers = Caterer.all.order("created_at DESC").where(draft: false).limit(4)
-   @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false).limit(4)
-   @supermarkets = Supermarket.all.order("created_at DESC").where(draft: false).limit(4)
-   @lessons = Lesson.all.order("created_at DESC").where(draft: false).limit(4)
-   @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false).limit(4)
-   @suppliers = Supplier.all.order("created_at DESC").where(draft: false).limit(4)
+   @ecommers = @search_ecommers.result.order("created_at DESC").where(draft: false)
+   @search_caterers = Caterer.ransack(params[:q])
+   @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
+   @search_food_deliveries = FoodDelivery.ransack(params[:q])
+   @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
+   @search_online_grocers = OnlineGrocer.ransack(params[:q])
+   @online_grocers = @search_online_grocers.result.order("created_at DESC").where(draft: false)
+   @search_suppliers = Supplier.ransack(params[:q])
+   @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false)
    @friends_rewards = FriendsReward.all
    @users_testimonials = UsersTestimonial.all
    @featured_articles = FeaturedArticle.all
@@ -25,6 +27,10 @@ class PagesController < ApplicationController
     @places = Place.filter_by_params(params)
    end
    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
+   @caterers = Caterer.all.order("created_at DESC").where(draft: false)
+   @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
+   @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
+   @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   end 
 
  def merchant_dashboard

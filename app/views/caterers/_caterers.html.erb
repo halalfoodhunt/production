@@ -1,6 +1,10 @@
 <% @caterers.each do |caterer| %>
-<div class="col-xs-12 col-sm-6 col-md-3">
-  <% if caterer.verified == true %>
+<div class="four columns alpha">
+ <div class="card-container manual-flip">
+  <div class="card">
+    <div class="front">
+      <div class="cover">
+        <% if caterer.verified == true %>
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(caterer.qualifying_type.icon.url(:square), :class => "img-responsive") %></span>
             <% else %>
             <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
@@ -9,6 +13,36 @@
               <%= image_tag caterer.friends_reward.icon.url(:square), :class => "img-responsive" %>
               <% end %>
             </span>
+        <%= link_to caterer_path(caterer) do %><%= image_tag caterer.featured_image.url(:medium), :class => "img_responsive" %><% end %>
+      </div>
+      <div class="user">
+        <%= image_tag caterer.logo.url(:medium), :class => "img-circle" %>
+      </div>
+      <div class="content">
+        <label><strong><%= link_to caterer.business_name, caterer_path(caterer) %></strong></label>
+        <p class="profession">
+         <p><% caterer.caterer_types.each do |caterer_type| %>
+          <%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %>
+          <% end %></p>
+       </p>
+     </div>
+   </div> <!-- end front panel -->
+ </div>
+</div>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+<% @caterers.each do |caterer| %>
+<div class="col-xs-12 col-sm-6 col-md-3">
+  
   <div style="padding:0px; height:280px; position:relative;" class="thumbnail">
     <%= image_tag caterer.featured_image.url(:medium), :class => "img_responsive" %>
     <div class="caption">
@@ -18,9 +52,7 @@
         </div>
         <div class="media-body">
           <h5 class="media-heading"><%= link_to caterer.business_name, caterer_path(caterer) %></h5>
-          <p><% caterer.caterer_types.each do |caterer_type| %>
-          <%= image_tag caterer_type.icon.url(:thumb) %> <%= caterer_type.name %>
-          <% end %></p>
+          
         </div>
       </div>
     </div>
