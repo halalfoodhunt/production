@@ -1,5 +1,5 @@
 {
-    "master_picture": "images/media/LOGO-FA-01.png",
+    "master_picture": "public/images/media/LOGO-FA-01.png",
     "favicon_design": {
         "ios": {
             "picture_aspect": "background_and_margin",
