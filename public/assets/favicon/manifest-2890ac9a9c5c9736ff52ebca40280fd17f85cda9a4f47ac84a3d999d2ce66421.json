@@ -1,0 +1,18 @@
+{
+    "name": "Halalfoodhunt",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-192x192-79adc8eece667ff853dd4329b5cee17db467d48065a7f1b9d3adcb095bd18cf9.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/favicon/android-chrome-512x512-2a010031e7876332414b55bdcb2b1ed693d5a4a1cbfb2d74e1f08aff92f7dec8.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
