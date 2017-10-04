@@ -22,6 +22,8 @@ gem "cancan"
 
 gem "cocoon"
 
+gem 'rails_real_favicon'
+
 gem 'ransack'
 
 gem "select2-rails"
