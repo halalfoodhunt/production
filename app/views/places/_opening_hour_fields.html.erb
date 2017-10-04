@@ -10,6 +10,6 @@
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-3" style="padding:0 5px 0 5px;">
 		<%= f.time_select :closing, label: "To" %>
-		<%= link_to_remove_association "Remove Opening Hour", f %>
+		<%= link_to_remove_association "Remove Opening Hour",  f, :opening_hours %>
 	</div>
 </div>
