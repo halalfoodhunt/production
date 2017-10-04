@@ -20,6 +20,8 @@ gem 'bootstrap_form'
 
 gem "cancan"
 
+gem "cocoon"
+
 gem 'ransack'
 
 gem "select2-rails"
