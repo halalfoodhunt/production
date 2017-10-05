@@ -29,7 +29,7 @@ class PagesController < ApplicationController
    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
-   @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
+   @online_grocers = OnlineGrocer.all.where(draft: false)
    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   end 
 
