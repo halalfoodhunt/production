@@ -1,16 +1,25 @@
 <%= render 'layouts/header' %>
-<div style="padding-left:0; padding-right:0;" class="container-fluid merchant-sign-up">
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:50px;">
-    <div class="text-center">
-      <h3 style="color:white; margin-top:60px; font-weight:500; font-size:2em; text-transform:uppercase; text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);">What is halalfoodhunt.com?</h3>
-      <iframe src="https://www.youtube.com/embed/p5aMjwFeF1s" width="450" height="250" frameborder="0" style="" allowfullscreen></iframe></center>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: rgba(0,0,0,0.7); padding:50px;">
-    <h4 style="color:white; margin-top:60px; text-transform:uppercase; text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);"><center>CREATE AN AFFILIATE MERCHANT ACCOUNT</center></h4>
-    <center><p style="color:white;">Please fill in your information to create an account with us. <br><center><p style="color:white;">Have an account? <%= render "devise/shared/links" %>.</center></p></p>
-  </center>
-  <%= bootstrap_form_for(@merchant, as: @merchant, url: merchant_registration_path(@merchant), label_errors: true, inline_errors: true) do |f| %>
+<div class="pixfort_ecourse_8" id="section_ecourse_2">
+		<div class="page_style pix_builder_bg" data-selector=".pix_builder_bg" style="outline-offset: -3px;">
+			<div class="container">
+				<div class="sixteen columns">
+					<div class="nine columns  alpha">
+						<div class="left_zone">
+							<div class="video_style">
+								<iframe src="https://player.vimeo.com/video/102732914?title=0&amp;byline=0&amp;portrait=0&amp;color=11b1c2&amp;wmode=opaque" allowfullscreen="">
+							</iframe>
+						</div>
+						<h3 class="title_st editContent" data-selector="h3" style="">What is HALALFOODHUNT.COM?</h3>
+						
+					</div>
+				</div>
+				<div class="seven columns  omega">
+					<div class="text_input">
+						<div class="headtext_style"><span class="editContent" data-selector="Footers" style=""><span class="pix_text" data-selector=".pix_text, .pix_edit" style="" rel="">Create a merchant account</span></span></div>
+						<div class="segment pix_builder_bg" data-selector=".pix_builder_bg" style="background-image: none; background-color: rgb(231, 76, 60); padding-top: 0px; padding-bottom: 0px; box-shadow: none; border-color: rgb(68, 68, 68); background-size: auto; background-attachment: scroll; background-repeat: repeat;" src="images/3_app/windows.png"> </div>
+						<p class="subtext_style editContent" data-selector="p" style="">Please fill in your information to create an account with us.</p>
+						<div class="contact_st">
+							<%= bootstrap_form_for(@merchant, as: @merchant, url: merchant_registration_path(@merchant), label_errors: true, inline_errors: true) do |f| %>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <div class="field label-form" style="color:white;">
       <%= f.collection_select :region_id, Region.all, :id, :name, autofocus: true, layout: :inline %>
@@ -42,9 +51,36 @@
     </div>
   </div>
   <% end %>
-  <center><p style="color:white;">By creating an account, you agree to our <a href="#">terms.</a></p></center>
+						</div>
+						<p class="note_st editContent" data-selector="p" style="color: rgb(231, 76, 60); font-size: 13px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif;" src="images/3_app/windows.png">*By creating an account, you agree to our terms.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-</div>
+<div id="hidden_pix_8" class="confirm_page confirm_page_8 pix_builder_bg" data-selector=".pix_builder_bg" style="">
+	<div class="pixfort_ecourse_8">
+
+		<div class="confirm_header"><span class="editContent" data-selector="Footers"><span class="pix_text" data-selector=".pix_text, .pix_edit" style="">Thank You Very Much!</span></span></div>
+		<div class="sub_text">
+			<span class="editContent" data-selector="Footers"><span class="pix_text" data-selector=".pix_text, .pix_edit" style="">Download Tutorial: 4.5 MB</span></span>
+		</div>
+		<div class="code_text">
+			<a href="#" class="download_button pix_builder_bg" data-selector=".pix_builder_bg" style=""><span class="editContent" data-selector="Footers"><span class="pix_text" data-selector=".pix_text, .pix_edit" style="">Download Now</span></span></a>
+		</div>
+
+		<div class="confirm_text">
+			<span class="editContent" data-selector="Footers"><span class="pix_text" data-selector=".pix_text, .pix_edit" style="">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</span></span>
+		</div>
+		<div class="center_text padding_bottom_60">
+            <ul class="bottom-icons confirm_icons center_text big_title pix_inline_block">
+                <li><a class="pi pixicon-facebook6 white" href="#fakelink" data-selector=".pi" style=""></a></li>
+                <li><a class="pi pixicon-twitter6 white" href="#fakelink" data-selector=".pi" style=""></a></li>
+                <li><a class="pi pixicon-googleplus7 white" href="#fakelink" data-selector=".pi" style=""></a></li>
+            </ul>
+        </div>
+	</div>
 </div>
 <div class="container-fluid" style="background-color: #F9F9F9; padding:50px 0 50px 0;">
   <div class="container">
