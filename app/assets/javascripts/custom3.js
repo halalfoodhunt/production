@@ -12,8 +12,8 @@ jQuery(document).ready(function($){
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "40%";
-    document.getElementById("push-content").style.marginLeft = "250px";
+    document.getElementById("mySidenav").style.width = "80%";
+    document.getElementById("push-content").style.marginLeft = "40%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
