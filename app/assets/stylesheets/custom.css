@@ -817,6 +817,40 @@ a:focus {
     color: #ccc;
 }
 
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#push-content {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
 
 /*
  * Main content
@@ -950,10 +984,6 @@ span.step {
     margin-left: 5px;
 }
 
-.height-350 {
-    height: 350px;
-}
-
 .single {
     div {
         text-align: center;
@@ -961,16 +991,16 @@ span.step {
 }
 
 div img.color_flip {
-    filter: none;
-    -webkit-filter: grayscale(1);
+    filter: gray;
+    -webkit-filter: grayscale(0);
     /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
     display: inline-block;
     padding: 0 10px 20px 10px;
 }
 
 img.color_flip:hover {
-    filter: gray; /* IE5+ */
-    -webkit-filter: grayscale(0); /* Webkit Nightlies & Chrome Canary */
+    filter: none; /* IE5+ */
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
     -webkit-transition: all .5s ease-in-out;
 }
 
@@ -992,27 +1022,6 @@ img.color_flip:hover {
 #text-shadow {
     text-shadow: 2px 2px #22211d;
 }
-
-#merchant-front {       
-    background-image: url('http://friends.jumaiyah.com/wp-content/uploads/2017/02/1.jpg');        
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;        
-    width: 100%;            
-    height: 550px;       
-    margin-left: auto;      
-    margin-right: auto;       
-}   
-
-#merchant-bottom {       
-    background-image: url('http://friends.jumaiyah.com/wp-content/uploads/2017/02/FRIENDSCARD-19.jpg');        
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;        
-    width: 100%;            
-    margin-left: auto;      
-    margin-right: auto;       
-} 
 
 .bs-wizard {margin-top: 40px;}
 
