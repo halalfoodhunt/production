@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def index
    @halalfoodhunt_seos = HalalfoodhuntSeo.all
    @search_place = Place.ransack(params[:q])
-   @places = @search_place.result.where(draft: false)
+   @places = @search_place.result.order("created_at DESC").where(draft: false)
    @search_ecommers = Ecommer.ransack(params[:q])
    @ecommers = @search_ecommers.result.order("created_at DESC").where(draft: false)
    @search_caterers = Caterer.ransack(params[:q])
@@ -13,7 +13,7 @@ class PagesController < ApplicationController
    @search_food_deliveries = FoodDelivery.ransack(params[:q])
    @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
    @search_online_grocers = OnlineGrocer.ransack(params[:q])
-   @online_grocers = @search_online_grocers.result.where(draft: false)
+   @online_grocers = @search_online_grocers.result.order("created_at DESC").where(draft: false)
    @search_suppliers = Supplier.ransack(params[:q])
    @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false)
    @friends_rewards = FriendsReward.all
@@ -29,7 +29,7 @@ class PagesController < ApplicationController
    @ecommers = Ecommer.all.order("created_at DESC").where(draft: false)
    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
-   @online_grocers = OnlineGrocer.all.where(draft: false)
+   @online_grocers = OnlineGrocer.all.order("created_at DESC").where(draft: false)
    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
   end 
 
