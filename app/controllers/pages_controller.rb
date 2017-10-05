@@ -13,7 +13,7 @@ class PagesController < ApplicationController
    @search_food_deliveries = FoodDelivery.ransack(params[:q])
    @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
    @search_online_grocers = OnlineGrocer.ransack(params[:q])
-   @online_grocers = @search_online_grocers.result.order("created_at DESC").where(draft: false)
+   @online_grocers = @search_online_grocers.result.where(draft: false)
    @search_suppliers = Supplier.ransack(params[:q])
    @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false)
    @friends_rewards = FriendsReward.all
