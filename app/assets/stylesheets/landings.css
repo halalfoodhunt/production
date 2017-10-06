@@ -4811,10 +4811,10 @@ iframe.c1 {
 
 .pixfort_ecourse_8 .headtext_style {
     color:#fff;
-    font-size:26px;
-    
+    font-size:22px;
     line-height:100%;
-    padding-top:60px
+    padding-top:60px;
+    text-transform: uppercase;
 }
 
 .pixfort_ecourse_8 .segment {
