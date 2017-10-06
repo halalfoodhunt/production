@@ -1955,7 +1955,7 @@ iframe.c1 {
 
 /*  Part 8:  #Contact     */
 .pixfort_app_3 .download_style {
-    background:url(../images/3_app/bg.png) #fff center fixed no-repeat;
+    background:url(/images/media/bg.png) #fff center fixed no-repeat;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
